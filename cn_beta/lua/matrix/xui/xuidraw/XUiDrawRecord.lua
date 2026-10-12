@@ -31,10 +31,7 @@ function XUiDrawRecord:OnStart(defaultDrawId, historyGroupInfos, optionKey)
 end
 
 function XUiDrawRecord:OnDestroy()
-    if self._DrdOpenTimeId then
-        XScheduleManager.UnSchedule(self._DrdOpenTimeId)
-        self._DrdOpenTimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.OnDrawListOpen, self)
 end
 
 --region 初始化
@@ -62,13 +59,8 @@ function XUiDrawRecord:InitDrawDropdown()
     -- 打开下拉框时，为了克隆，Unity会先激活Template，触发enable。之后再执行克隆并改名的操作。
     -- 而节点的数据同步在下一帧执行，因此需要隔一帧
     self.DrdTemplateBehaviour.LuaOnEnable = function()
-
-        if self._DrdOpenTimeId then
-            XScheduleManager.UnSchedule(self._DrdOpenTimeId)
-            self._DrdOpenTimeId = nil
-        end
-
-        self._DrdOpenTimeId = XScheduleManager.ScheduleNextFrame(handler(self, self.OnDrawListOpen))
+        -- Pro 同键（handler+handlerObj）后写覆盖，重复注册无需先取消
+        XScheduleManagerPro.ScheduleNextFrame(self.OnDrawListOpen, self)
     end
 
     local dropdownDataList = XDataCenter.DrawManager.GetDisplayOptionsForRecord(self.HistoryGroupInfos)
@@ -259,7 +251,8 @@ function XUiDrawRecord:RefreshRecordShow()
                 quality = quality or 1
                 fromName = fromGoods.Name
                 if fromGoods.TradeName then
-                    fromName = fromName .. "." .. fromGoods.TradeName
+                    -- 来源为角色时同样读LogName，与普通行保持一致
+                    fromName = XMVCA.XCharacter:GetCharacterLogName(reward.RewardGoods.ConvertFrom)
                 end
                 name = Goods.Name
                 time = TimestampToGameDateTimeString(reward.DrawTime)
@@ -270,11 +263,8 @@ function XUiDrawRecord:RefreshRecordShow()
                 quality = quality or 1
                 name = Goods.Name
                 if Goods.TradeName then
-                    if XOverseaManager.IsENRegion() then
-                        name = string.format("%s:%s", name, Goods.TradeName)
-                    else
-                        name = name .. "." .. Goods.TradeName
-                    end
+                    -- 角色货架才有TradeName：直接用Character.tab的LogName，避免代码拼接分隔符
+                    name = XMVCA.XCharacter:GetCharacterLogName(reward.RewardGoods.TemplateId)
                 end
                 time = TimestampToGameDateTimeString(reward.DrawTime)
                 self:_SetLogData(name, reward.RewardGoods.TemplateId, nil, time, quality)

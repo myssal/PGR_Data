@@ -261,24 +261,11 @@ end
 function XUiBossInshotMain:InitActivityTimer()
     self.EndTime = self._Control:GetActivityEndTime(self.ActivityId)
     self:ClearActivityTimer()
-    self.ActivityTimer = XScheduleManager.ScheduleForever(function()
-        local gameTime = self.EndTime - XTime.GetServerNowTimestamp()
-        if gameTime <= 0 then
-            self:ClearActivityTimer()
-            self._Control:HandleActivityEnd()
-        else
-            self:RefreshTime()
-            self:RefreshBossOpenTime()
-            self:RefreshTowerUnlockTime()
-        end
-    end, 1000)
+    XScheduleManagerPro.ScheduleForever(XUiBossInshotMain._OnUpdateActivityTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiBossInshotMain:ClearActivityTimer()
-    if self.ActivityTimer then
-        XScheduleManager.UnSchedule(self.ActivityTimer)
-        self.ActivityTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiBossInshotMain._OnUpdateActivityTimeScheduleCb, self)
 end
 
 function XUiBossInshotMain:ShowBlackHole(show)
@@ -612,6 +599,18 @@ function XUiBossInshotMain:ClearSceneSettingTimer()
     if self.SceneSettingTimer then
         XScheduleManager.UnSchedule(self.SceneSettingTimer)
         self.SceneSettingTimer = nil
+    end
+end
+
+function XUiBossInshotMain:_OnUpdateActivityTimeScheduleCb()
+    local gameTime = self.EndTime - XTime.GetServerNowTimestamp()
+    if gameTime <= 0 then
+        self:ClearActivityTimer()
+        self._Control:HandleActivityEnd()
+    else
+        self:RefreshTime()
+        self:RefreshBossOpenTime()
+        self:RefreshTowerUnlockTime()
     end
 end
 

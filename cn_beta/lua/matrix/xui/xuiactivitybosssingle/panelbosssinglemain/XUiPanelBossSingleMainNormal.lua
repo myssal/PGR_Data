@@ -6,7 +6,6 @@ local XUiGridActivityBossSingle = require("XUi/XUiActivityBossSingle/XUiGridActi
 
 local tableInsert = table.insert
 local CsXTextManager = CS.XTextManager
-local CsXScheduleManager = XScheduleManager
 
 local StageCount = 6
 
@@ -177,45 +176,47 @@ function XUiPanelBossSingleMainNormal:CreateActivityTimer()
         end
     end
 
-    self.ActivityTimer = CsXScheduleManager.ScheduleForever(function()
-        if XTool.UObjIsNil(self.TxtLeftTime) then
-            self:DestroyActivityTimer()
-            return
+    XScheduleManagerPro.ScheduleForever(XUiPanelBossSingleMainNormal._OnActivityTimeScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+-- 活动倒计时定时器回调
+function XUiPanelBossSingleMainNormal:_OnActivityTimeScheduleCb()
+    if XTool.UObjIsNil(self.TxtLeftTime) then
+        self:DestroyActivityTimer()
+        return
+    end
+
+    local time = XTime.GetServerNowTimestamp()+1
+    local fightEndTime = XDataCenter.FubenActivityBossSingleManager.GetFightEndTime()
+    local activityEndTime = XDataCenter.FubenActivityBossSingleManager.GetActivityEndTime()
+
+    if time >= activityEndTime then
+        self:DestroyActivityTimer()
+        XDataCenter.FubenActivityBossSingleManager.OnActivityEnd()
+    elseif fightEndTime <= time then
+        local leftTime = activityEndTime - time
+        if leftTime > 0 then
+            self.TxtLeftTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
+            if self.TxtLeftTimeMirror then
+                self.TxtLeftTimeMirror.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
+            end
         end
-
-        time = time + 1
-
-        if time >= activityEndTime then
-            self:DestroyActivityTimer()
-            XDataCenter.FubenActivityBossSingleManager.OnActivityEnd()
-        elseif fightEndTime <= time then
-            local leftTime = activityEndTime - time
-            if leftTime > 0 then
-                self.TxtLeftTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
-                if self.TxtLeftTimeMirror then
-                    self.TxtLeftTimeMirror.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
-                end
+    else
+        local leftTime = fightEndTime - time
+        if leftTime > 0 then
+            self.TxtLeftTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
+            if self.TxtLeftTimeMirror then
+                self.TxtLeftTimeMirror.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
             end
         else
-            local leftTime = fightEndTime - time
-            if leftTime > 0 then
-                self.TxtLeftTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
-                if self.TxtLeftTimeMirror then
-                    self.TxtLeftTimeMirror.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
-                end
-            else
-                self:DestroyActivityTimer()
-                self:CreateActivityTimer()
-            end
+            self:DestroyActivityTimer()
+            self:CreateActivityTimer()
         end
-    end, CsXScheduleManager.SECOND, 0)
+    end
 end
 
 function XUiPanelBossSingleMainNormal:DestroyActivityTimer()
-    if self.ActivityTimer then
-        CsXScheduleManager.UnSchedule(self.ActivityTimer)
-        self.ActivityTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiPanelBossSingleMainNormal._OnActivityTimeScheduleCb, self)
 end
 --endregion
 

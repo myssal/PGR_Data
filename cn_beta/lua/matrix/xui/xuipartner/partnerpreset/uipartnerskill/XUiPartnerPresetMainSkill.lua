@@ -137,14 +137,16 @@ function XUiPartnerPresetMainSkill:ShowPanel(panelType, skillGroup)
         self.PanelSkillInfo:Refresh(skillGroup)
     end
     
-    XScheduleManager.ScheduleOnce(function()
-        if self.PanelType == PanelType.SkillSelectType then
-            self:PlayAnimation("QieHuan2")
-        elseif self.PanelType == PanelType.SkillInfoType then
-            self:PlayAnimation("QieHuan1")
-        end
-    end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayAnimationScheduleCb, self, 1)
 end 
+
+function XUiPartnerPresetMainSkill:_OnPlayAnimationScheduleCb()
+    if self.PanelType == PanelType.SkillSelectType then
+        self:PlayAnimation("QieHuan2")
+    elseif self.PanelType == PanelType.SkillInfoType then
+        self:PlayAnimation("QieHuan1")
+    end
+end
 
 function XUiPartnerPresetMainSkill:GetCurrentGroup()
     return self.CurrentGroup

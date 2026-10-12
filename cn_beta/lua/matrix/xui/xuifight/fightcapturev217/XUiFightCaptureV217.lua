@@ -93,9 +93,11 @@ function XUiFightCaptureV217:OnStart(cameraCfgId, npcAnimCfgGroupId, stickerCfgG
     self.XUiPanelAction:SetData(npcAnimCfgGroupId, unlockActionIdList)
     self.XUiPanelSticker:SetData(stickerCfgGroupId, unlockStickerIdList)
     self._Control:SetScreenEffectCallBack(handler(self, self.SetScreenEffect))
-    XScheduleManager.ScheduleOnce(function()
+    XScheduleManagerPro.ScheduleOnce(self._OnStartScheduleCb, self, 1)
+end
+
+function XUiFightCaptureV217:_OnStartScheduleCb()
         self:OnSliderChanged(0)
-    end, 1)
 end
 
 function XUiFightCaptureV217:InitCamera(cameraCfgId)

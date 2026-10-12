@@ -30,9 +30,7 @@ function XUiEnhanceSkillActivation:UpdatePanel()
     local resource = self._Control:GetLoader():Load(fullBodyImage)
     self.MeshImg.sharedMaterial:SetTexture("_MainTex", resource)
     self.FxUiChuxian.gameObject:SetActiveEx(false)
-    XScheduleManager.ScheduleOnce(function()
-            self.FxUiChuxian.gameObject:SetActiveEx(true)
-        end,  500)
+    XScheduleManagerPro.ScheduleOnce(XUiEnhanceSkillActivation._OnShowActivationEffectScheduleCb, self, 500)
     
     
     self.SkillIcon:SetRawImage(self.SkillGroup:GetIcon())
@@ -55,6 +53,11 @@ function XUiEnhanceSkillActivation:OnBtnDetermineClick()
 end
 
 function XUiEnhanceSkillActivation:OnDestroy()
+    XScheduleManagerPro.UnSchedule(XUiEnhanceSkillActivation._OnShowActivationEffectScheduleCb, self)
     local fullBodyImage = XMVCA.XCharacter:GetCharFullBodyImg(self.CharacterId)
     self._Control:GetLoader():Unload(fullBodyImage)
+end
+
+function XUiEnhanceSkillActivation:_OnShowActivationEffectScheduleCb()
+    self.FxUiChuxian.gameObject:SetActiveEx(true)
 end

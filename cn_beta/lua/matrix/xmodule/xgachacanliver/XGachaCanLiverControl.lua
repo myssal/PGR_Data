@@ -343,24 +343,18 @@ function XGachaCanLiverControl:SetLockTickout(isLock)
 end
 
 function XGachaCanLiverControl:StopTimelimitDrawLeftTimer()
-    if self._DrawLeftTimerId then
-        XScheduleManager.UnSchedule(self._DrawLeftTimerId)
-        self._DrawLeftTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.UpdateTimelimitDrawTimeShow, self)
+    XScheduleManagerPro.UnSchedule(self._OnStartTimelimitDrawLeftTimerScheduleCb, self)
+end
 
-    if self._DrawLeftTimerNextFrameId then
-        XScheduleManager.UnSchedule(self._DrawLeftTimerNextFrameId)
-        self._DrawLeftTimerNextFrameId = nil
-    end
+function XGachaCanLiverControl:_OnStartTimelimitDrawLeftTimerScheduleCb()
+        self:UpdateTimelimitDrawTimeShow()
 end
 
 function XGachaCanLiverControl:StartTimelimitDrawLeftTimer()
     self:StopTimelimitDrawLeftTimer()
-    self._DrawLeftTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateTimelimitDrawTimeShow), XScheduleManager.SECOND)
-    self._DrawLeftTimerNextFrameId = XScheduleManager.ScheduleNextFrame(function()
-        self:UpdateTimelimitDrawTimeShow()
-        self._DrawLeftTimerNextFrameId = nil
-    end)
+    XScheduleManagerPro.ScheduleForever(self.UpdateTimelimitDrawTimeShow, self, XScheduleManagerPro.SECOND)
+    XScheduleManagerPro.ScheduleNextFrame(self._OnStartTimelimitDrawLeftTimerScheduleCb, self)
 end
 
 function XGachaCanLiverControl:UpdateTimelimitDrawTimeShow()

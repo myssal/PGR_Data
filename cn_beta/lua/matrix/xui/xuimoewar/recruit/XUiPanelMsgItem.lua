@@ -62,12 +62,14 @@ function XUiPanelMsgItem:CheckSwitchAnimaContent(isCheck)
         if self.PauseInsertDynamicTimer then
             self.PauseInsertDynamicTimer()
         end
-        self.Timer = XScheduleManager.ScheduleOnce(function()
-            self:SwitchAnimaContentIsShow(false)
-            if self.CancelPauseInsertDynamicTimer then
-                self.CancelPauseInsertDynamicTimer(true)
-            end
-        end, MoeWarRecruitAnimaContentShowTime)
+        XScheduleManagerPro.ScheduleOnce(self._OnCheckSwitchAnimaContentScheduleCb, self, MoeWarRecruitAnimaContentShowTime)
+    end
+end
+
+function XUiPanelMsgItem:_OnCheckSwitchAnimaContentScheduleCb()
+    self:SwitchAnimaContentIsShow(false)
+    if self.CancelPauseInsertDynamicTimer then
+        self.CancelPauseInsertDynamicTimer(true)
     end
 end
 
@@ -81,10 +83,7 @@ function XUiPanelMsgItem:SwitchAnimaContentIsShow(isShow)
 end
 
 function XUiPanelMsgItem:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnCheckSwitchAnimaContentScheduleCb, self)
 end
 
 return XUiPanelMsgItem

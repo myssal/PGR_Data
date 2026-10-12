@@ -138,20 +138,22 @@ function XUiPurchaseRecommend:UpdateRecommend(uiType, childTabIndex)
         if self.CurrentIndex > #btns then self.CurrentIndex = #btns end
         self.PanelTabGroup:SelectIndex(self.CurrentIndex)
         
-        XScheduleManager.ScheduleNextFrame(function()
-            -- 判断自己有没销毁
-            if not self or not self.GameObject:Exist() then
-                return
-            end
-            
-            local button = self.PanelTabGroup:GetButtonByIndex(self.CurrentIndex)
-            -- 尝试滑动聚焦到该按钮
-            self:TryFocusStage(button)
-        end)
+        XScheduleManagerPro.ScheduleNextFrame(self._OnNextFrameFocusTab, self)
     end
     -- 刷新推荐
     self.DynamicTable:SetDataSource(self.Recommends)
     self.DynamicTable:ReloadData(self.CurrentIndex - 1)
+end
+
+function XUiPurchaseRecommend:_OnNextFrameFocusTab()
+    -- 判断自己有没销毁
+    if not self.GameObject or not self.GameObject:Exist() then
+        return
+    end
+
+    local button = self.PanelTabGroup:GetButtonByIndex(self.CurrentIndex)
+    -- 尝试滑动聚焦到该按钮
+    self:TryFocusStage(button)
 end
 
 ---@param grid XUiRecommendGrid

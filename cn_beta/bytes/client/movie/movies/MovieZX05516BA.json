@@ -4598,6 +4598,36 @@
     },
     {
         "Id": 458,
+        "ActionId": 5000,
+        "Type": 101,
+        "BeginAnim": "DialogDisable",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 459,
+        "ActionId": 460,
+        "Type": 302,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "……薇拉？",
+            461
+        ]
+    },
+    {
+        "Id": 460,
+        "ActionId": 461,
+        "Type": 501,
+        "EndDelay": 50.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 461,
         "ActionId": 458,
         "Type": 101,
         "Params": [
@@ -4605,7 +4635,7 @@
         ]
     },
     {
-        "Id": 459,
+        "Id": 462,
         "ActionId": 459,
         "Type": 201,
         "Params": [
@@ -4619,29 +4649,10 @@
         ]
     },
     {
-        "Id": 460,
-        "ActionId": 460,
-        "Type": 302,
-        "Params": [
-            "",
-            "……薇拉？",
-            461
-        ]
-    },
-    {
-        "Id": 461,
-        "ActionId": 461,
-        "Type": 501,
-        "Params": [
-            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab",
-            2
-        ]
-    },
-    {
-        "Id": 462,
+        "Id": 463,
         "ActionId": 462,
         "Type": 301,
-        "BeginAnim": "AniZhuanchangEnd",
+        "BeginAnim": "DialogEnable",
         "Params": [
             1,
             "",
@@ -4649,7 +4660,7 @@
         ]
     },
     {
-        "Id": 463,
+        "Id": 464,
         "ActionId": 463,
         "Type": 302,
         "Params": [
@@ -4659,7 +4670,7 @@
         ]
     },
     {
-        "Id": 464,
+        "Id": 465,
         "ActionId": 464,
         "Type": 401,
         "Params": [
@@ -4668,7 +4679,7 @@
         ]
     },
     {
-        "Id": 465,
+        "Id": 466,
         "ActionId": 465,
         "Type": 202,
         "Params": [
@@ -4676,7 +4687,7 @@
         ]
     },
     {
-        "Id": 466,
+        "Id": 467,
         "ActionId": 466,
         "Type": 104,
         "Params": [
@@ -4685,7 +4696,7 @@
         ]
     },
     {
-        "Id": 467,
+        "Id": 468,
         "ActionId": 467,
         "Type": 301,
         "Params": [
@@ -4695,7 +4706,7 @@
         ]
     },
     {
-        "Id": 468,
+        "Id": 469,
         "ActionId": 468,
         "Type": 302,
         "EndAnim": "DialogDisable",
@@ -4706,7 +4717,7 @@
         ]
     },
     {
-        "Id": 469,
+        "Id": 470,
         "ActionId": 469,
         "Type": 401,
         "Params": [
@@ -4715,7 +4726,7 @@
         ]
     },
     {
-        "Id": 470,
+        "Id": 471,
         "ActionId": 470,
         "Type": 501,
         "EndAnim": "AniZhuanchangBegin",
@@ -4726,7 +4737,7 @@
         ]
     },
     {
-        "Id": 471,
+        "Id": 472,
         "ActionId": 471,
         "Type": 505,
         "Params": [
@@ -4735,7 +4746,7 @@
         ]
     },
     {
-        "Id": 472,
+        "Id": 473,
         "ActionId": 472,
         "Type": 101,
         "BeginAnim": "AniZhuanchangEnd",
@@ -4744,7 +4755,7 @@
         ]
     },
     {
-        "Id": 473,
+        "Id": 474,
         "ActionId": 473,
         "Type": 301,
         "BeginAnim": "DialogEnable",
@@ -4755,7 +4766,7 @@
         ]
     },
     {
-        "Id": 474,
+        "Id": 475,
         "ActionId": 474,
         "Type": 301,
         "Params": [
@@ -4765,7 +4776,7 @@
         ]
     },
     {
-        "Id": 475,
+        "Id": 476,
         "ActionId": 475,
         "Type": 302,
         "Params": [
@@ -4775,7 +4786,7 @@
         ]
     },
     {
-        "Id": 476,
+        "Id": 477,
         "ActionId": 476,
         "Type": 101,
         "Params": [
@@ -4783,7 +4794,7 @@
         ]
     },
     {
-        "Id": 477,
+        "Id": 478,
         "ActionId": 477,
         "Type": 301,
         "BeginAnim": "AniZhuanchangEnd",
@@ -4794,7 +4805,7 @@
         ]
     },
     {
-        "Id": 478,
+        "Id": 479,
         "ActionId": 478,
         "Type": 301,
         "Params": [
@@ -4804,7 +4815,7 @@
         ]
     },
     {
-        "Id": 479,
+        "Id": 480,
         "ActionId": 479,
         "Type": 302,
         "Params": [
@@ -4816,7 +4827,7 @@
         ]
     },
     {
-        "Id": 480,
+        "Id": 481,
         "ActionId": 480,
         "Type": 301,
         "Params": [
@@ -4826,7 +4837,7 @@
         ]
     },
     {
-        "Id": 481,
+        "Id": 482,
         "ActionId": 481,
         "Type": 301,
         "EndAnim": "DialogDisable",
@@ -4837,7 +4848,7 @@
         ]
     },
     {
-        "Id": 482,
+        "Id": 483,
         "ActionId": 482,
         "Type": 501,
         "Params": [
@@ -4846,7 +4857,7 @@
         ]
     },
     {
-        "Id": 483,
+        "Id": 484,
         "ActionId": 483,
         "Type": 504,
         "Params": [
@@ -4854,7 +4865,7 @@
         ]
     },
     {
-        "Id": 484,
+        "Id": 485,
         "ActionId": 484,
         "Type": 401,
         "Params": [
@@ -4863,7 +4874,7 @@
         ]
     },
     {
-        "Id": 485,
+        "Id": 486,
         "ActionId": 485,
         "Type": 101,
         "Params": [
@@ -4871,7 +4882,7 @@
         ]
     },
     {
-        "Id": 486,
+        "Id": 487,
         "ActionId": 486,
         "Type": 201,
         "Params": [
@@ -4880,7 +4891,7 @@
         ]
     },
     {
-        "Id": 487,
+        "Id": 488,
         "ActionId": 487,
         "Type": 301,
         "BeginAnim": "DialogEnable",
@@ -4892,7 +4903,7 @@
         ]
     },
     {
-        "Id": 488,
+        "Id": 489,
         "ActionId": 488,
         "Type": 302,
         "Params": [
@@ -4904,7 +4915,7 @@
         ]
     },
     {
-        "Id": 489,
+        "Id": 490,
         "ActionId": 489,
         "NextActionId": 491,
         "Type": 301,
@@ -4916,7 +4927,7 @@
         ]
     },
     {
-        "Id": 490,
+        "Id": 491,
         "ActionId": 490,
         "NextActionId": 491,
         "Type": 301,
@@ -4928,7 +4939,7 @@
         ]
     },
     {
-        "Id": 491,
+        "Id": 492,
         "ActionId": 491,
         "Type": 202,
         "Params": [
@@ -4936,7 +4947,7 @@
         ]
     },
     {
-        "Id": 492,
+        "Id": 493,
         "ActionId": 492,
         "Type": 301,
         "Params": [
@@ -4946,7 +4957,7 @@
         ]
     },
     {
-        "Id": 493,
+        "Id": 494,
         "ActionId": 493,
         "Type": 301,
         "Params": [
@@ -4956,7 +4967,7 @@
         ]
     },
     {
-        "Id": 494,
+        "Id": 495,
         "ActionId": 494,
         "Type": 301,
         "Params": [
@@ -4966,7 +4977,7 @@
         ]
     },
     {
-        "Id": 495,
+        "Id": 496,
         "ActionId": 495,
         "Type": 201,
         "Params": [
@@ -4975,7 +4986,7 @@
         ]
     },
     {
-        "Id": 496,
+        "Id": 497,
         "ActionId": 496,
         "Type": 301,
         "Params": [
@@ -4986,7 +4997,7 @@
         ]
     },
     {
-        "Id": 497,
+        "Id": 498,
         "ActionId": 497,
         "Type": 301,
         "Params": [
@@ -4997,7 +5008,7 @@
         ]
     },
     {
-        "Id": 498,
+        "Id": 499,
         "ActionId": 498,
         "Type": 202,
         "Params": [
@@ -5005,7 +5016,7 @@
         ]
     },
     {
-        "Id": 499,
+        "Id": 500,
         "ActionId": 499,
         "Type": 401,
         "Params": [
@@ -5014,7 +5025,7 @@
         ]
     },
     {
-        "Id": 500,
+        "Id": 501,
         "ActionId": 500,
         "Type": 301,
         "Params": [
@@ -5024,7 +5035,7 @@
         ]
     },
     {
-        "Id": 501,
+        "Id": 502,
         "ActionId": 501,
         "Type": 401,
         "Params": [
@@ -5033,7 +5044,7 @@
         ]
     },
     {
-        "Id": 502,
+        "Id": 503,
         "ActionId": 502,
         "Type": 501,
         "Params": [
@@ -5042,7 +5053,7 @@
         ]
     },
     {
-        "Id": 503,
+        "Id": 504,
         "ActionId": 503,
         "Type": 504,
         "Params": [
@@ -5050,7 +5061,7 @@
         ]
     },
     {
-        "Id": 504,
+        "Id": 505,
         "ActionId": 504,
         "Type": 401,
         "Params": [
@@ -5059,7 +5070,7 @@
         ]
     },
     {
-        "Id": 505,
+        "Id": 506,
         "ActionId": 505,
         "Type": 101,
         "Params": [
@@ -5067,7 +5078,7 @@
         ]
     },
     {
-        "Id": 506,
+        "Id": 507,
         "ActionId": 506,
         "Type": 201,
         "Params": [
@@ -5081,7 +5092,7 @@
         ]
     },
     {
-        "Id": 507,
+        "Id": 508,
         "ActionId": 507,
         "Type": 301,
         "Params": [
@@ -5092,7 +5103,7 @@
         ]
     },
     {
-        "Id": 508,
+        "Id": 509,
         "ActionId": 508,
         "Type": 202,
         "Params": [
@@ -5105,7 +5116,7 @@
         ]
     },
     {
-        "Id": 509,
+        "Id": 510,
         "ActionId": 509,
         "Type": 201,
         "Params": [
@@ -5119,7 +5130,7 @@
         ]
     },
     {
-        "Id": 510,
+        "Id": 511,
         "ActionId": 510,
         "Type": 201,
         "Params": [
@@ -5133,7 +5144,7 @@
         ]
     },
     {
-        "Id": 511,
+        "Id": 512,
         "ActionId": 511,
         "Type": 301,
         "Params": [
@@ -5144,7 +5155,7 @@
         ]
     },
     {
-        "Id": 512,
+        "Id": 513,
         "ActionId": 512,
         "Type": 301,
         "BeginAnim": "PanelActor1Shake",
@@ -5156,7 +5167,7 @@
         ]
     },
     {
-        "Id": 513,
+        "Id": 514,
         "ActionId": 513,
         "Type": 202,
         "Params": [
@@ -5169,7 +5180,7 @@
         ]
     },
     {
-        "Id": 514,
+        "Id": 515,
         "ActionId": 514,
         "Type": 501,
         "Params": [
@@ -5178,7 +5189,7 @@
         ]
     },
     {
-        "Id": 515,
+        "Id": 516,
         "ActionId": 515,
         "Type": 504,
         "Params": [
@@ -5186,7 +5197,7 @@
         ]
     },
     {
-        "Id": 516,
+        "Id": 517,
         "ActionId": 516,
         "Type": 401,
         "Params": [
@@ -5195,7 +5206,7 @@
         ]
     },
     {
-        "Id": 517,
+        "Id": 518,
         "ActionId": 517,
         "Type": 101,
         "Params": [
@@ -5203,7 +5214,7 @@
         ]
     },
     {
-        "Id": 518,
+        "Id": 519,
         "ActionId": 518,
         "Type": 201,
         "Params": [
@@ -5212,7 +5223,7 @@
         ]
     },
     {
-        "Id": 519,
+        "Id": 520,
         "ActionId": 519,
         "Type": 301,
         "Params": [
@@ -5223,7 +5234,7 @@
         ]
     },
     {
-        "Id": 520,
+        "Id": 521,
         "ActionId": 520,
         "Type": 301,
         "Params": [
@@ -5234,7 +5245,7 @@
         ]
     },
     {
-        "Id": 521,
+        "Id": 522,
         "ActionId": 521,
         "Type": 202,
         "Params": [
@@ -5242,7 +5253,7 @@
         ]
     },
     {
-        "Id": 522,
+        "Id": 523,
         "ActionId": 522,
         "Type": 301,
         "Params": [
@@ -5252,7 +5263,7 @@
         ]
     },
     {
-        "Id": 523,
+        "Id": 524,
         "ActionId": 523,
         "Type": 501,
         "Params": [
@@ -5261,7 +5272,7 @@
         ]
     },
     {
-        "Id": 524,
+        "Id": 525,
         "ActionId": 524,
         "Type": 504,
         "Params": [
@@ -5269,7 +5280,7 @@
         ]
     },
     {
-        "Id": 525,
+        "Id": 526,
         "ActionId": 525,
         "Type": 401,
         "Params": [
@@ -5278,7 +5289,7 @@
         ]
     },
     {
-        "Id": 526,
+        "Id": 527,
         "ActionId": 526,
         "Type": 101,
         "Params": [
@@ -5286,7 +5297,7 @@
         ]
     },
     {
-        "Id": 527,
+        "Id": 528,
         "ActionId": 527,
         "Type": 201,
         "Params": [
@@ -5296,7 +5307,7 @@
         ]
     },
     {
-        "Id": 528,
+        "Id": 529,
         "ActionId": 528,
         "Type": 301,
         "Params": [
@@ -5307,7 +5318,7 @@
         ]
     },
     {
-        "Id": 529,
+        "Id": 530,
         "ActionId": 529,
         "Type": 301,
         "Params": [
@@ -5318,7 +5329,7 @@
         ]
     },
     {
-        "Id": 530,
+        "Id": 531,
         "ActionId": 530,
         "Type": 204,
         "Params": [
@@ -5326,7 +5337,7 @@
         ]
     },
     {
-        "Id": 531,
+        "Id": 532,
         "ActionId": 531,
         "Type": 301,
         "Params": [
@@ -5337,7 +5348,7 @@
         ]
     },
     {
-        "Id": 532,
+        "Id": 533,
         "ActionId": 532,
         "Type": 301,
         "Params": [
@@ -5348,7 +5359,7 @@
         ]
     },
     {
-        "Id": 533,
+        "Id": 534,
         "ActionId": 533,
         "Type": 202,
         "Params": [
@@ -5361,7 +5372,7 @@
         ]
     },
     {
-        "Id": 534,
+        "Id": 535,
         "ActionId": 534,
         "Type": 501,
         "Params": [
@@ -5370,7 +5381,7 @@
         ]
     },
     {
-        "Id": 535,
+        "Id": 536,
         "ActionId": 535,
         "Type": 504,
         "Params": [
@@ -5378,7 +5389,7 @@
         ]
     },
     {
-        "Id": 536,
+        "Id": 537,
         "ActionId": 536,
         "Type": 401,
         "Params": [
@@ -5387,7 +5398,7 @@
         ]
     },
     {
-        "Id": 537,
+        "Id": 538,
         "ActionId": 537,
         "Type": 101,
         "Params": [
@@ -5395,7 +5406,7 @@
         ]
     },
     {
-        "Id": 538,
+        "Id": 539,
         "ActionId": 538,
         "Type": 301,
         "Params": [
@@ -5405,7 +5416,7 @@
         ]
     },
     {
-        "Id": 539,
+        "Id": 540,
         "ActionId": 539,
         "Type": 201,
         "Params": [
@@ -5414,7 +5425,7 @@
         ]
     },
     {
-        "Id": 540,
+        "Id": 541,
         "ActionId": 540,
         "Type": 301,
         "Params": [
@@ -5425,7 +5436,7 @@
         ]
     },
     {
-        "Id": 541,
+        "Id": 542,
         "ActionId": 541,
         "Type": 301,
         "Params": [
@@ -5435,7 +5446,7 @@
         ]
     },
     {
-        "Id": 542,
+        "Id": 543,
         "ActionId": 542,
         "Type": 301,
         "Params": [
@@ -5445,7 +5456,7 @@
         ]
     },
     {
-        "Id": 543,
+        "Id": 544,
         "ActionId": 543,
         "Type": 302,
         "Params": [
@@ -5457,7 +5468,7 @@
         ]
     },
     {
-        "Id": 544,
+        "Id": 545,
         "ActionId": 544,
         "Type": 301,
         "EndAnim": "DialogDisable",
@@ -5469,7 +5480,7 @@
         ]
     },
     {
-        "Id": 545,
+        "Id": 546,
         "ActionId": 545,
         "Type": 302,
         "Params": [
@@ -5479,7 +5490,7 @@
         ]
     },
     {
-        "Id": 546,
+        "Id": 547,
         "ActionId": 546,
         "Type": 302,
         "Params": [
@@ -5489,7 +5500,7 @@
         ]
     },
     {
-        "Id": 547,
+        "Id": 548,
         "ActionId": 547,
         "Type": 301,
         "BeginAnim": "DialogEnable",
@@ -5501,7 +5512,7 @@
         ]
     },
     {
-        "Id": 548,
+        "Id": 549,
         "ActionId": 548,
         "Type": 401,
         "Params": [
@@ -5510,7 +5521,7 @@
         ]
     },
     {
-        "Id": 549,
+        "Id": 550,
         "ActionId": 549,
         "Type": 203,
         "Params": [
@@ -5521,7 +5532,7 @@
         ]
     },
     {
-        "Id": 550,
+        "Id": 551,
         "ActionId": 550,
         "Type": 301,
         "Params": [
@@ -5531,7 +5542,7 @@
         ]
     },
     {
-        "Id": 551,
+        "Id": 552,
         "ActionId": 551,
         "Type": 301,
         "BeginAnim": "PanelActor1Shake",
@@ -5543,7 +5554,7 @@
         ]
     },
     {
-        "Id": 552,
+        "Id": 553,
         "ActionId": 552,
         "Type": 202,
         "Params": [
@@ -5551,7 +5562,7 @@
         ]
     },
     {
-        "Id": 553,
+        "Id": 554,
         "ActionId": 553,
         "Type": 301,
         "EndAnim": "DialogDisable",
@@ -5562,7 +5573,7 @@
         ]
     },
     {
-        "Id": 554,
+        "Id": 555,
         "ActionId": 554,
         "Type": 104,
         "Params": [
@@ -5571,7 +5582,7 @@
         ]
     },
     {
-        "Id": 555,
+        "Id": 556,
         "ActionId": 555,
         "Type": 205,
         "EndDelay": 1000.0,
@@ -5584,7 +5595,7 @@
         ]
     },
     {
-        "Id": 556,
+        "Id": 557,
         "ActionId": 556,
         "Type": 205,
         "Params": [
@@ -5592,7 +5603,7 @@
         ]
     },
     {
-        "Id": 557,
+        "Id": 558,
         "ActionId": 557,
         "Type": 101,
         "Params": [
@@ -5600,7 +5611,7 @@
         ]
     },
     {
-        "Id": 558,
+        "Id": 559,
         "ActionId": 558,
         "Type": 301,
         "BeginAnim": "DialogEnable",
@@ -5611,7 +5622,7 @@
         ]
     },
     {
-        "Id": 559,
+        "Id": 560,
         "ActionId": 559,
         "Type": 301,
         "Params": [
@@ -5621,7 +5632,7 @@
         ]
     },
     {
-        "Id": 560,
+        "Id": 561,
         "ActionId": 560,
         "Type": 301,
         "Params": [
@@ -5631,7 +5642,7 @@
         ]
     },
     {
-        "Id": 561,
+        "Id": 562,
         "ActionId": 561,
         "Type": 201,
         "Params": [
@@ -5640,7 +5651,7 @@
         ]
     },
     {
-        "Id": 562,
+        "Id": 563,
         "ActionId": 562,
         "Type": 301,
         "Params": [
@@ -5651,7 +5662,7 @@
         ]
     },
     {
-        "Id": 563,
+        "Id": 564,
         "ActionId": 563,
         "Type": 202,
         "Params": [
@@ -5659,7 +5670,7 @@
         ]
     },
     {
-        "Id": 564,
+        "Id": 565,
         "ActionId": 564,
         "Type": 301,
         "Params": [
@@ -5669,7 +5680,7 @@
         ]
     },
     {
-        "Id": 565,
+        "Id": 566,
         "ActionId": 565,
         "Type": 301,
         "Params": [
@@ -5679,7 +5690,7 @@
         ]
     },
     {
-        "Id": 566,
+        "Id": 567,
         "ActionId": 566,
         "Type": 301,
         "Params": [
@@ -5689,7 +5700,7 @@
         ]
     },
     {
-        "Id": 567,
+        "Id": 568,
         "ActionId": 567,
         "Type": 201,
         "Params": [
@@ -5698,7 +5709,7 @@
         ]
     },
     {
-        "Id": 568,
+        "Id": 569,
         "ActionId": 568,
         "Type": 301,
         "Params": [
@@ -5709,7 +5720,7 @@
         ]
     },
     {
-        "Id": 569,
+        "Id": 570,
         "ActionId": 569,
         "Type": 302,
         "Params": [
@@ -5721,7 +5732,7 @@
         ]
     },
     {
-        "Id": 570,
+        "Id": 571,
         "ActionId": 570,
         "Type": 202,
         "Params": [
@@ -5729,7 +5740,7 @@
         ]
     },
     {
-        "Id": 571,
+        "Id": 572,
         "ActionId": 571,
         "Type": 301,
         "Params": [
@@ -5739,7 +5750,7 @@
         ]
     },
     {
-        "Id": 572,
+        "Id": 573,
         "ActionId": 572,
         "Type": 301,
         "Params": [
@@ -5749,7 +5760,7 @@
         ]
     },
     {
-        "Id": 573,
+        "Id": 574,
         "ActionId": 573,
         "Type": 201,
         "Params": [
@@ -5758,7 +5769,7 @@
         ]
     },
     {
-        "Id": 574,
+        "Id": 575,
         "ActionId": 574,
         "Type": 301,
         "Params": [
@@ -5769,7 +5780,7 @@
         ]
     },
     {
-        "Id": 575,
+        "Id": 576,
         "ActionId": 575,
         "Type": 202,
         "Params": [
@@ -5777,7 +5788,7 @@
         ]
     },
     {
-        "Id": 576,
+        "Id": 577,
         "ActionId": 576,
         "Type": 301,
         "Params": [
@@ -5787,7 +5798,7 @@
         ]
     },
     {
-        "Id": 577,
+        "Id": 578,
         "ActionId": 577,
         "Type": 301,
         "Params": [
@@ -5797,7 +5808,7 @@
         ]
     },
     {
-        "Id": 578,
+        "Id": 579,
         "ActionId": 578,
         "Type": 301,
         "Params": [
@@ -5807,7 +5818,7 @@
         ]
     },
     {
-        "Id": 579,
+        "Id": 580,
         "ActionId": 579,
         "Type": 301,
         "EndAnim": "DialogDisable",
@@ -5818,7 +5829,7 @@
         ]
     },
     {
-        "Id": 580,
+        "Id": 581,
         "ActionId": 580,
         "Type": 302,
         "Params": [
@@ -5828,7 +5839,7 @@
         ]
     },
     {
-        "Id": 581,
+        "Id": 582,
         "ActionId": 581,
         "Type": 302,
         "Params": [
@@ -5838,7 +5849,7 @@
         ]
     },
     {
-        "Id": 582,
+        "Id": 583,
         "ActionId": 582,
         "Type": 302,
         "Params": [
@@ -5848,7 +5859,7 @@
         ]
     },
     {
-        "Id": 583,
+        "Id": 584,
         "ActionId": 583,
         "Type": 201,
         "Params": [
@@ -5857,7 +5868,7 @@
         ]
     },
     {
-        "Id": 584,
+        "Id": 585,
         "ActionId": 584,
         "Type": 301,
         "BeginAnim": "DialogEnable",
@@ -5869,7 +5880,7 @@
         ]
     },
     {
-        "Id": 585,
+        "Id": 586,
         "ActionId": 585,
         "Type": 401,
         "Params": [
@@ -5878,7 +5889,7 @@
         ]
     },
     {
-        "Id": 586,
+        "Id": 587,
         "ActionId": 586,
         "Type": 203,
         "EndDelay": 200.0,
@@ -5891,7 +5902,7 @@
         ]
     },
     {
-        "Id": 587,
+        "Id": 588,
         "ActionId": 587,
         "Type": 202,
         "Params": [
@@ -5899,7 +5910,7 @@
         ]
     },
     {
-        "Id": 588,
+        "Id": 589,
         "ActionId": 588,
         "Type": 301,
         "Params": [
@@ -5909,7 +5920,7 @@
         ]
     },
     {
-        "Id": 589,
+        "Id": 590,
         "ActionId": 589,
         "Type": 302,
         "EndAnim": "DialogDisable",
@@ -5920,7 +5931,7 @@
         ]
     },
     {
-        "Id": 590,
+        "Id": 591,
         "ActionId": 590,
         "Type": 101,
         "Params": [
@@ -5928,7 +5939,7 @@
         ]
     },
     {
-        "Id": 591,
+        "Id": 592,
         "ActionId": 591,
         "Type": 501,
         "Params": [
@@ -5937,7 +5948,7 @@
         ]
     },
     {
-        "Id": 592,
+        "Id": 593,
         "ActionId": 592,
         "Type": 502,
         "Params": [
@@ -5945,7 +5956,7 @@
         ]
     },
     {
-        "Id": 593,
+        "Id": 594,
         "ActionId": 593,
         "Type": 301,
         "BeginAnim": "AniZhuanchangEnd",
@@ -5956,7 +5967,7 @@
         ]
     },
     {
-        "Id": 594,
+        "Id": 595,
         "ActionId": 594,
         "Type": 301,
         "Params": [
@@ -5966,7 +5977,7 @@
         ]
     },
     {
-        "Id": 595,
+        "Id": 596,
         "ActionId": 595,
         "Type": 301,
         "EndAnim": "DialogDisable",
@@ -5977,7 +5988,7 @@
         ]
     },
     {
-        "Id": 596,
+        "Id": 597,
         "ActionId": 596,
         "Type": 401,
         "Params": [
@@ -5986,7 +5997,7 @@
         ]
     },
     {
-        "Id": 597,
+        "Id": 598,
         "ActionId": 597,
         "Type": 505,
         "Params": [
@@ -5995,7 +6006,7 @@
         ]
     },
     {
-        "Id": 598,
+        "Id": 599,
         "ActionId": 598,
         "Type": 101,
         "BeginAnim": "AniZhuanchangEnd",
@@ -6004,7 +6015,7 @@
         ]
     },
     {
-        "Id": 599,
+        "Id": 600,
         "ActionId": 599,
         "Type": 401,
         "Params": [
@@ -6013,7 +6024,7 @@
         ]
     },
     {
-        "Id": 600,
+        "Id": 601,
         "ActionId": 600,
         "Type": 401,
         "Params": [
@@ -6022,7 +6033,7 @@
         ]
     },
     {
-        "Id": 601,
+        "Id": 602,
         "ActionId": 601,
         "Type": 201,
         "Params": [
@@ -6036,7 +6047,7 @@
         ]
     },
     {
-        "Id": 602,
+        "Id": 603,
         "ActionId": 602,
         "Type": 401,
         "EndDelay": 200.0,
@@ -6046,7 +6057,7 @@
         ]
     },
     {
-        "Id": 603,
+        "Id": 604,
         "ActionId": 603,
         "Type": 203,
         "Params": [
@@ -6058,7 +6069,7 @@
         ]
     },
     {
-        "Id": 604,
+        "Id": 605,
         "ActionId": 604,
         "Type": 301,
         "BeginAnim": "DialogEnable",
@@ -6069,7 +6080,7 @@
         ]
     },
     {
-        "Id": 605,
+        "Id": 606,
         "ActionId": 605,
         "Type": 301,
         "Params": [
@@ -6079,7 +6090,7 @@
         ]
     },
     {
-        "Id": 606,
+        "Id": 607,
         "ActionId": 606,
         "Type": 401,
         "Params": [
@@ -6088,7 +6099,7 @@
         ]
     },
     {
-        "Id": 607,
+        "Id": 608,
         "ActionId": 607,
         "Type": 301,
         "BeginAnim": "PanelActor1Shake",
@@ -6100,7 +6111,7 @@
         ]
     },
     {
-        "Id": 608,
+        "Id": 609,
         "ActionId": 608,
         "Type": 201,
         "Params": [
@@ -6111,7 +6122,7 @@
         ]
     },
     {
-        "Id": 609,
+        "Id": 610,
         "ActionId": 609,
         "Type": 301,
         "Params": [
@@ -6122,7 +6133,7 @@
         ]
     },
     {
-        "Id": 610,
+        "Id": 611,
         "ActionId": 610,
         "Type": 301,
         "EndAnim": "DialogDisable",
@@ -6133,7 +6144,7 @@
         ]
     },
     {
-        "Id": 611,
+        "Id": 612,
         "ActionId": 611,
         "Type": 202,
         "Params": [
@@ -6146,7 +6157,7 @@
         ]
     },
     {
-        "Id": 612,
+        "Id": 613,
         "ActionId": 612,
         "Type": 111,
         "Params": [
@@ -6155,7 +6166,7 @@
         ]
     },
     {
-        "Id": 613,
+        "Id": 614,
         "ActionId": 613,
         "Type": 401,
         "Params": [
@@ -6164,7 +6175,7 @@
         ]
     },
     {
-        "Id": 614,
+        "Id": 615,
         "ActionId": 614,
         "Type": 501,
         "Params": [
@@ -6173,7 +6184,7 @@
         ]
     },
     {
-        "Id": 615,
+        "Id": 616,
         "ActionId": 615,
         "Type": 101,
         "EndDelay": 300.0,
@@ -6182,7 +6193,7 @@
         ]
     },
     {
-        "Id": 616,
+        "Id": 617,
         "ActionId": 616,
         "Type": 401,
         "Params": [
@@ -6191,7 +6202,7 @@
         ]
     },
     {
-        "Id": 617,
+        "Id": 618,
         "ActionId": 617,
         "Type": 501,
         "Params": [
@@ -6200,7 +6211,7 @@
         ]
     },
     {
-        "Id": 618,
+        "Id": 619,
         "ActionId": 618,
         "Type": 101,
         "EndDelay": 800.0,
@@ -6209,7 +6220,7 @@
         ]
     },
     {
-        "Id": 619,
+        "Id": 620,
         "ActionId": 619,
         "Type": 401,
         "Params": [
@@ -6218,7 +6229,7 @@
         ]
     },
     {
-        "Id": 620,
+        "Id": 621,
         "ActionId": 620,
         "Type": 501,
         "Params": [
@@ -6227,7 +6238,7 @@
         ]
     },
     {
-        "Id": 621,
+        "Id": 622,
         "ActionId": 621,
         "Type": 505,
         "Params": [
@@ -6236,7 +6247,7 @@
         ]
     },
     {
-        "Id": 622,
+        "Id": 623,
         "ActionId": 622,
         "Type": 101,
         "EndDelay": 300.0,
@@ -6245,7 +6256,7 @@
         ]
     },
     {
-        "Id": 623,
+        "Id": 624,
         "ActionId": 623,
         "Type": 401,
         "Params": [
@@ -6254,7 +6265,7 @@
         ]
     },
     {
-        "Id": 624,
+        "Id": 625,
         "ActionId": 624,
         "Type": 301,
         "BeginAnim": "DialogEnable",
@@ -6265,7 +6276,7 @@
         ]
     },
     {
-        "Id": 625,
+        "Id": 626,
         "ActionId": 625,
         "Type": 301,
         "Params": [
@@ -6276,7 +6287,7 @@
         ]
     },
     {
-        "Id": 626,
+        "Id": 627,
         "ActionId": 626,
         "Type": 101,
         "Params": [
@@ -6284,7 +6295,7 @@
         ]
     },
     {
-        "Id": 627,
+        "Id": 628,
         "ActionId": 627,
         "Type": 502,
         "Params": [
@@ -6292,7 +6303,7 @@
         ]
     },
     {
-        "Id": 628,
+        "Id": 629,
         "ActionId": 628,
         "Type": 201,
         "Params": [
@@ -6303,7 +6314,7 @@
         ]
     },
     {
-        "Id": 629,
+        "Id": 630,
         "ActionId": 629,
         "Type": 201,
         "Params": [
@@ -6315,7 +6326,7 @@
         ]
     },
     {
-        "Id": 630,
+        "Id": 631,
         "ActionId": 630,
         "Type": 301,
         "BeginAnim": "AniZhuanchangEnd",
@@ -6327,7 +6338,7 @@
         ]
     },
     {
-        "Id": 631,
+        "Id": 632,
         "ActionId": 631,
         "Type": 302,
         "Params": [
@@ -6337,7 +6348,7 @@
         ]
     },
     {
-        "Id": 632,
+        "Id": 633,
         "ActionId": 632,
         "Type": 301,
         "Params": [
@@ -6347,7 +6358,7 @@
         ]
     },
     {
-        "Id": 633,
+        "Id": 634,
         "ActionId": 633,
         "Type": 204,
         "Params": [
@@ -6356,7 +6367,7 @@
         ]
     },
     {
-        "Id": 634,
+        "Id": 635,
         "ActionId": 634,
         "Type": 401,
         "Params": [
@@ -6365,7 +6376,7 @@
         ]
     },
     {
-        "Id": 635,
+        "Id": 636,
         "ActionId": 635,
         "Type": 203,
         "Params": [
@@ -6375,7 +6386,7 @@
         ]
     },
     {
-        "Id": 636,
+        "Id": 637,
         "ActionId": 636,
         "Type": 203,
         "BeginAnim": "PanelActor2Shake",
@@ -6386,7 +6397,7 @@
         ]
     },
     {
-        "Id": 637,
+        "Id": 638,
         "ActionId": 637,
         "Type": 502,
         "Params": [
@@ -6394,7 +6405,7 @@
         ]
     },
     {
-        "Id": 638,
+        "Id": 639,
         "ActionId": 638,
         "Type": 301,
         "Params": [
@@ -6404,7 +6415,7 @@
         ]
     },
     {
-        "Id": 639,
+        "Id": 640,
         "ActionId": 639,
         "Type": 202,
         "Params": [
@@ -6417,7 +6428,7 @@
         ]
     },
     {
-        "Id": 640,
+        "Id": 641,
         "ActionId": 640,
         "Type": 306,
         "Params": [
@@ -6425,7 +6436,7 @@
         ]
     },
     {
-        "Id": 641,
+        "Id": 642,
         "ActionId": 641,
         "Type": 201,
         "Params": [
@@ -6438,7 +6449,7 @@
         ]
     },
     {
-        "Id": 642,
+        "Id": 643,
         "ActionId": 642,
         "Type": 502,
         "Params": [
@@ -6446,7 +6457,7 @@
         ]
     },
     {
-        "Id": 643,
+        "Id": 644,
         "ActionId": 643,
         "Type": 301,
         "Params": [
@@ -6456,7 +6467,7 @@
         ]
     },
     {
-        "Id": 644,
+        "Id": 645,
         "ActionId": 644,
         "Type": 301,
         "Params": [
@@ -6466,7 +6477,7 @@
         ]
     },
     {
-        "Id": 645,
+        "Id": 646,
         "ActionId": 645,
         "Type": 401,
         "Params": [
@@ -6475,7 +6486,7 @@
         ]
     },
     {
-        "Id": 646,
+        "Id": 647,
         "ActionId": 646,
         "Type": 301,
         "Params": [
@@ -6485,7 +6496,7 @@
         ]
     },
     {
-        "Id": 647,
+        "Id": 648,
         "ActionId": 647,
         "Type": 301,
         "Params": [
@@ -6495,7 +6506,7 @@
         ]
     },
     {
-        "Id": 648,
+        "Id": 649,
         "ActionId": 648,
         "Type": 301,
         "IsEnd": 1,

@@ -55,8 +55,10 @@
 ---@field XArchive XArchiveAgency
 ---@field XLeftTime XLeftTimeAgency
 ---@field XAprilFoolDay XAprilFoolDayAgency
+---@field XRegression4 XRegression4Agency
 ---@field XAudio XAudioAgency
 ---@field XRestaurant XRestaurantAgency
+---@field XSkyTower XSkyTowerAgency
 ---@field XDlcMultiplayer XDlcMultiplayerAgency
 ---@field XDlcMultiMouseHunter XDlcMultiMouseHunterAgency
 ---@field XDunhuang XDunhuangAgency
@@ -145,9 +147,17 @@
 ---@field XTheatre6 XTheatre6Agency
 ---@field XFashion XFashionAgency
 ---@field XGameCollection XGameCollectionAgency
+---@field XTeamRecommend XTeamRecommendAgency
 ---@field XBigWorldMemory XBigWorldMemoryAgency
 ---@field XLowMemory XLowMemoryAgency
 ---@field XDyeMergeGame XDyeMergeGameAgency
+---@field XEnvelopeGuessing XEnvelopeGuessingAgency
+---@field XMusicPlayer XMusicPlayerAgency
+---@field XMusicScene XMusicSceneAgency
+---@field XPartner XPartnerAgency
+---@field XPunishaar XPunishaarAgency
+---@field XTransfiniteTower XTransfiniteTowerAgency
+---@field XAnniversaryPreHeating XAnniversaryPreHeatingAgency
 local XMVCACls = require("MVCA/XMVCACls")
 
 ---常用的一些模块放在这里初始化
@@ -213,8 +223,10 @@ function XMVCACls:InitModule()
     self:RegisterAgency(ModuleId.XLinkCraftActivity)
     self:RegisterAgency(ModuleId.XLeftTime)
     self:RegisterAgency(ModuleId.XAprilFoolDay)
+    self:RegisterAgency(ModuleId.XRegression4)
     self:RegisterAgency(ModuleId.XAudio)
     self:RegisterAgency(ModuleId.XRestaurant)
+    self:RegisterAgency(ModuleId.XSkyTower)
     self:RegisterAgency(ModuleId.XDlcMultiplayer)
     self:RegisterAgency(ModuleId.XDlcMultiMouseHunter)
     self:RegisterAgency(ModuleId.XBossInshot)
@@ -289,7 +301,18 @@ function XMVCACls:InitModule()
     self:RegisterAgency(ModuleId.XTheatre6)
     self:RegisterAgency(ModuleId.XGameCollection)
     self:RegisterAgency(ModuleId.XFashion)
+    self:RegisterAgency(ModuleId.XTeamRecommend)
     self:RegisterAgency(ModuleId.XDyeMergeGame)
+
+    self:RegisterAgency(ModuleId.XEnvelopeGuessing)
+    self:RegisterAgency(ModuleId.XMusicPlayer)
+    self:RegisterAgency(ModuleId.XMusicScene)
+    self:RegisterAgency(ModuleId.XPartner)
+    self:RegisterAgency(ModuleId.XPunishaar)
+
+    self:RegisterAgency(ModuleId.XTransfiniteTower)
+
+    self:RegisterAgency(ModuleId.XAnniversaryPreHeating)
 end
 
 ---@type XMVCACls

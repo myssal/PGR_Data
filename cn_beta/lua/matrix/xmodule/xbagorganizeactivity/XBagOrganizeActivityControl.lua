@@ -311,31 +311,16 @@ end
 function XBagOrganizeActivityControl:StartCheckOverTimer()
     self:StopCheckOverTimer()
     if XMain.IsWindowsEditor then
-        self._CheckEditorTimerId = XScheduleManager.ScheduleNextFrame(function()
-            -- 编辑器也用了这个控制器，但是不需要踢出检测
-            if not self._EditorControl then
-                self:UpdateTimer()
-                self._CheckOverTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateTimer), XScheduleManager.SECOND)
-            end
-        end)
+        XScheduleManagerPro.ScheduleNextFrame(XBagOrganizeActivityControl._OnStartEditorCheckOverScheduleCb, self)
     else
         self:UpdateTimer()
-        self._CheckOverTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateTimer), XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleForever(XBagOrganizeActivityControl.UpdateTimer, self, XScheduleManagerPro.SECOND)
     end
 end
 
 function XBagOrganizeActivityControl:StopCheckOverTimer()
-    if self._CheckOverTimerId then
-        XScheduleManager.UnSchedule(self._CheckOverTimerId)
-        self._CheckOverTimerId = nil
-    end
-
-    if XMain.IsWindowsEditor then
-        if self._CheckEditorTimerId then
-            XScheduleManager.UnSchedule(self._CheckEditorTimerId)
-            self._CheckEditorTimerId = nil
-        end
-    end
+    XScheduleManagerPro.UnSchedule(XBagOrganizeActivityControl.UpdateTimer, self)
+    XScheduleManagerPro.UnSchedule(XBagOrganizeActivityControl._OnStartEditorCheckOverScheduleCb, self)
 end
 
 function XBagOrganizeActivityControl:UpdateTimer()
@@ -424,5 +409,13 @@ function XBagOrganizeActivityControl:SetStageTipsIsShow()
     end
 end
 --endregion
+
+function XBagOrganizeActivityControl:_OnStartEditorCheckOverScheduleCb()
+    -- 编辑器也用了这个控制器，但是不需要踢出检测
+    if not self._EditorControl then
+        self:UpdateTimer()
+        XScheduleManagerPro.ScheduleForever(XBagOrganizeActivityControl.UpdateTimer, self, XScheduleManagerPro.SECOND)
+    end
+end
 
 return XBagOrganizeActivityControl

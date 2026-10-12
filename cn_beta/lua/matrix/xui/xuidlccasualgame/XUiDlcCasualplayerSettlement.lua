@@ -21,7 +21,6 @@ function XUiDlcCasualplayerSettlement:Ctor()
     ---@type XDlcCasualResult
     self._Result = nil
     self._ModelCaseList = nil
-    self._CloseTimer = nil
     self._IsCanClose = false
 end
 
@@ -115,22 +114,20 @@ function XUiDlcCasualplayerSettlement:_HideEffect()
 end
 
 function XUiDlcCasualplayerSettlement:_StartCloseTimer()
-    if not self._CloseTimer then
+    if not XScheduleManagerPro.HasSchedule(self._OnStartCloseTimerScheduleCb, self) then
         self:_StopCloseTimer()
     end
     local countDownTime = CS.XGame.Config:GetInt("OnlinePraiseCountDown")
 
-    self._CloseTimer = XScheduleManager.ScheduleOnce(function()
-        self._IsCanClose = true
-        self._CloseTimer = nil
-    end, countDownTime * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(self._OnStartCloseTimerScheduleCb, self, countDownTime * XScheduleManagerPro.SECOND)
 end
 
 function XUiDlcCasualplayerSettlement:_StopCloseTimer()
-    if self._CloseTimer then
-        XScheduleManager.UnSchedule(self._CloseTimer)
-        self._CloseTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStartCloseTimerScheduleCb, self)
+end
+
+function XUiDlcCasualplayerSettlement:_OnStartCloseTimerScheduleCb()
+    self._IsCanClose = true
 end
 
 return XUiDlcCasualplayerSettlement

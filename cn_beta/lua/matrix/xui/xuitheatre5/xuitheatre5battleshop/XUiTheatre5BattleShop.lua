@@ -75,7 +75,7 @@ function XUiTheatre5BattleShop:OnStart()
         self._Control.PVPControl:StartPVPTimer()
     end
 
-    self.DraggingItemCheckTimeId = XScheduleManager.ScheduleForever(handler(self, self.EndDragErrorCheckTimer), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self.EndDragErrorCheckTimer, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiTheatre5BattleShop:OnEnable()
@@ -101,10 +101,7 @@ function XUiTheatre5BattleShop:OnDestroy()
         self._Control.PVPControl:StopPVPTimer()
     end
 
-    if self.DraggingItemCheckTimeId then
-        XScheduleManager.UnSchedule(self.DraggingItemCheckTimeId)
-        self.DraggingItemCheckTimeId = nil
-    end
+        XScheduleManagerPro.UnSchedule(self.EndDragErrorCheckTimer, self)
 end
 
 function XUiTheatre5BattleShop:Close()

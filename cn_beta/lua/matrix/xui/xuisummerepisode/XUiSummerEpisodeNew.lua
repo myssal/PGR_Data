@@ -261,14 +261,12 @@ function XUiSummerEpisodeNew:UpdateActivityTime()
 end
 
 function XUiSummerEpisodeNew:StartTimer()
-    if self.Timer then self:StopTimer() end
-    self.Timer = XScheduleManager.ScheduleForever(handler(self, self.UpdateActivityTime), XScheduleManager.SECOND)
+    self:StopTimer()
+    XScheduleManagerPro.ScheduleForever(self.UpdateActivityTime, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiSummerEpisodeNew:StopTimer()
-    if not self.Timer then return end
-    XScheduleManager.UnSchedule(self.Timer)
-    self.Timer = nil
+    XScheduleManagerPro.UnSchedule(self.UpdateActivityTime, self)
 end
 
 -- 获取教程数据函数

@@ -103,6 +103,10 @@ local GoodsName = {
         if not template then return "" end
         return template.Name
     end,
+    [XArrangeConfigs.Types.SkyTower] = function(templateId)
+        local template = XMVCA.XSkyTower:GetItemConfig(templateId)
+        return template and template.Name or ""
+    end,
     [XArrangeConfigs.Types.FashionColor] = function(templateId)
         return XMVCA.XFashion:GetFashionColorName(templateId)
     end
@@ -182,10 +186,13 @@ local GoodsQuality = {
     [XArrangeConfigs.Types.SgDormFurniture] = function(templateId)
         return XMVCA.XSkyGardenDorm:GetFurnitureQuality(templateId)
     end,
-
     [XArrangeConfigs.Types.FashionColor] = function(templateId)
         return XMVCA.XFashion:GetFashionColorQuality(templateId)
-    end
+    end,
+    [XArrangeConfigs.Types.SkyTower] = function(templateId)
+        local template = XMVCA.XSkyTower:GetItemConfig(templateId)
+        return template and template.Quality or ""
+    end,
 }
 
 local GoodsIcon = {
@@ -281,7 +288,11 @@ local GoodsIcon = {
     end,
     [XArrangeConfigs.Types.FashionColor] = function(templateId)
         return XMVCA.XFashion:GetFashionColorIcon(templateId)
-    end
+    end,
+    [XArrangeConfigs.Types.SkyTower] = function(templateId)
+        local template = XMVCA.XSkyTower:GetItemConfig(templateId)
+        return template and template.Icon or ""
+    end,
 }
 
 local GoodsDescription = {
@@ -396,7 +407,11 @@ local GoodsDescription = {
     end,
     [XArrangeConfigs.Types.FashionColor] = function(templateId)
         return XMVCA.XFashion:GetFashionColorDescription(templateId)
-    end
+    end,
+    [XArrangeConfigs.Types.SkyTower] = function(templateId)
+        local template = XMVCA.XSkyTower:GetItemConfig(templateId)
+        return template and template.Description or ""
+    end,
 }
 
 local GoodsWorldDesc = {
@@ -484,7 +499,11 @@ local GoodsWorldDesc = {
     end,
     [XArrangeConfigs.Types.FashionColor] = function(templateId)
         return XMVCA.XFashion:GetFashionColorWorldDescription(templateId)
-    end
+    end,
+    [XArrangeConfigs.Types.SkyTower] = function(templateId)
+        local template = XMVCA.XSkyTower:GetItemConfig(templateId)
+        return template and template.WorldDesc or ""
+    end,
 }
 
 local GoodsSkipIdParams = {
@@ -620,7 +639,10 @@ local GoodsCurrentCount = {
         else
             return 0
         end
-    end
+    end,
+    [XArrangeConfigs.Types.SkyTower] = function(templateId)
+        return XMVCA.XSkyTower:GetItemCount(templateId)
+    end,
 }
 
 --==============================--
@@ -1053,6 +1075,20 @@ GoodsShowParams[XArrangeConfigs.Types.FashionColor] = function(templateId)
         Quality = fashionColorConf.Quality
     }
 
+end
+
+GoodsShowParams[XArrangeConfigs.Types.SkyTower] = function(templateId)
+    local template = XMVCA.XSkyTower:GetItemConfig(templateId)
+    return {
+        RewardType = XRewardManager.XRewardType.SkyTower,
+        TemplateId = templateId,
+        Name = template.Name,
+        Quality = template.Quality,
+        Icon = template.Icon,
+        BigIcon = template.BigIcon,
+        WorldDesc = template.WorldDesc,
+        Description = template.Description,
+    }
 end
 
 --==============================--

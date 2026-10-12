@@ -78,28 +78,14 @@ function XUiFubenSpringFestivalChapter:OnClickSmashEggsBtn()
 end
 
 function XUiFubenSpringFestivalChapter:StartTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnStopTimerScheduleCb, self) then
         self:StopTimer()
     end
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        if XTool.UObjIsNil(self.TxtDay) then
-            self:StopTimer()
-            return
-        end
-        local currentTime = XTime.GetServerNowTimestamp()
-        if currentTime > self.EndTime then
-            XDataCenter.SpringFestivalActivityManager.OnActivityEnd()
-            return
-        end
-        self:RefreshRemainingTime()
-    end,XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnStopTimerScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiFubenSpringFestivalChapter:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStopTimerScheduleCb, self)
 end
 
 function XUiFubenSpringFestivalChapter:RefreshRemainingTime()
@@ -108,6 +94,19 @@ function XUiFubenSpringFestivalChapter:RefreshRemainingTime()
     local now = XTime.GetServerNowTimestamp()
     local offset = XMath.Clamp(endTime - now,0,endTime-startTime)
     self.TxtDay.text = XUiHelper.GetTime(offset,XUiHelper.TimeFormatType.ACTIVITY)
+end
+
+function XUiFubenSpringFestivalChapter:_OnStopTimerScheduleCb()
+    if XTool.UObjIsNil(self.TxtDay) then
+        self:StopTimer()
+        return
+    end
+    local currentTime = XTime.GetServerNowTimestamp()
+    if currentTime > self.EndTime then
+        XDataCenter.SpringFestivalActivityManager.OnActivityEnd()
+        return
+    end
+    self:RefreshRemainingTime()
 end
 
 return XUiFubenSpringFestivalChapter

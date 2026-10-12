@@ -421,7 +421,7 @@ function XUiNewGridDrawBanner:SetImage(imageList)
         return
     end
 
-    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryDrawId(self.Base.DrawInfo.Id) then
+    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsLinkageDrawId(self.Base.DrawInfo.Id) then
         if self.RImgBg then self.RImgBg.gameObject:SetActiveEx(false) end
         if self.RImgRole then self.RImgRole.gameObject:SetActiveEx(false) end
         if self.RImgName then self.RImgName.gameObject:SetActiveEx(false) end
@@ -478,7 +478,7 @@ function XUiNewGridDrawBanner:SetTextByResourceIds(resourceIds)
         return
     end
 
-    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryDrawId(self.Base.DrawInfo.Id) then
+    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.Base.DrawInfo.GroupId) then
         self:SetTextActive(false)
         return
     end
@@ -734,11 +734,17 @@ function XUiNewGridDrawBanner:UpdateNewDrawView(drawCfg, modelId)
     if not self.NewDrawUiObject then
         return
     end
-    local groupInfo = XDataCenter.DrawManager.GetDrawGroupInfoByGroupId(self.Base.GroupId)
+    local activityTargetInfo = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(self.Base.GroupId)
     local hasChosen
-    if not string.IsNilOrEmpty(self.OptionKey) then
+    if activityTargetInfo then
+        -- 校准活动读取服务端记录的目标
+        hasChosen = XTool.IsNumberValid(activityTargetInfo:GetTargetId())
+    elseif not string.IsNilOrEmpty(self.OptionKey) then
+        -- 多选项卡池读取当前选项
         hasChosen = XTool.IsNumberValid(XDataCenter.DrawManager.GetRealUseDrawIdByOptionKey(self.OptionKey))
     else
+        -- 普通自选卡池读取当前卡池
+        local groupInfo = XDataCenter.DrawManager.GetDrawGroupInfoByGroupId(self.Base.GroupId)
         hasChosen = XTool.IsNumberValid((groupInfo.UseDrawIdDict or {})[0])
     end
     self.NewDrawUiObject.PanelChar.gameObject:SetActiveEx(hasChosen)
@@ -747,7 +753,7 @@ function XUiNewGridDrawBanner:UpdateNewDrawView(drawCfg, modelId)
     self.NewDrawUiObject.BtnChoose.gameObject:SetActiveEx(hasChosen)
     self.NewDrawUiObject.BtnChooseEmpty.gameObject:SetActiveEx(not hasChosen)
     if hasChosen then
-        local targetId = tonumber(modelId or drawCfg.ModelId)
+        local targetId = activityTargetInfo and activityTargetInfo:GetTargetId() or tonumber(modelId or drawCfg.ModelId)
         ---@type XTableCharacter
         local config = XMVCA.XCharacter:GetCharacterTemplate(targetId)
         local elementConfig = XMVCA.XCharacter:GetCharElement(config.Element)
@@ -755,12 +761,23 @@ function XUiNewGridDrawBanner:UpdateNewDrawView(drawCfg, modelId)
         self.NewDrawUiObject.TxtCharName.text = config.LogName
         self.NewDrawUiObject.ImgElement:SetRawImage(elementConfig.Icon2)
         self.NewDrawUiObject.TypeNum.text = XMVCA.XCharacter:GetCharacterCodeStr(targetId)
+        if activityTargetInfo then
+            self:UpdateNewDrawChar()
+        end
     end
 end
 
 function XUiNewGridDrawBanner:UpdateNewDrawChar(roleUrl, isQualityShow, qualityIcon)
     if not self.NewDrawUiObject then
         return
+    end
+    local activityTargetInfo = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(self.Base.GroupId)
+    if activityTargetInfo and XTool.IsNumberValid(activityTargetInfo:GetTargetId()) then
+        -- 校准活动头像始终跟随当前目标
+        local goodsShowParams = XGoodsCommonManager.GetGoodsShowParamsByTemplateId(activityTargetInfo:GetTargetId())
+        roleUrl = goodsShowParams.Icon
+        qualityIcon = goodsShowParams.QualityIcon
+        isQualityShow = not string.IsNilOrEmpty(qualityIcon)
     end
     self.NewDrawUiObject.RImgRoleNew:SetRawImage(roleUrl)
     self.NewDrawUiObject.ImgQuality.gameObject:SetActiveEx(isQualityShow)
@@ -770,18 +787,20 @@ function XUiNewGridDrawBanner:UpdateNewDrawChar(roleUrl, isQualityShow, qualityI
 end
 
 function XUiNewGridDrawBanner:OnBtnChooseClick()
-    self.Base:OnBtnOptionDrawClick()
+    if XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(self.Base.GroupId) then
+        -- 校准活动选择目标
+        self.Base:OnBtnActivityTargetClick()
+    else
+        -- 普通卡池选择子卡池
+        self.Base:OnBtnOptionDrawClick()
+    end
 end
 
 --endregion
 
---- 获取当前 DrawInfo（优先使用 OptionKey 维度）
+--- 获取当前界面正在展示的 DrawInfo
 function XUiNewGridDrawBanner:_GetDrawInfo()
-    if not string.IsNilOrEmpty(self.OptionKey) then
-        return XDataCenter.DrawManager.GetUseDrawInfoByOptionKey(self.OptionKey)
-    else
-        return XDataCenter.DrawManager.GetUseDrawInfoByGroupId(self.Data:GetId())
-    end
+    return self.Base.DrawInfo
 end
 
 return XUiNewGridDrawBanner

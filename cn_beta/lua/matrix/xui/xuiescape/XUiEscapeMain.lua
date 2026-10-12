@@ -23,16 +23,13 @@ end
 
 function XUiEscapeMain:OnEnable()
     XUiEscapeMain.Super.OnEnable(self)
-    self.UpdateImgBgPosSchedule = XScheduleManager.ScheduleForeverEx(handler(self, self.UpdateImgBgPos), 0, 0)
+    XScheduleManagerPro.ScheduleForeverEx(self.UpdateImgBgPos, self, 0, 0)
     self:Refresh()
 end
 
 function XUiEscapeMain:OnDisable()
     XUiEscapeMain.Super.OnDisable(self)
-    if self.UpdateImgBgPosSchedule then
-        XScheduleManager.UnSchedule(self.UpdateImgBgPosSchedule)
-        self.UpdateImgBgPosSchedule = nil
-    end
+        XScheduleManagerPro.UnSchedule(self.UpdateImgBgPos, self)
     self:RemoveMoveAnimaTimer()
     CsXGameEventManager.Instance:RemoveEvent(XEventId.EVENT_GUIDE_START, handler(self, self.OnGuideStart))
 end

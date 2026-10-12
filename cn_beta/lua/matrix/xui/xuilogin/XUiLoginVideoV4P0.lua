@@ -6,17 +6,9 @@ function XUiLoginVideoV4P0:OnAwake()
     self.BtnGo.CallBack = function() self:OnBtnGoClick() end
 
     self.VideoPlayerUgui1.ActionPlayed = function ()
-        self.TimerId = XScheduleManager.ScheduleOnce(function()
-            self.Effect.gameObject:SetActiveEx(true)
-            self.Step2.gameObject:SetActiveEx(true)
-            self:PlayAnimation("BtnEnable")
-        end, XScheduleManager.SECOND * 7.85)
-        
-        self.TimerId2 = XScheduleManager.ScheduleOnce(function()
-            self.VideoPlayerUgui2:Play()
-            self.VideoPlayerUgui1:Stop()
-            self.VideoPlayerUgui1.gameObject:SetActiveEx(false)
-        end, XScheduleManager.SECOND * 8.2)
+        XScheduleManagerPro.ScheduleOnce(XUiLoginVideoV4P0._OnShowGoButtonScheduleCb, self, XScheduleManagerPro.SECOND * 7.85)
+
+        XScheduleManagerPro.ScheduleOnce(XUiLoginVideoV4P0._OnPlaySecondVideoScheduleCb, self, XScheduleManagerPro.SECOND * 8.2)
     end
 end
 
@@ -120,16 +112,21 @@ function XUiLoginVideoV4P0:OnDestroy()
 end
 
 function XUiLoginVideoV4P0:CloseVideo()
-    if self.TimerId then
-        XScheduleManager.UnSchedule(self.TimerId)
-        self.TimerId = nil
-    end
-
-    if self.TimerId2 then
-        XScheduleManager.UnSchedule(self.TimerId2)
-        self.TimerId2 = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiLoginVideoV4P0._OnShowGoButtonScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(XUiLoginVideoV4P0._OnPlaySecondVideoScheduleCb, self)
 
     if not XTool.UObjIsNil(self.VideoPlayerUgui1) then self.VideoPlayerUgui1:Stop() end
     if not XTool.UObjIsNil(self.VideoPlayerUgui2) then self.VideoPlayerUgui2:Stop() end
+end
+
+function XUiLoginVideoV4P0:_OnShowGoButtonScheduleCb()
+    self.Effect.gameObject:SetActiveEx(true)
+    self.Step2.gameObject:SetActiveEx(true)
+    self:PlayAnimation("BtnEnable")
+end
+
+function XUiLoginVideoV4P0:_OnPlaySecondVideoScheduleCb()
+    self.VideoPlayerUgui2:Play()
+    self.VideoPlayerUgui1:Stop()
+    self.VideoPlayerUgui1.gameObject:SetActiveEx(false)
 end

@@ -5,8 +5,6 @@ local XUiDlcHuntSettlement = XLuaUiManager.Register(XLuaUi, "UiDlcHuntSettlement
 
 function XUiDlcHuntSettlement:Ctor()
     self._CountDownTime = CS.XGame.Config:GetInt("OnlinePraiseCountDown")
-    self._TimerClose = false
-    self._TimerUi = false
     self._IsCountDownFinish = false
     ---@type XUiDlcHuntSettlementGrid[]
     self._UiMember = {}
@@ -46,17 +44,11 @@ function XUiDlcHuntSettlement:OnDisable()
 end
 
 function XUiDlcHuntSettlement:StartTimerClose()
-    self._TimerClose = XScheduleManager.ScheduleOnce(function()
-        self._TimerClose = false
-        self._IsCountDownFinish = true
-    end, self._CountDownTime * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(XUiDlcHuntSettlement._OnEnableCloseScheduleCb, self, self._CountDownTime * XScheduleManagerPro.SECOND)
 end
 
 function XUiDlcHuntSettlement:StopTimerClose()
-    if self._TimerClose then
-        XScheduleManager.UnSchedule(self._TimerClose)
-        self._TimerClose = false
-    end
+    XScheduleManagerPro.UnSchedule(XUiDlcHuntSettlement._OnEnableCloseScheduleCb, self)
 end
 
 function XUiDlcHuntSettlement:StartTimerUi()
@@ -64,28 +56,12 @@ function XUiDlcHuntSettlement:StartTimerUi()
     if self.DescClose then
         self.DescClose.gameObject:SetActive(false)
     end
-    local startTicks = CS.XTimerManager.Ticks
-    local countDownTime = self._CountDownTime
-    local refresh = function()
-        local t = countDownTime - (CS.XTimerManager.Ticks - startTicks) / CS.System.TimeSpan.TicksPerSecond
-        self.ImgCountDownBarRight.fillAmount = t / countDownTime
-        self.ImgCountDownBarLeft.fillAmount = t / countDownTime
-        if t <= 0 then
-            self:StopTimerUi()
-            self.PanelCountDown.gameObject:SetActive(false)
-            if self.DescClose then
-                self.DescClose.gameObject:SetActive(true)
-            end
-        end
-    end
-    self._TimerUi = XScheduleManager.ScheduleForever(refresh, 0)
+    self._CountDownStartTicks = CS.XTimerManager.Ticks
+    XScheduleManagerPro.ScheduleNextFrame(XUiDlcHuntSettlement._OnRefreshCountDownScheduleCb, self)
 end
 
 function XUiDlcHuntSettlement:StopTimerUi()
-    if self._TimerUi then
-        XScheduleManager.UnSchedule(self._TimerUi)
-        self._TimerUi = false
-    end
+    XScheduleManagerPro.UnSchedule(XUiDlcHuntSettlement._OnRefreshCountDownScheduleCb, self)
 end
 
 function XUiDlcHuntSettlement:OnClickClose()
@@ -122,6 +98,26 @@ function XUiDlcHuntSettlement:OnNotifyAddLike(data)
             end
         end
     end
+end
+
+function XUiDlcHuntSettlement:_OnEnableCloseScheduleCb()
+    self._IsCountDownFinish = true
+end
+
+function XUiDlcHuntSettlement:_OnRefreshCountDownScheduleCb()
+    local countDownTime = self._CountDownTime
+    local t = countDownTime - (CS.XTimerManager.Ticks - self._CountDownStartTicks) / CS.System.TimeSpan.TicksPerSecond
+    self.ImgCountDownBarRight.fillAmount = t / countDownTime
+    self.ImgCountDownBarLeft.fillAmount = t / countDownTime
+    if t <= 0 then
+        self:StopTimerUi()
+        self.PanelCountDown.gameObject:SetActive(false)
+        if self.DescClose then
+            self.DescClose.gameObject:SetActive(true)
+        end
+        return
+    end
+    XScheduleManagerPro.ScheduleNextFrame(XUiDlcHuntSettlement._OnRefreshCountDownScheduleCb, self)
 end
 
 return XUiDlcHuntSettlement

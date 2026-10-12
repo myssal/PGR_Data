@@ -10,11 +10,10 @@ function XUiEpicFashionGacha:Ctor()
     self.DoGachaTrigger = nil -- 抽卡触发器，1/10回抽按钮设置，拨动时钟触发
     self.FinishCbTrigger = nil -- 抽卡结束触发器，抽卡请求回调设置，播放完抽卡演出后触发
     self.GachaAllFinishTrigger = nil -- 抽卡全结束触发器，1/10回抽按钮设置，抽卡结果界面关闭后刷新触发
-    self.HasBeenKey = "GachaBiancaHasBeenKey"
-    self.SkipBtnKey = "UiEpicFashionGacha"
+    self.HasBeenKey = XGachaConfigs.GetSkipAnimCacheKey("GachaBiancaHasBeenKey")
+    self.SkipBtnKey = XGachaConfigs.GetSkipAnimCacheKey("UiEpicFashionGacha")
     self.GachaStoryRedPoint = "GachaStoryRedPoint"
     self.TempFx = nil
-    self.TimerStoryRoleEnable = nil
 end
 
 function XUiEpicFashionGacha:SetSelfActive(flag)
@@ -147,10 +146,7 @@ function XUiEpicFashionGacha:OnChildClose()
         end)
     end
 
-    if self.TimerStoryRoleEnable then
-        XScheduleManager.UnSchedule(self.TimerStoryRoleEnable)
-        self.TimerStoryRoleEnable = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnBtnStoryLineClickScheduleCb, self)
 end
 
 function XUiEpicFashionGacha:AutoOpenChild()
@@ -256,16 +252,7 @@ function XUiEpicFashionGacha:PlayLongEnableAnim2()
     local curUiDirector = self.Panel3D.AnimEnableLong:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     curUiDirector.initialTime = currTime
     curUiDirector:Play()
-    self.LongAnimTimer = XScheduleManager.ScheduleOnce(function()
-        self.Panel3D.RoleLoop:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
-        -- 必须要在enable动画完成后打开视线跟随
-        self.Panel3D.AnimEnableLong.gameObject:SetActiveEx(false)
-        self:SetXPostFaicalControllerActive(true)
-        if self.LongEnableCb then
-            self.LongEnableCb()
-            self.LongEnableCb = nil
-        end
-    end, math.round(curUiDirector.duration * XScheduleManager.SECOND))
+    XScheduleManagerPro.ScheduleOnce(self._OnSetXPostFaicalControllerActiveScheduleCb, self, math.round(curUiDirector.duration * XScheduleManagerPro.SECOND))
 
     self.AnimEnableLong:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)).initialTime = currTime
     self.AnimEnableLong:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
@@ -819,10 +806,7 @@ function XUiEpicFashionGacha:OnBtnStoryLineClick(isAutoOpen)
 
     local storyRoleEnbaleDictor = self.Panel3D.StoryRoleEnbale:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     storyRoleEnbaleDictor:Play()
-    self.TimerStoryRoleEnable = XScheduleManager.ScheduleOnce(function()
-        self.Panel3D.RoleLoop:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
-        self.Panel3D.StoryRoleEnbale.gameObject:SetActiveEx(false)
-    end, math.round(storyRoleEnbaleDictor.duration * XScheduleManager.SECOND))
+    XScheduleManagerPro.ScheduleOnce(self._OnBtnStoryLineClickScheduleCb, self, math.round(storyRoleEnbaleDictor.duration * XScheduleManagerPro.SECOND))
 end
 
 function XUiEpicFashionGacha:OnDisable()
@@ -833,15 +817,9 @@ function XUiEpicFashionGacha:OnDisable()
     -- 离开界面时关闭视线跟随
     self:SetXPostFaicalControllerActive(false)
 
-    if self.TimerStoryRoleEnable then
-        XScheduleManager.UnSchedule(self.TimerStoryRoleEnable)
-        self.TimerStoryRoleEnable = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnBtnStoryLineClickScheduleCb, self)
 
-    if self.LongAnimTimer then
-        XScheduleManager.UnSchedule(self.LongAnimTimer)
-        self.LongAnimTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnSetXPostFaicalControllerActiveScheduleCb, self)
 end
 
 function XUiEpicFashionGacha:OnDestroy()
@@ -873,5 +851,20 @@ function XUiEpicFashionGacha:ShowWeaponFashion()
         local data = cacheReward
         local rewards = { { TemplateId = data.ItemId, Count = data.ItemCount } }
         XUiManager.OpenUiObtain(rewards)
+    end
+end
+
+function XUiEpicFashionGacha:_OnBtnStoryLineClickScheduleCb()
+    self.Panel3D.RoleLoop:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
+    self.Panel3D.StoryRoleEnbale.gameObject:SetActiveEx(false)
+end
+function XUiEpicFashionGacha:_OnSetXPostFaicalControllerActiveScheduleCb()
+    self.Panel3D.RoleLoop:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Play()
+    -- 必须要在enable动画完成后打开视线跟随
+    self.Panel3D.AnimEnableLong.gameObject:SetActiveEx(false)
+    self:SetXPostFaicalControllerActive(true)
+    if self.LongEnableCb then
+        self.LongEnableCb()
+        self.LongEnableCb = nil
     end
 end

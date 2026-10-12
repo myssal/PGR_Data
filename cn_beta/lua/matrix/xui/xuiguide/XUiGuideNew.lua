@@ -56,9 +56,7 @@ function XUiGuideNew:OnStart(targetImg, isWeakGuide, guideDesc, icon, name, call
     --V3.7 点击区域是全屏时 0.5秒内点击无反应
     if(self.MaskClickAreaType == XUiGuideNew.XUIGuideMaskClickAreaType.ClickAnyWhere) then
         self:ShowBtnMask(true)
-        self.Timer = XScheduleManager.ScheduleOnce(function()
-            self:ShowBtnMask(false)
-        end,  500)
+        XScheduleManagerPro.ScheduleOnce(self._OnStartScheduleCb, self, 500)
     end
     
     if targetImg then
@@ -139,16 +137,17 @@ function XUiGuideNew:OnStart(targetImg, isWeakGuide, guideDesc, icon, name, call
     self:StartCheckGuideMask()
 end
 
+function XUiGuideNew:_OnStartScheduleCb()
+        self:ShowBtnMask(false)
+end
+
 function XUiGuideNew:OnDestroy()
     -- CsXGameEventManager.Instance:RemoveEvent(XEventId.EVENT_GUIDE_FIGHT_BTNDOWN, function(evt, args)
     if self.Callback then
         self.Callback = nil
     end
     -- end)
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartScheduleCb, self)
     
     self:SendCloseUiClick()
     self:ClearGuideMask()
@@ -231,22 +230,22 @@ function XUiGuideNew:OnBtnPanelMaskGuideClick()
 end
 
 function XUiGuideNew:ClearGuideMask()
-    if self._CheckMaskTimer then
-        XScheduleManager.UnSchedule(self._CheckMaskTimer)
-        self._CheckMaskTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartCheckGuideMaskScheduleCb, self)
 
     XDataCenter.GuideManager.TryHideGuideMask()
 end
+
+
 
 function XUiGuideNew:StartCheckGuideMask()
     if not XDataCenter.GuideManager.IsShowGuideMask() then
         return
     end
-    self._CheckMaskTimer = XScheduleManager.ScheduleOnce(function() 
-        self._CheckMaskTimer = nil
-        self:ClearGuideMask()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(self._OnStartCheckGuideMaskScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+function XUiGuideNew:_OnStartCheckGuideMaskScheduleCb()
+    self:ClearGuideMask()
 end
 
 --显示头像

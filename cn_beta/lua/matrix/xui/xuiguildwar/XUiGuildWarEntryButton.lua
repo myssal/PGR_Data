@@ -31,19 +31,12 @@ function XUiGuildWarEntryButton:OnDestroy()
 end
 
 function XUiGuildWarEntryButton:StartEntryBtnListener()
-    if self.EntryBtnTimeId then return end
     self:Refresh()
-    self.EntryBtnTimeId = XScheduleManager.ScheduleForever(
-        function()
-            self:Refresh()
-        end,1000
-    )
+    XScheduleManagerPro.ScheduleForever(self._OnRefreshScheduleCb, self, 1000)
 end
 
 function XUiGuildWarEntryButton:StopEntryBtnListener()
-    if not self.EntryBtnTimeId then return end
-    XScheduleManager.UnSchedule(self.EntryBtnTimeId)
-    self.EntryBtnTimeId = nil
+    XScheduleManagerPro.UnSchedule(self._OnRefreshScheduleCb, self)
 end
 
 function XUiGuildWarEntryButton:Refresh()
@@ -127,6 +120,10 @@ function XUiGuildWarEntryButton:OnClick()
     if self.OnClickCb then
         self.OnClickCb()
     end
+end
+
+function XUiGuildWarEntryButton:_OnRefreshScheduleCb()
+    self:Refresh()
 end
 
 return XUiGuildWarEntryButton

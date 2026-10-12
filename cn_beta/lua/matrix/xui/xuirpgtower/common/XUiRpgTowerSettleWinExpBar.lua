@@ -16,13 +16,7 @@ end
 function XUiRpgTowerSettleWinExpBar:StartFillExp()
     self.StartFillTime = 0
     self.ImgPlayerExpFillAdd.fillAmount = 0
-    self.TimeId = XScheduleManager.ScheduleForever(function()
-                if XTool.UObjIsNil(self.Transform) then
-                    self:StopTimer()
-                    return
-                end
-                self:LerpExp()
-            end, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnStopTimerScheduleCb, self, 0)
 end
 
 function XUiRpgTowerSettleWinExpBar:SetChangeData(changeData)
@@ -96,13 +90,19 @@ function XUiRpgTowerSettleWinExpBar:LerpExp()
 end
 
 function XUiRpgTowerSettleWinExpBar:StopTimer()
-    if not self.TimerId then return end
-    XScheduleManager.UnSchedule(self.TimerId)
-    self.TimerId = nil
+    XScheduleManagerPro.UnSchedule(self._OnStopTimerScheduleCb, self)
 end
 
 function XUiRpgTowerSettleWinExpBar:ShowLevelUpTips()
     XLuaUiManager.Open("UiRpgTowerLevelUp")
+end
+
+function XUiRpgTowerSettleWinExpBar:_OnStopTimerScheduleCb()
+    if XTool.UObjIsNil(self.Transform) then
+        self:StopTimer()
+        return
+    end
+    self:LerpExp()
 end
 
 return XUiRpgTowerSettleWinExpBar

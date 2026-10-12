@@ -96,10 +96,7 @@ end
 --endregion
 
 function XUiSkyGardenShoppingStreetPopupRoundEndGridShop:StopAnimationTimer()
-    if not self._AnimationTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._AnimationTimer)
+    XScheduleManagerPro.UnSchedule(self._OnPlayAnimationScheduleCb, self)
     self._AnimationTimer = false
 end
 
@@ -108,10 +105,7 @@ function XUiSkyGardenShoppingStreetPopupRoundEndGridShop:PlayEnableAnimation(ind
     if self.CanvasGroup then
         self.CanvasGroup.alpha = 0
     end
-    self._AnimationTimer = XScheduleManager.ScheduleOnce(function()
-        self:PlayAnimation("GridEnable")
-        self:StopAnimationTimer()
-    end, 80 * index)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayAnimationScheduleCb, self, 80 * index)
 end
 
 --region 私有方法
@@ -121,5 +115,10 @@ function XUiSkyGardenShoppingStreetPopupRoundEndGridShop:_RegisterButtonClicks()
 end
 
 --endregion
+
+function XUiSkyGardenShoppingStreetPopupRoundEndGridShop:_OnPlayAnimationScheduleCb()
+    self:PlayAnimation("GridEnable")
+    self:StopAnimationTimer()
+end
 
 return XUiSkyGardenShoppingStreetPopupRoundEndGridShop

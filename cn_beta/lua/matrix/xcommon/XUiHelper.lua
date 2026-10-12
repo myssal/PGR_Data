@@ -179,6 +179,8 @@ function XUiHelper.CreateScrollItem(datas, template, parent, cb, scrollstyle)
     end
 end
 
+-- type 须传 typeof() 类型对象，不要传类名字符串：
+-- GetComponent(string) 用简单类名匹配，遇 Spine.Slider / UnityEngine.UI.Slider 等顶层同名类型会歧义返回 nil，typeof() 走 Type 重载不受影响
 function XUiHelper.TryGetComponent(transform, path, type)
     local temp = transform:Find(path)
     if temp then
@@ -267,6 +269,32 @@ function XUiHelper.SetQualityIcon(rootUi, imgQuality, quality)
         rootUi:SetUiSprite(imgQuality, spriteName)
     else
         imgQuality:SetSprite(spriteName)
+    end
+end
+
+-- 将UI的坐标同步到3D场景中的物体
+function XUiHelper.SetUiObjectPositionTo3D(
+    uiCamera,               -- UI相机
+    uiObjectTransform,      -- UI对象的Transform
+    threeDCamera,           -- 3D相机，可以为Near或Far
+    threeDObjectTransform)  -- 3D对象的Transform
+
+    uiCamera = uiCamera or CS.XUiManager.Instance.UiCamera
+    local screenPos3D = threeDCamera:WorldToScreenPoint(threeDObjectTransform.position)
+    local screenPos2D = XLuaVector2.New(screenPos3D.x, screenPos3D.y)
+    local success, localPoint = CS
+        .UnityEngine
+        .RectTransformUtility
+        .ScreenPointToLocalPointInRectangle(
+            uiObjectTransform.parent,
+            screenPos2D,
+            uiCamera)
+
+    if success then
+        uiObjectTransform.localPosition = XLuaVector3.New(
+            localPoint.x,
+            localPoint.y,
+            0)
     end
 end
 
@@ -1376,6 +1404,76 @@ function XUiHelper.Tween(duration, onRefresh, onFinish, easeMethod)
     return XScheduleManager.ScheduleForever(refresh, 0)
 end
 
+--==============================--
+--desc: 无闭包版Tween（基于XScheduleManagerPro跟踪对象黑板，语义与Tween一致）。
+--      onRefresh/onFinish为类级方法，回调对象作为第一个参数传入；进度计算收口在本层。
+--      返回跟踪句柄给业务持有，取消时传回StopTweenWithHandelObject；
+--      自然结束/中断时内部自动取消注册并归还跟踪对象，业务在onFinish里把持有的句柄字段置nil即可。
+--      重入不再自动顶掉同宿主旧动画，业务重开前需自行Stop旧句柄。
+--@duration: 动画时长(s)
+--@onRefresh: fun(obj, progress)|nil 刷新动作，progress为0~1，返回不为空或true时中断（仍会触发onFinish）
+--@refreshObj: onRefresh的回调对象
+--@onFinish: fun(obj)|nil 结束回调
+--@finishObj: onFinish的回调对象
+--@easeMethod: 自定义曲线函数
+--@return: XScheduleProTrackHandelObject 跟踪句柄（用于StopTweenWithHandelObject取消）
+--==============================--
+function XUiHelper.TweenWithHandelObject(duration, onRefresh, refreshObj, onFinish, finishObj, easeMethod)
+    local trackHandel = XScheduleManagerPro.BuildTrackHandelObject(refreshObj)
+    trackHandel:SetParm("Duration", duration)
+    trackHandel:SetParm("StartTicks", CSXTimerManager.Ticks)
+    trackHandel:SetParm("OnRefresh", onRefresh)
+    trackHandel:SetParm("OnFinish", onFinish)
+    trackHandel:SetParm("FinishObj", finishObj)
+    trackHandel:SetParm("EaseMethod", easeMethod)
+    XScheduleManagerPro.ScheduleForeverEx(XUiHelper._OnTweenWithHandelObjectCb, trackHandel, 0)
+    return trackHandel
+end
+
+--==============================--
+--desc: 按句柄取消TweenWithHandelObject（内部取消注册并归还跟踪对象）。
+--      nil或已自然结束归还的句柄安全跳过；调用后业务应把持有的句柄字段置nil
+--@trackHandel: TweenWithHandelObject返回的跟踪句柄
+--==============================--
+function XUiHelper.StopTweenWithHandelObject(trackHandel)
+    if trackHandel == nil or trackHandel:IsInPool() then
+        return
+    end
+    XScheduleManagerPro.UnSchedule(XUiHelper._OnTweenWithHandelObjectCb, trackHandel)
+    XScheduleManagerPro.ReturnTrackHandelObject(trackHandel)
+end
+
+-- TweenWithHandelObject定时器回调（类级方法，非闭包）
+function XUiHelper._OnTweenWithHandelObjectCb(trackHandel)
+    local t = (CSXTimerManager.Ticks - trackHandel:GetParm("StartTicks")) / trackHandel:GetParm("Duration") / TicksPerSecond
+    t = mathMin(1, t)
+    t = mathMax(0, t)
+
+    -- 在调用业务回调前取完全部黑板参数：业务可能在onRefresh内Stop归还trackHandel，归还后黑板禁读
+    local onRefresh = trackHandel:GetParm("OnRefresh")
+    local onFinish = trackHandel:GetParm("OnFinish")
+    local finishObj = trackHandel:GetParm("FinishObj")
+    local easeMethod = trackHandel:GetParm("EaseMethod")
+    local host = trackHandel:GetHandelObject()
+    if easeMethod then
+        t = easeMethod(t)
+    end
+
+    local stop = (onRefresh and onRefresh(host, t)) or t == 1
+    if not stop then
+        return
+    end
+
+    -- 主动取消注册并归还跟踪对象；业务已自行Stop归还时跳过，避免重复归还报错
+    if not trackHandel:IsInPool() then
+        XScheduleManagerPro.UnSchedule(XUiHelper._OnTweenWithHandelObjectCb, trackHandel)
+        XScheduleManagerPro.ReturnTrackHandelObject(trackHandel)
+    end
+    if onFinish then
+        onFinish(finishObj)
+    end
+end
+
 XUiHelper.EaseType = {
     Linear = 1,
     Sin = 2,
@@ -1674,17 +1772,23 @@ function XUiHelper.ReplaceWithPlayerName(str, replaceStr)
 end
 
 --把大数字按照一定的规范转换成字符串
---规范：小于6位不转换，大于等于6位转换为w并保留小数点后2位
+--规范：小于阈值不转换，大于等于阈值转换为w并保留小数点后2位（阈值/除数由客户端配置 LargeIntNumThreshold/LargeIntNumDivisor 控制）
+--LargeIntNumThreshold 配置为-1时不做转换，直接返回原数
 --比如 600000 返回 60w
 function XUiHelper.GetLargeIntNumText(num)
     local tenThousandStr = XUiHelper.GetText("TenThousand")
     if XOverseaManager.IsTWRegion() then
-       tenThousandStr = XUiHelper.GetText("TenthousandGuildTw")
+        tenThousandStr = XUiHelper.GetText("TenthousandGuildTw")
     end
     local t = type(num)
     if t == "number" then
-        if num >= 100000 then
-            local bigNum = num / 10000
+        local threshold = CS.XGame.ClientConfig:GetInt("LargeIntNumThreshold")
+        if threshold == -1 then
+            return tostring(num)
+        end
+        if num >= threshold then
+            local divisor = CS.XGame.ClientConfig:GetInt("LargeIntNumDivisor")
+            local bigNum = num / divisor
             if math.floor(bigNum) < bigNum then
                 return string.format("%.2f", bigNum) .. tenThousandStr
             else
@@ -1933,8 +2037,10 @@ end
 ---@param count any
 ---@param handleFunc any
 ---@param isAddRange boolean 往container追加元素，而不是拿它本来的子节点使用
+---@param uiNodeClass XUiNode
+---@param parent any
 ---【警告】该方法不能兼容XUiNode类型子节点, 如果子节点为XUiNode类型尽量使用 XTool.UpdateDynamicItem 替代
-function XUiHelper.RefreshUiObjectList(uiList, container, gridGo, count, handleFunc, isAddRange)
+function XUiHelper.RefreshUiObjectList(uiList, container, gridGo, count, handleFunc, isAddRange,uiNodeClass,parent)
     uiList = uiList or {}
 
     -- 先隐藏不需要的
@@ -1952,7 +2058,12 @@ function XUiHelper.RefreshUiObjectList(uiList, container, gridGo, count, handleF
         end
     else
         if not isAddRange then
-            local child = XTool.InitUiObjectByUi({}, gridGo)
+            local child
+            if uiNodeClass then
+                child = uiNodeClass.New(gridGo,parent)
+            else
+                child = XTool.InitUiObjectByUi({}, gridGo)
+            end
             uiList[1] = child
         end
         gridGo.gameObject:SetActiveEx(false)
@@ -1963,7 +2074,12 @@ function XUiHelper.RefreshUiObjectList(uiList, container, gridGo, count, handleF
         local child = uiList[i]
         if not child or isAddRange then
             local childNode = XUiHelper.Instantiate(gridGo, container)
-            child = XTool.InitUiObjectByUi({}, childNode)
+            if uiNodeClass then
+                child = uiNodeClass.New(childNode,parent)
+            else
+                child = XTool.InitUiObjectByUi({}, childNode)
+            end
+            
             uiList[i] = child
         end
 
@@ -2244,11 +2360,17 @@ function XUiHelper.SetSceneType(sceneType)
     if not sceneType then
         return
     end
+    local currentSceneType = CS.XGlobalIllumination.SceneType
+    if sceneType == currentSceneType then
+        return
+    end
+    
     if sceneType == CS.XSceneType.Dormitory then
         XEventManager.DispatchEvent(XEventId.EVENT_SCENE_SET_NONE_STATE)
         CsXGameEventManager.Instance:Notify(XEventId.EVENT_SCENE_SET_NONE_STATE)
     end
     CS.XGlobalIllumination.SetSceneType(sceneType)
+    XEventManager.DispatchEvent(XEventId.EVENT_SCENE_TYPE_CHANGED, currentSceneType, sceneType)
 end
 
 -- xxxx年x月x日 年月日
@@ -2805,3 +2927,78 @@ function XUiHelper.ShowBubbleToTarget(bubble, target, canvasTran, avoidTransform
 
     bubble.localPosition = pos
 end
+
+--region 隐藏/显示所有Ui（通过关闭Ui相机实现）
+
+local HIDE_ALL_UI_DEFAULT_TIMEOUT = 40 -- 默认最大隐藏时长（秒），超时自动恢复
+local HIDE_ALL_UI_MASK_KEY = "XUiHelperHideAllUi"
+local HideAllUiCamera
+local HideAllUiTimer
+
+---隐藏所有Ui（关闭Ui相机），同时屏蔽点击
+---@param timeout number 可选，超时自动恢复的时间（秒），默认40秒，传0关闭超时保护
+---@return boolean 是否成功隐藏
+function XUiHelper.HideAllUi(timeout)
+    local uiManager = CS.XUiManager.Instance
+    local uiCamera = uiManager and uiManager.UiCamera
+    if XTool.UObjIsNil(uiCamera) then
+        XLog.Error("XUiHelper.HideAllUi失败：Ui相机不存在")
+        return false
+    end
+
+    if HideAllUiCamera then
+        -- Ui相机已被重建，避免永久锁死
+        if HideAllUiCamera ~= uiCamera then
+            XUiHelper.ShowAllUi()
+        else
+            XLog.Error("XUiHelper.HideAllUi失败：Ui已被隐藏，接口已上锁")
+            return false
+        end
+    end
+
+    uiCamera.enabled = false
+    HideAllUiCamera = uiCamera
+    XLuaUiManager.SetMask(true, HIDE_ALL_UI_MASK_KEY)
+
+    local realTimeout = timeout or HIDE_ALL_UI_DEFAULT_TIMEOUT
+    if realTimeout > 0 then
+        HideAllUiTimer = XScheduleManager.ScheduleOnce(function()
+            HideAllUiTimer = nil
+            XLog.Error("XUiHelper.HideAllUi超时未恢复，自动显示所有Ui")
+            XUiHelper.ShowAllUi()
+        end, realTimeout * XScheduleManager.SECOND)
+    end
+
+    return true
+end
+
+---显示所有Ui（恢复Ui相机、移除遮罩），同时释放HideAllUi的锁
+---@return boolean 是否执行了恢复操作
+function XUiHelper.ShowAllUi()
+    if HideAllUiTimer then
+        XScheduleManager.UnSchedule(HideAllUiTimer)
+        HideAllUiTimer = nil
+    end
+
+    local uiCamera = HideAllUiCamera
+    HideAllUiCamera = nil
+
+    if not uiCamera then
+        return false
+    end
+
+    if not XTool.UObjIsNil(uiCamera) then
+        uiCamera.enabled = true
+    end
+    XLuaUiManager.SetMask(false, HIDE_ALL_UI_MASK_KEY)
+
+    return true
+end
+
+---当前是否处于隐藏所有Ui的状态
+---@return boolean
+function XUiHelper.IsAllUiHidden()
+    return HideAllUiCamera ~= nil
+end
+
+--endregion

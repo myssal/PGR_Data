@@ -1,4 +1,4 @@
-local XUiPanelTask = require("XUi/XUiMoneyReward/XUiPanelTask")
+---@class XUiWelfare:XLuaUi
 local XUiWelfare = XLuaUiManager.Register(XLuaUi, "UiWelfare")
 ---@desc 按钮类型
 ---@field Primary number 一级标签
@@ -183,13 +183,17 @@ function XUiWelfare:InitTabButton()
                 if not fallbackIndex then
                     fallbackIndex = i
                 end
-
-                if not self._Params2SelectTab.WelfareId then
+                
+                if self._Params2SelectTab.ActivityId then
+                    if config.Id == self._Params2SelectTab.ActivityId then
+                        self.PanelTitleBtnGroup:SelectIndex(i)
+                        fallbackIndex = nil
+                        break
+                    end
+                elseif not self._Params2SelectTab.WelfareId then
                     self.PanelTitleBtnGroup:SelectIndex(i)
                     break
-                end
-
-                if config.WelfareId == self._Params2SelectTab.WelfareId then
+                elseif config.WelfareId == self._Params2SelectTab.WelfareId then
                     self.PanelTitleBtnGroup:SelectIndex(i)
                     fallbackIndex = nil
                     break
@@ -441,6 +445,7 @@ end
 ---@param template XTableActivity 活动配置 Activity.tab
 ---@return nil
 function XUiWelfare:OnRefreshTask(template)
+    ---@type XUiPanelTask
     self.TaskPanel = self.TaskPanel or require("XUi/XUiActivityBase/XUiPanelTask").New(self.PanelTask, self)
     self.TaskPanel:Open()
     self.TaskPanel:Refresh(template)
@@ -451,6 +456,7 @@ end
 ---@return nil
 function XUiWelfare:OnRefreshShop(template)
     self.PanelActivityShop.gameObject:SetActiveEx(true)
+    ---@type XUiPanelShop
     self.ShopPanel = self.ShopPanel or require("XUi/XUiActivityBase/XUiPanelShop").New(self.PanelActivityShop, self)
     self.ShopPanel:Refresh(template)
 end
@@ -460,7 +466,7 @@ end
 ---@return nil
 function XUiWelfare:OnRefreshSkip(template)
     self.PanelSkip.gameObject:SetActiveEx(true)
-    ---@type XUiPanelTask
+    ---@type XUiPanelSkip
     self.SkipPanel = self.SkipPanel or require("XUi/XUiActivityBase/XUiPanelSkip").New(self.PanelSkip)
     self.SkipPanel:Refresh(template)
 end

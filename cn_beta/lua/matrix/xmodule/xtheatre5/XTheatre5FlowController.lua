@@ -255,19 +255,7 @@ function XTheatre5FlowController:CheckEventAfterNodeEnd(storyLineId, curStoryLin
                 XLog.Debug('栈顶UI：' .. XLuaUiManager.GetUIStackTopUiName() .. '延后0.2s检查')
             end
             
-            XScheduleManager.ScheduleOnce(function()
-                if XLuaUiManager.GetUIStackTopUiName() == 'UiTheatre5ChooseCharacter' then
-                    --栈顶是选人界面，直接关闭即可
-                    XLuaUiManager.Close('UiTheatre5ChooseCharacter')
-                else
-                    if XMain.IsWindowsEditor then
-                        XLog.Debug('踢出失败，栈顶UI：' .. XLuaUiManager.GetUIStackTopUiName())
-                    end
-                    
-                    -- 保底逻辑再试一次
-                    XLuaUiManager.CloseAllUpperUi('UiTheatre5Main')
-                end
-            end, 0.2 * XScheduleManager.SECOND)
+            XScheduleManagerPro.ScheduleOnce(self._OnCheckEventAfterNodeEndScheduleCb, self, 0.2 * XScheduleManagerPro.SECOND)
         end
     end
 end
@@ -309,6 +297,20 @@ function XTheatre5FlowController:OnRelease()
     self._IsEntering = false
     self._IsEnteringStoryLine = false
     self._PVEFlowNodeBlackBoard = nil
+end
+
+function XTheatre5FlowController:_OnCheckEventAfterNodeEndScheduleCb()
+    if XLuaUiManager.GetUIStackTopUiName() == 'UiTheatre5ChooseCharacter' then
+        --栈顶是选人界面，直接关闭即可
+        XLuaUiManager.Close('UiTheatre5ChooseCharacter')
+    else
+        if XMain.IsWindowsEditor then
+            XLog.Debug('踢出失败，栈顶UI：' .. XLuaUiManager.GetUIStackTopUiName())
+        end
+
+        -- 保底逻辑再试一次
+        XLuaUiManager.CloseAllUpperUi('UiTheatre5Main')
+    end
 end
 
 return XTheatre5FlowController

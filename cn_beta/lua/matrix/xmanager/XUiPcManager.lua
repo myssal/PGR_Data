@@ -161,6 +161,13 @@ XUiPcManagerCreator = function()
         local lastResolution = XUiPcManager.GetLastResolution();        -- 获取上一次设备分辨率
         local lastScreen = XUiPcManager.GetLastScreen();                -- 获取上一次使用的屏幕分辨率 
         local unityScreen = XUiPcManager.GetUnityScreen();              -- 获取Unity写入的设备分辨率
+
+		local guardState = CS.XResolutionBootstrap.GetResolutionGuardState()
+		if guardState.Abnormal then
+			unityScreen.width = guardState.Width
+			unityScreen.height = guardState.Height
+		end
+
 		local minResolution = resolutions[1]
         local length = #resolutions
         local maxResolution = resolutions[length]
@@ -208,7 +215,8 @@ XUiPcManagerCreator = function()
             CS.XLog.Debug(string.format("设备分辨率高度与配置分辨率高度一致, 使用小一级窗口化分辨率, width: %s, heigth: %s", lessHeightResolution.x, lessHeightResolution.y))
             XUiPcManager.SetResolution(lessHeightResolution.x, lessHeightResolution.y, windowedMode)
         else
-            if unityScreen.width < minResolution.x or unityScreen.height < minResolution.y then
+			local invalid = unityScreen.width < minResolution.x or unityScreen.height < minResolution.y
+            if guardState.Abnormal or invalid then
                 -- unity读取的尺寸很可能导致条幅屏, 判断是否有正确的缓存值
 				if lastScreen.width > minResolution.x and lastScreen.height > minResolution.y then
 				    -- 如果有正确的缓存值

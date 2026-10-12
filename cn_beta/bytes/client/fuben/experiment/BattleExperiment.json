@@ -3075,7 +3075,7 @@
         "CharacterID": 1421003,
         "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
         "Title": "远点轰炸",
-        "Description": "执炬者形态强袭模式下点按红球可释放爆破式或突破式，消耗执炬信号球，获得回响值。",
+        "Description": "执炬者形态毁灭模式下点按红球可释放爆破式或突破式，消耗执炬信号球，获得回响值和破渊值。",
         "NextTrialID": 389
     },
     {
@@ -3083,7 +3083,7 @@
         "CharacterID": 1421003,
         "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
         "Title": "远点轰炸",
-        "Description": "执炬者形态强袭模式下长按红球可释放连射式或压制式，消耗回响值。",
+        "Description": "执炬者形态毁灭模式下长按红球可释放连射式或压制式，消耗回响值，获得破渊值和行渊信火层数。",
         "NextTrialID": 390
     },
     {
@@ -3091,7 +3091,7 @@
         "CharacterID": 1421003,
         "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
         "Title": "穿渊灭光",
-        "Description": "执炬者形态强袭模式下点按黄球释放坍缩态或超压态，消耗执炬信号球，获得回响值。",
+        "Description": "执炬者形态强袭模式下点按黄球释放坍缩态或超压态，消耗执炬信号球，获得回响值和破渊值。",
         "NextTrialID": 391
     },
     {
@@ -3099,7 +3099,7 @@
         "CharacterID": 1421003,
         "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
         "Title": "穿渊灭光",
-        "Description": "执炬者形态强袭模式下长按黄球释放穿光态或重压态，消耗回响值。",
+        "Description": "执炬者形态强袭模式下长按黄球释放穿光态或重压态，消耗回响值，获得破渊值和行渊信火层数。",
         "NextTrialID": 392
     },
     {
@@ -3123,7 +3123,7 @@
         "CharacterID": 1421003,
         "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
         "Title": "巡锋洄闪",
-        "Description": "行渊者形态下点击闪避，下三个行渊信号球伤害翻倍。",
+        "Description": "行渊者形态下点击闪避，造成暗属性伤害。",
         "NextTrialID": 395
     },
     {
@@ -3141,5 +3141,85 @@
         "Title": "行渊闪袭",
         "Description": "行渊者形态下点击必杀，手臂枪展开射击后爆炸，获得治疗效果，期间触发时滞演算。",
         "NextTrialID": 388
+    },
+    {
+        "Id": 397,
+        "CharacterID": 1431003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
+        "Title": "群星舞奏",
+        "Description": "协衡状态下至多五段普攻，星环状态下至多四段普攻。两种状态下均可以长按普攻。",
+        "NextTrialID": 398
+    },
+    {
+        "Id": 398,
+        "CharacterID": 1431003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
+        "Title": "尘光吸积",
+        "Description": "协衡状态下点击红色信号球，第一段不消耗球，第二段消耗至多3个信号球，根据消球数量获得必杀能量、捕光能量。",
+        "NextTrialID": 399
+    },
+    {
+        "Id": 399,
+        "CharacterID": 1431003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
+        "Title": "寰天星轨",
+        "Description": "协衡状态下点击黄色信号球，第一段不消耗球，第二段消耗至多3个信号球，根据消球数量获得必杀能量、捕光能量。",
+        "NextTrialID": 400
+    },
+    {
+        "Id": 400,
+        "CharacterID": 1431003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
+        "Title": "宇宙契约",
+        "Description": "使使用任意颜色信号球技能时将最右侧引力球位改为对应颜色。连续两次使用信号球技能时，将在2秒内激活对应颜色引力球。",
+        "NextTrialID": 401
+    },
+    {
+        "Id": 401,
+        "CharacterID": 1431003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
+        "Title": "宇宙契约",
+        "Description": "引力球激活期间，点击引力球或普攻可使用引力球技能，获得必杀能量，将捕光能量转化为祈星能量，达到上限时激活炫彩引力球。",
+        "NextTrialID": 402
+    },
+    {
+        "Id": 402,
+        "CharacterID": 1431003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
+        "Title": "圆环定理",
+        "Description": "协衡状态下炫彩引力球激活期间，点击引力球，消耗所有祈星能量，进入星环状态，触发未冷却的超算空间，消除持有的摄光标记。",
+        "NextTrialID": 403
+    },
+    {
+        "Id": 403,
+        "CharacterID": 1431003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
+        "Title": "夜海溢光",
+        "Description": "星环状态下，长按普攻一段时间后，可消耗2个信号球获得必杀能量，消耗4颗球后获得摄光标记。",
+        "NextTrialID": 404
+    },
+    {
+        "Id": 404,
+        "CharacterID": 1431003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
+        "Title": "银河回环",
+        "Description": "星环状态下点击蓝色信号球，每段消耗1颗白色信号球，获得捕光能量。超算中释放时，立即获得2颗白色信号球，并视为三消。",
+        "NextTrialID": 405
+    },
+    {
+        "Id": 405,
+        "CharacterID": 1431003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
+        "Title": "缎带回路",
+        "Description": "星环状态下炫彩引力球激活期间，点击或长按引力球，消耗祈星能量，获得必杀能量，释放第四段后进入均衡状态并获得摄光标记。",
+        "NextTrialID": 406
+    },
+    {
+        "Id": 406,
+        "CharacterID": 1431003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Adelaide.png",
+        "Title": "光幕舞曲的星屑",
+        "Description": "星环状态下点击必杀，消耗必杀能量释放。若持有摄光标记，则伤害提升，且可在协衡状态下释放。携带覆冰效应时将凝结冰刺。",
+        "NextTrialID": 397
     }
 ]

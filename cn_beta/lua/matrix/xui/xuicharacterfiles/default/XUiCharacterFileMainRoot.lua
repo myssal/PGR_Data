@@ -155,7 +155,7 @@ end
 --- 结束当前玩法的BGM，恢复上次的BGM
 function XUiCharacterFileMainRoot:ResumeLastBGM()
     if XTool.IsNumberValid(self._LastBGMCueIdCache) then
-        XLuaAudioManager.PlayMusicCD(self._LastBGMCueIdCache, 0, 0)
+        XLuaAudioManager.PlayMusicInOut2(self._LastBGMCueIdCache, -1, -1, -1, -1, 0, 0)
     end    
 end
 

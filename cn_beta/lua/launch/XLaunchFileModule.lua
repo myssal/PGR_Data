@@ -276,7 +276,7 @@ local module_creator = function()
                         dict.version = NewVersion
                         dict.type = ResFileType
                         DoRecord(dict, "80007", "XFileManagerDownloadError")
-                        ShowStartErrorDialog("FileManagerInitFileTableDownloadError", CsApplication.Exit, function()
+                        XLaunchConst.ShowStartErrorDialog("FileManagerInitFileTableDownloadError", CsApplication.Exit, function()
                             Loop()
                         end, CsApplication.GetText("Retry")) -- 重试
                         return
@@ -350,7 +350,7 @@ local module_creator = function()
         local downloader = CS.XUriPrefixDownloader(uriPrefixStr, documentFilePath, false, sha1, indexSize, TIMEOUT, RETRY)
         CsTool.WaitCoroutine(downloader:Send(), function()
             if downloader.State ~= CS.XDownloaderState.Success then
-                ShowStartErrorDialog("FileManagerInitVersionDownLoadError")
+                XLaunchConst.ShowStartErrorDialog("FileManagerInitVersionDownLoadError")
             else
                 if ResFileType == RES_FILE_TYPE.LAUNCH_MODULE then
                     AppVersionModule.UpdateLaunchVersion()
@@ -515,9 +515,6 @@ local module_creator = function()
                     removeResIdsRecord = {}
                 end
 
-                -- 4.6兜底：本次强制下载sub=4000并补写Launch下载记录
-                local needForceSub4000Download46 = XLaunchDlcManager.CheckNeedForceSub4000Download46()
-
                 -- 分包补丁
                 ResSizeDic = {}
                 local subHasUninstalledCache = {} -- 缓存Sub级卸载意图检查结果，避免同Sub下多个res重复查询
@@ -562,12 +559,6 @@ local module_creator = function()
                             needDownloadDlc = true
                         end
                     end
-                    if not needDownloadDlc and needForceSub4000Download46
-                            and ResId2SubIdMap and tostring(ResId2SubIdMap[resId]) == "4000"
-                            and not isUninstalled then
-                        needDownloadDlc = true
-                        XLaunchDlcManager.SetLaunchDownloadRecord(resId) -- 补写记录，确保后续热更能下载补丁
-                    end
                     if IsDebugBuild then
                         needDownloadMap[resId] = needDownloadDlc
                         print(string.format("[Debug] resId: %s isHotUpdateRes: %s, isSelectFullOrSelectRemove: %s, checkNeedDownload: %s, removeResIdsRecord: %s, ignore: %s", resId,
@@ -599,10 +590,6 @@ local module_creator = function()
                 end
 
                 SetDlcTable(dlcTableMap)
-                -- 4.6兜底：标记已触发，下次启动不再重复
-                if needForceSub4000Download46 then
-                    XLaunchDlcManager.MarkForceSub4000Downloaded46()
-                end
                 if IsDebugBuild then
                     local logTab = {}
                     for dlcId, need in pairs(needDownloadMap) do
@@ -726,7 +713,7 @@ local module_creator = function()
                 --dict["file_name"] = info[1]
                 --DoRecord(dict, "80006", "UpdateTableAddFileError")
                 --CsLog.Error("repeat update file:" .. tostring(info[1]))
-                --ShowStartErrorDialog("FileManagerInitFileTableUpdateTableError")
+                --XLaunchConst.ShowStartErrorDialog("FileManagerInitFileTableUpdateTableError")
                 --return
             else
                 UpdateTable[info[1]] = info
@@ -891,6 +878,7 @@ local module_creator = function()
 
         local nums = {}
         local sizes = {}
+        local isShowLog = IsDebugBuild
         if IsDebugBuild then
             -- 总况
             for dlcId, map in pairs(DlcNeedFileMap) do
@@ -1141,7 +1129,7 @@ local module_creator = function()
                 local exitCb =  OnExitCallback or CsApplication.Exit
 
                 CsLog.Debug("[Download Android Backgroud] Istate " .. tostring(state) .. ",waitTimeCnt: " .. tostring(waitTimeCnt))
-                ShowStartErrorDialog("FileManagerInitFileTableDownloadError", exitCb, function()
+                XLaunchConst.ShowStartErrorDialog("FileManagerInitFileTableDownloadError", exitCb, function()
                     RemoveEvents()
                     CheckIndexFile()
                 end, CsApplication.GetText("Retry"))
@@ -1203,7 +1191,7 @@ local module_creator = function()
 
         manager:SetDownloadErrorHandler(function(file)
             local exitCb =  OnExitCallback or CsApplication.Exit
-            ShowStartErrorDialog("FileManagerInitFileTableDownloadError", exitCb, function()
+            XLaunchConst.ShowStartErrorDialog("FileManagerInitFileTableDownloadError", exitCb, function()
                 manager:ContinueDownloading()
             end, CsApplication.GetText("Retry")) -- 重试
         end)
@@ -1299,7 +1287,7 @@ local module_creator = function()
                             XLaunchFileModule.ReleaseDownloader()
                             return
                         end
-                        ShowStartErrorDialog(errorCode, exitCb, function()
+                        XLaunchConst.ShowStartErrorDialog(errorCode, exitCb, function()
                             Loop()
                         end, CsApplication.GetText("Retry")) -- 重试
                         return
@@ -1348,7 +1336,7 @@ local module_creator = function()
                 end
             elseif downloadManager.State == DownloadState.CompleteError then
                 CsTool.RemoveUpdateEvent(updateFunc)
-                ShowStartErrorDialog("FileManagerInitFileTableDownloadError", exitCb, function()
+                XLaunchConst.ShowStartErrorDialog("FileManagerInitFileTableDownloadError", exitCb, function()
                     downloadManager.RePrepareFailedTask()
                     CsGameEventManager:Notify(CS.XEventId.EVENT_LAUNCH_START_DOWNLOAD, progress.TotalDownloadSize)
                     downloadManager.Start()
@@ -1411,7 +1399,7 @@ local module_creator = function()
                 end
             elseif currentState == COMPLETE_ERROR_STATE then
                 CsTool.RemoveUpdateEvent(updateFunc)
-                ShowStartErrorDialog("FileManagerInitFileTableDownloadError", exitCb, function()
+                XLaunchConst.ShowStartErrorDialog("FileManagerInitFileTableDownloadError", exitCb, function()
                     downloadManagerAgent.RePrepareFailedTask()
                     totalDownloadSize = downloadManagerAgent.GetTotalDownloadSize()
                     CsGameEventManager:Notify(CS.XEventId.EVENT_LAUNCH_START_DOWNLOAD, totalDownloadSize)
@@ -1579,6 +1567,7 @@ local module_creator = function()
             count = count + 1
             size = size + info[3]
         end
+        XLaunchDlcManager.RewriteDownloadCache()
         if IsDebugBuild then
             CsLog.Debug("[DLC] 清理DLC .." .. dlcId .. "下载资源，数量：" .. count .. "，大小：" .. math.ceil(size/1024/1024) .. "mb")
         end

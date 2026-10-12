@@ -124,11 +124,14 @@ function XUiSignWeekRound:RefreshBySignIn()
         return
     end
     self.RoundCount = self.WeekCardData:GetRoundCount()
-    if self.RoundCount <= 1 then
-        self.TxtTipsBg.gameObject:SetActiveEx(true)
-        self.TxtTips.text = self.WeekCardData:GetDesc()
-    else
-        self.TxtTipsBg.gameObject:SetActiveEx(false)
+    -- 五日周卡(V408)预制已移除 TxtTips/TxtTipsBg,仅七日周卡(V306)预制存在,故判空
+    if self.TxtTipsBg then
+        if self.RoundCount <= 1 then
+            self.TxtTipsBg.gameObject:SetActiveEx(true)
+            self.TxtTips.text = self.WeekCardData:GetDesc()
+        else
+            self.TxtTipsBg.gameObject:SetActiveEx(false)
+        end
     end
     self:InitTabGroup()
     self:SetRewardInfos(self.Round)
@@ -156,7 +159,7 @@ function XUiSignWeekRound:RefreshByPurchasePackageData()
     if icon then
         self.RawImageConsume:SetRawImage(icon)
     end
-    self.BtnBuy:SetName(self.PurchaseData.ConsumeCount)
+    self.BtnBuy:SetName(self.RootUi:GetConsumePriceColorText(self.PurchaseData.ConsumeId, self.PurchaseData.ConsumeCount))
     XUiHelper.RegisterClickEvent(self.RootUi, self.BtnBuy, self.RootUi.OnBtnBuyClick)
     if self.PurchaseData.BuyTimes < self.PurchaseData.BuyLimitTimes then
         self.BtnBuy:SetDisable(false)
@@ -166,8 +169,19 @@ function XUiSignWeekRound:RefreshByPurchasePackageData()
 
     self:RefreshImmediatelyReward()
     self.RootUi:InitAndRegisterTimer(self.TxtTime) -- 调用礼包购买提示的接口注册到期显示
-    self.TxtTips.text = self.PurchaseData.Desc
+    -- 五日周卡(V408)预制已移除 TxtTips,仅七日周卡(V306)预制存在,故判空兼容
+    if self.TxtTips then
+        self.TxtTips.text = self.PurchaseData.Desc
+    end
     self:SetRewardInfos(1)
+end
+
+-- 虹卡数量变动时重刷购买按钮价格颜色(仅打脸购买态有购买按钮)
+function XUiSignWeekRound:RefreshBuyBtnColor()
+    if not self.IsPurchaseEnter or not self.PurchaseData or not self.BtnBuy then
+        return
+    end
+    self.BtnBuy:SetName(self.RootUi:GetConsumePriceColorText(self.PurchaseData.ConsumeId, self.PurchaseData.ConsumeCount))
 end
 
 function XUiSignWeekRound:RefreshImmediatelyReward()
@@ -230,7 +244,7 @@ function XUiSignWeekRound:SetRewardInfos(roundIndex)
     end or function(index)
         return self.WeekCardData:CheckIsBetterRewardByIndex(index)
     end
-    
+
     for _, v in ipairs(self.DaySmallGrids) do
         v:Close()
     end

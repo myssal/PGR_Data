@@ -34,14 +34,11 @@ end
 function XUiBagOrganizeMain:StartLeftTimer()
     self:StopLeftTimer()
     self:UpdateLeftTimer()
-    self._LeftTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateLeftTimer), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiBagOrganizeMain._OnUpdateLeftTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiBagOrganizeMain:StopLeftTimer()
-    if self._LeftTimerId then
-        XScheduleManager.UnSchedule(self._LeftTimerId)
-        self._LeftTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiBagOrganizeMain._OnUpdateLeftTimeScheduleCb, self)
 end
 
 function XUiBagOrganizeMain:UpdateLeftTimer()
@@ -132,5 +129,9 @@ function XUiBagOrganizeMain:OnRankClickEvent()
     end)
 end
 --endregion
+
+function XUiBagOrganizeMain:_OnUpdateLeftTimeScheduleCb()
+    self:UpdateLeftTimer()
+end
 
 return XUiBagOrganizeMain

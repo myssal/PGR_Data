@@ -32,7 +32,6 @@ function XUiGuildWarTeamAreaCharacterSelectAssistant:Ctor(initData)
     
     self._Index = false
     self.WearingAwarenessGrids = {}
-    self._Timer = false
     self._FilterKey = false
     
     self:Init()
@@ -80,19 +79,18 @@ end
 --开始 支援角色CD计时器 
 function XUiGuildWarTeamAreaCharacterSelectAssistant:StartTimerCd()
     self:UpdateTime()
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateTime()
-            self:UpdateGridsCd()
-        end,1)
+    if not XScheduleManagerPro.HasSchedule(self._OnStartTimerCdScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnStartTimerCdScheduleCb, self,1)
     end
+end
+
+function XUiGuildWarTeamAreaCharacterSelectAssistant:_OnStartTimerCdScheduleCb()
+        self:UpdateTime()
+        self:UpdateGridsCd()
 end
 --关闭刷新界面计时器
 function XUiGuildWarTeamAreaCharacterSelectAssistant:StopTimerCd()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerCdScheduleCb, self)
 end
 --更新时间
 function XUiGuildWarTeamAreaCharacterSelectAssistant:UpdateTime()

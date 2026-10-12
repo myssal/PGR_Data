@@ -194,13 +194,8 @@ end
 function XUiDlcMultiPlayerCompetition:OnBtnMonsterClick()
     self._ClickCount = self._ClickCount + 1
     self.MonsterState:SetInitialState("hit")
-    if self.MonsetResetTimer then
-        XScheduleManager.UnSchedule(self.MonsetResetTimer)
-        self.MonsetResetTimer = nil
-    end
-    self.MonsetResetTimer = XScheduleManager.ScheduleOnce(function()
-        self.MonsterState:SetInitialState("normal")
-    end, 500)
+    XScheduleManagerPro.UnSchedule(XUiDlcMultiPlayerCompetition._OnResetMonsterStateScheduleCb, self)
+    XScheduleManagerPro.ScheduleOnce(XUiDlcMultiPlayerCompetition._OnResetMonsterStateScheduleCb, self, 500)
 end
 
 function XUiDlcMultiPlayerCompetition:OnDestroy()
@@ -208,10 +203,7 @@ function XUiDlcMultiPlayerCompetition:OnDestroy()
         XMVCA.XDlcRoom:ClickCount(self._ClickCount)
     end
     self:_RemoveDiscussionTimer()
-    if self.MonsetResetTimer then
-        XScheduleManager.UnSchedule(self.MonsetResetTimer)
-        self.MonsetResetTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiDlcMultiPlayerCompetition._OnResetMonsterStateScheduleCb, self)
 end
 
 function XUiDlcMultiPlayerCompetition:_CheckGetReward()
@@ -264,6 +256,10 @@ function XUiDlcMultiPlayerCompetition:_SpecialkGetReward(callback)
             callback()
         end
     end)
+end
+
+function XUiDlcMultiPlayerCompetition:_OnResetMonsterStateScheduleCb()
+    self.MonsterState:SetInitialState("normal")
 end
 
 return XUiDlcMultiPlayerCompetition

@@ -384,29 +384,15 @@ function XPlanetMainScene:InitTalentTeamObj()
     self._Explore:SetScene(self)
     self._Explore:StartSync()
     self._Explore:Pause()
-    self._Timer = nil
     self:_InitMainRotateCross()
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            if not self:Exist() then
-                self:ReleaseTalentTeamObj()
-                return
-            end
-            self._Explore:Update(XLuaTime.deltaTime * 1)
-            if self._PlanetCamera then
-                self:CameraUpdate(self._Explore, XLuaTime.deltaTime * 1)
-            end
-            self:MainRotate(XLuaTime.deltaTime)
-        end, 0)
+    if not XScheduleManagerPro.HasSchedule(self._OnExistScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnExistScheduleCb, self, 0)
     end
     self:TalentTeamResume()
 end
 
 function XPlanetMainScene:ReleaseTalentTeamObj()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-    end
-    self._Timer = nil
+        XScheduleManagerPro.UnSchedule(self._OnExistScheduleCb, self)
 end
 
 function XPlanetMainScene:ResetTeam()
@@ -507,6 +493,18 @@ function XPlanetIScene:_InitTopNode()
     local PlanetTopNode = self._TopNode.gameObject:GetComponent(typeof(CS.PlanetTopNode))
     PlanetTopNode.CameraNode = self._PlanetCamera:GetCameraTransform()
     PlanetTopNode.PlanetNode = self._Planet:GetTransform()
+end
+
+function XPlanetMainScene:_OnExistScheduleCb()
+    if not self:Exist() then
+        self:ReleaseTalentTeamObj()
+        return
+    end
+    self._Explore:Update(XLuaTime.deltaTime * 1)
+    if self._PlanetCamera then
+        self:CameraUpdate(self._Explore, XLuaTime.deltaTime * 1)
+    end
+    self:MainRotate(XLuaTime.deltaTime)
 end
 
 return XPlanetMainScene

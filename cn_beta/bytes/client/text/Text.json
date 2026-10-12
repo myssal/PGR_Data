@@ -3512,7 +3512,7 @@
     },
     {
         "Key": "PurchaseYKDes",
-        "Text": "月卡购买后，持续30日，每日5:00，可领取100黑卡。\\n月卡最多购买6张，时间叠加，每天只能领取一次。\\n购买后可立即获取300黑卡。"
+        "Text": "月卡购买后，持续30日，每日5:00，可领取黑卡*100，以及中型血清组β*1。\\n月卡最多购买6张，时间叠加，每天只能领取一次。\\n购买后可立即获取300黑卡。"
     },
     {
         "Key": "SaveShowSetting",
@@ -4751,8 +4751,16 @@
         "Text": "预热活动期间每日最多{0}次{1}倍奖励，活动时间内最多{2}次{1}倍奖励，目前剩余{3}次{1}倍奖励\\n若回归{1}倍奖励活动同时开启，会优先消耗每天奖励次数"
     },
     {
+        "Key": "ActivityRepeatChallengeMultiRewardDesc1",
+        "Text": "今日{0}倍奖励剩余次数:{1}"
+    },
+    {
+        "Key": "ActivityRepeatChallengeMultiRewardDesc2",
+        "Text": "回归剩余次数:{0}\\n预热活动剩余次数:{1}"
+    },
+    {
         "Key": "ActivityRepeatChallengeMultiRewardTimes",
-        "Text": "每天{0}倍奖励次数："
+        "Text": "{0}倍奖励剩余次数："
     },
     {
         "Key": "ActivityRepeatChallengeName",
@@ -10835,7 +10843,7 @@
     },
     {
         "Key": "ReformLockDifficulty",
-        "Text": "通关所有普通关卡后解锁困难模式"
+        "Text": "通关上一关卡解锁"
     },
     {
         "Key": "ReformSelectFull",
@@ -11163,7 +11171,7 @@
     },
     {
         "Key": "MineSweepingStageLoseHint",
-        "Text": "失败条件：踩到{0}次蛛网（{1}/{2}）"
+        "Text": "失败条件：踩到{0}次邦比娜塔（{1}/{2}）"
     },
     {
         "Key": "MineSweepingChapterWinHint",
@@ -11307,7 +11315,7 @@
     },
     {
         "Key": "MineSweepingNotCoinHint",
-        "Text": "【捕梦网】的数目不足，无法进行操作"
+        "Text": "【“清庭白鹭”】的数目不足，无法进行操作"
     },
     {
         "Key": "STOverTimeHint",
@@ -11915,7 +11923,7 @@
     },
     {
         "Key": "LivWarmActivityUseItemCountText",
-        "Text": "消耗        <color=#ec4858>{1}</color> 可以移动一次头像位置"
+        "Text": "消耗            <color={0}>{1}</color> 可以移动一次头像位置"
     },
     {
         "Key": "LivWarmActivityReminderLoseText",
@@ -16535,7 +16543,7 @@
     },
     {
         "Key": "PcUnableFullScreen",
-        "Text": "当前仅支持2560×2048及以下分辨率开启全屏模式"
+        "Text": "当前仅支持3840×2160及以下分辨率开启全屏模式"
     },
     {
         "Key": "PcControllerTypePollingIntervalTip",
@@ -20495,7 +20503,7 @@
     },
     {
         "Key": "PurchaseMonthPlusDesc",
-        "Text": "1、规则说明：购买后可立刻获得1000活动研发券，并获得1份【黑卡月卡】（黑卡月卡共计可得3300黑卡奖励）。\\n2、黑卡月卡说明：获得后立即发放300黑卡，从激活当日开始每日登录可领取100黑卡，持续30日。每日5:00后登录可自动领取当天黑卡奖励，或进入【主界面--活动】系统内找到【月卡】的页签，手动领取奖励。此页签也可查看指挥官当前黑卡月卡权限剩余天数。\\n3、限购说明：【月卡研发劵组合包】限购1次，不受当前【黑卡月卡】购买数量限制的影响。例如：指挥官当前已激活6张月卡达到上限，此时仍可购买【月卡研发劵组合包】，购买后黑卡月卡剩余天数相应增加。"
+        "Text": "1、规则说明：购买后可立刻获得1000活动角色研发券，并获得1份【黑卡月卡】（黑卡月卡共计可得3300黑卡和30中型血清组β奖励）。\\n2、黑卡月卡说明：获得后立即发放300黑卡，从激活当日开始每日登录可领取100黑卡，以及中型血清组β*1，持续30日。每日5:00后登录可自动领取当天奖励，或进入【主界面--活动】系统内找到【月卡】的页签，手动领取奖励。此页签也可查看指挥官当前黑卡月卡权限剩余天数。\\n3、限购说明：【月卡研发劵组合包】限购1次，不受当前【黑卡月卡】购买数量限制的影响。例如：指挥官当前已激活6张月卡达到上限，此时仍可购买【月卡研发劵组合包】，购买后黑卡月卡剩余天数相应增加。"
     },
     {
         "Key": "PurchaseComboTitle",
@@ -21671,7 +21679,7 @@
     },
     {
         "Key": "AwarenessOneClickResonanceTimesTips",
-        "Text": "1.该选项是单个技能的最大共鸣次数，达成选择目标后将会停止共鸣。\\n2.选择【共鸣直至达成全部目标】将不再设置共鸣次数上限，直至达成所选目标或者是消耗材料不足为止。\\n3.一键过程中可以点击中止按钮，点击后将会返回剩余未消耗材料。"
+        "Text": "1.该选项是单个技能的最大共鸣次数。\\n2.一键过程中可以点击中止按钮，点击后将会返回剩余未消耗材料。"
     },
     {
         "Key": "AwarenessOneClickResonanceTargetTimesDesc",
@@ -21840,6 +21848,14 @@
     {
         "Key": "TeamRecommendRoleTargetDetailDesc",
         "Text": "此处仅计算方案基础模块的养成进度，不包含额外提升模块（辅助机进化、辅助机技能）。"
+    },
+    {
+        "Key": "TeamRecommendBubbleBtnRecommend",
+        "Text": "新增一键养成"
+    },
+    {
+        "Key": "TeamRecommendBubbleUiPanelEquipInfo",
+        "Text": "设置后可进行一键养成"
     },
     {
         "Key": "RoleCultureUnitProcessingProgress",
@@ -22055,7 +22071,7 @@
     },
     {
         "Key": "TransfiniteTowerSettleNextTeamChange",
-        "Text": "【下一层无法上阵【超频核心】】"
+        "Text": "下一层无法上阵【超频核心】"
     },
     {
         "Key": "TransfiniteTowerSettleSaveConfirm",
@@ -22163,7 +22179,7 @@
     },
     {
         "Key": "PartnerOneKeyLevelUpTitle",
-        "Text": "等级提升"
+        "Text": "等级与突破"
     },
     {
         "Key": "PartnerOneKeyLevelUpPreview",
@@ -22171,7 +22187,7 @@
     },
     {
         "Key": "PartnerOneKeyStarUpTitle",
-        "Text": "品质提升"
+        "Text": "进化"
     },
     {
         "Key": "PartnerOneKeyStarUpPreview",
@@ -22179,7 +22195,7 @@
     },
     {
         "Key": "PartnerOneKeySkillUpTitle",
-        "Text": "技能提升"
+        "Text": "技能"
     },
     {
         "Key": "PartnerOneKeySkillUpPreview",
@@ -22203,7 +22219,7 @@
     },
     {
         "Key": "PartnerOneKeyNothingToCulture",
-        "Text": "没有什么可以养的！！！"
+        "Text": "材料不足，无法使用"
     },
     {
         "Key": "PartnerOneKeyBubbleDetail",
@@ -22231,15 +22247,15 @@
     },
     {
         "Key": "PartnerOneKeyUnitLevelUp",
-        "Text": "升级"
+        "Text": "等级与突破"
     },
     {
         "Key": "PartnerOneKeyUnitStarUp",
-        "Text": "升星"
+        "Text": "进化"
     },
     {
         "Key": "PartnerOneKeyUnitSkill",
-        "Text": "技能"
+        "Text": "技能升级"
     },
     {
         "Key": "PartnerOneKeyPreviewLevelUp",
@@ -22251,7 +22267,7 @@
     },
     {
         "Key": "PartnerOneKeyPreviewSkill",
-        "Text": "技能平均等级{0}"
+        "Text": "技能平均等级LV{0}"
     },
     {
         "Key": "PartnerOneKeyStatusWaiting",
@@ -22283,7 +22299,11 @@
     },
     {
         "Key": "PartnerOneKeyDetailSkillTitle",
-        "Text": "技能【装配所有技能达到满级】"
+        "Text": "技能"
+    },
+    {
+        "Key": "Regression4TaskOwnNum",
+        "Text": "拥有：<color=#0F70BC>{0}</color>"
     },
     {
         "Key": "TransfiniteTowerRankCloseTip",
@@ -22328,5 +22348,129 @@
     {
         "Key": "PartnerOneKeyLackSkillUpMaterial",
         "Text": "技能升级材料不足"
+    },
+    {
+        "Key": "PartnerOneKeyFoodOwnedCount",
+        "Text": "拥有{0}"
+    },
+    {
+        "Key": "PartnerOneKeyFoodSelectedCount",
+        "Text": "已选{0}/{1}"
+    },
+    {
+        "Key": "PartnerOneKeyMaterialNotEnough",
+        "Text": "材料不足"
+    },
+    {
+        "Key": "PartnerOneKeyWaitSelectFood",
+        "Text": "待选择辅助机"
+    },
+    {
+        "Key": "PartnerOneKeyFoodNotEnough",
+        "Text": "辅助机不足"
+    },
+    {
+        "Key": "PacManMainScreenEasterEgg1",
+        "Text": "Loading……Loading……怎么还没开始？"
+    },
+    {
+        "Key": "PacManMainScreenEasterEgg2",
+        "Text": "这些亮晶晶的豆子和道具可以当作奖励带走吗？"
+    },
+    {
+        "Key": "PacManMainScreenEasterEgg3",
+        "Text": "玩游戏的终极奥义——一定一定要记得存档！！！"
+    },
+    {
+        "Key": "PacManMainScreenEasterEgg4",
+        "Text": "这台电脑写着莱亚的名字，完全是我的时尚嘛。"
+    },
+    {
+        "Key": "PacManMainScreenEasterEgg5",
+        "Text": "邀请最厉害的构造体来玩游戏，这绝对是你们最正确的决定。"
+    },
+    {
+        "Key": "ReformSettlePerfectBalanceTip",
+        "Text": "完美配平额外活动+{0}"
+    },
+    {
+        "Key": "ReformBalanceWishMass",
+        "Text": "{0}/{1}"
+    },
+    {
+        "Key": "ReformBalanceWishMassNotEnough",
+        "Text": "愿望质量未达到最低目标"
+    },
+    {
+        "Key": "ReformBalanceNeedWeightCount",
+        "Text": "需要选择至少{0}个角色和{1}个敌人"
+    },
+    {
+        "Key": "ReformBalanceWeightSlotFull",
+        "Text": "砝码已添加到上限"
+    },
+    {
+        "Key": "ReformBalanceRoleWeightLimit",
+        "Text": "最多添加{0}个角色砝码"
+    },
+    {
+        "Key": "ReformBalanceDifficultyNormal",
+        "Text": "当前挑战难度：低"
+    },
+    {
+        "Key": "ReformBalanceDifficultyHard",
+        "Text": "当前挑战难度：中"
+    },
+    {
+        "Key": "ReformBalanceDifficultyNightmare",
+        "Text": "当前挑战难度：极高"
+    },
+    {
+        "Key": "ReformBalanceHighDifficultyConfirm",
+        "Text": "当前挑战难度偏高，确定要进入关卡吗？"
+    },
+    {
+        "Key": "ReformBalanceBubblePerfect",
+        "Text": "完美配平"
+    },
+    {
+        "Key": "ReformBalanceBubbleNormal",
+        "Text": "基本配平"
+    },
+    {
+        "Key": "ReformBalanceBubbleUnbalanced",
+        "Text": "未配平"
+    },
+    {
+        "Key": "ReformBalanceBubbleCostExceed",
+        "Text": "代价砝码已超出预设值"
+    },
+    {
+        "Key": "ReformBalanceRecommendSameTip",
+        "Text": "当前选择已经是我的建议了哦"
+    },
+    {
+        "Key": "ReformBalanceRecommendAppliedTip",
+        "Text": "交给我吧，这样就能基本配平了"
+    },
+    {
+        "Key": "ReformBalanceRecommendResetConfirm",
+        "Text": "使用【莱亚的直觉】会重置当前所有选择，直接达到基本配平，确定要继续吗？"
+    },
+    {
+        "Key": "ReformBalanceWishMassTitle",
+        "Text": "愿望质量"
+    },
+    {
+        "Key": "ReformBalanceCostMassTitle",
+        "Text": "代价质量"
+    },
+    {
+        "Key": "ReformBalanceFixedWeightCannotRemove",
+        "Text": "当前怪物不可卸下"
+    },
+    {
+        "Key": "TransfiniteTowerBattleCoreNotFit",
+        "Text": "超频核心不满足使用条件"
     }
 ]

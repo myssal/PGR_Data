@@ -158,32 +158,37 @@ function XUiScoreTowerTask:PlayGridTaskAnim()
     end
     self:StopDynamicGridTime()
     self:SetGridTaskAlpha(0)
-    local animIndex = 1
     local gridCount = table.nums(grids)
     XLuaUiManager.SetMask(true)
-    self._DynamicGridTimeId = XScheduleManager.Schedule(function()
-        local grid = grids[animIndex]
-        if grid then
-            if grid.GridTaskTimeline then
-                grid.GridTaskTimeline:PlayTimelineAnimation()
-            end
-        end
-        animIndex = animIndex + 1
-    end, self.AnimInterval, gridCount)
+    self._AnimIndex = 1
+    XScheduleManagerPro.Schedule(XUiScoreTowerTask._OnGridTaskAnimScheduleCb, self, self.AnimInterval, gridCount)
     -- 动画结束 动画间隔 * 格子数量 + 500ms(最后一个格子动画播放时间)
-    XScheduleManager.ScheduleOnce(function()
-        self:StopDynamicGridTime()
-        self:SetGridTaskAlpha(1)
-        XLuaUiManager.SetMask(false)
-    end, self.AnimInterval * gridCount + 500)
+    XScheduleManagerPro.ScheduleOnce(XUiScoreTowerTask._OnGridTaskAnimFinishScheduleCb, self, self.AnimInterval * gridCount + 500)
+end
+
+--- 定时器回调：逐个播放任务格子动画
+function XUiScoreTowerTask:_OnGridTaskAnimScheduleCb()
+    local grids = self.DynamicTable and self.DynamicTable:GetGrids()
+    local grid = grids and grids[self._AnimIndex]
+    if grid then
+        if grid.GridTaskTimeline then
+            grid.GridTaskTimeline:PlayTimelineAnimation()
+        end
+    end
+    self._AnimIndex = self._AnimIndex + 1
+end
+
+--- 定时器回调：任务格子动画播放结束
+function XUiScoreTowerTask:_OnGridTaskAnimFinishScheduleCb()
+    self:StopDynamicGridTime()
+    self:SetGridTaskAlpha(1)
+    XLuaUiManager.SetMask(false)
 end
 
 -- 停止任务动画
 function XUiScoreTowerTask:StopDynamicGridTime()
-    if self._DynamicGridTimeId then
-        XScheduleManager.UnSchedule(self._DynamicGridTimeId)
-        self._DynamicGridTimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiScoreTowerTask._OnGridTaskAnimScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(XUiScoreTowerTask._OnGridTaskAnimFinishScheduleCb, self)
 end
 
 -- 设置任务格子透明度

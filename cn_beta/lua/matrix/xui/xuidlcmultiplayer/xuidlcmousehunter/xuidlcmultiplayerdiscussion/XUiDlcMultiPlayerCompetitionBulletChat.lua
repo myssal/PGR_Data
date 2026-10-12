@@ -35,9 +35,6 @@ function XUiDlcMultiPlayerCompetitionBulletChat:OnStart()
     -- 弹幕追踪（防止同一条弹幕重复出现在屏幕上）
     self._ActiveDanmakuKeys = {}    -- 当前活跃的弹幕唯一标识集合 {[key] = true}
 
-    -- 定时器
-    self._DanmakuShootTimer = nil
-
     -- 配置参数
     self._DanmakuPeriod = 0 -- 发射间隔
     self._DanmakuSpeed = 0  -- 飞行速度
@@ -211,21 +208,12 @@ function XUiDlcMultiPlayerCompetitionBulletChat:_StartDanmakuShoot()
     end
 
     self:_ShootNextDanmaku()
-    self._DanmakuShootTimer = XScheduleManager.ScheduleForever(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            self:_StopDanmakuShoot()
-            return
-        end
-        self:_ShootNextDanmaku()
-    end, self._DanmakuPeriod)
+    XScheduleManagerPro.ScheduleForever(XUiDlcMultiPlayerCompetitionBulletChat._OnShootDanmakuScheduleCb, self, self._DanmakuPeriod)
     self._IsShooting = true
 end
 
 function XUiDlcMultiPlayerCompetitionBulletChat:_StopDanmakuShoot()
-    if self._DanmakuShootTimer then
-        XScheduleManager.UnSchedule(self._DanmakuShootTimer)
-        self._DanmakuShootTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiDlcMultiPlayerCompetitionBulletChat._OnShootDanmakuScheduleCb, self)
     self._IsShooting = false
 end
 
@@ -522,6 +510,14 @@ function XUiDlcMultiPlayerCompetitionBulletChat:AddOwnDanmakuData(camp)
     self:_StartDanmakuShoot()
 end
 --endregion
+
+function XUiDlcMultiPlayerCompetitionBulletChat:_OnShootDanmakuScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        self:_StopDanmakuShoot()
+        return
+    end
+    self:_ShootNextDanmaku()
+end
 
 return XUiDlcMultiPlayerCompetitionBulletChat
 

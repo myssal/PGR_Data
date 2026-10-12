@@ -2,11 +2,11 @@
     {
         "Id": 1,
         "Name": "主线活动",
-        "SkipId": 536,
-        "TimeId": 49401,
+        "SkipId": 537,
+        "TimeId": 50401,
         "BtnInitMethodName": "RefreshActivityMainLine2",
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 10
+        "RemindPriority": 14
     },
     {
         "Id": 2,
@@ -18,10 +18,10 @@
         "Id": 3,
         "Name": "超难关",
         "SkipId": 11724,
-        "TimeId": 49101,
+        "TimeId": 50501,
         "BtnInitMethodName": "RefreshActivityBossSingle",
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 4,
+        "RemindPriority": 3,
         "RedConditions": [
             "CONDITION_ACTIVITY_BOSS_SINGLE_REWARD"
         ]
@@ -57,18 +57,18 @@
         "Id": 8,
         "Name": "复刷关",
         "SkipId": 20017,
-        "TimeId": 49303,
+        "TimeId": 50402,
         "BtnInitMethodName": "RefreshActivityRepeateChallenge",
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 1,
+        "RemindPriority": 2,
         "RedConditions": [
             "CONDITION_REPEAT_CHALLENGE_ENTRANCE"
         ],
         "ActivityRewardIds": [
-            69443
+            69533
         ],
         "RewardShowTimeIds": [
-            49303
+            50402
         ]
     },
     {
@@ -185,10 +185,10 @@
         "Id": 27,
         "Name": "新角色试玩",
         "SkipId": 20235,
-        "TimeId": 49924,
+        "TimeId": 50602,
         "BtnInitMethodName": "RefreshNewCharActivity",
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 3,
+        "RemindPriority": 4,
         "RedConditions": [
             "CONDITION_KOROMCHARACTIVITYMAINRED"
         ],
@@ -198,10 +198,10 @@
         "Id": 28,
         "Name": "涂装试玩关",
         "SkipId": 10035,
-        "TimeId": 49104,
+        "TimeId": 50107,
         "BtnInitMethodName": "RefreshFubenActivityTrial",
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 9,
+        "RemindPriority": 8,
         "TagCondition": "CONDITION_NEWCHARACT_SKIP_TRIAL"
     },
     {
@@ -879,9 +879,6 @@
         "Id": 125,
         "Name": "全系回溯加料",
         "SkipId": 89093,
-        "TimeId": 49601,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 6,
         "RedConditions": [
             "CONDITION_BOUNTY_CHALLENGE"
         ]
@@ -954,7 +951,10 @@
         "Id": 140,
         "Name": "勤务商店",
         "SkipId": 90055,
-        "ConstShowRewardId": 69238
+        "TimeId": 50937,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 13,
+        "ConstShowRewardId": 69535
     },
     {
         "Id": 141,
@@ -972,22 +972,19 @@
     {
         "Id": 143,
         "Name": "大好感",
-        "SkipId": 20385,
-        "TimeId": 49551,
+        "SkipId": 20405,
+        "TimeId": 50651,
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 5,
+        "RemindPriority": 6,
         "RedConditions": [
             "CONDITION_FAVORABILITY_STORY_GIFT_TASK"
         ],
-        "ConstShowRewardId": 703152
+        "ConstShowRewardId": 703162
     },
     {
         "Id": 144,
         "Name": "战双兄弟",
         "SkipId": 1300635,
-        "TimeId": 49920,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 11,
         "RedConditions": [
             "CONDITION_PBRGAME_MAIN"
         ]
@@ -1004,9 +1001,9 @@
         "Id": 146,
         "Name": "肉鸽6",
         "SkipId": 89102,
-        "TimeId": 48601,
+        "TimeId": 50947,
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 2,
+        "RemindPriority": 10,
         "RedConditions": [
             "CONDITION_THEATRE6_MAIN"
         ]
@@ -1023,9 +1020,6 @@
         "Id": 148,
         "Name": "夏日剧情活动",
         "SkipId": 89106,
-        "TimeId": 48820,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 8,
         "RedConditions": [
             "CONDITION_FASHION_STORY_ENTRANCE"
         ]
@@ -1042,11 +1036,73 @@
         "Id": 150,
         "Name": "七夕开包",
         "SkipId": 89113,
-        "TimeId": 49201,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 7,
         "RedConditions": [
             "CONDITION_ENVELOPE_GUESSING_ENTRANCE"
         ]
+    },
+    {
+        "Id": 151,
+        "Name": "通天塔"
+    },
+    {
+        "Id": 152,
+        "Name": "大巴扎",
+        "SkipId": 90074,
+        "TimeId": 50201,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 1,
+        "RedConditions": [
+            "CONDITION_PUNISHAAR_MAIN"
+        ]
+    },
+    {
+        "Id": 153,
+        "Name": "破坏王",
+        "SkipId": 89049,
+        "TimeId": 50801,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 7,
+        "RedConditions": [
+            "CONDITION_FANGKUAI_MAIN"
+        ]
+    },
+    {
+        "Id": 154,
+        "Name": "联动试玩",
+        "SkipId": 20395,
+        "TimeId": 50601,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 9,
+        "RedConditions": [
+            "CONDITION_KOROMCHARACTIVITYMAINRED"
+        ],
+        "TagCondition": "CONDITION_NEWCHARACT_ISCHALLENGEABLE"
+    },
+    {
+        "Id": 155,
+        "Name": "联动剧情",
+        "SkipId": 90073,
+        "TimeId": 50202,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 11
+    },
+    {
+        "Id": 156,
+        "Name": "卡池复刻",
+        "SkipId": 20400,
+        "TimeId": 51001,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 12,
+        "RedConditions": [
+            "CONDITION_GACHA_FASHION_SELF_CHOICE"
+        ]
+    },
+    {
+        "Id": 157,
+        "Name": "超频演算",
+        "SkipId": 90077,
+        "TimeId": 50100,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 5
     }
 ]

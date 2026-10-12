@@ -35,11 +35,12 @@ function XUiPanelBossRightV4P5:OnStart()
     end
 
     XLuaUiManager.SetMask(true)
-    self._OpenAnimationMaskOffSchedule = XScheduleManager.ScheduleOnce(function()
-        XLuaUiManager.SetMask(false)
-        XScheduleManager.UnSchedule(self._OpenAnimationMaskOffSchedule)
-        self._OpenAnimationMaskOffSchedule = nil
-    end, 2000)
+    XScheduleManagerPro.ScheduleOnce(XUiPanelBossRightV4P5._OnOpenAnimationMaskOffScheduleCb, self, 2000)
+end
+
+--- 定时器回调：打开动画结束后关闭Mask
+function XUiPanelBossRightV4P5:_OnOpenAnimationMaskOffScheduleCb()
+    XLuaUiManager.SetMask(false)
 end
 
 function XUiPanelBossRightV4P5:OnEnable()
@@ -210,15 +211,12 @@ function XUiPanelBossRightV4P5:_StartRecordTimer()
     self:_StopRecordTimer()
 
     if XTool.IsNumberValid(self._RecordEndTime) then
-        self._RecordTimer = XScheduleManager.ScheduleForever(Handler(self, self._RefreshTimerInner), XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleForever(XUiPanelBossRightV4P5._RefreshTimerInner, self, XScheduleManagerPro.SECOND)
     end
 end
 
 function XUiPanelBossRightV4P5:_StopRecordTimer()
-    if self._RecordTimer then
-        XScheduleManager.UnSchedule(self._RecordTimer)
-        self._RecordTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiPanelBossRightV4P5._RefreshTimerInner, self)
 end
 
 function XUiPanelBossRightV4P5:_OnBtnAttributeDetailClick()

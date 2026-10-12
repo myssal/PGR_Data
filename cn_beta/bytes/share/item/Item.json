@@ -1231,6 +1231,19 @@
         "GridCount": 99999
     },
     {
+        "Id": 107,
+        "Name": "回归信笺",
+        "Description": "完成归航任务获得，可提升信笺记录等级。",
+        "WorldDesc": "灰鸦小队为久别归来的指挥官准备的专属信物。彩旗扬起，礼物已经备好，那些未曾说出口的惦念，都封存在这一页信笺之中。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconRegression4Coin01.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconRegression4Coin01.png",
+        "ItemType": 2097156,
+        "Quality": 5,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 99999
+    },
+    {
         "Id": 200,
         "Name": "幻痛伤痕",
         "Description": "幻痛囚笼中能获得的代币，可用于兑换各种有用的东西。",
@@ -1955,6 +1968,23 @@
         "Id": 243,
         "Name": "支援架构零件-凯尔派",
         "Description": "支援单位凯尔派的架构零件，收集一定数量后可组合支援单位。",
+        "WorldDesc": "支援单位的核心技术都浓缩在架构上。只要收集足够的架构零件，就能组合出支援单位来。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconPet3Sailfish1.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconPet3Sailfish1Sp.png",
+        "ItemType": 8,
+        "Quality": 5,
+        "Priority": 29600,
+        "MaxCount": 9999,
+        "GridCount": 9999,
+        "SkipIdParams": [
+            15006,
+            7212
+        ]
+    },
+    {
+        "Id": 244,
+        "Name": "支援架构零件-聆璃",
+        "Description": "支援单位聆璃的架构零件，收集一定数量后可组合支援单位。",
         "WorldDesc": "支援单位的核心技术都浓缩在架构上。只要收集足够的架构零件，就能组合出支援单位来。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconPet3Sailfish1.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconPet3Sailfish1Sp.png",
@@ -4083,6 +4113,21 @@
         "SellForCount": 10
     },
     {
+        "Id": 487,
+        "Name": "终解·祈星",
+        "Description": "构造体终阶解放后，将会在每一场战斗中，首次登场时获取3个同色信号球。",
+        "WorldDesc": "科学理事会研发，根据机体单独配备的光环型装置，内含动能驱动的纳米机器人，可以辅助构造体进行高频计算，立刻产生信号球。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconSkillRelease64.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconSkillRelease64Sp.png",
+        "ItemType": 1,
+        "Quality": 5,
+        "Priority": 50,
+        "MaxCount": 999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10
+    },
+    {
         "Id": 501,
         "Name": "逆元碎片-异火",
         "Description": "里·异火的逆元碎片，收集一定数量后可连接构造体。",
@@ -5662,6 +5707,26 @@
         "SellForId": 35,
         "SellForCount": 5,
         "SkipIdParams": [
+            10012,
+            10048,
+            90061
+        ]
+    },
+    {
+        "Id": 597,
+        "Name": "逆元碎片-祈星",
+        "Description": "莱亚·祈星的逆元碎片，收集一定数量后可连接构造体。",
+        "WorldDesc": "构造体的意识可以分解为数个逆元碎片，当这些碎片聚合完整后，指挥官就可以与对应构造体产生连接。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconTools1421003.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconTools1421003Sp.png",
+        "ItemType": 8,
+        "Quality": 5,
+        "Priority": 50,
+        "MaxCount": 999,
+        "GridCount": 999,
+        "SellForId": 35,
+        "SellForCount": 5,
+        "SkipIdParams": [
             10012
         ]
     },
@@ -7034,8 +7099,8 @@
         "Name": "法奥斯校徽",
         "Description": "可在【溯讯衍波】玩法中交换卡牌位置。",
         "WorldDesc": "法奥斯颁予每位学生的校徽，纵使岁月流转，徽面上的金属光泽也从未黯淡。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLivWarmItem06.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLivWarmItem06Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiLivWarmItem08.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiLivWarmItem08Sp.png",
         "ItemType": 262148,
         "Quality": 4,
         "Priority": 10,
@@ -26573,16 +26638,17 @@
         "Name": "阿呆蛙之梦图纸",
         "Description": "类型：物件。",
         "WorldDesc": "在家具改装时使用，可以将其他家具改装为【阿呆蛙之梦】。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheSound002.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheSound002Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueTediansusheLuxiyaxiaowo001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueTediansusheLuxiyaxiaowo001Sp.png",
         "ItemType": 16388,
         "Quality": 4,
         "Priority": 10,
         "MaxCount": 99999,
         "GridCount": 999,
+        "StartTime": "2026/12/1 5:00",
         "SellForId": 1,
         "SellForCount": 10,
-        "SuitId": 88,
+        "SuitId": 18,
         "SubTypeParams": [
             211301001
         ]
@@ -26592,8 +26658,8 @@
         "Name": "“她的誓言”图纸",
         "Description": "类型：物件。",
         "WorldDesc": "在家具改装时使用，可以将其他家具改装为【“她的誓言”】。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheSound002.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheSound002Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheHaogan001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheHaogan001Sp.png",
         "ItemType": 16388,
         "Quality": 4,
         "Priority": 10,
@@ -26611,8 +26677,8 @@
         "Name": "砺行岁月图纸",
         "Description": "类型：墙。",
         "WorldDesc": "在家具改装时使用，可以将其他家具改装为【砺行岁月】。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheSound002.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheSound002Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheFloor001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheFloor001Sp.png",
         "ItemType": 16388,
         "Quality": 4,
         "Priority": 10,
@@ -26630,8 +26696,8 @@
         "Name": "高亮补给图纸",
         "Description": "类型：物件。",
         "WorldDesc": "在家具改装时使用，可以将其他家具改装为【高亮补给】。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheSound002.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheSound002Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheBox001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheBox001Sp.png",
         "ItemType": 16388,
         "Quality": 4,
         "Priority": 10,
@@ -26649,8 +26715,8 @@
         "Name": "金牌教师图纸",
         "Description": "类型：物件。",
         "WorldDesc": "在家具改装时使用，可以将其他家具改装为【金牌教师】。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheSound002.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheSound002Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheDdban001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheDdban001Sp.png",
         "ItemType": 16388,
         "Quality": 4,
         "Priority": 10,
@@ -26668,8 +26734,8 @@
         "Name": "能量暂存点图纸",
         "Description": "类型：桌子。",
         "WorldDesc": "在家具改装时使用，可以将其他家具改装为【能量暂存点】。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheSound002.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheSound002Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheWorkbench001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheWorkbench001Sp.png",
         "ItemType": 16388,
         "Quality": 4,
         "Priority": 10,
@@ -26687,8 +26753,8 @@
         "Name": "默守靶心图纸",
         "Description": "类型：物件。",
         "WorldDesc": "在家具改装时使用，可以将其他家具改装为【默守靶心】。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheSound002.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheSound002Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheTarget001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheTarget001Sp.png",
         "ItemType": 16388,
         "Quality": 4,
         "Priority": 10,
@@ -26706,8 +26772,8 @@
         "Name": "“先到先得”图纸",
         "Description": "类型：沙发。",
         "WorldDesc": "在家具改装时使用，可以将其他家具改装为【“先到先得”】。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBluePengkesusheSound002.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBluePengkesusheSound002Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheChair001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheChair001Sp.png",
         "ItemType": 16388,
         "Quality": 4,
         "Priority": 10,
@@ -26716,6 +26782,177 @@
         "SellForId": 1,
         "SellForCount": 10,
         "SuitId": 89,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3017,
+        "Name": "梦蝶时刻图纸",
+        "Description": "类型：沙发。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【梦蝶时刻】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheChair001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheChair001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 18,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3018,
+        "Name": "蓝调引力图纸",
+        "Description": "类型：地板。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【蓝调引力】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheChair001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheChair001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 90,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3019,
+        "Name": "幕间聆星图纸",
+        "Description": "类型：墙。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【幕间聆星】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheChair001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheChair001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 90,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3020,
+        "Name": "失重节拍图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【失重节拍】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheChair001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheChair001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 90,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3021,
+        "Name": "绮物随行图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【绮物随行】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheChair001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheChair001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 90,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3022,
+        "Name": "掌上星球图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【掌上星球】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheChair001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheChair001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 90,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3023,
+        "Name": "拾光物语图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【拾光物语】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheChair001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheChair001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 90,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3024,
+        "Name": "星海回音图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【星海回音】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheChair001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheChair001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 90,
+        "SubTypeParams": [
+            211301001
+        ]
+    },
+    {
+        "Id": 3025,
+        "Name": "振风蝶翼图纸",
+        "Description": "类型：物件。",
+        "WorldDesc": "在家具改装时使用，可以将其他家具改装为【振风蝶翼】。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconBlueAdelaidesusheChair001.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueAdelaidesusheChair001Sp.png",
+        "ItemType": 16388,
+        "Quality": 4,
+        "Priority": 10,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 10,
+        "SuitId": 90,
         "SubTypeParams": [
             211301001
         ]
@@ -27973,7 +28210,7 @@
     {
         "Id": 30000,
         "Name": "升迁仪",
-        "Description": "在【一键培养】系统使用",
+        "Description": "在【一键养成】系统使用",
         "WorldDesc": "使用后，可将角色常规养成内容提升至上限。\\n若角色已有养成进度，已消耗材料不会返还。\\n常规养成：等级、晋升、常规技能（不含进化、跃升、独域）。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/ItExpI30000.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItExpI30000Sp.png",
@@ -30027,11 +30264,11 @@
     },
     {
         "Id": 40644,
-        "Name": "TEXT",
-        "Description": "TEXT",
-        "WorldDesc": "TEXT",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItGift0343.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItGift0343Sp.png",
+        "Name": "黑森林蛋糕",
+        "Description": "赠送给成员能增加信赖度，时崎狂三喜爱的珍贵礼物。",
+        "WorldDesc": "微苦偏涩的巧克力风味蛋糕，完全符合时崎狂三的偏好。若能在下午茶时间为她送上，她定会十分欣喜。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItGift0344.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItGift0344Sp.png",
         "ItemType": 524292,
         "Quality": 5,
         "Priority": 69901,
@@ -30048,8 +30285,26 @@
         "Name": "凯歌的见证",
         "Description": "赠送给成员能增加信赖度，阿德莱德喜爱的珍贵礼物。",
         "WorldDesc": "年少时与伙伴们拼搏赢得的奖杯。至今存放在阿德莱德的办公桌上，旧时友人们的签名依旧清晰可见。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItGift0344.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItGift0344Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItGift0345.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItGift0345Sp.png",
+        "ItemType": 524292,
+        "Quality": 5,
+        "Priority": 69901,
+        "MaxCount": 99999,
+        "GridCount": 999,
+        "SellForId": 1,
+        "SellForCount": 20,
+        "SkipIdParams": [
+            10007
+        ]
+    },
+    {
+        "Id": 40646,
+        "Name": "占位",
+        "Description": "占位",
+        "WorldDesc": "占位",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItGift0346.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItGift0346Sp.png",
         "ItemType": 524292,
         "Quality": 5,
         "Priority": 69901,
@@ -31158,8 +31413,8 @@
         "Name": "约战角色研发券",
         "Description": "联动道具，过期后转化为活动角色研发券。",
         "WorldDesc": "统一配发给各执行者小队的资格券，累积多个以后可以使用一次构造体的研发设备。使用后似乎能和某位来自异界的访客产生新的邂逅。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDMCRoleCard.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDMCRoleCardSp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDateALiveRoleCard.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDateALiveRoleCardSp.png",
         "ItemType": 32772,
         "Quality": 5,
         "Priority": 800,
@@ -31167,7 +31422,7 @@
         "GridCount": 9999,
         "TimelinessType": 1,
         "StartTime": "2026/9/29 10:00",
-        "Duration": 3074400,
+        "Duration": 3074340,
         "RecycleRewardId": 817,
         "RecycleByMail": true
     },
@@ -31176,8 +31431,8 @@
         "Name": "约战武器研发券",
         "Description": "联动道具，过期后转化为狙击武器研发券。",
         "WorldDesc": "统一配发给各执行者小队的资格券，累积多个以后可以使用一次特殊装备的研发设备，但现在似乎和异界中的某件灵装产生了连结。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDMCWeaponsCard.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDMCWeaponsCardSp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDateALiveWeaponsCard.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDateALiveWeaponsCardSp.png",
         "ItemType": 32772,
         "Quality": 5,
         "Priority": 800,
@@ -31185,7 +31440,7 @@
         "GridCount": 9999,
         "TimelinessType": 1,
         "StartTime": "2026/9/29 10:00",
-        "Duration": 3074400,
+        "Duration": 3074340,
         "RecycleRewardId": 818,
         "RecycleByMail": true
     },
@@ -31194,8 +31449,8 @@
         "Name": "约战装备研发券",
         "Description": "联动道具，过期后转化为辅助机研发券。",
         "WorldDesc": "统一配发给各执行者小队的资格券，累积多个以后可以使用一次支援单位的研发设备。现在似乎可以响应某种神秘力量的召唤。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDMCCubCard.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDMCCubCardSp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDateALiveCubCard.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDateALiveCubCardSp.png",
         "ItemType": 32772,
         "Quality": 5,
         "Priority": 800,
@@ -31203,7 +31458,7 @@
         "GridCount": 9999,
         "TimelinessType": 1,
         "StartTime": "2026/9/29 10:00",
-        "Duration": 3074400,
+        "Duration": 3074340,
         "RecycleRewardId": 852,
         "RecycleByMail": true
     },
@@ -31225,8 +31480,8 @@
         "Name": "约战角色研发券",
         "Description": "联动道具，过期后转化为活动角色研发券。",
         "WorldDesc": "统一配发给各执行者小队的资格券，累积多个以后可以使用一次构造体的研发设备。使用后似乎能和某位来自异界的访客产生新的邂逅。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDMCRoleCard.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDMCRoleCardSp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDateALiveRoleCard.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDateALiveRoleCardSp.png",
         "ItemType": 32772,
         "Quality": 5,
         "Priority": 800,
@@ -31234,7 +31489,7 @@
         "GridCount": 9999,
         "TimelinessType": 1,
         "StartTime": "2026/9/29 10:00",
-        "Duration": 3074400,
+        "Duration": 3074340,
         "RecycleRewardId": 817,
         "RecycleByMail": true
     },
@@ -31243,8 +31498,8 @@
         "Name": "约战武器研发券",
         "Description": "联动道具，过期后转化为狙击武器研发券。",
         "WorldDesc": "统一配发给各执行者小队的资格券，累积多个以后可以使用一次特殊装备的研发设备，但现在似乎和异界中的某件灵装产生了连结。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDMCWeaponsCard.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDMCWeaponsCardSp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDateALiveWeaponsCard.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDateALiveWeaponsCardSp.png",
         "ItemType": 32772,
         "Quality": 5,
         "Priority": 800,
@@ -31252,7 +31507,7 @@
         "GridCount": 9999,
         "TimelinessType": 1,
         "StartTime": "2026/9/29 10:00",
-        "Duration": 3074400,
+        "Duration": 3074340,
         "RecycleRewardId": 818,
         "RecycleByMail": true
     },
@@ -31261,8 +31516,8 @@
         "Name": "约战装备研发券",
         "Description": "联动道具，过期后转化为辅助机研发券。",
         "WorldDesc": "统一配发给各执行者小队的资格券，累积多个以后可以使用一次支援单位的研发设备。现在似乎可以响应某种神秘力量的召唤。",
-        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDMCCubCard.png",
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDMCCubCardSp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconDateALiveCubCard.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconDateALiveCubCardSp.png",
         "ItemType": 32772,
         "Quality": 5,
         "Priority": 800,
@@ -31270,7 +31525,7 @@
         "GridCount": 9999,
         "TimelinessType": 1,
         "StartTime": "2026/9/29 10:00",
-        "Duration": 3074400,
+        "Duration": 3074340,
         "RecycleRewardId": 852,
         "RecycleByMail": true
     },
@@ -32519,7 +32774,7 @@
         "GridCount": 9999,
         "TimelinessType": 1,
         "StartTime": "2026/9/26 10:00",
-        "Duration": 3369600,
+        "Duration": 3438000,
         "RecycleRewardId": 909,
         "RecycleByMail": true
     },
@@ -32537,7 +32792,7 @@
         "GridCount": 9999,
         "TimelinessType": 1,
         "StartTime": "2026/9/26 10:00",
-        "Duration": 3369600,
+        "Duration": 3438000,
         "RecycleRewardId": 909,
         "RecycleByMail": true
     },
@@ -32555,7 +32810,7 @@
         "GridCount": 9999,
         "TimelinessType": 1,
         "StartTime": "2026/9/26 10:00",
-        "Duration": 3369600,
+        "Duration": 3438000,
         "RecycleRewardId": 909,
         "RecycleByMail": true
     },
@@ -32573,8 +32828,26 @@
         "GridCount": 9999,
         "TimelinessType": 1,
         "StartTime": "2026/9/26 10:00",
-        "Duration": 3369600,
+        "Duration": 3438000,
         "RecycleRewardId": 909,
+        "RecycleByMail": true
+    },
+    {
+        "Id": 50179,
+        "Name": "伴航研发券",
+        "Description": "研发特定活动道具用的道具。",
+        "WorldDesc": "统一配发给各执行者小队的资格券，累积多个以后可以使用一次研发设备。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconActivityConsumeTicEv219.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconActivityConsumeTicEv219Sp.png",
+        "ItemType": 32772,
+        "Quality": 5,
+        "Priority": 800,
+        "MaxCount": 99999,
+        "GridCount": 9999,
+        "TimelinessType": 1,
+        "StartTime": "2026/9/4 10:00",
+        "Duration": 3006000,
+        "RecycleRewardId": 826,
         "RecycleByMail": true
     },
     {
@@ -38094,7 +38367,7 @@
         "MaxCount": 999999,
         "GridCount": 999,
         "TimelinessType": 1,
-        "StartTime": "2025/6/21 5:00",
+        "StartTime": "2026/4/21 5:00",
         "Duration": 3542400
     },
     {
@@ -38110,7 +38383,7 @@
         "MaxCount": 999999,
         "GridCount": 999,
         "TimelinessType": 1,
-        "StartTime": "2026/7/19 5:00",
+        "StartTime": "2026/8/19 5:00",
         "Duration": 3024000
     },
     {
@@ -41645,7 +41918,7 @@
         "MaxCount": 1,
         "GridCount": 1,
         "SkipIdParams": [
-            80235
+            80330
         ],
         "SubTypeParams": [
             12490002
@@ -42127,7 +42400,7 @@
         "MaxCount": 1,
         "GridCount": 1,
         "SkipIdParams": [
-            80293
+            80330
         ],
         "SubTypeParams": [
             12540003
@@ -42389,8 +42662,8 @@
         "Name": "涤罪断骨",
         "Description": "雾夜镇魂曲系列——裁决镰刃",
         "WorldDesc": "月光自锋刃边缘游走，迷雾丝丝缕缕，缠绕上旧日的契约。红水晶般的瞳孔中漾出一丝笑意，她向命运发来邀约，今夜，可愿共赴这场末途之魇舞？",
-        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3PistolMd040011Sp.png",
-        "Icon": "Assets/Product/Texture/Image/IconTools/E3PistolMd040011.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3SickleMd030011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3SickleMd030011.png",
         "ItemType": 32,
         "Quality": 5,
         "Priority": 2100,
@@ -42408,8 +42681,8 @@
         "Name": "凄白羁火",
         "Description": "放逐乐园系列——十字重炮",
         "WorldDesc": "铁与火铸就裂空的轰鸣，宣告毁灭与新生同时降临。烈焰划破寒暑晨昏，枪口所指之处，天地止息，万物噤声。",
-        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3PistolMd040011Sp.png",
-        "Icon": "Assets/Product/Texture/Image/IconTools/E3PistolMd040011.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3HeavycrossMd020011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3HeavycrossMd020011.png",
         "ItemType": 32,
         "Quality": 5,
         "Priority": 2100,
@@ -42421,6 +42694,45 @@
         ],
         "SubTypeParams": [
             12690001
+        ]
+    },
+    {
+        "Id": 80147,
+        "Name": "银漪曳星",
+        "Description": "游诗歌谣系列——钥杖",
+        "WorldDesc": "远处的流星本在各自的轨道上奔逃，却在擦过轻纱的一瞬，被一双白皙的手轻轻拽住了尾迹。她不想留住这颗星，只是坐着，垂着指尖，任那星辰的轨迹在星空间曳出一道流动的弧。仿佛她触及的，只是这苍茫宇宙间一抹肯为她停驻的光。",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3HeavycrossMd020011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3HeavycrossMd020011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80330
+        ],
+        "SubTypeParams": [
+            12500004
+        ]
+    },
+    {
+        "Id": 80148,
+        "Name": "绯色慕意",
+        "Description": "新生活系列——遣光编绳",
+        "WorldDesc": "她在镜子前练习了无数次——举杖、转身、念出那些她并不知道具体含义的咒语。镜中的少女看起来笨手笨脚，绯色的丝带总在挥动时散开，但只有那一抹笑容，是谁都无法否认的快乐。她比任何人都知道自己并没有魔法，动画片里那些属于变身少女们的奇迹也永远不会发生，但她至少可以选择成为，守护身边所有重要之人的英雄。",
+        "BigIcon": "Assets/Product/Texture/Image/IconToolsSp/E3HeavycrossMd020011Sp.png",
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3HeavycrossMd020011.png",
+        "ItemType": 32,
+        "Quality": 5,
+        "Priority": 2100,
+        "MaxCount": 1,
+        "GridCount": 1,
+        "SkipIdParams": [
+            80330,
+            80331
+        ],
+        "SubTypeParams": [
+            12700001
         ]
     },
     {
@@ -44602,6 +44914,42 @@
         ]
     },
     {
+        "Id": 94076,
+        "Name": "S级泛用机体自选礼包",
+        "Description": "使用后可在33个S级泛用机体中，任选获得其中1个。",
+        "WorldDesc": "可选S级泛用机体：仰光、乱数、烬燃、暗能、脉冲、深红之渊、真理、鸦羽、凛冽、银冕、荣光、绯耀、极昼、幻奏、遥星之座、辉晓、深痕、超刻、万华、深红囚影、森息、回音、深谣、尘铭、启明、终焉、檀心、明晰梦、誓焰、芒星之迹、幻日、谬影、希声。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItZixuanS018.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItZixuanS018Sp.png",
+        "ItemType": 16,
+        "Quality": 6,
+        "Priority": 98001,
+        "MaxCount": 9,
+        "GridCount": 1,
+        "SubTypeParams": [
+            3,
+            1485,
+            1
+        ]
+    },
+    {
+        "Id": 94077,
+        "Name": "S级辅助机自选",
+        "Description": "使用后可在23个S级辅助机中，任选获得其中1个。",
+        "WorldDesc": "可选S级辅助机截止至雪歌（赛琳娜·希声适用）。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/ItZixuanPetS07.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ItZixuanPetS07Sp.png",
+        "ItemType": 16,
+        "Quality": 6,
+        "Priority": 98001,
+        "MaxCount": 9,
+        "GridCount": 1,
+        "SubTypeParams": [
+            3,
+            1488,
+            1
+        ]
+    },
+    {
         "Id": 95000,
         "Name": "涂装自选补给包",
         "Description": "在仓库-道具界面使用该道具。",
@@ -44715,7 +45063,7 @@
     {
         "Id": 95006,
         "Name": "黑卡月卡",
-        "Description": "激活后，立即发放300黑卡，从激活当日开始每日登录可领取100黑卡，持续30日。",
+        "Description": "激活后，立即发放300黑卡，从激活当日开始每日登录可领取100黑卡，以及中型血清组β*1，持续30日。",
         "WorldDesc": "购买礼包，立刻激活。",
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconYK30Day.png",
         "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconYK30DaySp.png",
@@ -49098,8 +49446,8 @@
         "MaxCount": 999999,
         "GridCount": 999999,
         "TimelinessType": 1,
-        "StartTime": "2026/7/21 10:00",
-        "Duration": 4050000
+        "StartTime": "2026/8/19 5:00",
+        "Duration": 3024000
     },
     {
         "Id": 97092,
@@ -49114,8 +49462,58 @@
         "MaxCount": 999999,
         "GridCount": 999999,
         "TimelinessType": 1,
-        "StartTime": "2026/7/21 10:00",
-        "Duration": 4050000
+        "StartTime": "2026/8/19 5:00",
+        "Duration": 3024000
+    },
+    {
+        "Id": 97093,
+        "Name": "筑梦资金",
+        "Description": "用于【筑梦大亨】玩法中提升库洛洛大楼等级。",
+        "WorldDesc": "扩张商业版图，满满都是梦想成真的味道。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiTheatre6Icon07.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiTheatre6Icon07Sp.png",
+        "ItemType": 2097156,
+        "Quality": 5,
+        "Priority": 10
+    },
+    {
+        "Id": 97094,
+        "Name": "晋级绩效",
+        "Description": "用于【筑梦大亨】玩法中提升员工等级，每获得100个筑梦资金后自动获得1个晋级绩效。",
+        "WorldDesc": "随着营收增长而产生的激励，加油加柴加薪水！",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiTheatre6Icon02.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiTheatre6Icon02Sp.png",
+        "ItemType": 2097156,
+        "Quality": 5,
+        "Priority": 10
+    },
+    {
+        "Id": 97095,
+        "Name": "调度指令",
+        "Description": "可在【筑梦大亨】玩法中对工位进行加速。",
+        "WorldDesc": "项目管理部特批的提速许可，总之加速就对了。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/UiTheatre6Icon05.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/UiTheatre6Icon05Sp.png",
+        "ItemType": 2097156,
+        "Quality": 5,
+        "Priority": 10,
+        "MaxCount": 999999,
+        "GridCount": 999999
+    },
+    {
+        "Id": 97096,
+        "Name": "外勤凭证",
+        "Description": "可以在【筑梦大亨】玩法内兑换奖励。",
+        "WorldDesc": "出外勤与在室内享受空调同等重要。",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconGameCollection01.png",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconGameCollection01Sp.png",
+        "ItemType": 2097156,
+        "Quality": 5,
+        "Priority": 10,
+        "MaxCount": 999999,
+        "GridCount": 999999,
+        "StartTime": "2026/6/23 10:00",
+        "Duration": 1969200
     },
     {
         "Id": 99901,

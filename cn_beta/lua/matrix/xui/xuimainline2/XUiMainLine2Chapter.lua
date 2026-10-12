@@ -45,18 +45,29 @@ function XUiMainLine2Chapter:OnStart(mainId, chapterId, stageId, isOpenStageDeta
         end
     end
     
-    -- 显示未通关的章节
+    -- 显示已解锁且未通关的章节
     if not self.CurChapterId then
         for _, cId in ipairs(self.ChapterIds) do
-            local isPass = self._Control:IsChapterPassed(cId)
-            if not isPass then
+            local isUnlock = self._Control:IsChapterUnlock(cId)
+            if isUnlock and not self._Control:IsChapterPassed(cId) then
                 self.CurChapterId = cId
                 break
             end
         end
     end
 
-    -- 默认/全通关打开第一个章节
+    -- 已解锁章节全通关时，停在最后一个已解锁的章节
+    if not self.CurChapterId then
+        for i = #self.ChapterIds, 1, -1 do
+            local cId = self.ChapterIds[i]
+            if self._Control:IsChapterUnlock(cId) then
+                self.CurChapterId = cId
+                break
+            end
+        end
+    end
+
+    -- 默认打开第一个章节
     if not self.CurChapterId then
         self.CurChapterId = self.ChapterIds[1]
     end
@@ -263,27 +274,29 @@ function XUiMainLine2Chapter:InitActivityTimer()
 
     self.TxtLeftTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
     self:ClearActivityTimer()
-    self.ActivityTimer = XScheduleManager.ScheduleForever(function()
-        leftTime = self.EndTime - XTime.GetServerNowTimestamp()
-        if leftTime < 0 then
-            local isUnLock = self._Control:IsChapterUnlock(characterId)
-            if isUnLock then
-                self:ClearActivityTimer()
-                self.PanelActivityTime.gameObject:SetActiveEx(false)
-            else
-                XDataCenter.FubenMainLineManager.OnActivityEnd()
-            end
+    XScheduleManagerPro.ScheduleForever(XUiMainLine2Chapter._OnActivityTimeScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+-- 活动倒计时定时器回调
+function XUiMainLine2Chapter:_OnActivityTimeScheduleCb()
+    local mainCfg = self._Control:GetConfigMain(self.MainId)
+    local characterId = mainCfg.ChapterIds[1]
+    local leftTime = self.EndTime - XTime.GetServerNowTimestamp()
+    if leftTime < 0 then
+        local isUnLock = self._Control:IsChapterUnlock(characterId)
+        if isUnLock then
+            self:ClearActivityTimer()
+            self.PanelActivityTime.gameObject:SetActiveEx(false)
         else
-            self.TxtLeftTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
+            XDataCenter.FubenMainLineManager.OnActivityEnd()
         end
-    end, XScheduleManager.SECOND)
+    else
+        self.TxtLeftTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
+    end
 end
 
 function XUiMainLine2Chapter:ClearActivityTimer()
-    if self.ActivityTimer then
-        XScheduleManager.UnSchedule(self.ActivityTimer)
-        self.ActivityTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiMainLine2Chapter._OnActivityTimeScheduleCb, self)
 end
 
 function XUiMainLine2Chapter:SwitchChapter(index)
@@ -702,6 +715,9 @@ function XUiMainLine2Chapter:CheckPlayEffect()
 
     -- 自动切换章节特效
     self:CheckAutoSwitchChapter()
+
+    -- 无特效直跳：打完当前章节直接跳到配置指定的目标章节
+    self:CheckAutoSwitchChapterDirect()
 end
 
 -- 检查是否播第一次进入特效
@@ -736,31 +752,40 @@ function XUiMainLine2Chapter:CheckFirstEnterEffect()
 
     -- 截图屏幕
     self:ClearCaptureUITimer()
-    self.CaptureUITimer = XScheduleManager.ScheduleOnce(function()
-        local component = self.Effect.gameObject:AddComponent(typeof(CS.XACaptureUIScreenTrigger))
-        component.enabled = false
-        component.enabled = true
-    end, DELAY_CAPTURE_UI_TIME)
+    XScheduleManagerPro.ScheduleOnce(XUiMainLine2Chapter._OnCaptureUIScheduleCb, self, DELAY_CAPTURE_UI_TIME)
 
     -- 加载特效
     self:ClearLoadEffectTimer()
-    self.LoadEffectTimer = XScheduleManager.ScheduleOnce(function()
-        local effectPath = self._Control:GetClientConfigParams("SwitchChapterEffect", 1)
-        self.Effect:LoadPrefab(effectPath)
-    end, DELAY_LOAD_EFFECT_TIME)
+    XScheduleManagerPro.ScheduleOnce(XUiMainLine2Chapter._OnLoadEffectScheduleCb, self, DELAY_LOAD_EFFECT_TIME)
 
     -- 隐藏假章节，显示正确章节
     self:ClearSwitchChapterTimer()
-    self.SwitchChapterTimer = XScheduleManager.ScheduleOnce(function()
-        -- 记录已播放
-        self._Control:SetIsPlayFirstEnterEffect(self.MainId)
-        self.ChapterTemp.gameObject:SetActiveEx(false)
-        XLuaUiManager.SetMask(false)
+    XScheduleManagerPro.ScheduleOnce(XUiMainLine2Chapter._OnFirstEnterSwitchScheduleCb, self, DELAY_SWITCH_TIME)
+end
 
-        -- 恢复隐藏的UI
-        self:RefreshTitle()
-        self:RefreshDifficultyProgress()
-    end, DELAY_SWITCH_TIME)
+-- 首次进入：隐藏假章节，显示正确章节
+function XUiMainLine2Chapter:_OnFirstEnterSwitchScheduleCb()
+    -- 记录已播放
+    self._Control:SetIsPlayFirstEnterEffect(self.MainId)
+    self.ChapterTemp.gameObject:SetActiveEx(false)
+    XLuaUiManager.SetMask(false)
+
+    -- 恢复隐藏的UI
+    self:RefreshTitle()
+    self:RefreshDifficultyProgress()
+end
+
+-- 延迟截图屏幕
+function XUiMainLine2Chapter:_OnCaptureUIScheduleCb()
+    local component = self.Effect.gameObject:AddComponent(typeof(CS.XACaptureUIScreenTrigger))
+    component.enabled = false
+    component.enabled = true
+end
+
+-- 延迟加载切换特效
+function XUiMainLine2Chapter:_OnLoadEffectScheduleCb()
+    local effectPath = self._Control:GetClientConfigParams("SwitchChapterEffect", 1)
+    self.Effect:LoadPrefab(effectPath)
 end
 
 -- 检查是否自动切换章节
@@ -792,52 +817,81 @@ function XUiMainLine2Chapter:CheckAutoSwitchChapter()
 
     -- 截图屏幕
     self:ClearCaptureUITimer()
-    self.CaptureUITimer = XScheduleManager.ScheduleOnce(function()
-        local component = self.Effect.gameObject:AddComponent(typeof(CS.XACaptureUIScreenTrigger))
-        component.enabled = false
-        component.enabled = true
-    end, DELAY_CAPTURE_UI_TIME)
+    XScheduleManagerPro.ScheduleOnce(XUiMainLine2Chapter._OnCaptureUIScheduleCb, self, DELAY_CAPTURE_UI_TIME)
 
     -- 加载特效
     self:ClearLoadEffectTimer()
-    self.LoadEffectTimer = XScheduleManager.ScheduleOnce(function()
-        local effectPath = self._Control:GetClientConfigParams("SwitchChapterEffect", 1)
-        self.Effect:LoadPrefab(effectPath)
-    end, DELAY_LOAD_EFFECT_TIME)
+    XScheduleManagerPro.ScheduleOnce(XUiMainLine2Chapter._OnLoadEffectScheduleCb, self, DELAY_LOAD_EFFECT_TIME)
     
     -- 切换下一章节
     self:ClearSwitchChapterTimer()
-    self.SwitchChapterTimer = XScheduleManager.ScheduleOnce(function()
-        -- 记录已播放
-        self._Control:SetIsPlaySwitchEnterEffect(self.CurChapterId)
-        -- 切换
-        self:SwitchChapter(self.CurChapterIndex + 1)
-        XLuaUiManager.SetMask(false)
-    end, DELAY_SWITCH_TIME)
+    XScheduleManagerPro.ScheduleOnce(XUiMainLine2Chapter._OnAutoSwitchChapterScheduleCb, self, DELAY_SWITCH_TIME)
+end
+
+-- 自动切换下一章节
+function XUiMainLine2Chapter:_OnAutoSwitchChapterScheduleCb()
+    -- 记录已播放
+    self._Control:SetIsPlaySwitchEnterEffect(self.CurChapterId)
+    -- 切换
+    self:SwitchChapter(self.CurChapterIndex + 1)
+    XLuaUiManager.SetMask(false)
+end
+
+-- 检查是否直接跳转：当前章节全通时，直接跳到配置指定的目标章节（要播特效的用CheckAutoSwitchChapter方法）
+function XUiMainLine2Chapter:CheckAutoSwitchChapterDirect()
+    -- 未配置直跳，不处理
+    if not self._Control:IsClientConfigExit("AutoSwitchChapterDirectTriggerIds") then return end
+    if not self._Control:IsClientConfigExit("AutoSwitchChapterDirectTargetIds") then return end
+
+    -- 已跳过，不重复
+    if self._Control:GetIsAutoSwitchChapterDirect(self.CurChapterId) then return end
+
+    -- 当前章节未全通，不跳
+    if not self._Control:IsChapterPassed(self.CurChapterId) then return end
+
+    -- 主线已全通，不跳
+    if self._Control:IsMainPassed(self.MainId) then return end
+
+    -- 找当前章节在触发组中的下标，取同下标的目标 ChapterId
+    local triggerIds = self._Control:GetClientConfigParams("AutoSwitchChapterDirectTriggerIds")
+    local targetIds = self._Control:GetClientConfigParams("AutoSwitchChapterDirectTargetIds")
+    local targetChapterIdNum
+    for i = 1, #triggerIds do
+        if tonumber(triggerIds[i]) == self.CurChapterId then
+            local target = targetIds[i]
+            targetChapterIdNum = target and tonumber(target)
+            break
+        end
+    end
+    if not targetChapterIdNum then return end
+
+    -- 目标 ChapterId 必须在当前主线章节列表内，避免 SwitchChapter 越界
+    local isContain, targetIndex = table.contains(self.ChapterIds, targetChapterIdNum)
+    if not isContain then return end
+
+    -- 判断目标章节满足开放条件
+    local isUnlock = self._Control:IsChapterUnlock(targetChapterIdNum)
+    if not isUnlock then return end
+
+    -- 标记已跳 + 直接切换
+    self._Control:SetIsAutoSwitchChapterDirect(self.CurChapterId)
+    self:SwitchChapter(targetIndex)
 end
 
 -- 清除延迟截图屏幕定时器
 function XUiMainLine2Chapter:ClearCaptureUITimer()
-    if self.CaptureUITimer then
-        XScheduleManager.UnSchedule(self.CaptureUITimer)
-        self.CaptureUITimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiMainLine2Chapter._OnCaptureUIScheduleCb, self)
 end
 
 -- 清除延迟播特效定时器
 function XUiMainLine2Chapter:ClearLoadEffectTimer()
-    if self.LoadEffectTimer then
-        XScheduleManager.UnSchedule(self.LoadEffectTimer)
-        self.LoadEffectTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiMainLine2Chapter._OnLoadEffectScheduleCb, self)
 end
 
 -- 清除切换章节定时器
 function XUiMainLine2Chapter:ClearSwitchChapterTimer()
-    if self.SwitchChapterTimer then
-        XScheduleManager.UnSchedule(self.SwitchChapterTimer)
-        self.SwitchChapterTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiMainLine2Chapter._OnFirstEnterSwitchScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(XUiMainLine2Chapter._OnAutoSwitchChapterScheduleCb, self)
 end
 
 function XUiMainLine2Chapter:SetLastClickStageId(stageId)

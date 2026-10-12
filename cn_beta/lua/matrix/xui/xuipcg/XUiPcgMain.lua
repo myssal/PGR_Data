@@ -51,23 +51,22 @@ end
 function XUiPcgMain:InitTimer()
     self:ClearTimer()
     self.EndTime = self._Control:GetActivityEndTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        local isClose = self.EndTime < XTime.GetServerNowTimestamp()
-        if isClose then
-            self._Control:HandleActivityEnd()
-        else
-            self:RefreshTime()
-            self:RefreshChapterList()
-        end
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnRefreshTimeScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+function XUiPcgMain:_OnRefreshTimeScheduleCb()
+    local isClose = self.EndTime < XTime.GetServerNowTimestamp()
+    if isClose then
+        self._Control:HandleActivityEnd()
+    else
+        self:RefreshTime()
+        self:RefreshChapterList()
+    end
 end
 
 -- 清除定时器
 function XUiPcgMain:ClearTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRefreshTimeScheduleCb, self)
 end
 
 -- 刷新界面
@@ -175,6 +174,7 @@ function XUiPcgMain:RefreshBtnPicture()
     end
     self.BtnPicture:ShowReddot(isRed)
 end
+
 
 
 return XUiPcgMain

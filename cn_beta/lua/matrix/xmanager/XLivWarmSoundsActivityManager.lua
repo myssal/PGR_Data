@@ -90,13 +90,15 @@ XLivWarmSoundsActivityCreator = function()
         end
 
         --延迟是为了防止打断UI动画
-        XScheduleManager.ScheduleOnce(function()
-            XLuaUiManager.RunMain()
-        end, 1000)
+        XScheduleManagerPro.ScheduleOnce(XLivWarmSoundsActivityManager._OnTimerScheduleCb, XLivWarmSoundsActivityManager, 1000)
 
         XLivWarmSoundsActivityManager.ClearActivityEnd()
 
         return true
+    end
+
+    function XLivWarmSoundsActivityManager:_OnTimerScheduleCb()
+            XLuaUiManager.RunMain()
     end
 
     function XLivWarmSoundsActivityManager.EnterUiMain(beforeOpenUiCb)

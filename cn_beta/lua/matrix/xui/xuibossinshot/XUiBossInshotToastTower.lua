@@ -12,16 +12,14 @@ function XUiBossInshotToastTower:OnStart(toastData, autoCloseCb)
         toastData.CurLevelType == XBossInshotModel.TowerLevelType.ChallengeLevel,
         toastData.TargetScore)
 
-    self._AutoCloseSchedule = XScheduleManager.ScheduleOnce(
-        handler(self, self._AutoClose),
+    XScheduleManagerPro.ScheduleOnce(self._AutoClose, self,
         CS.XGame.ClientConfig:GetInt("UiBossInshotToastTowerCloseTime"))
 
     self._AutoCloseCallback = autoCloseCb
 end
 
 function XUiBossInshotToastTower:_AutoClose()
-    XScheduleManager.UnSchedule(self._AutoCloseSchedule)
-    self._AutoCloseSchedule = nil
+    XScheduleManagerPro.UnSchedule(self._AutoClose, self)
 
     self:Close()
 

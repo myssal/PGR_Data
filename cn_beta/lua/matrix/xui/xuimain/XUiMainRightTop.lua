@@ -34,39 +34,36 @@ end
 function XUiMainRightTop:OnEnable()
     if not self.IsPreview then
         --延迟更新，解决可能存在的当帧问题（Mono状态未更新）
-        self._DelayRefreshTimeId = XScheduleManager.Schedule(function()
-            self:UpdateSceneState()
-            self._DelayRefreshTimeId = nil
-        end,0.1*XScheduleManager.SECOND,1,0)
+        XScheduleManagerPro.ScheduleOnce(self._OnDelayRefreshTimer, self, 0.1 * XScheduleManagerPro.SECOND)
     end
     
     self:ResetBatteryTime()
 
-    self.BatteryEffectSchedule = XScheduleManager.ScheduleForever(function()
-        self:UpdateSceneState()
-    end, 5 * XScheduleManager.SECOND)
-
-    self.BatteryTimeSchedule = XScheduleManager.ScheduleForever(function()
-        self:UpdateNowTimeTimer()
-        self:UpdateTimeLimitItemTipTimer()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnBatteryEffectTimer, self, 5 * XScheduleManagerPro.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnBatteryTimeTimer, self, XScheduleManagerPro.SECOND)
     
     XEventManager.AddEventListener(XEventId.EVENT_SCENE_PREVIEW, self.OnBackGroupPreview, self)
     XEventManager.AddEventListener(XEventId.EVENT_SCENE_UIMAIN_STATE_CHANGE, self.PreviewUpdateChargeMark, self)
     XEventManager.AddEventListener(XEventId.EVENT_TIMELIMIT_ITEM_USE, self.ResetBatteryTime, self)
 end
 
+function XUiMainRightTop:_OnDelayRefreshTimer()
+    self:UpdateSceneState()
+end
+
+function XUiMainRightTop:_OnBatteryEffectTimer()
+    self:UpdateSceneState()
+end
+
+function XUiMainRightTop:_OnBatteryTimeTimer()
+    self:UpdateNowTimeTimer()
+    self:UpdateTimeLimitItemTipTimer()
+end
+
 function XUiMainRightTop:OnDisable()
-    if self._DelayRefreshTimeId then
-        XScheduleManager.UnSchedule(self._DelayRefreshTimeId)
-        self._DelayRefreshTimeId = nil
-    end
-    
-    XScheduleManager.UnSchedule(self.BatteryEffectSchedule)
-    if self.BatteryTimeSchedule then
-        XScheduleManager.UnSchedule(self.BatteryTimeSchedule)
-        self.BatteryTimeSchedule = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnDelayRefreshTimer, self)
+    XScheduleManagerPro.UnSchedule(self._OnBatteryEffectTimer, self)
+    XScheduleManagerPro.UnSchedule(self._OnBatteryTimeTimer, self)
     LastMainUiChargeState = XUiMainChargeState.None
     self.RootUi:ChangeLowPowerState(self.RootUi.LowPowerState.None)
     
@@ -272,8 +269,8 @@ end
 
 -- v1.29 关场景模式改变监听
 function XUiMainRightTop:OnBackGroupPreview() 
-    XScheduleManager.UnSchedule(self.BatteryEffectSchedule) 
-    XScheduleManager.UnSchedule(self.BatteryTimeSchedule)
+    XScheduleManagerPro.UnSchedule(self._OnBatteryEffectTimer, self)
+    XScheduleManagerPro.UnSchedule(self._OnBatteryTimeTimer, self)
     self.IsPreview=true
 end
 

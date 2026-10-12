@@ -63,19 +63,18 @@ end
 -- 移动到最后
 function XUiPcgPopupLog:MoveToLast()
     self:ClearMoveTimer()
-    self.MoveTimer = XScheduleManager.ScheduleOnce(function()
-        local contentHeight = self.Content.rect.height
-        local viewportHeight = self.Content.transform.parent:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.height
-        local posY = contentHeight - viewportHeight
-        self.Content.anchoredPosition = CS.UnityEngine.Vector2(self.Content.anchoredPosition.x, posY)
-    end, 50)
+    XScheduleManagerPro.ScheduleOnce(self._OnMoveToLastScheduleCb, self, 50)
+end
+
+function XUiPcgPopupLog:_OnMoveToLastScheduleCb()
+    local contentHeight = self.Content.rect.height
+    local viewportHeight = self.Content.transform.parent:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.height
+    local posY = contentHeight - viewportHeight
+    self.Content.anchoredPosition = CS.UnityEngine.Vector2(self.Content.anchoredPosition.x, posY)
 end
 
 function XUiPcgPopupLog:ClearMoveTimer()
-    if self.MoveTimer then
-        XScheduleManager.UnSchedule(self.MoveTimer)
-        self.MoveTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnMoveToLastScheduleCb, self)
 end
 
 return XUiPcgPopupLog

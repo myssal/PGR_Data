@@ -89,17 +89,12 @@ function XUiMeadalDetail:SetDetailData()
 end
 
 function XUiMeadalDetail:StartTimeCount()
-    if self.TimeId then return end
     self:SetCountDownTimeText()
-    self.TimeId = XScheduleManager.ScheduleForever(function()
-                self:SetCountDownTimeText()
-            end, 1000)
+    XScheduleManagerPro.ScheduleForever(self._OnSetCountDownTimeTextScheduleCb, self, 1000)
 end
 
 function XUiMeadalDetail:StopTimeCount()
-    if not self.TimeId then return end
-    XScheduleManager.UnSchedule(self.TimeId)
-    self.TimeId = nil
+    XScheduleManagerPro.UnSchedule(self._OnSetCountDownTimeTextScheduleCb, self)
 end
 
 function XUiMeadalDetail:SetCountDownTimeText(text)
@@ -134,4 +129,8 @@ function XUiMeadalDetail:OnBtnUnload()
     XPlayer.ChangeMedal(0, function()
         self:ShowLock(false)
     end)
+end
+
+function XUiMeadalDetail:_OnSetCountDownTimeTextScheduleCb()
+    self:SetCountDownTimeText()
 end

@@ -162,20 +162,11 @@ function XUiPanelExpDetail:Show(characterId, transform)
     self:UpdateFurnitureInfo(self.CharacterId)
     self.GameObject:SetActive(true)
 
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.Transform) or not self.GameObject.activeSelf then
-            return
-        end
-
-        self:Hide()
-    end, XDormConfig.DISPPEAR_TIME)
+    XScheduleManagerPro.ScheduleOnce(XUiPanelExpDetail._OnHideScheduleCb, self, XDormConfig.DISPPEAR_TIME)
 end
 
 function XUiPanelExpDetail:RemoveTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiPanelExpDetail._OnHideScheduleCb, self)
 end
 
 function XUiPanelExpDetail:Hide()
@@ -194,6 +185,13 @@ function XUiPanelExpDetail:Update()
     end
 
     self:UpdateTransform(self.TargetTransform)
+end
+
+function XUiPanelExpDetail:_OnHideScheduleCb()
+    if XTool.UObjIsNil(self.Transform) or not self.GameObject.activeSelf then
+        return
+    end
+    self:Hide()
 end
 
 return XUiPanelExpDetail

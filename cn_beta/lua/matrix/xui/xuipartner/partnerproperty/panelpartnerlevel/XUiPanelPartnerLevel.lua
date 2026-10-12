@@ -58,9 +58,11 @@ function XUiPanelPartnerLevel:ShowPanel(data)
 end
 
 function XUiPanelPartnerLevel:PlayEnableAnime()
-    XScheduleManager.ScheduleOnce(function()
-            self.Animation:GetObject("AnimEnable"):PlayTimelineAnimation()
-        end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayEnableAnimeScheduleCb, self, 1)
+end
+
+function XUiPanelPartnerLevel:_OnPlayEnableAnimeScheduleCb()
+    self.Animation:GetObject("AnimEnable"):PlayTimelineAnimation()
 end
 
 return XUiPanelPartnerLevel

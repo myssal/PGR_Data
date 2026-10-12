@@ -4,8 +4,6 @@ local XUiColorTableMain = XLuaUiManager.Register(XLuaUi, "UiColorTableMain")
 local RewardAnimTime = 2000 -- 2000毫秒
 
 function XUiColorTableMain:OnAwake()
-    self.Timer = nil -- 倒计时定时器
-
     self:SetButtonCallBack()
     self:InitChapterBtnList()
     self:InitAssetPanel()
@@ -70,20 +68,14 @@ function XUiColorTableMain:Refresh()
 end
 
 function XUiColorTableMain:StartTimer()
-    if self.Timer then return end
+    if XScheduleManagerPro.HasSchedule(XUiColorTableMain._OnRefreshActivityScheduleCb, self) then return end
 
     self:RefreshActivityTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:RefreshChapterUnlock()
-        self:RefreshActivityTime()
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(XUiColorTableMain._OnRefreshActivityScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiColorTableMain:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiColorTableMain._OnRefreshActivityScheduleCb, self)
 end
 
 function XUiColorTableMain:RefreshActivityTime()
@@ -278,4 +270,9 @@ function XUiColorTableMain:RefreshBtnShop()
 
         XDataCenter.ColorTableManager.CheckShopUnlockTipsUi()
     end, XShopManager.ActivityShopType.ColortableShop)
+end
+
+function XUiColorTableMain:_OnRefreshActivityScheduleCb()
+    self:RefreshChapterUnlock()
+    self:RefreshActivityTime()
 end

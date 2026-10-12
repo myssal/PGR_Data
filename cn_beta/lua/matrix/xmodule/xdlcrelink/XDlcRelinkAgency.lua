@@ -150,12 +150,7 @@ function XDlcRelinkAgency:OpenMainUi()
 
         local loadingType = self._Model:GetClientConfig("RoomUiLoadingType", 1)
         XLuaUiManager.Open("UiLoading", loadingType)
-        XScheduleManager.ScheduleOnce(function()
-            -- TODO 战斗初始化，先临时放在这里，后续等战斗那边优化后在调整。
-            XMVCA.XDlcRelink:DlcInitFight()
-            XLuaUiManager.Open("UiDlcRelinkRoom")
-            XLuaUiManager.Remove("UiLoading")
-        end, 2000)
+        XScheduleManagerPro.ScheduleOnce(self._OnOpenMainUiScheduleCb, self, 2000)
     end)
     return true
 end
@@ -564,5 +559,12 @@ function XDlcRelinkAgency:DisposeWorld()
 end
 
 --endregion
+
+function XDlcRelinkAgency:_OnOpenMainUiScheduleCb()
+    -- TODO 战斗初始化，先临时放在这里，后续等战斗那边优化后在调整。
+    XMVCA.XDlcRelink:DlcInitFight()
+    XLuaUiManager.Open("UiDlcRelinkRoom")
+    XLuaUiManager.Remove("UiLoading")
+end
 
 return XDlcRelinkAgency

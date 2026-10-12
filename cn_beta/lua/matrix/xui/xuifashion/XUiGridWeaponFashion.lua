@@ -13,11 +13,7 @@ end
 function XUiGridWeaponFashion:PlayAnimation()
     if XTool.UObjIsNil(self.GridFashionTimeline) then return end
 
-    XScheduleManager.ScheduleOnce(function()
-        if self.GridFashionTimeline.gameObject.activeInHierarchy then
-            self.GridFashionTimeline:PlayTimelineAnimation()
-        end
-    end, 40)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayAnimationScheduleCb, self, 40)
 end
 
 function XUiGridWeaponFashion:CheckAnimationFinish()
@@ -96,6 +92,12 @@ function XUiGridWeaponFashion:UpdateStatus()
         self.RImgIcon.color = CSUnityEngineColor(1, 1, 1, 1)
     end
     self:SetRedPoint(XDataCenter.WeaponFashionManager.GetAllWeaponFashionIsOwnDic(self.FashionId).IsNew)
+end
+
+function XUiGridWeaponFashion:_OnPlayAnimationScheduleCb()
+    if self.GridFashionTimeline.gameObject.activeInHierarchy then
+        self.GridFashionTimeline:PlayTimelineAnimation()
+    end
 end
 
 return XUiGridWeaponFashion

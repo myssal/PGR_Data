@@ -39,16 +39,13 @@ function XUiBountyChallengeChapterDetailTask:UpdateContent(data)
         self.ImgMask.gameObject:SetActive(false)
     end
 
-    local difficulty = 1
-    if data.Difficulty then
-        difficulty = data.Difficulty
-    end
+    local isMaxDifficulty = data.IsMaxDifficulty
     self.ImgBgComplete.gameObject:SetActiveEx(data.IsCanFinish)
-    self.ImgBgNormal.gameObject:SetActiveEx(not data.IsCanFinish and difficulty ~= 4)
+    self.ImgBgNormal.gameObject:SetActiveEx(not data.IsCanFinish and not isMaxDifficulty)
     if not self.ImgBgLianYu then
         self.ImgBgLianYu = self.Transform:Find("All/ImgBgLianYu")
     end
-    self.ImgBgLianYu.gameObject:SetActiveEx(not data.IsCanFinish and difficulty == 4)
+    self.ImgBgLianYu.gameObject:SetActiveEx(not data.IsCanFinish and isMaxDifficulty)
 
     -- 可领取特效
     if data.IsCanFinish then
@@ -142,12 +139,15 @@ function XUiBountyChallengeChapterDetailTask:PlayStartAnimation(index)
     end
     
     self:StopAnimation('TaskEnable')
-    local animTimeId = XScheduleManager.ScheduleOnce(function()
-        self:PlayAnimation('TaskEnable')
-    end, fixDelayTime)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayStartAnimationScheduleCb, self, fixDelayTime)
     
-    self._TweenAnimationAgency:_AddTimerId(animTimeId)
 end
 
+function XUiBountyChallengeChapterDetailTask:OnDestroy()
+    XScheduleManagerPro.UnSchedule(self._OnPlayStartAnimationScheduleCb, self)
+end
 
+function XUiBountyChallengeChapterDetailTask:_OnPlayStartAnimationScheduleCb()
+        self:PlayAnimation('TaskEnable')
+end
 return XUiBountyChallengeChapterDetailTask

@@ -263,16 +263,11 @@ end
 
 function XUiMoeWarRecruit:StartTimer()
     self:StopTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:RefreshAndCheckActivityTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnRefreshAndCheckActivityTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiMoeWarRecruit:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRefreshAndCheckActivityTimeScheduleCb, self)
 end
 
 function XUiMoeWarRecruit:RefreshAndCheckActivityTime()
@@ -297,4 +292,8 @@ function XUiMoeWarRecruit:RefreshRecruitCount()
     local itemName = XItemConfigs.GetItemNameById(itemId)
     local residueDesc = CSXTextManagerGetText("Residue")
     self.InfoText.text = residueDesc .. itemName
+end
+
+function XUiMoeWarRecruit:_OnRefreshAndCheckActivityTimeScheduleCb()
+    self:RefreshAndCheckActivityTime()
 end

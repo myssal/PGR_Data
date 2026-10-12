@@ -19,7 +19,6 @@ function XUiTransfiniteMain:Ctor()
     ---@type XUiGridCommon[]
     self._RewardGridList = {}
 
-    self._Timer = false
 
     self._State = STATE.NORMAL
     XDataCenter.TransfiniteManager.GetStageGroup()
@@ -65,14 +64,8 @@ end
 function XUiTransfiniteMain:OnEnable()
     self:UpdateUiByState()
     self:UpdateTime()
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            if XTool.UObjIsNil(self.Transform) then
-                self:UnSchedule()
-                return
-            end
-            self:UpdateTime()
-        end, XScheduleManager.SECOND)
+    if not XScheduleManagerPro.HasSchedule(self._OnUnScheduleScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnUnScheduleScheduleCb, self, XScheduleManagerPro.SECOND)
     end
 
     XEventManager.AddEventListener(XEventId.EVENT_TRANSFINITE_UPDATE_ROOM, self.Update, self)
@@ -83,8 +76,7 @@ function XUiTransfiniteMain:OnEnable()
 end
 
 function XUiTransfiniteMain:UnSchedule()
-    XScheduleManager.UnSchedule(self._Timer)
-    self._Timer = false
+    XScheduleManagerPro.UnSchedule(self._OnUnScheduleScheduleCb, self)
 end
 
 function XUiTransfiniteMain:OnDisable()
@@ -274,6 +266,14 @@ end
 
 function XUiTransfiniteMain:OnResume(value)
     self._State = value
+end
+
+function XUiTransfiniteMain:_OnUnScheduleScheduleCb()
+    if XTool.UObjIsNil(self.Transform) then
+        self:UnSchedule()
+        return
+    end
+    self:UpdateTime()
 end
 
 return XUiTransfiniteMain

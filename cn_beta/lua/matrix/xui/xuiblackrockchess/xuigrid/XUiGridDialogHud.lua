@@ -23,24 +23,18 @@ function XUiGridDialogHud:RefreshView()
 end
 
 function XUiGridDialogHud:StartTimer()
-    if self.Timer then
-        self:StopTimer()
-    end
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
-        
-        self:Close()
-    end, DURATION * XScheduleManager.SECOND)
+    self:StopTimer()
+    XScheduleManagerPro.ScheduleOnce(XUiGridDialogHud._OnCloseDialogScheduleCb, self, DURATION * XScheduleManagerPro.SECOND)
 end
 
 function XUiGridDialogHud:StopTimer()
-    if not self.Timer then
-        return
+    XScheduleManagerPro.UnSchedule(XUiGridDialogHud._OnCloseDialogScheduleCb, self)
+end
+
+function XUiGridDialogHud:_OnCloseDialogScheduleCb()
+    if not XTool.UObjIsNil(self.GameObject) then
+        self:Close()
     end
-    XScheduleManager.UnSchedule(self.Timer)
-    self.Timer = nil
 end
 
 return XUiGridDialogHud

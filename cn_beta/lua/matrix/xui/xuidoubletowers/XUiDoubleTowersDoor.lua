@@ -6,7 +6,6 @@ local XUiDoubleTowersDoor = XClass(nil, "XUiDoubleTowersDoor")
 function XUiDoubleTowersDoor:Ctor(ui)
     self._GroupId = false
     self._IsUnfold = false
-    self._Timer = false
     ---@type XUiDoubleTowersDoorUnfoldStage[]
     self._UiStage = {}
 
@@ -105,20 +104,18 @@ function XUiDoubleTowersDoor:Unfold()
 end
 
 function XUiDoubleTowersDoor:BeginTimer()
-    if self._Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnBeginTimerScheduleCb, self) then
         return
     end
     if not self:CountDown() then
         return
     end
     self.TowerNumber.gameObject:SetActiveEx(true)
-    self._Timer =
-        XScheduleManager.ScheduleForever(
-        function()
-            self:CountDown()
-        end,
-        XScheduleManager.SECOND
-    )
+    XScheduleManagerPro.ScheduleForever(self._OnBeginTimerScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+function XUiDoubleTowersDoor:_OnBeginTimerScheduleCb()
+        self:CountDown()
 end
 
 function XUiDoubleTowersDoor:CountDown()
@@ -134,11 +131,7 @@ function XUiDoubleTowersDoor:CountDown()
 end
 
 function XUiDoubleTowersDoor:StopTimer()
-    if not self._Timer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._Timer)
-    self._Timer = false
+    XScheduleManagerPro.UnSchedule(self._OnBeginTimerScheduleCb, self)
 end
 
 -- 由于这部分text都是关卡名，且无甚意义，因此代码统一处理

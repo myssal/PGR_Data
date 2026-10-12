@@ -74,19 +74,11 @@ function XUiInputSignalMediator:StartInputSignalUpdateTimer()
 
     self:ClearAllInputSignalRecord()
     
-    self.SignalHandleTimer = XScheduleManager.ScheduleForever(function()
-        self:Update()
-    end, self._IntervalTime)
+    XScheduleManagerPro.ScheduleForever(XUiInputSignalMediator._OnInputSignalUpdateScheduleCb, self, self._IntervalTime)
 end
 
 function XUiInputSignalMediator:StopInputSignalUpdateTimer()
-    if not self.SignalHandleTimer then
-        return
-    end
-
-    XScheduleManager.UnSchedule(self.SignalHandleTimer)
-    self.SignalHandleTimer = nil
-
+    XScheduleManagerPro.UnSchedule(XUiInputSignalMediator._OnInputSignalUpdateScheduleCb, self)
     self:ClearAllInputSignalRecord()
 end
 
@@ -110,5 +102,9 @@ function XUiInputSignalMediator:Update()
 end
 
 --endregion
+
+function XUiInputSignalMediator:_OnInputSignalUpdateScheduleCb()
+    self:Update()
+end
 
 return XUiInputSignalMediator

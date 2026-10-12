@@ -245,19 +245,13 @@ end
 function XLuckyTenant2Control:AddAgencyEvent()
     --control在生命周期启动的时候需要对Agency及对外的Agency进行注册
     self:UpdateActivityTimeLeft()
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateActivityTimeLeft()
-        self:CheckInTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateActivityTimeLeftScheduleCb, self, XScheduleManagerPro.SECOND)
     XEventManager.AddEventListener(XEventId.EVENT_LUCKY_TENANT2_SET_TEST_CASE, self._SetTestCase, self)
     XEventManager.AddEventListener(XEventId.EVENT_LUCKY_TENANT2_CLEAR_BAG, self._TestClearBag, self)
 end
 
 function XLuckyTenant2Control:RemoveAgencyEvent()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateActivityTimeLeftScheduleCb, self)
     -- TODO: 根据实际需求移除事件监听
     XEventManager.RemoveEventListener(XEventId.EVENT_LUCKY_TENANT2_SET_TEST_CASE, self._SetTestCase)
     XEventManager.RemoveEventListener(XEventId.EVENT_LUCKY_TENANT2_CLEAR_BAG, self._TestClearBag)
@@ -2811,6 +2805,11 @@ end
 
 function XLuckyTenant2Control:GetLuckyTenant2ChessTypeById(pieceId)
     return self._Model:GetLuckyTenant2ChessTypeById(pieceId)
+end
+
+function XLuckyTenant2Control:_OnUpdateActivityTimeLeftScheduleCb()
+    self:UpdateActivityTimeLeft()
+    self:CheckInTime()
 end
 
 return XLuckyTenant2Control

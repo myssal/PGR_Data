@@ -22,19 +22,12 @@ end
 function XUiPanelKotodamaMainFirst:OnEnable()
     XRedPointManager.Check(self.TaskRedId)
     self:RefreshLeftTime()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-    end
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:RefreshLeftTime()
-    end, XScheduleManager.SECOND, 0)
+        XScheduleManagerPro.UnSchedule(self._OnRefreshLeftTimeScheduleCb, self)
+    XScheduleManagerPro.ScheduleForever(self._OnRefreshLeftTimeScheduleCb, self, XScheduleManagerPro.SECOND, 0)
 end
 
 function XUiPanelKotodamaMainFirst:OnDisable()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRefreshLeftTimeScheduleCb, self)
 end
 
 --region 界面更新
@@ -57,5 +50,9 @@ function XUiPanelKotodamaMainFirst:OnTaskRedPointEvent(count)
     self.BtnTask:ShowReddot(count >= 0)
 end
 --endregion
+
+function XUiPanelKotodamaMainFirst:_OnRefreshLeftTimeScheduleCb()
+    self:RefreshLeftTime()
+end
 
 return XUiPanelKotodamaMainFirst

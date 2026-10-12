@@ -32,12 +32,7 @@ function XUiGridPokerGuessingStory:PlayEnableAnimation(index)
     self.GameObject:SetActiveEx(true)
     if self.GameObject.activeInHierarchy and self.AnimEnable and not self.IsPlay then
         self.CanvasGroup.alpha = 0
-        XScheduleManager.ScheduleOnce(function()
-            self.AnimEnable:PlayTimelineAnimation(function()
-                self.CanvasGroup.alpha = 1
-                self.IsPlay = true
-            end)
-        end, (index - 1) * 90)
+        XScheduleManagerPro.ScheduleOnce(self._OnPlayEnableAnimationScheduleCb, self, (index - 1) * 90)
     end
 end
 
@@ -167,3 +162,10 @@ function XUiFubenPokerGuessingStory:OnToggleFilterValueChanged(select)
     self.PokerGuessing:MarkSelectFilter(select)
     self:SetupDynamicTable()
 end 
+
+function XUiGridPokerGuessingStory:_OnPlayEnableAnimationScheduleCb()
+    self.AnimEnable:PlayTimelineAnimation(function()
+        self.CanvasGroup.alpha = 1
+        self.IsPlay = true
+    end)
+end

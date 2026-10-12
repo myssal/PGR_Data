@@ -35,11 +35,9 @@ function XUiSameColorGameShop:OnDisable()
 end
 
 function XUiSameColorGameShop:OnDestroy()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnInitTimesScheduleCb, self)
 end
+
 
 function XUiSameColorGameShop:Refresh()
     self:UpdateShop()
@@ -56,9 +54,11 @@ function XUiSameColorGameShop:InitTimes()
     --        self:RefreshTime()
     --    end
     --end)
-    self._Timer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnInitTimesScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiSameColorGameShop:_OnInitTimesScheduleCb()
         self:RefreshTime()
-    end, XScheduleManager.SECOND, 0)
 end
 
 function XUiSameColorGameShop:RefreshTime()

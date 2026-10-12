@@ -1652,5 +1652,70 @@
             1110
         ],
         "OpenLevel": 20
+    },
+    {
+        "Id": 116,
+        "Name": "新客访临",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgBirthday14V400.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainDateALive14V408.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabelBirthday14V400.png",
+        "Type": 2,
+        "RoundDays": [
+            7,
+            7
+        ],
+        "SubRoundId": [
+            1111,
+            1112
+        ],
+        "SkipTimeId": 50301,
+        "SkipId": 20361,
+        "SkipRedPointConditions": [
+            "CONDITION_DATEALIVE_CHAPTER_ENTER"
+        ]
+    },
+    {
+        "Id": 117,
+        "Name": "远信回响-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgV408.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainV408.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabelV408.png",
+        "Type": 2,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1113
+        ],
+        "OpenLevel": 20
+    },
+    {
+        "Id": 118,
+        "Name": "桂月澄明-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBg2026ZhongQiuV408.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMain2026ZhongQiuV408.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabel2026ZhongQiuV408.png",
+        "Type": 2,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1114
+        ]
+    },
+    {
+        "Id": 119,
+        "Name": "五日赠礼-礼包",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseWeekCardV408.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignWeekCardV408.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelWeekCardV408.png",
+        "Type": 4,
+        "RoundDays": [
+            5
+        ],
+        "SubRoundId": [
+            202
+        ],
+        "IsShowWhenSignOver": true
     }
 ]

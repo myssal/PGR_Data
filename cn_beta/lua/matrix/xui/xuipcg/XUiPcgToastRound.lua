@@ -36,16 +36,15 @@ end
 function XUiPcgToastRound:Refresh()
     self.TxtTips.text = self._Control:GetClientConfig("StartPlayCardTips", 1)
     self:ClearCloseTimer()
-    self.CloseTimer = XScheduleManager.ScheduleOnce(function()  
-        self:Close()
-    end, self.ExitTime)
+    XScheduleManagerPro.ScheduleOnce(self._OnCloseScheduleCb, self, self.ExitTime)
 end
 
 function XUiPcgToastRound:ClearCloseTimer()
-    if self.CloseTimer then
-        XScheduleManager.UnSchedule(self.CloseTimer)
-        self.CloseTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnCloseScheduleCb, self)
+end
+
+function XUiPcgToastRound:_OnCloseScheduleCb()
+    self:Close()
 end
 
 return XUiPcgToastRound

@@ -95,9 +95,11 @@ function XUiFunbenWeiLaTutorial:StartActivityTimer()
     
     self:CloseActivityTimer()
 
-    self.TimerId = XScheduleManager.ScheduleForever(function()
-        self:RefreshActivityTime()
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnStartActivityTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiFunbenWeiLaTutorial:_OnStartActivityTimerScheduleCb()
+    self:RefreshActivityTime()
 end
 
 function XUiFunbenWeiLaTutorial:RefreshActivityTime()
@@ -105,9 +107,7 @@ function XUiFunbenWeiLaTutorial:RefreshActivityTime()
     if now > self.ActivityEndTime then
         XUiManager.TipText("KoroCharacterActivityEnd")
         self:CloseActivityTimer()
-        XScheduleManager.ScheduleOnce(function()
-            XLuaUiManager.RunMain()
-        end,500)
+        XScheduleManagerPro.ScheduleOnce(self._OnRefreshActivityRunMain, self,500)
         return
     end
     --需要格式处理，因此把数值和单位抽取出来
@@ -124,11 +124,12 @@ function XUiFunbenWeiLaTutorial:RefreshActivityTime()
     self.TxtDay.text = fixedContent
 end
 
+function XUiFunbenWeiLaTutorial:_OnRefreshActivityRunMain()
+    XLuaUiManager.RunMain()
+end
+
 function XUiFunbenWeiLaTutorial:CloseActivityTimer()
-    if self.TimerId then
-        XScheduleManager.UnSchedule(self.TimerId)
-        self.TimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartActivityTimerScheduleCb, self)
 end
 
 --切换到挑战界面或者教学关界面

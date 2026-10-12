@@ -179,27 +179,30 @@ end
 
 function XUiCharacterTowerTask:RefreshProgressTransform()
     -- 异形屏适配需要
-    XScheduleManager.ScheduleOnce(function()
+    XScheduleManagerPro.ScheduleOnce(self._OnRefreshProgressTransformScheduleCb, self, 1)
+end
+
+
+function XUiCharacterTowerTask:_OnRefreshProgressTransformScheduleCb()
         if not self.GameObject or not self.GameObject:Exist() then
-            return
-        end
-        -- 更新位置
-        local totalWidth = self.ImgProgressRect.rect.size.x
-        local activeWidthOffset = self.TemplateRect.rect.size.x * self.TemplateRect.localScale.x / 2
-        local treasureIds = self.ChapterViewModel:GetChapterTreasureIds()
-        if XTool.IsTableEmpty(treasureIds) then
-            return
-        end
-        local totalStars = XFubenCharacterTowerConfigs.GetRequireStarByTreasureId(treasureIds[#treasureIds])
-        for i = 1, #treasureIds do
-            local requireStar = XFubenCharacterTowerConfigs.GetRequireStarByTreasureId(treasureIds[i])
-            local currentProgress = requireStar * 1.0 / totalStars * FULL_PROGRESS
-            local progress = self.GridProgressList[i]
-            if progress then
-                progress.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).anchoredPosition3D = CS.UnityEngine.Vector3(currentProgress * totalWidth - activeWidthOffset, self.TemplatePosition.y, self.TemplatePosition.z)
-            end
-        end
-    end, 1)
+                    return
+                end
+                -- 更新位置
+                local totalWidth = self.ImgProgressRect.rect.size.x
+                local activeWidthOffset = self.TemplateRect.rect.size.x * self.TemplateRect.localScale.x / 2
+                local treasureIds = self.ChapterViewModel:GetChapterTreasureIds()
+                if XTool.IsTableEmpty(treasureIds) then
+                    return
+                end
+                local totalStars = XFubenCharacterTowerConfigs.GetRequireStarByTreasureId(treasureIds[#treasureIds])
+                for i = 1, #treasureIds do
+                    local requireStar = XFubenCharacterTowerConfigs.GetRequireStarByTreasureId(treasureIds[i])
+                    local currentProgress = requireStar * 1.0 / totalStars * FULL_PROGRESS
+                    local progress = self.GridProgressList[i]
+                    if progress then
+                        progress.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).anchoredPosition3D = CS.UnityEngine.Vector3(currentProgress * totalWidth - activeWidthOffset, self.TemplatePosition.y, self.TemplatePosition.z)
+                    end
+                end
 end
 
 function XUiCharacterTowerTask:RegisterUiEvents()

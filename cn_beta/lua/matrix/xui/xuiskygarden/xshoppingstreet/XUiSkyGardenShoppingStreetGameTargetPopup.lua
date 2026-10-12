@@ -40,17 +40,17 @@ function XUiSkyGardenShoppingStreetGameTargetPopup:_RefreshFinishTask(idList)
 end
 
 function XUiSkyGardenShoppingStreetGameTargetPopup:RemoveNextCheckTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnAddNextCheckTimerScheduleCb, self)
 end
+
 
 function XUiSkyGardenShoppingStreetGameTargetPopup:AddNextCheckTimer()
     self:RemoveNextCheckTimer()
-    self.Timer = XScheduleManager.ScheduleOnce(function()
+    XScheduleManagerPro.ScheduleOnce(self._OnAddNextCheckTimerScheduleCb, self, 3000)
+end
+
+function XUiSkyGardenShoppingStreetGameTargetPopup:_OnAddNextCheckTimerScheduleCb()
         self:CheckTaskFinishIds()
-    end, 3000)
 end
 
 function XUiSkyGardenShoppingStreetGameTargetPopup:CheckTaskFinishIds()

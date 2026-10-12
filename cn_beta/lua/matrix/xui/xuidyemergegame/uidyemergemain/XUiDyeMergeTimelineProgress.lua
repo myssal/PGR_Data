@@ -11,7 +11,6 @@ function XUiDyeMergeTimelineProgress:OnStart()
     self._Speed = 0
     self._ScheduleId = nil
     self._OnCompleteCb = nil
-    self._UpdateHandler = handler(self, self._OnFrameUpdate)
     
     self:SetDirector(self.GameObject:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)))
 end
@@ -41,7 +40,7 @@ function XUiDyeMergeTimelineProgress:SmoothMoveTo(targetProgress, speed, fromPro
         return
     end
 
-    self._ScheduleId = XScheduleManager.ScheduleForever(self._UpdateHandler, 0, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnFrameUpdate, self, 0, 0)
 end
 
 function XUiDyeMergeTimelineProgress:SetProgress(progress, onComplete)
@@ -109,10 +108,7 @@ function XUiDyeMergeTimelineProgress:_OnReachTarget()
 end
 
 function XUiDyeMergeTimelineProgress:_StopSchedule()
-    if self._ScheduleId then
-        XScheduleManager.UnSchedule(self._ScheduleId)
-        self._ScheduleId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnFrameUpdate, self)
 end
 
 return XUiDyeMergeTimelineProgress

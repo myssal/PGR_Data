@@ -18,11 +18,7 @@ function XUiGridSGFurniture:OnDisable()
 end
 
 function XUiGridSGFurniture:StopAnimationTimer()
-    if not self._AnimationTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._AnimationTimer)
-    self._AnimationTimer = false
+    XScheduleManagerPro.UnSchedule(self._OnPlayEnableAnimationScheduleCb, self)
 end
 
 function XUiGridSGFurniture:PlayEnableAnimation(index)
@@ -30,10 +26,12 @@ function XUiGridSGFurniture:PlayEnableAnimation(index)
     if not XTool.UObjIsNil(self._CanvasGroup) then
         self._CanvasGroup.alpha = 0
     end
-    self._AnimationTimer = XScheduleManager.ScheduleOnce(function()
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayEnableAnimationScheduleCb, self, (index - 1) * Delay)
+end
+
+function XUiGridSGFurniture:_OnPlayEnableAnimationScheduleCb()
         self:PlayAnimationWithMask("GridItemEnable")
-        self:StopAnimationTimer()
-    end, (index - 1) * Delay)
+                self:StopAnimationTimer()
 end
 
 function XUiGridSGFurniture:Refresh(data, selectId, gridType)

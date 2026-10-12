@@ -41,16 +41,18 @@ function XUiTheatre3BubbleEquipment:UpdateView()
     elseif self._Param.Align and self._Param.DimObj then
         -- 异形屏适配
         self._Tip:Close()
-        XScheduleManager.ScheduleOnce(function()
-            self._Tip:Open()
-            self._Tip:SetPositionByAlign(self._Param.DimObj, self._Param.Align)
-        end, 1)
+        XScheduleManagerPro.ScheduleOnce(self._OnUpdateViewScheduleCb, self, 1)
     end
 end
 
 function XUiTheatre3BubbleEquipment:DoCallBack()
     self:Close()
     self._Param.btnCallBack()
+end
+
+function XUiTheatre3BubbleEquipment:_OnUpdateViewScheduleCb()
+    self._Tip:Open()
+    self._Tip:SetPositionByAlign(self._Param.DimObj, self._Param.Align)
 end
 
 return XUiTheatre3BubbleEquipment

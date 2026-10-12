@@ -140,16 +140,11 @@ end
 
 function XUiPrequelFragment:AddChallengeTimer()
     self:RemoveChallengeTimer()
-    ChallengeChapterTimer = XScheduleManager.ScheduleForever(function()
-        self:UpdateChapterItems()
-    end, ChallengeChapterInterval)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateChapterItemsScheduleCb, self, ChallengeChapterInterval)
 end
 
 function XUiPrequelFragment:RemoveChallengeTimer()
-    if ChallengeChapterTimer then
-        XScheduleManager.UnSchedule(ChallengeChapterTimer)
-        ChallengeChapterTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateChapterItemsScheduleCb, self)
 end
 
 function XUiPrequelFragment:UpdateChapterItems()
@@ -190,4 +185,8 @@ function XUiPrequelFragment:OnDisable()
 end
 
 function XUiPrequelFragment:OnDestroy()
+end
+
+function XUiPrequelFragment:_OnUpdateChapterItemsScheduleCb()
+    self:UpdateChapterItems()
 end

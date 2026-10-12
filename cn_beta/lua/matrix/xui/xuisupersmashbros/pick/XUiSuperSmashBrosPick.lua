@@ -67,9 +67,7 @@ function XUiSuperSmashBrosPick:OnEnable()
     if self.FirstIn then
         self.FirstIn = false
         XLuaUiManager.SetMask(true)
-        XScheduleManager.ScheduleOnce(function()
-                XLuaUiManager.SetMask(false)
-            end, 1200) --开始进入界面时等待一下动画结束
+        XScheduleManagerPro.ScheduleOnce(self._OnOnEnableScheduleCb, self, 1200) --开始进入界面时等待一下动画结束
     else
         if self.PanelPickEnable then self.PanelPickEnable:Play() end
     end
@@ -130,4 +128,8 @@ end
 function XUiSuperSmashBrosPick:RemovePickScenes()
     XLuaUiManager.Remove("UiSuperSmashBrosSelectStage")
     XLuaUiManager.Remove("UiSuperSmashBrosPick")
+end
+
+function XUiSuperSmashBrosPick:_OnOnEnableScheduleCb()
+    XLuaUiManager.SetMask(false)
 end

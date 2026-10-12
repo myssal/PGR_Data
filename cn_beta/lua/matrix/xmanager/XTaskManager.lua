@@ -80,6 +80,8 @@ TaskType = {
     Maverick3Daily = 93, -- 孤胆枪神每日任务
     DlcMouseHunter = 96, -- 躲猫猫
     DevilMayCryDraw = 102, -- 鬼泣联动卡池
+    DateALiveDraw = 114, -- 约战联动卡池
+    SkyTower = 118, --通天塔
 }
 
 TaskTag = {
@@ -185,6 +187,7 @@ XTaskManagerCreator = function()
     local WorldBossTaskData = {}
     local RiftTaskData = {}
     local DevilMayCryDrawTaskList = {}
+    local DateALiveDrawTaskList = {}
 
     --师徒任务
     local MentorGrowTaskData = {}
@@ -220,6 +223,8 @@ XTaskManagerCreator = function()
 
     --音频解密
     local LivWarmSoundsActivityTaskData = {}
+    --通天塔
+    local SkyTowerTaskData = {}
     
     local TaskResultDataCache = {}
     local _IsInit = false
@@ -650,10 +655,20 @@ XTaskManagerCreator = function()
 
             return taskType == XTaskManager.TaskType.DevilMayCryDraw, key, value
         end)
+        DateALiveDrawTaskList = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.DateALiveDraw, key, value
+        end)
         DlcMouseHunterTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
             local taskType = XTaskConfig.GetTaskType(key)
 
             return taskType == XTaskManager.TaskType.DlcMouseHunter, key, value
+        end)
+        SkyTowerTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.SkyTower, key, value
         end)
         TaskDataGroup = XLazy.ApplyLazyerClassifier(TotalTaskData, function(key, value)
             local taskType = XTaskConfig.GetTaskType(key)
@@ -1791,6 +1806,14 @@ XTaskManagerCreator = function()
         return tasks
     end
 
+    function XTaskManager.GetDateALiveDrawTaskList()
+        local tasks = {}
+        for _, v in pairs(DateALiveDrawTaskList) do
+            tableInsert(tasks, v)
+        end
+        return tasks
+    end
+
     -- 包括已完成的任务
     function XTaskManager.GetBabelTowerFullTaskList()
         local tasks = {}
@@ -2409,8 +2432,12 @@ XTaskManagerCreator = function()
             datas = RiftTaskData
         elseif taskType == XTaskManager.TaskType.DevilMayCryDraw then
             datas = DevilMayCryDrawTaskList
+        elseif taskType == XTaskManager.TaskType.DateALiveDraw then
+            datas = DateALiveDrawTaskList
         elseif taskType == XTaskManager.TaskType.DlcMouseHunter then
             datas = DlcMouseHunterTaskData
+        elseif taskType == XTaskManager.TaskType.SkyTower then
+            datas = SkyTowerTaskData
         elseif taskType then
             datas = TaskDataGroup[taskType] or {}
         end
@@ -2743,8 +2770,12 @@ XTaskManagerCreator = function()
                 RiftTaskData[value.Id] = value
             elseif taskType == XTaskManager.TaskType.DevilMayCryDraw then
                 DevilMayCryDrawTaskList[value.Id] = value
+            elseif taskType == XTaskManager.TaskType.DateALiveDraw then
+                DateALiveDrawTaskList[value.Id] = value
             elseif taskType == XTaskManager.TaskType.DlcMouseHunter then
                 DlcMouseHunterTaskData[value.Id] = value
+            elseif taskType == XTaskManager.TaskType.SkyTower then
+                SkyTowerTaskData[value.Id] = value
             else
                 if not TaskDataGroup[taskType] then
                     TaskDataGroup[taskType] = {}
@@ -2842,8 +2873,12 @@ XTaskManagerCreator = function()
             taskList = RiftTaskData
         elseif taskType == XTaskManager.TaskType.DevilMayCryDraw then
             taskList = DevilMayCryDrawTaskList
+        elseif taskType == XTaskManager.TaskType.DateALiveDraw then
+            taskList = DateALiveDrawTaskList
         elseif taskType == XTaskManager.TaskType.DlcMouseHunter then
             taskList = DlcMouseHunterTaskData
+        elseif taskType == XTaskManager.TaskType.SkyTower then
+            taskList = SkyTowerTaskData
         else
             taskList = TaskDataGroup[taskType]
         end

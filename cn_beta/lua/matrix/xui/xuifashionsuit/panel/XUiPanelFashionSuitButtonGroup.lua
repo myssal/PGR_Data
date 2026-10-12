@@ -41,7 +41,11 @@ end
 
 function XUiPanelFashionSuitButtonGroup:OnBtnGetClick()
     local skipId = self._Context:GetCurParams()[1]
-    XFunctionManager.SkipInterface(skipId)
+    if not XTool.IsNumberValid(skipId) then
+        return
+    end
+
+    XLuaUiManager.Open("UiSkip", self._Context.SourceId, nil, nil, { skipId })
 end
 
 function XUiPanelFashionSuitButtonGroup:OnBtnWearClick()
@@ -83,6 +87,14 @@ function XUiPanelFashionSuitButtonGroup:ActionBuy(characterId, params)
     self.BtnRandomWear.gameObject:SetActiveEx(false)
     
     self._GainType = self._FashionGroup.GainType
+
+    for _, id in ipairs(params) do
+        local gainParams = self._Context:GetParams(id)
+        if not XMVCA.XFashionSuit:CheckGainParamsValid(self._GainType, gainParams) then
+            self:SetBuyClose()
+            return
+        end
+    end
     if self._GainType == GainType.Purchase then
         self.BtnBuy.gameObject:SetActiveEx(true)
         self._Purchase:ActionBuy(params, self._FashionGroup)
@@ -260,6 +272,12 @@ function XUiPanelFashionSuitButtonGroup:OnBuyBefore()
         endTime = XTime.GetServerNowTimestamp() + self._RemainTime
     end
 
+    local isHideWorldDesc = false
+    if self._Helper:IsEnableGroupSales() then
+        local giftId = XFashionConfigs.GetFashionTemplate(self._FashionGroup.FashionId).GiftId
+        isHideWorldDesc = not XTool.IsNumberValid(giftId)
+    end
+
     ---@type CoatingBuyTipsViewModel
     local viewModel = {
         Title = self._Helper:GetName(),
@@ -272,6 +290,7 @@ function XUiPanelFashionSuitButtonGroup:OnBuyBefore()
         AssetsItemIds = { XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.HongKa },
         EndTime = endTime,
         IsTimeLimit = XTool.IsNumberValid(endTime),
+        IsHideWorldDesc = isHideWorldDesc,
     }
 
     -- 打开详情界面
@@ -361,7 +380,11 @@ end
 --只有从涂装套装主界面跳转过来时 才开启成套购买功能
 function XUiPanelFashionSuitButtonGroup:SetBtnBuySuitVisible(bo, skipUpdateView)
     self._IsGroupSalesVisible = bo
-    self.BtnBuySuit.gameObject:SetActiveEx(bo)
+    if self._Context.FashionGroup.GainType == GainType.Skip then
+        self.BtnBuySuit.gameObject:SetActiveEx(false)
+    else
+        self.BtnBuySuit.gameObject:SetActiveEx(bo)
+    end
     if skipUpdateView then
         self.Parent:ApplyGroupSalesState(self._IsGroupSalesVisible, self._IsGroupSalesEnable)
     else

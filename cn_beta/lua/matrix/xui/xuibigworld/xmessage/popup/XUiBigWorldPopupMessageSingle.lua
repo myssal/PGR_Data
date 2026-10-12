@@ -17,7 +17,6 @@ function XUiBigWorldPopupMessageSingle:OnAwake()
     self._Message = false
     self._IsForce = false
     self._IsPlayFinish = false
-    self._Timer = false
 
     self:_RegisterButtonClicks()
 end
@@ -79,26 +78,12 @@ end
 
 function XUiBigWorldPopupMessageSingle:_RegisterSchedules()
     -- 在此处注册定时器
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        if not self._IsPlayFinish then
-            if not self._Message or self._Message:IsNil() or self._Message:IsComplete() then
-                self._IsPlayFinish = true
-                self.BtnClose.gameObject:SetActiveEx(true)
-                self.BtnBgClose.gameObject:SetActiveEx(true)
-
-                XScheduleManager.UnSchedule(self._Timer)
-                self._Timer = false
-            end
-        end
-    end, XScheduleManager.SECOND * 3)
+    XScheduleManagerPro.ScheduleForever(XUiBigWorldPopupMessageSingle._OnCheckMessageFinishScheduleCb, self, XScheduleManagerPro.SECOND * 3)
 end
 
 function XUiBigWorldPopupMessageSingle:_RemoveSchedules()
     -- 在此处移除定时器
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(XUiBigWorldPopupMessageSingle._OnCheckMessageFinishScheduleCb, self)
 end
 
 function XUiBigWorldPopupMessageSingle:_RegisterListeners()
@@ -127,5 +112,16 @@ function XUiBigWorldPopupMessageSingle:_Refresh()
 end
 
 -- endregion
+
+function XUiBigWorldPopupMessageSingle:_OnCheckMessageFinishScheduleCb()
+    if not self._IsPlayFinish then
+        if not self._Message or self._Message:IsNil() or self._Message:IsComplete() then
+            self._IsPlayFinish = true
+            self.BtnClose.gameObject:SetActiveEx(true)
+            self.BtnBgClose.gameObject:SetActiveEx(true)
+            self:_RemoveSchedules()
+        end
+    end
+end
 
 return XUiBigWorldPopupMessageSingle

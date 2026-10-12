@@ -153,14 +153,16 @@ end
 
 function XMapPoint:_PlayLvUpDownAnim()
     self.TxtName2.gameObject:SetActiveEx(true)
-    XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
-        self.TxtName2.gameObject:SetActive(false)
-    end, 2000)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayLvUpDownAnimScheduleCb, self, 2000)
 end
 
 -------------------------------------------------------------------
+
+function XMapPoint:_OnPlayLvUpDownAnimScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
+    end
+    self.TxtName2.gameObject:SetActive(false)
+end
 
 return XMapPoint

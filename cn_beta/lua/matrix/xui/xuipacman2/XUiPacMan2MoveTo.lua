@@ -1,6 +1,10 @@
 ---@class XUiPacMan2MoveTo
 local XUiPacMan2MoveTo = XClass(nil, "XUiPacMan2MoveTo")
 
+-- 剩余距离平方小于此值时，直接吸附到目标位置。
+-- 这是距离平方阈值，不是距离；保持原值，避免改变移动表现。
+local ArrivalDistanceSquared = 0.1
+
 function XUiPacMan2MoveTo:Ctor(transform, speed)
     self._Timer = false
     self._TargetPosition = false
@@ -14,10 +18,8 @@ end
 
 function XUiPacMan2MoveTo:SetTargetPosition(position)
     self._TargetPosition = position
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:_Move()
-        end, 0)
+    if not XScheduleManagerPro.HasSchedule(self._OnMoveScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnMoveScheduleCb, self, 0)
     end
 end
 
@@ -39,7 +41,7 @@ function XUiPacMan2MoveTo:_Move()
         self._Transform.position = self._Transform.position + direction.normalized * moveDistance
         
         -- 检查是否已经接近目标位置
-        if (self._Transform.position - self._TargetPosition).sqrMagnitude < 0.1 then
+        if (self._Transform.position - self._TargetPosition).sqrMagnitude < ArrivalDistanceSquared then
             self._Transform.position = self._TargetPosition
             self:Stop()
         end
@@ -50,11 +52,7 @@ function XUiPacMan2MoveTo:_Move()
 end
 
 function XUiPacMan2MoveTo:Stop()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
-    self._TargetPosition = false
+        XScheduleManagerPro.UnSchedule(self._OnMoveScheduleCb, self)
 end
 
 -- 必须destroy，否则会内存泄漏，持有transform，来自unity
@@ -62,6 +60,10 @@ function XUiPacMan2MoveTo:Destroy()
     self:Stop()
     self._Transform = false
     self._Speed = false
+end
+
+function XUiPacMan2MoveTo:_OnMoveScheduleCb()
+    self:_Move()
 end
 
 return XUiPacMan2MoveTo

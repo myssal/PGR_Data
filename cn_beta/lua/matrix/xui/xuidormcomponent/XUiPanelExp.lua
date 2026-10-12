@@ -39,21 +39,12 @@ function XUiPanelExp:RefreshExpInfo(changeValue)
         self.TxtMoodAdd.text = "+" .. changeValue
         self.TxtMoodAdd.gameObject:SetActive(true)
 
-        self.Timer = XScheduleManager.ScheduleOnce(function()
-            if XTool.UObjIsNil(self.Transform) or not self.GameObject.activeSelf then
-                return
-            end
-
-            self.TxtMoodAdd.gameObject:SetActive(false)
-        end, XDormConfig.DISPPEAR_TIME)
+        XScheduleManagerPro.ScheduleOnce(self._OnRefreshExpInfoScheduleCb, self, XDormConfig.DISPPEAR_TIME)
     end
 end
 
 function XUiPanelExp:RemoveTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRefreshExpInfoScheduleCb, self)
 end
 
 function XUiPanelExp:UpdateExpInfo(characterId, changeValue)
@@ -111,6 +102,14 @@ function XUiPanelExp:Update()
     end
 
     self:UpdateTransform(self.TargetTransform)
+end
+
+function XUiPanelExp:_OnRefreshExpInfoScheduleCb()
+    if XTool.UObjIsNil(self.Transform) or not self.GameObject.activeSelf then
+        return
+    end
+
+    self.TxtMoodAdd.gameObject:SetActive(false)
 end
 
 return XUiPanelExp

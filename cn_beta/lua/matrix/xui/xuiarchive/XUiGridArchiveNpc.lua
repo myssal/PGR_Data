@@ -195,9 +195,7 @@ end
 function XUiGridArchiveNpc:SetItemDailyEnable(cb)
     self.NpcItemDailyCanvasGroupAlphaTimer = XUiHelper.DoAlpha(self.NpcItemDailyCanvasGroup, self.StartAlpha, self.EndAlpha, TweenSpeed.Mid, XUiHelper.EaseType.Sin, nil)
     self.NpcItemDailyScaleTimer = XUiHelper.DoScale(self.NpcItemDaily,self.StartScale , self.EndScale, TweenSpeed.Mid, XUiHelper.EaseType.Sin, cb)
-    XScheduleManager.ScheduleOnce(function ()
-            self.NpcItemDaily.gameObject:SetActiveEx(true)
-        end, 1)
+    XScheduleManagerPro.ScheduleNextFrame(XUiGridArchiveNpc._OnShowDailyItemNextFrameScheduleCb, self)
 end
 function XUiGridArchiveNpc:SetItemDailyDisable(cb)
     self.NpcItemDailyCanvasGroupAlphaTimer = XUiHelper.DoAlpha(self.NpcItemDailyCanvasGroup, self.EndAlpha, self.StartAlpha, TweenSpeed.Mid, XUiHelper.EaseType.Sin, nil)
@@ -216,6 +214,7 @@ function XUiGridArchiveNpc:GoBack(cb,IsMove)
     self.NpcItemMoveTimer = XUiHelper.DoMove(self.NpcItem, self.StartPos, IsMove and TweenSpeed.High or 0, XUiHelper.EaseType.Sin, cb)
 end
 function XUiGridArchiveNpc:StopTween()
+    XScheduleManagerPro.UnSchedule(XUiGridArchiveNpc._OnShowDailyItemNextFrameScheduleCb, self)
     if self.NpcItemMoveTimer then
         XScheduleManager.UnSchedule(self.NpcItemMoveTimer)
     end
@@ -229,6 +228,10 @@ function XUiGridArchiveNpc:StopTween()
         XScheduleManager.UnSchedule(self.NpcItemCanvasGroupAlphaTimer)
     end
 
+end
+
+function XUiGridArchiveNpc:_OnShowDailyItemNextFrameScheduleCb()
+    self.NpcItemDaily.gameObject:SetActiveEx(true)
 end
 
 

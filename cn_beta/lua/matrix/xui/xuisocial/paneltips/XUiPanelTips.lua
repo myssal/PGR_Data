@@ -4,7 +4,7 @@ local XUiPanelTips = XClass(nil, "XUiPanelTips")
 
 local MAX_ANIMATION_NUMBER = 2
 local ANIMATION_DELAY = CS.XGame.ClientConfig:GetFloat("SocialBlackAnimationContentShowTime")
-local SECOND = XScheduleManager.SECOND
+local SECOND = XScheduleManagerPro.SECOND
 local HINT_DISABLE_TIME = CS.XGame.ClientConfig:GetInt("SocialHintDisableTime")
 
 function XUiPanelTips:Ctor(ui, rootUi)
@@ -80,21 +80,11 @@ end
 
 function XUiPanelTips:StartRemoveTipTimer()
     self:StopRemoveTipTimer()
-    self.RemoveTipTimer = XScheduleManager.ScheduleForever(function()
-        if XTool.IsTableEmpty(self.AnimationGridList[1]) then
-            self:StopRemoveTipTimer()
-            return
-        end
-
-        self:PlayDisableAnimation()
-    end, HINT_DISABLE_TIME)
+    XScheduleManagerPro.ScheduleForever(self._OnStopRemoveTipTimerScheduleCb, self, HINT_DISABLE_TIME)
 end
 
 function XUiPanelTips:StopRemoveTipTimer()
-    if self.RemoveTipTimer then
-        XScheduleManager.UnSchedule(self.RemoveTipTimer)
-        self.RemoveTipTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStopRemoveTipTimerScheduleCb, self)
 end
 
 function XUiPanelTips:Show()
@@ -110,6 +100,15 @@ function XUiPanelTips:Hide()
     self.AnimationGridList = {}
     self.AnimationIndex = 1
     self.GameObject.gameObject:SetActive(false)
+end
+
+function XUiPanelTips:_OnStopRemoveTipTimerScheduleCb()
+    if XTool.IsTableEmpty(self.AnimationGridList[1]) then
+        self:StopRemoveTipTimer()
+        return
+    end
+
+    self:PlayDisableAnimation()
 end
 
 return XUiPanelTips

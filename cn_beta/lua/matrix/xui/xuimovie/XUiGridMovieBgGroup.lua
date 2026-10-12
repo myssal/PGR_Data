@@ -91,17 +91,12 @@ function XUiGridMovieBgGroup:PlayBgSwitchAnimation()
     end
     
     self:RemoveBgAnimTimer()
-    self.BgAnimTimer = XScheduleManager.ScheduleForever(function()  
-        self:OnBgAnimUpdate()
-    end, TIMER_INTERVAL * 1000)
+    XScheduleManagerPro.ScheduleForever(self._OnOnBgAnimUpdateScheduleCb, self, TIMER_INTERVAL * 1000)
 end
 
 -- 移除背景切换定时器
 function XUiGridMovieBgGroup:RemoveBgAnimTimer()
-    if self.BgAnimTimer then
-        XScheduleManager.UnSchedule(self.BgAnimTimer)
-        self.BgAnimTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnOnBgAnimUpdateScheduleCb, self)
 end
 
 -- 背景动画定时器更新函数
@@ -143,6 +138,10 @@ function XUiGridMovieBgGroup:OnBgAnimUpdate()
     -- 更新背景图下标和等待时间
     self.CurBgIndex = nextBgIndex
     self.WaitTime = self.SwitchAnimTime + self.StayTime
+end
+
+function XUiGridMovieBgGroup:_OnOnBgAnimUpdateScheduleCb()
+    self:OnBgAnimUpdate()
 end
 
 return XUiGridMovieBgGroup

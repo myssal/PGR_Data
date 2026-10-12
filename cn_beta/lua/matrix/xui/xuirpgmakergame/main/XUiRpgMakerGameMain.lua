@@ -58,24 +58,12 @@ end
 function XUiRpgMakerGameMain:InitTimes()
     self:ClearTimer()
     self.EndTime = XDataCenter.RpgMakerGameManager.GetActivityEndTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        local isClose = self.EndTime < XTime.GetServerNowTimestamp()
-        if isClose then
-            XUiManager.TipText("ActivityMainLineEnd")
-            XLuaUiManager.Close("UiGuide")
-            XLuaUiManager.RunMain()
-        else
-            self:RefreshActivityTime()
-        end
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnRefreshActivityTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 -- 清除定时器
 function XUiRpgMakerGameMain:ClearTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRefreshActivityTimeScheduleCb, self)
 end
 
 --#endregion
@@ -381,3 +369,14 @@ function XUiRpgMakerGameMain:OnBtnTaskClick()
 end
 
 --#endregion
+
+function XUiRpgMakerGameMain:_OnRefreshActivityTimeScheduleCb()
+    local isClose = self.EndTime < XTime.GetServerNowTimestamp()
+    if isClose then
+        XUiManager.TipText("ActivityMainLineEnd")
+        XLuaUiManager.Close("UiGuide")
+        XLuaUiManager.RunMain()
+    else
+        self:RefreshActivityTime()
+    end
+end

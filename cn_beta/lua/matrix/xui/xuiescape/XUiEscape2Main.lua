@@ -75,15 +75,11 @@ end
 
 function XUiEscape2Main:StartTimeUpdate()
     self:StopTimeUpdate()
-    self._TimeUpdateTimer = XScheduleManager.ScheduleForever(handler(self, self.UpdateTime),
-            XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self.UpdateTime, self, XScheduleManagerPro.SECOND, 0)
 end
 
 function XUiEscape2Main:StopTimeUpdate()
-    if self._TimeUpdateTimer then
-        XScheduleManager.UnSchedule(self._TimeUpdateTimer)
-    end
-    self._TimeUpdateTimer = nil
+    XScheduleManagerPro.UnSchedule(self.UpdateTime, self)
 end
 
 function XUiEscape2Main:UpdateTime()

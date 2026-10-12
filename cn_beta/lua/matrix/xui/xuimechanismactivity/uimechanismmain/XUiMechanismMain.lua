@@ -38,7 +38,7 @@ end
 function XUiMechanismMain:StartTimeUpdater()
     self:StopTimeUpdater()
     self:OnTimeUpdate()
-    self._TimerUpdaterId = XScheduleManager.ScheduleForever(handler(self, self.OnTimeUpdate), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self.OnTimeUpdate, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiMechanismMain:OnTimeUpdate()
@@ -47,10 +47,7 @@ function XUiMechanismMain:OnTimeUpdate()
 end
 
 function XUiMechanismMain:StopTimeUpdater()
-    if self._TimerUpdaterId then
-        XScheduleManager.UnSchedule(self._TimerUpdaterId)
-        self._TimerUpdaterId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.OnTimeUpdate, self)
 end
 
 --endregion

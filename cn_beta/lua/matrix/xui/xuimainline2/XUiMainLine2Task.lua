@@ -107,25 +107,25 @@ function XUiMainLine2Task:OnDynamicTableEvent(event, index, grid)
         grid:ResetData(data)
         self.GridCount = self.GridCount + 1
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
-        local grids = self.DynamicTable:GetGrids()
         self.GridIndex = 1
         self:StopAnimationTimer()
-        self.AnimationTimerId = XScheduleManager.Schedule(function()
-            local item = grids[self.GridIndex]
-            if item then
-                item.GameObject:SetActive(true)
-                item:PlayAnimation()
-            end
-            self.GridIndex = self.GridIndex + 1
-        end, 50, self.GridCount, 0)
+        XScheduleManagerPro.Schedule(XUiMainLine2Task._OnGridAnimScheduleCb, self, 50, self.GridCount, 0)
     end
 end
 
-function XUiMainLine2Task:StopAnimationTimer()
-    if self.AnimationTimerId then
-        XScheduleManager.UnSchedule(self.AnimationTimerId)
-        self.AnimationTimerId = nil
+-- 格子入场动画定时器回调
+function XUiMainLine2Task:_OnGridAnimScheduleCb()
+    local grids = self.DynamicTable and self.DynamicTable:GetGrids()
+    local item = grids and grids[self.GridIndex]
+    if item then
+        item.GameObject:SetActive(true)
+        item:PlayAnimation()
     end
+    self.GridIndex = self.GridIndex + 1
+end
+
+function XUiMainLine2Task:StopAnimationTimer()
+    XScheduleManagerPro.UnSchedule(XUiMainLine2Task._OnGridAnimScheduleCb, self)
 end
 
 return XUiMainLine2Task

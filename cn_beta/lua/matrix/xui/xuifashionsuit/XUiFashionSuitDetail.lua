@@ -32,6 +32,7 @@ function XUiFashionSuitDetail:OnAwake()
     if self.PanelLackResources then
         self._PanelLackRes = XUiPanelLackResources.New(self.PanelLackResources, self)
     end
+    XUiHelper.SetSceneType(CS.XSceneType.Ui)
 end
 
 function XUiFashionSuitDetail:GetContextUi()
@@ -478,7 +479,7 @@ function XUiFashionSuitDetail:UpdatePlayBtn()
 end
 
 function XUiFashionSuitDetail:OnBtnPlayClick()
-    XLuaUiManager.Open("UiPaintingExperiencePassV4P2", self._TrialLevelInfo.Id)
+    XDataCenter.FubenExperimentManager:OpenPaintingExperiencePass(self._TrialLevelInfo.Id)
 end
 
 --endregion

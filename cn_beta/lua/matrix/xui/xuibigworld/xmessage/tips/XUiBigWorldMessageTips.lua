@@ -13,7 +13,6 @@ function XUiBigWorldMessageTips:OnAwake()
     self._MessageData = false
     self._SequentialId = 0
     self._IsForce = false
-    self._Timer = false
     self._IsOpenedSingle = false
 
     self:_RegisterButtonClicks()
@@ -78,20 +77,13 @@ function XUiBigWorldMessageTips:_RegisterSchedules()
     end
 
     -- 在此处注册定时器
-    self._Timer = XScheduleManager.ScheduleOnce(function()
-        self._Timer = false
-        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_RECEIVE_MESSAGE_NOTIFY)
-        self:_PlayDisableAnimation()
-    end, self._Control:GetMessageTipShowTime() * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(XUiBigWorldMessageTips._OnHideMessageTipScheduleCb, self, self._Control:GetMessageTipShowTime() * XScheduleManagerPro.SECOND)
 
 end
 
 function XUiBigWorldMessageTips:_RemoveSchedules()
     -- 在此处移除定时器
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(XUiBigWorldMessageTips._OnHideMessageTipScheduleCb, self)
 end
 
 function XUiBigWorldMessageTips:_RegisterListeners()
@@ -158,5 +150,10 @@ function XUiBigWorldMessageTips:_Init()
 end
 
 -- endregion
+
+function XUiBigWorldMessageTips:_OnHideMessageTipScheduleCb()
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_RECEIVE_MESSAGE_NOTIFY)
+    self:_PlayDisableAnimation()
+end
 
 return XUiBigWorldMessageTips

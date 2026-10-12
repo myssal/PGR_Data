@@ -103,9 +103,7 @@ function XUiLoginVerification:OnAnswerRight()
     if self.QuizIndex >= #self.QuizList then
         XUiManager.TipText("LoginLimitPass")
         self:Close()
-        XScheduleManager.ScheduleOnce(function()
-            XLoginManager.ClearLimitLogin()
-        end, 1500)
+        XScheduleManagerPro.ScheduleOnce(self._OnOnAnswerRightScheduleCb, self, 1500)
     else
         XUiManager.TipText("LoginLimitRightAnswer")
         self.QuizIndex = self.QuizIndex + 1
@@ -115,10 +113,7 @@ end
 
 function XUiLoginVerification:OnAnswerWrong()
     XUiManager.TipText("LoginLimitWrongAnswer")
-    XScheduleManager.ScheduleOnce(function()
-        self:Close()
-        XLoginManager.DoDisconnect()
-    end, 1500)
+    XScheduleManagerPro.ScheduleOnce(self._OnCloseScheduleCb, self, 1500)
 end
 
 -- auto
@@ -140,4 +135,12 @@ function XUiLoginVerification:OnBtnConfirmClick()
             self:OnAnswerWrong()
         end
     end)
+end
+
+function XUiLoginVerification:_OnCloseScheduleCb()
+    self:Close()
+    XLoginManager.DoDisconnect()
+end
+function XUiLoginVerification:_OnOnAnswerRightScheduleCb()
+    XLoginManager.ClearLimitLogin()
 end

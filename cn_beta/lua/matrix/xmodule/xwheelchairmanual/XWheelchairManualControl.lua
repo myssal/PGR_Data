@@ -484,7 +484,7 @@ function XWheelchairManualControl:GetCurActivityScrollCardSwitchInterval()
         end
     end
     
-    return XScheduleManager.SECOND
+    return XScheduleManagerPro.SECOND
 end
 
 function XWheelchairManualControl:GetCurActivityScrollCardImages()
@@ -626,6 +626,13 @@ function XWheelchairManualControl:GetManualPlanRewardId(planId)
     local cfg = self._Model:GetWheelchairManualPlanCfg(planId)
     if cfg then
         return cfg.RewardId
+    end
+end
+
+function XWheelchairManualControl:GetManualPlanExtRewardId(planId)
+    local cfg = self._Model:GetWheelchairManualPlanCfg(planId)
+    if cfg then
+        return cfg.ExtRewardId
     end
 end
 
@@ -801,15 +808,12 @@ end
 function XWheelchairManualControl:StartTickOutCheckTimer()
     self:StopTickOutCheckTimer()
     if not self:TickOutCheck() then
-        self._TickOutCheckTimeId = XScheduleManager.ScheduleForever(handler(self, self.TickOutCheck), XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleForever(XWheelchairManualControl.TickOutCheck, self, XScheduleManagerPro.SECOND)
     end
 end
 
 function XWheelchairManualControl:StopTickOutCheckTimer()
-    if self._TickOutCheckTimeId then
-        XScheduleManager.UnSchedule(self._TickOutCheckTimeId)
-        self._TickOutCheckTimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XWheelchairManualControl.TickOutCheck, self)
 end
 
 function XWheelchairManualControl:TickOutCheck()

@@ -53,15 +53,18 @@ function XUiPanelPartnerSkill:ShowPanel()
         self.SkillInfoPanel:UpdatePanel(self.Data, self.SelectSkillIndex)
         self.SkillInfoPanel:PlayEnableAnime()
     elseif self.PanelState == panelState.SkillUpConfirm then
-        XScheduleManager.ScheduleOnce(function()
-            self:SetSkillInfoState()
-            self:ShowPanel()
-            XLuaUiManager.Open("UiPartnerPopupTip",CS.XTextManager.GetText("PartnerSkillUpConfirm"))
-        end, 2)
+        XScheduleManagerPro.ScheduleOnce(self._OnSetSkillInfoStateScheduleCb, self, 2)
         --self.SkillUpConfirmPanel:UpdatePanel(self.Data, self.SkillUpInfo)
         --self.SkillUpConfirmPanel:PlayEnableAnime()
     end
 end
+
+function XUiPanelPartnerSkill:_OnSetSkillInfoStateScheduleCb()
+    self:SetSkillInfoState()
+    self:ShowPanel()
+    XLuaUiManager.Open("UiPartnerPopupTip",CS.XTextManager.GetText("PartnerSkillUpConfirm"))
+end
+
 
 function XUiPanelPartnerSkill:SetSkillMainState()
     self.PanelState = panelState.SkillMain
@@ -83,9 +86,11 @@ function XUiPanelPartnerSkill:IsInfoSkillState()
 end
 
 function XUiPanelPartnerSkill:PlayEnableAnime()
-    XScheduleManager.ScheduleOnce(function()
-        self.Animation:GetObject("AnimEnable"):PlayTimelineAnimation()
-        end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayEnableAnimeScheduleCb, self, 1)
+end
+
+function XUiPanelPartnerSkill:_OnPlayEnableAnimeScheduleCb()
+    self.Animation:GetObject("AnimEnable"):PlayTimelineAnimation()
 end
 
 return XUiPanelPartnerSkill

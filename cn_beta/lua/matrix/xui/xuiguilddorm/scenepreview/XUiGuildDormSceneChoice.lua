@@ -106,7 +106,7 @@ function XUiGuildDormSceneChoice:RefreshUi()
     self.PanelTrialTime.gameObject:SetActiveEx(isTime)
     if isTime then
         self.EndTimer = XFunctionManager.GetEndTimeByTimeId(config.TimeId)
-        if not self.Timer then
+        if not XScheduleManagerPro.HasSchedule(self._OnUpdateTimerScheduleCb, self) then
             self:StartTimer()
         else
             self:UpdateTimer()
@@ -148,14 +148,12 @@ function XUiGuildDormSceneChoice:OnClickTemplate(id)
 end
 
 function XUiGuildDormSceneChoice:StartTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnUpdateTimerScheduleCb, self) then
         self:StopTimer()
     end
 
     self:UpdateTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateTimer()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateTimerScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiGuildDormSceneChoice:UpdateTimer()
@@ -175,10 +173,11 @@ function XUiGuildDormSceneChoice:UpdateTimer()
 end
 
 function XUiGuildDormSceneChoice:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateTimerScheduleCb, self)
+end
+
+function XUiGuildDormSceneChoice:_OnUpdateTimerScheduleCb()
+    self:UpdateTimer()
 end
 
 return XUiGuildDormSceneChoice

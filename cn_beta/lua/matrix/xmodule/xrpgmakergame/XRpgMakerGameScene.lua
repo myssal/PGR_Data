@@ -71,18 +71,19 @@ function XRpgMakerGameScene:OnSceneLoadComplete()
 
     -- 延迟Loading界面关闭的时间
     local delay = CS.XGame.ClientConfig:GetInt("RpgMakerGameLoadingDelayClose")
-    self.DelayTimer = XScheduleManager.ScheduleOnce(function()
-        XLuaUiManager.Close("UiFubenRpgMakerGameMovie")
-        if not XLuaUiManager.IsUiLoad("UiRpgMakerGamePlayMain") then
-            XLuaUiManager.Open("UiRpgMakerGamePlayMain")
-        end
-        self:SetSceneActive(false) --处理光照异常
-        self:SetSceneActive(true)
-        self.DelayTimer = nil
-    end, delay)
+    XScheduleManagerPro.ScheduleOnce(self._OnSceneLoadCompleteScheduleCb, self, delay)
 
     -- 注册事件
     self:RegisterEvents()
+end
+
+function XRpgMakerGameScene:_OnSceneLoadCompleteScheduleCb()
+        XLuaUiManager.Close("UiFubenRpgMakerGameMovie")
+                if not XLuaUiManager.IsUiLoad("UiRpgMakerGamePlayMain") then
+                    XLuaUiManager.Open("UiRpgMakerGamePlayMain")
+                end
+                self:SetSceneActive(false) --处理光照异常
+                self:SetSceneActive(true)
 end
 
 function XRpgMakerGameScene:RegisterEvents()
@@ -129,10 +130,7 @@ function XRpgMakerGameScene:OnRelease()
         self.GameObject = nil
     end
 
-    if self.DelayTimer then
-        XScheduleManager.UnSchedule(self.DelayTimer)
-        self.DelayTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnSceneLoadCompleteScheduleCb, self)
     self.ActionClass = nil
     
     -- 释放对象
@@ -395,8 +393,6 @@ function XRpgMakerGameScene:GetGrass(x, y)
     return XDataCenter.RpgMakerGameManager.GetEntityObjByPosition(x, y, XMVCA.XRpgMakerGame.EnumConst.XRpgMakeBlockMetaType.Grass)
 end
 --endregion
-
-
 
 --region 地图初始化
 function XRpgMakerGameScene:InitCamera()
@@ -877,8 +873,6 @@ function XRpgMakerGameScene:StageResetTorchObj()
 end
 --endregion
 
-
-
 function XRpgMakerGameScene:GetGapObjs()
     return self.GapObjs
 end
@@ -1191,7 +1185,6 @@ function XRpgMakerGameScene:IsPhysics2CanPass(pos)
     end
     return true
 end
-
 
 -- 物理属性单位是否可飞过
 function XRpgMakerGameScene:IsPhysics2CanFly(pos)

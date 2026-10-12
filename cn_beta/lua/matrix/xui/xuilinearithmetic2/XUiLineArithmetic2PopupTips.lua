@@ -7,7 +7,6 @@ local XUiLineArithmetic2PopupTips = XLuaUiManager.Register(XLuaUi, "UiLineArithm
 
 function XUiLineArithmetic2PopupTips:OnAwake()
     self:BindExitBtns(self.BtnTanchuangCloseBig)
-    self._Timer = false
     
     ---@type XUiLineArithmetic2GameGrid[]
     self._UiGrids = {}
@@ -34,10 +33,8 @@ end
 
 function XUiLineArithmetic2PopupTips:OnEnable()
     self.TxtSpeak.text = XUiHelper.GetText("LineArithmeticHelpText")
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:Update()
-        end, 0)
+    if not XScheduleManagerPro.HasSchedule(self._OnEnableScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnEnableScheduleCb, self, 0)
     end
     ---@type UnityEngine.UI.GridLayoutGroup
     local gridLayoutGroup = self.AllGrid:GetComponent(typeof(CS.UnityEngine.UI.LayoutGroup))
@@ -47,11 +44,12 @@ function XUiLineArithmetic2PopupTips:OnEnable()
     self:UpdateMap()
 end
 
+function XUiLineArithmetic2PopupTips:_OnEnableScheduleCb()
+        self:Update()
+end
+
 function XUiLineArithmetic2PopupTips:OnDisable()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
 end
 
 function XUiLineArithmetic2PopupTips:Update()

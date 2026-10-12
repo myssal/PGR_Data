@@ -67,12 +67,7 @@ function XUiGridTheatre6TaskDemand:ShowCountChange(add)
 
     self.TxtNumAdd.text = string.format("+%s", add)
     self.UiImgBarAdd.fillAmount = math.min(1, self._Amount / self._NeedNum)
-    local timerId = XScheduleManager.ScheduleOnce(function()
-        self.TxtNumAdd.gameObject:SetActiveEx(false)
-        self.UiImgBarAdd.gameObject:SetActiveEx(false)
-        self:UpdateView()
-    end, WaitTime)
-    self.Parent:_AddTimerId(timerId)
+    XScheduleManagerPro.ScheduleOnce(self._OnUpdateViewScheduleCb, self, WaitTime)
 end
 
 ---显示高亮
@@ -83,6 +78,16 @@ end
 
 function XUiGridTheatre6TaskDemand:IsTaskFinish()
     return self._Amount and self._Amount >= self._NeedNum
+end
+
+function XUiGridTheatre6TaskDemand:OnDestroy()
+    XScheduleManagerPro.UnSchedule(self._OnUpdateViewScheduleCb, self)
+end
+
+function XUiGridTheatre6TaskDemand:_OnUpdateViewScheduleCb()
+    self.TxtNumAdd.gameObject:SetActiveEx(false)
+    self.UiImgBarAdd.gameObject:SetActiveEx(false)
+    self:UpdateView()
 end
 
 return XUiGridTheatre6TaskDemand

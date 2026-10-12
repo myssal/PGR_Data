@@ -31,7 +31,7 @@ function XUiAccumulateExpendShopMain:OnStart(...)
 end
 
 function XUiAccumulateExpendShopMain:OnDestroy()
-    XScheduleManager.UnSchedule(self.Timer)
+    XScheduleManagerPro.UnSchedule(XUiAccumulateExpendShopMain._OnRefreshTimeScheduleCb, self)
 end
 
 function XUiAccumulateExpendShopMain:OnGetLuaEvents()
@@ -66,9 +66,7 @@ function XUiAccumulateExpendShopMain:InitView()
 
     self:RefreshTime()
     self:RefreshAccumemlateDataTxt()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:RefreshTime()
-    end, 1000)
+    XScheduleManagerPro.ScheduleForever(XUiAccumulateExpendShopMain._OnRefreshTimeScheduleCb, self, 1000)
 
     local goldIcon = XDataCenter.ItemManager.GetItemIcon(self.ActivityConfig.ShopItemId)
     self.RImgGold:SetRawImage(goldIcon)
@@ -228,6 +226,10 @@ function XUiAccumulateExpendShopMain:CheckTimeEnd()
         XLuaUiManager.RunMain()
         return
     end
+end
+
+function XUiAccumulateExpendShopMain:_OnRefreshTimeScheduleCb()
+    self:RefreshTime()
 end
 
 return XUiAccumulateExpendShopMain

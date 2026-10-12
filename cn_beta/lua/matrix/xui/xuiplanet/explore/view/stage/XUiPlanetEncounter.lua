@@ -13,15 +13,9 @@ function XUiPlanetEncounter:OnAwake()
 end
 
 function XUiPlanetEncounter:OnStart(callback, tipType)
-    if not self._Timer then
+    if not XScheduleManagerPro.HasSchedule(self._OnStartScheduleCb, self) then
         -- 应对同时打开多个窗口, 相互覆盖造成的bug
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            if self._Time > self._Duration then
-                XLuaUiManager.SafeClose(self.Name)
-                return
-            end
-            self._Time = self._Time + CS.UnityEngine.Time.unscaledDeltaTime
-        end, 0)
+        XScheduleManagerPro.ScheduleForever(self._OnStartScheduleCb, self, 0)
     end
     self._Callback = callback
     self._TipType = tipType or XPlanetConfigs.TipType.Boss
@@ -40,10 +34,7 @@ function XUiPlanetEncounter:OnDestroy()
         self._Callback()
         self._Callback = false
     end
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStartScheduleCb, self)
 end
 
 function XUiPlanetEncounter:InitUiObj()
@@ -71,6 +62,14 @@ function XUiPlanetEncounter:RefreshTip()
             self.TipEffectList[key].gameObject:SetActiveEx(key == self._TipType)
         end
     end
+end
+
+function XUiPlanetEncounter:_OnStartScheduleCb()
+    if self._Time > self._Duration then
+        XLuaUiManager.SafeClose(self.Name)
+        return
+    end
+    self._Time = self._Time + CS.UnityEngine.Time.unscaledDeltaTime
 end
 
 return XUiPlanetEncounter

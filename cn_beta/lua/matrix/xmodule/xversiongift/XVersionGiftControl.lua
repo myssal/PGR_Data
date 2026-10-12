@@ -202,15 +202,12 @@ function XVersionGiftControl:SetTickoutLock(isLock)
 end
 
 function XVersionGiftControl:StopTickoutCheckTimer()
-    if self._TickoutCheckTimeId then
-        XScheduleManager.UnSchedule(self._TickoutCheckTimeId)
-        self._TickoutCheckTimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XVersionGiftControl.UpdateTickoutCheckTimer, self)
 end
 
 function XVersionGiftControl:StartTickoutCheckTimer()
     self:StopTickoutCheckTimer()
-    self._TickoutCheckTimeId = XScheduleManager.ScheduleForever(handler(self, self.UpdateTickoutCheckTimer), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XVersionGiftControl.UpdateTickoutCheckTimer, self, XScheduleManagerPro.SECOND)
     self:UpdateTickoutCheckTimer()
 end
 

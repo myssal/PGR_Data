@@ -77,13 +77,8 @@ function XLineArithmeticControl:AddAgencyEvent()
     XEventManager.AddEventListener(XEventId.EVENT_LINE_ARITHMETIC_CLICK_GRID, self.OnClickPos, self)
     XEventManager.AddEventListener(XEventId.EVENT_LINE_ARITHMETIC_CONFIRM, self.ConfirmTouch, self)
 
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            if not self._Model:CheckInTime() then
-                XUiManager.TipText("FubenRepeatNotInActivityTime")
-                self:CloseThisModule()
-            end
-        end, 0)
+    if not XScheduleManagerPro.HasSchedule(self._OnCloseThisModuleScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnCloseThisModuleScheduleCb, self, 0)
     end
 end
 
@@ -91,10 +86,7 @@ function XLineArithmeticControl:RemoveAgencyEvent()
     XEventManager.RemoveEventListener(XEventId.EVENT_LINE_ARITHMETIC_CLICK_GRID, self.OnClickPos, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_LINE_ARITHMETIC_CONFIRM, self.ConfirmTouch, self)
 
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+        XScheduleManagerPro.UnSchedule(self._OnCloseThisModuleScheduleCb, self)
 end
 
 function XLineArithmeticControl:OnRelease()
@@ -989,6 +981,13 @@ end
 
 function XLineArithmeticControl:IsRequesting()
     return self._Model:IsRequesting()
+end
+
+function XLineArithmeticControl:_OnCloseThisModuleScheduleCb()
+    if not self._Model:CheckInTime() then
+        XUiManager.TipText("FubenRepeatNotInActivityTime")
+        self:CloseThisModule()
+    end
 end
 
 return XLineArithmeticControl

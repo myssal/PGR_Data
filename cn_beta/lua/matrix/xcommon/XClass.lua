@@ -5,11 +5,13 @@ local _class = {}
 local _classNameDic = nil
 local _className2Partial = nil
 local _partialClassPath2PartialKey = nil
+local _funcNameCache = nil
 
 if XMain.IsEditorDebug then
     _classNameDic = {}
     _className2Partial = {} -- 类名映射分部类路径，用于热重载
     _partialClassPath2PartialKey = {} -- 分部类路径映射分部类自己定义的字段名，用于热重载
+    _funcNameCache = setmetatable({}, { __mode = "k" }) 
 end
 
 local _classNameDicForPartial = {}
@@ -92,6 +94,10 @@ function XClass(super, className, setPartial)
                 end
                 
                 vtbl[k] = v
+
+                if type(v) == "function"  then
+                    _funcNameCache[v] = className .. ":" .. k
+                end
             end,
             __index = function(_, k)
                 return vtbl[k]
@@ -206,6 +212,14 @@ end
 
 function GetClassVirtualTable(class)
     return _class[class]
+end
+
+function GetFunNameByFunAddress(func)
+    return _funcNameCache and _funcNameCache[func] or nil
+end
+
+function  GetAllFunNameDict()
+    return _funcNameCache 
 end
 
 function UpdateClassType(newClass, oldClass)

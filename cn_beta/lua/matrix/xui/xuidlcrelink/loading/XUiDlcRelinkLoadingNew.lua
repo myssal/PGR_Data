@@ -39,15 +39,7 @@ end
 function XUiDlcRelinkLoadingNew:OnEnable()
     self:RefreshInfo()
     self:RefreshCharacter()
-    XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
-        -- 重置引导，避免引导残留进入战斗
-        if XDataCenter.GuideManager.CheckIsInGuide() then
-            XDataCenter.GuideManager.ResetGuide()
-        end
-    end, 500)
+    XScheduleManagerPro.ScheduleOnce(self._OnOnEnableScheduleCb, self, 500)
 end
 
 function XUiDlcRelinkLoadingNew:OnGetLuaEvents()
@@ -183,6 +175,16 @@ function XUiDlcRelinkLoadingNew:PreprocessPlayerData(playerDataList, myPlayerId)
     end
 
     return newPlayerDataList
+end
+
+function XUiDlcRelinkLoadingNew:_OnOnEnableScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
+    end
+    -- 重置引导，避免引导残留进入战斗
+    if XDataCenter.GuideManager.CheckIsInGuide() then
+        XDataCenter.GuideManager.ResetGuide()
+    end
 end
 
 return XUiDlcRelinkLoadingNew

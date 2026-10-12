@@ -36,23 +36,15 @@ end
 function XUiTempleMain:OnEnable()
     -- 策划: 暂时不显示时间
     self:UpdateTime()
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateTime()
-        end, XScheduleManager.SECOND)
+    if not XScheduleManagerPro.HasSchedule(self._OnUpdateTimeScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnUpdateTimeScheduleCb, self, XScheduleManagerPro.SECOND)
     end
     self:Update()
 end
 
 function XUiTempleMain:OnDisable()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
-    if self._TimerReward then
-        XScheduleManager.UnSchedule(self._TimerReward)
-        self._TimerReward = false
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateTimeScheduleCb, self)
+        XScheduleManagerPro.UnSchedule(self._OnUpdateRewardScheduleCb, self)
 end
 
 function XUiTempleMain:Update()
@@ -129,9 +121,14 @@ function XUiTempleMain:UpdateReward()
     XUiHelper.CreateTemplates(self, self.Items, rewardList, XUiGridCommon.New, self.Grid256New, self.Grid256New.transform.parent, function(grid, data)
         grid:Refresh(data, nil, nil, false)
     end)
-    self._TimerReward = XScheduleManager.ScheduleOnce(function()
-        self.Grid256New.transform.parent.gameObject:SetActiveEx(false)
-    end, 3 * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(self._OnUpdateRewardScheduleCb, self, 3 * XScheduleManagerPro.SECOND)
+end
+
+function XUiTempleMain:_OnUpdateRewardScheduleCb()
+    self.Grid256New.transform.parent.gameObject:SetActiveEx(false)
+end
+function XUiTempleMain:_OnUpdateTimeScheduleCb()
+    self:UpdateTime()
 end
 
 return XUiTempleMain

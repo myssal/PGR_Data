@@ -170,33 +170,32 @@ end
 
 --region Game - Control
 function XUiFightLevelMusicGame:StartGameTimer()
-    self._GameTimer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartGameTimerScheduleCb, self, 0)
+end
+
+function XUiFightLevelMusicGame:_OnStartGameTimerScheduleCb()
         if not self._Game then
-            self:StopGameTimer()
-            return
-        end
-        if self._Game:IsGameStop() then
-            self:StopGameTimer()
-            return
-        end
-        if self._IsPause then
-            return
-        end
-        local deltaTime = CS.UnityEngine.Time.deltaTime
-        if self._AnimTime > 0 then
-            self._AnimTime = self._AnimTime - deltaTime
-            return
-        end
-        self:Update(deltaTime)
-    end, 0)
+                    self:StopGameTimer()
+                    return
+                end
+                if self._Game:IsGameStop() then
+                    self:StopGameTimer()
+                    return
+                end
+                if self._IsPause then
+                    return
+                end
+                local deltaTime = CS.UnityEngine.Time.deltaTime
+                if self._AnimTime > 0 then
+                    self._AnimTime = self._AnimTime - deltaTime
+                    return
+                end
+                self:Update(deltaTime)
 end
 
 function XUiFightLevelMusicGame:StopGameTimer()
-    if self._GameTimer then
-        XScheduleManager.UnSchedule(self._GameTimer)
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartGameTimerScheduleCb, self)
     self._Game = false
-    self._GameTimer = false
 end
 
 function XUiFightLevelMusicGame:PauseGame()
@@ -238,20 +237,22 @@ function XUiFightLevelMusicGame:_UpdateRLTrack(changeTime)
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, 4716)
     
     -- note加载
-    XScheduleManager.ScheduleOnce(function()
+    XScheduleManagerPro.ScheduleOnce(self._OnUpdateRLTrackScheduleCb, self, changeTime * XScheduleManagerPro.SECOND)
+end
+
+function XUiFightLevelMusicGame:_OnUpdateRLTrackScheduleCb()
         local XUiFightLevelMusicGridNote = require("XUi/XUiFightMiniGame/XUiFightLevelMusicGridNote")
-        local curTrackLength = self._Game:GetCurTrackLength()
-        local noteTypeList = {}
-        
-        -- 刷新Note
-        for i, note in pairs(self._Game:GetCurNoteList()) do
-            self:_InitGridNote(XUiFightLevelMusicGridNote, i, note, curTrackLength)
-            noteTypeList[note:GetType()] = true
-        end
-        -- 刷新按钮
-        self:_UpdateBtnShow(noteTypeList)
-        -- 刷新按钮背景
-    end, changeTime * XScheduleManager.SECOND)
+                local curTrackLength = self._Game:GetCurTrackLength()
+                local noteTypeList = {}
+
+                -- 刷新Note
+                for i, note in pairs(self._Game:GetCurNoteList()) do
+                    self:_InitGridNote(XUiFightLevelMusicGridNote, i, note, curTrackLength)
+                    noteTypeList[note:GetType()] = true
+                end
+                -- 刷新按钮
+                self:_UpdateBtnShow(noteTypeList)
+                -- 刷新按钮背景
 end
 
 ---Miss状态按钮置灰

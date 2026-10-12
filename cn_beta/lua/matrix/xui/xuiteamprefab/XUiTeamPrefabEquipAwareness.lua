@@ -132,10 +132,7 @@ function XUiTeamPrefabEquipAwareness:PlaySwitchEffect()
     local isFirst = not self.IsPlayed
     if isFirst then
         self:ReleasePlayEffectTimer()
-        self.PlayEffectTimer = XScheduleManager.ScheduleOnce(function() 
-            self.PlayEffectTimer = nil
-            self:PlaySwitchEffect()
-        end, 500)
+        XScheduleManagerPro.ScheduleOnce(self._OnPlaySwitchEffectScheduleCb, self, 500)
         self.IsPlayed = true
         return
     end
@@ -149,16 +146,17 @@ function XUiTeamPrefabEquipAwareness:PlaySwitchEffect()
 end
 
 function XUiTeamPrefabEquipAwareness:ReleasePlayEffectTimer()
-    if self.PlayEffectTimer then
-        XScheduleManager.UnSchedule(self.PlayEffectTimer)
-        self.PlayEffectTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnPlaySwitchEffectScheduleCb, self)
 end
 
 function XUiTeamPrefabEquipAwareness:OnDestroy()
     if self.CloseCallback then
         self.CloseCallback(self.ChangeEquipSuccess)
     end
+end
+
+function XUiTeamPrefabEquipAwareness:_OnPlaySwitchEffectScheduleCb()
+    self:PlaySwitchEffect()
 end
 
 return XUiTeamPrefabEquipAwareness

@@ -383,14 +383,11 @@ end
 function XLinkCraftActivityControl:StartLeftTimeTimer()
     self:EndLeftTimeTimer()
     self:UpdateLeftTime()
-    self._LeftTimeTimerId = XScheduleManager.ScheduleForever(handler(self,self.UpdateLeftTime),XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self.UpdateLeftTime, self, XScheduleManagerPro.SECOND)
 end
 
 function XLinkCraftActivityControl:EndLeftTimeTimer()
-    if self._LeftTimeTimerId then
-        XScheduleManager.UnSchedule(self._LeftTimeTimerId)
-        self._LeftTimeTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.UpdateLeftTime, self)
 end
 
 function XLinkCraftActivityControl:UpdateLeftTime()

@@ -8,7 +8,6 @@ function XUiWeekChallenge:Ctor(ui, rootUi)
     self.Transform = ui.transform
     self.RootUi = rootUi
 
-    self._Timer = false
     self._WeekIndex = 0
     self._TaskDataList = false
     self._UiWeekTab = {}
@@ -255,27 +254,16 @@ function XUiWeekChallenge:RefreshUpdateTime()
 end
 
 function XUiWeekChallenge:StartTimer()
-    if self._Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnStartTimerScheduleCb, self) then
         return
     end
     self:UpdateTime()
     self:RefreshUpdateTime()
-    self._Timer =
-        XScheduleManager.ScheduleForever(
-        function()
-            self:UpdateTime()
-            self:CheckActivityEnd()
-        end,
-        XScheduleManager.SECOND
-    )
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiWeekChallenge:StopTimer()
-    if not self._Timer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._Timer)
-    self._Timer = false
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
 end
 
 function XUiWeekChallenge:UpdateTime()
@@ -323,4 +311,8 @@ function XUiWeekChallenge:InitUi()
     self.TabGroup = XUiHelper.TryGetComponent(self.Transform, "PanelRound1/TopBtnWeek", "XUiButtonGroup")
 end
 
+function XUiWeekChallenge:_OnStartTimerScheduleCb()
+        self:UpdateTime()
+        self:CheckActivityEnd()
+end
 return XUiWeekChallenge

@@ -634,7 +634,8 @@ function XUiDrawOptional:InitDrawActivityTarget(drawGroupId)
     end
     ---@type XGridDrawTarget[]
     self._GridDrawTargetList = {}
-    self._DrawTargetTemplateList = { 0 }
+    -- 首次选择前才提供“暂不选择”
+    self._DrawTargetTemplateList = XTool.IsNumberValid(self._TargetActivityData:GetTargetId()) and {} or { 0 }
 
     local templateIdList = self._TargetActivityData:GetTargetTemplateIds()
     if not XTool.IsTableEmpty(templateIdList) then
@@ -648,7 +649,23 @@ function XUiDrawOptional:InitDrawActivityTarget(drawGroupId)
     self.CurSelectDrawId = self.LastSelectDrawId
 
     self.TextRoleTitle.text = XUiHelper.GetText("DrawTargetFirstTitle")
-    self.TxtHaveCountChar.text = XUiHelper.GetText("DrawTargetSecondTitle", self._TargetActivityData:GetTargetCount())
+    local isSwitchTargetUnlimited = self._TargetActivityData:IsSwitchTargetUnlimited()
+    local isAdjustTimesUnlimited = self._TargetActivityData:IsAdjustTimesUnlimited()
+    self.IsCanSwitch = isSwitchTargetUnlimited or XTool.IsNumberValid(self._TargetActivityData:GetSwitchTargetCount())
+    self.PanelQieHuanChar.gameObject:SetActiveEx(not isSwitchTargetUnlimited or not isAdjustTimesUnlimited)
+    if not isSwitchTargetUnlimited then
+        -- 限制切换次数时显示剩余切换次数
+        local count = self._TargetActivityData:GetSwitchTargetCount()
+        self.TxtHaveCountChar.text = CSTextManagerGetText("DrawSelectCountFullText", count)
+        self.TxtNotHaveCountChar.text = CSTextManagerGetText("DrawSelectNotCountFullText")
+        self.TxtHaveCountChar.gameObject:SetActiveEx(count > 0)
+        self.TxtNotHaveCountChar.gameObject:SetActiveEx(count <= 0)
+    elseif not isAdjustTimesUnlimited then
+        -- 仅限制校准次数时显示剩余校准次数
+        self.TxtHaveCountChar.text = XUiHelper.GetText("DrawTargetSecondTitle", self._TargetActivityData:GetTargetCount())
+        self.TxtHaveCountChar.gameObject:SetActiveEx(true)
+        self.TxtNotHaveCountChar.gameObject:SetActiveEx(false)
+    end
 
     -- 刷新界面
     if self.GoodsType == XArrangeConfigs.Types.Character then
@@ -778,7 +795,7 @@ function XUiDrawOptional:SelectTargetTemplate(templateId)
             self.TexCharNotSelect.gameObject:SetActiveEx(false)
         end
     end
-    self.BtnRoleComfirm:SetDisable(isSame)
+    self.BtnRoleComfirm:SetDisable(isSame or not self.IsCanSwitch)
 end
 
 function XUiDrawOptional:_RefreshCharacterDrawTarget(templateIds)
@@ -916,41 +933,10 @@ function XUiDrawOptional:_OnBtnComfirmSelectDrawAnim()
         return
     end
 
-    -- 解析 groupSubtype 用于 SaveDrawAimId
-    local groupSubtype = 0
-    if not string.IsNilOrEmpty(self.OptionKey) then
-        local _, sub = string.match(self.OptionKey, "^(%d+)_(%d+)$")
-        groupSubtype = tonumber(sub) or 0
-    end
-
-    local sureFun = function(IsChange)
-        if IsChange then
-            XDataCenter.DrawManager.SaveDrawAimId(self.CurSelectDrawId, self.ParentUi.GroupId, function()
-                self:Close()
-                self.OptionalCb(self.CurSelectDrawId)
-            end, groupSubtype)
-        end
-    end
-
-    local combination = XDataCenter.DrawManager.GetDrawCombination(self.CurSelectDrawId)
-    local goodsList = combination and combination.GoodsId or {}
-    local IsRandom = #goodsList == 0
-    local maxSwitchCount = self.GroupInfo.MaxSwitchDrawIdCount
-    local curSwitchCount = self.GroupInfo.SwitchDrawIdCount
-    local count = maxSwitchCount - curSwitchCount
-    -- 按 option 维度判断是否变更（不带 fallback）
-    local lastUseDrawId = 0
-    if not string.IsNilOrEmpty(self.OptionKey) then
-        lastUseDrawId = XDataCenter.DrawManager.GetRealUseDrawIdByOptionKey(self.OptionKey)
-    else
-        lastUseDrawId = (self.GroupInfo.UseDrawIdDict or {})[0] or 0
-    end
-    local IsChang = lastUseDrawId ~= self.CurSelectDrawId
-    if (IsChang or IsRandom) and maxSwitchCount > 0 then
-        XLuaUiManager.Open("UiChangeCombination", self.CurSelectDrawId, count, IsChang, sureFun)
-    else
-        sureFun(IsChang)
-    end
+    XDataCenter.DrawManager.SelectDrawAimId(self.CurSelectDrawId, function()
+        self:Close()
+        self.OptionalCb(self.CurSelectDrawId)
+    end)
 end
 
 function XUiDrawOptional:OnBtnRecommendCharFilterClick()

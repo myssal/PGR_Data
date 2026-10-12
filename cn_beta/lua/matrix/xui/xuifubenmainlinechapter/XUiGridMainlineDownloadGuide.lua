@@ -136,17 +136,14 @@ function XUiGridMainlineDownloadGuide:CheckAndStartProgressTimer()
     -- 判断必要资源是否正在下载
     if XMVCA.XSubPackage:CheckNecessaryIsReadyDownload() then
         self:UpdateProgress()
-        self._DownloadProgressTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateProgress), XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleForever(XUiGridMainlineDownloadGuide.UpdateProgress, self, XScheduleManagerPro.SECOND)
         self:StopAnimation('ImgIcon2Loop')
         self:PlayAnimation('DownloadLoop', nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.Loop)
     end
 end
 
 function XUiGridMainlineDownloadGuide:StopProgressTimer()
-    if self._DownloadProgressTimerId then
-        XScheduleManager.UnSchedule(self._DownloadProgressTimerId)
-        self._DownloadProgressTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiGridMainlineDownloadGuide.UpdateProgress, self)
     
     self:StopAnimation('DownloadLoop')
     self:PlayAnimation('ImgIcon2Loop', nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.Loop)

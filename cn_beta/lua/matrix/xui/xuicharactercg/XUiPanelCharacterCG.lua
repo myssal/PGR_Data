@@ -259,10 +259,7 @@ function XUiPanelCharacterCG:RemoveReplayTimer()
 end
 
 function XUiPanelCharacterCG:RemoveMaskTimer()
-    if self._MaskTimer then
-        XScheduleManager.UnSchedule(self._MaskTimer)
-        self._MaskTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiPanelCharacterCG._OnCloseClickMaskScheduleCb, self)
 end
 
 ---在视频加载和播过场表现时屏蔽点击
@@ -271,9 +268,7 @@ function XUiPanelCharacterCG:OpenClickMask(time)
     XLuaUiManager.SetMask(true, "UiPanelCharacterCG")
     self:RemoveMaskTimer()
     if XTool.IsNumberValid(time) then
-        self._MaskTimer = XScheduleManager.ScheduleOnce(function()
-            self:CloseClickMask()
-        end, time)
+        XScheduleManagerPro.ScheduleOnce(XUiPanelCharacterCG._OnCloseClickMaskScheduleCb, self, time)
     end
 end
 
@@ -397,5 +392,9 @@ function XUiPanelCharacterCG:GetVolume()
 end
 
 --endregion
+
+function XUiPanelCharacterCG:_OnCloseClickMaskScheduleCb()
+    self:CloseClickMask()
+end
 
 return XUiPanelCharacterCG

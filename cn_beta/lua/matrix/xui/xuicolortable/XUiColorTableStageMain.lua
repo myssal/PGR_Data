@@ -87,24 +87,27 @@ end
 
 function XUiColorTableStageMain:RefreshLineEffect()
     -- 因为特效用的是控件加载，不是脚本控制加载，所以下一帧再调用处理
-    XScheduleManager.ScheduleNextFrame(function ()
-        if XTool.UObjIsNil(self.GameObject) or self.PanelEffectLine.childCount <= 0 then return end
-        self.Effect = self.PanelEffectLine.transform:GetChild(0)
-        if not self.Effect or self.Effect.childCount <= 0 then return end
-        local isNormal = XColorTableConfigs.GetMapType(self._GameData:GetMapId()) ~= XColorTableConfigs.MapType.Commander
-        for i = 0, 15, 1 do
-            if i >= 8 and i <= 11 then
-                self.Effect:GetChild(0):GetChild(i).gameObject:SetActiveEx(isNormal and not self._GameData:CheckIsFirstGuideStage())
-            elseif i >= 12 and i <= 15 then
-                self.Effect:GetChild(0):GetChild(i).gameObject:SetActiveEx(not isNormal and not self._GameData:CheckIsFirstGuideStage())
-            elseif i >= 6 and i <= 7  then
-                self.Effect:GetChild(0):GetChild(i).gameObject:SetActiveEx(true)
-            else
-                self.Effect:GetChild(0):GetChild(i).gameObject:SetActiveEx(not self._GameData:CheckIsFirstGuideStage())
-            end
-        end
-    end)
+    XScheduleManagerPro.ScheduleNextFrame(self._OnRefreshLineEffectScheduleCb, self)
 end
+
+function XUiColorTableStageMain:_OnRefreshLineEffectScheduleCb()
+        if XTool.UObjIsNil(self.GameObject) or self.PanelEffectLine.childCount <= 0 then return end
+                self.Effect = self.PanelEffectLine.transform:GetChild(0)
+                if not self.Effect or self.Effect.childCount <= 0 then return end
+                local isNormal = XColorTableConfigs.GetMapType(self._GameData:GetMapId()) ~= XColorTableConfigs.MapType.Commander
+                for i = 0, 15, 1 do
+                    if i >= 8 and i <= 11 then
+                        self.Effect:GetChild(0):GetChild(i).gameObject:SetActiveEx(isNormal and not self._GameData:CheckIsFirstGuideStage())
+                    elseif i >= 12 and i <= 15 then
+                        self.Effect:GetChild(0):GetChild(i).gameObject:SetActiveEx(not isNormal and not self._GameData:CheckIsFirstGuideStage())
+                    elseif i >= 6 and i <= 7  then
+                        self.Effect:GetChild(0):GetChild(i).gameObject:SetActiveEx(true)
+                    else
+                        self.Effect:GetChild(0):GetChild(i).gameObject:SetActiveEx(not self._GameData:CheckIsFirstGuideStage())
+                    end
+                end
+end
+
 
 -- 刷新时间轴
 function XUiColorTableStageMain:RefreshTimeline()

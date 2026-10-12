@@ -35,20 +35,18 @@ function XUiCollectionTeachGrid:OnDisable()
 end
 
 function XUiCollectionTeachGrid:StopAnimationTimer()
-    if not self._AnimationTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._AnimationTimer)
-    self._AnimationTimer = false
+    XScheduleManagerPro.UnSchedule(self._OnPlayEnableAnimationScheduleCb, self)
 end
 
 function XUiCollectionTeachGrid:PlayEnableAnimation(index)
     self:StopAnimationTimer()
     self.CanvasGroup.alpha = 0
-    self._AnimationTimer = XScheduleManager.ScheduleOnce(function()
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayEnableAnimationScheduleCb, self, 100 * index)
+end
+
+function XUiCollectionTeachGrid:_OnPlayEnableAnimationScheduleCb()
         self.BtnFirstEnable:PlayTimelineAnimation()
         self:StopAnimationTimer()
-    end, 100 * index)
 end
 
 function XUiCollectionTeachGrid:SetIsSelect(isSelect)

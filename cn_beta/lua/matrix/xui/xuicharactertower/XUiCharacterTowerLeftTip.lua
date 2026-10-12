@@ -18,16 +18,11 @@ function XUiCharacterTowerLeftTip:OnStart(chapterId, conditionId, isCloseLastUi)
     
     -- 延迟时间
     local delayTime = XUiHelper.GetClientConfig("CharacterTowerLeftTipDelayTime", XUiHelper.ClientConfigType.Int)
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        self:Close()
-    end, XScheduleManager.SECOND * delayTime)
+    XScheduleManagerPro.ScheduleOnce(XUiCharacterTowerLeftTip._OnCloseScheduleCb, self, XScheduleManagerPro.SECOND * delayTime)
 end
 
 function XUiCharacterTowerLeftTip:OnDestroy()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiCharacterTowerLeftTip._OnCloseScheduleCb, self)
 end
 
 function XUiCharacterTowerLeftTip:RegisterUiEvents()
@@ -61,6 +56,10 @@ function XUiCharacterTowerLeftTip:OnBtnAdvanceClick()
         end
         self:Close()
     end
+end
+
+function XUiCharacterTowerLeftTip:_OnCloseScheduleCb()
+    self:Close()
 end
 
 return XUiCharacterTowerLeftTip

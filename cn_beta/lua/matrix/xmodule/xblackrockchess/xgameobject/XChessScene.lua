@@ -15,7 +15,6 @@ local CsVector3 = CS.UnityEngine.Vector3
 
 function XChessScene:Ctor(loadCb)
     self._LoadCb = loadCb
-    self._OnTryToReleaseCb = handler(self, self.TryToRelease)
 end
 
 --- 展示
@@ -42,7 +41,7 @@ function XChessScene:Dispose()
     end
     self._GameObject:SetActiveEx(false)
     self:StopReleaseTimer()
-    self._ReleaseTimer = XScheduleManager.ScheduleOnce(self._OnTryToReleaseCb, DelayReleaseTime)
+    XScheduleManagerPro.ScheduleOnce(self.TryToRelease, self, DelayReleaseTime)
 end
 
 function XChessScene:Release()
@@ -117,11 +116,7 @@ function XChessScene:TryFind(path)
 end
 
 function XChessScene:StopReleaseTimer()
-    if not self._ReleaseTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._ReleaseTimer)
-    self._ReleaseTimer = nil
+    XScheduleManagerPro.UnSchedule(self.TryToRelease, self)
 end
 
 function XChessScene:GetLoader()

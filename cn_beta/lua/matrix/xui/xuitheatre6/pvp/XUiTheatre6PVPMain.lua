@@ -201,23 +201,21 @@ function XUiTheatre6PVPMain:StartRefreshCd(remainCd)
     end
     self:StopRefreshCdTimer()
     self.BtnRefresh:SetDisable(true, false)
-    local delayTime = remainCd * XScheduleManager.SECOND
-    self._RefreshCdTimerId = XScheduleManager.ScheduleOnce(function()
-        self._RefreshCdTimerId = nil
-        if not XTool.UObjIsNil(self.GameObject) then
-            self.BtnRefresh:SetDisable(false)
-        end
-    end, delayTime)
+    local delayTime = remainCd * XScheduleManagerPro.SECOND
+    XScheduleManagerPro.ScheduleOnce(self._OnStartRefreshCdScheduleCb, self, delayTime)
     self.ImgMask.fillAmount = refreshMatchCd > 0 and remainCd / refreshMatchCd or 1
     XUiHelper.TweenFillAmount(self, self.ImgMask, 0, remainCd)
 end
 
 function XUiTheatre6PVPMain:StopRefreshCdTimer()
-    if self._RefreshCdTimerId then
-        XScheduleManager.UnSchedule(self._RefreshCdTimerId)
-        self._RefreshCdTimerId = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStartRefreshCdScheduleCb, self)
 end
 --endregion
+
+function XUiTheatre6PVPMain:_OnStartRefreshCdScheduleCb()
+    if not XTool.UObjIsNil(self.GameObject) then
+        self.BtnRefresh:SetDisable(false)
+    end
+end
 
 return XUiTheatre6PVPMain

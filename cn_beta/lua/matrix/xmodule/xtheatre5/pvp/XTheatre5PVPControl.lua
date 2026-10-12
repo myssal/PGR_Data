@@ -332,10 +332,7 @@ end
 --region 踢出检查
 
 function XTheatre5PVPControl:StopPVPTimer()
-    if self._PVPTimerId then
-        XScheduleManager.UnSchedule(self._PVPTimerId)
-        self._PVPTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XTheatre5PVPControl.UpdatePVPTimer, self)
 end
 
 function XTheatre5PVPControl:StartPVPTimer(tickCb)
@@ -346,7 +343,7 @@ function XTheatre5PVPControl:StartPVPTimer(tickCb)
 
     if XTool.IsNumberValid(self.PVPTimeId) and XFunctionManager.CheckInTimeByTimeId(self.PVPTimeId) then
         self:UpdatePVPTimer()
-        self._PVPTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdatePVPTimer), XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleForever(XTheatre5PVPControl.UpdatePVPTimer, self, XScheduleManagerPro.SECOND)
     else
         self:DoTickoutCallBack()
     end

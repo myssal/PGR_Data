@@ -73,29 +73,21 @@ function XUiPlanetChapterGrid:RefreshLock()
         local startTime = XFunctionManager.GetStartTimeByTimeId(XPlanetStageConfigs.GetChapterOpenTimeId(self.ChapterId))
         local nowTime = XTime.GetServerNowTimestamp()
         self.TxtLock.text = XUiHelper.GetText("PivotCombatLockTimeTxt", XUiHelper.GetTime(startTime - nowTime, XUiHelper.TimeFormatType.ACTIVITY))
-        if not self.LockTimer then
+        if not XScheduleManagerPro.HasSchedule(self._OnStopRefreshLockScheduleCb, self) then
             self:StartRefreshLock()
         end
     else
         self:StopRefreshLock()
     end
+    self.LockTimer = nil
 end
 
 function XUiPlanetChapterGrid:StartRefreshLock()
-    self.LockTimer = XScheduleManager.ScheduleForever(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            self:StopRefreshLock()
-            return
-        end
-        self:RefreshLock()
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnStopRefreshLockScheduleCb, self, XScheduleManagerPro.SECOND, 0)
 end
 
 function XUiPlanetChapterGrid:StopRefreshLock()
-    if self.LockTimer then
-        XScheduleManager.UnSchedule(self.LockTimer)
-    end
-    self.LockTimer = nil
+        XScheduleManagerPro.UnSchedule(self._OnStopRefreshLockScheduleCb, self)
 end
 
 function XUiPlanetChapterGrid:IsOpen()
@@ -133,5 +125,13 @@ function XUiPlanetChapterGrid:OnBtnClick()
     XLuaUiManager.Open("UiPlanetChapterChoice", self.ChapterId)
 end
 --endregion
+
+function XUiPlanetChapterGrid:_OnStopRefreshLockScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        self:StopRefreshLock()
+        return
+    end
+    self:RefreshLock()
+end
 
 return XUiPlanetChapterGrid

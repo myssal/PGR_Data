@@ -530,6 +530,8 @@ local Creator = function()
         local args = { ... }
         -- print("[LauncTest] OnNotify evt:" .. tostring(evt) .. ", args[1]:" .. tostring(args[1]))
         if evt == CS.XEventId.EVENT_LAUNCH_START_DOWNLOAD then
+            self._progScale = 1 / (args[4] or 1)
+            self._progStart = args[5] or 0
             if not self.IsPlayingCG then
                 self.UiDownload:SetActiveEx(true)
                 self:OnRefresh()
@@ -559,6 +561,7 @@ local Creator = function()
             self.WindowSizeSum = 0
             self.WindowSize = 5
             self.LastSpeed = 0
+            self:CheckAutoScrollTimer()
 
         elseif evt == CS.XEventId.EVENT_LAUNCH_CG then
             local needCGBtn = args[1]
@@ -642,7 +645,7 @@ local Creator = function()
                     self.LastProgress = progress
 
                     if progress > 0 and currentSpeed > 0 then
-                        local time = math.ceil(((1 - progress) * self.MBSize) / (currentSpeed / 1024))
+                        local time = math.ceil(((1 - (progress - self._progStart) * self._progScale) * self.MBSize) / (currentSpeed / 1024))
                         self.TxtDownloadTime.text = self.DownloadCostTimeTitle .. FormatSec2Min(time) -- "预计时间："
                     elseif currentSpeed <= 0 then
                         self.TxtDownloadTime.text = self.DownloadCostTimeTitleDefault -- "预计时间：00:00:00"
@@ -654,9 +657,9 @@ local Creator = function()
                 self.TxtDownloadProgress.text = StringFormat("%d%%", MathFloor(progress * 100))
                 if self.NeedUnit then
                     local size, unit = ConvertUnits(self.MBSize)
-                    self.TxtDownloadSize.text = StringFormat(self.CustomFormat or "(%d%s/%d%s)", MathFloor(size * progress), unit, MathFloor(size), unit)
+                    self.TxtDownloadSize.text = StringFormat(self.CustomFormat or "(%d%s/%d%s)", MathFloor(size * (progress - self._progStart) * self._progScale), unit, MathFloor(size), unit)
                 else
-                    self.TxtDownloadSize.text = StringFormat(self.CustomFormat or "(%d/%d)", MathFloor(self.MBSize * progress), MathFloor(self.MBSize))
+                    self.TxtDownloadSize.text = StringFormat(self.CustomFormat or "(%d/%d)", MathFloor(self.MBSize * (progress - self._progStart) * self._progScale), MathFloor(self.MBSize))
                 end
             end
         elseif evt == CS.XEventId.EVENT_LAUNCH_SHOW_DOWNLOAD_SELECT then
@@ -680,7 +683,7 @@ local Creator = function()
         self.DownloadProgressEffectTrans = self.DownloadProgressEffect.transform
         local originPos = self.DownloadProgressEffectTrans.localPosition
         self.DownloadEffectPos = Vector3(0, originPos.y, originPos.z)
-        self.DownloadMaxWidth = self.DownloadProgressEffectTrans.parent:GetComponent("RectTransform").rect.width
+        self.DownloadMaxWidth = self.DownloadProgressEffectTrans.parent:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.width
         self.DownloadProgressEffectTrans.localPosition = self.DownloadEffectPos
     end
 

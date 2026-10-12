@@ -3,7 +3,6 @@
 local XSoloReformControl = XClass(XControl, "XSoloReformControl")
 
 function XSoloReformControl:OnInit()
-    self._ActivityEndCheckTimeId = nil
     self._ActivityTimeId = nil
 end
 
@@ -219,7 +218,7 @@ function XSoloReformControl:StartActivityEndCheckTimer()
         self._ActivityTimeId = nil
         return
     end    
-    self._ActivityEndCheckTimeId = XScheduleManager.ScheduleForever(handler(self, self.UpdateActivityEndCheckTimer), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XSoloReformControl.UpdateActivityEndCheckTimer, self, XScheduleManagerPro.SECOND)
 end
 
 function XSoloReformControl:UpdateActivityEndCheckTimer()
@@ -238,10 +237,7 @@ function XSoloReformControl:ActivityEnd()
 end
 
 function XSoloReformControl:StopActivityEndCheckTimer()
-    if self._ActivityEndCheckTimeId then
-        XScheduleManager.UnSchedule(self._ActivityEndCheckTimeId)
-        self._ActivityEndCheckTimeId = nil
-    end    
+    XScheduleManagerPro.UnSchedule(XSoloReformControl.UpdateActivityEndCheckTimer, self)
 end
 
 function XSoloReformControl:GetChapterStageStageType(stageId)
@@ -318,7 +314,6 @@ end
 
 function XSoloReformControl:OnRelease()
     self:StopActivityEndCheckTimer()
-    self._ActivityEndCheckTimeId = nil
     self._ActivityTimeId = nil
 end
 

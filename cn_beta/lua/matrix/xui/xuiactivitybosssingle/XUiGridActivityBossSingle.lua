@@ -52,51 +52,42 @@ function XUiGridActivityBossSingle:Refresh(stageId, index)
         self.goHardLv1.gameObject:SetActiveEx(false)
         self.goHardLv2.gameObject:SetActiveEx(false)
         self.goHardLv3 .gameObject:SetActiveEx(false)
-        self.PanelBgNorma01.gameObject:SetActiveEx(false)
-        self.PanelBgNorma02.gameObject:SetActiveEx(false)
-        self.PanelBgNorma03.gameObject:SetActiveEx(false)
+        -- self.PanelBgNorma01.gameObject:SetActiveEx(false)
+        -- self.PanelBgNorma02.gameObject:SetActiveEx(false)
+        -- self.PanelBgNorma03.gameObject:SetActiveEx(false)
 
         local curScore = XDataCenter.FubenActivityBossSingleManager.GetCurDifficultScoreRecord(stageId)
         local lastScore =  XDataCenter.FubenActivityBossSingleManager.GetLastDifficultScoreRecord(stageId)
-        XDataCenter.FubenActivityBossSingleManager.GetLastDifficultScoreRecord(stageId,curScore)
         
         self:_ClearScoreAnimationTimer()
         if curScore == nil then
             self.txtScore.text = tostring(0)
         elseif lastScore == nil or lastScore >= curScore then
             self.txtScore.text = tostring(curScore)
+            XDataCenter.FubenActivityBossSingleManager.SetLastDifficultScoreRecord(stageId, curScore)
         else -- 上次刷新了记录
             self.txtScore.text = tostring(lastScore) 
 
-            self._ScoreAnimationTimerId = XUiHelper.Tween(1, function(progress)
-                if XTool.UObjIsNil(self.Transform) then
-                    return
-                end
-                self.txtScore.text = tostring( math.floor(CS.UnityEngine.Mathf.Lerp(lastScore, curScore, progress)) )
-            end, function()
-                self._ScoreAnimationTimerId = nil
-                if XTool.UObjIsNil(self.Transform) then
-                    return
-                end
-                self.txtScore.text = tostring(curScore)
-            end)
+            -- 分数滚动动画（句柄由业务持有，重开前先Stop旧动画，自然结束在finish回调里置nil）
+            self._ScoreAnimTweenHandel = XUiHelper.TweenWithHandelObject(1,
+                    XUiGridActivityBossSingle._OnScoreAnimRefreshCb, self,
+                    XUiGridActivityBossSingle._OnScoreAnimFinishCb, self)
 
-            local curLevelCO = XFubenActivityBossSingleConfigs.GetBossLevelScoreCOByScore(curScore)
-            local laseLevelCO = XFubenActivityBossSingleConfigs.GetBossLevelScoreCOByScore(lastScore)
-            self:_PlayHardLevelChangeAnim(curLevelCO.Id, laseLevelCO.Id)
+            -- lastScore 的同步延迟到动画回调内做，回调可从 Manager 实时推导出难度变化
+            self:_PlayHardLevelChangeAnim()
         end
         local levelCO = XFubenActivityBossSingleConfigs.GetBossLevelScoreCOByScore(curScore)
         if isUnLock then
             local hardLevel = levelCO.Id
             if hardLevel == 1 then
                 self.goHardLv1.gameObject:SetActiveEx(true)
-                self.PanelBgNorma01.gameObject:SetActiveEx(true)
+                -- self.PanelBgNorma01.gameObject:SetActiveEx(true)
             elseif hardLevel == 2 then
                 self.goHardLv2.gameObject:SetActiveEx(true)
-                self.PanelBgNorma02.gameObject:SetActiveEx(true)
+                -- self.PanelBgNorma02.gameObject:SetActiveEx(true)
             else
                 self.goHardLv3.gameObject:SetActiveEx(true)
-                self.PanelBgNorma03.gameObject:SetActiveEx(true)
+                -- self.PanelBgNorma03.gameObject:SetActiveEx(true)
             end
         else
             self.hardLv0.gameObject:SetActiveEx(true)
@@ -115,17 +106,26 @@ function XUiGridActivityBossSingle:OnBtnStageClick()
 end
 
 
----@param curHardLevel number 当前难度等级
----@param lastHardLevel number 上次难度等级
-function XUiGridActivityBossSingle:_PlayHardLevelChangeAnim(curHardLevel, lastHardLevel)
+function XUiGridActivityBossSingle:_PlayHardLevelChangeAnim()
     self:_ClearHardLevelAnimTimer()
-    self._HardLevelAnimTimerId = XScheduleManager.ScheduleOnce(function()
-        self._HardLevelAnimTimerId = nil
-        if XTool.UObjIsNil(self.Transform) then
-            return
-        end
-        self:_DoPlayHardLevelChangeAnim(curHardLevel, lastHardLevel)
-    end, 2000)
+    XScheduleManagerPro.ScheduleOnce(XUiGridActivityBossSingle._OnHardLevelAnimScheduleCb, self, 2000)
+end
+
+function XUiGridActivityBossSingle:_OnHardLevelAnimScheduleCb()
+    if XTool.UObjIsNil(self.Transform) then
+        return
+    end
+    local stageId = self.StageId
+    local curScore = XDataCenter.FubenActivityBossSingleManager.GetCurDifficultScoreRecord(stageId)
+    local lastScore = XDataCenter.FubenActivityBossSingleManager.GetLastDifficultScoreRecord(stageId)
+    XDataCenter.FubenActivityBossSingleManager.SetLastDifficultScoreRecord(stageId, curScore)
+    
+    if curScore == nil or lastScore == nil or lastScore >= curScore then
+        return
+    end
+    local curLevelCO = XFubenActivityBossSingleConfigs.GetBossLevelScoreCOByScore(curScore)
+    local lastLevelCO = XFubenActivityBossSingleConfigs.GetBossLevelScoreCOByScore(lastScore)
+    self:_DoPlayHardLevelChangeAnim(curLevelCO.Id, lastLevelCO.Id)
 end
 
 function XUiGridActivityBossSingle:_DoPlayHardLevelChangeAnim(curHardLevel, lastHardLevel)
@@ -156,18 +156,40 @@ function XUiGridActivityBossSingle:_DoPlayHardLevelChangeAnim(curHardLevel, last
 end
 
 
-function XUiGridActivityBossSingle:_ClearScoreAnimationTimer()
-    if self._ScoreAnimationTimerId then
-        XScheduleManager.UnSchedule(self._ScoreAnimationTimerId)
-        self._ScoreAnimationTimerId = nil
+-- 分数滚动动画刷新回调（类级方法）：progress由TweenWithHandelObject算好传入，
+-- 当前/上次分数由Manager实时推导，不落快照缓存；对象销毁时仅跳帧（返回nil不中断），与原闭包语义一致
+---@param progress number 动画进度0~1
+function XUiGridActivityBossSingle:_OnScoreAnimRefreshCb(progress)
+    if XTool.UObjIsNil(self.Transform) then
+        return
+    end
+    local stageId = self.StageId
+    local curScore = XDataCenter.FubenActivityBossSingleManager.GetCurDifficultScoreRecord(stageId)
+    local lastScore = XDataCenter.FubenActivityBossSingleManager.GetLastDifficultScoreRecord(stageId)
+    if curScore == nil or lastScore == nil then
+        return
+    end
+    self.txtScore.text = tostring( math.floor(CS.UnityEngine.Mathf.Lerp(lastScore, curScore, progress)) )
+end
+
+function XUiGridActivityBossSingle:_OnScoreAnimFinishCb()
+    self._ScoreAnimTweenHandel = nil -- 自然结束句柄已由内部归还，置nil防持有失效句柄
+    if XTool.UObjIsNil(self.Transform) then
+        return
+    end
+    local curScore = XDataCenter.FubenActivityBossSingleManager.GetCurDifficultScoreRecord(self.StageId)
+    if curScore ~= nil then
+        self.txtScore.text = tostring(curScore)
     end
 end
 
+function XUiGridActivityBossSingle:_ClearScoreAnimationTimer()
+    XUiHelper.StopTweenWithHandelObject(self._ScoreAnimTweenHandel)
+    self._ScoreAnimTweenHandel = nil
+end
+
 function XUiGridActivityBossSingle:_ClearHardLevelAnimTimer()
-    if self._HardLevelAnimTimerId then
-        XScheduleManager.UnSchedule(self._HardLevelAnimTimerId)
-        self._HardLevelAnimTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiGridActivityBossSingle._OnHardLevelAnimScheduleCb, self)
 end
 
 return XUiGridActivityBossSingle

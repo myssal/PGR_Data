@@ -28,12 +28,7 @@ end
 
 function XPanelLog:PlayLog()
     self.GameObject:SetActiveEx(true)
-    XScheduleManager.ScheduleOnce(function ()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
-        self:CloseLog()
-    end, 2000)
+    XScheduleManagerPro.ScheduleOnce(self._OnCloseLogScheduleCb, self, 2000)
 end
 
 function XPanelLog:CloseLog()
@@ -50,6 +45,12 @@ end
 
 -- private
 ------------------------------------------------------------------
+function XPanelLog:_OnCloseLogScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
+    end
+    self:CloseLog()
+end
 
 
 

@@ -86,9 +86,7 @@ function XRpgMakerGameWaterData:CheckPlayFlat()
             local modelPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.Melt)
             self:LoadModel(modelPath, nil, nil, XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.Melt)
             
-            XScheduleManager.ScheduleOnce(function()
-                self:LoadModel(XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.WaterRipper))
-            end, 500)
+            XScheduleManagerPro.ScheduleOnce(self._OnLoadModelScheduleCb, self, 500)
             XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_Melt)
         else
             local modelPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.WaterRipper)
@@ -124,6 +122,10 @@ function XRpgMakerGameWaterData:RefreshCubePrefab()
     if cubeObj.ModelPath ~= cubeModelPath then
         cubeObj:ChangeCubeWithScaleAnim(cubeModelPath)
     end
+end
+
+function XRpgMakerGameWaterData:_OnLoadModelScheduleCb()
+    self:LoadModel(XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.WaterRipper))
 end
 
 return XRpgMakerGameWaterData

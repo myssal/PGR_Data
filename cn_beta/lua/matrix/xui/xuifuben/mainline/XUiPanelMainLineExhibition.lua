@@ -20,6 +20,7 @@ function XUiPanelMainLineExhibition:Ctor(ui, root)
     self:RegisterUiEvents()
     self:InitDragArea()
     self:InitModuleList()
+    self:InitModuleLineNodes()
     self:InitModuleDropdown()
 end
 
@@ -33,7 +34,7 @@ function XUiPanelMainLineExhibition:OnEnable()
     end
 
     self.IsEnable = true
-    
+
     -- 子界面OnEnable
     for _, module in pairs(self.ModuleList) do
         module:OnEnable()
@@ -78,7 +79,8 @@ function XUiPanelMainLineExhibition:OnDisable()
 
     self.UiPanelModuleDropdown:CloseDropdown()
     self.firstNewTagExhibitionChapterId = nil
-    self.RootUi.BgmMusicPlayer:ClearTempMusic()
+    -- 临时 BGM 功能本期暂不启用
+    -- self.RootUi.BgmMusicPlayer:ClearTempMusic()
 end
 
 function XUiPanelMainLineExhibition:OnDestroy()
@@ -311,7 +313,7 @@ function XUiPanelMainLineExhibition:SwitchBriefUi()
 end
 
 function XUiPanelMainLineExhibition:InitDragArea()
-    self.DragAreaRectTransform = self.DragArea:GetComponent("RectTransform")
+    self.DragAreaRectTransform = self.DragArea:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self.PanelAreaScaleDrag.MaxScale = XEnumConst.MAINLINE2.EXHIBITION_MAX_SCALE
     self.PanelAreaScaleDrag.MinScale = XEnumConst.MAINLINE2.EXHIBITION_MIN_SCALE
     local scale = XEnumConst.MAINLINE2.EXHIBITION_SHOW_INIT_SCALE
@@ -341,6 +343,87 @@ function XUiPanelMainLineExhibition:InitModuleList()
         else
             XLog.Error(string.format("预制体UiMainLineExhibitionMain，缺少节点PanelModule/Module%s!", i))
         end
+    end
+end
+
+-- 根据Module初始化完成时的宽度快照创建分隔节点，运行期间不随Module尺寸变化
+function XUiPanelMainLineExhibition:InitModuleLineNodes()
+    local panelLine = self.ScrollBar.transform:Find("PanelLine")
+    local imgNode = panelLine and panelLine:Find("ImgNode")
+    if not imgNode then
+        XLog.Error("预制体UiMainLineExhibitionMain，缺少节点ScrollBar/PanelLine/ImgNode!")
+        return
+    end
+
+    for i = 0, panelLine.childCount - 1 do
+        local child = panelLine:GetChild(i)
+        if string.find(child.name, "ImgNode", 1, true) == 1 then
+            child.gameObject:SetActiveEx(false)
+        end
+    end
+
+    local moduleCount = #self.ModuleList
+    if moduleCount <= 1 then
+        return
+    end
+
+    local moduleCfgs = XMVCA.XMainLine2:GetConfigExhibitionModule()
+    if moduleCount ~= #moduleCfgs then
+        XLog.Error(string.format("UiMainLineExhibitionMain模块初始化不完整，配置数量:%s，初始化数量:%s，无法创建分隔节点!", #moduleCfgs, moduleCount))
+        return
+    end
+
+    local moduleWidthList = {}
+    local totalModuleWidth = 0
+    for i, module in ipairs(self.ModuleList) do
+        local moduleWidth = module:GetWidth()
+        if moduleWidth <= 0 then
+            XLog.Error(string.format("UiMainLineExhibitionMain模块宽度异常，ModuleIndex:%s，ModuleId:%s，Width:%s", i, module:GetModuleId(), moduleWidth))
+            return
+        end
+        moduleWidthList[i] = moduleWidth
+        totalModuleWidth = totalModuleWidth + moduleWidth
+    end
+
+    local panelLineRect = panelLine:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local imgNodeRect = imgNode:GetComponent(typeof(CS.UnityEngine.RectTransform))
+    local panelLineWidth = panelLineRect.rect.width
+    if panelLineWidth <= 0 then
+        XLog.Error(string.format("UiMainLineExhibitionMain的PanelLine宽度异常，Width:%s", panelLineWidth))
+        return
+    end
+
+    local padding = self.PanelModuleLayoutGroup.padding
+    local spacing = self.PanelModuleLayoutGroup.spacing
+    local contentWidth = padding.left + totalModuleWidth + spacing * (moduleCount - 1) + padding.right
+    local scale = self:GetCurrentScale()
+    local allDragAreaWidth = contentWidth * scale - self:GetShowAreaWidth()
+    if allDragAreaWidth <= 0 then
+        XLog.Error(string.format("UiMainLineExhibitionMain可拖拽区域宽度异常，Width:%s", allDragAreaWidth))
+        return
+    end
+
+    local scrollBarMoveWidth = panelLineWidth * (1 - self.ScrollBar.size)
+    if scrollBarMoveWidth <= 0 then
+        XLog.Error(string.format("UiMainLineExhibitionMain滚动条可移动宽度异常，Width:%s", scrollBarMoveWidth))
+        return
+    end
+
+    local moduleBoundaryWidth = padding.left
+    for i = 1, moduleCount - 1 do
+        moduleBoundaryWidth = moduleBoundaryWidth + moduleWidthList[i] + spacing
+        local progress = moduleBoundaryWidth * scale / allDragAreaWidth
+        if progress > 1 then
+            progress = 1
+        elseif progress < 0 then
+            progress = 0
+        end
+
+        local nodeRect = XUiHelper.Instantiate(imgNodeRect, panelLineRect)
+        local nodePosition = nodeRect.anchoredPosition
+        local nodeX = (progress - nodeRect.anchorMin.x) * scrollBarMoveWidth
+        nodeRect:SetAnchoredPosition(nodeX, nodePosition.y)
+        nodeRect.gameObject:SetActiveEx(true)
     end
 end
 
@@ -452,12 +535,13 @@ function XUiPanelMainLineExhibition:RefreshBgAndBgm(moduleId)
     self:RefreshBgSpine(condSpinePath)
     self:SetDropdownModuleId(moduleId)
 
-    local bgmCueId = moduleConfig.BgmCueId
-    if bgmCueId ~= 0 then
-        self.RootUi.BgmMusicPlayer:SetTempMusic(bgmCueId)
-    else
-        self.RootUi.BgmMusicPlayer:ClearTempMusic()
-    end
+    -- 临时 BGM 功能本期暂不启用
+    -- local bgmCueId = moduleConfig.BgmCueId
+    -- if bgmCueId ~= 0 then
+    --     self.RootUi.BgmMusicPlayer:SetTempMusic(bgmCueId)
+    -- else
+    --     self.RootUi.BgmMusicPlayer:ClearTempMusic()
+    -- end
 end
 
 -- 按条件加载/隐藏背景 Spine

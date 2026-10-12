@@ -34,24 +34,11 @@ function XUiScratchTicketPanelTop:InitTime()
 end
 
 function XUiScratchTicketPanelTop:SetTimer()
-    if self.Timer then return end
-    self.Timer = XScheduleManager.ScheduleForever(function()
-            if not self.RootUi:Exist() then return end
-            local endTimeSecond = self.Controller:GetEndTime()
-            local now = XTime.GetServerNowTimestamp()
-            local leftTime = endTimeSecond - now
-            self.TxtTime.text = CS.XTextManager.GetText("ScratchTicketActivityLeftTime") .. XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
-            if leftTime <= 0 then
-                self.RootUi:OnGameEnd()
-            end
-        end, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnSetTimerScheduleCb, self, 0)
 end
 
 function XUiScratchTicketPanelTop:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnSetTimerScheduleCb, self)
 end
 
 function XUiScratchTicketPanelTop:InitBtns()
@@ -64,6 +51,17 @@ end
 
 function XUiScratchTicketPanelTop:OnDestroy()
     self:StopTimer()
+end
+
+function XUiScratchTicketPanelTop:_OnSetTimerScheduleCb()
+    if not self.RootUi:Exist() then return end
+    local endTimeSecond = self.Controller:GetEndTime()
+    local now = XTime.GetServerNowTimestamp()
+    local leftTime = endTimeSecond - now
+    self.TxtTime.text = CS.XTextManager.GetText("ScratchTicketActivityLeftTime") .. XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
+    if leftTime <= 0 then
+        self.RootUi:OnGameEnd()
+    end
 end
 
 return XUiScratchTicketPanelTop

@@ -324,10 +324,7 @@ end
 
 -- 聊天相关
 function XUiGridMulitiplayerRoomChar:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStopTimerScheduleCb, self)
 end
 
 function XUiGridMulitiplayerRoomChar:RefreshChat(chatDataLua)
@@ -343,14 +340,7 @@ function XUiGridMulitiplayerRoomChar:RefreshChat(chatDataLua)
         self.TxtDesc.text = str
     end
 
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self.LeftTime = self.LeftTime - 1
-        if self.LeftTime <= 0 then
-            self:StopTimer()
-            self.PanelChat.gameObject:SetActiveEx(false)
-            return
-        end
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnStopTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
 
     self.PanelChat.gameObject:SetActiveEx(true)
     self.PanelDailog.gameObject:SetActive(not isEmoji)
@@ -523,6 +513,15 @@ function XUiGridMulitiplayerRoomChar:RefreshSpecialTrain(playerData)
     if XFubenSpecialTrainConfig.IsBreakthroughStage(stageId) then
         self.CharacterPets.gameObject:SetActiveEx(false)
         self.PanelSpecialTrainIcon.gameObject:SetActiveEx(false)
+    end
+end
+
+function XUiGridMulitiplayerRoomChar:_OnStopTimerScheduleCb()
+    self.LeftTime = self.LeftTime - 1
+    if self.LeftTime <= 0 then
+        self:StopTimer()
+        self.PanelChat.gameObject:SetActiveEx(false)
+        return
     end
 end
 

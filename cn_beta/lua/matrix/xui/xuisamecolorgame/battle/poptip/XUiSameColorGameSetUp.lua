@@ -42,18 +42,11 @@ function XUiSameColorGameSetUp:_InitReplayBtn()
 end
 
 function XUiSameColorGameSetUp:_StartRefreshReplayBtn()
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        if self._IsCanReplay or XTool.UObjIsNil(self.Transform) then
-            self:_StopRefreshReplayBtn()
-        end
-        self:_RefreshReplayBtn()
-    end, 0, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnStopRefreshReplayBtnScheduleCb, self, 0, 0)
 end
 
 function XUiSameColorGameSetUp:_StopRefreshReplayBtn()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStopRefreshReplayBtnScheduleCb, self)
 end
 
 function XUiSameColorGameSetUp:_RefreshReplayBtn()
@@ -117,4 +110,11 @@ end
 function XUiSameColorGameSetUp:Refresh()
     self.ToggleMusic.isOn = not self.IsMusicClose
     self.ToggleSound.isOn = not self.IsSoundClose
+end
+
+function XUiSameColorGameSetUp:_OnStopRefreshReplayBtnScheduleCb()
+    if self._IsCanReplay or XTool.UObjIsNil(self.Transform) then
+        self:_StopRefreshReplayBtn()
+    end
+    self:_RefreshReplayBtn()
 end

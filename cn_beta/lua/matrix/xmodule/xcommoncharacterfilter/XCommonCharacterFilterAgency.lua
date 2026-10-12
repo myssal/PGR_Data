@@ -320,8 +320,8 @@ function XCommonCharacterFilterAgency:InitSortFunction()
         return aP > bP
     end
     SortFunction[CharacterSortFunType.Target] = function (idA, idB)
-        local aR = XDataCenter.EquipGuideManager.IsEquipGuideCharacter(idA)
-        local bR = XDataCenter.EquipGuideManager.IsEquipGuideCharacter(idB)
+        local aR = XMVCA.XTeamRecommend:GetServerCharacterTarget(idA) ~= nil
+        local bR = XMVCA.XTeamRecommend:GetServerCharacterTarget(idB) ~= nil
         if aR ~= bR then
             return aR
         end
@@ -446,8 +446,8 @@ function XCommonCharacterFilterAgency:InitCheckSortFun()
         end 
     end
     CheckSortFun[CharacterSortFunType.Target] = function (idA, idB)
-        local aR = XDataCenter.EquipGuideManager.IsEquipGuideCharacter(idA)
-        local bR = XDataCenter.EquipGuideManager.IsEquipGuideCharacter(idB)
+        local aR = XMVCA.XTeamRecommend:GetServerCharacterTarget(idA) ~= nil
+        local bR = XMVCA.XTeamRecommend:GetServerCharacterTarget(idB) ~= nil
         if aR or bR then
             return true
         end

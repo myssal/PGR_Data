@@ -129,6 +129,10 @@ local type = {
     --研究红点
     CONDITION_ACTIVITYDRAW_RED = "XRedPointConditionActivityDrawNew", -- 研究活动卡池红点
     CONDITION_DEVILMAYCRY_CAN_RECEIVE_CHARACTER = "XRedPointConditionDevilMayCryCanReceiveCharacter", -- 鬼泣卡池有可领取角色
+    CONDITION_DATEALIVE_MAIN = "XRedPointConditionDateALiveMain", -- 约战卡池主界面红点
+    CONDITION_DATEALIVE_CAN_RECEIVE_CHARACTER = "XRedPointConditionDateALiveCanReceiveCharacter", -- 约战卡池有可领取角色
+    CONDITION_DATEALIVE_SIGN_IN_REWARD = "XRedPointConditionDateALiveSignInReward", -- 约战联动签到存在可领取奖励
+    CONDITION_DATEALIVE_CHAPTER_ENTER = "XRedPointConditionDateALiveChapterEnter", -- 约战联动剧情关当前是否进去过
     --头像红点
     CONDITION_HEADPORTRAIT_RED = "XRedPointConditionHeadPortraitNew",
     --反馈红点
@@ -180,6 +184,15 @@ local type = {
     CONDITION_REGRESSION3_MAIN = "XRedPointConditionRegression3Main", --主界面
     CONDITION_REGRESSION3_SURVEY = "XRedPointConditionRegression3Survey", --问卷
     CONDITION_REGRESSION3_GIFT_SHOP = "XRedPointConditionRegression3GiftShop", --礼品商店
+    --回归4期活动
+    CONDITION_REGRESSION4_ALL = "XRedPointConditionRegression4All", --活动入口
+    CONDITION_REGRESSION4_SIGN = "XRedPointConditionRegression4Sign", --签到
+    CONDITION_REGRESSION4_PASSPORT = "XRedPointConditionRegression4Passport", --战令
+    CONDITION_REGRESSION4_TASK = "XRedPointConditionRegression4Task", --任务
+    CONDITION_REGRESSION4_SHOP = "XRedPointConditionRegression4Shop", --商店
+    CONDITION_REGRESSION4_MAIN = "XRedPointConditionRegression4Main", --主界面
+    CONDITION_REGRESSION4_SURVEY = "XRedPointConditionRegression4Survey", --问卷
+    CONDITION_REGRESSION4_GIFT_SHOP = "XRedPointConditionRegression4GiftShop", --礼品商店
     -- 公会相关红点
     CONDITION_GUILD_MEMBER = "XRedPointConditionGuildMember", --公会成员相关红点
     CONDITION_GUILD_INFO = "XRedPointConditionGuildInformation", --公会主界面信息红点
@@ -333,6 +346,8 @@ local type = {
     CONDITION_FASHION_STORY_TASK = "XRedPointConditionFashionStoryTask", --有任务待领取
     CONDITION_FASHION_STORY_NEWCHAPTER_UNLOCK = "XRedPointConditionFashionStoryNewChapterUnLock", --有待查看的新解锁章节
     CONDITION_FASHION_STORY_REWARD = "XRedPointConditionFashionStoryReward", --奖励活动可领取
+    -- 4.7 七夕开包玩法
+    CONDITION_ENVELOPE_GUESSING_ENTRANCE = "XRedPointConditionEnvelopeGuessingEntrance", --入口红点
     --杀戮空间
     --XRedPointConditionKillZoneActivity = "XRedPointConditionKillZoneActivity", --入口红点
     --XRedPointConditionKillZoneNewChapter = "XRedPointConditionKillZoneNewChapter", --有新章节可挑战
@@ -456,9 +471,6 @@ local type = {
     --正逆塔
     CONDITION_TWO_SIDE_TOWER_TASK = "XRedPointTwoSideTowerTask",
     CONDITION_TWO_SIDE_TOWER_NEW_CHAPTER = "XRedPointTwoSideTowerNewChapter",
-    --装备目标
-    CONDITION_EQUIP_GUIDE_CAN_EQUIP = "XRedPointEquipGuideCanEquip", --有装备可以装备
-    CONDITION_EQUIP_GUIDE_HAS_STRONGER_WEAPON = "XRedPointEquipGuideHasStrongerWeapon", --武器升强提醒
     -- v1.30 考级红点
     CONDITION_COURSE_BANNER = "XRedPointConditionCourseBanner", -- 海报红点
     CONDITION_COURSE_LESSON_TOG = "XRedPointConditionCourseLessonTog", -- 课程页签红点
@@ -481,6 +493,7 @@ local type = {
     CONDITION_SKIN_VOTE_ENTRANCE = "XRedPointConditionSkinVoteEntrance", -- 活动入口
     --餐厅
     CONDITION_RESTAURANT_ENTRANCE = "XRedPointConditionRestaurantEntrance", --活动入口
+    CONDITION_SKY_TOWER_ENTRANCE = "XRedPointConditionSkyTowerEntrance", --活动入口
     -- 本我回廊（角色塔）
     CONDITION_CHARACTER_TOWER_ENTRANCE = "XRedPointConditionCharacterTowerEntrance", -- 活动入口
     --DLC分包下载
@@ -512,6 +525,9 @@ local type = {
     CONDITION_ACTIVITY_BOSS_SINGLE_NEW = "XActivityBossSingle/XRedPointActivityBossSingleStoryNew", --超难关新解锁剧情
     --超限连战
     CONDITION_TRANSFINITE = "XTransfinite/XRedPointTransfinite", -- 有奖励
+    CONDITION_TRANSFINITE_TOWER_UNLOCK = "XTransfinite/XRedPointTransfiniteTowerUnlock", -- 塔解锁未进入
+    CONDITION_TRANSFINITE_TOWER_TASK = "XTransfinite/XRedPointTransfiniteTowerTask", -- 有任务奖励待领取
+    CONDITION_TRANSFINITE_TOWER_MAIN = "XTransfinite/XRedPointTransfiniteTowerMain", -- 活动入口聚合红点
     --黄金矿工
     CONDITION_GOLDEN_MINER_REWARD = "XGoldenMiner/XRedPointConditionGoldenMinerReward", -- 有奖励
     --大转盘
@@ -568,6 +584,8 @@ local type = {
     CONDITION_DLC_MOUSE_HUNTER_ACTIVITY = "XRedPointDlcMouseHunterActivity", -- 活动入口
     -- 每日重置的红点
     CONDITION_DAILY_RESET = "Common/XRedPointConditionDailyReset",
+    -- 活动按钮永久一次性红点（点击后永久不再显示，跨版本不重显）
+    CONDITION_ACTIVITY_BTN_ONCE = "Common/XRedPointConditionActivityBtnOnce",
     -- 数据演习
     CONDITION_SIMULATE_TRAIN = "XRedPointConditionSimulateTrain",
     -- 背包整理玩法
@@ -718,6 +736,16 @@ local type = {
     CONDITION_DYEMERGE_MAIN = "XDyeMergeGame/XRedPointDyeMergeMain",
     CONDITION_DYEMERGE_NEW_CHAPTER = "XDyeMergeGame/XRedPointDyeMergeNewChapter",
     CONDITION_DYEMERGE_TASK = "XDyeMergeGame/XRedPointDyeMergeTask",
+    
+    --大巴扎玩法
+    -- 大巴扎玩法
+    CONDITION_PUNISHAAR_MAIN = "XPunishaar/XRedPointPunishaarMain",
+    CONDITION_PUNISHAAR_STAGE = "XPunishaar/XRedPointPunishaarStage",
+    CONDITION_PUNISHAAR_TASK = "XPunishaar/XRedPointPunishaarTask",
+    CONDITION_PUNISHAAR_COLLECTION = "XPunishaar/XRedPointPunishaarCollection",
+
+    --周年预热入口红点
+    CONDITION_ANNIVERSARY_PREHEATING_ENTRANCE = "XRedPointConditionAnniversaryPreHeatingEntrance",
 }
 XRedPointConditions.Conditions = type
 

@@ -102,23 +102,20 @@ end
 
 function XUiPanelGachaLuciaVolume:TweenInit()
     self:RemoveTimer()
-    self._Timer = XScheduleManager.ScheduleOnce(function()
+    XScheduleManagerPro.ScheduleOnce(self._OnTweenInitScheduleCb, self, self._InitWaitTime)
+end
+
+function XUiPanelGachaLuciaVolume:_OnTweenInitScheduleCb()
         self:PlayHideSliderTween()
-    end, self._InitWaitTime)
 end
 
 function XUiPanelGachaLuciaVolume:TweenClick()
     self:RemoveTimer()
-    self._Timer = XScheduleManager.ScheduleOnce(function()
-        self:PlayHideSliderTween()
-    end, self._ClickWaitTime)
+    XScheduleManagerPro.ScheduleOnce(self._OnTweenInitScheduleCb, self, self._ClickWaitTime)
 end
 
 function XUiPanelGachaLuciaVolume:RemoveTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnTweenInitScheduleCb, self)
 end
 
 function XUiPanelGachaLuciaVolume:OnBtnActiveVolumeClick()

@@ -20,10 +20,8 @@ function XUiSkinVoteMain:OnEnable()
         self.PanelSkinVote:Show()
     end)
     
-    if not self.Timer then
-        self.Timer = XScheduleManager.ScheduleForever(function() 
-            self:RefreshVote()
-        end, XScheduleManager.SECOND)
+    if not XScheduleManagerPro.HasSchedule(self._OnRefreshVoteScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnRefreshVoteScheduleCb, self, XScheduleManagerPro.SECOND)
     end
 end 
 
@@ -34,10 +32,7 @@ end
 
 function XUiSkinVoteMain:OnDisable()
     self.PanelSkinVote:Hide()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRefreshVoteScheduleCb, self)
 end
 
 function XUiSkinVoteMain:InitUi()
@@ -78,5 +73,6 @@ function XUiSkinVoteMain:ShowDialog(title, content, cancelBtnName, cancelCb, con
     self.PanelDialog:Show(title, content, cancelBtnName, cancelCb, confirmBtnName, confirmCb)
 end
 
-
-
+function XUiSkinVoteMain:_OnRefreshVoteScheduleCb()
+    self:RefreshVote()
+end

@@ -161,7 +161,6 @@ function XUiEquipResonanceSelectV2P6:OnSkillSelectClick()
     })
 end
 
-
 function XUiEquipResonanceSelectV2P6:OnBtnResonanceClick()
     if self.BtnResonance.ButtonState == DISABLE then
         return
@@ -225,11 +224,12 @@ function XUiEquipResonanceSelectV2P6:UpdateView(checkOpenUi)
 
     self:ClearOpenUiTimer()
     if checkOpenUi then
-        self.CheckOpenUiTimer = XScheduleManager.ScheduleOnce(function()
-            self.CheckOpenUiTimer = nil
-            self:CheckOpenSelectUi()
-        end, 300)
+        XScheduleManagerPro.ScheduleOnce(self._OnUpdateViewScheduleCb, self, 300)
     end
+end
+
+function XUiEquipResonanceSelectV2P6:_OnUpdateViewScheduleCb()
+    self:CheckOpenSelectUi()
 end
 
 -- 刷新名称
@@ -467,10 +467,7 @@ function XUiEquipResonanceSelectV2P6:CheckOpenSelectUi()
 end
 
 function XUiEquipResonanceSelectV2P6:ClearOpenUiTimer()
-    if self.CheckOpenUiTimer then
-        XScheduleManager.UnSchedule(self.CheckOpenUiTimer)
-        self.CheckOpenUiTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnUpdateViewScheduleCb, self)
 end
 
 return XUiEquipResonanceSelectV2P6

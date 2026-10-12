@@ -33,8 +33,6 @@ function XSkyGardenDroneGameControl:OnInit()
 
     self._Dialogues = false
 
-    self._MaskTimer = false
-
     self._PcPressHandle = Handler(self, self.OnPressPCKeyHandle)
 
     self:SendEnterGameCmd()
@@ -49,10 +47,9 @@ function XSkyGardenDroneGameControl:RemoveAgencyEvent()
 end
 
 function XSkyGardenDroneGameControl:RemoveMaskTimer()
-    if self._MaskTimer then
-        XScheduleManager.UnSchedule(self._MaskTimer)
+    if XScheduleManagerPro.HasSchedule(self._OnOpenBlackMaskScheduleCb, self) then
+        XScheduleManagerPro.UnSchedule(self._OnOpenBlackMaskScheduleCb, self)
         XMVCA.XBigWorldLoading:CloseCurrentLoading()
-        self._MaskTimer = false
     end
 end
 
@@ -407,13 +404,14 @@ function XSkyGardenDroneGameControl:OpenShopUi()
 end
 
 function XSkyGardenDroneGameControl:OpenBlackMask()
-    if not self._MaskTimer then
+    if not XScheduleManagerPro.HasSchedule(self._OnOpenBlackMaskScheduleCb, self) then
         XMVCA.XBigWorldLoading:OpenLoadingByType(XMVCA.XBigWorldLoading.LoadingType.BlackMask)
-        self._MaskTimer = XScheduleManager.ScheduleOnce(function()
-            self._MaskTimer = false
-            XMVCA.XBigWorldLoading:CloseCurrentLoading()
-        end, 2 * XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleOnce(self._OnOpenBlackMaskScheduleCb, self, 2 * XScheduleManagerPro.SECOND)
     end
+end
+
+function XSkyGardenDroneGameControl:_OnOpenBlackMaskScheduleCb()
+    XMVCA.XBigWorldLoading:CloseCurrentLoading()
 end
 
 function XSkyGardenDroneGameControl:TryRestoreStageUI(stageEntity)

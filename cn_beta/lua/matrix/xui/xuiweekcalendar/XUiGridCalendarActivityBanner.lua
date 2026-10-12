@@ -187,14 +187,12 @@ end
 --region 结束倒计时 
 
 function XUiGridCalendarActivityBanner:StartTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnUpdateTimerScheduleCb, self) then
         self:StopTimer()
     end
 
     self:UpdateTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateTimer()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateTimerScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiGridCalendarActivityBanner:UpdateTimer()
@@ -218,16 +216,17 @@ function XUiGridCalendarActivityBanner:UpdateTimer()
 end
 
 function XUiGridCalendarActivityBanner:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateTimerScheduleCb, self)
 end
 
 --endregion
 
 function XUiGridCalendarActivityBanner:OnDisable()
     self:StopTimer()
+end
+
+function XUiGridCalendarActivityBanner:_OnUpdateTimerScheduleCb()
+    self:UpdateTimer()
 end
 
 return XUiGridCalendarActivityBanner

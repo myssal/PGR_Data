@@ -17,45 +17,52 @@ function XUiPanelTerminalTips:ShowFileTips()
     XDataCenter.DormQuestManager.SetIsHaveNewQuestFile(false)
     self.GameObject:SetActiveEx(true)
     self.ImgTips02.gameObject:SetActiveEx(true)
-    self.FileTimer = XScheduleManager.ScheduleOnce(function()
-        --隐藏
-        self.ImgTips02.gameObject:SetActiveEx(false)
-        self.GameObject:SetActiveEx(false)
-    end, XScheduleManager.SECOND * self.DelayTime)
+    XScheduleManagerPro.ScheduleOnce(XUiPanelTerminalTips._OnHideFileTipsScheduleCb, self, XScheduleManagerPro.SECOND * self.DelayTime)
 end
 
 function XUiPanelTerminalTips:ShowUpgradeTips()
     XDataCenter.DormQuestManager.SaveTerminalShowUpgradeTip(true)
     self.GameObject:SetActiveEx(true)
     self.ImgTips01.gameObject:SetActiveEx(true)
-    self.UpgradeTimer = XScheduleManager.ScheduleOnce(function()
-        -- 隐藏
-        self.ImgTips01.gameObject:SetActiveEx(false)
-        self.GameObject:SetActiveEx(false)
-    end, XScheduleManager.SECOND * self.DelayTime)
+    XScheduleManagerPro.ScheduleOnce(XUiPanelTerminalTips._OnHideUpgradeTipsScheduleCb, self, XScheduleManagerPro.SECOND * self.DelayTime)
 end
 
 function XUiPanelTerminalTips:ShowAutoQuestSuccess()
     XDataCenter.DormQuestManager.SaveTerminalShowUpgradeTip(true)
     self.GameObject:SetActiveEx(true)
     self.ImgTips03.gameObject:SetActiveEx(true)
-    self.UpgradeTimer = XScheduleManager.ScheduleOnce(function()
-        -- 隐藏
-        self.ImgTips03.gameObject:SetActiveEx(false)
-        self.GameObject:SetActiveEx(false)
-    end, XScheduleManager.SECOND * self.DelayTime)
+    XScheduleManagerPro.ScheduleOnce(XUiPanelTerminalTips._OnHideAutoQuestSuccessScheduleCb, self, XScheduleManagerPro.SECOND * self.DelayTime)
 end
 
 function XUiPanelTerminalTips:OnDisable()
     self.GameObject:SetActiveEx(false)
-    if self.FileTimer then
-        XScheduleManager.UnSchedule(self.FileTimer)
-        self.FileTimer = nil
+    XScheduleManagerPro.UnSchedule(XUiPanelTerminalTips._OnHideFileTipsScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(XUiPanelTerminalTips._OnHideUpgradeTipsScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(XUiPanelTerminalTips._OnHideAutoQuestSuccessScheduleCb, self)
+end
+
+function XUiPanelTerminalTips:_OnHideFileTipsScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
     end
-    if self.UpgradeTimer then
-        XScheduleManager.UnSchedule(self.UpgradeTimer)
-        self.UpgradeTimer = nil
+    self.ImgTips02.gameObject:SetActiveEx(false)
+    self.GameObject:SetActiveEx(false)
+end
+
+function XUiPanelTerminalTips:_OnHideUpgradeTipsScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
     end
+    self.ImgTips01.gameObject:SetActiveEx(false)
+    self.GameObject:SetActiveEx(false)
+end
+
+function XUiPanelTerminalTips:_OnHideAutoQuestSuccessScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
+    end
+    self.ImgTips03.gameObject:SetActiveEx(false)
+    self.GameObject:SetActiveEx(false)
 end
 
 return XUiPanelTerminalTips

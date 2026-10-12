@@ -74,11 +74,13 @@ function XUiMainDown:OnNewRegressionOpenStatusUpdate()
         self:UpdateNewRegressionBtnIcon()
         self.BtnNewRegression.gameObject:SetActiveEx(true)
 
-        self.NewRegressionTimer = XScheduleManager.ScheduleForever(function()
-            self:UpdateNewRegressionLeftTime()
-        end, XScheduleManager.SECOND, 0)
+        XScheduleManagerPro.ScheduleForever(self._OnNewRegressionTimer, self, XScheduleManagerPro.SECOND)
         XRedPointManager.CheckOnceByButton(self.BtnNewRegression, RedPointConditionGroup.NewRegression)
     end
+end
+
+function XUiMainDown:_OnNewRegressionTimer()
+    self:UpdateNewRegressionLeftTime()
 end
 
 function XUiMainDown:UpdateNewRegressionBtnIcon()
@@ -91,10 +93,7 @@ function XUiMainDown:UpdateNewRegressionBtnIcon()
 end
 
 function XUiMainDown:StopNewRegressionTimer()
-    if self.NewRegressionTimer then
-        XScheduleManager.UnSchedule(self.NewRegressionTimer)
-        self.NewRegressionTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnNewRegressionTimer, self)
 end
 
 function XUiMainDown:UpdateNewRegressionLeftTime()

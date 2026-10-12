@@ -17,6 +17,10 @@ function XUiPacMan2StageGrid:OnStart()
     self._IsPassed = nil
     self._StarBegin = 1
     self._StarEnd = 1
+
+    -- 保存GridChapter模板中的默认图片。
+    -- 当关卡表未配置StageIcon时恢复该图片，避免出现空白。
+    self._DefaultStageIcon = self.RImgStageIcon.texture
 end
 
 ---@param data XUiPacMan2StageGridData
@@ -24,6 +28,13 @@ function XUiPacMan2StageGrid:Update(data)
     self._Data = data
     self.TxtName.text = data.Name
 
+    -- 使用当前关卡配置的主界面图片。
+    if not string.IsNilOrEmpty(data.StageIcon) then
+        self.RImgStageIcon:SetRawImage(data.StageIcon)
+    else
+        self.RImgStageIcon.texture = self._DefaultStageIcon
+    end
+    
     if data.IsPassed then
         self.CommonClear.gameObject:SetActiveEx(true)
         self.PanelLock.gameObject:SetActiveEx(false)

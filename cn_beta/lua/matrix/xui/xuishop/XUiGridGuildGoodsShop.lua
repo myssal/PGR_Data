@@ -102,7 +102,6 @@ function XUiGridGuildGoodsShop:Refresh(data)
     self:RefreshOnSales()
     self:RefreshPrice()
     self:RemoveTimer()
-    self:RemoveOnSaleTimer()
     self:RefreshBuyCount()
     self:RefreshTimer(self.Data.SelloutTime)
     self:RefreshTags()
@@ -233,17 +232,7 @@ function XUiGridGuildGoodsShop:RefreshPrice()
 end
 
 function XUiGridGuildGoodsShop:RemoveTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
-end
-
-function XUiGridGuildGoodsShop:RemoveOnSaleTimer()
-    if self.OnSaleTimer then
-        XScheduleManager.UnSchedule(self.OnSaleTimer)
-        self.OnSaleTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnLeftTimeTimer, self)
 end
 
 function XUiGridGuildGoodsShop:RefreshBuyCount()
@@ -268,35 +257,36 @@ function XUiGridGuildGoodsShop:RefreshTimer(time)
         return
     end
     if time > 0 then
-        local leftTime = XShopManager.GetLeftTime(time)
+        self._LeftTime = XShopManager.GetLeftTime(time)
 
-        local doRefresh = function()
-            leftTime = leftTime > 0 and leftTime or 0
-            if self.TxtLeftTime then
-                local dataTime = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.SHOP)
-                self.TxtLeftTime.text = XUiHelper.GetText("TimeSoldOut", dataTime)
-            end
-            if leftTime <= 0 then
-                self:RemoveTimer()
-                local rImg = self:GetSelloutIcon()
-                if rImg then
-                    rImg.gameObject:SetActiveEx(true)
-                end
-            end
-        end
+        self:_RefreshLeftTimeText()
+        XScheduleManagerPro.ScheduleForever(self._OnLeftTimeTimer, self, 1000)
 
-        doRefresh()
-
-        self.Timer = XScheduleManager.ScheduleForever(function()
-            leftTime = leftTime - 1
-            doRefresh()
-        end, XScheduleManager.SECOND)
-        
         self.ImgLeftTime.gameObject:SetActiveEx(true)
         self.TxtLeftTime.gameObject:SetActiveEx(true)
     else
         self.ImgLeftTime.gameObject:SetActiveEx(false)
         self.TxtLeftTime.gameObject:SetActiveEx(false)
+    end
+end
+
+function XUiGridGuildGoodsShop:_OnLeftTimeTimer()
+    self._LeftTime = self._LeftTime - 1
+    self:_RefreshLeftTimeText()
+end
+
+function XUiGridGuildGoodsShop:_RefreshLeftTimeText()
+    local leftTime = self._LeftTime > 0 and self._LeftTime or 0
+    if self.TxtLeftTime then
+        local dataTime = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.SHOP)
+        self.TxtLeftTime.text = XUiHelper.GetText("TimeSoldOut", dataTime)
+    end
+    if leftTime <= 0 then
+        self:RemoveTimer()
+        local rImg = self:GetSelloutIcon()
+        if rImg then
+            rImg.gameObject:SetActiveEx(true)
+        end
     end
 end
 

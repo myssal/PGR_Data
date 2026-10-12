@@ -42,16 +42,15 @@ function XUiPcgSkillPopup:Refresh()
     end
 
     self:ClearCloseTimer()
-    self.CloseTimer =  XScheduleManager.ScheduleForever(function()
-        self:Close()
-    end, XEnumConst.PCG.ANIM_TIME_SLAY)
+    XScheduleManagerPro.ScheduleForever(self._OnCloseScheduleCb, self, XEnumConst.PCG.ANIM_TIME_SLAY)
 end
 
 function XUiPcgSkillPopup:ClearCloseTimer()
-    if self.CloseTimer then
-        XScheduleManager.UnSchedule(self.CloseTimer)
-        self.CloseTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnCloseScheduleCb, self)
+end
+
+function XUiPcgSkillPopup:_OnCloseScheduleCb()
+    self:Close()
 end
 
 return XUiPcgSkillPopup

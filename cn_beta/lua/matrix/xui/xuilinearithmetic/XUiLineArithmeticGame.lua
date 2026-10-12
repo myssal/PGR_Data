@@ -17,8 +17,6 @@ function XUiLineArithmeticGame:Ctor()
 
     self._UiLines = {}
 
-    self._TimerGame = false
-
     ---@type XLineArithmeticAnimation
     self._CurrentAnimation = false
 
@@ -71,10 +69,8 @@ end
 
 function XUiLineArithmeticGame:OnEnable()
     self:Update()
-    if not self._TimerGame then
-        self._TimerGame = XScheduleManager.ScheduleForever(function()
-            self:UpdateGame()
-        end, 0, 0)
+    if not XScheduleManagerPro.HasSchedule(self._OnEnableScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnEnableScheduleCb, self, 0, 0)
     end
 
     XEventManager.AddEventListener(XEventId.EVENT_LINE_ARITHMETIC_UPDATE_LINE, self.UpdateLine, self)
@@ -83,11 +79,12 @@ function XUiLineArithmeticGame:OnEnable()
     self._Control:SetCurrentGameStageId()
 end
 
+function XUiLineArithmeticGame:_OnEnableScheduleCb()
+    self:UpdateGame()
+end
+
 function XUiLineArithmeticGame:OnDisable()
-    if self._TimerGame then
-        XScheduleManager.UnSchedule(self._TimerGame)
-        self._TimerGame = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
 
     XEventManager.RemoveEventListener(XEventId.EVENT_LINE_ARITHMETIC_UPDATE_LINE, self.UpdateLine, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_LINE_ARITHMETIC_UPDATE_GAME, self.UpdateFromEvent, self)

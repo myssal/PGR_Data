@@ -24,7 +24,6 @@ function XUiGuildWarTerm4Panel:Ctor()
 
     self._CameraGroup = false
 
-    self._TimerDelayCameraOpen = false
     
     self._OldLevel = 0
 end
@@ -190,20 +189,18 @@ function XUiGuildWarTerm4Panel:OnEnable()
         self:OnEventUnfoldDetail(true, childIndex)
     else
         -- 延迟，否则virtualCamera的过度不展示
-        self._TimerDelayCameraOpen = XScheduleManager.ScheduleOnce(function()
-            self._TimerDelayCameraOpen = false
-            self:SetCamera(self._CameraGroup.Main)
-        end, 500)
+        XScheduleManagerPro.ScheduleOnce(self._OnEnableScheduleCb, self, 500)
         self:Update()
     end
     self:ShowAction()
 end
 
+function XUiGuildWarTerm4Panel:_OnEnableScheduleCb()
+    self:SetCamera(self._CameraGroup.Main)
+end
+
 function XUiGuildWarTerm4Panel:OnDisable()
-    if self._TimerDelayCameraOpen then
-        XScheduleManager.UnSchedule(self._TimerDelayCameraOpen)
-        self._TimerDelayCameraOpen = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
     XUiGuildWarTerm4Panel.Super.OnDisable(self)
     self:RemoveEventListener()
     self:StopTimer()
@@ -233,9 +230,11 @@ function XUiGuildWarTerm4Panel:UpdateAndCheckBossLevel()
 end
 
 function XUiGuildWarTerm4Panel:StartTimer()
-    self.ActionTimer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiGuildWarTerm4Panel:_OnStartTimerScheduleCb()
         self:ShowAction()
-    end, XScheduleManager.SECOND, 0)
 end
 
 function XUiGuildWarTerm4Panel:StopTimer()
@@ -243,10 +242,7 @@ function XUiGuildWarTerm4Panel:StopTimer()
         XScheduleManager.UnSchedule(self.Timer)
         self.Timer = false
     end
-    if self.ActionTimer then
-        XScheduleManager.UnSchedule(self.ActionTimer)
-        self.ActionTimer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
 end
 
 function XUiGuildWarTerm4Panel:OnEventUnfoldDetail(isUnfold, childIndex, playAnimation)

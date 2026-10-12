@@ -34,10 +34,7 @@ end
 
 function XUiFubenNierRepeat:OnEnable()
     if XDataCenter.NieRManager.GetIsActivityEnd() then
-        XScheduleManager.ScheduleOnce(function()
-            if not self.GameObject or  not self.GameObject:Exist() then return end
-            XDataCenter.NieRManager.OnActivityEnd()
-        end, 1)
+        XScheduleManagerPro.ScheduleOnce(self._OnOnEnableScheduleCb, self, 1)
     else
         local unlockCount,count = XDataCenter.NieRManager.GetCharacterCount()
         local nierPOD = XDataCenter.NieRManager.GetNieRPODData()
@@ -153,4 +150,9 @@ end
 function XUiFubenNierRepeat:OnBtnChapterClick(stageId, nierRepeatStageId)
     XLuaUiManager.Open("UiFubenNierGuanqiaNormal", stageId, XNieRConfigs.NieRStageType.RepeatStage, nierRepeatStageId)
     XDataCenter.NieRManager.SaveSelRepeatStageId(nierRepeatStageId)
+end
+
+function XUiFubenNierRepeat:_OnOnEnableScheduleCb()
+    if not self.GameObject or  not self.GameObject:Exist() then return end
+    XDataCenter.NieRManager.OnActivityEnd()
 end

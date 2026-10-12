@@ -170,7 +170,7 @@ function XLuaScene:IsWaitForDestroy()
     if XTool.UObjIsNil(self._GameObject) then
         return false
     end
-    if not self._DestroyTimer then
+    if not XScheduleManagerPro.HasSchedule(self._OnDestroyScheduleCb, self) then
         return false
     end
     
@@ -199,19 +199,13 @@ function XLuaScene:_StartDestroyTimer()
         return
     end
     
-    self._DestroyTimer = XScheduleManager.ScheduleOnce(function() 
-        self:Destroy()
-    end, cacheTime)
+    XScheduleManagerPro.ScheduleOnce(self._OnDestroyScheduleCb, self, cacheTime)
 end
 
 --- 停止倒计时
 --------------------------
 function XLuaScene:_StopDestroyTimer()
-    if not self._DestroyTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._DestroyTimer)
-    self._DestroyTimer = nil
+    XScheduleManagerPro.UnSchedule(self._OnDestroyScheduleCb, self)
 end
 
 --- 绑定相机到后处理脚本
@@ -450,5 +444,9 @@ function XLuaScene:ReleaseAllChild()
 end
 
 --endregion Load Child
+
+function XLuaScene:_OnDestroyScheduleCb()
+    self:Destroy()
+end
 
 return XLuaScene

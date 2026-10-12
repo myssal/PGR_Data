@@ -272,10 +272,7 @@ function XUiBigWorldPopupEnvironmentalStory:ChangeEnvironmentQuestGroup()
         XMVCA.XBigWorldLoading:OpenLoadingByType(XMVCA.XBigWorldLoading.LoadingType.BlackMask, nil, function()
             XMVCA.XBigWorldUI:TipText("EnvironmentalStoryChangeTip")
         end)
-        self._Timer = XScheduleManager.ScheduleOnce(function()
-            self._Timer = nil
-            self:OnEnvironmentGroupChangeComplete()
-        end, XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleOnce(XUiBigWorldPopupEnvironmentalStory._OnEnvironmentGroupChangeScheduleCb, self, XScheduleManagerPro.SECOND)
     end)
 end
 
@@ -305,10 +302,7 @@ function XUiBigWorldPopupEnvironmentalStory:OnEnvironmentGroupChangeComplete()
 end
 
 function XUiBigWorldPopupEnvironmentalStory:RemoveTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiBigWorldPopupEnvironmentalStory._OnEnvironmentGroupChangeScheduleCb, self)
 end
 
 function XUiBigWorldPopupEnvironmentalStory:SortEnvironmentIds(ids)
@@ -368,4 +362,8 @@ function XUiBigWorldPopupEnvironmentalStory:Refresh(groupConfig, targetId)
     self.BtnConfirm:SetDisable(self._IsOnDuty, true)
     self._DynamicTable:SetDataSource(self._DataList)
     self._DynamicTable:ReloadDataSync(index)
+end
+
+function XUiBigWorldPopupEnvironmentalStory:_OnEnvironmentGroupChangeScheduleCb()
+    self:OnEnvironmentGroupChangeComplete()
 end

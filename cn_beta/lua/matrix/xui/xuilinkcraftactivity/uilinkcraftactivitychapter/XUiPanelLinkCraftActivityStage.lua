@@ -7,12 +7,7 @@ function XUiPanelLinkCraftActivityStage:OnStart(chapterId)
     self._ChapterId = chapterId
     self:InitStageUI()
     self:InitBackground()
-    XScheduleManager.ScheduleNextFrame(function()
-        self:UpdateStageUI()
-        self:FocusOnEnable()
-        
-        self._FirstEnableEnd = true
-    end)
+    XScheduleManagerPro.ScheduleNextFrame(self._OnUpdateStageUIScheduleCb, self)
     
 end
 
@@ -78,5 +73,12 @@ function XUiPanelLinkCraftActivityStage:FocusOnEnable()
     end
 end
 --endregion <<<-----------------------
+
+function XUiPanelLinkCraftActivityStage:_OnUpdateStageUIScheduleCb()
+    self:UpdateStageUI()
+    self:FocusOnEnable()
+
+    self._FirstEnableEnd = true
+end
 
 return XUiPanelLinkCraftActivityStage

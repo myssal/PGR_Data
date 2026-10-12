@@ -39,17 +39,16 @@ function XUiGWSelectPanelTitle:ShowRemainTime()
 end
 
 function XUiGWSelectPanelTitle:StartTimeCount()
-    if self.TimeCountId then return end
     self:ShowRemainTime()
-    self.TimeCountId = XScheduleManager.ScheduleForever(function()
-            self:ShowRemainTime()
-        end, 1000)
+    XScheduleManagerPro.ScheduleForever(self._OnShowRemainTimeScheduleCb, self, 1000)
 end
 
 function XUiGWSelectPanelTitle:EndTimeCount()
-    if not self.TimeCountId then return end
-    XScheduleManager.UnSchedule(self.TimeCountId)
-    self.TimeCountId = nil
+    XScheduleManagerPro.UnSchedule(self._OnShowRemainTimeScheduleCb, self)
+end
+
+function XUiGWSelectPanelTitle:_OnShowRemainTimeScheduleCb()
+    self:ShowRemainTime()
 end
 
 return XUiGWSelectPanelTitle

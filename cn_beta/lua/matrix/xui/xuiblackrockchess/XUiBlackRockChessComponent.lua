@@ -127,18 +127,14 @@ function XUiBlackRockChessComponent:InitUi()
 end
 
 function XUiBlackRockChessComponent:StartTimer()
-    if self.UpdateTimer then
+    if XScheduleManagerPro.HasSchedule(XUiBlackRockChessComponent._OnUpdateScheduleCb, self) then
         return
     end
-    self.UpdateTimer = XScheduleManager.ScheduleForever(handler(self, self.Update), 1)
+    XScheduleManagerPro.ScheduleNextFrame(XUiBlackRockChessComponent._OnUpdateScheduleCb, self)
 end
 
 function XUiBlackRockChessComponent:StopTimer()
-    if not self.UpdateTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self.UpdateTimer)
-    self.UpdateTimer = nil
+    XScheduleManagerPro.UnSchedule(XUiBlackRockChessComponent._OnUpdateScheduleCb, self)
 end
 
 function XUiBlackRockChessComponent:InitCb()
@@ -453,6 +449,13 @@ function XUiBlackRockChessComponent:UpdatePrepare()
             self:HidePartnerHeadHud(id)
             self:HideErrorHud(id)
         end
+    end
+end
+
+function XUiBlackRockChessComponent:_OnUpdateScheduleCb()
+    self:Update()
+    if XScheduleManagerPro.HasSchedule(XUiBlackRockChessComponent._OnUpdateScheduleCb, self) then
+        XScheduleManagerPro.ScheduleNextFrame(XUiBlackRockChessComponent._OnUpdateScheduleCb, self)
     end
 end
 

@@ -22,7 +22,6 @@ function XUiGuildWarReinforcementsDetail:OnAwake()
     self.BattleManager = self.GuildWarManager.GetBattleManager()
     self.UiPanelNodeDetail = XUiPanelReinforcements.New(self.PanelNodeDetail, self)
     self.UiPanelReinforce = XUiPanelReinfoce.New(self.PanelReinforce, self)
-    self.TimeId = nil
     
     XUiHelper.NewPanelActivityAssetSafe({ XGuildWarConfig.ActivityPointItemId }
     , self.PanelSpecialTool, self, { self.GuildWarManager.GetMaxActionPoint() })
@@ -51,11 +50,9 @@ function XUiGuildWarReinforcementsDetail:OnStart(reinforcementsEntity)
 end
 
 function XUiGuildWarReinforcementsDetail:OnEnable()
-    if not self.TimeId then
+    if not XScheduleManagerPro.HasSchedule(self._OnEnableScheduleCb, self) then
         self:RefreshTimeData()
-        self.TimeId = XScheduleManager.ScheduleForever(function()
-            self:RefreshTimeData()
-        end, XScheduleManager.SECOND, 0)
+        XScheduleManagerPro.ScheduleForever(self._OnEnableScheduleCb, self, XScheduleManagerPro.SECOND, 0)
     end
 
     local currentNode = self.Entity and self.BattleManager:GetNode(self.Entity:GetCurrentNodeId())
@@ -67,12 +64,13 @@ function XUiGuildWarReinforcementsDetail:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_GUILDWAR_TIME_REFRESH, self.RefreshNode, self)
 end
 
+function XUiGuildWarReinforcementsDetail:_OnEnableScheduleCb()
+        self:RefreshTimeData()
+end
+
 function XUiGuildWarReinforcementsDetail:OnDisable()
 
-    if self.TimeId then
-        XScheduleManager.UnSchedule(self.TimeId)
-        self.TimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_GUILDWAR_ACTIONLIST_CHANGE, self.CheckClose, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_GUILDWAR_TIME_REFRESH, self.RefreshNode, self)
 end

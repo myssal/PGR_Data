@@ -22,17 +22,15 @@ end
 
 function XUiSkyGardenCafePopupBroadcast:StartTimer()
     self:StopTimer()
-    self._Timer = XScheduleManager.ScheduleOnce(function() 
+    XScheduleManagerPro.ScheduleOnce(self._OnStartTimerScheduleCb, self, 2000)
+end
+
+function XUiSkyGardenCafePopupBroadcast:_OnStartTimerScheduleCb()
         self:Close()
-    end, 2000)
 end
 
 function XUiSkyGardenCafePopupBroadcast:StopTimer()
-    if not self._Timer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._Timer)
-    self._Timer = false
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
 end
 
 function XUiSkyGardenCafePopupBroadcast:InitUi()

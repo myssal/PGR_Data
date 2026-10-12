@@ -130,11 +130,12 @@ function XUiEquipDetailOther:InitModel()
         self.MeshLihui.sharedMaterial:SetTexture("_MainTex", texture)
 
         self:ReleaseLihuiTimer()
-        self.LihuiTimer = XScheduleManager.ScheduleOnce(function()
-            self.FxUiLihuiChuxian01.gameObject:SetActiveEx(true)
-            self.LihuiTimer = nil
-        end,500)
+        XScheduleManagerPro.ScheduleOnce(self._OnInitModelScheduleCb, self,500)
     end
+end
+
+function XUiEquipDetailOther:_OnInitModelScheduleCb()
+        self.FxUiLihuiChuxian01.gameObject:SetActiveEx(true)
 end
 
 -- 释放模型
@@ -144,10 +145,7 @@ end
 
 -- 释放定时器
 function XUiEquipDetailOther:ReleaseLihuiTimer()
-    if self.LihuiTimer then
-        XScheduleManager.UnSchedule(self.LihuiTimer)
-        self.LihuiTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnInitModelScheduleCb, self)
 end
 
 function XUiEquipDetailOther:UpdateView()
@@ -377,7 +375,6 @@ function XUiEquipDetailOther:UpdateOverrunSceneEffect()
     end
 end
 --------------------#endregion 装备 --------------------
-
 
 --------------------#region 意识 --------------------
 

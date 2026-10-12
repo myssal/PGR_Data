@@ -34,7 +34,8 @@ local XRewardType = {
     BWDIYPart = 30, --空花指挥官DIY部件
     Filter = 31,        -- 滤镜解锁
     Anim = 32,          -- 动作解锁
-    FashionColor = 34   -- 涂装颜色
+    FashionColor = 34,   -- 涂装颜色
+    SkyTower = 39, --通天塔道具
 }
 
 --local HeadPortraitQuality = CS.XGame.Config:GetInt("HeadPortraitQuality")
@@ -76,7 +77,8 @@ local Arrange2RewardType = {
     [XArrangeConfigs.Types.BWDIYPart] = XRewardType.BWDIYPart,
     [XArrangeConfigs.Types.Anim] = XRewardType.Anim,
     [XArrangeConfigs.Types.Filter] = XRewardType.Filter,
-    [XArrangeConfigs.Types.FashionColor] = XRewardType.FashionColor
+    [XArrangeConfigs.Types.FashionColor] = XRewardType.FashionColor,
+    [XArrangeConfigs.Types.SkyTower] = XRewardType.SkyTower,
 }
 
 local CreateGoodsFunc = {
@@ -356,7 +358,14 @@ local CreateGoodsFunc = {
             TemplateId = templateId,
             Count = count and count or 1
         }
-    end
+    end,
+    [XRewardType.SkyTower] = function(templateId, count)
+        return {
+            RewardType = XRewardType.SkyTower,
+            TemplateId = templateId,
+            Count = count and count or 1,
+        }
+    end,
 }
 
 local CloneRewardGoods = function(rewardGoods)
@@ -653,14 +662,25 @@ local SortPhotoAnim = function(a, b)
 end
 
 local SortPhotoFilter = function(a, b)
-    local priorityA = XMVCA.XBigWorldAlbum:GetFilterConfigById(a.TemplateId)
-    local priorityB = XMVCA.XBigWorldAlbum:GetFilterConfigById(b.TemplateId)
+    local configA = XMVCA.XBigWorldAlbum:GetFilterConfigById(a.TemplateId)
+    local configB = XMVCA.XBigWorldAlbum:GetFilterConfigById(b.TemplateId)
 
     if configA.Priority ~= configB.Priority then
         return configA.Priority > configB.Priority
     end
 
     return configA.Id < configB.Id
+end
+
+local SortSkyTowerItem = function(a, b)
+    local templateA = XMVCA.XSkyTower:GetItemConfig(a.TemplateId)
+    local templateB = XMVCA.XSkyTower:GetItemConfig(b.TemplateId)
+
+    if templateA.Quality ~= templateB.Quality then
+        return templateA.Quality > templateB.Quality
+    end
+
+    return a.TemplateId > b.TemplateId
 end
 
 local SortRewardTypePrioriy = {
@@ -690,6 +710,7 @@ local SortRewardTypePrioriy = {
     [XRewardType.SgDormFashion] = 26,
     [XRewardType.Anim] = 27,
     [XRewardType.Filter] = 28,
+    [XRewardType.SkyTower] = 30,
 }
 
 local SortFunc = {
@@ -713,6 +734,7 @@ local SortFunc = {
     [XRewardType.BWDIYPart] = SortBWDIYPart,
     [XRewardType.Anim] = SortPhotoAnim,
     [XRewardType.Filter] = SortPhotoFilter,
+    [XRewardType.SkyTower] = SortSkyTowerItem,
 }
 
 local RewardsFilter = {

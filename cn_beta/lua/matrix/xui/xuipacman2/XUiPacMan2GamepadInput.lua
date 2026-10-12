@@ -1,6 +1,24 @@
 --- PacMan2 手柄输入处理脚本
 --- 用于响应手柄输入，控制游戏角色移动
 
+local Direction = require("XUi/XUiPacMan2/XUiPacMan2InputDirection")
+
+-- 输入轴死区；绝对值超过此值才视为有效方向输入。
+local GamepadAxisDeadZone = 0.3
+
+-- 最后一次有效手柄输入后，允许解锁鼠标的等待时间，单位为秒。
+local CursorUnlockDelaySeconds = 1
+
+-- 鼠标任一坐标轴的移动量超过此值时，恢复鼠标显示，单位为像素。
+local MouseMoveThresholdPixels = 10
+
+-- Unity Input.GetMouseButtonDown的按钮编号。
+local MouseButton = {
+    Left = 0,
+    Right = 1,
+    Middle = 2,
+}
+
 ---@class XUiPacMan2GamepadInput
 local XUiPacMan2GamepadInput = XClass(nil, "XUiPacMan2GamepadInput")
 
@@ -10,69 +28,46 @@ local Cursor = CS.UnityEngine.Cursor
 local CursorLockMode = CS.UnityEngine.CursorLockMode
 local Time = CS.UnityEngine.Time
 
-local Direction = {
-    None = 0,
-    Up = 1,
-    Down = 2,
-    Left = 3,
-    Right = 4
-}
-
-function XUiPacMan2GamepadInput:Ctor(gameUi)
-    ---@type XUiPacMan2Game
-    self._GameUi = gameUi
-    self._IsEnabled = false
-    self._UpdateTimerId = nil
+---@param onDirection fun(direction:number):boolean
+---@param pcInputFeedback XUiPacMan2PcInputFeedback
+function XUiPacMan2GamepadInput:Ctor(onDirection, pcInputFeedback)
+    self._OnDirection = onDirection
+    self._PcInputFeedback = pcInputFeedback
+    self._InputEnabled = false
 
     -- 手柄输入相关
     self._LastDirection = Direction.None
     self._LastHasGamepadInput = false
-    
+
     -- 鼠标控制相关
     self._IsUsingGamepad = false
     self._OriginalCursorLockState = CursorLockMode.None
     self._OriginalCursorVisible = true
     self._LastMousePosition = nil
     self._LockStartTime = nil
-    self._UnlockDelay = 1  -- 解锁延迟时间（秒），避免鼠标闪烁
+    self._UnlockDelay = CursorUnlockDelaySeconds -- 解锁延迟时间（秒），避免鼠标闪烁
 end
 
 --- 启用手柄输入
-function XUiPacMan2GamepadInput:Enable()
-    if self._IsEnabled then
-        return
-    end
-
-    if self._UpdateTimerId then
-        XScheduleManager.UnSchedule(self._UpdateTimerId)
-        self._UpdateTimerId = nil
-    end
-
-    self._OriginalCursorLockState = CursorLockMode.None
-    self._OriginalCursorVisible = true
-    self._IsEnabled = true
-
-    self._UpdateTimerId = XScheduleManager.ScheduleForever(function()
-        self:_UpdateInput()
-    end, 0)
+--- 定时器由InputManager统一负责，这里只重置状态
+function XUiPacMan2GamepadInput:OnEnable()
+    self._OriginalCursorLockState = Cursor.lockState
+    self._OriginalCursorVisible = Cursor.visible
+    self._LastDirection = Direction.None
+    self._LastHasGamepadInput = false
 end
 
 --- 禁用手柄输入
-function XUiPacMan2GamepadInput:Disable()
-    if not self._IsEnabled then
-        return
-    end
-
-    self._IsEnabled = false
-
-    if self._UpdateTimerId then
-        XScheduleManager.UnSchedule(self._UpdateTimerId)
-        self._UpdateTimerId = nil
-    end
-
+--- 定时器由InputManager统一负责，这里只清理状态
+function XUiPacMan2GamepadInput:OnDisable()
     self._LastDirection = Direction.None
+    self._LastHasGamepadInput = false
     self._LockStartTime = nil
 
+    if self._PcInputFeedback then
+        self._PcInputFeedback:Release(self)
+    end
+    
     if Cursor.lockState == CursorLockMode.Locked then
         Cursor.lockState = CursorLockMode.None
     end
@@ -80,23 +75,18 @@ function XUiPacMan2GamepadInput:Disable()
     self:_RestoreCursor()
 end
 
---- 销毁
-function XUiPacMan2GamepadInput:Dispose()
-    self:Disable()
-    self._GameUi = nil
-end
-
-function XUiPacMan2GamepadInput:_UpdateInput()
-    if not self._IsEnabled or not self._GameUi then
+--- 由InputManager每帧统一调用
+function XUiPacMan2GamepadInput:UpdateInput()
+    if not self._OnDirection then
         return
     end
 
     -- 检测手柄摇杆输入
+    -- 暂时继续使用Horizontal/Vertical，因此WASD也可能进入这里
     local horizontal = Input.GetAxis("Horizontal")
     local vertical = Input.GetAxis("Vertical")
-    local threshold = 0.3  -- 输入阈值，避免轻微触碰就触发
-    local hasGamepadInput = math.abs(horizontal) > threshold or math.abs(vertical) > threshold
-    
+    local hasGamepadInput = math.abs(horizontal) > GamepadAxisDeadZone or math.abs(vertical) > GamepadAxisDeadZone
+
     if hasGamepadInput ~= (self._LastHasGamepadInput or false) then
         self._LastHasGamepadInput = hasGamepadInput
     end
@@ -106,42 +96,47 @@ function XUiPacMan2GamepadInput:_UpdateInput()
         if not self._IsUsingGamepad then
             self._IsUsingGamepad = true
         end
+
         if Cursor.lockState ~= CursorLockMode.Locked then
             Cursor.lockState = CursorLockMode.Locked
         end
+
         self._LockStartTime = Time.realtimeSinceStartup
+
         if Cursor.visible then
             Cursor.visible = false
         end
     else
         -- 无手柄输入时：延迟解锁，检测鼠标/键盘输入以恢复鼠标显示
-        if self._IsUsingGamepad then
-            if self._LockStartTime then
-                local elapsedTime = Time.realtimeSinceStartup - self._LockStartTime
-                if elapsedTime >= self._UnlockDelay then
-                    -- 延迟时间已过，解锁鼠标但保持隐藏，等待输入
-                    if Cursor.lockState == CursorLockMode.Locked then
-                        Cursor.lockState = CursorLockMode.None
-                        self._LastMousePosition = Input.mousePosition
-                    end
-                    if Cursor.visible then
-                        Cursor.visible = false
-                    end
-                    self:_CheckMouseOrKeyboardInput()
+        if self._IsUsingGamepad and self._LockStartTime then
+            local elapsedTime = Time.realtimeSinceStartup - self._LockStartTime
+
+            if elapsedTime >= self._UnlockDelay then
+                -- 延迟时间已过，解锁鼠标但保持隐藏，等待输入
+                if Cursor.lockState == CursorLockMode.Locked then
+                    Cursor.lockState = CursorLockMode.None
+                    self._LastMousePosition = Input.mousePosition
                 end
+
+                if Cursor.visible then
+                    Cursor.visible = false
+                end
+
+                self:_CheckMouseOrKeyboardInput()
             end
         end
     end
 
     -- 根据输入确定方向（优先水平方向）
     local currentDirection = Direction.None
-    if math.abs(horizontal) > threshold then
+
+    if math.abs(horizontal) > GamepadAxisDeadZone then
         if horizontal > 0 then
             currentDirection = Direction.Right
         else
             currentDirection = Direction.Left
         end
-    elseif math.abs(vertical) > threshold then
+    elseif math.abs(vertical) > GamepadAxisDeadZone then
         if vertical > 0 then
             currentDirection = Direction.Up
         else
@@ -160,31 +155,42 @@ function XUiPacMan2GamepadInput:_UpdateInput()
         elseif currentDirection == Direction.Right then
             self:_OnMoveRight()
         end
+
         self._LastDirection = currentDirection
+
+        if self._PcInputFeedback then
+            if currentDirection == Direction.None or not self._InputEnabled then
+                -- 回中或回调期间输入被禁用时，只释放自己的反馈。
+                -- 不向移动系统提交停止请求。
+                self._PcInputFeedback:Release(self)
+            else
+                self._PcInputFeedback:Show(self, currentDirection)
+            end
+        end
     end
 end
 
 function XUiPacMan2GamepadInput:_OnMoveUp()
-    if self._GameUi and self._GameUi.OnClickUp then
-        self._GameUi:OnClickUp()
+    if self._OnDirection then
+        self._OnDirection(Direction.Up)
     end
 end
 
 function XUiPacMan2GamepadInput:_OnMoveDown()
-    if self._GameUi and self._GameUi.OnClickDown then
-        self._GameUi:OnClickDown()
+    if self._OnDirection then
+        self._OnDirection(Direction.Down)
     end
 end
 
 function XUiPacMan2GamepadInput:_OnMoveLeft()
-    if self._GameUi and self._GameUi.OnClickLeft then
-        self._GameUi:OnClickLeft()
+    if self._OnDirection then
+        self._OnDirection(Direction.Left)
     end
 end
 
 function XUiPacMan2GamepadInput:_OnMoveRight()
-    if self._GameUi and self._GameUi.OnClickRight then
-        self._GameUi:OnClickRight()
+    if self._OnDirection then
+        self._OnDirection(Direction.Right)
     end
 end
 
@@ -192,29 +198,39 @@ end
 function XUiPacMan2GamepadInput:_CheckMouseOrKeyboardInput()
     -- 检测鼠标移动
     local currentMousePosition = Input.mousePosition
+
     if self._LastMousePosition then
         local deltaX = math.abs(currentMousePosition.x - self._LastMousePosition.x)
         local deltaY = math.abs(currentMousePosition.y - self._LastMousePosition.y)
-        local mouseMoveThreshold = 10  -- 鼠标移动阈值（像素）
-        if deltaX > mouseMoveThreshold or deltaY > mouseMoveThreshold then
+
+        if deltaX > MouseMoveThresholdPixels or deltaY > MouseMoveThresholdPixels then
             self:_RestoreCursor()
             return
         end
     end
+
     self._LastMousePosition = currentMousePosition
 
     -- 检测键盘输入（方向键或WASD）
-    local hasKeyInput = Input.GetKeyDown(KeyCode.UpArrow) or Input.GetKeyDown(KeyCode.DownArrow) or
-        Input.GetKeyDown(KeyCode.LeftArrow) or Input.GetKeyDown(KeyCode.RightArrow) or
-        Input.GetKeyDown(KeyCode.W) or Input.GetKeyDown(KeyCode.S) or
-        Input.GetKeyDown(KeyCode.A) or Input.GetKeyDown(KeyCode.D)
+    local hasKeyInput = Input.GetKeyDown(KeyCode.UpArrow)
+        or Input.GetKeyDown(KeyCode.DownArrow)
+        or Input.GetKeyDown(KeyCode.LeftArrow)
+        or Input.GetKeyDown(KeyCode.RightArrow)
+        or Input.GetKeyDown(KeyCode.W)
+        or Input.GetKeyDown(KeyCode.S)
+        or Input.GetKeyDown(KeyCode.A)
+        or Input.GetKeyDown(KeyCode.D)
+
     if hasKeyInput then
         self:_RestoreCursor()
         return
     end
 
     -- 检测鼠标点击
-    local hasMouseClick = Input.GetMouseButtonDown(0) or Input.GetMouseButtonDown(1) or Input.GetMouseButtonDown(2)
+    local hasMouseClick = Input.GetMouseButtonDown(MouseButton.Left)
+        or Input.GetMouseButtonDown(MouseButton.Right)
+        or Input.GetMouseButtonDown(MouseButton.Middle)
+
     if hasMouseClick then
         self:_RestoreCursor()
     end
@@ -227,13 +243,46 @@ end
 
 --- 恢复鼠标状态（私有方法）
 function XUiPacMan2GamepadInput:_RestoreCursor()
-    if self._IsUsingGamepad then
-        self._IsUsingGamepad = false
-        self._LockStartTime = nil
-        Cursor.lockState = self._OriginalCursorLockState
-        Cursor.visible = self._OriginalCursorVisible
-        self._LastMousePosition = nil
+    if not self._IsUsingGamepad then
+        return
     end
+
+    self._IsUsingGamepad = false
+    self._LockStartTime = nil
+    Cursor.lockState = self._OriginalCursorLockState
+    Cursor.visible = self._OriginalCursorVisible
+    self._LastMousePosition = nil
+end
+
+function XUiPacMan2GamepadInput:OnControlStateChanged(inputEnabled, movementEnabled)
+    if self._InputEnabled == inputEnabled then
+        return
+    end
+
+    self._InputEnabled = inputEnabled
+
+    if inputEnabled then
+        self:OnEnable()
+    else
+        self:OnDisable()
+    end
+end
+
+--- 销毁
+function XUiPacMan2GamepadInput:Dispose()
+    -- 如果仍处于启用状态，保留原来的清理流程。
+    if self._InputEnabled then
+        self._InputEnabled = false
+        self:OnDisable()
+    end
+
+    -- Release允许重复调用，确保销毁后不再被共享反馈对象引用。
+    if self._PcInputFeedback then
+        self._PcInputFeedback:Release(self)
+        self._PcInputFeedback = nil
+    end
+
+    self._OnDirection = nil
 end
 
 return XUiPacMan2GamepadInput

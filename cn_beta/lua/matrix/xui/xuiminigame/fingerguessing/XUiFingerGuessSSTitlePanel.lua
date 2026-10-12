@@ -37,9 +37,11 @@ end
 --================
 function XUiFingerGuessSSTitlePanel:OnEnable()
     self:StopTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-            self:SetGameTimer()
-        end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnEnableScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiFingerGuessSSTitlePanel:_OnEnableScheduleCb()
+        self:SetGameTimer()
 end
 --================
 --OnDisable 隐藏面板时
@@ -66,9 +68,6 @@ end
 --停止计时器
 --================
 function XUiFingerGuessSSTitlePanel:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
 end
 return XUiFingerGuessSSTitlePanel

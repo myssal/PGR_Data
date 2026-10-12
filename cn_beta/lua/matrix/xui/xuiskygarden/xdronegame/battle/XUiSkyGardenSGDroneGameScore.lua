@@ -67,16 +67,15 @@ end
 
 function XUiSkyGardenSGDroneGameScore:_RegisterTimer()
     self:_RemoveTimer()
-    self._Timer = XScheduleManager.ScheduleOnce(function()
-        self:Close()
-    end, XScheduleManager.SECOND * 3)
+    XScheduleManagerPro.ScheduleOnce(self._OnCloseScheduleCb, self, XScheduleManagerPro.SECOND * 3)
 end
 
 function XUiSkyGardenSGDroneGameScore:_RemoveTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+        XScheduleManagerPro.UnSchedule(self._OnCloseScheduleCb, self)
+end
+
+function XUiSkyGardenSGDroneGameScore:_OnCloseScheduleCb()
+    self:Close()
 end
 
 return XUiSkyGardenSGDroneGameScore

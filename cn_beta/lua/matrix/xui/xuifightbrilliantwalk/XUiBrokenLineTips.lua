@@ -79,12 +79,7 @@ end
 function XUiBrokenLineTips:SetDesc(textIndex, tipTextId, varIndex, value)
     local tips = self:GetTips(textIndex)
     tips:SetDesc(textIndex, tipTextId, varIndex, value)
-    XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
-        self:UpdateDescPos()
-    end, 0)
+    XScheduleManagerPro.ScheduleOnce(self._OnUpdateDescPosScheduleCb, self, 0)
 end
 
 function XUiBrokenLineTips:UpdateDescPos()
@@ -113,6 +108,13 @@ function XUiBrokenLineTips:RemoveLink()
         self.CSRLManager:RemoveEntityImmediately(self.RLLink)
         self.RLLink = nil
     end
+end
+
+function XUiBrokenLineTips:_OnUpdateDescPosScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
+    end
+    self:UpdateDescPos()
 end
 
 return XUiBrokenLineTips

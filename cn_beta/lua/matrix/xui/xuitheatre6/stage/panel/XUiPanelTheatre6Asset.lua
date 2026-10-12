@@ -74,16 +74,20 @@ function XUiPanelTheatre6Asset:PlayAddGold(value)
     if value > 0 then
         self.UiTxtGoldAdd.gameObject:SetActiveEx(true)
         self.UiTxtGoldAdd.text = string.format("+%s", value)
-        self._GoldTimer = XScheduleManager.ScheduleOnce(function()
-            self.UiTxtGoldAdd.gameObject:SetActiveEx(false)
-        end, WaitTime)
+        XScheduleManagerPro.ScheduleOnce(self._OnPlayAddGoldScheduleCb, self, WaitTime)
     else
         self.UiTxtGoldReduce.gameObject:SetActiveEx(true)
         self.UiTxtGoldReduce.text = value
-        self._GoldTimer = XScheduleManager.ScheduleOnce(function()
-            self.UiTxtGoldReduce.gameObject:SetActiveEx(false)
-        end, WaitTime)
+        XScheduleManagerPro.ScheduleOnce(self._OnPlayAddGoldScheduleCb2, self, WaitTime)
     end
+end
+
+function XUiPanelTheatre6Asset:_OnPlayAddGoldScheduleCb2()
+        self.UiTxtGoldReduce.gameObject:SetActiveEx(false)
+end
+
+function XUiPanelTheatre6Asset:_OnPlayAddGoldScheduleCb()
+        self.UiTxtGoldAdd.gameObject:SetActiveEx(false)
 end
 
 function XUiPanelTheatre6Asset:PlayAddHp(value)
@@ -92,30 +96,30 @@ function XUiPanelTheatre6Asset:PlayAddHp(value)
     if value > 0 then
         self.UiTxtHpAdd.gameObject:SetActiveEx(true)
         self.UiTxtHpAdd.text = string.format("+%s", value)
-        self._HpTimer = XScheduleManager.ScheduleOnce(function()
-            self.UiTxtHpAdd.gameObject:SetActiveEx(false)
-        end, WaitTime)
+        XScheduleManagerPro.ScheduleOnce(self._OnPlayAddHpScheduleCb, self, WaitTime)
     else
         self.UiTxtHpReduce.gameObject:SetActiveEx(true)
         self.UiTxtHpReduce.text = value
-        self._HpTimer = XScheduleManager.ScheduleOnce(function()
-            self.UiTxtHpReduce.gameObject:SetActiveEx(false)
-        end, WaitTime)
+        XScheduleManagerPro.ScheduleOnce(self._OnPlayAddHpScheduleCb2, self, WaitTime)
     end
+end
+
+function XUiPanelTheatre6Asset:_OnPlayAddHpScheduleCb2()
+        self.UiTxtHpReduce.gameObject:SetActiveEx(false)
+end
+
+function XUiPanelTheatre6Asset:_OnPlayAddHpScheduleCb()
+        self.UiTxtHpAdd.gameObject:SetActiveEx(false)
 end
 
 function XUiPanelTheatre6Asset:RemoveGoldTimer()
-    if self._GoldTimer then
-        XScheduleManager.UnSchedule(self._GoldTimer)
-        self._GoldTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnPlayAddGoldScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(self._OnPlayAddGoldScheduleCb2, self)
 end
 
 function XUiPanelTheatre6Asset:RemoveHpTimer()
-    if self._HpTimer then
-        XScheduleManager.UnSchedule(self._HpTimer)
-        self._HpTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnPlayAddHpScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(self._OnPlayAddHpScheduleCb2, self)
 end
 
 function XUiPanelTheatre6Asset:OnBtnTaskDetailCloseClick()

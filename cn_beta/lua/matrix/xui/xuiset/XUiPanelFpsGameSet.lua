@@ -73,13 +73,7 @@ function XUiPanelFpsGameSet:OnSelectSkill(index)
 
     if self.VideoPlayer:IsPlaying() then
         self.VideoPlayer:Stop()
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            local status = self.VideoPlayer.VideoPlayerInst.player.status
-            if status == CS.CriWare.CriMana.Player.Status.Stop or status == CS.CriWare.CriMana.Player.Status.PlayEnd then
-                self:RemoveTimer()
-                self:PlayVideoSkill()
-            end
-        end, 1)
+        XScheduleManagerPro.ScheduleForever(self._OnRemoveTimerScheduleCb, self, 1)
     else
         self:PlayVideoSkill()
     end
@@ -108,14 +102,19 @@ function XUiPanelFpsGameSet:OnVideoPlayEnd()
 end
 
 function XUiPanelFpsGameSet:RemoveTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRemoveTimerScheduleCb, self)
 end
 
 function XUiPanelFpsGameSet:OnBtnSettingClick()
     self.Parent:JumpToFightSetting()
+end
+
+function XUiPanelFpsGameSet:_OnRemoveTimerScheduleCb()
+    local status = self.VideoPlayer.VideoPlayerInst.player.status
+    if status == CS.CriWare.CriMana.Player.Status.Stop or status == CS.CriWare.CriMana.Player.Status.PlayEnd then
+        self:RemoveTimer()
+        self:PlayVideoSkill()
+    end
 end
 
 return XUiPanelFpsGameSet

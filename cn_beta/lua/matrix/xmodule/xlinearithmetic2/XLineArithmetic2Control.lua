@@ -89,7 +89,6 @@ function XLineArithmetic2Control:OnInit()
     self._HelpActionTime = 0
     self._HelpActionIndex = 1
 
-    self._Timer = false
 
     self._HelpRecord = {}
 end
@@ -101,13 +100,8 @@ function XLineArithmetic2Control:AddAgencyEvent()
     XEventManager.AddEventListener(XEventId.EVENT_LINE_ARITHMETIC_LAUNCH1, self.Launch1, self)
     XEventManager.AddEventListener(XEventId.EVENT_LINE_ARITHMETIC_LAUNCH2, self.Launch2, self)
 
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            if not self._Model:CheckInTime() then
-                XUiManager.TipText("FubenRepeatNotInActivityTime")
-                self:CloseThisModule()
-            end
-        end, 0)
+    if not XScheduleManagerPro.HasSchedule(self._OnCloseThisModuleScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnCloseThisModuleScheduleCb, self, 0)
     end
 end
 
@@ -117,10 +111,7 @@ function XLineArithmetic2Control:RemoveAgencyEvent()
     XEventManager.RemoveEventListener(XEventId.EVENT_LINE_ARITHMETIC_LAUNCH1, self.Launch1, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_LINE_ARITHMETIC_LAUNCH2, self.Launch2, self)
 
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+        XScheduleManagerPro.UnSchedule(self._OnCloseThisModuleScheduleCb, self)
 end
 
 function XLineArithmetic2Control:OnRelease()
@@ -1218,6 +1209,13 @@ function XLineArithmetic2Control:TestAllStageByConfig()
                 print("测试失败:" .. v.Id)
             end
         end
+    end
+end
+
+function XLineArithmetic2Control:_OnCloseThisModuleScheduleCb()
+    if not self._Model:CheckInTime() then
+        XUiManager.TipText("FubenRepeatNotInActivityTime")
+        self:CloseThisModule()
     end
 end
 

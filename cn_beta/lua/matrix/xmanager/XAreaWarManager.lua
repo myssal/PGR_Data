@@ -142,13 +142,7 @@ XAreaWarManagerCreator = function()
         end
 
         --延迟是为了防止打断UI动画
-        XScheduleManager.ScheduleOnce(
-                function()
-                    XLuaUiManager.RunMain()
-                    XUiManager.TipText("AreaWarActivityEnd")
-                end,
-                1000
-        )
+        XScheduleManagerPro.ScheduleOnce(XAreaWarManager._OnTimerScheduleCb, XAreaWarManager, 1000)
 
         XAreaWarManager.ClearActivityEnd()
 
@@ -2836,6 +2830,11 @@ XAreaWarManagerCreator = function()
 
     XAreaWarManager.Init()
 
+
+    function XAreaWarManager:_OnTimerScheduleCb()
+            XLuaUiManager.RunMain()
+            XUiManager.TipText("AreaWarActivityEnd")
+    end
     return XAreaWarManager
 end
 ---------------------Notify begin------------------

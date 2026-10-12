@@ -148,10 +148,7 @@ function XUiSSBReadyEnemyGrid:PlaySwitchAnima(cb)
     self.OnSwitchFinishCb = cb
     self.GridPickEnemyEnable:Stop()
     self.PanelCharecterNextEnable:Play()
-    XScheduleManager.ScheduleOnce(function()
-            if XTool.UObjIsNil(self.GameObject) then return end
-                self:OnSwitchFinished()
-            end, self.PanelCharecterNextEnable.duration * 1000)
+    XScheduleManagerPro.ScheduleOnce(self._OnOnSwitchFinishedScheduleCb, self, self.PanelCharecterNextEnable.duration * 1000)
 end
 
 function XUiSSBReadyEnemyGrid:OnSwitchFinished()
@@ -174,6 +171,11 @@ end
 function XUiSSBReadyEnemyGrid:HidePanelHp()
     local panelHp = self.Transform:FindTransform("PanelHP")
     if panelHp then panelHp.gameObject:SetActiveEx(false) end
+end
+
+function XUiSSBReadyEnemyGrid:_OnOnSwitchFinishedScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then return end
+    self:OnSwitchFinished()
 end
 
 return XUiSSBReadyEnemyGrid

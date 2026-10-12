@@ -2,7 +2,6 @@
 local XUiConnectingLineBubble = XClass(XUiNode, "XUiConnectingLineBubble")
 
 function XUiConnectingLineBubble:Ctor()
-    self._Timer = false
     ---@type XConnectingLineModelBubble[]
     self._BubbleDict = false
     self._BubbleType = XEnumConst.CONNECTING_LINE.BUBBLE.DEFAULT
@@ -32,17 +31,12 @@ end
 
 function XUiConnectingLineBubble:StartTimer(time)
     self:StopTimer()
-    self._Timer = XScheduleManager.ScheduleOnce(function()
-        self:StopTimer()
-        XEventManager.DispatchEvent(XEventId.EVENT_CONNECTING_LINE_BUBBLE, XEnumConst.CONNECTING_LINE.BUBBLE.DEFAULT)
-    end, time)
+    XScheduleManagerPro.ScheduleOnce(XUiConnectingLineBubble._OnResetBubbleScheduleCb, self, time)
 end
 
 function XUiConnectingLineBubble:StopTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(XUiConnectingLineBubble._OnResetBubbleScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(XUiConnectingLineBubble._OnShowIdleBubbleScheduleCb, self)
 end
 
 function XUiConnectingLineBubble:OnBubbleChange(bubbleType)
@@ -74,12 +68,18 @@ function XUiConnectingLineBubble:OnBubbleChange(bubbleType)
 end
 
 function XUiConnectingLineBubble:StartIdle()
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleOnce(function()
-            self._Timer = false
-            XEventManager.DispatchEvent(XEventId.EVENT_CONNECTING_LINE_BUBBLE, XEnumConst.CONNECTING_LINE.BUBBLE.IDLE_SECOND_15)
-        end, self._IdleTime)
+    if not XScheduleManagerPro.HasSchedule(XUiConnectingLineBubble._OnResetBubbleScheduleCb, self) and not XScheduleManagerPro.HasSchedule(XUiConnectingLineBubble._OnShowIdleBubbleScheduleCb, self) then
+        XScheduleManagerPro.ScheduleOnce(XUiConnectingLineBubble._OnShowIdleBubbleScheduleCb, self, self._IdleTime)
     end
+end
+
+function XUiConnectingLineBubble:_OnResetBubbleScheduleCb()
+    self:StopTimer()
+    XEventManager.DispatchEvent(XEventId.EVENT_CONNECTING_LINE_BUBBLE, XEnumConst.CONNECTING_LINE.BUBBLE.DEFAULT)
+end
+
+function XUiConnectingLineBubble:_OnShowIdleBubbleScheduleCb()
+    XEventManager.DispatchEvent(XEventId.EVENT_CONNECTING_LINE_BUBBLE, XEnumConst.CONNECTING_LINE.BUBBLE.IDLE_SECOND_15)
 end
 
 return XUiConnectingLineBubble

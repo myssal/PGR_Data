@@ -195,22 +195,21 @@ end
 
 function XUiPanelChallengeMode:AddChallengeTimer()
     self:RemoveChallengeTimer()
-    ChallengeChapterTimer = XScheduleManager.ScheduleForever(function()
-        self:UpdateChapterItems()
-    end, ChallengeChapterInterval)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateChapterItemsScheduleCb, self, ChallengeChapterInterval)
 end
 
 function XUiPanelChallengeMode:RemoveChallengeTimer()
-    if ChallengeChapterTimer then
-        XScheduleManager.UnSchedule(ChallengeChapterTimer)
-        ChallengeChapterTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateChapterItemsScheduleCb, self)
 end
 
 function XUiPanelChallengeMode:UpdateChapterItems()
     if self.CurrentChallengeGrid then
         self.CurrentChallengeGrid:UpdateItems()
     end
+end
+
+function XUiPanelChallengeMode:_OnUpdateChapterItemsScheduleCb()
+    self:UpdateChapterItems()
 end
 
 return XUiPanelChallengeMode

@@ -173,25 +173,16 @@ function XUiDlcRelinkPopupInvitation:SetPanelActive(isActive)
 end
 
 function XUiDlcRelinkPopupInvitation:StartTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnStopTimerScheduleCb, self) then
         self:StopTimer()
     end
 
     local showTime = XMVCA.XDlcRoom:GetInviteShowTime()
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            self:StopTimer()
-            return
-        end
-        self:OnClose()
-    end, XScheduleManager.SECOND * showTime)
+    XScheduleManagerPro.ScheduleOnce(self._OnStopTimerScheduleCb, self, XScheduleManagerPro.SECOND * showTime)
 end
 
 function XUiDlcRelinkPopupInvitation:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStopTimerScheduleCb, self)
 end
 
 function XUiDlcRelinkPopupInvitation:OnClose()
@@ -238,6 +229,14 @@ end
 -- 取消按钮点击事件
 function XUiDlcRelinkPopupInvitation:OnBtnCancelClick()
     self:CloseAndReadMessage()
+end
+
+function XUiDlcRelinkPopupInvitation:_OnStopTimerScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        self:StopTimer()
+        return
+    end
+    self:OnClose()
 end
 
 return XUiDlcRelinkPopupInvitation

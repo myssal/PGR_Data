@@ -261,15 +261,12 @@ function XUiFubenBossSingleModeDetailGridBuff:_StartRecordTimer()
     self:_StopRecordTimer()
 
     if XTool.IsNumberValid(self._RecordEndTime) then
-        self._RecordTimer = XScheduleManager.ScheduleForever(Handler(self, self._RefreshTimer), XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleForever(XUiFubenBossSingleModeDetailGridBuff._RefreshTimer, self, XScheduleManagerPro.SECOND)
     end
 end
 
 function XUiFubenBossSingleModeDetailGridBuff:_StopRecordTimer()
-    if self._RecordTimer then
-        XScheduleManager.UnSchedule(self._RecordTimer)
-        self._RecordTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiFubenBossSingleModeDetailGridBuff._RefreshTimer, self)
 end
 
 function XUiFubenBossSingleModeDetailGridBuff:_RefreshTimer()

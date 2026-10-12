@@ -10,10 +10,7 @@ end
 function XQuestTimerAction:Execute()
     self:StopTimer()
     if self._Delay and self._Delay > 0 then
-        self._Timer = XScheduleManager.ScheduleOnce(function()
-            self._Timer = nil
-            self:Finish()
-        end, self._Delay)
+        XScheduleManagerPro.ScheduleOnce(XQuestTimerAction._OnFinishScheduleCb, self, self._Delay)
 
     else
         self:Finish()
@@ -29,11 +26,7 @@ function XQuestTimerAction:OnDestroy()
 end
 
 function XQuestTimerAction:StopTimer()
-    if not self._Timer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._Timer)
-    self._Timer = nil
+    XScheduleManagerPro.UnSchedule(XQuestTimerAction._OnFinishScheduleCb, self)
 end
 
 function XQuestTimerAction:OnPause()
@@ -43,6 +36,10 @@ end
 
 function XQuestTimerAction:GetActionType()
     return XMVCA.XBigWorldQuest.ActionType.Timer
+end
+
+function XQuestTimerAction:_OnFinishScheduleCb()
+    self:Finish()
 end
 
 return XQuestTimerAction

@@ -118,18 +118,11 @@ function XUiPurchaseComboSubGrid:Update(data)
 end
 
 function XUiPurchaseComboSubGrid:OnEnable()
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateTime()
-        end, XScheduleManager.SECOND)
-    end
+    XScheduleManagerPro.ScheduleForever(self.UpdateTime, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiPurchaseComboSubGrid:OnDisable()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self.UpdateTime, self)
 end
 
 function XUiPurchaseComboSubGrid:UpdateTime()
@@ -148,8 +141,7 @@ function XUiPurchaseComboSubGrid:UpdateTime()
             self.TxtUnShelveTime.gameObject:SetActive(false)
             self.ImgSellout.gameObject:SetActive(true)
             self.TxtSetOut.text = XUiHelper.GetText("PurchaseLBSettOff")
-            XScheduleManager.UnSchedule(self._Timer)
-            self._Timer = false
+            XScheduleManagerPro.UnSchedule(self.UpdateTime, self)
         end
     end
 end

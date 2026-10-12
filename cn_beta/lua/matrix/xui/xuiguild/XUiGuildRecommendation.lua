@@ -51,7 +51,6 @@ function XUiGuildRecommendation:InitFun()
         self:RefreshSelectedPanel(index)
     end)
     self.CurIndex = 0
-    self.RefreshTimerCb = function() self:RefreshTimerFun() end
     self:OnRefresh()
 
     self:AddRedPointEvent(self.RedNews, self.OnCheckGuildRecruitList, self, { XRedPointConditions.Types.CONDITION_GUILD_NEWS })
@@ -82,9 +81,7 @@ function XUiGuildRecommendation:OnStart()
 end
 
 function XUiGuildRecommendation:OnEnable()
-    self.CoolDownTimeScheduleId = XScheduleManager.ScheduleForever(function()
-        self:UpdateCoolDownTimer()
-    end, 1000)
+    XScheduleManagerPro.ScheduleForever(XUiGuildRecommendation._OnCoolDownScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiGuildRecommendation:OnDisable()
@@ -166,7 +163,7 @@ end
 
 function XUiGuildRecommendation:RefreshTimerFun()
     self.IsDelayIng = false
-    XScheduleManager.UnSchedule(self.RefreshTimer)
+    XScheduleManagerPro.UnSchedule(self.RefreshTimerFun, self)
 end
 
 function XUiGuildRecommendation:OnBtnSearchOfficeClick()
@@ -176,7 +173,7 @@ function XUiGuildRecommendation:OnBtnSearchOfficeClick()
         end
     end
 
-    self.RefreshTimer = XScheduleManager.ScheduleOnce(self.RefreshTimerCb,RefreshTime)
+    XScheduleManagerPro.ScheduleOnce(self.RefreshTimerFun, self, RefreshTime)
     self.IsDelayIng = true
     local str = self.InputField.text
     local id = tonumber(str)
@@ -295,8 +292,9 @@ end
 
 
 function XUiGuildRecommendation:UnScheduleCoolDownTime()
-    if self.CoolDownTimeScheduleId then
-        XScheduleManager.UnSchedule(self.CoolDownTimeScheduleId)
-        self.CoolDownTimeScheduleId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiGuildRecommendation._OnCoolDownScheduleCb, self)
+end
+
+function XUiGuildRecommendation:_OnCoolDownScheduleCb()
+    self:UpdateCoolDownTimer()
 end

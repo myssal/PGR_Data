@@ -48,26 +48,25 @@ end
 
 --region Ui - AutoClose
 function XUiLottoLifu:StartAutoCloseTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnStartAutoCloseTimerScheduleCb, self) then
         self:StopAutoCloseTimer()
     end
-    self.Timer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartAutoCloseTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiLottoLifu:_OnStartAutoCloseTimerScheduleCb()
         local now = XTime.GetServerNowTimestamp()
-        local drawData = self._LottoGroupData:GetDrawData()
-        local timeId = drawData:GetTimeId()
-        local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
-        if now > endTime then
-            XUiManager.TipText("LottoActivityOver")
-            XLuaUiManager.RunMain()
-        end
-    end, XScheduleManager.SECOND, 0)
+                local drawData = self._LottoGroupData:GetDrawData()
+                local timeId = drawData:GetTimeId()
+                local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
+                if now > endTime then
+                    XUiManager.TipText("LottoActivityOver")
+                    XLuaUiManager.RunMain()
+                end
 end
 
 function XUiLottoLifu:StopAutoCloseTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartAutoCloseTimerScheduleCb, self)
 end
 --endregion
 
@@ -192,10 +191,12 @@ function XUiLottoLifu:_PlayLongEnableAnimation(time)
     longDirector:Play()
     XLuaUiManager.SetMask(true)
     self.AnimationStart1:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector)):Stop()
-    XScheduleManager.ScheduleOnce(function()
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayLongEnableAnimationScheduleCb, self, longDirector.duration * XScheduleManagerPro.SECOND)
+end
+
+function XUiLottoLifu:_OnPlayLongEnableAnimationScheduleCb()
         XLuaUiManager.SetMask(false)
         self:ShowExtraReward()
-    end, longDirector.duration * XScheduleManager.SECOND)
 end
 
 function XUiLottoLifu:_PlayShortEnableAnimation()
@@ -277,9 +278,34 @@ function XUiLottoLifu:AddBtnListener()
     self.BtnXiangqing.CallBack = function() self:OnBtnShowRewardClick() end
     self.BtnStory.CallBack = function() self:OnBtnSkip2StoryClick() end
     self.BtnVoice.CallBack = function() self:OnBtnVoiceClick() end
+
+    if self.BtnChange then
+        self.BtnChange.CallBack = function()
+            self:OnBtnChangeClick()
+        end
+        self:RefreshBtnChange()
+    end
+end
+
+function XUiLottoLifu:RefreshBtnChange()
+    if not self.BtnChange then return end
+    local lottoId = self._LottoGroupData:GetDrawData():GetId()
+    self.BtnChange.gameObject:SetActiveEx(XDataCenter.LottoManager.IsLottoIdBelongSelfChoice(lottoId))
+end
+
+function XUiLottoLifu:OnBtnChangeClick()
+    -- 必须先翻 Entrance.IsChangeMode 再 Close，否则 Entrance.OnEnable 会因 dic 已选直接 CloseImmediately
+    XDataCenter.LottoManager.OpenSelfChoiceEntranceForChange()
+    self:Close()
 end
 
 function XUiLottoLifu:OnBtnBackClick()
+    -- 自选卡池：直接回主界面（Entrance 由 RunMain 一并关闭）
+    local lottoId = self._LottoGroupData:GetDrawData():GetId()
+    if XDataCenter.LottoManager.IsLottoIdBelongSelfChoice(lottoId) then
+        XLuaUiManager.RunMain()
+        return
+    end
     self:Close()
 end
 

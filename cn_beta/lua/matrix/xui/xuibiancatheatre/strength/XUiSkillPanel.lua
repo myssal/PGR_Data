@@ -65,15 +65,10 @@ function XUiSkillGrid:CheckIsActiveEffect(activeId)
     local isShow = self:GetStrengthenId() == activeId
     self.ActiveEffect.gameObject:SetActiveEx(isShow)
     if isShow then
-        XScheduleManager.ScheduleOnce(function()
-            if XTool.UObjIsNil(self.GameObject) then
-                return
-            end
-            self.ActiveEffect.gameObject:SetActiveEx(false)
-            self.RootUi:SetCurActiveSkillId(0)
-        end, 1000)
+        XScheduleManagerPro.ScheduleOnce(XUiSkillGrid._OnHideActiveEffectScheduleCb, self, 1000)
     end
 end
+
 
 
 ----------肉鸽玩法二期 外循环强化系统 技能面板-------------
@@ -176,6 +171,14 @@ function XUiSkillPanel:CancelSelectGrid()
         self.CurSelectSkillGrid:SetSelectStateActive(false)
         self.CurSelectSkillGrid = nil
     end
+end
+
+function XUiSkillGrid:_OnHideActiveEffectScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
+    end
+    self.ActiveEffect.gameObject:SetActiveEx(false)
+    self.RootUi:SetCurActiveSkillId(0)
 end
 
 return XUiSkillPanel

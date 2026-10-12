@@ -7,55 +7,61 @@ local XUiPanelExpBar = XClass(nil, "XUiPanelExpBar")
 function XUiPanelExpBar:Ctor(ui)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
-    self.ScheduleId = nil
     XTool.InitUiObject(self)
     self:InitView()
 end
 
 function XUiPanelExpBar:InitView()
     self.ImgPlayerExpFillAdd.fillAmount = 0
-    self.ScheduleId = self.GameObject:ScheduleForever(function()
-        if not self.FullTimes then return end
-        local beginFillAmount = self.BeginFillAmount
-        if not beginFillAmount then return end
-        local finalFillAmount = self.FinalFillAmount
-        if not finalFillAmount then return end
-        local curLevel = self.CurLevel
-        if not curLevel then return end
-        local lastLevel = self.LastLevel
-        if not lastLevel then return end
+    XScheduleManagerPro.ScheduleForever(XUiPanelExpBar._OnExpBarTickScheduleCb, self, 0)
+end
 
-        local lerpPercent = FILL_SPEED * (self.StartTime)
-        self.StartTime = self.StartTime + CSTime.deltaTime
-        if curLevel > lastLevel then
-            local finalFullTimes = curLevel - lastLevel
+-- 经验条动画逐帧回调
+function XUiPanelExpBar:_OnExpBarTickScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        self:StopAnim()
+        return
+    end
+    if not self.FullTimes then return end
+    local beginFillAmount = self.BeginFillAmount
+    if not beginFillAmount then return end
+    local finalFillAmount = self.FinalFillAmount
+    if not finalFillAmount then return end
+    local curLevel = self.CurLevel
+    if not curLevel then return end
+    local lastLevel = self.LastLevel
+    if not lastLevel then return end
 
-            if self.FullTimes == 0 then
-                self.ImgPlayerExpFill.fillAmount = MathfLerp(beginFillAmount, 1, lerpPercent)
-            elseif self.FullTimes < finalFullTimes then
-                self.ImgPlayerExpFill.fillAmount = MathfLerp(0, 1, lerpPercent)
-            else
-                self.ImgPlayerExpFill.fillAmount = MathfLerp(0, finalFillAmount, lerpPercent)
-                if lerpPercent >= 1 then
-                    self.FullTimes = nil
-                end
-            end
+    local lerpPercent = FILL_SPEED * (self.StartTime)
+    self.StartTime = self.StartTime + CSTime.deltaTime
+    if curLevel > lastLevel then
+        local finalFullTimes = curLevel - lastLevel
 
-            if self.FullTimes and lerpPercent >= 1 then
-                -- self.FullTimes = self.FullTimes + 1    --这里是一条条涨上去的动画
-                self.FullTimes = finalFullTimes  --跳过中间过程，只播首尾
-                if self.FullTimes >= finalFullTimes then
-                    self.StartTime = 0
-                    self.ImgPlayerExpFillAdd.fillAmount = finalFillAmount
-                end
-            end
+        if self.FullTimes == 0 then
+            self.ImgPlayerExpFill.fillAmount = MathfLerp(beginFillAmount, 1, lerpPercent)
+        elseif self.FullTimes < finalFullTimes then
+            self.ImgPlayerExpFill.fillAmount = MathfLerp(0, 1, lerpPercent)
         else
-            self.ImgPlayerExpFill.fillAmount = MathfLerp(beginFillAmount, finalFillAmount, lerpPercent)
+            self.ImgPlayerExpFill.fillAmount = MathfLerp(0, finalFillAmount, lerpPercent)
             if lerpPercent >= 1 then
                 self.FullTimes = nil
             end
         end
-    end, 0)
+
+        if self.FullTimes and lerpPercent >= 1 then
+            -- self.FullTimes = self.FullTimes + 1    --这里是一条条涨上去的动画
+            self.FullTimes = finalFullTimes  --跳过中间过程，只播首尾
+            if self.FullTimes >= finalFullTimes then
+                self.StartTime = 0
+                self.ImgPlayerExpFillAdd.fillAmount = finalFillAmount
+            end
+        end
+    else
+        self.ImgPlayerExpFill.fillAmount = MathfLerp(beginFillAmount, finalFillAmount, lerpPercent)
+        if lerpPercent >= 1 then
+            self.FullTimes = nil
+        end
+    end
 end
 
 function XUiPanelExpBar:LetsRoll(lastLevel, lastExp, lastMaxExp, curLevel, curExp, curMaxExp, addExp, txtLevelName)
@@ -111,7 +117,7 @@ function XUiPanelExpBar:SetShareTag(isShare)
 end
 
 function XUiPanelExpBar:StopAnim()
-    XScheduleManager.UnSchedule(self.ScheduleId)
+    XScheduleManagerPro.UnSchedule(XUiPanelExpBar._OnExpBarTickScheduleCb, self)
 end
 
 return XUiPanelExpBar

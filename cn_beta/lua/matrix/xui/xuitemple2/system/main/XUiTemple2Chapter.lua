@@ -36,9 +36,7 @@ end
 
 function XUiTemple2Chapter:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_TEMPLE2_UPDATE_STAGE, self.Update, self)
-    if self._TimerUpdate then
-        XScheduleManager.UnSchedule(self._TimerUpdate)
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateScheduleCb, self)
 end
 
 function XUiTemple2Chapter:Update()
@@ -85,17 +83,12 @@ function XUiTemple2Chapter:Update()
         end
     end
     if isAnyStageLock then
-        if not self._TimerUpdate then
-            self._TimerUpdate = XScheduleManager.ScheduleForever(function()
-                self:Update()
-            end, 10000)
+        if not XScheduleManagerPro.HasSchedule(self._OnUpdateScheduleCb, self) then
+            XScheduleManagerPro.ScheduleForever(self._OnUpdateScheduleCb, self, 10000)
         end
     else
         -- 全解锁时， 解除定时器
-        if self._TimerUpdate then
-            XScheduleManager.UnSchedule(self._TimerUpdate)
-            self._TimerUpdate = false
-        end
+            XScheduleManagerPro.UnSchedule(self._OnUpdateScheduleCb, self)
     end
 end
 
@@ -119,7 +112,11 @@ function XUiTemple2Chapter:UpdateReward()
     self.Grid256New.gameObject:SetActiveEx(false)
     --self._TimerReward = XScheduleManager.ScheduleOnce(function()
     --    self.Grid256New.transform.parent.gameObject:SetActiveEx(false)
-    --end, 3 * XScheduleManager.SECOND)
+    --end, 3 * XScheduleManagerPro.SECOND)
+end
+
+function XUiTemple2Chapter:_OnUpdateScheduleCb()
+    self:Update()
 end
 
 return XUiTemple2Chapter

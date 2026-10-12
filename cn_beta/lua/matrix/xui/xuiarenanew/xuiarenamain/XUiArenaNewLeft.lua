@@ -233,15 +233,11 @@ end
 
 function XUiArenaNewLeft:_RegisterChallengeTimer()
     self:_RemoveChallengeTimer()
-    self._ChallengeTimer = XScheduleManager.ScheduleForever(Handler(self, self._RefreshChallengeTimer),
-        XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiArenaNewLeft._RefreshChallengeTimer, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiArenaNewLeft:_RemoveChallengeTimer()
-    if self._ChallengeTimer then
-        XScheduleManager.UnSchedule(self._ChallengeTimer)
-        self._ChallengeTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiArenaNewLeft._RefreshChallengeTimer, self)
 end
 
 function XUiArenaNewLeft:_InitUi()

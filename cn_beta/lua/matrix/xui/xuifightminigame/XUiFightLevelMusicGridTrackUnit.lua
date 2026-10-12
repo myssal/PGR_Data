@@ -28,10 +28,12 @@ function XUiFightLevelMusicGridTrackUnit:ShowTriggerArea()
     end
     self._IsShowTriggerArea = true
     self.Img.color = CS.UnityEngine.Color.red
-    XScheduleManager.ScheduleOnce(function()
-        self._IsShowTriggerArea = false
-        self.Img.color = CS.UnityEngine.Color.white
-    end, 500)
+    XScheduleManagerPro.ScheduleOnce(self._OnShowTriggerAreaScheduleCb, self, 500)
+end
+
+function XUiFightLevelMusicGridTrackUnit:_OnShowTriggerAreaScheduleCb()
+    self._IsShowTriggerArea = false
+    self.Img.color = CS.UnityEngine.Color.white
 end
 
 return XUiFightLevelMusicGridTrackUnit

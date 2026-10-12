@@ -63,14 +63,11 @@ end
 function XUiGame2048Main:StartLeftTimer()
     self:StopLeftTimer()
     self:UpdateLeftTimer()
-    self._LeftTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateLeftTimer), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self.UpdateLeftTimer, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiGame2048Main:StopLeftTimer()
-    if self._LeftTimerId then
-        XScheduleManager.UnSchedule(self._LeftTimerId)
-        self._LeftTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.UpdateLeftTimer, self)
 end
 
 function XUiGame2048Main:UpdateLeftTimer()

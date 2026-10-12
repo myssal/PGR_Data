@@ -37,16 +37,16 @@ function XUiStrongholdMinerUp:OnStart(groupId)
     local changeTotalMineralCount = totalMineralCount - oldTotalMineralCount
     self.TxtMaxFriendCount.text = stringFormat("%s (+%s)", oldTotalMineralCount, changeTotalMineralCount)
 
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        self.BtnCloseTs.gameObject:SetActiveEx(true)
-    end, 1000)
+    XScheduleManagerPro.ScheduleOnce(XUiStrongholdMinerUp._OnShowCloseBtnScheduleCb, self, 1000)
+end
+
+--- 定时器回调：延迟显示关闭按钮
+function XUiStrongholdMinerUp:_OnShowCloseBtnScheduleCb()
+    self.BtnCloseTs.gameObject:SetActiveEx(true)
 end
 
 function XUiStrongholdMinerUp:OnDisable()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiStrongholdMinerUp._OnShowCloseBtnScheduleCb, self)
 end
 
 function XUiStrongholdMinerUp:AutoAddListener()

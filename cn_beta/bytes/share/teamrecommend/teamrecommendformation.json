@@ -1,17 +1,22 @@
 [
     {
         "Id": 1,
+        "Name": "高配推荐阵容-囚笼",
+        "Order": 3,
         "Tags": [
             "属性队"
         ],
         "FormationType": 1,
         "StageType": 5,
         "NeedLevel": 9,
+        "NeedScore": 340000,
         "MinCharacterQualityStar": 5000,
         "MaxCharacterQualityStar": 6000
     },
     {
         "Id": 2,
+        "Name": "中配推荐阵容-囚笼",
+        "Order": 2,
         "Tags": [
             "属性队"
         ],
@@ -24,61 +29,78 @@
     },
     {
         "Id": 3,
+        "Name": "低配推荐阵容-囚笼",
+        "Order": 1,
         "Tags": [
             "属性队"
         ],
         "FormationType": 1,
         "StageType": 5,
         "NeedLevel": 8,
-        "MinCharacterQualityStar": 4000,
+        "NeedScore": 300000,
+        "MinCharacterQualityStar": 3000,
         "MaxCharacterQualityStar": 4002
     },
     {
         "Id": 4,
+        "Name": "高配推荐阵容-战区",
+        "Order": 3,
         "Tags": [
             "属性队"
         ],
         "FormationType": 1,
         "StageType": 12,
         "NeedLevel": 7,
+        "NeedScore": 15000000,
         "MinCharacterQualityStar": 5000,
         "MaxCharacterQualityStar": 6000
     },
     {
         "Id": 5,
+        "Name": "中配推荐阵容-战区",
+        "Order": 2,
         "Tags": [
             "属性队"
         ],
         "FormationType": 1,
         "StageType": 12,
         "NeedLevel": 6,
+        "NeedScore": 5000000,
         "MinCharacterQualityStar": 4003,
         "MaxCharacterQualityStar": 4010
     },
     {
         "Id": 6,
+        "Name": "低配推荐阵容-战区",
+        "Order": 1,
         "Tags": [
             "属性队"
         ],
         "FormationType": 1,
         "StageType": 12,
         "NeedLevel": 6,
-        "MinCharacterQualityStar": 4000,
+        "NeedScore": 3000000,
+        "MinCharacterQualityStar": 3000,
         "MaxCharacterQualityStar": 4002
     },
     {
         "Id": 7,
+        "Name": "高配推荐阵容-囚笼",
+        "Order": 3,
         "Tags": [
             "效应队"
         ],
         "FormationType": 2,
         "StageType": 5,
         "NeedLevel": 9,
+        "NeedScore": 340000,
         "MinCharacterQualityStar": 5000,
         "MaxCharacterQualityStar": 6000
     },
     {
         "Id": 8,
+        "Name": "中配推荐阵容-囚笼",
+        "Order": 2,
         "Tags": [
             "效应队"
         ],
@@ -91,46 +113,58 @@
     },
     {
         "Id": 9,
+        "Name": "低配推荐阵容-囚笼",
+        "Order": 1,
         "Tags": [
             "效应队"
         ],
         "FormationType": 2,
         "StageType": 5,
         "NeedLevel": 8,
-        "MinCharacterQualityStar": 4000,
+        "NeedScore": 300000,
+        "MinCharacterQualityStar": 3000,
         "MaxCharacterQualityStar": 4002
     },
     {
         "Id": 10,
+        "Name": "高配推荐阵容-战区",
+        "Order": 3,
         "Tags": [
             "效应队"
         ],
         "FormationType": 2,
         "StageType": 12,
         "NeedLevel": 7,
+        "NeedScore": 15000000,
         "MinCharacterQualityStar": 5000,
         "MaxCharacterQualityStar": 6000
     },
     {
         "Id": 11,
+        "Name": "中配推荐阵容-战区",
+        "Order": 2,
         "Tags": [
             "效应队"
         ],
         "FormationType": 2,
         "StageType": 12,
         "NeedLevel": 6,
+        "NeedScore": 5000000,
         "MinCharacterQualityStar": 4003,
         "MaxCharacterQualityStar": 4010
     },
     {
         "Id": 12,
+        "Name": "低配推荐阵容-战区",
+        "Order": 1,
         "Tags": [
             "效应队"
         ],
         "FormationType": 2,
         "StageType": 12,
         "NeedLevel": 6,
-        "MinCharacterQualityStar": 4000,
+        "NeedScore": 3000000,
+        "MinCharacterQualityStar": 3000,
         "MaxCharacterQualityStar": 4002
     }
 ]

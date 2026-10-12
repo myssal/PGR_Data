@@ -9,7 +9,6 @@ function XUiGridFashionShop:Ctor(ui)
     self.TxtOldPrice = {self.TxtOldPrice1}
     self.TxtNewPrice = {self.TxtNewPrice1}
     self.RImgPrice = {self.RImgPrice1}
-    self.Timer = nil
 end
 
 function XUiGridFashionShop:Init(parent, rootUi)
@@ -190,17 +189,11 @@ function XUiGridFashionShop:RefreshSellOut()
 end
 
 function XUiGridFashionShop:RemoveTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnLeftTimeTimer, self)
 end
 
 function XUiGridFashionShop:RemoveOnSaleTimer()
-    if self.OnSaleTimer then
-        XScheduleManager.UnSchedule(self.OnSaleTimer)
-        self.OnSaleTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnSaleTimeTimer, self)
 end
 
 function XUiGridFashionShop:RefreshIcon()
@@ -364,29 +357,30 @@ function XUiGridFashionShop:RefreshTimer(time)
     self.TxtLeftTime.gameObject:SetActiveEx(true)
     self.ImgLeftTime.gameObject:SetActiveEx(true)
 
-    local leftTime = XShopManager.GetLeftTime(time)
+    self._LeftTime = XShopManager.GetLeftTime(time)
 
-    local func = function()
-        leftTime = leftTime > 0 and leftTime or 0
-        local dataTime = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.SHOP)
-        if self.TxtLeftTime then
-            self.TxtLeftTime.text = CS.XTextManager.GetText("TimeSoldOut", dataTime)
-        end
-        if leftTime <= 0 then
-            self:RemoveTimer()
-            if self.ImgSellOut then
-                self.ImgSellOut.gameObject:SetActiveEx(true)
-                self.IsSellOut = true
-            end
+    self:_RefreshLeftTimeText()
+    XScheduleManagerPro.ScheduleForever(self._OnLeftTimeTimer, self, 1000)
+end
+
+function XUiGridFashionShop:_OnLeftTimeTimer()
+    self._LeftTime = self._LeftTime - 1
+    self:_RefreshLeftTimeText()
+end
+
+function XUiGridFashionShop:_RefreshLeftTimeText()
+    local leftTime = self._LeftTime > 0 and self._LeftTime or 0
+    local dataTime = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.SHOP)
+    if self.TxtLeftTime then
+        self.TxtLeftTime.text = CS.XTextManager.GetText("TimeSoldOut", dataTime)
+    end
+    if leftTime <= 0 then
+        self:RemoveTimer()
+        if self.ImgSellOut then
+            self.ImgSellOut.gameObject:SetActiveEx(true)
+            self.IsSellOut = true
         end
     end
-
-    func()
-
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        leftTime = leftTime - 1
-        func()
-    end, 1000)
 end
 
 function XUiGridFashionShop:RefreshGift()
@@ -417,31 +411,32 @@ function XUiGridFashionShop:RefreshOnSaleTime(time)
     self.TxtOnSaleTime.gameObject:SetActiveEx(true)
     self.ShopOnSaleLockDecs = CS.XTextManager.GetText("ActivityBriefShopOnSaleLock")
 
-    local SaleTime = XShopManager.GetLeftTime(time)
+    self._SaleTime = XShopManager.GetLeftTime(time)
 
-    local func = function()
-        SaleTime = SaleTime > 0 and SaleTime or 0
-        local dataTime = XUiHelper.GetTime(SaleTime, XUiHelper.TimeFormatType.ACTIVITY)
-        if self.TxtOnSaleTime then
-            self.TxtOnSaleTime.text = CS.XTextManager.GetText("TimeOnSale", dataTime)
-        end
-        if SaleTime <= 0 then
-            self:RemoveOnSaleTimer()
-            if self.TxtOnSaleTime then
-                self.TxtOnSaleTime.gameObject:SetActiveEx(false)
-            end
-            self.IsShopOnSaleLock = false
-        else
-            self.IsShopOnSaleLock = true
-        end
+    self:_RefreshOnSaleTimeText()
+    XScheduleManagerPro.ScheduleForever(self._OnSaleTimeTimer, self, 1000)
+end
+
+function XUiGridFashionShop:_OnSaleTimeTimer()
+    self._SaleTime = self._SaleTime - 1
+    self:_RefreshOnSaleTimeText()
+end
+
+function XUiGridFashionShop:_RefreshOnSaleTimeText()
+    local saleTime = self._SaleTime > 0 and self._SaleTime or 0
+    local dataTime = XUiHelper.GetTime(saleTime, XUiHelper.TimeFormatType.ACTIVITY)
+    if self.TxtOnSaleTime then
+        self.TxtOnSaleTime.text = CS.XTextManager.GetText("TimeOnSale", dataTime)
     end
-
-    func()
-
-    self.OnSaleTimer = XScheduleManager.ScheduleForever(function()
-        SaleTime = SaleTime - 1
-        func()
-    end, 1000)
+    if saleTime <= 0 then
+        self:RemoveOnSaleTimer()
+        if self.TxtOnSaleTime then
+            self.TxtOnSaleTime.gameObject:SetActiveEx(false)
+        end
+        self.IsShopOnSaleLock = false
+    else
+        self.IsShopOnSaleLock = true
+    end
 end
 
 return XUiGridFashionShop

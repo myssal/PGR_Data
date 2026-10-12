@@ -2935,6 +2935,11 @@
         "Value": "Assets/Product/Behavior/Restaurant/Restaurant.bytes"
     },
     {
+        "Key": "SkyTowerData",
+        "Type": "string",
+        "Value": "Assets/Product/Behavior/SkyTower/SkyTower.bytes"
+    },
+    {
         "Key": "SkyGardenGuideData",
         "Type": "string",
         "Value": "Assets/Product/Behavior/BigWorld/SkyGarden/Guide/SkyGardenGuideData.bytes"
@@ -4492,17 +4497,17 @@
     {
         "Key": "InteractGunlunIconPC",
         "Type": "string",
-        "Value": "Assets/Product/Texture/Atlas/UiFight/InteractGunlunIcon.png"
+        "Value": "Assets/Product/Texture/Atlas/UiFight/Interact/InteractGunlunIcon.png"
     },
     {
         "Key": "InteractGunlunIconXbox",
         "Type": "string",
-        "Value": "Assets/Product/Texture/Atlas/UiFight/InteractGunlunIconXbox.png"
+        "Value": "Assets/Product/Texture/Atlas/UiFight/Interact/InteractGunlunIconXbox.png"
     },
     {
         "Key": "InteractGunlunIconPS",
         "Type": "string",
-        "Value": "Assets/Product/Texture/Atlas/UiFight/InteractGunlunIconPS.png"
+        "Value": "Assets/Product/Texture/Atlas/UiFight/Interact/InteractGunlunIconPS.png"
     },
     {
         "Key": "ICPFilingUrl",
@@ -5117,7 +5122,7 @@
     {
         "Key": "ActivityToastHallAutoCheckEnable",
         "Type": "bool",
-        "Value": 0
+        "Value": 1
     },
     {
         "Key": "XUiPanelRecommendDynamicFaceId",
@@ -5270,13 +5275,18 @@
         "Value": 40
     },
     {
-        "Key": "RenderPipelineDummyMaterialSVCRef",
-        "Type": "string",
-        "Value": "Assets/Product/Common/RenderPipelineDummyMaterialSVC_Ref.asset"
+        "Key": "LargeIntNumThreshold",
+        "Type": "int",
+        "Value": 100000
     },
     {
-        "Key": "ProductMaterialSVCRef",
+        "Key": "LargeIntNumDivisor",
+        "Type": "int",
+        "Value": 10000
+    },
+    {
+        "Key": "CommonChannelIds",
         "Type": "string",
-        "Value": "Assets/Product/Common/ProductMaterialSVC_Ref.asset"
+        "Value": "0|18|19|56"
     }
 ]

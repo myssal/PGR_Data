@@ -32,18 +32,13 @@ function XBountyChallengeControl:OnInit()
 end
 
 function XBountyChallengeControl:AddAgencyEvent()
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateTime()
-        end, 0)
+    if not XScheduleManagerPro.HasSchedule(self._OnUpdateTimeScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnUpdateTimeScheduleCb, self, 0)
     end
 end
 
 function XBountyChallengeControl:RemoveAgencyEvent()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateTimeScheduleCb, self)
 end
 
 function XBountyChallengeControl:OnRelease()
@@ -314,6 +309,8 @@ function XBountyChallengeControl:GetUiChapterDetail()
     local oldTaskList = data.TaskList
     data.TaskList = {}
     
+    local maxDifficulty = self._Model:GetBossMaxDifficultyLevel(self._SelectedBossId)
+
     for i, difficulty in pairs(difficulties) do
         if not XTool.IsTableEmpty(difficulty) then
             local taskList = self._Model:GetTaskCfgList(difficulty.TaskGroupId)
@@ -334,7 +331,8 @@ function XBountyChallengeControl:GetUiChapterDetail()
                     IsPlayAnimation = false,
                     Priority = cfg.Priority,
                     Config = cfg,
-                    Difficulty = cfg.Difficulty
+                    Difficulty = cfg.Difficulty,
+                    IsMaxDifficulty = cfg.Difficulty == maxDifficulty,
                 }
                 local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
                 if taskData then
@@ -397,6 +395,10 @@ end
 function XBountyChallengeControl:SetDifficultyLevel(level)
     self._DifficultyLevel = level
     XSaveTool.SaveData("BountyChallengeLevel" .. XPlayer.Id .. self._SelectedBossId, level)
+end
+
+function XBountyChallengeControl:SetBossNewRed(bossId, value)
+    self._Model:SetBossNewRed(bossId, value)
 end
 
 function XBountyChallengeControl:GetRemainTime()
@@ -530,6 +532,14 @@ end
 
 function XBountyChallengeControl:GetDifficultyConfigByBossAndLevel(bossId, level)
     return self._Model:GetDifficultyConfigByBossAndLevel(bossId, level)
+end
+
+function XBountyChallengeControl:GetBossMaxDifficultyLevel(bossId)
+    return self._Model:GetBossMaxDifficultyLevel(bossId)
+end
+
+function XBountyChallengeControl:_OnUpdateTimeScheduleCb()
+    self:UpdateTime()
 end
 
 return XBountyChallengeControl

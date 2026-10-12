@@ -37,16 +37,11 @@ end
 
 function XUiMiniGamesCollectionRewardShop:StartActivityCheckTimer()
     self:StopActivityCheckTimer()
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        self:CheckActivityEnd()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnCheckActivityEndScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiMiniGamesCollectionRewardShop:StopActivityCheckTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnCheckActivityEndScheduleCb, self)
 end
 
 function XUiMiniGamesCollectionRewardShop:CheckActivityEnd()
@@ -95,5 +90,9 @@ function XUiMiniGamesCollectionRewardShop:Refresh()
     self.BtnTask:SetButtonState(self.SetUpType == SetUpType.Task and CS.UiButtonState.Select or CS.UiButtonState.Normal)
 end
 
+
+function XUiMiniGamesCollectionRewardShop:_OnCheckActivityEndScheduleCb()
+    self:CheckActivityEnd()
+end
 
 return XUiMiniGamesCollectionRewardShop

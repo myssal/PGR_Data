@@ -80,9 +80,6 @@ function XUiFightBangbiSkill:OnBtnActivationClick(index)
 end
 
 function XUiFightBangbiSkill:CheckPlayAnima()
-    if self.Timer then
-        return
-    end
 
     local effectObj = self.AreaEffectObjectQueue:Dequeue()
     if not effectObj then
@@ -90,15 +87,14 @@ function XUiFightBangbiSkill:CheckPlayAnima()
     end
     effectObj:SetActiveEx(true)
     
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        self:StopTimer()
-        self:CheckPlayAnima()
-    end, ANIMA_TIME)
+    XScheduleManagerPro.ScheduleOnce(self._OnStopTimerScheduleCb, self, ANIMA_TIME)
 end
 
 function XUiFightBangbiSkill:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStopTimerScheduleCb, self)
+end
+
+function XUiFightBangbiSkill:_OnStopTimerScheduleCb()
+    self:StopTimer()
+    self:CheckPlayAnima()
 end

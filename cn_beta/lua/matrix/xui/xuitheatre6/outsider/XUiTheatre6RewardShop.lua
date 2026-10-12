@@ -20,7 +20,6 @@ function XUiTheatre6RewardShop:OnAwake()
     self.FirstTab2IndexDict = {}
     self.TabBtns = {}
     self.SelectIndex = nil
-    self._TimerId = nil
     self.TimelimitIds = {}
     self._LimitShopIds = {}
     self.BtnBack:AddEventListener(handler(self, self.Close))
@@ -94,7 +93,6 @@ function XUiTheatre6RewardShop:OnDestroy()
     self.TabIndexDic = nil
     self.TabBtns = nil
     self.SelectIndex = nil
-    self._TimerId = nil
 end
 --endregion
 
@@ -272,16 +270,12 @@ function XUiTheatre6RewardShop:StartTimer(rewardCfg)
 
     self.TxtTime.gameObject:SetActiveEx(true)
     self:UpdateTime(timeId)
-    self._TimerId = XScheduleManager.ScheduleForever(function()
-        self:UpdateTime(timeId)
-    end, XScheduleManager.SECOND)
+    self._TimerTimeId = timeId
+    XScheduleManagerPro.ScheduleForever(self._OnTimerScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiTheatre6RewardShop:StopTimer()
-    if self._TimerId then
-        XScheduleManager.UnSchedule(self._TimerId)
-        self._TimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnTimerScheduleCb, self)
 end
 
 function XUiTheatre6RewardShop:UpdateTime(timeId)
@@ -309,14 +303,11 @@ function XUiTheatre6RewardShop:StartTotalTimer()
     end
     self:StopTotalTimer()
     self:UpdateTotalTimer()
-    self._TotalTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateTotalTimer), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self.UpdateTotalTimer, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiTheatre6RewardShop:StopTotalTimer()
-    if self._TotalTimerId then
-        XScheduleManager.UnSchedule(self._TotalTimerId)
-        self._TotalTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.UpdateTotalTimer, self)
 end
 
 function XUiTheatre6RewardShop:UpdateTotalTimer()
@@ -478,5 +469,9 @@ function XUiTheatre6RewardShop:UpdateRedDot()
     end
 end
 --endregion
+
+function XUiTheatre6RewardShop:_OnTimerScheduleCb()
+    self:UpdateTime(self._TimerTimeId)
+end
 
 return XUiTheatre6RewardShop

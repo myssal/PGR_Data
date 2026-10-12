@@ -13,8 +13,6 @@ function XUiSpecialTrainBreakthroughMain:Ctor()
     self.EndTime = false
     self.RoleModelPanel = false
     self.SpecialTrainActionRandom = XSpecialTrainActionRandom.New()
-    self._TimerHellMode = false
-    self._TimerMusic = false
 end
 
 function XUiSpecialTrainBreakthroughMain:OnAwake()
@@ -207,13 +205,15 @@ function XUiSpecialTrainBreakthroughMain:GetHelpDataFunc()
 end
 
 function XUiSpecialTrainBreakthroughMain:StartTimer()
-    if self._Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnStartTimerScheduleCb, self) then
         self:StopTimer()
     end
     self:UpdateRefreshTime()
-    self._Timer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+function XUiSpecialTrainBreakthroughMain:_OnStartTimerScheduleCb()
         self:UpdateRefreshTime()
-    end, XScheduleManager.SECOND)
 end
 
 function XUiSpecialTrainBreakthroughMain:UpdateRefreshTime()
@@ -234,10 +234,7 @@ function XUiSpecialTrainBreakthroughMain:UpdateRefreshTime()
 end
 
 function XUiSpecialTrainBreakthroughMain:StopTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
 end
 
 function XUiSpecialTrainBreakthroughMain:OnClickBtnModelSwitch()
@@ -332,9 +329,7 @@ function XUiSpecialTrainBreakthroughMain:UpdateHellModeVisible()
         self.EffectHellMode.gameObject:SetActiveEx(true)
         self:StopTimerMusic()
         -- 困难
-        self._TimerMusic = XScheduleManager.ScheduleNextFrame(function()
-            XLuaAudioManager.PlaySoundDoNotInterrupt(XLuaAudioManager.UiBasicsMusic.SpecialTrainBreakthroughHell)
-        end)
+        XScheduleManagerPro.ScheduleNextFrame(self._OnUpdateHellModeVisibleScheduleCb, self)
         return
     end
 
@@ -344,16 +339,20 @@ function XUiSpecialTrainBreakthroughMain:UpdateHellModeVisible()
     self.EffectHellMode.gameObject:SetActiveEx(false)
     self:StopTimerMusic()
     -- 普通
-    self._TimerMusic = XScheduleManager.ScheduleNextFrame(function()
+    XScheduleManagerPro.ScheduleNextFrame(self._OnUpdateHellModeVisibleScheduleCb2, self)
+end
+
+function XUiSpecialTrainBreakthroughMain:_OnUpdateHellModeVisibleScheduleCb()
+        XLuaAudioManager.PlaySoundDoNotInterrupt(XLuaAudioManager.UiBasicsMusic.SpecialTrainBreakthroughHell)
+end
+
+function XUiSpecialTrainBreakthroughMain:_OnUpdateHellModeVisibleScheduleCb2()
         XLuaAudioManager.PlaySoundDoNotInterrupt(XLuaAudioManager.UiBasicsMusic.SpecialTrainBreakthroughNormal)
-    end)
 end
 
 function XUiSpecialTrainBreakthroughMain:StopTimerMusic()
-    if self._TimerMusic then
-        XScheduleManager.UnSchedule(self._TimerMusic)
-        self._TimerMusic = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnUpdateHellModeVisibleScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(self._OnUpdateHellModeVisibleScheduleCb2, self)
 end
 
 function XUiSpecialTrainBreakthroughMain:UpdateHellMode()
@@ -439,7 +438,7 @@ function XUiSpecialTrainBreakthroughMain:CountDownHellMode()
 end
 
 function XUiSpecialTrainBreakthroughMain:StartTimerHellMode()
-    if self._TimerHellMode then
+    if XScheduleManagerPro.HasSchedule(self._OnStartTimerHellModeScheduleCb, self) then
         return
     end
     if not self:CountDownHellMode() then
@@ -447,22 +446,21 @@ function XUiSpecialTrainBreakthroughMain:StartTimerHellMode()
         return
     end
     self.PanelTimeHellMode.gameObject:SetActiveEx(true)
-    self._TimerHellMode = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerHellModeScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+function XUiSpecialTrainBreakthroughMain:_OnStartTimerHellModeScheduleCb()
         if not self:CountDownHellMode() then
-            self:StopTimerHellMode()
-        end
-    end, XScheduleManager.SECOND)
+                    self:StopTimerHellMode()
+                end
 end
 
 function XUiSpecialTrainBreakthroughMain:StopTimerHellMode()
     self.PanelTimeHellMode.gameObject:SetActiveEx(false)
-    if not self._TimerHellMode then
-        return
-    end
-    XScheduleManager.UnSchedule(self._TimerHellMode)
-    self._TimerHellMode = false
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerHellModeScheduleCb, self)
 end
 
 --endregion term 2
+
 
 return XUiSpecialTrainBreakthroughMain

@@ -418,6 +418,13 @@ function XReformConfigModel:GetMobLabel(id)
     return self:GetMob(id).Label
 end
 
+-- 怪物特性 buff id 数组（4.9 天平砝码信息·怪物特性展示用）
+-- BuffIds 指向表（ReformBuff / ReformEnemyBuffDetail）待策划澄清，本接口仅返回 id 数组
+-- 描述文本由调用方按指向表经 GetBuffDesc 或（待补）GetEnemyBuffDetail 读
+function XReformConfigModel:GetMobBuffIds(id)
+    return self:GetMob(id).BuffIds
+end
+
 function XReformConfigModel:GetMobLevel(id)
     return self:GetMob(id).ShowLevel
 end

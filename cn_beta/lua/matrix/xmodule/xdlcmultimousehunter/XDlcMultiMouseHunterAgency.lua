@@ -78,9 +78,7 @@ function XDlcMultiMouseHunterAgency:OpenMainUi()
             XMVCA.XDlcRoom:CreateRoom(worldId, levelId, 1, true)
         end
     end)
-    XScheduleManager.ScheduleOnce(function()
-        self.InCd = false
-    end, 1000)--增加1s Cd
+    XScheduleManagerPro.ScheduleOnce(self._OnOpenMainUiScheduleCb, self, 1000)--增加1s Cd
     self.InCd = true
 end
 
@@ -575,6 +573,10 @@ end
 
 function XDlcMultiMouseHunterAgency:ExGetDlcModelIdByCharacterData(characterData)
     return ""
+end
+
+function XDlcMultiMouseHunterAgency:_OnOpenMainUiScheduleCb()
+    self.InCd = false
 end
 
 return XDlcMultiMouseHunterAgency

@@ -179,11 +179,13 @@ function XUiPartnerActivateMainSkill:GoSkillOptionView()
 end
 
 function XUiPartnerActivateMainSkill:PlayEnableAnime()
-    XScheduleManager.ScheduleOnce(function()
-            if self.PanelState == PanelState.SkillOption then
-                self:PlayAnimation("QieHuan2")
-            elseif self.PanelState == PanelState.Element then
-                self:PlayAnimation("QieHuan1")
-            end
-        end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayEnableAnimeScheduleCb, self, 1)
+end
+
+function XUiPartnerActivateMainSkill:_OnPlayEnableAnimeScheduleCb()
+        if self.PanelState == PanelState.SkillOption then
+                        self:PlayAnimation("QieHuan2")
+                    elseif self.PanelState == PanelState.Element then
+                        self:PlayAnimation("QieHuan1")
+                    end
 end

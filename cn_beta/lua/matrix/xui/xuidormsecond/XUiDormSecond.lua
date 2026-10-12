@@ -15,7 +15,6 @@ local XUiDormBgm = require("XUi/XUiDormSecond/XUiDormBgm")
 
 local TextManager = CS.XTextManager
 local SelfPreDormId = -1 --在访问其他人时，记录当前自己的宿舍Id。在访问返回时使用
-local CurrentSchedule = nil
 local V3OP
 local DisplaySetType
 local DormSecondEnter
@@ -481,6 +480,9 @@ function XUiDormSecond:OnEnable()
     if not self._LastSimulateMouseWithTouches then
         CS.UnityEngine.Input.simulateMouseWithTouches = true
     end
+    --当从其他界面返回到此界面时，需要重新设置光照
+    XUiHelper.SetSceneType(CS.XSceneType.Dormitory)
+    
     self.BtnPanelTask.CallBack = self.OnBtnTaskTipsClickCb
     self:SetScore()
     XDataCenter.DormManager.GetNextShowEvent()
@@ -797,9 +799,9 @@ function XUiDormSecond:OnBtnExpand()
 end
 
 function XUiDormSecond:ComfortTips()
-    if not CurrentSchedule then
+    if not XScheduleManagerPro.HasSchedule(self._OnComfortTipsTimerCbScheduleCb, self) then
         self.TopTips.gameObject:SetActiveEx(true)
-        CurrentSchedule = XScheduleManager.ScheduleForever(function() self:ComfortTipsTimerCb() end, XDormConfig.DormComfortTime)
+        XScheduleManagerPro.ScheduleForever(self._OnComfortTipsTimerCbScheduleCb, self, XDormConfig.DormComfortTime)
     end
 end
 
@@ -807,15 +809,11 @@ function XUiDormSecond:ComfortTipsTimerCb()
     if not XTool.UObjIsNil(self.TopTips) then
         self.TopTips.gameObject:SetActiveEx(false)
     end
-    XScheduleManager.UnSchedule(CurrentSchedule)
-    CurrentSchedule = nil
+    XScheduleManagerPro.UnSchedule(self._OnComfortTipsTimerCbScheduleCb, self)
 end
 
 function XUiDormSecond:RemoveTimer()--退出时关闭定时器，防止访问不存在的物体
-    if CurrentSchedule then
-        CS.XScheduleManager.UnSchedule(CurrentSchedule)
-        CurrentSchedule = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnComfortTipsTimerCbScheduleCb, self)
 end
 
 
@@ -1018,11 +1016,7 @@ function XUiDormSecond:OnPlayAnimation()
     end
 
     if delay > 0 then
-        self.DormWorkTimer = XScheduleManager.ScheduleOnce(function()
-            self.PanelBtn.gameObject:SetActiveEx(true)
-            self:PlayAnimation("AnimStartEnable")
-            XScheduleManager.UnSchedule(self.DormWorkTimer)
-        end, delay)
+        XScheduleManagerPro.ScheduleOnce(self._OnPlayAnimationScheduleCb, self, delay)
     else
         self:PlayAnimation("AnimStartEnable")
     end
@@ -1035,4 +1029,13 @@ function XUiDormSecond:ShowPanelHead(isShow)
     else
         self.PanelHead.gameObject:SetActiveEx(isShow)
     end
+end
+
+function XUiDormSecond:_OnPlayAnimationScheduleCb()
+    self.PanelBtn.gameObject:SetActiveEx(true)
+    self:PlayAnimation("AnimStartEnable")
+end
+
+function XUiDormSecond:_OnComfortTipsTimerCbScheduleCb()
+    self:ComfortTipsTimerCb() 
 end

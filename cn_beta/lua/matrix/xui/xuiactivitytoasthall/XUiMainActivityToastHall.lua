@@ -20,6 +20,10 @@ function XUiMainActivityToastHall:OnStart(toastId, skinId)
     self:ShowToast(cfg)
 end
 
+function XUiMainActivityToastHall:OnDestroy()
+    XScheduleManagerPro.UnSchedule(XUiMainActivityToastHall._OnCloseToastScheduleCb, self)
+end
+
 ---@param cfg XTableActivityToastHall
 function XUiMainActivityToastHall:InitSkin(cfg, skinId)
     skinId = skinId or cfg.SkinId
@@ -60,7 +64,7 @@ end
 ---@param cfg XTableActivityToastHall
 function XUiMainActivityToastHall:ShowToast(cfg)
     self:StopTweener(self._MoveTimer)
-    self:StopTweener(self._StayTimer)
+    XScheduleManagerPro.UnSchedule(XUiMainActivityToastHall._OnCloseToastScheduleCb, self)
 
     local skinUi = self.SkinUi
     skinUi.Txt.text = cfg.Content or ""
@@ -108,11 +112,12 @@ function XUiMainActivityToastHall:ShowSliderToast(cfg, stayTime)
 end
 
 function XUiMainActivityToastHall:ScheduleClose(stayTime)
-    self._StayTimer = XScheduleManager.ScheduleOnce(function()
-        XLuaUiManager.Remove("UiMainActivityToastHall")
-        XMVCA.XUiMain:TryPopActivityToastHall()
-    end, stayTime)
-    self:_AddTimerId(self._StayTimer)
+    XScheduleManagerPro.ScheduleOnce(XUiMainActivityToastHall._OnCloseToastScheduleCb, self, stayTime)
+end
+
+function XUiMainActivityToastHall:_OnCloseToastScheduleCb()
+    XLuaUiManager.Remove("UiMainActivityToastHall")
+    XMVCA.XUiMain:TryPopActivityToastHall()
 end
 
 return XUiMainActivityToastHall

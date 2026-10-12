@@ -8,17 +8,18 @@ function XUiMazeRandomTimeline:Ctor()
     self._Time = 0
     self._LastIndex = 1
     self._IsPlaying = false
-    self._Timer = false
     self._ObjectBind = {}
 end
 
 function XUiMazeRandomTimeline:Play(time)
     self._Time = time or 0
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:Update()
-        end, 0)
+    if not XScheduleManagerPro.HasSchedule(self._OnPlayScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnPlayScheduleCb, self, 0)
     end
+end
+
+function XUiMazeRandomTimeline:_OnPlayScheduleCb()
+        self:Update()
 end
 
 function XUiMazeRandomTimeline:PlayDelay()
@@ -27,17 +28,11 @@ function XUiMazeRandomTimeline:PlayDelay()
 end
 
 function XUiMazeRandomTimeline:Pause()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnPlayScheduleCb, self)
 end
 
 function XUiMazeRandomTimeline:Stop()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnPlayScheduleCb, self)
     self._TimelineHelper = false
     self:ClearObjectBind()
 end

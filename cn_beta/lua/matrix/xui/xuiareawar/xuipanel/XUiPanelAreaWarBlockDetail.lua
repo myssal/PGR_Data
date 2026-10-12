@@ -167,24 +167,14 @@ function XUiPanelAreaWarBlockDetail:UpdateView()
 end
 
 function XUiPanelAreaWarBlockDetail:StartRepeatTimer()
-    if XTool.IsNumberValid(self.RepeatTimer) or not self.ChapterStartTime then
+    if XScheduleManagerPro.HasSchedule(XUiPanelAreaWarBlockDetail._OnUpdateRepeatScheduleCb, self) or not self.ChapterStartTime then
         return
     end
-    self.RepeatTimer = XScheduleManager.ScheduleForever(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            self:StopRepeatTimer()
-            return
-        end
-        self:UpdateRepeat()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiPanelAreaWarBlockDetail._OnUpdateRepeatScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiPanelAreaWarBlockDetail:StopRepeatTimer()
-    if not XTool.IsNumberValid(self.RepeatTimer) then
-        return
-    end
-    XScheduleManager.UnSchedule(self.RepeatTimer)
-    self.RepeatTimer = nil
+    XScheduleManagerPro.UnSchedule(XUiPanelAreaWarBlockDetail._OnUpdateRepeatScheduleCb, self)
 end
 
 function XUiPanelAreaWarBlockDetail:UpdateRepeat()
@@ -260,5 +250,13 @@ end
 
 
 
+
+function XUiPanelAreaWarBlockDetail:_OnUpdateRepeatScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        self:StopRepeatTimer()
+        return
+    end
+    self:UpdateRepeat()
+end
 
 return XUiPanelAreaWarBlockDetail

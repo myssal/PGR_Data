@@ -73,16 +73,15 @@ function XUiLifuActivityMain:StartTimer()
     self.TxtDay.text = XUiHelper.GetTime(self.ActivityEndTime - now, XUiHelper.TimeFormatType.ACTIVITY)
     self:StopTimer()
 
-    self.TimerId = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiLifuActivityMain:_OnStartTimerScheduleCb()
         self:RefreshActivityTime()
-    end, XScheduleManager.SECOND, 0)
 end
 
 function XUiLifuActivityMain:StopTimer()
-    if self.TimerId then
-        XScheduleManager.UnSchedule(self.TimerId)
-        self.TimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
 end
 
 function XUiLifuActivityMain:RefreshActivityTime()
@@ -90,12 +89,14 @@ function XUiLifuActivityMain:RefreshActivityTime()
     if now > self.ActivityEndTime then
         XUiManager.TipText("KoroCharacterActivityEnd")
         self:StopTimer()
-        XScheduleManager.ScheduleOnce(function()
-            --XLuaUiManager.RunMain()
-        end,500)
+        XScheduleManagerPro.ScheduleOnce(self._OnRefreshActivityTimeScheduleCb, self,500)
         return
     end
     self.TxtDay.text = XUiHelper.GetTime(self.ActivityEndTime - now, XUiHelper.TimeFormatType.ACTIVITY)
+end
+
+function XUiLifuActivityMain:_OnRefreshActivityTimeScheduleCb()
+        --XLuaUiManager.RunMain()
 end
 
 function XUiLifuActivityMain:SwitchPanelStage(panelStage)

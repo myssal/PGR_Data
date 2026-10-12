@@ -7,10 +7,8 @@ local XUiMazeMain = XLuaUiManager.Register(XLuaUi, "UiMazeMain")
 function XUiMazeMain:Ctor()
     ---@type XViewModelMaze
     self._ViewModel = XViewModelMaze.New()
-    self._Timer = false
+        self._Timer = false
     self._TimerEndActivity = false
-    self._IsPlayingAnimationOnEnable = false
-    self._IsPlayingMovie = false
 end
 
 function XUiMazeMain:OnAwake()
@@ -26,9 +24,7 @@ function XUiMazeMain:OnAwake()
     cameraFarChoose.gameObject:SetActiveEx(false)
     cameraFarRoom.gameObject:SetActiveEx(false)
 
-    self._TimerEndActivity = XScheduleManager.ScheduleForever(function()
-        self:CheckActivityEnd()
-    end, 5 * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnCheckActivityEndScheduleCb, self, 5 * XScheduleManagerPro.SECOND)
     
     local componentPlayMusic = self.Transform:GetComponent("XPlayMusic")
     if componentPlayMusic then
@@ -66,14 +62,10 @@ function XUiMazeMain:OnEnable()
         self:PlayBgm()
     end
 
-    if not self._Timer then
+    if not XScheduleManagerPro.HasSchedule(self._OnUpdateTimeActivityScheduleCb, self) then
         self:UpdateTimeActivity()
         self:UpdateTimeTicket()
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateTimeActivity()
-            self:UpdateTimeTicket()
-            self:AutoRequestGetTicket()
-        end, XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleForever(self._OnUpdateTimeActivityScheduleCb, self, XScheduleManagerPro.SECOND)
     end
 
     self:Update()
@@ -81,14 +73,11 @@ end
 
 function XUiMazeMain:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_MOVIE_END, self.AutoRequestGetTicket, self)
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateTimeActivityScheduleCb, self)
 end
 
 function XUiMazeMain:OnDestroy()
-    XScheduleManager.UnSchedule(self._TimerEndActivity)
+    XScheduleManagerPro.UnSchedule(self._OnCheckActivityEndScheduleCb, self)
 end
 
 function XUiMazeMain:PlayMovie()
@@ -174,6 +163,16 @@ function XUiMazeMain:PlayBgm()
     if componentPlayMusic then
         componentPlayMusic.enabled = true
     end
+end
+
+function XUiMazeMain:_OnUpdateTimeActivityScheduleCb()
+    self:UpdateTimeActivity()
+    self:UpdateTimeTicket()
+    self:AutoRequestGetTicket()
+end
+
+function XUiMazeMain:_OnCheckActivityEndScheduleCb()
+    self:CheckActivityEnd()
 end
 
 return XUiMazeMain

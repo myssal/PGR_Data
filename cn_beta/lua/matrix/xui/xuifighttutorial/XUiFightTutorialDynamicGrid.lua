@@ -107,10 +107,7 @@ function XUiFightTutorialDynamicGrid:Play()
             local movieId = tonumber(self.Data.AssetPath)
             self.Video:SetInfoByVideoId(movieId)
 
-            self.ScheduleId = XScheduleManager.ScheduleNextFrame(function()
-                self.ScheduleId = nil
-                self.Video:Play()
-            end)
+            XScheduleManagerPro.ScheduleNextFrame(self._OnPlayScheduleCb, self)
         end
     end
 end
@@ -119,10 +116,7 @@ function XUiFightTutorialDynamicGrid:Stop()
     self:InitLoadVideoPrefab()
     if self.Data.AssetType == 1 then
         if self.Video:IsPlaying() then
-            if self.ScheduleId then
-                XScheduleManager.UnSchedule(self.ScheduleId)
-                self.ScheduleId = nil
-            end
+                XScheduleManagerPro.UnSchedule(self._OnPlayScheduleCb, self)
 
             self.Video:Stop()
         end
@@ -166,6 +160,10 @@ end
 
 function XUiFightTutorialDynamicGrid:SetRawImageAspectRatio()
     self.VisualImage:SetRawImageAspectRatio()
+end
+
+function XUiFightTutorialDynamicGrid:_OnPlayScheduleCb()
+    self.Video:Play()
 end
 
 return XUiFightTutorialDynamicGrid

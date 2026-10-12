@@ -6544,7 +6544,7 @@
             0,
             0
         ],
-        "Description": "占位"
+        "Description": "\"当所在宿舍总值未达到<color=#FF4E4EFF>1200</color>点,构造体每小时失去体力值<color=#28CFFFFF>1</color>点，心情值<color=#28CFFFFF>1</color>点\""
     },
     {
         "Id": 462,
@@ -6558,7 +6558,7 @@
             0,
             0
         ],
-        "Description": "占位"
+        "Description": "\"当所在宿舍总值达到<color=#FF4E4EFF>1200</color>点,构造体每小时恢复体力值<color=#28CFFFFF>3</color>点，心情值<color=#28CFFFFF>0.5</color>点\""
     },
     {
         "Id": 463,
@@ -6572,7 +6572,7 @@
             0,
             0
         ],
-        "Description": "占位"
+        "Description": "\"当所在宿舍总值达到<color=#FF4E4EFF>3500</color>点,构造体每小时恢复体力值<color=#28CFFFFF>4</color>点，心情值<color=#28CFFFFF>1</color>点\""
     },
     {
         "Id": 464,
@@ -6583,10 +6583,10 @@
         "CompareType": 1,
         "AttrTotal": 5500,
         "AttrCondition": [
-            2000,
+            3500,
             0
         ],
-        "Description": "占位"
+        "Description": "\"当所在宿舍达到舒适度<color=#FF4E4EFF>3500</color>点,美观度<color=#FF4E4EFF>2000</color>点,构造体每小时恢复体力值<color=#28CFFFFF>5</color>点，心情值<color=#28CFFFFF>2</color>点\""
     },
     {
         "Id": 465,
@@ -6597,10 +6597,10 @@
         "CompareType": 1,
         "AttrTotal": 10000,
         "AttrCondition": [
-            3500,
+            6500,
             0
         ],
-        "Description": "占位"
+        "Description": "\"当所在宿舍达到舒适度<color=#FF4E4EFF>6500</color>点,美观度<color=#FF4E4EFF>3500</color>点,构造体每小时恢复体力值<color=#28CFFFFF>6</color>点，心情值<color=#28CFFFFF>5</color>点\""
     },
     {
         "Id": 466,
@@ -6615,7 +6615,7 @@
             0,
             0
         ],
-        "Description": "占位"
+        "Description": "\"当所在宿舍总值未达到<color=#FF4E4EFF>1200</color>点,构造体每小时失去体力值<color=#28CFFFFF>1</color>点，心情值<color=#28CFFFFF>1</color>点\""
     },
     {
         "Id": 467,
@@ -6629,7 +6629,7 @@
             0,
             0
         ],
-        "Description": "占位"
+        "Description": "\"当所在宿舍总值达到<color=#FF4E4EFF>1200</color>点,构造体每小时恢复体力值<color=#28CFFFFF>3</color>点，心情值<color=#28CFFFFF>0.5</color>点\""
     },
     {
         "Id": 468,
@@ -6643,7 +6643,7 @@
             0,
             0
         ],
-        "Description": "占位"
+        "Description": "\"当所在宿舍总值达到<color=#FF4E4EFF>3500</color>点,构造体每小时恢复体力值<color=#28CFFFFF>4</color>点，心情值<color=#28CFFFFF>1</color>点\""
     },
     {
         "Id": 469,
@@ -6655,9 +6655,9 @@
         "AttrTotal": 5500,
         "AttrCondition": [
             2000,
-            0
+            3500
         ],
-        "Description": "占位"
+        "Description": "\"当所在宿舍达到实用度<color=#FF4E4EFF>3500</color>点,舒适度<color=#FF4E4EFF>2000</color>点,构造体每小时恢复体力值<color=#28CFFFFF>5</color>点，心情值<color=#28CFFFFF>2</color>点\""
     },
     {
         "Id": 470,
@@ -6669,8 +6669,79 @@
         "AttrTotal": 10000,
         "AttrCondition": [
             3500,
+            6500
+        ],
+        "Description": "\"当所在宿舍达到实用度<color=#FF4E4EFF>6500</color>点,舒适度<color=#FF4E4EFF>3500</color>点,构造体每小时恢复体力值<color=#28CFFFFF>6</color>点，心情值<color=#28CFFFFF>5</color>点\""
+    },
+    {
+        "Id": 471,
+        "CharacterId": 1431003,
+        "VitalityRecoveryType": 1,
+        "VitalityRecovery": 100,
+        "MoodRecoveryType": 1,
+        "MoodRecovery": 100,
+        "Pre": 1,
+        "CompareType": 1,
+        "AttrCondition": [
+            0,
             0
         ],
-        "Description": "占位"
+        "Description": "\"当所在宿舍总值未达到<color=#FF4E4EFF>1200</color>点,构造体每小时失去体力值<color=#28CFFFFF>1</color>点，心情值<color=#28CFFFFF>1</color>点\""
+    },
+    {
+        "Id": 472,
+        "CharacterId": 1431003,
+        "VitalityRecovery": 300,
+        "MoodRecovery": 50,
+        "Pre": 2,
+        "CompareType": 1,
+        "AttrTotal": 1200,
+        "AttrCondition": [
+            0,
+            0
+        ],
+        "Description": "\"当所在宿舍总值达到<color=#FF4E4EFF>1200</color>点,构造体每小时恢复体力值<color=#28CFFFFF>3</color>点，心情值<color=#28CFFFFF>0.5</color>点\""
+    },
+    {
+        "Id": 473,
+        "CharacterId": 1431003,
+        "VitalityRecovery": 400,
+        "MoodRecovery": 100,
+        "Pre": 3,
+        "CompareType": 1,
+        "AttrTotal": 3500,
+        "AttrCondition": [
+            0,
+            0
+        ],
+        "Description": "\"当所在宿舍总值达到<color=#FF4E4EFF>3500</color>点,构造体每小时恢复体力值<color=#28CFFFFF>4</color>点，心情值<color=#28CFFFFF>1</color>点\""
+    },
+    {
+        "Id": 474,
+        "CharacterId": 1431003,
+        "VitalityRecovery": 500,
+        "MoodRecovery": 200,
+        "Pre": 4,
+        "CompareType": 1,
+        "AttrTotal": 5500,
+        "AttrCondition": [
+            2000,
+            0
+        ],
+        "Description": "\"当所在宿舍达到美观度<color=#FF4E4EFF>3500</color>点,舒适度<color=#FF4E4EFF>2000</color>点,构造体每小时恢复体力值<color=#28CFFFFF>5</color>点，心情值<color=#28CFFFFF>2</color>点\""
+    },
+    {
+        "Id": 475,
+        "CharacterId": 1431003,
+        "VitalityRecovery": 600,
+        "MoodRecovery": 500,
+        "Pre": 5,
+        "CompareType": 1,
+        "AttrTotal": 10000,
+        "AttrCondition": [
+            3500,
+            0
+        ],
+        "Description": "\"当所在宿舍达到美观度<color=#FF4E4EFF>6500</color>点,舒适度<color=#FF4E4EFF>3500</color>点,构造体每小时恢复体力值<color=#28CFFFFF>6</color>点，心情值<color=#28CFFFFF>5</color>点\""
     }
 ]

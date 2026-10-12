@@ -12,7 +12,6 @@ local XUiDoubleTowers = XLuaUiManager.Register(XLuaUi, "UiDoubleTowers")
 
 --region init
 function XUiDoubleTowers:Ctor()
-    self._Timer = false
     self._PlaceDoorTimer = false
     self._SelectedGroupIndex = false
     self._FocusGroupIndex = false
@@ -192,17 +191,15 @@ end
 
 --region 收菜 gather
 function XUiDoubleTowers:StartTimer()
-    if self._Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnStartTimerScheduleCb, self) then
         return
     end
     self:UpdateGather()
-    self._Timer =
-        XScheduleManager.ScheduleForever(
-        function()
-            self:UpdateGather()
-        end,
-        XScheduleManager.SECOND
-    )
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+function XUiDoubleTowers:_OnStartTimerScheduleCb()
+        self:UpdateGather()
 end
 
 function XUiDoubleTowers:UpdateGather()
@@ -214,11 +211,7 @@ function XUiDoubleTowers:UpdateGather()
 end
 
 function XUiDoubleTowers:StopTimer()
-    if not self._Timer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._Timer)
-    self._Timer = false
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
 end
 
 -- set coin icon

@@ -5,22 +5,13 @@ function XUiShopFashionDiscountActivity:Ctor(base)
 end
 
 function XUiShopFashionDiscountActivity:OnDestroy()
-    if self._DiscountActivityTimeId then
-        XScheduleManager.UnSchedule(self._DiscountActivityTimeId)
-        self._DiscountActivityTimeId = nil
-    end
-    if self._DiscountActivityTagTimeId then
-        XScheduleManager.UnSchedule(self._DiscountActivityTagTimeId)
-        self._DiscountActivityTagTimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnDiscountActivityTimeTimer, self)
+    XScheduleManagerPro.UnSchedule(self.RefreshTag, self)
 end
 
 --region v4.3 商店折扣活动时间重置
 function XUiShopFashionDiscountActivity:ResetDiscountActivityTime(shopId)
-    if self._DiscountActivityTimeId then
-        XScheduleManager.UnSchedule(self._DiscountActivityTimeId)
-        self._DiscountActivityTimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnDiscountActivityTimeTimer, self)
 
     local shopInfo = nil
     for _, info in pairs(self.Parent.TagBtnShopGroup) do
@@ -38,13 +29,16 @@ function XUiShopFashionDiscountActivity:ResetDiscountActivityTime(shopId)
     local activityEndTime = XShopManager.GetShopActivityEndTime(shopId)
     local now = XTime.GetServerNowTimestamp()
     if activityEndTime and activityEndTime >= now then
+        self._DiscountActivityShopId = shopId
         self:RefreshTimeStrFunc(shopId)
-        self._DiscountActivityTimeId = XScheduleManager.ScheduleForever(function()
-            self:RefreshTimeStrFunc(shopId)
-        end, 1000)
+        XScheduleManagerPro.ScheduleForever(self._OnDiscountActivityTimeTimer, self, 1000)
     else
         self.Parent.TxtPanelFashionTime.gameObject:SetActiveEx(false)
     end
+end
+
+function XUiShopFashionDiscountActivity:_OnDiscountActivityTimeTimer()
+    self:RefreshTimeStrFunc(self._DiscountActivityShopId)
 end
 
 function XUiShopFashionDiscountActivity:RefreshTimeStrFunc(shopId)
@@ -65,12 +59,8 @@ function XUiShopFashionDiscountActivity:RefreshTimeStrFunc(shopId)
 end
 
 function XUiShopFashionDiscountActivity:ResetDiscountActivityTag()
-    if self._DiscountActivityTagTimeId then
-        XScheduleManager.UnSchedule(self._DiscountActivityTagTimeId)
-        self._DiscountActivityTagTimeId = nil
-    end
     self:RefreshTag()
-    self._DiscountActivityTagTimeId = XScheduleManager.ScheduleForever(handler(self, self.RefreshTag), 1000)
+    XScheduleManagerPro.ScheduleForever(self.RefreshTag, self, 1000)
 end
 
 function XUiShopFashionDiscountActivity:RefreshTag()

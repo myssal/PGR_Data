@@ -20,10 +20,7 @@ function XUiBattery:Ctor(ui)
 end
 
 function XUiBattery:OnRecycle()
-    if self.Timers then
-        XScheduleManager.UnSchedule(self.Timers)
-        self.Timers = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiBattery._OnSetTimeScheduleCb, self)
 end
 
 function XUiBattery:AutoAddListener()
@@ -124,8 +121,8 @@ function XUiBattery:UpdateGrid(bagItem, parent, index)
     end
 
     if self.BagItem.Data.Template.TimelinessType and
-    self.BagItem.Data.Template.TimelinessType ~= FoEver and not self.Timers then
-        self.Timers = XScheduleManager.ScheduleForever(function() self:SetTime() end, XScheduleManager.SECOND)
+    self.BagItem.Data.Template.TimelinessType ~= FoEver and not XScheduleManagerPro.HasSchedule(XUiBattery._OnSetTimeScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(XUiBattery._OnSetTimeScheduleCb, self, XScheduleManagerPro.SECOND)
     end
 
     self:SetTime()
@@ -193,6 +190,10 @@ function XUiBattery:CheckShowSelect()
     self.ImgSelect.gameObject:SetActiveEx(selectItemCount > 0)
     self.BtnMinusSelect.gameObject:SetActiveEx(selectItemCount > 0)
     self.TxtSelectHide.gameObject:SetActiveEx(selectItemCount > 0)
+end
+
+function XUiBattery:_OnSetTimeScheduleCb()
+    self:SetTime()
 end
 
 return XUiBattery

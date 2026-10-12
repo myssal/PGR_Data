@@ -272,14 +272,11 @@ end
 --- 服务端不会主动下推体力恢复，需要客户端按上次恢复时间戳倒计时，到点后主动请求服务端恢复体力
 function XTheatre6Control:StartPvpActionPointRecoverTimer()
     self:StopPvpActionPointRecoverTimer()
-    self._PvpActionPointRecoverTimer = XScheduleManager.ScheduleForever(handler(self, self.CheckPvpActionPointRecover), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XTheatre6Control.CheckPvpActionPointRecover, self, XScheduleManagerPro.SECOND)
 end
 
 function XTheatre6Control:StopPvpActionPointRecoverTimer()
-    if self._PvpActionPointRecoverTimer then
-        XScheduleManager.UnSchedule(self._PvpActionPointRecoverTimer)
-        self._PvpActionPointRecoverTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XTheatre6Control.CheckPvpActionPointRecover, self)
     self._LastPvpActionPointRequestTime = nil
 end
 

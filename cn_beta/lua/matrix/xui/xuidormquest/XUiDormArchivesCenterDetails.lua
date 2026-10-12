@@ -14,12 +14,7 @@ function XUiDormArchivesCenterDetails:OnStart(fileId)
     self.DormQuestFileViewModel = XDataCenter.DormQuestManager.GetDormQuestFileViewModel(fileId)
     self:InitUiData()
 
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        local dict = {}
-        dict["button"] = XGlobalVar.BtnDorm.BtnUiDormBtnFileDetails
-        dict["file_id"] = self.FileId
-        CS.XRecord.Record(dict, "200010", "Dorm")
-    end, XScheduleManager.SECOND * 1)
+    XScheduleManagerPro.ScheduleOnce(XUiDormArchivesCenterDetails._OnRecordFileDetailsScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiDormArchivesCenterDetails:OnEnable()
@@ -84,11 +79,15 @@ function XUiDormArchivesCenterDetails:RegisterUiEvents()
 end
 
 function XUiDormArchivesCenterDetails:OnBtnCloseClick()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiDormArchivesCenterDetails._OnRecordFileDetailsScheduleCb, self)
     self:Close()
+end
+
+function XUiDormArchivesCenterDetails:_OnRecordFileDetailsScheduleCb()
+    local dict = {}
+    dict["button"] = XGlobalVar.BtnDorm.BtnUiDormBtnFileDetails
+    dict["file_id"] = self.FileId
+    CS.XRecord.Record(dict, "200010", "Dorm")
 end
 
 return XUiDormArchivesCenterDetails

@@ -24,19 +24,11 @@ end
 ----------------------------------------------------------------
 
 function XUiColorTableCaptainDrama:_StartTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            self:_StopTimer()
-        end
-        self:_UpdateTime()
-    end, 1000)
+    XScheduleManagerPro.ScheduleForever(XUiColorTableCaptainDrama._OnUpdateCurrentTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiColorTableCaptainDrama:_StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiColorTableCaptainDrama._OnUpdateCurrentTimeScheduleCb, self)
 end
 
 function XUiColorTableCaptainDrama:_UpdateTime()
@@ -66,6 +58,14 @@ function XUiColorTableCaptainDrama:_OnBtnPanelMaskGuideClick()
     if self.CallBack then
         self.CallBack()
     end
+end
+
+function XUiColorTableCaptainDrama:_OnUpdateCurrentTimeScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        self:_StopTimer()
+        return
+    end
+    self:_UpdateTime()
 end
 
 ----------------------------------------------------------------

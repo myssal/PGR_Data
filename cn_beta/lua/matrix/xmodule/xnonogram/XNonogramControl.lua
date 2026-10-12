@@ -14,7 +14,6 @@ function XNonogramControl:OnInit()
     self._CurGameUnlockCGItemCount = 0 -- 当前章节总获得的物品数量
     self._CurGameRemainTime = 0 -- 当前章节游戏剩余时间
     self._CurGameReadyRemainTime = 0 -- 当前章节游戏剩余准备时间
-    self._UpdaterId = 0
     self._CurGameGridMap = {} -- 当句游戏格子地图
     self._CurGameGridOpenMap = {} -- 打开的格子索引字典
     self._CurGameRightIndexMap = {} -- 正确的格子的索引字典 {["1|1"] = { RowIndex = 1, ColumnIndex = 1 }}
@@ -437,13 +436,12 @@ function XNonogramControl:_RefreshCurGameData()
 end
 
 function XNonogramControl:_StartUpdater()
-    self._UpdaterId = XScheduleManager.ScheduleForeverEx(handler(self, self._OnUpdate), UPDATE_INTERVAL)
+    XScheduleManagerPro.ScheduleForeverEx(self._OnUpdate, self, UPDATE_INTERVAL)
 end
 
 function XNonogramControl:_StopUpdater()
-    if XTool.IsNumberValid(self._UpdaterId) then
-        XScheduleManager.UnSchedule(self._UpdaterId)
-        self._UpdaterId = nil
+    if XScheduleManagerPro.HasSchedule(self._OnUpdate, self) then
+        XScheduleManagerPro.UnSchedule(self._OnUpdate, self)
     end
 end
 

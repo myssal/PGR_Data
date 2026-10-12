@@ -110,12 +110,7 @@ function XUiGridRiftPluginDrop:DoOverturn()
     self.EffectXiaoShi03.gameObject:SetActiveEx(star == 6 and not isSpecial)
     self.EffectXiaoShi04.gameObject:SetActiveEx(star == 6 and isSpecial)
 
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        self.EffectXiaoShi01.gameObject:SetActiveEx(false)
-        self.EffectXiaoShi02.gameObject:SetActiveEx(false)
-        self.EffectXiaoShi03.gameObject:SetActiveEx(false)
-        self.EffectXiaoShi04.gameObject:SetActiveEx(false)
-    end, 500)
+    XScheduleManagerPro.ScheduleOnce(self._OnDoOverturnScheduleCb, self, 500)
 
     self.EffectGuang01.gameObject:SetActiveEx(star <= 3)
     self.EffectGuang02.gameObject:SetActiveEx(star == 4)
@@ -124,10 +119,7 @@ function XUiGridRiftPluginDrop:DoOverturn()
 end
 
 function XUiGridRiftPluginDrop:OnDestroy()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnDoOverturnScheduleCb, self)
 end
 
 function XUiGridRiftPluginDrop:OnBtnClick()
@@ -221,6 +213,13 @@ function XUiGridRiftPluginDrop:PlayAffixAnim(type, slot)
             anim.gameObject:PlayTimelineAnimation()
         end
     end
+end
+
+function XUiGridRiftPluginDrop:_OnDoOverturnScheduleCb()
+    self.EffectXiaoShi01.gameObject:SetActiveEx(false)
+    self.EffectXiaoShi02.gameObject:SetActiveEx(false)
+    self.EffectXiaoShi03.gameObject:SetActiveEx(false)
+    self.EffectXiaoShi04.gameObject:SetActiveEx(false)
 end
 
 return XUiGridRiftPluginDrop

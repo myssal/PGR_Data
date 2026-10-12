@@ -128,20 +128,7 @@ end
 --============
 function XUiSSBMainEntranceGrid:SetTimer()
     self.EntranceDisable.TxtLeftTime.text = XUiHelper.GetTime(self:GetLeftTime(), XUiHelper.TimeFormatType.ACTIVITY)
-    self.Timer = XScheduleManager.ScheduleForever(function()
-            if XTool.UObjIsNil(self.BtnEntranceDis) then self:RemoveTimer() return end 
-            local leftTime = self:GetLeftTime()
-            if leftTime <= 0 then
-                self.EntranceDisable.TxtLeftTime.text = 0
-                self:RemoveTimer()
-                self.BtnEntranceDis:SetButtonState(CS.UiButtonState.Normal)
-                if self.Red then
-                    self.Red.gameObject:SetActiveEx(true)
-                end
-                return
-            end
-            self.EntranceDisable.TxtLeftTime.text = XUiHelper.GetTime(self:GetLeftTime(), XUiHelper.TimeFormatType.ACTIVITY)
-        end, 1)
+    XScheduleManagerPro.ScheduleForever(self._OnRemoveTimerScheduleCb, self, 1)
 end
 --============
 --获取解锁剩余时间(秒数)
@@ -157,9 +144,7 @@ end
 --移除解锁时间计时器
 --============
 function XUiSSBMainEntranceGrid:RemoveTimer()
-    if not self.Timer then return end
-    XScheduleManager.UnSchedule(self.Timer)
-    self.Timer = nil
+    XScheduleManagerPro.UnSchedule(self._OnRemoveTimerScheduleCb, self)
 end
 --============
 --解锁模式
@@ -173,10 +158,7 @@ function XUiSSBMainEntranceGrid:UnlockMode()
     XSaveTool.SaveData(XPlayer.Id .. XSuperSmashBrosConfig.ModeUnlockSaveStr .. self.Mode:GetId() .. self.Mode:GetActivityId(), true)
     XLuaUiManager.SetMask(true)
     --延迟一点播放动画再弹窗
-    XScheduleManager.ScheduleOnce(function()
-            XLuaUiManager.Open("UiSuperSmashBrosModeRules", self.Mode)
-            XLuaUiManager.SetMask(false)
-            end, 750)
+    XScheduleManagerPro.ScheduleOnce(self._OnUnlockModeScheduleCb, self, 750)
     self.Red.gameObject:SetActiveEx(false) --提示可解锁的红点取消
 end
 --============
@@ -258,6 +240,26 @@ function XUiSSBMainEntranceGrid:SetColor4EachMode()
     elseif modeId == XSuperSmashBrosConfig.ModeType.DeathRandom then
         textModeNameSelected.color = XUiHelper.Hexcolor2Color("ad9fc3")
     end
+end
+
+function XUiSSBMainEntranceGrid:_OnUnlockModeScheduleCb()
+    XLuaUiManager.Open("UiSuperSmashBrosModeRules", self.Mode)
+    XLuaUiManager.SetMask(false)
+end
+
+function XUiSSBMainEntranceGrid:_OnRemoveTimerScheduleCb()
+    if XTool.UObjIsNil(self.BtnEntranceDis) then self:RemoveTimer() return end 
+    local leftTime = self:GetLeftTime()
+    if leftTime <= 0 then
+        self.EntranceDisable.TxtLeftTime.text = 0
+        self:RemoveTimer()
+        self.BtnEntranceDis:SetButtonState(CS.UiButtonState.Normal)
+        if self.Red then
+            self.Red.gameObject:SetActiveEx(true)
+        end
+        return
+    end
+    self.EntranceDisable.TxtLeftTime.text = XUiHelper.GetTime(self:GetLeftTime(), XUiHelper.TimeFormatType.ACTIVITY)
 end
 
 return XUiSSBMainEntranceGrid

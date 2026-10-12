@@ -34,20 +34,13 @@ function XUiBigWorldTeachGrid:OnDisable()
 end
 
 function XUiBigWorldTeachGrid:StopAnimationTimer()
-    if not self._AnimationTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._AnimationTimer)
-    self._AnimationTimer = false
+    XScheduleManagerPro.UnSchedule(XUiBigWorldTeachGrid._OnEnableAnimationScheduleCb, self)
 end
 
 function XUiBigWorldTeachGrid:PlayEnableAnimation(index)
     self:StopAnimationTimer()
     self.CanvasGroup.alpha = 0
-    self._AnimationTimer = XScheduleManager.ScheduleOnce(function()
-        self.BtnFirstEnable:PlayTimelineAnimation()
-        self:StopAnimationTimer()
-    end, 100 * index)
+    XScheduleManagerPro.ScheduleOnce(XUiBigWorldTeachGrid._OnEnableAnimationScheduleCb, self, 100 * index)
 end
 
 function XUiBigWorldTeachGrid:SetIsSelect(isSelect)
@@ -71,6 +64,11 @@ end
 
 function XUiBigWorldTeachGrid:_ShowReddot(isActive)
     self.TeachRed.gameObject:SetActiveEx(isActive)
+end
+
+function XUiBigWorldTeachGrid:_OnEnableAnimationScheduleCb()
+    self.BtnFirstEnable:PlayTimelineAnimation()
+    self:StopAnimationTimer()
 end
 
 return XUiBigWorldTeachGrid

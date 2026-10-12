@@ -38,23 +38,11 @@ end
 
 function XUiDlcRelinkMatching:BeginMatching()
     self:StopMatchingTimer()
-    self.MatchingTimer = XScheduleManager.ScheduleForeverEx(function()
-        if XTool.UObjIsNil(self.TxtTime) then
-            return
-        end
-
-        self.ElapsedSeconds = (self.ElapsedSeconds or 0) + 1
-        local m = math.floor(self.ElapsedSeconds / 60)
-        local s = self.ElapsedSeconds % 60
-        self.TxtTime.text = string.format("%02d:%02d", m, s)
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForeverEx(self._OnBeginMatchingScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiDlcRelinkMatching:StopMatchingTimer()
-    if self.MatchingTimer then
-        XScheduleManager.UnSchedule(self.MatchingTimer)
-        self.MatchingTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnBeginMatchingScheduleCb, self)
 end
 
 function XUiDlcRelinkMatching:OnMatchSuccess()
@@ -82,6 +70,17 @@ end
 
 function XUiDlcRelinkMatching:OnBtnMatchingClick()
     self._Control:CommonRunRelinkRoomUiHandle()
+end
+
+function XUiDlcRelinkMatching:_OnBeginMatchingScheduleCb()
+    if XTool.UObjIsNil(self.TxtTime) then
+        return
+    end
+
+    self.ElapsedSeconds = (self.ElapsedSeconds or 0) + 1
+    local m = math.floor(self.ElapsedSeconds / 60)
+    local s = self.ElapsedSeconds % 60
+    self.TxtTime.text = string.format("%02d:%02d", m, s)
 end
 
 return XUiDlcRelinkMatching

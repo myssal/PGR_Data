@@ -24,6 +24,7 @@ function XUiGridSpringFestivalCollectCard:RegisterButtonEvent()
         self.Btn.CallBack = function()
             self:OnClickRewardIconBtn()
         end
+    self.Timer = nil
     end
     if self.Type ~= XSpringFestivalActivityConfigs.CollectWordsRewardType.Final then
         for i = 1, #self.WordsList do
@@ -169,29 +170,28 @@ function XUiGridSpringFestivalCollectCard:OnClickBtnWord(index)
 end
 
 function XUiGridSpringFestivalCollectCard:StartTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnStopTimerScheduleCb, self) then
         self:StopTimer()
     end
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        if XTool.UObjIsNil(self.TxtTime) then
-            self:StopTimer()
-            return
-        end
-        local time = XDataCenter.SpringFestivalActivityManager.GetNextRequestRefreshTime()
-        time = XMath.Clamp(time, 0, time)
-        if time == 0 then
-            self.BtnReceive.gameObject:SetActiveEx(true)
-            self.BtnReceive:SetDisable(false,true)
-        end
-        self.TxtTime.text = CSXTextManagerGetText("SpringFestivalNextGetRewardTime", XTime.TimestampToGameDateTimeString(time, "HH:mm:ss"))
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnStopTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
 end
 
 function XUiGridSpringFestivalCollectCard:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
+        XScheduleManagerPro.UnSchedule(self._OnStopTimerScheduleCb, self)
+end
+
+function XUiGridSpringFestivalCollectCard:_OnStopTimerScheduleCb()
+    if XTool.UObjIsNil(self.TxtTime) then
+        self:StopTimer()
+        return
     end
-    self.Timer = nil
+    local time = XDataCenter.SpringFestivalActivityManager.GetNextRequestRefreshTime()
+    time = XMath.Clamp(time, 0, time)
+    if time == 0 then
+        self.BtnReceive.gameObject:SetActiveEx(true)
+        self.BtnReceive:SetDisable(false,true)
+    end
+    self.TxtTime.text = CSXTextManagerGetText("SpringFestivalNextGetRewardTime", XTime.TimestampToGameDateTimeString(time, "HH:mm:ss"))
 end
 
 return XUiGridSpringFestivalCollectCard

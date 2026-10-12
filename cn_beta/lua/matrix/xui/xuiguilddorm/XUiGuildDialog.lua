@@ -28,18 +28,17 @@ function XUiGuildDialog:OnTimer()
 end
 
 function XUiGuildDialog:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiGuildDialog._OnTimerScheduleCb, self)
 end
 
 function XUiGuildDialog:StartTimer()
-    if not self.Timer then
-        self.Timer = XScheduleManager.ScheduleForever(function()
-            self:OnTimer()
-        end, XScheduleManager.SECOND)
+    if not XScheduleManagerPro.HasSchedule(XUiGuildDialog._OnTimerScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(XUiGuildDialog._OnTimerScheduleCb, self, XScheduleManagerPro.SECOND)
     end
+end
+
+function XUiGuildDialog:_OnTimerScheduleCb()
+    self:OnTimer()
 end
 
 return XUiGuildDialog

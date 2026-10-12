@@ -114,26 +114,27 @@ function XUiPanelPartnerQuality:HideRoleModel()
 end
 
 function XUiPanelPartnerQuality:PlayEnableAnime()
-    XScheduleManager.ScheduleOnce(function()
-            if self.PanelState == panelState.QualityStar then
-                self.Animation:GetObject("PanelQualityStarEnable"):PlayTimelineAnimation()
-                self.Animation:GetObject("PanelQualityStarLoop").gameObject:SetActiveEx(false)
-                self.Animation:GetObject("PanelQualityStarLoop").gameObject:SetActiveEx(true)
-            elseif self.PanelState == panelState.QualityUp then
-                self.Animation:GetObject("PanelQualityUpEnable"):PlayTimelineAnimation()
-            elseif self.PanelState == panelState.QualityMax then
-                self.Animation:GetObject("PanelQualityMaxEnable"):PlayTimelineAnimation()
-            elseif self.PanelState == panelState.QualityUpConfirm then
-                XLuaUiManager.SetMask(true)
-                self.Animation:GetObject("PanelQualityUpConfirmEnable"):PlayTimelineAnimation(function ()
-                        XLuaUiManager.SetMask(false)
-                end)
-            elseif self.PanelState == panelState.QualityMain then
-                self.Animation:GetObject("PanelQualityMain"):PlayTimelineAnimation()
-                self.Animation:GetObject("PanelQualityMainLoop").gameObject:SetActiveEx(false)
-                self.Animation:GetObject("PanelQualityMainLoop").gameObject:SetActiveEx(true)
-            end
-        end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayEnableAnimeScheduleCb, self, 1)
 end
 
+function XUiPanelPartnerQuality:_OnPlayEnableAnimeScheduleCb()
+        if self.PanelState == panelState.QualityStar then
+                        self.Animation:GetObject("PanelQualityStarEnable"):PlayTimelineAnimation()
+                        self.Animation:GetObject("PanelQualityStarLoop").gameObject:SetActiveEx(false)
+                        self.Animation:GetObject("PanelQualityStarLoop").gameObject:SetActiveEx(true)
+                    elseif self.PanelState == panelState.QualityUp then
+                        self.Animation:GetObject("PanelQualityUpEnable"):PlayTimelineAnimation()
+                    elseif self.PanelState == panelState.QualityMax then
+                        self.Animation:GetObject("PanelQualityMaxEnable"):PlayTimelineAnimation()
+                    elseif self.PanelState == panelState.QualityUpConfirm then
+                        XLuaUiManager.SetMask(true)
+                        self.Animation:GetObject("PanelQualityUpConfirmEnable"):PlayTimelineAnimation(function ()
+                                XLuaUiManager.SetMask(false)
+                        end)
+                    elseif self.PanelState == panelState.QualityMain then
+                        self.Animation:GetObject("PanelQualityMain"):PlayTimelineAnimation()
+                        self.Animation:GetObject("PanelQualityMainLoop").gameObject:SetActiveEx(false)
+                        self.Animation:GetObject("PanelQualityMainLoop").gameObject:SetActiveEx(true)
+                    end
+end
 return XUiPanelPartnerQuality

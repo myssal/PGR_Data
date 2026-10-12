@@ -82,11 +82,13 @@ function XUiPanelFangKuaiFight3D:PlayRoleAnimation(state, resetTime)
     if #anims > 0 then
         self:PlayRandomAnimation(anims, self._RoleModelPanel, resetTime)
         if state ~= XEnumConst.FangKuai.RoleAnim.Standby and XTool.IsNumberValid(resetTime) then
-            self._RoleTimer = XScheduleManager.ScheduleOnce(function()
-                self:PlayRoleAnimation(XEnumConst.FangKuai.RoleAnim.Standby)
-            end, resetTime)
+            XScheduleManagerPro.ScheduleOnce(self._OnPlayRoleAnimationScheduleCb, self, resetTime)
         end
     end
+end
+
+function XUiPanelFangKuaiFight3D:_OnPlayRoleAnimationScheduleCb()
+    self:PlayRoleAnimation(XEnumConst.FangKuai.RoleAnim.Standby)
 end
 
 function XUiPanelFangKuaiFight3D:PlayBossAnimation(state, resetTime)
@@ -113,10 +115,7 @@ function XUiPanelFangKuaiFight3D:PlayRandomAnimation(anims, model)
 end
 
 function XUiPanelFangKuaiFight3D:RemoveRoleTimer()
-    if self._RoleTimer then
-        XScheduleManager.UnSchedule(self._RoleTimer)
-        self._RoleTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnPlayRoleAnimationScheduleCb, self)
 end
 
 function XUiPanelFangKuaiFight3D:RemoveBossTimer()

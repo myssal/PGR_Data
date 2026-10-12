@@ -61,9 +61,7 @@ end
 function XUiRestaurantCommon:OnEnable()
     self:UpdateView()
     self:Update()
-    self.Timer = XScheduleManager.ScheduleForever(function() 
-        self:Update()
-    end, 0, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateScheduleCb, self, 0, 0)
     self._Control:SubscribeEvent(XMVCA.XRestaurant.EventId.OnShowPerformTip, self._OnOnShowPerformTipCb)
     DoEnable = true
 end
@@ -360,11 +358,7 @@ function XUiRestaurantCommon:ShowBillView()
 end
 
 function XUiRestaurantCommon:ClearTimer()
-    if not self.Timer then
-        return
-    end
-    XScheduleManager.UnSchedule(self.Timer)
-    self.Timer = nil
+    XScheduleManagerPro.UnSchedule(self._OnUpdateScheduleCb, self)
 end 
 
 function XUiRestaurantCommon:RefreshSign()
@@ -488,4 +482,8 @@ function XUiRestaurantCommon:OnShowPerformTip(performId)
         return
     end
     grid:ShowTip()
+end
+
+function XUiRestaurantCommon:_OnUpdateScheduleCb()
+    self:Update()
 end

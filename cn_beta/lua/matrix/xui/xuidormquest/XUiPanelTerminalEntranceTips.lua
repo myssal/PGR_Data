@@ -27,11 +27,7 @@ function XUiPanelTerminalEntranceTips:Refresh()
     self.ImgDes:SetSprite(XUiHelper.GetClientConfig(data.Icon, XUiHelper.ClientConfigType.String))
     self.TxtName.text = XUiHelper.GetText(data.Content)
     self.TxtNum.text = data.Count
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        self.DisableAnim:PlayTimelineAnimation(function()
-            self.GameObject:SetActiveEx(false)
-        end)
-    end, XScheduleManager.SECOND * DelayTime)
+    XScheduleManagerPro.ScheduleOnce(XUiPanelTerminalEntranceTips._OnHideEntranceTipsScheduleCb, self, XScheduleManagerPro.SECOND * DelayTime)
 end
 
 function XUiPanelTerminalEntranceTips:GetShowData()
@@ -57,10 +53,13 @@ end
 
 function XUiPanelTerminalEntranceTips:OnDisable()
     self.GameObject:SetActiveEx(false)
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiPanelTerminalEntranceTips._OnHideEntranceTipsScheduleCb, self)
+end
+
+function XUiPanelTerminalEntranceTips:_OnHideEntranceTipsScheduleCb()
+    self.DisableAnim:PlayTimelineAnimation(function()
+        self.GameObject:SetActiveEx(false)
+    end)
 end
 
 return XUiPanelTerminalEntranceTips

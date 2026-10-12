@@ -778,8 +778,9 @@ function XViewModelReform2ndList:SetPlayingAnimationScroll(value)
 end
 
 --region environment
-function XViewModelReform2ndList:UpdateEnvironment()
-    local stage = self._Stage
+
+function XViewModelReform2ndList:UpdateEnvironment(stage)
+    stage = stage or self._Stage
     local environments = stage:GetEnvironments(self._Model)
     local list = {}
     self.DataEnvironment.List = list

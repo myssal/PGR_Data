@@ -22,7 +22,6 @@ function XUiBigWorldProcess:OnAwake()
     ---@type XBWCourseVersionEntity
     self._CurrentVersionEntity = false
 
-    self._Timer = false
     self._SequentialId = 0
     self._TargetContentId = 0
 
@@ -164,21 +163,12 @@ function XUiBigWorldProcess:_RegisterSchedules()
     -- 在此处注册定时器
     self:_RemoveSchedules()
 
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        if not self._CurrentVersionEntity or not self._CurrentVersionEntity:IsValid() then
-            self:_RemoveSchedules()
-            XMVCA.XBigWorldUI:SafeClose("UiBigWorldProcessSwitch")
-            self:Close()
-        end
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiBigWorldProcess._OnCheckVersionValidScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiBigWorldProcess:_RemoveSchedules()
     -- 在此处移除定时器
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(XUiBigWorldProcess._OnCheckVersionValidScheduleCb, self)
 end
 
 function XUiBigWorldProcess:_RegisterRedPointEvents()
@@ -350,6 +340,14 @@ function XUiBigWorldProcess:_RefreshTabRedPoint(contentType, isShow)
 
     if contentTab then
         contentTab:ShowReddot(isShow)
+    end
+end
+
+function XUiBigWorldProcess:_OnCheckVersionValidScheduleCb()
+    if not self._CurrentVersionEntity or not self._CurrentVersionEntity:IsValid() then
+        self:_RemoveSchedules()
+        XMVCA.XBigWorldUI:SafeClose("UiBigWorldProcessSwitch")
+        self:Close()
     end
 end
 

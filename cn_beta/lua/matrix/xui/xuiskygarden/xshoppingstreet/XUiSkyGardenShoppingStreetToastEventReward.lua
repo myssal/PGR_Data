@@ -25,15 +25,15 @@ end
 
 function XUiSkyGardenShoppingStreetToastEventReward:_AddCloseTimer()
     self:_RemoveCloseTimer()
-    self._CheckCloseTimer = XScheduleManager.ScheduleOnce(function()
+    XScheduleManagerPro.ScheduleOnce(self._OnAddCloseTimerScheduleCb, self, TIP_MSG_SHOW_TIME)
+end
+
+function XUiSkyGardenShoppingStreetToastEventReward:_OnAddCloseTimerScheduleCb()
         self:CheckClose()
-    end, TIP_MSG_SHOW_TIME)
 end
 
 function XUiSkyGardenShoppingStreetToastEventReward:_RemoveCloseTimer()
-    if not self._CheckCloseTimer then return end
-    XScheduleManager.UnSchedule(self._CheckCloseTimer)
-    self._CheckCloseTimer = false
+    XScheduleManagerPro.UnSchedule(self._OnAddCloseTimerScheduleCb, self)
 end
 
 function XUiSkyGardenShoppingStreetToastEventReward:CheckClose()

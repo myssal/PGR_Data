@@ -101,7 +101,7 @@ function XUiLivWarmActivityPop:UpdateLoseText()
     local itemId = XLivWarmActivityConfigs.GetLivWarmActivityItemId()
     local useItemCount = XLivWarmActivityConfigs.GetLivWarmActivityUseItemCount()
     local itemCount = XDataCenter.ItemManager.GetCount(itemId)
-    local color = itemCount < useItemCount and "#7EE4D7" or "#cc84d5"
+    local color = itemCount < useItemCount and "#ec4858" or "#FFE173"
     local isMaxItemUseCount = self:GetCurUseItemData()
     useItemCount = isMaxItemUseCount and 0 or useItemCount      --达到消耗上限显示0
     self.LoseText.text = CSXTextManagerGetText("LivWarmActivityUseItemCountText", color, useItemCount)
@@ -277,19 +277,11 @@ function XUiLivWarmActivityPop:StartActivityTimer()
     end
 
     self:RefreshActivityTime()
-    self.ActivityTimer = XScheduleManager.ScheduleForever(function() 
-        if not XDataCenter.LivWarmActivityManager.CheckActivityIsOpen() then
-            return
-        end
-        self:RefreshActivityTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnRefreshActivityTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiLivWarmActivityPop:StopActivityTimer()
-    if self.ActivityTimer then
-        XScheduleManager.UnSchedule(self.ActivityTimer)
-        self.ActivityTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRefreshActivityTimeScheduleCb, self)
 end
 
 function XUiLivWarmActivityPop:RefreshActivityTime()
@@ -747,4 +739,11 @@ end
 function XUiLivWarmActivityPop:RefreshPanelEntranceRedPoint()
     local result = XDataCenter.LivWarmSoundsActivityManager.CheckRedPoint()
     self.PanelEntrance:ShowReddot(result)
+end
+
+function XUiLivWarmActivityPop:_OnRefreshActivityTimeScheduleCb()
+    if not XDataCenter.LivWarmActivityManager.CheckActivityIsOpen() then
+        return
+    end
+    self:RefreshActivityTime()
 end

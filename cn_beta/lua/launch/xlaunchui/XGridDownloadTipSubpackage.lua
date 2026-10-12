@@ -24,8 +24,7 @@ end
 
 function XGridDownloadTipSubpackage:Init(data)
     local totalSize = 0
-    local fileModule = XLaunchDlcManager.GetFileModule()
-    local resSizeDic = fileModule.GetResSizeDic()
+    local resSizeDic = XLaunchDlcManager.GetResSizeDic()
     
     local validResIds = {}
     for _, resId in ipairs(data.ResIdList) do
@@ -34,7 +33,7 @@ function XGridDownloadTipSubpackage:Init(data)
             totalSize = totalSize + size
             table.insert(validResIds, resId)
         else
-            print("XGridDownloadTipSubpackage:Init resId %s not found", resId)
+            print(string.format("XGridDownloadTipSubpackage:Init resId %s not found", resId))
         end
     end
     self.ResIdList = validResIds

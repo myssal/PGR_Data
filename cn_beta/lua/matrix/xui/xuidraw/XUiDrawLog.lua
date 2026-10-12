@@ -159,9 +159,11 @@ function XUiDrawLog:InitDrawPreview()
             tmpObj.TxtProbability.text = data.ProbShow[i]
         end
     end
-    XScheduleManager.ScheduleOnce(function()
-        CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(PanelObj.PanelCardParent);
-    end, 0)
+    XScheduleManagerPro.ScheduleNextFrame(self._ForceRebuildCardLayout, self)
+end
+
+function XUiDrawLog:_ForceRebuildCardLayout()
+    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(PanelObj.PanelCardParent)
 end
 --endregion
 

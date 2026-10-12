@@ -119,4 +119,10 @@ function XUiPacMan2PopupSettlement:PlayAnimationList()
     end
 end
 
+return XUiPacMan2PopupSettlement(timer)
+        end, i * 200 + 200)
+        self:_AddTimerId(timer)
+    end
+end
+
 return XUiPacMan2PopupSettlement

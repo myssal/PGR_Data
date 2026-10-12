@@ -32,9 +32,7 @@ function XUiGridRiftChapter:Update()
         end
         if self._Chapter:CheckTimeLock() then
             self:CountDown()
-            self._Timer = XScheduleManager.ScheduleForever(function()
-                self:CountDown()
-            end, XScheduleManager.SECOND, 0)
+            XScheduleManagerPro.ScheduleForever(self._OnCountDownScheduleCb, self, XScheduleManagerPro.SECOND, 0)
         elseif self._Chapter:CheckPreLock() then
             self.GridChapter:SetNameByGroup(2, XUiHelper.GetText("RiftChapterPreLimit"))
         end
@@ -75,10 +73,7 @@ function XUiGridRiftChapter:CountDown()
 end
 
 function XUiGridRiftChapter:RemoveTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnCountDownScheduleCb, self)
 end
 
 function XUiGridRiftChapter:RefreshRedPoint()
@@ -101,6 +96,10 @@ function XUiGridRiftChapter:TryEnterChapter()
     XLuaUiManager.Open("UiRiftPopupChapterDetail", self._Chapter)
     self._Chapter:SaveFirstEnter()
     self:RefreshRedPoint()
+end
+
+function XUiGridRiftChapter:_OnCountDownScheduleCb()
+    self:CountDown()
 end
 
 return XUiGridRiftChapter

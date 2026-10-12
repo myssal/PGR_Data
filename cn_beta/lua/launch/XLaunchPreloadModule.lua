@@ -58,7 +58,7 @@ local module_creator = function()
         CsTool.WaitCoroutinePerFrame(moveHelper, function(isComplete)
             if isComplete then
                 if moveHelper.hasError then
-                    ShowStartErrorDialog("MovePreloadError", CsApplication.Exit)
+                    XLaunchConst.ShowStartErrorDialog("MovePreloadError", CsApplication.Exit)
                 else
                     CsApplication.SetProgress(1)
                     if OnProgress then --更新进度

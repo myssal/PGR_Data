@@ -183,14 +183,11 @@ end
 --region 检查定时器
 function XUiPanelGame2048ShowCharacter:StartCheckErrorTimer()
     self:StopCheckErrorTimer()
-    self._CheckErrorTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateCheckErrorTimer), XScheduleManager.SECOND * ShowActionOutTimeCheckInterval)
+    XScheduleManagerPro.ScheduleForever(self.UpdateCheckErrorTimer, self, XScheduleManagerPro.SECOND * ShowActionOutTimeCheckInterval)
 end
 
 function XUiPanelGame2048ShowCharacter:StopCheckErrorTimer()
-    if self._CheckErrorTimerId then
-        XScheduleManager.UnSchedule(self._CheckErrorTimerId)
-        self._CheckErrorTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.UpdateCheckErrorTimer, self)
 end
 
 function XUiPanelGame2048ShowCharacter:UpdateCheckErrorTimer()

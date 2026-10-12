@@ -10,8 +10,8 @@ function XUiGachaLamiyaMain:OnAwake()
     self._FinishCbTrigger = nil -- 抽卡结束触发器，抽卡请求回调设置，播放完抽卡演出后触发
     self._GachaAllFinishTrigger = nil -- 抽卡全结束触发器，1/10回抽按钮设置，抽卡结果界面关闭后刷新触发
     self._TipCbTrigger = nil -- 奖励弹框
-    self._HasBeenKey = "GachaLamiyaHasBeenKey"
-    self._SkipBtnKey = "UiGachaLamiya"
+    self._HasBeenKey = XGachaConfigs.GetSkipAnimCacheKey("GachaLamiyaHasBeenKey")
+    self._SkipBtnKey = XGachaConfigs.GetSkipAnimCacheKey("UiGachaLamiya")
     self._GachaStoryRedPoint = "GachaStoryRedPoint"
     self._TempFx = nil
     self._TimerStoryRoleEnable = nil

@@ -56,20 +56,12 @@ function XUiBigWorldTaskObtain:InitView()
 end
 
 function XUiBigWorldTaskObtain:StartTimer()
-    if self._TimerId then
-        self:StopTimer()
-    end
-    self._TimerId = XScheduleManager.ScheduleOnce(function()
-        self:Close()
-    end, Duration)
+    self:StopTimer()
+    XScheduleManagerPro.ScheduleOnce(XUiBigWorldTaskObtain._OnCloseScheduleCb, self, Duration)
 end
 
 function XUiBigWorldTaskObtain:StopTimer()
-    if not self._TimerId then
-        return
-    end
-    XScheduleManager.UnSchedule(self._TimerId)
-    self._TimerId = nil
+    XScheduleManagerPro.UnSchedule(XUiBigWorldTaskObtain._OnCloseScheduleCb, self)
 end
 
 function XUiBigWorldTaskObtain:SendCmd()
@@ -79,6 +71,10 @@ function XUiBigWorldTaskObtain:SendCmd()
         QuestId = questId,
         State = state
     })
+end
+
+function XUiBigWorldTaskObtain:_OnCloseScheduleCb()
+    self:Close()
 end
 
 return XUiBigWorldTaskObtain

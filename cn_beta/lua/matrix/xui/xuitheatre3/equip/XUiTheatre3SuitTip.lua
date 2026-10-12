@@ -34,10 +34,7 @@ function XUiTheatre3SuitTip:UpdateView()
     end
     if self._Param.DimObj and self._Param.Align then
         self.BubbleSet.gameObject:SetActiveEx(false)
-        XScheduleManager.ScheduleOnce(function()
-            self.BubbleSet.gameObject:SetActiveEx(true)
-            self:SetPosition(self._Param.DimObj, self._Param.Align)
-        end, 1)
+        XScheduleManagerPro.ScheduleOnce(self._OnSetPositionScheduleCb, self, 1)
     end
 end
 
@@ -181,6 +178,11 @@ end
 
 function XUiTheatre3SuitTip:OnClickTip()
     self:CloseEffectDetail()
+end
+
+function XUiTheatre3SuitTip:_OnSetPositionScheduleCb()
+    self.BubbleSet.gameObject:SetActiveEx(true)
+    self:SetPosition(self._Param.DimObj, self._Param.Align)
 end
 
 return XUiTheatre3SuitTip

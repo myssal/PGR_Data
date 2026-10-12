@@ -39,10 +39,7 @@ end
 --region 音频播放相关
 
 function XUiPanelMainLinePopupExploreSound:StopAudioPlay()
-    if self._AudioProgressTimeId then
-        XScheduleManager.UnSchedule(self._AudioProgressTimeId)
-        self._AudioProgressTimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiPanelMainLinePopupExploreSound._UpdateAudioProgressShow, self)
 
     if self._AudioInfo then
         self._AudioInfo:Stop()
@@ -55,7 +52,7 @@ function XUiPanelMainLinePopupExploreSound:StartAudioPlay(cueId)
     self._AudioInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, cueId)
 
     self:_UpdateAudioProgressShow()
-    self._AudioProgressTimeId = XScheduleManager.ScheduleForever(handler(self, self._UpdateAudioProgressShow), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiPanelMainLinePopupExploreSound._UpdateAudioProgressShow, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiPanelMainLinePopupExploreSound:_UpdateAudioProgressShow()
@@ -65,7 +62,7 @@ function XUiPanelMainLinePopupExploreSound:_UpdateAudioProgressShow()
     end
 
     local curTime = self._AudioInfo.Playing and math.max(0, self._AudioInfo.Time) or self._AudioInfo.Duration
-    local leftTime = math.max(0, (self._AudioInfo.Duration - curTime) / XScheduleManager.SECOND)
+    local leftTime = math.max(0, (self._AudioInfo.Duration - curTime) / XScheduleManagerPro.SECOND)
 
     self.TxtTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.HOUR_MINUTE_SECOND)
 

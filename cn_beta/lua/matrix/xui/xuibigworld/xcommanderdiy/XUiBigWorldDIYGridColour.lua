@@ -52,22 +52,13 @@ function XUiBigWorldDIYGridColour:SetSelect(isSelect)
 end
 
 function XUiBigWorldDIYGridColour:StopAnimationTimer()
-    if not self._AnimationTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._AnimationTimer)
-    self._AnimationTimer = false
+    XScheduleManagerPro.UnSchedule(XUiBigWorldDIYGridColour._OnPlayEnableAnimationScheduleCb, self)
 end
 
 function XUiBigWorldDIYGridColour:PlayEnableAnimation(index)
     self:StopAnimationTimer()
     self.CanvasGroup.alpha = 0
-    self._AnimationTimer = XScheduleManager.ScheduleOnce(function()
-        if self:IsNodeShow() then
-            self.GridEnable:PlayTimelineAnimation()
-        end
-        self:StopAnimationTimer()
-    end, 50 * index)
+    XScheduleManagerPro.ScheduleOnce(XUiBigWorldDIYGridColour._OnPlayEnableAnimationScheduleCb, self, 50 * index)
 end
 
 function XUiBigWorldDIYGridColour:GetEntity()
@@ -111,5 +102,11 @@ function XUiBigWorldDIYGridColour:_RegisterRedPointEvents()
 end
 
 -- endregion
+
+function XUiBigWorldDIYGridColour:_OnPlayEnableAnimationScheduleCb()
+    if self:IsNodeShow() then
+        self.GridEnable:PlayTimelineAnimation()
+    end
+end
 
 return XUiBigWorldDIYGridColour

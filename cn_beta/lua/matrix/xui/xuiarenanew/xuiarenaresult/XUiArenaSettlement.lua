@@ -3,8 +3,7 @@
 ---@field _ResultData ArenaFightResult|nil 结算数据（ArenaResult）
 ---@field _WinData table|nil 完整的胜利数据（包含 SettleData, CharExp 等，用于 debug）
 ---@field _AudioInfo any|nil 音效信息
----@field _AnimationDelayTimerId number|nil 动画延迟定时器ID
----@field _AnimationPlayTimerId number|nil 动画播放延迟定时器ID
+---@field _PlayScoreAnimationTimerId number|nil 分数动画Tween定时器ID
 ---@field _IsInAnimationDelay boolean 是否在动画延迟期间（配合Unity动画演出）
 ---@field ListCharacter UnityEngine.RectTransform|nil 角色列表容器
 ---@field GridCharacter1 UnityEngine.RectTransform|nil 角色头像模板
@@ -148,18 +147,12 @@ end
 
 --- 清理动画延迟定时器
 function XUiArenaSettlement:_ClearAnimationDelayTimer()
-    if self._AnimationDelayTimerId then
-        XScheduleManager.UnSchedule(self._AnimationDelayTimerId)
-        self._AnimationDelayTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiArenaSettlement._OnAnimationDelayScheduleCb, self)
 end
 
 --- 清理动画播放定时器
 function XUiArenaSettlement:_ClearAnimationPlayTimer()
-    if self._AnimationPlayTimerId then
-        XScheduleManager.UnSchedule(self._AnimationPlayTimerId)
-        self._AnimationPlayTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiArenaSettlement._OnAnimationPlayScheduleCb, self)
 
     if self._PlayScoreAnimationTimerId then
         XScheduleManager.UnSchedule(self._PlayScoreAnimationTimerId)
@@ -173,13 +166,15 @@ function XUiArenaSettlement:_StartAnimationDelay()
     self._IsInAnimationDelay = true
     
     -- 延迟3秒后允许操作
-    self._AnimationDelayTimerId = XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.Transform) then
-            return
-        end
-        self._IsInAnimationDelay = false
-        self._AnimationDelayTimerId = nil
-    end, 3 * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(XUiArenaSettlement._OnAnimationDelayScheduleCb, self, 3 * XScheduleManagerPro.SECOND)
+end
+
+--- 定时器回调：动画延迟结束，允许操作
+function XUiArenaSettlement:_OnAnimationDelayScheduleCb()
+    if XTool.UObjIsNil(self.Transform) then
+        return
+    end
+    self._IsInAnimationDelay = false
 end
 
 -- endregion
@@ -224,19 +219,31 @@ function XUiArenaSettlement:_Refresh()
 
     -- 延迟3秒后播放音效和分数动画（配合Unity动画演出）
     self:_ClearAnimationPlayTimer()
-    self._AnimationPlayTimerId = XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.Transform) then
-            return
-        end
-        self._AnimationPlayTimerId = nil
-        -- 播放音效
-        self._AudioInfo = XLuaAudioManager.PlayAudioByType(
-            XLuaAudioManager.SoundType.SFX,
-            XLuaAudioManager.UiBasicsMusic.UiSettle_Win_Number
-        )
-        -- 播放分数动画
-        self:_PlayScoreAnimation(data, markInfo)
-    end, 3 * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(XUiArenaSettlement._OnAnimationPlayScheduleCb, self, 3 * XScheduleManagerPro.SECOND)
+end
+
+
+function XUiArenaSettlement:_OnAnimationPlayScheduleCb()
+    if XTool.UObjIsNil(self.Transform) then
+        return
+    end
+
+    local data = self._ResultData
+    if not data then
+        return
+    end
+
+    local areaId = self._Control:GetCurrentEnterAreaId()
+    local markId = self._Control:GetMarkIdByAreaId(areaId)
+    local markInfo = self:_GetMarkInfo(markId)
+
+    -- 播放音效
+    self._AudioInfo = XLuaAudioManager.PlayAudioByType(
+        XLuaAudioManager.SoundType.SFX,
+        XLuaAudioManager.UiBasicsMusic.UiSettle_Win_Number
+    )
+    -- 播放分数动画
+    self:_PlayScoreAnimation(data, markInfo)
 end
 
 --- 获取标记信息

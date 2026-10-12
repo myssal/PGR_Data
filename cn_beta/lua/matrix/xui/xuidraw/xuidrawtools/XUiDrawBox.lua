@@ -12,7 +12,7 @@ end
 
 local OpenBox = function(cb)
     boxAnim:Play(animOpen)
-    XScheduleManager.ScheduleOnce(cb, animLength)
+    XScheduleManagerPro.ScheduleOnce(cb, nil, animLength)
 end
 
 local ResetBox = function()

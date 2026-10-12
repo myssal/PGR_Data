@@ -274,23 +274,6 @@ function XUiTeamPrefabMain:OnBtnUseClick()
         return
     end
 
-    -- 武器存在性冲突检测（最优先）
-    local function CheckWeaponExistConflictAndConfirm()
-        local isWeaponExistConflict = false
-        for pos, v in ipairs(self.CharacterCardList) do
-            if v:GetIsWeaponExsitConflict() then
-                isWeaponExistConflict = true
-                break
-            end
-        end
-        
-        if isWeaponExistConflict then
-            XUiManager.TipMsg(CS.XTextManager.GetText("TeamPrefabWeaponNotExistConflict"))
-            return false
-        end
-
-        return true
-    end
 
     -- 最终执行应用
     local function ApplyTeamPrefab()
@@ -312,7 +295,7 @@ function XUiTeamPrefabMain:OnBtnUseClick()
         end)
     end
 
-    -- 辅助机冲突检测
+    -- 5. 辅助机冲突检测
     local function CheckPartnerConflictAndConfirm()
         local entityIds = curTeamPrefabEntity:GetEntityIds()
         local teamPrefabPartnerData = curTeamPrefabEntity:GetPartnerData()
@@ -338,7 +321,7 @@ function XUiTeamPrefabMain:OnBtnUseClick()
         end
     end
 
-    -- 欲穿戴武器意识当前有真正的角色正在穿戴的冲突检测
+    -- 4. 欲穿戴武器意识当前有真正的角色正在穿戴的冲突检测
     local function CheckEquipConflictAndConfirm()
         local maxPos = XDataCenter.TeamManager.GetMaxPos()
         local isEquipConflict = false
@@ -378,18 +361,50 @@ function XUiTeamPrefabMain:OnBtnUseClick()
         end
     end
 
-    -- 武器共鸣与谐振冲突检测（②共鸣数量 ③谐振 ④共鸣技能绑定）
+    -- 3. 形态数据检查
+    local function CheckSwitchSkill()
+        local isNeedSync = false
+        local entityIds = curTeamPrefabEntity:GetEntityIds()
+        for pos, characterId in ipairs(entityIds) do
+            if XTool.IsNumberValid(characterId) and not curTeamPrefabEntity:GetSwitchSkillByPos(pos) then
+                -- SilentFix2：形态数据为空时，静默修复为角色当前使用的形态
+                local switchSkillId = XMVCA.XCharacter:GetSkillExchangeDesSkillIdAndConfigByCharacterId(characterId)
+                if switchSkillId then
+                    local groupSkillIds = XMVCA.XCharacter:GetGroupSkillIds(switchSkillId)
+                    for _, skillId in ipairs(groupSkillIds) do
+                        if XMVCA.XCharacter:IsSkillUsing(skillId) then
+                            curTeamPrefabEntity:UpdateSwitchSkillAtPos(pos, skillId, true)
+                            isNeedSync = true
+                            break
+                        end
+                    end
+                end
+            end
+        end
+
+        if isNeedSync then
+            curTeamPrefabEntity:SyncFullDataToServer(CheckEquipConflictAndConfirm)
+        else
+            CheckEquipConflictAndConfirm()
+        end
+    end
+
+    -- 2. 武器共鸣与谐振冲突检测（共鸣数量、谐振、共鸣技能绑定）
     local function CheckResonanceAndOverrunConflictAndConfirm()
-        local isResonanceOrOverrunConflict = false
+        local isNeedConfirm = false
         local conflictPosList = {}
         for pos, v in ipairs(self.CharacterCardList) do
-            if v:GetIsWeaponResonanceCountConflict() or v:GetIsWeaponOverrunConflict() or v:GetIsWeaponResonanceSkillNeedConfirm() then
-                isResonanceOrOverrunConflict = true
+            local isResonanceOrOverrunConflict = v:GetIsWeaponResonanceCountConflict() or v:GetIsWeaponOverrunConflict()
+            local isResonanceSkillNeedConfirm = v:GetIsWeaponResonanceSkillNeedConfirm()
+            if isResonanceOrOverrunConflict or isResonanceSkillNeedConfirm then
                 table.insert(conflictPosList, pos)
+            end
+            if isResonanceSkillNeedConfirm then
+                isNeedConfirm = true
             end
         end
         
-        if isResonanceOrOverrunConflict then
+        if isNeedConfirm then
             XLuaUiManager.Open("UiDialog", XUiHelper.GetText("TipTitle"),
             XUiHelper.GetText("TeamPrefabEquipConflictConfirm"),
             XUiManager.DialogType.Normal, nil, function ()
@@ -398,7 +413,7 @@ function XUiTeamPrefabMain:OnBtnUseClick()
                     -- 每个冲突位都要单独发一次 TeamPrefabUpdateEquipRequest，串行执行避免并发覆盖
                     local function SyncNextConflictPos(conflictIndex)
                         if conflictIndex > #conflictPosList then
-                            CheckEquipConflictAndConfirm()
+                            CheckSwitchSkill()
                             return
                         end
                         local pos = conflictPosList[conflictIndex]
@@ -410,11 +425,11 @@ function XUiTeamPrefabMain:OnBtnUseClick()
                     end
                     SyncNextConflictPos(1)
                 else
-                    CheckEquipConflictAndConfirm()
+                    CheckSwitchSkill()
                 end
             end)
         else
-            -- 无弹窗时，静默修复共鸣数量与谐振数据
+            -- SilentFix1：无弹窗时，静默修复共鸣数量与谐振数据
             for pos, v in ipairs(self.CharacterCardList) do
                 local charId = curTeamPrefabEntity:GetEntityIdByTeamPos(pos)
                 if XTool.IsNumberValid(charId) then
@@ -433,16 +448,32 @@ function XUiTeamPrefabMain:OnBtnUseClick()
                 end
             end
 
-            CheckEquipConflictAndConfirm()
+            CheckSwitchSkill()
         end
     end
 
-    -- 优先执行武器存在性冲突检测
+    
+    -- 1. 武器存在性冲突检测（最优先）
+    local function CheckWeaponExistConflictAndConfirm()
+        local isWeaponExistConflict = false
+        for pos, v in ipairs(self.CharacterCardList) do
+            if v:GetIsWeaponExsitConflict() then
+                isWeaponExistConflict = true
+                break
+            end
+        end
+        
+        if isWeaponExistConflict then
+            XUiManager.TipMsg(CS.XTextManager.GetText("TeamPrefabWeaponNotExistConflict"))
+            return false
+        end
+
+        return true
+    end
     if not CheckWeaponExistConflictAndConfirm() then
         return
     end
     
-    -- 继续原有的检测流程
     CheckResonanceAndOverrunConflictAndConfirm()
 end
 

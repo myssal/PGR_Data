@@ -44,6 +44,7 @@ function XUiPlanetChapter:OnEnable()
         self:UpdateChapterGridListPosition()
         self:StartUpdateChapterGridListPosition()
     end
+    self.UpdateTimer = nil
 end
 
 function XUiPlanetChapter:OnDisable()
@@ -102,20 +103,19 @@ function XUiPlanetChapter:UpdateChapterGridListPosition()
 end
 
 function XUiPlanetChapter:StartUpdateChapterGridListPosition()
-    self.UpdateTimer = XScheduleManager.ScheduleForever(function()
-        if self.PlanetMainScene:CheckCameraIsMove() then
-            self:UpdateChapterGridListPosition()
-        else
-            self:CamBounceBack()
-        end
-    end, 0, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateChapterGridListPositionScheduleCb, self, 0, 0)
+end
+
+function XUiPlanetChapter:_OnUpdateChapterGridListPositionScheduleCb()
+    if self.PlanetMainScene:CheckCameraIsMove() then
+        self:UpdateChapterGridListPosition()
+    else
+        self:CamBounceBack()
+    end
 end
 
 function XUiPlanetChapter:StopUpdateChapterGridListPosition()
-    if self.UpdateTimer then
-        XScheduleManager.UnSchedule(self.UpdateTimer)
-    end
-    self.UpdateTimer = nil
+        XScheduleManagerPro.UnSchedule(self._OnUpdateChapterGridListPositionScheduleCb, self)
 end
 
 function XUiPlanetChapter:RefreshRedPoint()

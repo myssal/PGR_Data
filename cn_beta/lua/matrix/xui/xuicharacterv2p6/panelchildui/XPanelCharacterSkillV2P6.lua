@@ -1,4 +1,5 @@
 ---@class XPanelCharacterSkillV2P6 : XUiNode
+---@field _Control XCharacterControl
 local XPanelCharacterSkillV2P6 = XClass(XUiNode, "XPanelCharacterSkillV2P6")
 local XUiGridSkillItemV2P6 = require("XUi/XUiCharacterV2P6/Grid/XUiGridSkillItemV2P6")
 
@@ -10,19 +11,48 @@ function XPanelCharacterSkillV2P6:OnStart()
     self:InitButton()
 end
 
+function XPanelCharacterSkillV2P6:OnEnable()
+    self:RefreshOneClickBtn()
+    XDataCenter.GuideManager.CheckGuideOpen()
+end
+
 function XPanelCharacterSkillV2P6:InitButton()
+    self.BtnOneClick:AddEventListener(handler(self, self.OnBtnOneClickClick))
     XUiHelper.RegisterClickEvent(self, self.GridSkillItem7, self.OnGotoWeaponOverrunSkillDetail)
 end
 
+function XPanelCharacterSkillV2P6:OnBtnOneClickClick()
+    XMVCA.XCharacter:OpenUiRoleCultureDetailMain(self.CharacterId)
+end
+
 function XPanelCharacterSkillV2P6:RefreshUiShow()
-    self.CharacterId = self.Parent.ParentUi.CurCharacter.Id
     self.CurCharacter = self.Parent.ParentUi.CurCharacter
 
     self.BtnSkillTeach.gameObject:SetActive(XPanelCharacterSkillV2P6.BUTTON_SKILL_TEACH_ACTIVE)
+    self:RefreshOneClickBtn()
+    self:RefreshTrainingItemBubble()
     self.IsShow = true
     self.GameObject:SetActive(true)
     self:ShowSkillItemPanel()
     self:UpdateSkill()
+end
+
+function XPanelCharacterSkillV2P6:RefreshOneClickBtn()
+    self.CharacterId = self.Parent.ParentUi.CurCharacter.Id
+    local isOneClickOpen = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.CharacterOneClick)
+        and self._Control:CheckRoleCultureHasAnyUpgradableByCurState(self.CharacterId)
+    self.BtnOneClick.gameObject:SetActiveEx(isOneClickOpen)
+end
+
+--- 一键养成道具持有提示：有道具才展示气泡
+function XPanelCharacterSkillV2P6:RefreshTrainingItemBubble()
+    local count = self._Control:GetRoleCultureSpecialItemCount()
+    self.GroupBubble.gameObject:SetActiveEx(count > 0)
+    if count <= 0 then
+        return
+    end
+    self.IconTrainingItem:SetRawImage(XDataCenter.ItemManager.GetItemIcon(self._Control:GetRoleCultureSpecialItemId()))
+    self.TxtItemNum.text = "x" .. count
 end
 
 function XPanelCharacterSkillV2P6:UpdateSkill()

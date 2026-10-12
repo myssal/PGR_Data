@@ -99,37 +99,35 @@ end
 
 -- 定时器
 function XUiMainBoardEffect:StartTimer()
-    self:StopTimer()
-    self.Timer = XScheduleManager.ScheduleForeverEx(function()
-        if XTool.UObjIsNil(self.Parent.GameObject) then
-            self:StopTimer()
-            return
-        end
-        if XTool.IsTableEmpty(self.EffectDataList) then
-            self:StopTimer()
-            return
-        end
-        -- 时间结束后自动移除
-        for index = #self.EffectDataList, 1, -1 do
-            local data = self.EffectDataList[index]
-            if data.Time <= 0 then
-                if not XTool.UObjIsNil(data.EffectGo) then
-                    data.EffectGo:SetActiveEx(false)
-                end
-                table.remove(self.EffectDataList, index)
-            else
-                data.Time = data.Time - 1
+    XScheduleManagerPro.ScheduleForeverEx(self._OnEffectTimer, self, 1000)
+end
+
+function XUiMainBoardEffect:_OnEffectTimer()
+    if XTool.UObjIsNil(self.Parent.GameObject) then
+        self:StopTimer()
+        return
+    end
+    if XTool.IsTableEmpty(self.EffectDataList) then
+        self:StopTimer()
+        return
+    end
+    -- 时间结束后自动移除
+    for index = #self.EffectDataList, 1, -1 do
+        local data = self.EffectDataList[index]
+        if data.Time <= 0 then
+            if not XTool.UObjIsNil(data.EffectGo) then
+                data.EffectGo:SetActiveEx(false)
             end
+            table.remove(self.EffectDataList, index)
+        else
+            data.Time = data.Time - 1
         end
-    end, 1000)
+    end
 end
 
 -- 停止定时器
 function XUiMainBoardEffect:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEffectTimer, self)
 end
 
 return XUiMainBoardEffect

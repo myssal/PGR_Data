@@ -192,14 +192,7 @@ end
 function XUiPanelSignBoard:OnEnable()
     self:RefreshUiShow()
 
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
-
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:Update()
-    end, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateTimer, self, 0)
 
     -- self:RefreshCharModel()
 
@@ -229,10 +222,7 @@ function XUiPanelSignBoard:OnDisable()
         self.PanelOpration.gameObject:SetActiveEx(false)
     end
 
-    if self.Timer ~= nil then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnUpdateTimer, self)
 
     if self.SignBoardPlayer then
         self.SignBoardPlayer:OnDisable()
@@ -253,10 +243,7 @@ function XUiPanelSignBoard:OnDisable()
 end
 
 function XUiPanelSignBoard:OnDestroy()
-    if self.Timer ~= nil then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnUpdateTimer, self)
 
     if self.SignBoardPlayer then
         self.SignBoardPlayer:OnDestroy()
@@ -279,10 +266,11 @@ function XUiPanelSignBoard:OnDestroy()
 end
 
 function XUiPanelSignBoard:StopTimerShow()
-    if self.TimerShow then
-        XScheduleManager.UnSchedule(self.TimerShow)
-    end
-    self.TimerShow = nil
+    XScheduleManagerPro.UnSchedule(self._OnTimerShowEnd, self)
+end
+
+function XUiPanelSignBoard:_OnUpdateTimer()
+    self:Update()
 end
 
 function XUiPanelSignBoard:Update()
@@ -890,14 +878,10 @@ function XUiPanelSignBoard:Play(element)
     if self.OpenType == XUiPanelSignBoard.SignBoardOpenType.MAIN then
         self.Parent:PlayAnimation("AnimOprationBegan")
         self:AOPAfterOperationShowBegin()
-        self:StopTimerShow()
-        self.TimerShow = XScheduleManager.ScheduleOnce(function()
-            self.Parent:PlayAnimation("AnimOprationEnd")
-            self.PanelOpration.gameObject:SetActiveEx(false)
-            self:AOPAfterOperationShowEnd()
-        end, CS.XGame.ClientConfig:GetInt("Interactionbuttonshowtime"))
+        XScheduleManagerPro.ScheduleOnce(self._OnTimerShowEnd, self, CS.XGame.ClientConfig:GetInt("Interactionbuttonshowtime"))
     end
 end
+
 
 function XUiPanelSignBoard:AOPAfterOperationShowEnd()
     
@@ -936,15 +920,16 @@ function XUiPanelSignBoard:PlayCross(element)
     if self.OpenType == XUiPanelSignBoard.SignBoardOpenType.MAIN then
         self.Parent:PlayAnimation("AnimOprationBegan")
         self:AOPAfterOperationShowBegin()
-        self:StopTimerShow()
-        self.TimerShow = XScheduleManager.ScheduleOnce(function()
-            self.Parent:PlayAnimation("AnimOprationEnd")
-            self.PanelOpration.gameObject:SetActiveEx(false)
-            self:AOPAfterOperationShowEnd()
-        end, CS.XGame.ClientConfig:GetInt("Interactionbuttonshowtime"))
+        XScheduleManagerPro.ScheduleOnce(self._OnTimerShowEnd, self, CS.XGame.ClientConfig:GetInt("Interactionbuttonshowtime"))
     end
 end
 
+
+function XUiPanelSignBoard:_OnTimerShowEnd()
+    self.Parent:PlayAnimation("AnimOprationEnd")
+    self.PanelOpration.gameObject:SetActiveEx(false)
+    self:AOPAfterOperationShowEnd()
+end
 
 --============================
 -- UI显示
@@ -977,13 +962,13 @@ function XUiPanelSignBoard:_PlayCv(element)
     if element.SignBoardConfig.TurnOffBgm then
         if self.PlayingCv then
             XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, true, 0.5)
-            self.PlayingCv.FinishCb = function ()
+            self.PlayingCv:AddFinishCallback(function()
                 if self.CurElement and element.SignBoardConfig.Id ~= self.CurElement.SignBoardConfig.Id and self.CurElement.SignBoardConfig.TurnOffBgm then
                     -- 还处于Mute的config播放中，暂不做处理
                 else
                     XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, false, 0.5)
                 end
-            end
+            end)
         end
     end
 end

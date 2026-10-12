@@ -27,30 +27,29 @@ function XUiWhiteValenPlace:Refresh()
 end
 
 function XUiWhiteValenPlace:SetDispatchingTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnSetDispatchingTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiWhiteValenPlace:_OnSetDispatchingTimerScheduleCb()
         local checkExist
-        local gameObject = self.GameObject
-        if gameObject and gameObject.Exist then
-            checkExist = function() return gameObject:Exist() end
-        end
-        if checkExist() then
-            self.TxtDispatchCountDown.text = self.Place:GetEventEndTimeString()
-            self.PanelTime.gameObject:SetActiveEx(self.Place:GetIsDispatching())
-            if not self.Place:GetIsDispatching() then
-                self:RemoveDispatchingTimer()
-                self:Refresh()
-            end
-        else
-            self:RemoveDispatchingTimer()
-        end
-    end, XScheduleManager.SECOND, 0)
+                local gameObject = self.GameObject
+                if gameObject and gameObject.Exist then
+                    checkExist = function() return gameObject:Exist() end
+                end
+                if checkExist() then
+                    self.TxtDispatchCountDown.text = self.Place:GetEventEndTimeString()
+                    self.PanelTime.gameObject:SetActiveEx(self.Place:GetIsDispatching())
+                    if not self.Place:GetIsDispatching() then
+                        self:RemoveDispatchingTimer()
+                        self:Refresh()
+                    end
+                else
+                    self:RemoveDispatchingTimer()
+                end
 end
 
 function XUiWhiteValenPlace:RemoveDispatchingTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnSetDispatchingTimerScheduleCb, self)
 end
 
 function XUiWhiteValenPlace:OnBtnDispatch()

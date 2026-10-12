@@ -2182,6 +2182,7 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 195,
+        "Explain": "4.8洁塔薇联动皮打脸",
         "ConditionId": 1050153,
         "IsHideFunc": true
     },
@@ -2190,6 +2191,7 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 196,
+        "Explain": "4.7跨4.8预热打脸狂三",
         "ConditionId": 1050153,
         "IsHideFunc": true
     },
@@ -2198,6 +2200,7 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 197,
+        "Explain": "4.7跨4.8预热打脸阿德莱德",
         "ConditionId": 1050153,
         "IsHideFunc": true
     },
@@ -2206,6 +2209,7 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 198,
+        "Explain": "4.7500卡池复刻打脸",
         "ConditionId": 1050153,
         "IsHideFunc": true
     },
@@ -2214,6 +2218,7 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 199,
+        "Explain": "土豆兄弟打脸图",
         "ConditionId": 1050153,
         "IsHideFunc": true
     },
@@ -2222,6 +2227,7 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 200,
+        "Explain": "4.7露娜涂鸦打脸图",
         "ConditionId": 1050153,
         "IsHideFunc": true
     },
@@ -2230,6 +2236,7 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 201,
+        "Explain": "4.8阿德莱德特效皮",
         "ConditionId": 1050153,
         "IsHideFunc": true
     },
@@ -2238,6 +2245,7 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 202,
+        "Explain": "4.8涅缇娅特效皮",
         "ConditionId": 1050153,
         "IsHideFunc": true
     },
@@ -2254,6 +2262,51 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 204,
+        "Explain": "4.8卡池复刻打脸图",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40204,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 205,
+        "Explain": "v4.8可肝商店新增打脸图",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40205,
+        "Origin": 2,
+        "UiName": "UiRegression4AutoWindow",
+        "ParamId": 206,
+        "Explain": "v4.8回归活动4期",
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40206,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 207,
+        "Explain": "占位",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40207,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 208,
+        "Explain": "占位",
+        "ConditionId": 1050153,
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 40208,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 209,
+        "Explain": "占位",
         "ConditionId": 1050153,
         "IsHideFunc": true
     },
@@ -3499,6 +3552,7 @@
         "Origin": 2,
         "UiName": "UiSignBanner",
         "ParamId": 116,
+        "Explain": "4.8联动签到",
         "TimeId": 50301,
         "IsHideFunc": true
     },
@@ -3507,6 +3561,7 @@
         "Origin": 2,
         "UiName": "UiSignBanner",
         "ParamId": 117,
+        "Explain": "4.8版本签到",
         "TimeId": 50911,
         "IsHideFunc": true
     },
@@ -3515,6 +3570,7 @@
         "Origin": 2,
         "UiName": "UiSignBanner",
         "ParamId": 118,
+        "Explain": "4.8中秋签到",
         "TimeId": 50912,
         "IsHideFunc": true
     },
@@ -3523,6 +3579,7 @@
         "Origin": 2,
         "UiName": "UiSignBanner",
         "ParamId": 119,
+        "Explain": "【每次新建】v4.8五日周卡签到弹窗跳转",
         "IsHideFunc": true
     },
     {
@@ -6134,6 +6191,7 @@
         "Origin": 7,
         "UiName": "OpenMainLine3DStage",
         "Explain": "主线 - 第十七章（查询Share-Fuben-Mainline-Chapter.tab，填写章节第一关Id）",
+        "ConditionId": 1050153,
         "CustomParams": [
             0,
             10170101
@@ -6564,6 +6622,18 @@
         "FunctionalId": 10308,
         "CustomParams": [
             1043
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 538,
+        "Origin": 7,
+        "UiName": "SkipToMainLine2",
+        "Explain": "新主线第四十四章",
+        "ConditionId": 1050153,
+        "FunctionalId": 10308,
+        "CustomParams": [
+            1044
         ],
         "IsHideFunc": true
     },
@@ -11833,6 +11903,7 @@
         "Origin": 7,
         "UiName": "SkipTRPGMain",
         "Explain": "主线 - 第13章（查询Share-Fuben-Mainline-Chapter.tab，填写章节第一关Id）",
+        "ConditionId": 1050153,
         "FunctionalId": 10308,
         "IsHideFunc": true
     },
@@ -11874,6 +11945,7 @@
         "Origin": 7,
         "UiName": "OpenMainLine3DStage",
         "Explain": "主线 - 第17章（查询Share-Fuben-Mainline-Chapter.tab，填写章节第一关Id）",
+        "ConditionId": 1050153,
         "FunctionalId": 10308,
         "CustomParams": [
             0,
@@ -13017,9 +13089,10 @@
         "Origin": 7,
         "UiName": "SkipToPartnerTeachingChapter",
         "Explain": "前往辅助机教学试玩-第三十八章",
+        "ConditionId": 1050153,
         "FunctionalId": 1801,
         "CustomParams": [
-            37
+            38
         ],
         "IsHideFunc": true
     },
@@ -13077,136 +13150,92 @@
     },
     {
         "SkipId": 7205,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往研发",
         "FunctionalId": 401,
-        "CustomParams": [
-            1,
-            1
-        ],
         "IsHideFunc": true
     },
     {
         "SkipId": 7206,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往涂装卡池",
         "FunctionalId": 401,
-        "CustomParams": [
-            2,
-            2
-        ],
         "IsHideFunc": true
     },
     {
         "SkipId": 7207,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往联动卡池",
         "FunctionalId": 401,
-        "CustomParams": [
-            1,
-            19
-        ],
         "IsHideFunc": true
     },
     {
         "SkipId": 7208,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往降临卡池",
         "FunctionalId": 401,
-        "CustomParams": [
-            1,
-            12
-        ],
         "IsHideFunc": true
     },
     {
         "SkipId": 7209,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往主题卡池",
         "FunctionalId": 401,
-        "CustomParams": [
-            1,
-            11
-        ],
         "IsHideFunc": true
     },
     {
         "SkipId": 7210,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往SP卡池",
         "FunctionalId": 401,
-        "CustomParams": [
-            1,
-            16
-        ],
         "IsHideFunc": true
     },
     {
         "SkipId": 7211,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往武器狙击",
         "FunctionalId": 401,
-        "CustomParams": [
-            1,
-            4
-        ],
         "IsHideFunc": true
     },
     {
         "SkipId": 7212,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往随行支援单位研发",
         "FunctionalId": 401,
         "StartTime": "2021/4/15 11:00",
-        "CustomParams": [
-            1,
-            22
-        ],
         "IsHideFunc": true
     },
     {
         "SkipId": 7213,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往活动限定研发",
         "FunctionalId": 401,
-        "CustomParams": [
-            1,
-            23
-        ],
         "IsHideFunc": true
     },
     {
         "SkipId": 7214,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "涂装研发",
         "FunctionalId": 401,
-        "CustomParams": [
-            2,
-            2
-        ],
         "IsHideFunc": true
     },
     {
         "SkipId": 7215,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "周年限定研发",
         "FunctionalId": 401,
         "TimeId": 42723,
-        "CustomParams": [
-            1,
-            17
-        ],
         "IsHideFunc": true
     },
     {
@@ -13223,50 +13252,38 @@
     },
     {
         "SkipId": 7217,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往初夏限定研发",
         "FunctionalId": 401,
-        "CustomParams": [
-            1,
-            27
-        ],
         "IsHideFunc": true
     },
     {
         "SkipId": 7218,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往淬炼主题卡池",
         "FunctionalId": 401,
-        "CustomParams": [
-            1,
-            35
-        ],
         "IsHideFunc": true
     },
     {
         "SkipId": 7219,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往源树脉络辅助机研发",
         "FunctionalId": 401,
         "CustomParams": [
-            1,
-            22,
             7064
         ],
         "IsHideFunc": true
     },
     {
         "SkipId": 7220,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
-        "Explain": "TEXT",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
+        "Explain": "前往狂三联动异界装备研发卡池",
         "FunctionalId": 401,
         "CustomParams": [
-            1,
-            40,
             7068
         ],
         "IsHideFunc": true
@@ -13303,7 +13320,7 @@
         "Origin": 1,
         "UiName": "UiNewFuben",
         "Explain": "前往与成员交流",
-        "FunctionalId": 1400,
+        "FunctionalId": 2001,
         "IsHideFunc": true
     },
     {
@@ -13512,14 +13529,10 @@
     },
     {
         "SkipId": 7804,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往研发（A成员）",
         "FunctionalId": 401,
-        "CustomParams": [
-            1,
-            1
-        ],
         "IsHideFunc": true
     },
     {
@@ -13604,14 +13617,10 @@
     },
     {
         "SkipId": 7815,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往研发（A成员）",
         "FunctionalId": 401,
-        "CustomParams": [
-            1,
-            1
-        ],
         "IsHideFunc": true
     },
     {
@@ -13698,7 +13707,7 @@
         "SkipId": 7825,
         "Origin": 1,
         "UiName": "UiNewFuben",
-        "Explain": "前往看板（信赖度）",
+        "Explain": "前往与成员交流",
         "FunctionalId": 2001,
         "IsHideFunc": true
     },
@@ -14084,14 +14093,10 @@
     },
     {
         "SkipId": 8009,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往研发",
         "FunctionalId": 401,
-        "CustomParams": [
-            1,
-            1
-        ],
         "IsHideFunc": true
     },
     {
@@ -16589,8 +16594,6 @@
         "StartTime": "2023/8/24 18:00",
         "CloseTime": "2023/9/22 9:59",
         "CustomParams": [
-            1,
-            25,
             5508
         ],
         "IsHideFunc": true
@@ -16621,8 +16624,6 @@
         "StartTime": "2025/5/22 7:00",
         "CloseTime": "2025/7/3 5:00",
         "CustomParams": [
-            1,
-            31,
             5608
         ],
         "IsHideFunc": true
@@ -16636,8 +16637,6 @@
         "StartTime": "2025/5/22 7:00",
         "CloseTime": "2025/7/3 5:00",
         "CustomParams": [
-            1,
-            29,
             5609
         ],
         "IsHideFunc": true
@@ -16651,8 +16650,6 @@
         "StartTime": "2025/5/22 7:00",
         "CloseTime": "2025/7/3 5:00",
         "CustomParams": [
-            1,
-            34,
             7049
         ],
         "IsHideFunc": true
@@ -17674,6 +17671,17 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 19085,
+        "Origin": 7,
+        "UiName": "SkipToCharacterV2P6",
+        "Explain": "前往成员功能",
+        "FunctionalId": 101,
+        "CustomParams": [
+            1431003
+        ],
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 20000,
         "Origin": 1,
         "UiName": "UiNewFuben",
@@ -17772,14 +17780,10 @@
     },
     {
         "SkipId": 20010,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "主题限定研发",
         "FunctionalId": 401,
-        "CustomParams": [
-            1,
-            15
-        ],
         "IsHideFunc": true
     },
     {
@@ -17791,7 +17795,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -17890,7 +17894,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -17918,14 +17922,10 @@
     },
     {
         "SkipId": 20023,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "独域机体研发",
         "FunctionalId": 401,
-        "CustomParams": [
-            1,
-            16
-        ],
         "IsHideFunc": true
     },
     {
@@ -18317,7 +18317,7 @@
         "CustomParams": [
             2,
             0,
-            5
+            6
         ],
         "IsHideFunc": true
     },
@@ -18346,7 +18346,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -18807,6 +18807,7 @@
         "Origin": 7,
         "UiName": "OpenMainLine3DStage",
         "Explain": "主线 - 第十七章（查询Share-Fuben-Mainline-Chapter.tab，填写章节第一关Id）",
+        "ConditionId": 1050153,
         "CustomParams": [
             0,
             10170101
@@ -18868,7 +18869,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -19059,13 +19060,10 @@
     },
     {
         "SkipId": 20131,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "前往研发",
         "FunctionalId": 401,
-        "CustomParams": [
-            1
-        ],
         "IsHideFunc": true
     },
     {
@@ -19349,7 +19347,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -20202,7 +20200,7 @@
         "Explain": "新角色主题试玩（33期之后，修改期数）",
         "FunctionalId": 10325,
         "CustomParams": [
-            50
+            52
         ],
         "IsHideFunc": true
     },
@@ -20255,16 +20253,12 @@
     },
     {
         "SkipId": 20240,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【伊什梅尔·幻日】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2024/11/7 7:00",
         "CloseTime": "2024/12/19 5:00",
-        "CustomParams": [
-            1,
-            11
-        ],
         "IsHideFunc": true
     },
     {
@@ -20278,15 +20272,16 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
     {
         "SkipId": 20242,
-        "Origin": 6,
-        "UiName": "UiFavorabilityStory",
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
         "Explain": "前往莉莉丝·谬影好感度剧情",
+        "FunctionalId": 1402,
         "CustomParams": [
             1331003
         ],
@@ -20349,7 +20344,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -20367,9 +20362,10 @@
     },
     {
         "SkipId": 20249,
-        "Origin": 6,
-        "UiName": "UiFavorabilityStory",
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
         "Explain": "前往赛琳娜好感度剧情",
+        "FunctionalId": 1402,
         "CustomParams": [
             1531005
         ],
@@ -20410,22 +20406,18 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
     {
         "SkipId": 20253,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【赛琳娜·希声】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2025/1/23 7:00",
         "CloseTime": "2025/3/6 5:00",
-        "CustomParams": [
-            1,
-            11
-        ],
         "IsHideFunc": true
     },
     {
@@ -20545,22 +20537,18 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
     {
         "SkipId": 20265,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【洁塔薇·破晓】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2025/3/6 7:00",
         "CloseTime": "2025/4/10 7:00",
-        "CustomParams": [
-            1,
-            1
-        ],
         "IsHideFunc": true
     },
     {
@@ -20570,16 +20558,17 @@
         "Explain": "跳转至“幻镜虚像”活动",
         "FunctionalId": 10324,
         "CustomParams": [
-            10,
+            12,
             102
         ],
         "IsHideFunc": true
     },
     {
         "SkipId": 20267,
-        "Origin": 6,
-        "UiName": "UiFavorabilityStory",
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
         "Explain": "前往薇拉好感度剧情",
+        "FunctionalId": 1402,
         "CustomParams": [
             1131004
         ],
@@ -20599,16 +20588,12 @@
     },
     {
         "SkipId": 20269,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【薇拉·灼惘】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2025/4/10 7:00",
         "CloseTime": "2025/5/22 5:00",
-        "CustomParams": [
-            1,
-            11
-        ],
         "IsHideFunc": true
     },
     {
@@ -20622,7 +20607,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -20681,8 +20666,6 @@
         "StartTime": "2025/5/22 7:00",
         "CloseTime": "2025/7/3 5:00",
         "CustomParams": [
-            1,
-            31,
             5608
         ],
         "IsHideFunc": true
@@ -20696,8 +20679,6 @@
         "StartTime": "2025/5/22 7:00",
         "CloseTime": "2025/7/3 5:00",
         "CustomParams": [
-            1,
-            29,
             5609
         ],
         "IsHideFunc": true
@@ -20752,16 +20733,12 @@
     },
     {
         "SkipId": 20281,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【比安卡·晖暮】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2025/7/3 7:00",
         "CloseTime": "2025/8/21 5:00",
-        "CustomParams": [
-            1,
-            11
-        ],
         "IsHideFunc": true
     },
     {
@@ -20775,7 +20752,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -20793,10 +20770,11 @@
     },
     {
         "SkipId": 20284,
-        "Origin": 6,
-        "UiName": "UiFavorabilityStory",
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
         "Explain": "前往比安卡好感度剧情",
         "IsRecord": true,
+        "FunctionalId": 1402,
         "CustomParams": [
             1041005
         ],
@@ -20904,16 +20882,12 @@
     },
     {
         "SkipId": 20294,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【斜奏·裁律】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2025/8/21 7:00",
         "CloseTime": "2025/9/25 5:00",
-        "CustomParams": [
-            1,
-            1
-        ],
         "IsHideFunc": true
     },
     {
@@ -20927,7 +20901,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -20980,16 +20954,12 @@
     },
     {
         "SkipId": 20300,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【维罗妮卡·铮骨】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2025/9/25 7:00",
         "CloseTime": "2025/11/13 5:00",
-        "CustomParams": [
-            1,
-            11
-        ],
         "IsHideFunc": true
     },
     {
@@ -21003,7 +20973,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -21045,16 +21015,12 @@
     },
     {
         "SkipId": 20305,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【神丽芙】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2025/11/13 5:00",
         "CloseTime": "2025/12/22 5:00",
-        "CustomParams": [
-            1,
-            11
-        ],
         "IsHideFunc": true
     },
     {
@@ -21068,7 +21034,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -21109,10 +21075,11 @@
     },
     {
         "SkipId": 20310,
-        "Origin": 6,
-        "UiName": "UiFavorabilityStory",
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
         "Explain": "前往丽芙好感度剧情",
         "IsRecord": true,
+        "FunctionalId": 1402,
         "CustomParams": [
             1031005
         ],
@@ -21132,16 +21099,12 @@
     },
     {
         "SkipId": 20312,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【布偶熊】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2025/12/23 5:00",
         "CloseTime": "2026/2/2 5:00",
-        "CustomParams": [
-            1,
-            11
-        ],
         "IsHideFunc": true
     },
     {
@@ -21155,7 +21118,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -21225,10 +21188,11 @@
     },
     {
         "SkipId": 20319,
-        "Origin": 6,
-        "UiName": "UiFavorabilityStory",
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
         "Explain": "前往布偶熊好感度剧情",
         "IsRecord": true,
+        "FunctionalId": 1402,
         "CustomParams": [
             1291003
         ],
@@ -21283,16 +21247,12 @@
     },
     {
         "SkipId": 20324,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【v4.3涅缇娅】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2026/3/17 5:00",
         "CloseTime": "2026/4/21 5:00",
-        "CustomParams": [
-            1,
-            35
-        ],
         "IsHideFunc": true
     },
     {
@@ -21306,7 +21266,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -21324,16 +21284,12 @@
     },
     {
         "SkipId": 20327,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【v4.2罗塞塔】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2025/2/3 5:00",
         "CloseTime": "2026/3/17 5:00",
-        "CustomParams": [
-            1,
-            11
-        ],
         "IsHideFunc": true
     },
     {
@@ -21347,7 +21303,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -21356,6 +21312,7 @@
         "Origin": 7,
         "UiName": "SkipToCharacterStory",
         "Explain": "【v4.3涅缇娅】限时通关好感剧情领取角色跳转",
+        "FunctionalId": 1402,
         "CustomParams": [
             1391003
         ],
@@ -21363,10 +21320,11 @@
     },
     {
         "SkipId": 20330,
-        "Origin": 6,
-        "UiName": "UiFavorabilityStory",
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
         "Explain": "前往罗塞塔好感度剧情",
         "IsRecord": true,
+        "FunctionalId": 1402,
         "CustomParams": [
             1141004
         ],
@@ -21374,10 +21332,11 @@
     },
     {
         "SkipId": 20331,
-        "Origin": 6,
-        "UiName": "UiFavorabilityStory",
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
         "Explain": "前往涅缇娅好感度剧情",
         "IsRecord": true,
+        "FunctionalId": 1402,
         "CustomParams": [
             1391003
         ],
@@ -21397,10 +21356,11 @@
     },
     {
         "SkipId": 20333,
-        "Origin": 6,
-        "UiName": "UiFavorabilityStory",
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
         "Explain": "前往神威好感度剧情",
         "IsRecord": true,
+        "FunctionalId": 1402,
         "CustomParams": [
             1061004
         ],
@@ -21420,16 +21380,12 @@
     },
     {
         "SkipId": 20335,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【v4.4神威】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2025/4/21 5:00",
         "CloseTime": "2026/6/2 5:00",
-        "CustomParams": [
-            1,
-            11
-        ],
         "IsHideFunc": true
     },
     {
@@ -21443,7 +21399,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -21715,18 +21671,15 @@
         "FunctionalId": 401,
         "StartTime": "2026/4/28 10:00",
         "CloseTime": "2026/6/2 5:00",
-        "CustomParams": [
-            1,
-            23
-        ],
         "IsHideFunc": true
     },
     {
         "SkipId": 20362,
-        "Origin": 6,
-        "UiName": "UiFavorabilityStory",
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
         "Explain": "前往阿尔法好感度剧情",
         "IsRecord": true,
+        "FunctionalId": 1402,
         "CustomParams": [
             1021007
         ],
@@ -21757,15 +21710,13 @@
     },
     {
         "SkipId": 20365,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【v4.5冰毛】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2025/6/2 5:00",
         "CloseTime": "2026/7/17 5:00",
         "CustomParams": [
-            1,
-            11,
             1488
         ],
         "IsHideFunc": true
@@ -21781,7 +21732,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -21799,10 +21750,11 @@
     },
     {
         "SkipId": 20368,
-        "Origin": 6,
-        "UiName": "UiFavorabilityStory",
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
         "Explain": "前往海伦汀好感度剧情",
         "IsRecord": true,
+        "FunctionalId": 1402,
         "CustomParams": [
             1401003
         ],
@@ -21923,6 +21875,7 @@
         "Origin": 7,
         "UiName": "SkipToCharacterStory",
         "ConditionId": 1050153,
+        "FunctionalId": 1402,
         "CustomParams": [
             1401003
         ],
@@ -21942,15 +21895,13 @@
     },
     {
         "SkipId": 20381,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【v4.6海伦汀】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2026/7/17 5:00",
         "CloseTime": "2026/8/19 5:00",
         "CustomParams": [
-            1,
-            35,
             1499
         ],
         "IsHideFunc": true
@@ -21966,19 +21917,20 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
     {
         "SkipId": 20383,
-        "Origin": 6,
-        "UiName": "UiWelfare",
+        "Origin": 7,
+        "UiName": "SkipToUiWelfare",
         "Explain": "完成“绯影降临”活动任务",
         "FunctionalId": 1,
         "CustomParams": [
-            1,
-            99
+            9,
+            47,
+            424
         ],
         "IsHideFunc": true
     },
@@ -21996,11 +21948,12 @@
     },
     {
         "SkipId": 20385,
-        "Origin": 6,
-        "UiName": "UiFavorabilityStory",
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
         "Explain": "前往卡列尼娜好感度剧情",
         "IsRecord": true,
         "ConditionId": 1050153,
+        "FunctionalId": 1402,
         "CustomParams": [
             1071005
         ],
@@ -22020,16 +21973,12 @@
     },
     {
         "SkipId": 20387,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "【v4.7卡列】前往主题卡池",
         "FunctionalId": 401,
         "StartTime": "2026/8/19 5:00",
         "CloseTime": "2026/9/24 5:00",
-        "CustomParams": [
-            1,
-            11
-        ],
         "IsHideFunc": true
     },
     {
@@ -22043,19 +21992,20 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
     {
         "SkipId": 20389,
-        "Origin": 6,
-        "UiName": "UiWelfare",
+        "Origin": 7,
+        "UiName": "SkipToUiWelfare",
         "Explain": "完成“溯讯衍波”活动任务",
         "FunctionalId": 1,
         "CustomParams": [
-            1,
-            99
+            9,
+            47,
+            429
         ],
         "IsHideFunc": true
     },
@@ -22083,7 +22033,7 @@
         "SkipId": 20395,
         "Origin": 7,
         "UiName": "OnOpenCharacterFileFubenActivity",
-        "Explain": "TEXT",
+        "Explain": "新角色主题试玩（狂三）",
         "FunctionalId": 10325,
         "CustomParams": [
             51
@@ -22092,15 +22042,14 @@
     },
     {
         "SkipId": 20393,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
+        "Explain": "研发",
         "FunctionalId": 401,
-        "StartTime": "2025/7/17 5:00",
-        "CloseTime": "2026/8/19 5:00",
+        "StartTime": "2026/9/29 10:00",
+        "CloseTime": "2026/11/3 23:59",
         "CustomParams": [
-            1,
-            35,
-            1499
+            5612
         ],
         "IsHideFunc": true
     },
@@ -22108,6 +22057,7 @@
         "SkipId": 20394,
         "Origin": 6,
         "UiName": "UiFubenPracticeStageListRoot",
+        "Explain": "【v4.8狂三】赛利卡补习班跳转（33期之后，新增跳转id）",
         "IsRecord": true,
         "FunctionalId": 10325,
         "CustomParams": [
@@ -22131,6 +22081,7 @@
         "SkipId": 20396,
         "Origin": 7,
         "UiName": "OnOpenGacha",
+        "Explain": "v4.8比安卡剧情跳转·自选复刻",
         "FunctionalId": 1308,
         "CustomParams": [
             50,
@@ -22175,6 +22126,7 @@
         "SkipId": 20400,
         "Origin": 7,
         "UiName": "SkipToSelfChoiceGacha",
+        "Explain": "v4.8跳转到当期Gacha自选卡池",
         "FunctionalId": 10489,
         "CustomParams": [
             5
@@ -22227,10 +22179,12 @@
     },
     {
         "SkipId": 20405,
-        "Origin": 6,
-        "UiName": "UiFavorabilityStory",
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
         "Explain": "前往阿德莱德好感度剧情",
         "IsRecord": true,
+        "ConditionId": 1050153,
+        "FunctionalId": 1402,
         "CustomParams": [
             1421003
         ],
@@ -22261,6 +22215,7 @@
         "Origin": 7,
         "UiName": "SkipToCharacterStory",
         "ConditionId": 1050153,
+        "FunctionalId": 1402,
         "CustomParams": [
             1421003
         ],
@@ -22268,13 +22223,147 @@
     },
     {
         "SkipId": 20409,
-        "Origin": 6,
-        "UiName": "UiWelfare",
+        "Origin": 7,
+        "UiName": "SkipToUiWelfare",
         "Explain": "完成“宇宙奇趣”活动任务",
         "FunctionalId": 1,
         "CustomParams": [
-            1,
-            99
+            9,
+            47,
+            430
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20410,
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
+        "Explain": "【v4.8阿德莱德】前往主题卡池",
+        "FunctionalId": 401,
+        "StartTime": "2026/9/24 5:00",
+        "CloseTime": "2026/11/5 5:00",
+        "CustomParams": [
+            1516
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20411,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "【v4.8阿德莱德】前往涂装补给包",
+        "FunctionalId": 3,
+        "StartTime": "2026/9/24 5:00",
+        "CloseTime": "2026/11/5 5:00",
+        "CustomParams": [
+            2,
+            0,
+            5
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20412,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeStageListRoot",
+        "Explain": "阿德莱德赛利卡补习班跳转（33期之后，新增跳转id）",
+        "IsRecord": true,
+        "FunctionalId": 10325,
+        "CustomParams": [
+            52
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20413,
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
+        "Explain": "研发",
+        "FunctionalId": 401,
+        "StartTime": "2026/9/29 10:00",
+        "CloseTime": "2026/11/3 23:59",
+        "CustomParams": [
+            7068
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20414,
+        "Origin": 7,
+        "UiName": "OpenLotto",
+        "Explain": "启程卡池4.9跳转",
+        "CustomParams": [
+            23
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20415,
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
+        "Explain": "前往莱亚好感度剧情",
+        "IsRecord": true,
+        "ConditionId": 1050153,
+        "FunctionalId": 1402,
+        "CustomParams": [
+            1421003
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20416,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeStageListRoot",
+        "Explain": "莱亚赛利卡补习班跳转（33期之后，新增跳转id）",
+        "IsRecord": true,
+        "FunctionalId": 10325,
+        "CustomParams": [
+            53
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20417,
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
+        "Explain": "【v4.9莱亚】前往主题卡池",
+        "FunctionalId": 401,
+        "StartTime": "2026/8/19 5:00",
+        "CloseTime": "2026/11/5 5:00",
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20418,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "【v4.9莱亚】前往涂装补给包",
+        "FunctionalId": 3,
+        "StartTime": "2026/8/19 5:00",
+        "CloseTime": "2026/11/5 5:00",
+        "CustomParams": [
+            2,
+            0,
+            5
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20419,
+        "Origin": 7,
+        "UiName": "SkipToMainLine2",
+        "ConditionId": 1050153,
+        "CustomParams": [
+            1044
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 20420,
+        "Origin": 7,
+        "UiName": "SkipToCharacterV2P6",
+        "FunctionalId": 101,
+        "CustomParams": [
+            1431003
         ],
         "IsHideFunc": true
     },
@@ -25331,6 +25420,7 @@
         "Origin": 7,
         "UiName": "SkipTRPGMain",
         "Explain": "新主线跑团-终焉福音",
+        "ConditionId": 1050153,
         "FunctionalId": 1304,
         "IsHideFunc": true
     },
@@ -26039,7 +26129,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26073,16 +26163,12 @@
     },
     {
         "SkipId": 80003,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "年禧密约",
         "FunctionalId": 401,
         "StartTime": "2021/2/4 10:00",
         "CloseTime": "2021/2/25 10:00",
-        "CustomParams": [
-            2,
-            1
-        ],
         "IsHideFunc": true
     },
     {
@@ -26107,7 +26193,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26122,7 +26208,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26152,7 +26238,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26182,7 +26268,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26204,7 +26290,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26234,7 +26320,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26279,7 +26365,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26309,7 +26395,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26324,7 +26410,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26349,7 +26435,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26379,22 +26465,18 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
     {
         "SkipId": 80026,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
+        "Origin": 7,
+        "UiName": "SkipToNewDrawMain",
         "Explain": "苍蓝无尽夏",
         "FunctionalId": 401,
         "StartTime": "2021/7/15 10:00",
         "CloseTime": "2021/8/12 10:00",
-        "CustomParams": [
-            2,
-            2
-        ],
         "IsHideFunc": true
     },
     {
@@ -26431,7 +26513,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26471,7 +26553,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26561,7 +26643,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26605,7 +26687,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26635,7 +26717,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26650,7 +26732,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26689,7 +26771,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26714,7 +26796,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26754,7 +26836,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26784,7 +26866,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26834,7 +26916,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26900,7 +26982,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26940,7 +27022,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26955,7 +27037,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -26995,7 +27077,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27010,7 +27092,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27025,7 +27107,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27065,7 +27147,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27080,7 +27162,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27105,7 +27187,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27145,7 +27227,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27186,7 +27268,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27220,7 +27302,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27235,7 +27317,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27250,7 +27332,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27280,7 +27362,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27305,7 +27387,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27320,7 +27402,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27345,7 +27427,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27360,7 +27442,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27545,7 +27627,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27560,7 +27642,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27575,7 +27657,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27612,7 +27694,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27627,7 +27709,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27642,7 +27724,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27682,7 +27764,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27697,7 +27779,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27712,7 +27794,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27727,7 +27809,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27742,7 +27824,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27780,7 +27862,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27820,7 +27902,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27845,7 +27927,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27888,7 +27970,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27933,7 +28015,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -27963,7 +28045,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28000,7 +28082,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28030,7 +28112,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28097,7 +28179,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28127,7 +28209,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28165,7 +28247,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28180,7 +28262,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28210,7 +28292,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28240,7 +28322,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28270,7 +28352,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28285,7 +28367,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28323,7 +28405,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28338,7 +28420,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28368,7 +28450,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28434,7 +28516,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28462,7 +28544,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28492,7 +28574,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28507,7 +28589,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28532,7 +28614,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28572,7 +28654,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28602,7 +28684,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28627,7 +28709,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28655,7 +28737,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28685,7 +28767,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28700,7 +28782,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28776,7 +28858,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28829,7 +28911,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28844,7 +28926,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28894,7 +28976,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28909,7 +28991,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28939,7 +29021,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -28954,7 +29036,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29007,7 +29089,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29037,7 +29119,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29062,7 +29144,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29077,7 +29159,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29117,7 +29199,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29142,7 +29224,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29172,7 +29254,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29197,7 +29279,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29227,7 +29309,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29242,7 +29324,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29257,7 +29339,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29272,7 +29354,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29287,7 +29369,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29321,7 +29403,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29336,7 +29418,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29389,7 +29471,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29404,7 +29486,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29444,7 +29526,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29459,7 +29541,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29484,7 +29566,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29514,7 +29596,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29529,7 +29611,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29544,7 +29626,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29559,7 +29641,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29589,7 +29671,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29629,7 +29711,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29669,7 +29751,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29723,7 +29805,7 @@
         "CustomParams": [
             1,
             0,
-            0
+            5
         ],
         "IsHideFunc": true
     },
@@ -29738,7 +29820,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29778,7 +29860,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29818,7 +29900,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29861,7 +29943,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29886,7 +29968,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29916,7 +29998,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29931,7 +30013,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29946,7 +30028,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -29961,7 +30043,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30001,7 +30083,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30027,7 +30109,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30057,7 +30139,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30101,7 +30183,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30116,7 +30198,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30146,7 +30228,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30161,7 +30243,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30176,7 +30258,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30219,7 +30301,7 @@
         "CustomParams": [
             2,
             0,
-            9
+            1
         ]
     },
     {
@@ -30233,7 +30315,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30263,7 +30345,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30293,7 +30375,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30308,7 +30390,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30323,7 +30405,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30353,7 +30435,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30398,7 +30480,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30413,7 +30495,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30428,7 +30510,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30443,7 +30525,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30458,7 +30540,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30488,7 +30570,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30499,11 +30581,11 @@
         "Explain": "购买涂装补给包",
         "FunctionalId": 5,
         "StartTime": "2026/9/24 5:00",
-        "CloseTime": "2026/11/4 5:00",
+        "CloseTime": "2026/11/5 5:00",
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -30514,7 +30596,7 @@
         "ParamId": 3,
         "Explain": "涂装商店",
         "FunctionalId": 1001,
-        "StartTime": "2026/11/4 5:00",
+        "StartTime": "2026/11/5 5:00",
         "CustomParams": [
             1,
             0,
@@ -30529,11 +30611,86 @@
         "Explain": "购买涂装补给包",
         "FunctionalId": 5,
         "StartTime": "2026/9/29 10:00",
-        "CloseTime": "2026/11/4 5:00",
+        "CloseTime": "2026/11/3 23:59",
         "CustomParams": [
             2,
             0,
-            4
+            5
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80330,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "购买涂装补给包",
+        "FunctionalId": 5,
+        "StartTime": "2026/11/5 5:00",
+        "CloseTime": "2026/12/17 5:00",
+        "CustomParams": [
+            2,
+            0,
+            5
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80331,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 3,
+        "Explain": "涂装商店",
+        "FunctionalId": 1001,
+        "StartTime": "2026/12/17 5:00",
+        "CustomParams": [
+            1,
+            0,
+            504
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80332,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "购买涂装补给包",
+        "FunctionalId": 5,
+        "StartTime": "2026/11/5 5:00",
+        "CloseTime": "2026/12/17 5:00",
+        "CustomParams": [
+            2,
+            0,
+            5
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80333,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 3,
+        "Explain": "涂装商店",
+        "FunctionalId": 1001,
+        "StartTime": "2026/12/17 5:00",
+        "CustomParams": [
+            1,
+            0,
+            502
+        ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 80334,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "Explain": "购买涂装补给包",
+        "FunctionalId": 5,
+        "StartTime": "2026/11/5 5:00",
+        "CloseTime": "2026/12/17 5:00",
+        "CustomParams": [
+            2,
+            0,
+            5
         ],
         "IsHideFunc": true
     },
@@ -31718,6 +31875,12 @@
         "Explain": "音乐会报名"
     },
     {
+        "SkipId": 189074,
+        "Origin": 9,
+        "ParamId": 19,
+        "Explain": "h5拉人回流"
+    },
+    {
         "SkipId": 89074,
         "Origin": 7,
         "UiName": "SkipToTemple2",
@@ -32105,6 +32268,13 @@
         "IsHideFunc": true
     },
     {
+        "SkipId": 89115,
+        "Origin": 7,
+        "UiName": "SkipToRegression4",
+        "Explain": "回归活动4期",
+        "IsHideFunc": true
+    },
+    {
         "SkipId": 90000,
         "Origin": 6,
         "UiName": "UiShop",
@@ -32371,7 +32541,7 @@
         "Explain": "吃豆人玩法",
         "IsRecord": true,
         "FunctionalId": 10490,
-        "TimeId": 43701,
+        "TimeId": 51101,
         "IsHideFunc": true
     },
     {
@@ -32630,8 +32800,6 @@
         "Explain": "前往生命树研发",
         "FunctionalId": 401,
         "CustomParams": [
-            1,
-            11,
             1438
         ],
         "IsHideFunc": true
@@ -32791,8 +32959,6 @@
         "Explain": "前往生命树白毛研发",
         "FunctionalId": 401,
         "CustomParams": [
-            1,
-            11,
             1488
         ],
         "IsHideFunc": true
@@ -32804,8 +32970,6 @@
         "Explain": "前往生命树丽芙研发",
         "FunctionalId": 401,
         "CustomParams": [
-            1,
-            11,
             1498
         ],
         "IsHideFunc": true
@@ -32887,7 +33051,7 @@
         "Explain": "前往活动【回路演算】",
         "IsRecord": true,
         "FunctionalId": 10509,
-        "TimeId": 50200,
+        "TimeId": 50201,
         "IsHideFunc": true
     },
     {
@@ -32899,7 +33063,7 @@
         "CustomParams": [
             2,
             0,
-            7
+            8
         ],
         "IsHideFunc": true
     },
@@ -32912,7 +33076,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ],
         "IsHideFunc": true
     },
@@ -32922,6 +33086,7 @@
         "UiName": "UiTransfiniteTowerMain",
         "Explain": "前往活动【超频演算】",
         "IsRecord": true,
+        "ConditionId": 1050153,
         "FunctionalId": 10510,
         "TimeId": 50100,
         "IsHideFunc": true
@@ -32931,6 +33096,7 @@
         "Origin": 7,
         "UiName": "OpenLotto",
         "Explain": "前往活动【露娜卡池剧情】",
+        "ConditionId": 1050153,
         "FunctionalId": 10306,
         "CustomParams": [
             2001,
@@ -32943,6 +33109,7 @@
         "Origin": 7,
         "UiName": "OpenLotto",
         "Explain": "前往活动【薇拉卡池剧情】",
+        "ConditionId": 1050153,
         "FunctionalId": 10306,
         "CustomParams": [
             2002,
@@ -32955,6 +33122,7 @@
         "Origin": 7,
         "UiName": "OpenLotto",
         "Explain": "前往活动【卡列卡池剧情】",
+        "ConditionId": 1050153,
         "FunctionalId": 10306,
         "CustomParams": [
             2003,
@@ -32967,11 +33135,23 @@
         "Origin": 7,
         "UiName": "OpenLotto",
         "Explain": "前往活动【慈悲者卡池剧情】",
+        "ConditionId": 1050153,
         "FunctionalId": 10306,
         "CustomParams": [
             2004,
             2
         ],
+        "IsHideFunc": true
+    },
+    {
+        "SkipId": 90082,
+        "Origin": 7,
+        "UiName": "SkipToSkyTowerMain",
+        "Explain": "4.9通天塔",
+        "IsRecord": true,
+        "ConditionId": 774800,
+        "FunctionalId": 10514,
+        "TimeId": 51011,
         "IsHideFunc": true
     },
     {
@@ -33129,7 +33309,7 @@
         "CustomParams": [
             2,
             0,
-            9
+            1
         ]
     },
     {
@@ -33140,8 +33320,8 @@
         "Explain": "BP拍脸",
         "ConditionId": 775500,
         "CustomParams": [
-            1792962000,
-            1793566800
+            1796590800,
+            1797195600
         ]
     },
     {
@@ -33195,9 +33375,10 @@
         "SkipId": 1300648,
         "Origin": 7,
         "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.8洁塔薇",
         "ConditionId": 1050153,
         "CustomParams": [
-            1
+            127
         ]
     },
     {
@@ -33234,18 +33415,20 @@
         "SkipId": 1300652,
         "Origin": 7,
         "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.8阿德莱德试玩",
         "ConditionId": 1050153,
         "CustomParams": [
-            1
+            139
         ]
     },
     {
         "SkipId": 1300653,
         "Origin": 7,
         "UiName": "OpenUiPaintingExperiencePass",
+        "Explain": "涂装试玩-4.8涅缇娅试玩",
         "ConditionId": 1050153,
         "CustomParams": [
-            1
+            138
         ]
     }
 ]

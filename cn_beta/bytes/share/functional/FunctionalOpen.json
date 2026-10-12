@@ -352,6 +352,9 @@
         "Id": 603,
         "Name": "战队-成就",
         "Priority": 25,
+        "Condition": [
+            200000
+        ],
         "Type": 1,
         "FunctionType": 1
     },
@@ -585,7 +588,7 @@
         "Name": "信赖度",
         "Priority": 48,
         "Condition": [
-            773500
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -595,7 +598,7 @@
         "Name": "信赖度-档案",
         "Priority": 49,
         "Condition": [
-            773600
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -605,7 +608,7 @@
         "Name": "信赖度-剧情",
         "Priority": 50,
         "Condition": [
-            773700
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -615,7 +618,7 @@
         "Name": "信赖度-礼物",
         "Priority": 51,
         "Condition": [
-            773800
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -625,7 +628,7 @@
         "Name": "信赖度-偶遇",
         "Priority": 52,
         "Condition": [
-            773900
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -2644,7 +2647,7 @@
         "Name": "角色剧情",
         "Priority": 55,
         "Condition": [
-            770400
+            200000
         ],
         "Type": 1,
         "FunctionType": 1
@@ -2890,6 +2893,26 @@
         "Id": 10508,
         "Name": "Cd机",
         "Priority": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10514,
+        "Name": "通天塔",
+        "Priority": 1,
+        "Condition": [
+            774800
+        ],
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10515,
+        "Name": "一键养成意识共鸣解锁",
+        "Priority": 1360,
+        "Condition": [
+            10436071
+        ],
         "Type": 1,
         "FunctionType": 1
     }

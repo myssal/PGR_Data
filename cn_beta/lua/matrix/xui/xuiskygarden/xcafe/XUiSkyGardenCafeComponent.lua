@@ -37,11 +37,13 @@ function XUiSkyGardenCafeComponent:InitUi()
     self._PanelReview = XUiPanelSGHudContainer.New(self.PanelReview, self, self.GridFavorability)
     self._PanelExpression = XUiPanelSGHudContainer.New(self.PanelExpression, self, self.GridExpression)
     
-    self._Timer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnInitUiScheduleCb, self, 0)
+end
+
+function XUiSkyGardenCafeComponent:_OnInitUiScheduleCb()
         self._PanelCoffee:Update()
-        self._PanelReview:Update()
-        self._PanelExpression:Update()
-    end, 0)
+                self._PanelReview:Update()
+                self._PanelExpression:Update()
 end
 
 function XUiSkyGardenCafeComponent:InitCb()
@@ -51,11 +53,7 @@ function XUiSkyGardenCafeComponent:InitView()
 end
 
 function XUiSkyGardenCafeComponent:StopTimer()
-    if not self._Timer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._Timer)
-    self._Timer = nil
+    XScheduleManagerPro.UnSchedule(self._OnInitUiScheduleCb, self)
 end
 
 function XUiSkyGardenCafeComponent:RefreshHud(id, target, offset, type, value)

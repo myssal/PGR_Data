@@ -10,15 +10,15 @@ function XGDFTestEvent:CheckOnce()
 end
 
 function XGDFTestEvent:StartEntryBtnListener()
-    self.EntryBtnTimeId = XScheduleManager.ScheduleForever(
-        function()
-            self:CheckOnce()
-        end,5000
-    )
+    XScheduleManagerPro.ScheduleForever(self._OnCheckOnceScheduleCb, self, 5000)
 end
 
 function XGDFTestEvent:Dispose()
-    XScheduleManager.UnSchedule(self.EntryBtnTimeId)
+    XScheduleManagerPro.UnSchedule(self._OnCheckOnceScheduleCb, self)
+end
+
+function XGDFTestEvent:_OnCheckOnceScheduleCb()
+    self:CheckOnce()
 end
 
 return XGDFTestEvent

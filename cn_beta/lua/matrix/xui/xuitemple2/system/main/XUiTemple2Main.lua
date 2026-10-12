@@ -22,7 +22,6 @@ function XUiTemple2Main:OnAwake()
     self:RegisterClickEvent(self.BtnShop, self.OnClickShop)
     self.BtnStory:ShowReddot(false)
     self.BtnShop:ShowReddot(false)
-    self._Timer = false
 
     if self.GridChapter1 then
         self._Chapters[1] = XUiTemple2MainGrid.New(self.GridChapter1, self)
@@ -44,16 +43,15 @@ function XUiTemple2Main:OnEnable()
     self:Update()
     self:UpdateTime()
     self.BtnTask:ShowReddot(XRedPointConditionTemple2.CheckTask())
-    self._Timer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnEnableScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+function XUiTemple2Main:_OnEnableScheduleCb()
         self:UpdateTime()
-    end, XScheduleManager.SECOND)
 end
 
 function XUiTemple2Main:OnDisable()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
 end
 
 function XUiTemple2Main:Update()

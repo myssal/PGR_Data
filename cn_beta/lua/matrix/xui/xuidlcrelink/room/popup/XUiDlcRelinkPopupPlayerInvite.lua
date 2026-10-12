@@ -131,20 +131,11 @@ end
 
 function XUiDlcRelinkPopupPlayerInvite:RegisterInviteTimer()
     self:RemoveInviteTimer()
-    self.InvitedTimer = XScheduleManager.ScheduleForever(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            self:RemoveInviteTimer()
-            return
-        end
-        self:RefreshInvitedTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnRemoveInviteTimerScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiDlcRelinkPopupPlayerInvite:RemoveInviteTimer()
-    if self.InvitedTimer then
-        XScheduleManager.UnSchedule(self.InvitedTimer)
-        self.InvitedTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRemoveInviteTimerScheduleCb, self)
 end
 
 --endregion
@@ -156,6 +147,14 @@ end
 
 function XUiDlcRelinkPopupPlayerInvite:OnBtnCloseClick()
     self:Close()
+end
+
+function XUiDlcRelinkPopupPlayerInvite:_OnRemoveInviteTimerScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        self:RemoveInviteTimer()
+        return
+    end
+    self:RefreshInvitedTime()
 end
 
 return XUiDlcRelinkPopupPlayerInvite

@@ -85,9 +85,7 @@ end
 function XUiGridScoreTowerStrengthenChapter:TryPlayEnableAnim(delayTime)
     self:StopEnableAnimDelayTimer()
     self:SetCanvasGroupAlpha(0)
-    self._EnableAnimDelayTimer = XScheduleManager.ScheduleOnce(function()
-        self:PlayGridChapterEnable()
-    end, delayTime)
+    XScheduleManagerPro.ScheduleOnce(XUiGridScoreTowerStrengthenChapter.PlayGridChapterEnable, self, delayTime)
 end
 
 -- 播放动画
@@ -99,10 +97,7 @@ end
 
 -- 停止动画延迟计时器
 function XUiGridScoreTowerStrengthenChapter:StopEnableAnimDelayTimer()
-    if self._EnableAnimDelayTimer then
-        XScheduleManager.UnSchedule(self._EnableAnimDelayTimer)
-        self._EnableAnimDelayTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiGridScoreTowerStrengthenChapter.PlayGridChapterEnable, self)
 end
 
 -- 设置透明度

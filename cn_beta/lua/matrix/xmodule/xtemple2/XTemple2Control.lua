@@ -17,13 +17,15 @@ function XTemple2Control:OnRelease()
 end
 
 function XTemple2Control:AddAgencyEvent()
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        self:CheckTime()
-    end, 10 * XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnAddAgencyEventScheduleCb, self, 10 * XScheduleManagerPro.SECOND, 0)
+end
+
+function XTemple2Control:_OnAddAgencyEventScheduleCb()
+    self:CheckTime()
 end
 
 function XTemple2Control:RemoveAgencyEvent()
-    XScheduleManager.UnSchedule(self._Timer)
+    XScheduleManagerPro.UnSchedule(self._OnAddAgencyEventScheduleCb, self)
 end
 
 ---@return XTemple2EditorControl

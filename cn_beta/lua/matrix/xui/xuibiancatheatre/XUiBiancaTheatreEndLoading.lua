@@ -29,17 +29,19 @@ function XUiBiancaTheatreEndLoading:OnStart(adventureEnd)
     end
     self.Icon.gameObject:SetActiveEx(icon and true or false)
 
-    XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
-        self:RegisterClickEvent(self.BtnClick, self.OnBtnClick)
-    end, XScheduleManager.SECOND)
     XDataCenter.BiancaTheatreManager.CheckEndBgmPlay(adventureEnd)
+    XScheduleManagerPro.ScheduleOnce(XUiBiancaTheatreEndLoading._OnEnableClickScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiBiancaTheatreEndLoading:OnBtnClick()
     XLuaUiManager.PopThenOpen("UiBiancaTheatreInfiniteSettleWin", self.AdventureEnd)
+end
+
+function XUiBiancaTheatreEndLoading:_OnEnableClickScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
+    end
+    self:RegisterClickEvent(self.BtnClick, self.OnBtnClick)
 end
 
 return XUiBiancaTheatreEndLoading

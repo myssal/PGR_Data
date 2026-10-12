@@ -84,10 +84,7 @@ end
 --region 活动时间定时器
 
 function XDyeMergeGameControl:StopActivityTimer()
-    if self._ActivityTimerId then
-        XScheduleManager.UnSchedule(self._ActivityTimerId)
-        self._ActivityTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XDyeMergeGameControl.UpdateActivityTimer, self)
     self._TimeTickOutCallBack = nil
 end
 
@@ -96,11 +93,11 @@ function XDyeMergeGameControl:StartActivityTimer()
 
     self:UpdateActivityTimer()
 
-    self._ActivityTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateActivityTimer), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XDyeMergeGameControl.UpdateActivityTimer, self, XScheduleManagerPro.SECOND)
 end
 
 function XDyeMergeGameControl:GetIsActivityTimerStart()
-    return XTool.IsNumberValidEx(self._ActivityTimerId)
+    return XScheduleManagerPro.HasSchedule(XDyeMergeGameControl.UpdateActivityTimer, self)
 end
 
 function XDyeMergeGameControl:UpdateActivityTimer()

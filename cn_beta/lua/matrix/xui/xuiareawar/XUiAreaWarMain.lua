@@ -32,12 +32,7 @@ function XUiAreaWarMain:OnStart(skipBlockId)
     self.SkipBlockId = skipBlockId
     self:InitView()
     -- 等待开始动画播放完
-    XScheduleManager.ScheduleOnce(function()
-        if not CS.XAreaWarManager.Instance then
-            return
-        end
-        CS.XAreaWarManager.Instance.ForceUpdateCamera = false
-    end, XScheduleManager.SECOND * 2)
+    XScheduleManagerPro.ScheduleOnce(XUiAreaWarMain._OnStopForceUpdateCameraScheduleCb, self, XScheduleManagerPro.SECOND * 2)
     XEventManager.AddEventListener(XEventId.EVNET_AREA_WAR_QUEST_FINISH, self.OnQuestFinish, self)
     XEventManager.AddEventListener(XEventId.EVENT_AREA_WAR_QUEST_REFRESH, self.RefreshQuests, self)
 end
@@ -72,6 +67,9 @@ function XUiAreaWarMain:OnDisable()
 end
 
 function XUiAreaWarMain:OnDestroy()
+    XScheduleManagerPro.UnSchedule(XUiAreaWarMain._OnStopForceUpdateCameraScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(XUiAreaWarMain._OnShowBuffUnlockEffectScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(XUiAreaWarMain._OnFinishTrailScheduleCb, self)
     self:StopActivityDataTimer()
     self.BlockList3DPanel:OnDispose()
     self.DragMove:DelZoomBehaviour(self.ZoomHandler)
@@ -1178,20 +1176,14 @@ function XUiAreaWarMain:OnCheckActivity(isClose)
 end
 
 function XUiAreaWarMain:StartActivityDataTimer()
-    if self.ActivityDataTimer then
+    if XScheduleManagerPro.HasSchedule(XUiAreaWarMain._OnRequestActivityDataScheduleCb, self) then
         return
     end
-    self.ActivityDataTimer = XScheduleManager.ScheduleForever(function()
-        XDataCenter.AreaWarManager.AreaWarGetActivityDataRequest()
-    end, AUTO_REQ_ACTIVITY_DATA_INTERVAL)
+    XScheduleManagerPro.ScheduleForever(XUiAreaWarMain._OnRequestActivityDataScheduleCb, self, AUTO_REQ_ACTIVITY_DATA_INTERVAL)
 end
 
 function XUiAreaWarMain:StopActivityDataTimer()
-    if not XTool.IsNumberValid(self.ActivityDataTimer) then
-        return
-    end
-    XScheduleManager.UnSchedule(self.ActivityDataTimer)
-    self.ActivityDataTimer = nil
+    XScheduleManagerPro.UnSchedule(XUiAreaWarMain._OnRequestActivityDataScheduleCb, self)
 end
 
 --endregion------------------定时器 finish------------------
@@ -1411,37 +1403,40 @@ function XUiAreaWarMain:OnTrailArrived(cb)
     if cb then cb() end
     
     --策划想要界面打开时，特效才绽放
-    XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
+    XScheduleManagerPro.ScheduleOnce(XUiAreaWarMain._OnShowBuffUnlockEffectScheduleCb, self, 100)
+    XScheduleManagerPro.ScheduleOnce(XUiAreaWarMain._OnFinishTrailScheduleCb, self, 2100)
+end
 
-        if XTool.UObjIsNil(self.BtnBuff) then
-            return
-        end
-        self.BtnBuff:ShowTag(false)
-        self.BtnBuff:ShowTag(true)
-        
-        if XTool.UObjIsNil(self.Trail) then
-            return
-        end
-        self.Trail.gameObject:SetActiveEx(false)
-        self.Trail.transform.localPosition = Vector3.zero
-        self:UpdatePersonal()
-    end, 100)
-    
-    XScheduleManager.ScheduleOnce(function()
-        self.IsTrailRunning = false
-        
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
-        
-        if XTool.UObjIsNil(self.BtnBuff) then
-            return
-        end
-        self.BtnBuff:ShowTag(false)
-    end, 2100)
+function XUiAreaWarMain:_OnStopForceUpdateCameraScheduleCb()
+    if CS.XAreaWarManager.Instance then
+        CS.XAreaWarManager.Instance.ForceUpdateCamera = false
+    end
+end
+
+function XUiAreaWarMain:_OnRequestActivityDataScheduleCb()
+    XDataCenter.AreaWarManager.AreaWarGetActivityDataRequest()
+end
+
+function XUiAreaWarMain:_OnShowBuffUnlockEffectScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) or XTool.UObjIsNil(self.BtnBuff) then
+        return
+    end
+    self.BtnBuff:ShowTag(false)
+    self.BtnBuff:ShowTag(true)
+    if XTool.UObjIsNil(self.Trail) then
+        return
+    end
+    self.Trail.gameObject:SetActiveEx(false)
+    self.Trail.transform.localPosition = Vector3.zero
+    self:UpdatePersonal()
+end
+
+function XUiAreaWarMain:_OnFinishTrailScheduleCb()
+    self.IsTrailRunning = false
+    if XTool.UObjIsNil(self.GameObject) or XTool.UObjIsNil(self.BtnBuff) then
+        return
+    end
+    self.BtnBuff:ShowTag(false)
 end
 
 return XUiAreaWarMain

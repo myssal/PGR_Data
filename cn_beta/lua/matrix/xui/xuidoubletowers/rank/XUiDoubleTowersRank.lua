@@ -18,16 +18,11 @@ function XUiDoubleTowersRank:OnEnable()
     self:Refresh()
 
     self:RefreshCdTimer()
-    self.ActivityEndCDSchedule = XScheduleManager.ScheduleForever(function()
-        self:RefreshCdTimer()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnRefreshCdTimerScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiDoubleTowersRank:OnDisable()
-    if self.ActivityEndCDSchedule then
-        XScheduleManager.UnSchedule(self.ActivityEndCDSchedule)
-    end
-    self.ActivityEndCDSchedule = nil
+        XScheduleManagerPro.UnSchedule(self._OnRefreshCdTimerScheduleCb, self)
 end
 
 function XUiDoubleTowersRank:AutoAddListener()
@@ -44,10 +39,7 @@ end
 function XUiDoubleTowersRank:InitTimes()
     self:SetAutoCloseInfo(XDataCenter.DoubleTowersManager.GetActivityEndTime(), function(isClose)
         if isClose then
-            if self.ActivityEndCDSchedule then
-                XScheduleManager.UnSchedule(self.ActivityEndCDSchedule)
-            end
-            self.ActivityEndCDSchedule = nil
+                XScheduleManagerPro.UnSchedule(self._OnRefreshCdTimerScheduleCb, self)
             XDataCenter.DoubleTowersManager.HandleActivityEndTime()
             return
         end
@@ -98,3 +90,7 @@ end
 function XUiDoubleTowersRank:RefreshCdTimer()
     self.TxtCurTime.text = XDataCenter.DoubleTowersManager.GetRankCountDownTime()
 end 
+
+function XUiDoubleTowersRank:_OnRefreshCdTimerScheduleCb()
+    self:RefreshCdTimer()
+end

@@ -174,9 +174,7 @@ end
 function XUiExpeditionRecruit:SetRecruitRefreshTimer()
     self:StopTimer()
     self:SetRecruitRefreshTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:SetRecruitRefreshTime()
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnSetRecruitRefreshTimeScheduleCb, self, XScheduleManagerPro.SECOND, 0)
 end
 
 function XUiExpeditionRecruit:SetRecruitRefreshTime()
@@ -188,10 +186,7 @@ function XUiExpeditionRecruit:SetRecruitRefreshTime()
 end
 --停止计时器
 function XUiExpeditionRecruit:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnSetRecruitRefreshTimeScheduleCb, self)
 end
 
 function XUiExpeditionRecruit:OpenRoleDetailsPanel(eChara, type, gridIndex, onOpenBefore, onOpenAfter)
@@ -204,4 +199,8 @@ function XUiExpeditionRecruit:OpenRoleDetailsPanel(eChara, type, gridIndex, onOp
         onOpenBefore()
     end
     self:FindChildUiObj(UiExpeditionRoleDetails):RefreshData(eChara, type, gridIndex, onOpenAfter)
+end
+
+function XUiExpeditionRecruit:_OnSetRecruitRefreshTimeScheduleCb()
+    self:SetRecruitRefreshTime()
 end

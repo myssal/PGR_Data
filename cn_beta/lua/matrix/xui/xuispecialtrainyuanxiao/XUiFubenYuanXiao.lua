@@ -237,13 +237,11 @@ function XUiFubenYuanXiao:GetHelpDataFunc()
 end
 
 function XUiFubenYuanXiao:StartTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnUpdateRefreshTimeScheduleCb, self) then
         self:StopTimer()
     end
     self:UpdateRefreshTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateRefreshTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateRefreshTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiFubenYuanXiao:UpdateRefreshTime()
@@ -264,10 +262,11 @@ function XUiFubenYuanXiao:UpdateRefreshTime()
 end
 
 function XUiFubenYuanXiao:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateRefreshTimeScheduleCb, self)
+end
+
+function XUiFubenYuanXiao:_OnUpdateRefreshTimeScheduleCb()
+    self:UpdateRefreshTime()
 end
 
 return XUiFubenYuanXiao

@@ -7,17 +7,16 @@ function XUiPokerGuessing2ToastRound:OnAwake()
 end
 
 function XUiPokerGuessing2ToastRound:OnStart()
-    self._Timer = XScheduleManager.ScheduleOnce(function()
-        self._Timer = false
-        XLuaUiManager.SafeClose(self.Name)
-    end, 3 * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(self._OnStartScheduleCb, self, 3 * XScheduleManagerPro.SECOND)
     self:Update()
 end
 
+function XUiPokerGuessing2ToastRound:_OnStartScheduleCb()
+                XLuaUiManager.SafeClose(self.Name)
+end
+
 function XUiPokerGuessing2ToastRound:OnDestroy()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartScheduleCb, self)
 end
 
 function XUiPokerGuessing2ToastRound:Update()

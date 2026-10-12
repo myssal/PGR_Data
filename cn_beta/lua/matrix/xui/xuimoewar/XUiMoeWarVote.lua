@@ -486,12 +486,7 @@ function XUiMoeWarVote:OnSelectToggle(index)
         self.CurrGroup = btn.SubGroupIndex
     end
     if btn.SubGroupIndex ~= self.CurrGroup or self.IsFirstIn then
-        XScheduleManager.ScheduleOnce(function()
-            if XTool.UObjIsNil(self.PanelTitleBtnContent) then
-                return
-            end
-            self.PanelTitleBtnContent:DOAnchorPosY(-self.PanelTitleBtnContent.sizeDelta.y / 2, 0.1)
-        end, 200)
+        XScheduleManagerPro.ScheduleOnce(self._OnSelectToggleScheduleCb, self, 200)
         self.CurrGroup = btn.SubGroupIndex
     end
     local realIndex = self:ConvertSelectIndexToIndex(index)
@@ -514,6 +509,13 @@ function XUiMoeWarVote:OnSelectToggle(index)
         end
         self:UpdateResultIcon()
     end
+end
+
+function XUiMoeWarVote:_OnSelectToggleScheduleCb()
+    if XTool.UObjIsNil(self.PanelTitleBtnContent) then
+        return
+    end
+    self.PanelTitleBtnContent:DOAnchorPosY(-self.PanelTitleBtnContent.sizeDelta.y / 2, 0.1)
 end
 
 function XUiMoeWarVote:InitSceneRoot()

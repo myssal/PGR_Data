@@ -50,19 +50,23 @@ function XUiGridChooseReward:Refresh(rewardId)
         if self.IsFirstPlayFanpai then
             self.IsFirstPlayFanpai = false
             if XFubenInfestorExploreConfigs.IsPrecious(quality) then
-                XScheduleManager.ScheduleOnce(function()
-                    self.UiFanpai1:Play()
-                end, 0)
+                XScheduleManagerPro.ScheduleOnce(self._OnRefreshScheduleCb, self, 0)
             else
-                XScheduleManager.ScheduleOnce(function()
-                    self.UiFanpai2:Play()
-                end, 0)
+                XScheduleManagerPro.ScheduleOnce(self._OnRefreshScheduleCb2, self, 0)
             end
         end
         self.PanelLock.gameObject:SetActiveEx(false)
     else
         self.PanelLock.gameObject:SetActiveEx(true)
     end
+end
+
+function XUiGridChooseReward:_OnRefreshScheduleCb()
+        self.UiFanpai1:Play()
+end
+
+function XUiGridChooseReward:_OnRefreshScheduleCb2()
+        self.UiFanpai2:Play()
 end
 
 return XUiGridChooseReward

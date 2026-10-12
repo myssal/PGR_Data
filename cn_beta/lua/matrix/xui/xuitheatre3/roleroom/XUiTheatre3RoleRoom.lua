@@ -36,19 +36,13 @@ function XUiTheatre3RoleRoom:OnEnable()
     if self._GraphicRaycaster then
         self._GraphicRaycaster.enabled = false
     end
-    self._EnableTimer = XScheduleManager.ScheduleOnce(function()
-        if not XTool.UObjIsNil(self._GraphicRaycaster) then
-            self._GraphicRaycaster.enabled = true
-        end
-    end, 400)
+    XScheduleManagerPro.ScheduleOnce(self._OnEnableScheduleCb, self, 400)
     self:Update()
     self:AddEventListener()
 end
 
 function XUiTheatre3RoleRoom:OnDisable()
-    if self._EnableTimer then
-        XScheduleManager.UnSchedule(self._EnableTimer)
-    end
+        XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
     self._IsDirty = true
     self:RemoveEventListener()
 end
@@ -211,5 +205,11 @@ function XUiTheatre3RoleRoom:RemoveEventListener()
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE3_SAVE_TEAM, self.Update, self)
 end
 --endregion
+
+function XUiTheatre3RoleRoom:_OnEnableScheduleCb()
+    if not XTool.UObjIsNil(self._GraphicRaycaster) then
+        self._GraphicRaycaster.enabled = true
+    end
+end
 
 return XUiTheatre3RoleRoom

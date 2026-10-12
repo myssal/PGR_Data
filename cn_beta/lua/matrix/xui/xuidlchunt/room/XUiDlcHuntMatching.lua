@@ -2,7 +2,6 @@
 local XUiDlcHuntMatching = XLuaUiManager.Register(XLuaUi, "UiDlcHuntMatching")
 
 function XUiDlcHuntMatching:Ctor()
-    self._Timer = false
     self._StartTime = false
 end
 
@@ -44,16 +43,15 @@ end
 function XUiDlcHuntMatching:StartTimer()
     self:StopTimer()
     self:UpdateTime()
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiDlcHuntMatching._OnUpdateMatchingTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiDlcHuntMatching:StopTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(XUiDlcHuntMatching._OnUpdateMatchingTimeScheduleCb, self)
+end
+
+function XUiDlcHuntMatching:_OnUpdateMatchingTimeScheduleCb()
+    self:UpdateTime()
 end
 
 return XUiDlcHuntMatching

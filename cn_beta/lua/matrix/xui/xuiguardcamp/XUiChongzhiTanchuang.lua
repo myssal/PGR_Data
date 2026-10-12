@@ -206,16 +206,15 @@ end
 
 function XUiChongzhiTanchuang:StartUpdateTimer()
     self:StopUpdateTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartUpdateTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiChongzhiTanchuang:_OnStartUpdateTimerScheduleCb()
         self:UpdateTimer()
-    end, XScheduleManager.SECOND, 0)
 end
 
 function XUiChongzhiTanchuang:StopUpdateTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartUpdateTimerScheduleCb, self)
 end
 
 -- 更新倒计时

@@ -79,6 +79,7 @@ XUiBag.MaterialTypeToItemTypes = {
     },
     [XUiBag.MaterialType.Consumables] = {
         XItemConfigs.ItemType.Gift,
+        XItemConfigs.ItemType.NormalConsumableItem,
     },
     [XUiBag.MaterialType.Others] = {
         XItemConfigs.ItemType.ExchangeMoney,
@@ -160,6 +161,7 @@ function XUiBag:OnStart(record)
 end
 
 function XUiBag:OnEnable()
+    XMVCA.XTeamRecommend:CheckAllServerCharacterTargetProgressAndFinish()
     self.GridCount = 1
     self:Refresh(false)
     self.SelectGiftPanel:OnEnable()
@@ -168,6 +170,7 @@ function XUiBag:OnEnable()
 end
 
 function XUiBag:OnDestroy()
+    XMVCA.XTeamRecommend:CheckAllServerCharacterTargetProgressAndFinish()
     XDataCenter.ItemManager.SetPageRecordCache(self.PageRecord)
     MaterialTypeCache = self.MaterailTypeRecord
 end
@@ -335,9 +338,7 @@ function XUiBag:OnDynamicTableEvent(event, index, grid)
             self.GridIndex = self.GridIndex + 1
         end, GridTimeAnimation, self.GridCount, 0)
 
-        XScheduleManager.ScheduleOnce(function()
-            XLuaUiManager.SetMask(false)
-        end, XScheduleManager.SECOND * 0.8)
+        XScheduleManagerPro.ScheduleOnce(XUiBag._OnGridAnimationFinishScheduleCb, self, XScheduleManagerPro.SECOND * 0.8)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RECYCLE then
         grid:Recycle()
     end
@@ -874,4 +875,8 @@ end
 
 function XUiBag:OnCheckBtnCollectRed(count)
     self.BtnCollection:ShowReddot(count >= 0)
+end
+
+function XUiBag:_OnGridAnimationFinishScheduleCb()
+    XLuaUiManager.SetMask(false)
 end

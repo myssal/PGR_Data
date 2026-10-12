@@ -25,10 +25,7 @@ end
 
 function XUiFubenNierEnter:OnEnable()
     if XDataCenter.NieRManager.GetIsActivityEnd() then
-        XScheduleManager.ScheduleOnce(function()
-            if not self.GameObject:Exist() then return end
-            XDataCenter.NieRManager.OnActivityEnd()
-        end, 1)
+        XScheduleManagerPro.ScheduleOnce(self._OnOnEnableScheduleCb, self, 1)
     end
     local unlockCount,count = XDataCenter.NieRManager.GetCharacterCount()
     local nierPOD = XDataCenter.NieRManager.GetNieRPODData()
@@ -155,4 +152,9 @@ function XUiFubenNierEnter:OnBtnShopClick()
     or XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopActive) then
         XLuaUiManager.Open("UiNierShop")
     end
+end
+
+function XUiFubenNierEnter:_OnOnEnableScheduleCb()
+    if not self.GameObject:Exist() then return end
+    XDataCenter.NieRManager.OnActivityEnd()
 end

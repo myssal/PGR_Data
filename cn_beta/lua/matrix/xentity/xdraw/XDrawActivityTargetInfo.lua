@@ -8,7 +8,12 @@ function XDrawActivityTargetInfo:Ctor()
     self._TargetId = 0
     self._StartTime = 0
     self._EndTime = 0
+    -- 可触发校准次数，0 表示不限制
     self._AdjustTimes = 0
+    -- 可切换目标次数，0 表示不限制
+    self._MaxSwitchDrawIdCount = 0
+    -- 当前已切换目标次数
+    self._SwitchDrawIdCount = 0
     self._DrawGroupId = 0
     self._TargetTemplateIds = {}
 end
@@ -22,6 +27,8 @@ function XDrawActivityTargetInfo:UpdateData(data)
     self._StartTime = data.StartTime
     self._EndTime = data.EndTime
     self._AdjustTimes = data.AdjustTimes
+    self._MaxSwitchDrawIdCount = data.MaxSwitchDrawIdCount
+    self._SwitchDrawIdCount = data.SwitchDrawIdCount
     self._DrawGroupId = data.DrawGroupId
     if not XTool.IsTableEmpty(data.TargetTemplateIds) then
         self._TargetTemplateIds = data.TargetTemplateIds
@@ -43,6 +50,10 @@ end
 
 function XDrawActivityTargetInfo:SetTargetTimes(times)
     self._TargetTimes = times
+end
+
+function XDrawActivityTargetInfo:SetSwitchDrawIdCount(count)
+    self._SwitchDrawIdCount = count
 end
 --endregion
 
@@ -75,6 +86,23 @@ end
 
 function XDrawActivityTargetInfo:GetTargetCount()
     return self._AdjustTimes - self._TargetTimes
+end
+
+function XDrawActivityTargetInfo:IsAdjustTimesUnlimited()
+    return self._AdjustTimes == 0
+end
+
+-- 剩余可切换目标次数，仅有限切换时使用
+function XDrawActivityTargetInfo:GetSwitchTargetCount()
+    return self._MaxSwitchDrawIdCount - self._SwitchDrawIdCount
+end
+
+function XDrawActivityTargetInfo:GetSwitchDrawIdCount()
+    return self._SwitchDrawIdCount
+end
+
+function XDrawActivityTargetInfo:IsSwitchTargetUnlimited()
+    return self._MaxSwitchDrawIdCount == 0
 end
 --endregion
 

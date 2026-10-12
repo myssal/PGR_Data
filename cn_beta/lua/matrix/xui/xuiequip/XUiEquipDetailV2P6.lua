@@ -6,6 +6,7 @@ local XDragAutoRotateType = typeof(CS.XDragAutoRotate)
 ---@class XUiEquipDetailV2P6 : XLuaUi
 ---@field _Control XEquipControl
 ---@field EffectUiOverrunV4P6 UnityEngine.GameObject
+---@field ShouldOpenHelpOnEnable boolean 是否在首次启用时自动打开当前页签的帮助说明
 local XUiEquipDetailV2P6 = XLuaUiManager.Register(XLuaUi, "UiEquipDetailV2P6")
 
 function XUiEquipDetailV2P6:OnAwake()
@@ -29,7 +30,8 @@ end
 
 --参数isPreview为true时是装备详情预览，传templateId进来
 --characterId只有需要判断武器共鸣特效时才传
-function XUiEquipDetailV2P6:OnStart(equipId, isPreview, characterId, forceShowBindCharacter, childUiIndex, openUiType, openResonanceSkillPos)
+---@param openHelpOnEnable boolean|nil 是否在首次启用时自动打开当前页签的帮助说明
+function XUiEquipDetailV2P6:OnStart(equipId, isPreview, characterId, forceShowBindCharacter, childUiIndex, openUiType, openResonanceSkillPos, openHelpOnEnable)
     self.IsPreview = isPreview
     self.EquipId = equipId
     self.CharacterId = characterId
@@ -38,8 +40,12 @@ function XUiEquipDetailV2P6:OnStart(equipId, isPreview, characterId, forceShowBi
     self.TemplateId = isPreview and self.EquipId or XMVCA.XEquip:GetEquipTemplateId(equipId)
     self.OpenUiType = openUiType
     self.OpenResonanceSkillPos = openResonanceSkillPos
+    self.ShouldOpenHelpOnEnable = openHelpOnEnable == true
     self.IsWeapon = XMVCA.XEquip:IsEquipWeapon(self.TemplateId)
     self.IsAwareness = XMVCA.XEquip:IsEquipAwareness(self.TemplateId)
+    if self.IsWeapon then
+        self:ApplyWeaponOverrunCameraConfig()
+    end
     if self.IsAwareness then
         self.SelectAwarenessIndex = XMVCA.XEquip:GetEquipSiteByEquipId(equipId)
     end
@@ -51,6 +57,10 @@ end
 
 function XUiEquipDetailV2P6:OnEnable()
     self:UpdateView()
+    if self.ShouldOpenHelpOnEnable then
+        self.ShouldOpenHelpOnEnable = false
+        self:OnBtnHelpClick()
+    end
 end
 
 function XUiEquipDetailV2P6:OnDestroy()
@@ -130,6 +140,10 @@ function XUiEquipDetailV2P6:OnBtnStrengthenMax()
 end
 
 function XUiEquipDetailV2P6:OnBtnHelpClick()
+    if XUiManager.IsHideFunc then
+        return
+    end
+
     local keyStr = self.IsWeapon and "EquipWeapon" or "EquipAwareness"
 
     local indexKey
@@ -740,6 +754,17 @@ function XUiEquipDetailV2P6:InitVirtualCamera(root)
     end
 end
 
+-- 应用当前武器的超限页默认相机配置；未配置时保留 Prefab 参数
+function XUiEquipDetailV2P6:ApplyWeaponOverrunCameraConfig()
+    local cameraConfig = self._Control:GetWeaponOverrunCameraConfig(self.TemplateId)
+    if not cameraConfig or XTool.UObjIsNil(self.VCOverrun) then
+        return
+    end
+
+    self.VCOverrun.localPosition = CS.UnityEngine.Vector3(cameraConfig.PositionX, cameraConfig.PositionY, cameraConfig.PositionZ)
+    self.VCOverrun.localEulerAngles = CS.UnityEngine.Vector3(cameraConfig.RotationX, cameraConfig.RotationY, cameraConfig.RotationZ)
+end
+
 function XUiEquipDetailV2P6:SetVirtualCameraActive(virtualCamera, isActive)
     if not XTool.UObjIsNil(virtualCamera) then
         virtualCamera.gameObject:SetActiveEx(isActive)
@@ -757,7 +782,8 @@ end
 -- 切换 UiEquipOverrunV4P6 内部相机；level 为空时使用超限页默认相机
 function XUiEquipDetailV2P6:SwitchVirtualCamera(level, overrunCfg)
     self:CloseAllVirtualCamera()
-    self:SetVirtualCameraActive(self.VCOverrun, level == nil)
+    local isDefaultCamera = level == nil
+    self:SetVirtualCameraActive(self.VCOverrun, isDefaultCamera)
     for i = 1, 7 do
         self:SetVirtualCameraActive(self.VCOverrunLvList[i], i == level)
     end

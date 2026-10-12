@@ -61,10 +61,7 @@ function XUiColorTableStageRoll:ShowPanel()
     self.Effect.gameObject:SetActiveEx(false)
     self.RImgRoll.transform.localEulerAngles = Vector3(self.RImgRoll.transform.localEulerAngles.x, self.RImgRoll.transform.localEulerAngles.y, self.RollAngle[self.RollAddData])
     self.PanelMessage.gameObject:SetActiveEx(true)
-    XScheduleManager.ScheduleOnce(function ()
-        if XTool.UObjIsNil(self.Transform) then return end
-        self:RefreshResultPanelEffect()
-    end, 250)
+    XScheduleManagerPro.ScheduleOnce(self._OnShowPanelScheduleCb, self, 250)
     self:PlayAnimationWithMask("PanelMessageEnable")
 
 end
@@ -78,17 +75,19 @@ function XUiColorTableStageRoll:RefreshResultPanelEffect()
         self.Effect01.gameObject:SetActiveEx(false)
         self.Effect01.gameObject:SetActiveEx(true)
         -- 因为特效用的是控件加载，不是脚本控制加载，所以等加载完下一帧再处理
-        XScheduleManager.ScheduleOnce(function ()
-            if XTool.UObjIsNil(self.GameObject) or self.Effect01.childCount <= 0 then return end
-            local effect = self.Effect01.transform:GetChild(0):GetChild(0)
-            if not effect then return end
-            local particleSystem = effect:GetChild(0):GetComponent("ParticleSystem")
-            local color = XUiHelper.Hexcolor2Color(XColorTableConfigs.GetColorStageRollPoint(self.ColorType, self.RollAddData))
-            particleSystem.main.startColor = CS.UnityEngine.ParticleSystem.MinMaxGradient(color)
-            effect.gameObject:SetActiveEx(false)
-            effect.gameObject:SetActiveEx(true)
-        end, 0)
+        XScheduleManagerPro.ScheduleOnce(self._OnRefreshResultPanelEffectScheduleCb, self, 0)
     end
+end
+
+function XUiColorTableStageRoll:_OnRefreshResultPanelEffectScheduleCb()
+        if XTool.UObjIsNil(self.GameObject) or self.Effect01.childCount <= 0 then return end
+                    local effect = self.Effect01.transform:GetChild(0):GetChild(0)
+                    if not effect then return end
+                    local particleSystem = effect:GetChild(0):GetComponent("ParticleSystem")
+                    local color = XUiHelper.Hexcolor2Color(XColorTableConfigs.GetColorStageRollPoint(self.ColorType, self.RollAddData))
+                    particleSystem.main.startColor = CS.UnityEngine.ParticleSystem.MinMaxGradient(color)
+                    effect.gameObject:SetActiveEx(false)
+                    effect.gameObject:SetActiveEx(true)
 end
 
 
@@ -155,3 +154,8 @@ function XUiColorTableStageRoll:_OnBtnDonShowRollAnimClick()
 end
 
 ----------------------------------------------------------------
+
+function XUiColorTableStageRoll:_OnShowPanelScheduleCb()
+        if XTool.UObjIsNil(self.Transform) then return end
+                self:RefreshResultPanelEffect()
+end

@@ -223,16 +223,11 @@ end
 --region 每帧驱动
 function XUiCommonDragGesture:_StartTick()
     self:_StopTick()
-    self._Tick = XScheduleManager.ScheduleForeverEx(function()
-        self:_OnTick()
-    end, 0)
+    XScheduleManagerPro.ScheduleForeverEx(XUiCommonDragGesture._OnGestureTickScheduleCb, self, 0)
 end
 
 function XUiCommonDragGesture:_StopTick()
-    if self._Tick then
-        XScheduleManager.UnSchedule(self._Tick)
-        self._Tick = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiCommonDragGesture._OnGestureTickScheduleCb, self)
 end
 
 function XUiCommonDragGesture:_OnTick()
@@ -394,6 +389,10 @@ function XUiCommonDragGesture:Destroy()
     self._OnPointerEnterCb = nil
     self._OnPointerExitCb = nil
     self._OnPointerUpExtra = nil
+end
+
+function XUiCommonDragGesture:_OnGestureTickScheduleCb()
+    self:_OnTick()
 end
 
 return XUiCommonDragGesture

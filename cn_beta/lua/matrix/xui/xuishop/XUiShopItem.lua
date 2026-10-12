@@ -518,4 +518,18 @@ function XUiShopItem:TipDialog(cancelCb, confirmCb, TextKey)
     XLuaUiManager.Open("UiDialog", CS.XTextManager.GetText("TipTitle"), CS.XTextManager.GetText(TextKey), XUiManager.DialogType.Normal, cancelCb, confirmCb)
 end
 
+return XUiShopItem()
+end
+
+function XUiShopItem:GetCountProxy(id)
+    if self.Proxy and self.Proxy.GetCount then
+        return self.Proxy.GetCount(id)
+    end
+    return XDataCenter.ItemManager.GetCount(id)
+end
+
+function XUiShopItem:TipDialog(cancelCb, confirmCb, TextKey)
+    XLuaUiManager.Open("UiDialog", CS.XTextManager.GetText("TipTitle"), CS.XTextManager.GetText(TextKey), XUiManager.DialogType.Normal, cancelCb, confirmCb)
+end
+
 return XUiShopItem

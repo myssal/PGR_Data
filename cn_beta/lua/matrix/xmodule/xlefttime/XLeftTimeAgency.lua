@@ -22,6 +22,10 @@ function XLeftTimeAgency:GetRegression3rd()
     return res
 end
 
+function XLeftTimeAgency:GetRegression4()
+    return XMVCA.XRegression4:GetLeftTime()
+end
+
 function XLeftTimeAgency:GetBirthday()
     return XMVCA.XBirthdayPlot:GetLeftTime()
 end

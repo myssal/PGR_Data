@@ -106,9 +106,7 @@ function XUiTaskActivity:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_FINISH_MULTI, self.UpdateDynamicTable, self)
     if self.TxtTime then
         self:UpdateTime()
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateTime()
-        end, XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleForever(XUiTaskActivity.UpdateTime, self, XScheduleManagerPro.SECOND)
     end
 end
 
@@ -121,10 +119,7 @@ end
 
 function XUiTaskActivity:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_FINISH_MULTI, self.UpdateDynamicTable, self)
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(XUiTaskActivity.UpdateTime, self)
 end
 
 function XUiTaskActivity:GetTaskDataList()

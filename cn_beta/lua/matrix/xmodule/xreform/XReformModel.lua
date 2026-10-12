@@ -27,6 +27,9 @@ function XReformModel:OnInit()
     ---@type XViewModelReform2ndList
     self._ViewModelList = nil
 
+    ---@type XReformBalanceViewModel
+    self._BalanceViewModel = nil
+
     ---@type XReform2ndMobGroup[][]
     self._MobGroupList = {}
 
@@ -42,6 +45,7 @@ end
 function XReformModel:ClearPrivate()
     self._ViewModel = nil
     self._ViewModelList = nil
+    self._BalanceViewModel = nil
 
     self._AffixCanSelect = {}
 end
@@ -55,6 +59,7 @@ function XReformModel:ResetAll()
     self._ChapterList = {}
     self._ViewModel = nil
     self._ViewModelList = nil
+    self._BalanceViewModel = nil
     self._MobGroupList = {}
     self._ServerData = false
     self._IsSuperior = false
@@ -76,6 +81,64 @@ function XReformModel:GetViewModelList()
     end
     return self._ViewModelList
 end
+
+-- 4.9 天平配平状态视图（Control 写、UI 读）；封存时随 Balance 功能删本方法与 _BalanceViewModel 字段
+---@return XReformBalanceViewModel
+function XReformModel:GetBalanceViewModel()
+    if not self._BalanceViewModel then
+        local XReformBalanceViewModel = require("XEntity/XReform2/ViewModel/XReformBalanceViewModel")
+        self._BalanceViewModel = XReformBalanceViewModel.New(self)
+    end
+    return self._BalanceViewModel
+end
+
+--region 4.9 天平（封存时连同 SubModules/Balance 一并删除）
+
+--- 进战数据，进关时由 Control 写入，PreFight 组装时读出
+---@param stageId number
+---@param wishMassIds number[]
+---@param costMassIds number[]
+function XReformModel:SetBalancePreFightData(stageId, wishMassIds, costMassIds)
+    self._BalancePreFightData = {
+        StageId = stageId,
+        WishMassIds = wishMassIds,
+        CostMassIds = costMassIds,
+    }
+end
+
+---@param stageId number
+---@return table|nil { WishMassIds = number[], CostMassIds = number[] }
+function XReformModel:GetBalancePreFightData(stageId)
+    local data = self._BalancePreFightData
+    if not data or data.StageId ~= stageId then
+        return nil
+    end
+    return { WishMassIds = data.WishMassIds, CostMassIds = data.CostMassIds }
+end
+
+--- 编队界面可上阵实体，随进战数据一并写入
+---@param entityIds number[]
+function XReformModel:SetBalanceEntityIds(entityIds)
+    self._BalanceEntityIds = entityIds
+end
+
+---@return number[]
+function XReformModel:GetBalanceEntityIds()
+    return self._BalanceEntityIds or table.empty
+end
+
+--- 编队界面进入时自动上阵的实体
+---@param entityIds number[]
+function XReformModel:SetBalanceAutoEntityIds(entityIds)
+    self._BalanceAutoEntityIds = entityIds
+end
+
+---@return number[]
+function XReformModel:GetBalanceAutoEntityIds()
+    return self._BalanceAutoEntityIds or table.empty
+end
+
+--endregion
 
 function XReformModel:IsOnUiStage(stageId)
     local view = self._ViewModelList
@@ -301,6 +364,41 @@ function XReformModel:GetChapterStarDesc(chapter)
     return string.format("%s/%s", starNumber, fullNumber)
 end
 
+-- 章节质量进度描述（天平玩法，"已完成质量/目标质量"，仿 GetChapterStarDesc 章级聚合写法）
+-- 已完成 = Σ 各关 BalanceMaxWishQuality（历史最高愿望质量，服务端下发）；目标 = Σ 各关 MinQuality（stage config 最低愿望质量门槛）
+-- 不截断（历史最高可超最低门槛，非星级上限语义）；与 GetChapterStarDesc 并列，前端按需选用，不影响旧的星级接口
+---@param chapter XReform2ndChapter
+---@return string
+function XReformModel:GetChapterQualityDesc(chapter)
+    local stageIds = self:GetChapterStageIdById(chapter:GetId())
+    local achievedQuality = 0
+    local targetQuality = 0
+    for index = 1, #stageIds do
+        local stageId = stageIds[index]
+        local stage = self:GetStage(stageId)
+        if stage then
+            achievedQuality = achievedQuality + (stage:GetBalanceMaxWishQuality() or 0)
+        end
+        local stageConfig = self:GetStageConfigById(stageId)
+        if stageConfig then
+            targetQuality = targetQuality + (stageConfig.MinQuality or 0)
+        end
+    end
+    return string.format("%s/%s", achievedQuality, targetQuality)
+end
+
+-- 单关质量进度描述（天平玩法，"已完成质量/目标质量"）
+-- 已完成 = 该关 BalanceMaxWishQuality；目标 = 该关 MinQuality
+---@param stageId number
+---@return string
+function XReformModel:GetStageQualityDesc(stageId)
+    local stage = self:GetStage(stageId)
+    local achievedQuality = stage and (stage:GetBalanceMaxWishQuality() or 0) or 0
+    local stageConfig = self:GetStageConfigById(stageId)
+    local targetQuality = stageConfig and (stageConfig.MinQuality or 0) or 0
+    return string.format("%s/%s", achievedQuality, targetQuality)
+end
+
 ---@param chapter XReform2ndChapter
 function XReformModel:IsChapterFinished(chapter)
     local starNumber = self:GetChapterStarNumber(chapter)
@@ -380,6 +478,8 @@ function XReformModel:InitServerDataStagePassed()
                     if stage then
                         local pass = stageData.Pass
                         stage:SetIsPassed(pass)
+                        -- 天平玩法：历史最高愿望质量（服务端下发）
+                        stage:SetBalanceMaxWishQuality(stageData.BalanceMaxWishQuality or 0)
                     end
                 end
             end
@@ -404,6 +504,9 @@ function XReformModel:SetData(data)
             if envId then
                 stage:SetSelectedEnvironmentById(envId)
             end
+
+            -- 天平玩法：历史最高愿望质量（服务端下发）
+            stage:SetBalanceMaxWishQuality(stageData.BalanceMaxWishQuality or 0)
 
             -- abandon: 每个stage有难度，现在默认为1
             local difficulty = stageData.CurDiffIndex + 1
@@ -752,6 +855,16 @@ function XReformModel:CheckUiEnvironmentAutoIsOpened(stageId)
         return false
     end
     return true
+end
+
+-- 天平配平：本关上次出战时的砝码选择
+---@return number[]|nil massId 数组（不含关卡固定怪）
+function XReformModel:GetBalanceSelectCache(stageId)
+    return self._SaveUtil:GetData("BalanceSelectStage" .. stageId)
+end
+
+function XReformModel:SetBalanceSelectCache(stageId, massIds)
+    self._SaveUtil:SaveData("BalanceSelectStage" .. stageId, massIds)
 end
 
 function XReformModel:GetUiCurrentStageId()

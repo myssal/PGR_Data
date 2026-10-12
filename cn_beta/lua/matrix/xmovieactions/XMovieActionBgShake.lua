@@ -31,9 +31,7 @@ function XMovieActionBgShake:OnRunning()
         self.UiRoot:SetShakeAction(self)
         self.StartTime = CSTime.realtimeSinceStartup
         self:RemoveShakeTimer()
-        self.ShakeTimer = XScheduleManager.ScheduleForever(function()
-            self:OnShakeUpdate()
-        end, 0)
+        XScheduleManagerPro.ScheduleForeverEx(XMovieActionBgShake._OnShakeScheduleCb, self, 0)
     end
 end
 
@@ -114,10 +112,7 @@ function XMovieActionBgShake:OnShakeEnd()
 end
 
 function XMovieActionBgShake:RemoveShakeTimer()
-    if self.ShakeTimer then
-        XScheduleManager.UnSchedule(self.ShakeTimer)
-        self.ShakeTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XMovieActionBgShake._OnShakeScheduleCb, self)
 end
 
 function XMovieActionBgShake:IsPassedActionRun(index)
@@ -139,6 +134,10 @@ end
 
 function XMovieActionBgShake:OnPassedActionRun()
     self:OnRunning()
+end
+
+function XMovieActionBgShake:_OnShakeScheduleCb()
+    self:OnShakeUpdate()
 end
 
 return XMovieActionBgShake

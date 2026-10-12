@@ -77,17 +77,7 @@ function XUiRadioSignRMSStrip:StartRandomMode()
     self._CurrentRandomRms = 0
     
     -- 启动随机值更新定时器
-    self._RandomScheduleId = XScheduleManager.ScheduleForever(function()
-        -- 生成随机 RMS 值（0 到 RMS_MAX）
-        -- 使用平滑的随机变化，避免跳跃太大
-        local targetRms = math.random() * RMS_MAX
-        -- 平滑过渡到目标值
-        local diff = targetRms - self._CurrentRandomRms
-        self._CurrentRandomRms = self._CurrentRandomRms + diff * 0.3 -- 每次更新30%的差值
-        
-        -- 更新显示
-        self:UpdateStrips(self._CurrentRandomRms)
-    end, RANDOM_UPDATE_INTERVAL, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateStripsScheduleCb, self, RANDOM_UPDATE_INTERVAL, 0)
 end
 
 ---停止随机模式（视频播放结束后恢复）
@@ -99,10 +89,7 @@ function XUiRadioSignRMSStrip:StopRandomMode()
     self._IsRandomMode = false
     
     -- 停止随机值更新定时器
-    if self._RandomScheduleId then
-        XScheduleManager.UnSchedule(self._RandomScheduleId)
-        self._RandomScheduleId = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateStripsScheduleCb, self)
     
     -- 重置显示为 0
     self._CurrentRandomRms = 0
@@ -110,6 +97,18 @@ function XUiRadioSignRMSStrip:StopRandomMode()
 end
 
 -- endregion
+
+function XUiRadioSignRMSStrip:_OnUpdateStripsScheduleCb()
+    -- 生成随机 RMS 值（0 到 RMS_MAX）
+    -- 使用平滑的随机变化，避免跳跃太大
+    local targetRms = math.random() * RMS_MAX
+    -- 平滑过渡到目标值
+    local diff = targetRms - self._CurrentRandomRms
+    self._CurrentRandomRms = self._CurrentRandomRms + diff * 0.3 -- 每次更新30%的差值
+
+    -- 更新显示
+    self:UpdateStrips(self._CurrentRandomRms)
+end
 
 return XUiRadioSignRMSStrip
 

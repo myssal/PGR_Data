@@ -429,7 +429,6 @@ function XUiDrawPanelLbItem:ActiveImgTimeBg(value)
     self.ImgTimeBg.gameObject:SetActiveEx(value)
 end
 
-local CurrentSchedule = nil
 -- 计时器相关
 function XUiDrawPanelLbItem:StartLBTimer()
     if self.IsStart then
@@ -437,7 +436,7 @@ function XUiDrawPanelLbItem:StartLBTimer()
     end
 
     self.IsStart = true
-    CurrentSchedule = XScheduleManager.ScheduleForever(function() self:UpdateLBTimer()end, 1000)
+    XScheduleManagerPro.ScheduleForever(self.UpdateLBTimer, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiDrawPanelLbItem:UpdateLBTimer()
@@ -469,10 +468,9 @@ function XUiDrawPanelLbItem:RegisterTimerFun(id, fun)
 end
 
 function XUiDrawPanelLbItem:DestroyTimer()
-    if CurrentSchedule then
+    if self.IsStart then
         self.IsStart = false
-        XScheduleManager.UnSchedule(CurrentSchedule)
-        CurrentSchedule = nil
+        XScheduleManagerPro.UnSchedule(self.UpdateLBTimer, self)
     end
 end
 --endregion

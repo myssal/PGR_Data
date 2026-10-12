@@ -49,12 +49,12 @@ function XUiBlackRockChessToastRound:OnStart()
     end
 
     local time = tonumber(self._Control:GetClientConfig("ToastRoundShowTime"))
-    local timerId = XScheduleManager.ScheduleOnce(handler(self, self.Close), time)
-    self:_AddTimerId(timerId)
+    XScheduleManagerPro.ScheduleOnce(self.Close, self, time)
 end
 
 function XUiBlackRockChessToastRound:OnDestroy()
     self:StopAllTweener()
+    XScheduleManagerPro.UnSchedule(self.Close, self)
 end
 
 return XUiBlackRockChessToastRound

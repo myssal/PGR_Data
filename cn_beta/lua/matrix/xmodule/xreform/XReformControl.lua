@@ -4,6 +4,10 @@ local XReformControl = XClass(XControl, "XReformControl")
 function XReformControl:OnInit()
     --初始化内部变量
     self._Model:InitWithServerData()
+
+    -- 4.9 天平质点子 Control（一次性封存功能，config 在其 config 分部 XReformBalanceConfigControl.lua）
+    -- 封存时：删 SubModules/Balance/ 夹 + 去本行 AddSubControl
+    self.BalanceControl = self:AddSubControl(require("XModule/XReform/SubModules/Balance/XReformBalanceControl"))
 end
 
 function XReformControl:AddAgencyEvent()
@@ -20,6 +24,15 @@ end
 function XReformControl:OnRelease()
 end
 
+---region 获取子Control
+
+---@return XReformBalanceControl
+function XReformControl:GetBalanceControl()
+    return self.BalanceControl
+end
+
+---endregion
+
 function XReformControl:UpdateServerData()
     self._Model:InitWithServerData()
 end
@@ -34,6 +47,24 @@ function XReformControl:GetViewModelList()
     return self._Model:GetViewModelList()
 end
 
+-- 4.9 天平界面用；封存时随 Balance 功能删
+---@param stage XReform2ndStage
+---@return string
+function XReformControl:GetStageEnvironmentName(stage)
+    local environment = stage:GetSelectedEnvironment(self._Model)
+    if not environment then
+        return ""
+    end
+    return environment:GetName(self._Model)
+end
+
+-- 4.9 天平进战：走通用编队界面 + 天平专属 Proxy（封存时删）
+---@param stageId number
+function XReformControl:OpenBattleRoleRoom(stageId)
+    local team = XDataCenter.Reform2ndManager.GetTeam(stageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, team, require("XUi/XUiReform2nd/Balance/XUiReformBalanceBattleRoleRoom"))
+end
+
 function XReformControl:GetActivityTime()
     return self._Model:GetActivityTime()
 end
@@ -42,16 +73,33 @@ function XReformControl:GetActivityEndTime()
     return self._Model:GetActivityEndTime()
 end
 
-function XReformControl:GetActivityTime()
-    return self._Model:GetActivityTime()
-end
-
 function XReformControl:GetHelpKey()
     return self._Model:GetHelpKey()
 end
 
 function XReformControl:GetChapterStarDesc(chapter)
     return self._Model:GetChapterStarDesc(chapter)
+end
+
+-- 天平玩法：章节质量进度（"已完成/目标"，前端按需选用，不影响 GetChapterStarDesc）
+function XReformControl:GetChapterQualityDesc(chapter)
+    return self._Model:GetChapterQualityDesc(chapter)
+end
+
+-- 天平玩法：单关质量进度（"已完成/目标"）
+function XReformControl:GetStageQualityDesc(stageId)
+    return self._Model:GetStageQualityDesc(stageId)
+end
+
+-- 主页章节列表用：按难度取该关质量进度（"已完成/目标"）
+---@param chapter XReform2ndChapter
+---@param isHardMode boolean
+function XReformControl:GetChapterQualityDescByDifficulty(chapter, isHardMode)
+    local stage = chapter:GetStageByDifficulty(self._Model, isHardMode)
+    if not stage then
+        return ""
+    end
+    return self._Model:GetStageQualityDesc(stage:GetId())
 end
 
 function XReformControl:IsChapterFinished(chapter)
@@ -173,10 +221,12 @@ function XReformControl:SetUiEnvironmentAutoOpened()
     end
 end
 
-function XReformControl:OpenUiEnvironment()
+--- 打开环境情报页
+---@param stage XReform2ndStage|nil
+function XReformControl:OpenUiEnvironment(stage)
     local XReformEnvironmentData = require("XEntity/XReform/Environment/XReformEnvironmentData")
     local viewModel = self:GetViewModelList()
-    viewModel:UpdateEnvironment()
+    viewModel:UpdateEnvironment(stage)
     local uiData = viewModel:GetUiDataEnvironment()
     local data = XReformEnvironmentData.New(uiData.List)
     XLuaUiManager.Open("UiTransfiniteEnvironmentDetail", data)

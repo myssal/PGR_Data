@@ -23,14 +23,7 @@ end
 function XUiPanelLineChapter:OnShow(delay)
     self.GameObject:SetActiveEx(false)
     self:Refresh()
-    self.AnimTimer = XScheduleManager.ScheduleOnce(function()
-        self.GameObject:SetActiveEx(true)
-        --self.AnimEnable:PlayTimelineAnimation()
-        self.LineEnable:PlayTimelineAnimation()
-        for _, v in ipairs(self.ActStages) do
-            v.IconEnable:PlayTimelineAnimation()
-        end
-    end, delay or 1000)
+    XScheduleManagerPro.ScheduleOnce(self._OnShowScheduleCb, self, delay or 1000)
     self:UpdateChapterStars()
     if self.PaneStageList and self.NeedReset then
         self.PaneStageList.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Elastic
@@ -46,10 +39,7 @@ function XUiPanelLineChapter:OnHide()
     for _, v in ipairs(self.ActStages) do
         v.IconDisable:PlayTimelineAnimation()
     end
-    if self.AnimTimer then
-        XScheduleManager.UnSchedule(self.AnimTimer)
-        self.AnimTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnShowScheduleCb, self)
 end
 
 -- 更新刷新
@@ -322,4 +312,12 @@ function XUiPanelLineChapter:InitTreasureGrade()
     end
 end
 
+function XUiPanelLineChapter:_OnShowScheduleCb()
+    self.GameObject:SetActiveEx(true)
+    --self.AnimEnable:PlayTimelineAnimation()
+    self.LineEnable:PlayTimelineAnimation()
+    for _, v in ipairs(self.ActStages) do
+        v.IconEnable:PlayTimelineAnimation()
+    end
+end
 return XUiPanelLineChapter

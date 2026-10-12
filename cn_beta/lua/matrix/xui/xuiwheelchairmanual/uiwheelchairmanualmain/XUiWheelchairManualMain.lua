@@ -201,7 +201,7 @@ function XUiWheelchairManualMain:StartTimeDownTimer()
             self.PanelTime.gameObject:SetActiveEx(true)
         end
         self:UpdateLeftTimeShow()
-        self._LeftTimeDownTimeId = XScheduleManager.ScheduleForever(handler(self, self.UpdateLeftTimeShow), XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleForever(XUiWheelchairManualMain._OnUpdateLeftTimeScheduleCb, self, XScheduleManagerPro.SECOND)
     else
         if self.TxtTime then
             self.TxtTime.text = ''
@@ -214,10 +214,7 @@ function XUiWheelchairManualMain:StartTimeDownTimer()
 end
 
 function XUiWheelchairManualMain:StopTimeDownTimer()
-    if self._LeftTimeDownTimeId then
-        XScheduleManager.UnSchedule(self._LeftTimeDownTimeId)
-        self._LeftTimeDownTimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiWheelchairManualMain._OnUpdateLeftTimeScheduleCb, self)
 end
 
 function XUiWheelchairManualMain:UpdateLeftTimeShow()
@@ -227,5 +224,9 @@ function XUiWheelchairManualMain:UpdateLeftTimeShow()
     end
 end
 --endregion
+
+function XUiWheelchairManualMain:_OnUpdateLeftTimeScheduleCb()
+    self:UpdateLeftTimeShow()
+end
 
 return XUiWheelchairManualMain

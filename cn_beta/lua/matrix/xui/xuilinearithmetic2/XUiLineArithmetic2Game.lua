@@ -18,8 +18,8 @@ function XUiLineArithmetic2Game:Ctor()
 
     self._UiLines = {}
 
-    self._TimerGame = false
 
+    self._TimerGame = false
     ---@type XUiLineArithmetic2GameEventGrid[]
     self._GridDesc = {}
 
@@ -77,10 +77,8 @@ end
 
 function XUiLineArithmetic2Game:OnEnable()
     self:Update()
-    if not self._TimerGame then
-        self._TimerGame = XScheduleManager.ScheduleForever(function()
-            self:UpdateGame()
-        end, 0, 0)
+    if not XScheduleManagerPro.HasSchedule(self._OnUpdateGameScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnUpdateGameScheduleCb, self, 0, 0)
     end
 
     XEventManager.AddEventListener(XEventId.EVENT_LINE_ARITHMETIC_UPDATE_LINE, self.UpdateLine, self)
@@ -90,10 +88,7 @@ function XUiLineArithmetic2Game:OnEnable()
 end
 
 function XUiLineArithmetic2Game:OnDisable()
-    if self._TimerGame then
-        XScheduleManager.UnSchedule(self._TimerGame)
-        self._TimerGame = false
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateGameScheduleCb, self)
 
     XEventManager.RemoveEventListener(XEventId.EVENT_LINE_ARITHMETIC_UPDATE_LINE, self.UpdateLine, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_LINE_ARITHMETIC_UPDATE_GAME, self.UpdateFromEvent, self)
@@ -529,6 +524,10 @@ function XUiLineArithmetic2Game:PlaySound(name)
     if self.AudioPlayer then
         self.AudioPlayer:PlayByKeyName(name)
     end
+end
+
+function XUiLineArithmetic2Game:_OnUpdateGameScheduleCb()
+    self:UpdateGame()
 end
 
 return XUiLineArithmetic2Game

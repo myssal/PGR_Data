@@ -32,15 +32,18 @@ end
 
 function XUiSameColorGameSettlement:OnBtnRePlayClick()
     self:Close()
-    XScheduleManager.ScheduleOnce(function()
-            if self.RePlayCb then self.RePlayCb() end
-        end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnOnBtnRePlayClickScheduleCb, self, 1)
     
 end
 
 function XUiSameColorGameSettlement:OnBtnBackClick()
     self:Close()
-    XScheduleManager.ScheduleOnce(function()
-            if self.BackCb then self.BackCb() end
-        end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnOnBtnBackClickScheduleCb, self, 1)
+end
+
+function XUiSameColorGameSettlement:_OnOnBtnBackClickScheduleCb()
+    if self.BackCb then self.BackCb() end
+end
+function XUiSameColorGameSettlement:_OnOnBtnRePlayClickScheduleCb()
+    if self.RePlayCb then self.RePlayCb() end
 end

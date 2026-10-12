@@ -14,7 +14,6 @@ function XUiLuckyTenant2MainGridStage:InitComponents()
     if self.BtnEndGame then
         XUiHelper.RegisterClickEvent(self, self.BtnEndGame, self.OnClickEndGame, nil, true)
     end
-    self._Timer = false
 
     self.TxtScore2 = self.TxtScore2 or XUiHelper.TryGetComponent(self.Transform, "PanelPress/Text/TxtScore", "Text")
 end
@@ -26,10 +25,7 @@ function XUiLuckyTenant2MainGridStage:OnDisable()
 end
 
 function XUiLuckyTenant2MainGridStage:OnDestroy()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnUpdateRemainTimeScheduleCb, self)
 end
 
 function XUiLuckyTenant2MainGridStage:UpdateRemainTime()
@@ -56,10 +52,8 @@ function XUiLuckyTenant2MainGridStage:UpdateRemainTime()
             if self.TxtTips then
                 self.TxtTips.text = XUiHelper.GetText("LuckyTenantUnlockAfterTime", timeStr)
             end
-            if not self._Timer then
-                self._Timer = XScheduleManager.ScheduleForever(function()
-                    self:UpdateRemainTime()
-                end, 1000)
+            if not XScheduleManagerPro.HasSchedule(self._OnUpdateRemainTimeScheduleCb, self) then
+                XScheduleManagerPro.ScheduleForever(self._OnUpdateRemainTimeScheduleCb, self, 1000)
             end
             return
         end
@@ -68,13 +62,16 @@ function XUiLuckyTenant2MainGridStage:UpdateRemainTime()
         end
     end
     
-    if self._Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnUpdateRemainTimeScheduleCb, self) then
         -- 检查是否已解锁，如果解锁则取消定时器
         if data.IsCanChallenge then
-            XScheduleManager.UnSchedule(self._Timer)
-            self._Timer = false
+            XScheduleManagerPro.UnSchedule(self._OnUpdateRemainTimeScheduleCb, self)
         end
     end
+end
+
+function XUiLuckyTenant2MainGridStage:_OnUpdateRemainTimeScheduleCb()
+    self:UpdateRemainTime()
 end
 
 function XUiLuckyTenant2MainGridStage:Update(data)

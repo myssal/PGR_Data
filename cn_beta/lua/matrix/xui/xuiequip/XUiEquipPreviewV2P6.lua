@@ -81,11 +81,12 @@ function XUiEquipPreviewV2P6:InitModel()
         self.MeshLihui.sharedMaterial:SetTexture("_MainTex", texture)
 
         self:ReleaseLihuiTimer()
-        self.LihuiTimer = XScheduleManager.ScheduleOnce(function()
-            self.FxUiLihuiChuxian01.gameObject:SetActiveEx(true)
-            self.LihuiTimer = nil
-        end,500)
+        XScheduleManagerPro.ScheduleOnce(self._OnInitModelScheduleCb, self,500)
     end
+end
+
+function XUiEquipPreviewV2P6:_OnInitModelScheduleCb()
+    self.FxUiLihuiChuxian01.gameObject:SetActiveEx(true)
 end
 
 -- 释放模型
@@ -95,10 +96,7 @@ end
 
 -- 释放定时器
 function XUiEquipPreviewV2P6:ReleaseLihuiTimer()
-    if self.LihuiTimer then
-        XScheduleManager.UnSchedule(self.LihuiTimer)
-        self.LihuiTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnInitModelScheduleCb, self)
 end
 
 function XUiEquipPreviewV2P6:InitPanelAsset()

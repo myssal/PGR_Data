@@ -90,16 +90,13 @@ end
 
 --region Activity Timer Refresh
 function XUiPanelWheelchairManualGuide:StopActivityTimeRefreshTimer()
-    if self._ActivitiesTimeRefreshTimerId then
-        XScheduleManager.UnSchedule(self._ActivitiesTimeRefreshTimerId)
-        self._ActivitiesTimeRefreshTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiPanelWheelchairManualGuide.RefreshActivitiesTime, self)
 end
 
 function XUiPanelWheelchairManualGuide:StartActivityTimeRefreshTimer()
     self:StopActivityTimeRefreshTimer()
 
-    self._ActivitiesTimeRefreshTimerId = XScheduleManager.ScheduleForever(handler(self, self.RefreshActivitiesTime), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiPanelWheelchairManualGuide.RefreshActivitiesTime, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiPanelWheelchairManualGuide:RefreshActivitiesTime()

@@ -97,7 +97,12 @@ function XMainLine2Main:GetIsLocked()
         return true
     end
 
-    local isUnlock, tips = XMVCA.XMainLine2:IsMainUnlock(self.Id)
+    return self:GetBusinessIsLocked()
+end
+
+-- 业务是否已锁，不包含分包资源状态
+function XMainLine2Main:GetBusinessIsLocked()
+    local isUnlock = XMVCA.XMainLine2:IsMainUnlock(self.Id)
     return not isUnlock
 end
 
@@ -107,7 +112,12 @@ function XMainLine2Main:GetLockTip()
         return XUiHelper.GetText("NecessaryResourcesNotDownloaded")
     end
 
-    local isUnlock, tips = XMVCA.XMainLine2:IsMainUnlock(self.Id)
+    return self:GetBusinessLockTip()
+end
+
+-- 获取业务锁提示，不包含分包资源状态
+function XMainLine2Main:GetBusinessLockTip()
+    local _, tips = XMVCA.XMainLine2:IsMainUnlock(self.Id)
     return tips
 end
 

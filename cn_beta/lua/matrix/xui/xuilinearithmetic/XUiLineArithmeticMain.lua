@@ -6,9 +6,7 @@ local XUiLineArithmeticMainChapterGrid = require("XUi/XUiLineArithmetic/XUiLineA
 local XUiLineArithmeticMain = XLuaUiManager.Register(XLuaUi, "UiLineArithmeticMain")
 
 function XUiLineArithmeticMain:Ctor()
-    self._Timer = false
     self._GridChapters = {}
-    self._TimerReward = false
     self._DurationShowReward = 5 * XScheduleManager.SECOND
 end
 
@@ -26,39 +24,34 @@ function XUiLineArithmeticMain:OnEnable()
     if not self:UpdateTime() then
         return
     end
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateTime()
-        end, XScheduleManager.SECOND)
+    if not XScheduleManagerPro.HasSchedule(self._OnEnableScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnEnableScheduleCb, self, XScheduleManagerPro.SECOND)
     end
     self:ShowReward()
     self:UpdateChapter()
     self:UpdateTask()
     
-    if not self._TimerLock then
+    if not XScheduleManagerPro.HasSchedule(self._OnEnableScheduleCb2, self) then
         if not self:CheckUnlockAll() then
             -- 固定时间刷新一次, 以解锁
-            self._TimerLock = XScheduleManager.ScheduleForever(function()
-                self:UpdateChapter()
-                self:CheckUnlockAll()
-            end, XScheduleManager.SECOND * 30)
+            XScheduleManagerPro.ScheduleForever(self._OnEnableScheduleCb2, self, XScheduleManagerPro.SECOND * 30)
         end
     end
 end
 
+function XUiLineArithmeticMain:_OnEnableScheduleCb2()
+    self:UpdateChapter()
+    self:CheckUnlockAll()
+end
+
+function XUiLineArithmeticMain:_OnEnableScheduleCb()
+    self:UpdateTime()
+end
+
 function XUiLineArithmeticMain:OnDisable()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
-    if self._TimerLock then
-        XScheduleManager.UnSchedule(self._TimerLock)
-        self._TimerLock = false
-    end
-    if self._TimerReward then
-        XScheduleManager.UnSchedule(self._TimerReward)
-        self._TimerReward = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb2, self)
+    XScheduleManagerPro.UnSchedule(self._OnShowRewardScheduleCb, self)
 end
 
 function XUiLineArithmeticMain:UpdateTime()
@@ -124,10 +117,11 @@ end
 
 function XUiLineArithmeticMain:ShowReward()
     self.PanelItem.gameObject:SetActiveEx(true)
-    self._TimerReward = XScheduleManager.ScheduleOnce(function()
-        self._TimerReward = false
-        self.PanelItem.gameObject:SetActiveEx(false)
-    end, self._DurationShowReward)
+    XScheduleManagerPro.ScheduleOnce(self._OnShowRewardScheduleCb, self, self._DurationShowReward)
+end
+
+function XUiLineArithmeticMain:_OnShowRewardScheduleCb()
+    self.PanelItem.gameObject:SetActiveEx(false)
 end
 
 function XUiLineArithmeticMain:CheckUnlockAll()
@@ -139,10 +133,7 @@ function XUiLineArithmeticMain:CheckUnlockAll()
         end
     end
     if isUnlockAll then
-        if self._TimerLock then
-            XScheduleManager.UnSchedule(self._TimerLock)
-            self._TimerLock = false
-        end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb2, self)
     end
     return isUnlockAll
 end

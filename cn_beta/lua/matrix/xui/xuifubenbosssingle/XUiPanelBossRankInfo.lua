@@ -2,6 +2,7 @@ local XUiTabBtnGroup = require("XUi/XUiBase/XUiTabBtnGroup")
 ---@class XUiPanelBossRankInfo : XUiNode
 ---@field Parent XUiFubenBossSingle
 ---@field _Control XFubenBossSingleControl
+---@field _RankEndTime number 排行榜结束时间戳锚点（唯一写点_SetLeftTime，重入时随定时器一并重置）
 local XUiPanelBossRankInfo = XClass(XUiNode, "XUiPanelBossRankInfo")
 local XUiPanelMyBossRank = require("XUi/XUiFubenBossSingle/XUiPanelMyBossRank")
 local XUiGridBossRank = require("XUi/XUiFubenBossSingle/XUiGridBossRank")
@@ -14,7 +15,6 @@ function XUiPanelBossRankInfo:OnStart()
     self._GridRankList = {}
     self._CurLevelType = bossSingleData:GetBossSingleLevelType()
     self._RankPlatform = bossSingleData:GetBossSingleRankPlatform()
-    self._Timer = nil
     self.GridRankLevel.gameObject:SetActive(false)
     self.GridBossRank.gameObject:SetActive(false)
     self.TxtCurTime.text = ""
@@ -28,6 +28,10 @@ function XUiPanelBossRankInfo:OnEnable()
 end 
 
 function XUiPanelBossRankInfo:OnDisable()
+    self:_RemoveTimer()
+end
+
+function XUiPanelBossRankInfo:OnDestroy()
     self:_RemoveTimer()
 end
 
@@ -99,10 +103,7 @@ function XUiPanelBossRankInfo:_RefreshRankInfo(levelType)
 end
 
 function XUiPanelBossRankInfo:_RemoveTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiPanelBossRankInfo._OnLeftTimeScheduleCb, self)
 end
 
 function XUiPanelBossRankInfo:_RefreshRank()
@@ -120,38 +121,36 @@ end
 
 ---@param rankData XBossSingleRankData
 function XUiPanelBossRankInfo:_SetLeftTime(rankData)
-    local leftTime = rankData:GetLeftTime()
-    if self._Timer then
-        self:_RemoveTimer()
+    self:_RemoveTimer()
+    self._RankEndTime = XTime.GetServerNowTimestamp() + rankData:GetLeftTime()
+    XScheduleManagerPro.ScheduleForever(XUiPanelBossRankInfo._OnLeftTimeScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+
+function XUiPanelBossRankInfo:_OnLeftTimeScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
     end
 
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
+    local desc = "BossSingleLeftTimeIos"
+    if self._RankPlatform == XEnumConst.BossSingle.Platform.Win then
+        desc = "BossSingleLeftTimeWin"
+    elseif self._RankPlatform == XEnumConst.BossSingle.Platform.Android then
+        desc = "BossSingleLeftTimeAndroid"
+    elseif self._RankPlatform == XEnumConst.BossSingle.Platform.IOS then
+        desc = "BossSingleLeftTimeIos"
+    elseif self._RankPlatform == XEnumConst.BossSingle.Platform.All then
+        desc = "BossSingleLeftTimeAll"
+    end
+    self.TxtIos.text = XUiHelper.GetText(desc)
 
-        local desc = "BossSingleLeftTimeIos"
-        if self._RankPlatform == XEnumConst.BossSingle.Platform.Win then
-            desc = "BossSingleLeftTimeWin"
-        elseif self._RankPlatform == XEnumConst.BossSingle.Platform.Android then
-            desc = "BossSingleLeftTimeAndroid"
-        elseif self._RankPlatform == XEnumConst.BossSingle.Platform.IOS then
-            desc = "BossSingleLeftTimeIos"
-        elseif self._RankPlatform == XEnumConst.BossSingle.Platform.All then
-            desc = "BossSingleLeftTimeAll"
-        end
-        self.TxtIos.text =  XUiHelper.GetText(desc)
-
-        leftTime = leftTime - 1
-        if leftTime <= 0 then
-            local dataTime = XUiHelper.GetTime(0)
-            self.TxtCurTime.text = XUiHelper.GetText("BossSingleLeftTime", dataTime)
-            self:_RemoveTimer()
-        else
-            local dataTime = XUiHelper.GetTime(leftTime)
-            self.TxtCurTime.text = XUiHelper.GetText("BossSingleLeftTime", dataTime)
-        end
-    end, 1000)
+    local leftTime = self._RankEndTime - XTime.GetServerNowTimestamp()
+    if leftTime <= 0 then
+        self.TxtCurTime.text = XUiHelper.GetText("BossSingleLeftTime", XUiHelper.GetTime(0))
+        self:_RemoveTimer()
+    else
+        self.TxtCurTime.text = XUiHelper.GetText("BossSingleLeftTime", XUiHelper.GetTime(leftTime))
+    end
 end
 
 ---@param rankData XBossSingleRankData

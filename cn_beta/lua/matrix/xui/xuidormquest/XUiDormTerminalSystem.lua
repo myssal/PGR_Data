@@ -253,9 +253,7 @@ function XUiDormTerminalSystem:ClickQuestGrid(grid)
         self:PlayScrollViewMove(grid)
     else
         XLuaUiManager.SetMask(true)
-        XScheduleManager.ScheduleOnce(function()
-            XLuaUiManager.SetMask(false)
-        end, XDataCenter.FubenMainLineManager.UiGridChapterMoveDuration * 1000)
+        XScheduleManagerPro.ScheduleOnce(XUiDormTerminalSystem._OnReleaseQuestMaskScheduleCb, self, XDataCenter.FubenMainLineManager.UiGridChapterMoveDuration * 1000)
     end
 
     self.CurQuestGrid = grid
@@ -517,14 +515,9 @@ end
 --region 计时器
 
 function XUiDormTerminalSystem:BtnStartTimer()
-    if self.BtnTimer then
-        self:BtnStopTimer()
-    end
-
+    self:BtnStopTimer()
     self:BtnUpdateTimer()
-    self.BtnTimer = XScheduleManager.ScheduleForever(function()
-        self:BtnUpdateTimer()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiDormTerminalSystem._OnUpdateTerminalButtonScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiDormTerminalSystem:BtnUpdateTimer()
@@ -549,21 +542,13 @@ function XUiDormTerminalSystem:BtnUpdateTimer()
 end
 
 function XUiDormTerminalSystem:BtnStopTimer()
-    if self.BtnTimer then
-        XScheduleManager.UnSchedule(self.BtnTimer)
-        self.BtnTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiDormTerminalSystem._OnUpdateTerminalButtonScheduleCb, self)
 end
 
 function XUiDormTerminalSystem:NextStartTimer()
-    if self.NextTimer then
-        self:NextStopTimer()
-    end
-
+    self:NextStopTimer()
     self:NextUpdateTimer()
-    self.NextTimer = XScheduleManager.ScheduleForever(function()
-        self:NextUpdateTimer()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiDormTerminalSystem._OnUpdateNextRefreshTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiDormTerminalSystem:NextUpdateTimer()
@@ -582,12 +567,21 @@ function XUiDormTerminalSystem:NextUpdateTimer()
 end
 
 function XUiDormTerminalSystem:NextStopTimer()
-    if self.NextTimer then
-        XScheduleManager.UnSchedule(self.NextTimer)
-        self.NextTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiDormTerminalSystem._OnUpdateNextRefreshTimeScheduleCb, self)
 end
 
 --endregion
+
+function XUiDormTerminalSystem:_OnReleaseQuestMaskScheduleCb()
+    XLuaUiManager.SetMask(false)
+end
+
+function XUiDormTerminalSystem:_OnUpdateTerminalButtonScheduleCb()
+    self:BtnUpdateTimer()
+end
+
+function XUiDormTerminalSystem:_OnUpdateNextRefreshTimeScheduleCb()
+    self:NextUpdateTimer()
+end
 
 return XUiDormTerminalSystem

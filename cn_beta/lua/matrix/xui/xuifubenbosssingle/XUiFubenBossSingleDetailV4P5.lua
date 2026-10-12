@@ -86,8 +86,7 @@ function XUiFubenBossSingleDetailV4P5:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_RESET, self.ScheduleResetCooldown, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_AUTO_FIGHT, self.ScheduleResetCooldown, self)
 
-    XScheduleManager.UnSchedule(self._TimerResetCooldown)
-    self._TimerResetCooldown = false
+    XScheduleManagerPro.UnSchedule(XUiFubenBossSingleDetailV4P5._OnResetCooldownScheduleCb, self)
 end
 
 function XUiFubenBossSingleDetailV4P5:_RegisterButtonClicks()
@@ -334,16 +333,16 @@ function XUiFubenBossSingleDetailV4P5:ScheduleResetCooldown()
         return
     end
 
-    if self._TimerResetCooldown then
-        XScheduleManager.UnSchedule(self._TimerResetCooldown)
-    end
+    XScheduleManagerPro.UnSchedule(XUiFubenBossSingleDetailV4P5._OnResetCooldownScheduleCb, self)
+    XScheduleManagerPro.ScheduleForever(XUiFubenBossSingleDetailV4P5._OnResetCooldownScheduleCb, self, XScheduleManagerPro.SECOND)
+end
 
-    self._TimerResetCooldown = XScheduleManager.ScheduleForever(function()
-        self:_RefreshButtons()
-        if not self._Control:IsResetCoolDown() then
-            XScheduleManager.UnSchedule(self._TimerResetCooldown)
-        end
-    end, XScheduleManager.SECOND)
+--- 定时器回调：重置冷却倒计时刷新
+function XUiFubenBossSingleDetailV4P5:_OnResetCooldownScheduleCb()
+    self:_RefreshButtons()
+    if not self._Control:IsResetCoolDown() then
+        XScheduleManagerPro.UnSchedule(XUiFubenBossSingleDetailV4P5._OnResetCooldownScheduleCb, self)
+    end
 end
 
 

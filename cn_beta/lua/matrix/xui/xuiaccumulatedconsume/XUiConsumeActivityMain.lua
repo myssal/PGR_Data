@@ -157,14 +157,10 @@ end
 
 --region 剩余时间
 function XUiConsumeActivityMain:StartTime()
-    if self.Timer then
-        self:StopTimer()
-    end
-    
+    self:StopTimer()
+
     self:UpdateTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiConsumeActivityMain._OnUpdateActivityTimeScheduleCb, self,XScheduleManagerPro.SECOND)
 end
 
 function XUiConsumeActivityMain:UpdateTime()
@@ -186,12 +182,13 @@ function XUiConsumeActivityMain:UpdateTime()
 end
 
 function XUiConsumeActivityMain:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiConsumeActivityMain._OnUpdateActivityTimeScheduleCb, self)
 end
 
 --endregion
+
+function XUiConsumeActivityMain:_OnUpdateActivityTimeScheduleCb()
+    self:UpdateTime()
+end
 
 return XUiConsumeActivityMain

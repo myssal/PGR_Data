@@ -18,18 +18,17 @@ end
 
 function XStageMemoryControl:AddAgencyEvent()
     self:UpdateTime()
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateTime()
-        end, XScheduleManager.SECOND)
+    if not XScheduleManagerPro.HasSchedule(self._OnAddAgencyEventScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnAddAgencyEventScheduleCb, self, XScheduleManagerPro.SECOND)
     end
 end
 
+function XStageMemoryControl:_OnAddAgencyEventScheduleCb()
+    self:UpdateTime()
+end
+
 function XStageMemoryControl:RemoveAgencyEvent()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnAddAgencyEventScheduleCb, self)
 end
 
 function XStageMemoryControl:OnRelease()

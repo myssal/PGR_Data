@@ -15,12 +15,7 @@ end
 -- 处理特效和动画
 function XUiPanelTrialGet:SetAnimationFx()
     self.FxUiPanelTrialGet01.gameObject:SetActive(true)
-    self.timer = XScheduleManager.ScheduleOnce(function()
-        if not XTool.UObjIsNil(self.FxUiPanelTrialGet02) then
-            self.FxUiPanelTrialGet02.gameObject:SetActive(true)
-        end
-        XScheduleManager.UnSchedule(self.timer)
-    end,200)
+    XScheduleManagerPro.ScheduleOnce(self._OnSetAnimationFxScheduleCb, self, 200)
 end
 
 function XUiPanelTrialGet:InitScript()
@@ -68,6 +63,12 @@ function XUiPanelTrialGet:OnBtnClickClick()
         return
     end
     self.BtnCb()
+end
+
+function XUiPanelTrialGet:_OnSetAnimationFxScheduleCb()
+    if not XTool.UObjIsNil(self.FxUiPanelTrialGet02) then
+        self.FxUiPanelTrialGet02.gameObject:SetActive(true)
+    end
 end
 
 return XUiPanelTrialGet

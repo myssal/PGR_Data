@@ -13,9 +13,7 @@ function XUiHackDevelop:OnStart()
     self.ActTemplate = XDataCenter.FubenHackManager.GetCurrentActTemplate()
     self:InitUi()
     self:Refresh()
-    XScheduleManager.ScheduleOnce(function()
-        self:MoveIntoBuff(XDataCenter.FubenHackManager.GetBuffListShowIndex())
-    end, 0)
+    XScheduleManagerPro.ScheduleOnce(self._OnMoveIntoBuffScheduleCb, self, 0)
     self.IsPlayingAnim = false
     self.IsPlayedAnim = false
 end
@@ -172,4 +170,8 @@ end
 
 function XUiHackDevelop:OnBtnMainUiClick()
     XLuaUiManager.RunMain()
+end
+
+function XUiHackDevelop:_OnMoveIntoBuffScheduleCb()
+    self:MoveIntoBuff(XDataCenter.FubenHackManager.GetBuffListShowIndex())
 end

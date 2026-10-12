@@ -80,14 +80,7 @@ function XUiDlcMultiPlayerSkill:SetAllNormel()
     end
     self._CatCamp:ShowChangeAnim()
     self._MouseCamp:ShowChangeAnim()
-    XScheduleManager.ScheduleOnce(function()
-        self._CatCamp:SetStatus(self.ViewStatus.Normal)
-        self._MouseCamp:SetStatus(self.ViewStatus.Normal)
-        self.BtnChange.gameObject:SetActiveEx(true)
-        self.BtnCommit.gameObject:SetActiveEx(false)
-        self.BtnClose:SetDisable(false)
-        self:OnSkillChangeClick()
-    end, 1000)
+    XScheduleManagerPro.ScheduleOnce(XUiDlcMultiPlayerSkill._OnChangeSkillScheduleCb, self, 1000)
 end
 
 function XUiDlcMultiPlayerSkill:SetAllChangeSkill()
@@ -102,6 +95,15 @@ function XUiDlcMultiPlayerSkill:SetCommitStatus()
     local isContain = table.contains(self._CatCamp:GetSelectSkillIdList(), 0)
     isContain = isContain or table.contains(self._MouseCamp:GetSelectSkillIdList(), 0)
     self.BtnCommit:SetDisable(isContain)
+end
+
+function XUiDlcMultiPlayerSkill:_OnChangeSkillScheduleCb()
+    self._CatCamp:SetStatus(self.ViewStatus.Normal)
+    self._MouseCamp:SetStatus(self.ViewStatus.Normal)
+    self.BtnChange.gameObject:SetActiveEx(true)
+    self.BtnCommit.gameObject:SetActiveEx(false)
+    self.BtnClose:SetDisable(false)
+    self:OnSkillChangeClick()
 end
 
 return XUiDlcMultiPlayerSkill

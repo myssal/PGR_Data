@@ -33,14 +33,11 @@ end
 function XUiPanelReinforce:StartTimer()
     self:StopTimer()
     self:RefreshTime()
-    self._TimeId = XScheduleManager.ScheduleForever(handler(self, self.RefreshTime), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self.RefreshTime, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiPanelReinforce:StopTimer()
-    if self._TimeId then
-        XScheduleManager.UnSchedule(self._TimeId)
-        self._TimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.RefreshTime, self)
 end
     
 function XUiPanelReinforce:RefreshTime()

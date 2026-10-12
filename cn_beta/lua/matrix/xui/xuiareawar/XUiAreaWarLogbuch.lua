@@ -21,7 +21,6 @@ function XUiGridChapterProgress:Refresh(chapterId)
     end
 end
 
-
 ---@class XUiAreaWarLogbuch : XLuaUi 全服战况
 ---@field PanelTitleBtnGroup XUiButtonGroup
 local XUiAreaWarLogbuch = XLuaUiManager.Register(XLuaUi, "UiAreaWarLogbuch")
@@ -138,14 +137,7 @@ function XUiAreaWarLogbuch:InitUi()
     
     self.PanelTitleBtnGroup:SelectIndex(XDataCenter.AreaWarManager.GetLastWarLogTabIndex())
     
-    self.HideZanEffectCb = function()
-        if XTool.UObjIsNil(self.Effect2) then
-            return
-        end
-        self.Effect2.gameObject:SetActiveEx(false)
-    end
-
-    self.HideZanEffectCb()
+    self:_HideZanEffect()
 end
 
 function XUiAreaWarLogbuch:InitView()
@@ -278,7 +270,6 @@ end
 
 --endregion------------------界面更新 finish------------------
 
-
 --region   ------------------UI Event start-------------------
 
 function XUiAreaWarLogbuch:OnSelectTab(tabIndex)
@@ -312,13 +303,20 @@ function XUiAreaWarLogbuch:OnBtnLikeClick()
     if cfg.IsGroup then
         return
     end
-    XDataCenter.AreaWarManager.RequestLikeArticle(cfg.Id, function() 
+    XDataCenter.AreaWarManager.RequestLikeArticle(cfg.Id, function()
         self:UpdateArticle()
         if self.Effect2 then
             self.Effect2.gameObject:SetActiveEx(true)
         end
-        XScheduleManager.ScheduleOnce(self.HideZanEffectCb, 500)
+        XScheduleManagerPro.ScheduleOnce(self._HideZanEffect, self, 500)
     end)
+end
+
+function XUiAreaWarLogbuch:_HideZanEffect()
+    if XTool.UObjIsNil(self.Effect2) then
+        return
+    end
+    self.Effect2.gameObject:SetActiveEx(false)
 end
 
 function XUiAreaWarLogbuch:OnBtnStoryClick()
@@ -331,7 +329,6 @@ end
 --endregion------------------UI Event finish------------------
 
 --region   ------------------private function start-------------------
-
 
 function XUiAreaWarLogbuch:_GetButtonPrefab(btnType, hasChild, index, totalNum)
     if btnType == TabButtonType.Primary then

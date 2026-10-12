@@ -665,9 +665,7 @@ function XTheatre5ShopControl:_EndDragForSkillChoice(cb)
 
 
         -- todo：初始化会稍微花点时间，后续看看播动画回调里刷新，现在先隔帧刷新不影响拖拽效果
-        XScheduleManager.ScheduleNextFrame(function()
-            self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_SHOP_STATE_CHANGED, true)
-        end)
+        XScheduleManagerPro.ScheduleNextFrame(self._OnEndDragForSkillChoiceScheduleCb, self)
     end)
 
     return true
@@ -865,6 +863,10 @@ end
 --- 获取背包容量
 function XTheatre5ShopControl:GetStrengthenRate()
     return self._Model:GetTheatre5ConfigValByKey("StrengthenRate")
+end
+
+function XTheatre5ShopControl:_OnEndDragForSkillChoiceScheduleCb()
+    self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_SHOP_STATE_CHANGED, true)
 end
 
 return XTheatre5ShopControl

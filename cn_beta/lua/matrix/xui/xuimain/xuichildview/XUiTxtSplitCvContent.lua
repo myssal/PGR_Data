@@ -42,15 +42,13 @@ function XUiTxtSplitCvContent:StartTimer()
         self:_SetText("")
     end
     if self:CheckTiming(0) then
-        self._Timer =
-            XScheduleManager.ScheduleForever(
-            function()
-                self:CheckTiming(CS.XUnityEx.DeltaTime)
-            end,
-            0
-        )
+        XScheduleManagerPro.ScheduleForever(self._OnTickTimer, self, 0)
     end
     return true
+end
+
+function XUiTxtSplitCvContent:_OnTickTimer()
+    self:CheckTiming(CS.XUnityEx.DeltaTime)
 end
 
 function XUiTxtSplitCvContent:CheckTiming(deltaTime)
@@ -60,7 +58,7 @@ function XUiTxtSplitCvContent:CheckTiming(deltaTime)
         return false
     end
     local lastTime = self._Time
-    local currentTime = lastTime + deltaTime * XScheduleManager.SECOND
+    local currentTime = lastTime + deltaTime * XScheduleManagerPro.SECOND
     self._Time = currentTime
     local timing = cv.Timing
     if lastTime <= timing and currentTime >= timing then
@@ -71,10 +69,7 @@ function XUiTxtSplitCvContent:CheckTiming(deltaTime)
 end
 
 function XUiTxtSplitCvContent:StopTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnTickTimer, self)
 end
 
 function XUiTxtSplitCvContent:_SetText(text)

@@ -52,12 +52,7 @@ function XUiGuildDormMovie:UpdateTalkId(talkId)
     end)
     -- 间隔n秒更新选项配置
     if config.OptionShowTime > 0 then
-        XScheduleManager.ScheduleOnce(function()
-            if XTool.UObjIsNil(self.PanelSelect) then
-                return
-            end
-            self.PanelSelect.gameObject:SetActiveEx(true)
-        end, config.OptionShowTime)
+        XScheduleManagerPro.ScheduleOnce(self._OnUpdateTalkIdScheduleCb, self, config.OptionShowTime)
     else
         self.PanelSelect.gameObject:SetActiveEx(false)
     end
@@ -136,6 +131,13 @@ function XUiGuildDormMovie:OnEndTalkEvent()
     CS.XRecord.Record(dict, "200006", "GuildDorm")
     CsXGameEventManager.Instance:Notify(XEventId.EVENT_DORM_TALK_END)
     self:Close()
+end
+
+function XUiGuildDormMovie:_OnUpdateTalkIdScheduleCb()
+    if XTool.UObjIsNil(self.PanelSelect) then
+        return
+    end
+    self.PanelSelect.gameObject:SetActiveEx(true)
 end
 
 return XUiGuildDormMovie

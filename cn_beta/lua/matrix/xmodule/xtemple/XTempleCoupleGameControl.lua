@@ -78,19 +78,21 @@ function XTempleCoupleGameControl:SimulateCoupleStageRecord()
         self._Game:SimulateActionRecordFromData(actionRecords, round, round, false)
 
         if self._IsAutoSimulate then
-            XScheduleManager.ScheduleOnce(function()
-                if XLuaUiManager.IsUiShow("UiTempleBattleCouple") then
-                    if self._Game then
-                        self:OnClickConfirm()
-                    end
-                end
-            end, 300)
+            XScheduleManagerPro.ScheduleOnce(self._OnOnClickConfirmScheduleCb, self, 300)
         end
     end
 end
 
 function XTempleCoupleGameControl:IsCoupleChapter()
     return true
+end
+
+function XTempleCoupleGameControl:_OnOnClickConfirmScheduleCb()
+    if XLuaUiManager.IsUiShow("UiTempleBattleCouple") then
+        if self._Game then
+            self:OnClickConfirm()
+        end
+    end
 end
 
 return XTempleCoupleGameControl

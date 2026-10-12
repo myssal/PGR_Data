@@ -74,9 +74,7 @@ function XUiPartnerTeachingBanner:StartTimer()
     end
 
     self.IsStart = true
-    CurrentSchedule = XScheduleManager.ScheduleForever(function()
-        self:UpdateTimer()
-    end, 1000)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateTimerScheduleCb, self, 1000)
 end
 
 function XUiPartnerTeachingBanner:UpdateTimer()
@@ -98,10 +96,11 @@ function XUiPartnerTeachingBanner:RemoveTimerFun(id)
 end
 
 function XUiPartnerTeachingBanner:DestroyTimer()
-    if CurrentSchedule then
         self.IsStart = false
-        XScheduleManager.UnSchedule(CurrentSchedule)
-        CurrentSchedule = nil
+        XScheduleManagerPro.UnSchedule(self._OnUpdateTimerScheduleCb, self)
         self.TimerFunctions = {}
-    end
+end
+
+function XUiPartnerTeachingBanner:_OnUpdateTimerScheduleCb()
+    self:UpdateTimer()
 end

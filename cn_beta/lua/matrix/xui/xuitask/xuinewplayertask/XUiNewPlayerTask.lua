@@ -240,22 +240,24 @@ end
 
 function XUiNewPlayerTask:RefreshProgressTransform()
     -- 异形屏适配需要
-    XScheduleManager.ScheduleOnce(function()
-        if not self.GameObject or not self.GameObject:Exist() then
-            return
-        end
+    XScheduleManagerPro.ScheduleOnce(self._OnRefreshProgressTransformScheduleCb, self, 1)
+end
 
-        -- 更新位置
-        local totalWidth = self.ImgProgressRect.rect.size.x
-        local activeWidthOffset = self.TemplateRect.rect.size.x / 2
-        for i = 1, self.TotalCount do
-            local currentProgress = self.NewbieActiveness.Activeness[i] * 1.0 / self.MaxProgress * FULL_PROGRESS
-            local progress = self.TotalProgress[i]
-            if progress then
-                progress.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).anchoredPosition3D = CS.UnityEngine.Vector3(currentProgress * totalWidth - activeWidthOffset, self.TemplatePosition.y, self.TemplatePosition.z)
-            end
-        end
-    end, 1)
+function XUiNewPlayerTask:_OnRefreshProgressTransformScheduleCb()
+        if not self.GameObject or not self.GameObject:Exist() then
+                    return
+                end
+
+                -- 更新位置
+                local totalWidth = self.ImgProgressRect.rect.size.x
+                local activeWidthOffset = self.TemplateRect.rect.size.x / 2
+                for i = 1, self.TotalCount do
+                    local currentProgress = self.NewbieActiveness.Activeness[i] * 1.0 / self.MaxProgress * FULL_PROGRESS
+                    local progress = self.TotalProgress[i]
+                    if progress then
+                        progress.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform)).anchoredPosition3D = CS.UnityEngine.Vector3(currentProgress * totalWidth - activeWidthOffset, self.TemplatePosition.y, self.TemplatePosition.z)
+                    end
+                end
 end
 
 function XUiNewPlayerTask:RefreshProgress()
@@ -300,5 +302,6 @@ function XUiNewPlayerTask:_UpdateTaskListTag(tab, openDay)
     end
     tab:ShowTag(true)
 end
+
 
 return XUiNewPlayerTask

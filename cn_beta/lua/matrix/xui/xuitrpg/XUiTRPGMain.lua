@@ -29,7 +29,7 @@ function XUiTRPGMain:OnEnable()
     XDataCenter.TRPGManager.CheckActivityEnd()
     XDataCenter.TRPGManager.CheckOpenNewMazeTips()
     XEventManager.AddEventListener(XEventId.EVENT_TRPG_FUNCTION_FINISH_SYN, XDataCenter.TRPGManager.CheckOpenNewMazeTips, XDataCenter.TRPGManager)
-    self.AreaOpenSchedule = XScheduleManager.ScheduleForever(function() self:UpdateAreaCanOpenTime() end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateAreaCanOpenTimeScheduleCb, self, XScheduleManagerPro.SECOND)
     self:Refresh()
     self:UpdateAreaCanOpenTime()
     self:OnCheckGridPanelChapterRedPoint()
@@ -39,7 +39,7 @@ end
 
 function XUiTRPGMain:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_TRPG_FUNCTION_FINISH_SYN, XDataCenter.TRPGManager.CheckOpenNewMazeTips, XDataCenter.TRPGManager)
-    XScheduleManager.UnSchedule(self.AreaOpenSchedule)
+    XScheduleManagerPro.UnSchedule(self._OnUpdateAreaCanOpenTimeScheduleCb, self)
 end
 
 function XUiTRPGMain:OnDestroy()
@@ -124,7 +124,7 @@ function XUiTRPGMain:UpdateAreaCanOpenTime()
     end
 
     if isAllOpen then
-        XScheduleManager.UnSchedule(self.AreaOpenSchedule)
+        XScheduleManagerPro.UnSchedule(self._OnUpdateAreaCanOpenTimeScheduleCb, self)
     end
 end
 
@@ -200,4 +200,8 @@ function XUiTRPGMain:OnNotify(evt, ...)
     if evt == XEventId.EVENT_ACTIVITY_MAINLINE_STATE_CHANGE then
         XDataCenter.TRPGManager.OnActivityMainLineStateChange(...)
     end
+end
+
+function XUiTRPGMain:_OnUpdateAreaCanOpenTimeScheduleCb()
+    self:UpdateAreaCanOpenTime() 
 end

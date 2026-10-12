@@ -10,13 +10,15 @@ function XUiSkyGardenShoppingStreetToastNormal:OnStart(params)
     end
     self.TxtDetail.text = params--.Tips
     
-    self.Timer = XScheduleManager.ScheduleOnce(function()
+    XScheduleManagerPro.ScheduleOnce(self._OnStartScheduleCb, self, TIP_MSG_SHOW_TIME)
+end
+
+function XUiSkyGardenShoppingStreetToastNormal:_OnStartScheduleCb()
         self:Close()
-    end, TIP_MSG_SHOW_TIME)
 end
 
 function XUiSkyGardenShoppingStreetToastNormal:OnDestroy()
-    XScheduleManager.UnSchedule(self.Timer)
+    XScheduleManagerPro.UnSchedule(self._OnStartScheduleCb, self)
 end
 --endregion
 

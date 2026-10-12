@@ -27,23 +27,14 @@ function XUiSpringFestivalHelpTips2:OnDestroy()
 end
 
 function XUiSpringFestivalHelpTips2:StartTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnSetRemainingTimeScheduleCb, self) then
         self:StopTimer()
     end
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        if XTool.UObjIsNil(self.TxtTime) then
-            self.StopTimer()
-            return
-        end
-        self:SetRemainingTime() 
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnSetRemainingTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiSpringFestivalHelpTips2:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnSetRemainingTimeScheduleCb, self)
 end
 
 function XUiSpringFestivalHelpTips2:SetRemainingTime()
@@ -118,6 +109,14 @@ function XUiSpringFestivalHelpTips2:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:Refresh(self.FriendList[index],XDataCenter.SpringFestivalActivityManager.GetRequestWordId())
     end
+end
+
+function XUiSpringFestivalHelpTips2:_OnSetRemainingTimeScheduleCb()
+    if XTool.UObjIsNil(self.TxtTime) then
+        self.StopTimer()
+        return
+    end
+    self:SetRemainingTime() 
 end
 
 return XUiSpringFestivalHelpTips2

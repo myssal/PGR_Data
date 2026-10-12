@@ -87,12 +87,7 @@ function XUiHitMouse:OnClickBtnBack()
 end
 
 function XUiHitMouse:StartGame()
-    self.UpdateScheduleId = XScheduleManager.ScheduleForever(
-        function()
-            self:OnUpdate()
-        end,
-        1
-    )
+    XScheduleManagerPro.ScheduleForever(self._OnOnUpdateScheduleCb, self, 1)
     self:NewRound()
 end
 
@@ -246,10 +241,7 @@ function XUiHitMouse:TimesUp()
 end
 
 function XUiHitMouse:UnSchedule()
-    if self.UpdateScheduleId then
-        XScheduleManager.UnSchedule(self.UpdateScheduleId)
-        self.UpdateScheduleId = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnOnUpdateScheduleCb, self)
 end
 
 function XUiHitMouse:OnActivityEnd()
@@ -267,4 +259,8 @@ end
 --==============
 function XUiHitMouse:RemoveListeners()
     XEventManager.RemoveEventListener(XEventId.EVENT_HIT_MOUSE_ACTIVITY_END, self.OnActivityEnd, self)
+end
+
+function XUiHitMouse:_OnOnUpdateScheduleCb()
+    self:OnUpdate()
 end

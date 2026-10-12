@@ -355,20 +355,22 @@ end
 function XUiDlcRelinkPopupExchangeWheel:StartDragTracking()
     self:StopDragTracking()
     self:RefreshDragClonePos()
-    self.DragTrackingTimer = XScheduleManager.ScheduleForeverEx(function()
+    XScheduleManagerPro.ScheduleForeverEx(self._OnStartDragTrackingScheduleCb, self, 0)
+end
+
+function XUiDlcRelinkPopupExchangeWheel:_OnStartDragTrackingScheduleCb()
         if XTool.UObjIsNil(self.GameObject) then
-            self:StopDragTracking()
-            return
-        end
-        -- 获取屏幕坐标
-        local screenPos = self:GetScreenPoint()
-        if not screenPos then
-            -- 手指真正抬起（Input.touchCount=0 且鼠标未按下）
-            self:EndDrag()
-            return
-        end
-        self:RefreshDragClonePos(screenPos)
-    end, 0)
+                    self:StopDragTracking()
+                    return
+                end
+                -- 获取屏幕坐标
+                local screenPos = self:GetScreenPoint()
+                if not screenPos then
+                    -- 手指真正抬起（Input.touchCount=0 且鼠标未按下）
+                    self:EndDrag()
+                    return
+                end
+                self:RefreshDragClonePos(screenPos)
 end
 
 function XUiDlcRelinkPopupExchangeWheel:RefreshDragClonePos(screenPos)
@@ -387,10 +389,7 @@ end
 
 -- 停止拖拽追踪
 function XUiDlcRelinkPopupExchangeWheel:StopDragTracking()
-    if self.DragTrackingTimer then
-        XScheduleManager.UnSchedule(self.DragTrackingTimer)
-        self.DragTrackingTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartDragTrackingScheduleCb, self)
 end
 
 function XUiDlcRelinkPopupExchangeWheel:EndDrag()

@@ -14,8 +14,6 @@ function XUiBigWorldProcessSwitch:OnAwake()
     self._VersionEntities = false
     self._VersionEntitiesState = false
 
-    self._Timer = false
-
     self:_RegisterButtonClicks()
 end
 
@@ -51,17 +49,12 @@ end
 function XUiBigWorldProcessSwitch:_RegisterSchedules()
     -- 在此处注册定时器
     self:_RemoveSchedules()
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        self:_RefreshState()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiBigWorldProcessSwitch._OnRefreshStateScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiBigWorldProcessSwitch:_RemoveSchedules()
     -- 在此处移除定时器
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(XUiBigWorldProcessSwitch._OnRefreshStateScheduleCb, self)
 end
 
 function XUiBigWorldProcessSwitch:_RegisterRedPointEvents()
@@ -110,6 +103,10 @@ function XUiBigWorldProcessSwitch:_RefreshState()
 
         self._VersionEntitiesState[i] = grid:TryRefreshValid(isValid)
     end
+end
+
+function XUiBigWorldProcessSwitch:_OnRefreshStateScheduleCb()
+    self:_RefreshState()
 end
 
 return XUiBigWorldProcessSwitch

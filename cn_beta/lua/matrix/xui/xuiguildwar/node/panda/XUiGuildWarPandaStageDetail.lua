@@ -22,7 +22,6 @@ function XUiGuildWarPandaStageDetail:Ctor()
 
     self.PandaType = XGuildWarConfig.ChildNodeIndex.None
     self.NodeId = false
-    self.Timer = false
 
     self._SelectedNodeId = false
 end
@@ -194,23 +193,21 @@ end
 
 function XUiGuildWarPandaStageDetail:StartTimer()
     self:UpdateTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateTime()
-    end, 1, 0)
-    self.ActionTimer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, 1, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb2, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiGuildWarPandaStageDetail:_OnStartTimerScheduleCb2()
         self:ShowAction()
-    end, XScheduleManager.SECOND, 0)
+end
+
+function XUiGuildWarPandaStageDetail:_OnStartTimerScheduleCb()
+        self:UpdateTime()
 end
 
 function XUiGuildWarPandaStageDetail:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = false
-    end
-    if self.ActionTimer then
-        XScheduleManager.UnSchedule(self.ActionTimer)
-        self.ActionTimer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb2, self)
 end
 
 function XUiGuildWarPandaStageDetail:OnEventUnfoldDetail(isUnfold, pandaType)

@@ -47,12 +47,7 @@ function XUiPanelBossInshotTowerLevelSelector:OnEnable()
     self:_TryEnterNextLevel()
 
     self:FocusOnCurrentLevel()
-    self._FocusOnCurrentLevelSchedule = XScheduleManager.ScheduleNextFrame(function()
-        XScheduleManager.UnSchedule(self._FocusOnCurrentLevelSchedule)
-        self._FocusOnCurrentLevelSchedule = nil
-
-        self:FocusOnCurrentLevel()
-    end)
+    XScheduleManagerPro.ScheduleNextFrame(self._OnFocusOnCurrentLevelScheduleCb, self)
 end
 
 function XUiPanelBossInshotTowerLevelSelector:FocusOnCurrentLevel()
@@ -220,6 +215,10 @@ function XUiPanelBossInshotTowerLevelSelector:OnButtonClicked(btn)
             btn:GetLevelConf(),
             btn:GetBossTowerData())
     end
+end
+
+function XUiPanelBossInshotTowerLevelSelector:_OnFocusOnCurrentLevelScheduleCb()
+    self:FocusOnCurrentLevel()
 end
 
 return XUiPanelBossInshotTowerLevelSelector

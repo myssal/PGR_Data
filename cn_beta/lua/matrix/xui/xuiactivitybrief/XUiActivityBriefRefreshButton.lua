@@ -75,7 +75,7 @@ function XUiActivityBriefRefreshButton:InitActivityBriefButton(index, groupId)
     end
     local btn
     local btnGrid = self[btnName]
-    if XTool.IsNumberValid(btnGrid.transform.childCount) then
+    if not XTool.UObjIsNil(btnGrid) and XTool.IsNumberValid(btnGrid.transform.childCount) then
         btn = btnGrid.transform:GetChild(0):GetComponent("XUiButton")
     else
         XLog.Error("InitActivityBriefButton() Error: " .. btnName .. " 下不存在Button")
@@ -1144,6 +1144,15 @@ function XUiActivityBriefRefreshButton:RefreshRestaurant()
     end
 end
 
+--通天塔
+function XUiActivityBriefRefreshButton:RefreshSkyTower()
+    self:RefreshNormal()
+    local btn = self.TlActivityBrieButton[self.ActivityGroupId]
+    if btn then
+        btn:AddRedPointEvent({ XRedPointConditions.Types.CONDITION_SKY_TOWER_ENTRANCE })
+    end
+end
+
 --v2.3 行星环游记
 function XUiActivityBriefRefreshButton:RefreshPlanetRunning()
     self:RefreshNormal()
@@ -1294,6 +1303,12 @@ function XUiActivityBriefRefreshButton:RefreshConstRewardShow(activityGroupId)
             self._RewardConstGrids[activityGroupId] = rewardGrid
             rewardGrid:Open()
         end
+    end
+end
+
+function XUiActivityBriefRefreshButton:RefreshActivityTag()
+    for _, btn in pairs(self.TlActivityBrieButton) do
+        btn:ShowActivityTag()
     end
 end
 

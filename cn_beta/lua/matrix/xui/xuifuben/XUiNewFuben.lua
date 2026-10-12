@@ -16,7 +16,6 @@ function XUiNewFuben:OnAwake()
         self.MainUiTabConfigs = result
     end
     self.ChildPanelInfoDic = {}
-    self.TimerId = nil
     self.SelectedIndex = nil
     self.MainUiFirstIndexArgsDic = {}
     self.IsInited = false
@@ -69,10 +68,8 @@ function XUiNewFuben:OnEnable()
     self:RefreshBg()
     self:InitBg()
     self:OnChildPanelEnable()
-    if self.TimerId then
-        XScheduleManager.UnSchedule(self.TimerId)
-    end
-    self.TimerId = XScheduleManager.ScheduleForeverEx(handler(self, self.TimeUpdate), 1000, 1000)
+    XScheduleManagerPro.UnSchedule(self.TimeUpdate, self)
+    XScheduleManagerPro.ScheduleForeverEx(self.TimeUpdate, self, 1000, 1000)
 end
 
 function XUiNewFuben:OnChildPanelEnable()
@@ -90,9 +87,7 @@ function XUiNewFuben:OnChildPanelDisable()
 end
 
 function XUiNewFuben:OnDisable()
-    if self.TimerId then
-        XScheduleManager.UnSchedule(self.TimerId)
-    end
+    XScheduleManagerPro.UnSchedule(self.TimeUpdate, self)
     self:OnChildPanelDisable()
 end
 

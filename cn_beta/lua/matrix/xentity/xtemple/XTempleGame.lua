@@ -32,7 +32,6 @@ function XTempleGame:Ctor()
     self._TimeIndex = 1
 
     self._State = GAME_STATE.None
-    self._Timer = false
     self._SpendTime = 0
     self._Score = 0
     self._Round = 0
@@ -91,18 +90,17 @@ function XTempleGame:Start()
     self._State = GAME_STATE.Start
     self:UpdateScore()
     XEventManager.DispatchEvent(XEventId.EVENT_TEMPLE_TALK, XTempleEnumConst.NPC_TALK.STAGE_ENTER)
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:Update()
-        end, 0)
+    if not XScheduleManagerPro.HasSchedule(self._OnStartScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnStartScheduleCb, self, 0)
     end
 end
 
+function XTempleGame:_OnStartScheduleCb()
+    self:Update()
+end
+
 function XTempleGame:Stop()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartScheduleCb, self)
 end
 
 function XTempleGame:InstantUpdate()

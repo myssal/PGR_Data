@@ -41,11 +41,13 @@ function XUiMiniGamesCollectionMain:OnEnable()
     self:RefreshMaxScore()
     self:RefreshTime()
     self:UpdateReddot()
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        self:RefreshTime()
-        self:CheckActivityEnd()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnEnableScheduleCb, self, XScheduleManagerPro.SECOND)
     self._Control:TryOpenExitRecord()
+end
+
+function XUiMiniGamesCollectionMain:_OnEnableScheduleCb()
+    self:RefreshTime()
+    self:CheckActivityEnd()
 end
 
 function XUiMiniGamesCollectionMain:CheckActivityEnd()
@@ -55,19 +57,13 @@ function XUiMiniGamesCollectionMain:CheckActivityEnd()
     if not self._Control:IsActivityEnd() then
         return
     end
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
     XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.GameCollection)
     XLuaUiManager.RunMain()
 end
 
 function XUiMiniGamesCollectionMain:OnDisable()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
 end
 
 function XUiMiniGamesCollectionMain:OnDestroy()

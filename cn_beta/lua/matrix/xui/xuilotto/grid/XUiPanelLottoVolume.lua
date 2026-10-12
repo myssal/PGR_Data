@@ -102,23 +102,20 @@ end
 
 function XUiPanelLottoVolume:TweenInit()
     self:RemoveTimer()
-    self._Timer = XScheduleManager.ScheduleOnce(function()
-        self:PlayHideSliderTween()
-    end, self._InitWaitTime)
+    XScheduleManagerPro.ScheduleOnce(self._OnTweenInitScheduleCb, self, self._InitWaitTime)
+end
+
+function XUiPanelLottoVolume:_OnTweenInitScheduleCb()
+    self:PlayHideSliderTween()
 end
 
 function XUiPanelLottoVolume:TweenClick()
     self:RemoveTimer()
-    self._Timer = XScheduleManager.ScheduleOnce(function()
-        self:PlayHideSliderTween()
-    end, self._ClickWaitTime)
+    XScheduleManagerPro.ScheduleOnce(self._OnTweenInitScheduleCb, self, self._ClickWaitTime)
 end
 
 function XUiPanelLottoVolume:RemoveTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnTweenInitScheduleCb, self)
 end
 
 function XUiPanelLottoVolume:OnBtnActiveVolumeClick()

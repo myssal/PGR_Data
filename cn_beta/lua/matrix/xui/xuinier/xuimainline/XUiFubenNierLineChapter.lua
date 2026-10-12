@@ -28,17 +28,11 @@ end
 function XUiFubenNierLineChapter:OnEnable()
 
     if XDataCenter.NieRManager.GetIsActivityEnd() then
-        XScheduleManager.ScheduleOnce(function()
-            if not self.GameObject or  not self.GameObject:Exist() then return end
-            XDataCenter.NieRManager.OnActivityEnd()
-        end, 1)
+        XScheduleManagerPro.ScheduleOnce(self._OnOnEnableScheduleCb, self, 1)
     else
 
         if XDataCenter.NieRManager.CheckFirstNieREasterEggStageShow() then
-            XScheduleManager.ScheduleOnce(function()
-               if not self.GameObject or  not self.GameObject:Exist() then return end
-               self:Close()
-            end, 1)
+            XScheduleManagerPro.ScheduleOnce(self._OnCloseScheduleCb, self, 1)
         else
             self.CurChapterData = XDataCenter.NieRManager.GetChapterDataById(self.CurChapterId)
             local unlockCount, count = XDataCenter.NieRManager.GetCharacterCount()
@@ -128,4 +122,13 @@ end
 
 function XUiFubenNierLineChapter:GetNieRLineBanner()
     return self.XUiNieRLineBanner
+end
+
+function XUiFubenNierLineChapter:_OnCloseScheduleCb()
+    if not self.GameObject or  not self.GameObject:Exist() then return end
+    self:Close()
+end
+function XUiFubenNierLineChapter:_OnOnEnableScheduleCb()
+    if not self.GameObject or  not self.GameObject:Exist() then return end
+    XDataCenter.NieRManager.OnActivityEnd()
 end

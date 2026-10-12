@@ -211,14 +211,11 @@ end
 function XUiFubenBossSingleRank:_RefreshTimer()
     self:_RemoveTimer()
 
-    self._Timer = XScheduleManager.ScheduleForever(Handler(self, self._RefreshResetTime), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiFubenBossSingleRank._RefreshResetTime, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiFubenBossSingleRank:_RemoveTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiFubenBossSingleRank._RefreshResetTime, self)
 end
 
 function XUiFubenBossSingleRank:_RefreshDynamicTable()

@@ -67,6 +67,9 @@
 ---@field CloudGameManager XCloudGameManager
 ---@field AutoWindowManager XAutoWindowManager
 ---@field NoticeManager XNoticeManager
+---@field FubenExperimentManager XFubenExperimentManager
+---@field SignInManager XSignInManager
+---@field FubenRepeatChallengeManager XFubenRepeatChallengeManager
 XDataCenter = XDataCenter or {}
 
 local IsWindowsEditor = XMain.IsWindowsEditor
@@ -90,6 +93,8 @@ end
 function XDataCenter.InitBeforeLogin()
     local SchedulePrivate = require("XCommon/XScheduleManager")
     SchedulePrivate.__Clear__()
+    local ScheduleProPrivate = require("XCommon/XScheduleManagerPro/XScheduleManagerPro")
+    ScheduleProPrivate.__Clear__()
 
     XGame.InitBreakPointTimer()
 
@@ -146,7 +151,6 @@ function XDataCenter.InitDependency()
     InitManager("FubenRepeatChallengeManager", XFubenRepeatChallengeManagerCreator)
 
     InitManager("TeamManager", XTeamManagerCreator)
-    InitManager("EquipGuideManager", XEquipGuideManagerCreator)
     InitManager("FurnitureManager", XFurnitureManagerCreator)
     InitManager("HeadPortraitManager", XHeadPortraitManagerCreator)
     InitManager("DormManager", XDormManagerCreator)

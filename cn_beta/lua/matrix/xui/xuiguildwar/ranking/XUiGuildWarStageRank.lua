@@ -68,17 +68,11 @@ function XUiGuildWarStageRank:RefreshList()
 end
 
 function XUiGuildWarStageRank:StartAutoRefresh()
-    if self.TimeId then return end
-    self.TimeId = XScheduleManager.ScheduleForever(function()
-                self:RefreshList()
-            end, 5 * 60 * 1000
-        )
+    XScheduleManagerPro.ScheduleForever(self._OnRefreshListScheduleCb, self, 5 * 60 * 1000)
 end
 
 function XUiGuildWarStageRank:StopAutoRefresh()
-    if not self.TimeId then return end
-    XScheduleManager.UnSchedule(self.TimeId)
-    self.TimeId = nil
+    XScheduleManagerPro.UnSchedule(self._OnRefreshListScheduleCb, self)
 end
 
 function XUiGuildWarStageRank:OnEnable()
@@ -91,6 +85,10 @@ end
 
 function XUiGuildWarStageRank:OnDestroy()
     self:StopAutoRefresh()
+end
+
+function XUiGuildWarStageRank:_OnRefreshListScheduleCb()
+    self:RefreshList()
 end
 
 return XUiGuildWarStageRank

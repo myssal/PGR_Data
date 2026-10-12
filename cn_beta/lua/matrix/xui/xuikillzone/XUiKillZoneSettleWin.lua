@@ -45,9 +45,7 @@ end
 function XUiKillZoneSettleWin:OnEnable()
     self.Super.OnEnable(self)
     self:UpdateView()
-    XScheduleManager.ScheduleOnce(function()
-        self:PlayAnimationWithMask("AnimEnable2")
-    end, 0)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayAnimationWithMaskScheduleCb, self, 0)
 end
 
 function XUiKillZoneSettleWin:OnDisable()
@@ -255,6 +253,10 @@ function XUiKillZoneSettleWin:StopAudio()
     if self.AudioInfo then
         self.AudioInfo:Stop()
     end
+end
+
+function XUiKillZoneSettleWin:_OnPlayAnimationWithMaskScheduleCb()
+    self:PlayAnimationWithMask("AnimEnable2")
 end
 
 return XUiKillZoneSettleWin

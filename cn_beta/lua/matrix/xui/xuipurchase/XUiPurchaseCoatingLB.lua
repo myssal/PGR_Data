@@ -4,7 +4,6 @@ local XUiPurchaseCoatingLB = XClass(nil, "XUiPurchaseCoatingLB")
 local Next = _G.next
 local CSXTextManagerGetText = CS.XTextManager.GetText
 local XUiPurchaseCoatingLBListItem = require("XUi/XUiPurchase/XUiPurchaseCoatingLBListItem")
-local CurrentSchedule = nil
 
 function XUiPurchaseCoatingLB:Ctor(ui,uiRoot, callBack)
     self.CurState = false
@@ -96,7 +95,7 @@ function XUiPurchaseCoatingLB:StartLBTimer()
     end
 
     self.IsStart = true
-    CurrentSchedule = XScheduleManager.ScheduleForever(function() self:UpdateLBTimer()end, 1000)
+    XScheduleManagerPro.ScheduleForever(self.UpdateLBTimer, self, 1000)
 end
 
 function XUiPurchaseCoatingLB:UpdateLBTimer()
@@ -186,11 +185,8 @@ function XUiPurchaseCoatingLB:ShowPanel()
 end
 
 function XUiPurchaseCoatingLB:DestroyTimer()
-    if CurrentSchedule then
-        self.IsStart = false
-        XScheduleManager.UnSchedule(CurrentSchedule)
-        CurrentSchedule = nil
-    end
+    self.IsStart = false
+    XScheduleManagerPro.UnSchedule(self.UpdateLBTimer, self)
 end
 
 function XUiPurchaseCoatingLB:Init()

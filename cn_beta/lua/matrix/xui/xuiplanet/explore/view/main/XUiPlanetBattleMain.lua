@@ -91,14 +91,8 @@ function XUiPlanetBattleMain:OnStart()
         self._Scene:UpdateCameraInStage(true, true)
     end
 
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            if not self.GameObject:Exist() then
-                return
-            end
-            self._Explore:Update(XLuaTime.deltaTime)
-            self._Scene:CameraUpdate(self._Explore, XLuaTime.deltaTime * self._Explore:GetTimeScale())
-        end, 0)
+    if not XScheduleManagerPro.HasSchedule(self._OnStartScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnStartScheduleCb, self, 0)
     end
     self._Explore:OnStart()
 end
@@ -130,10 +124,7 @@ function XUiPlanetBattleMain:OnDisable()
 end
 
 function XUiPlanetBattleMain:OnDestroy()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStartScheduleCb, self)
 
     XEventManager.RemoveEventListener(XEventId.EVENT_PLANET_UPDATE_MONSTER, self.OnBossChanged, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_PLANET_UPDATE_PAUSE, self.UpdateBtnPlay, self)
@@ -819,11 +810,7 @@ function XUiPlanetBattleMain:PlayBossCam(entityId)
     self._Scene:UpdateCameraInBoss(model:GetTransform(), function()
         model:ShowRoleModel()
         self._Explore:PlayBornEffect(self._Explore:GetEntity(entityId))
-        XScheduleManager.ScheduleOnce(function()
-            self._IsCamFollowLeader = false
-            self:ShowUi()
-            self:ExploreResume(XPlanetExploreConfigs.PAUSE_REASON.CAMERA)
-        end, 0.7 * XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleOnce(self._OnShowUiScheduleCb, self, 0.7 * XScheduleManagerPro.SECOND)
     end)
 end
 --endregion
@@ -874,5 +861,18 @@ function XUiPlanetBattleMain:CheckIsFirstGetMoney()
     end
 end
 --endregion
+
+function XUiPlanetBattleMain:_OnShowUiScheduleCb()
+    self:ShowUi()
+    self:ExploreResume(XPlanetExploreConfigs.PAUSE_REASON.CAMERA)
+end
+
+function XUiPlanetBattleMain:_OnStartScheduleCb()
+    if not self.GameObject:Exist() then
+        return
+    end
+    self._Explore:Update(XLuaTime.deltaTime)
+    self._Scene:CameraUpdate(self._Explore, XLuaTime.deltaTime * self._Explore:GetTimeScale())
+end
 
 return XUiPlanetBattleMain

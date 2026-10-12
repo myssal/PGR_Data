@@ -70,6 +70,16 @@ end
 function XUiCommonDragContext:GetPayload()
     return self._Payload
 end
+
+-- 本帧 tick 读到的指针屏幕坐标，非拖拽中或取不到输入时返回 nil
+-- 供业务侧做边缘滚动一类的跟手逻辑，不必自己再读一次 Input
+---@return number|nil, number|nil
+function XUiCommonDragContext:GetPointerScreenXY()
+    if not self._IsDragging then
+        return nil
+    end
+    return self._PointerX, self._PointerY
+end
 --endregion
 
 --region 落点区域（Rect 模式）
@@ -184,16 +194,11 @@ function XUiCommonDragContext:_StartTick()
     self:_StopTick()
     self._TickFirstFrame = true -- 首帧只定位克隆、不做抬手判定
     self:_OnTick() -- 立即定位一次，避免首帧错位
-    self._Tick = XScheduleManager.ScheduleForeverEx(function()
-        self:_OnTick()
-    end, 0)
+    XScheduleManagerPro.ScheduleForeverEx(XUiCommonDragContext._OnDragTickScheduleCb, self, 0)
 end
 
 function XUiCommonDragContext:_StopTick()
-    if self._Tick then
-        XScheduleManager.UnSchedule(self._Tick)
-        self._Tick = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiCommonDragContext._OnDragTickScheduleCb, self)
 end
 
 function XUiCommonDragContext:_OnTick()
@@ -209,6 +214,7 @@ function XUiCommonDragContext:_OnTick()
         return
     end
     local x, y = XUiCommonDragInput.GetScreenXY(self._PointerId)
+    self._PointerX, self._PointerY = x, y
     self:_RefreshClonePos(x, y)
     if self._HitTest == XEnumConst.CommonDrag.HitTest.Rect then
         self:_HitTestByRect(x, y)
@@ -330,6 +336,10 @@ function XUiCommonDragContext:Destroy()
         self._Progress:Close()
         self._Progress = nil
     end
+end
+
+function XUiCommonDragContext:_OnDragTickScheduleCb()
+    self:_OnTick()
 end
 
 return XUiCommonDragContext

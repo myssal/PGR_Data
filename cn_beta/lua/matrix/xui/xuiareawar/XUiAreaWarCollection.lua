@@ -297,16 +297,11 @@ end
 
 function XUiAreaWarCollection:StartTimer()
     self:StopTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:RefreshAuctionBubble()
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(XUiAreaWarCollection._OnAuctionBubbleScheduleCb, self, XScheduleManagerPro.SECOND, 0)
 end
 
 function XUiAreaWarCollection:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiAreaWarCollection._OnAuctionBubbleScheduleCb, self)
 end
 
 -- 刷新交易行气泡
@@ -325,6 +320,10 @@ end
 function XUiAreaWarCollection:RefreshBtnAuction()
     local isRed = self._Control:IsRedAuctionOrder()
     self.BtnAuction:ShowReddot(isRed)
+end
+
+function XUiAreaWarCollection:_OnAuctionBubbleScheduleCb()
+    self:RefreshAuctionBubble()
 end
 
 return XUiAreaWarCollection

@@ -71,21 +71,11 @@ function XUiEmojiItemEx:RefreshRedPoint()
 end
 
 function XUiEmojiItemEx:SetCountDownTimer()
-    if self.TimeLimitId then return end
-    self.TimeLimitId = XScheduleManager.ScheduleForever(function()
-            if not self.Transform or XTool.UObjIsNil(self.Transform) then
-                self:StopCountDownTimer()
-                return
-            end
- 
-            self:SetTimeText()
-        end, 1)
+    XScheduleManagerPro.ScheduleForever(self._OnStopCountDownTimerScheduleCb, self, 1)
 end
 
 function XUiEmojiItemEx:StopCountDownTimer()
-    if not self.TimeLimitId then return end
-    XScheduleManager.UnSchedule(self.TimeLimitId)
-    self.TimeLimitId = nil
+    XScheduleManagerPro.UnSchedule(self._OnStopCountDownTimerScheduleCb, self)
 end
 
 function XUiEmojiItemEx:SetTimeText()
@@ -130,6 +120,15 @@ end
 
 function XUiEmojiItemEx:Hide()
     self.GameObject:SetActiveEx(false)
+end
+
+function XUiEmojiItemEx:_OnStopCountDownTimerScheduleCb()
+    if not self.Transform or XTool.UObjIsNil(self.Transform) then
+        self:StopCountDownTimer()
+        return
+    end
+
+    self:SetTimeText()
 end
 
 return XUiEmojiItemEx

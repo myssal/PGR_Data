@@ -266,15 +266,22 @@ function XUiGridExploreChapter:ClickStageGrid(grid)
     end
 
     self.Mask.gameObject:SetActiveEx(true)
-    XScheduleManager.ScheduleOnce(function()
-        self.PanelDrag:FocusTarget(grid.Transform, ScaleLevel.Big, FocusTime, CS.UnityEngine.Vector3.zero, function()
-            -- 选中回调
-            if self.ShowStageCb then
-                self.ShowStageCb(grid.Stage, grid.ChapterOrderId)
-            end
-            self.Mask.gameObject:SetActiveEx(false)
-        end)
-    end, 0)
+    XScheduleManagerPro.ScheduleNextFrame(XUiGridExploreChapter._OnFocusStageScheduleCb, self)
+end
+
+--- 定时器回调：延迟一帧聚焦选中的关卡
+function XUiGridExploreChapter:_OnFocusStageScheduleCb()
+    local grid = self.CurStageGrid
+    if not grid or XTool.UObjIsNil(self.Mask) then
+        return
+    end
+    self.PanelDrag:FocusTarget(grid.Transform, ScaleLevel.Big, FocusTime, CS.UnityEngine.Vector3.zero, function()
+        -- 选中回调
+        if self.ShowStageCb then
+            self.ShowStageCb(grid.Stage, grid.ChapterOrderId)
+        end
+        self.Mask.gameObject:SetActiveEx(false)
+    end)
 end
 
 function XUiGridExploreChapter:IsEggStage(stageCfg)
@@ -323,6 +330,7 @@ function XUiGridExploreChapter:OnDisable()
     if not self.Enabled then
         return
     end
+    XScheduleManagerPro.UnSchedule(XUiGridExploreChapter._OnFocusStageScheduleCb, self)
     if self.GridStageList then
         for _, v in pairs(self.GridStageList) do
             v:OnDisable()

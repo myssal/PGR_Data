@@ -43,10 +43,7 @@ function XUiPanelBuffDetailBubble:Refresh(targetTransform, info)
     self.Line.gameObject:SetActiveEx(not isVolatilityEmpty and not isEventEmpty)
 
     -- 延迟一帧刷新高度
-    XScheduleManager.ScheduleNextFrame(function()
-        self:RefreshHeight()
-        self.CanvasGroup.alpha = 1
-    end)
+    XScheduleManagerPro.ScheduleNextFrame(self._OnRefreshHeightScheduleCb, self)
 end
 
 function XUiPanelBuffDetailBubble:RefreshGridBuffs(ids, startIndex, parentUi)
@@ -91,6 +88,11 @@ function XUiPanelBuffDetailBubble:RefreshHeight()
     else
         self.Transform.sizeDelta = CS.UnityEngine.Vector2(self.Width, self.MaxHeight)
     end
+end
+
+function XUiPanelBuffDetailBubble:_OnRefreshHeightScheduleCb()
+    self:RefreshHeight()
+    self.CanvasGroup.alpha = 1
 end
 
 return XUiPanelBuffDetailBubble

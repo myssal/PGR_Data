@@ -179,9 +179,7 @@ function XUiRacePredict:OnClickPredictOption(isRole, id)
         self.TxtMemberName.text = self._Control:GetRaceCharacterById(id).Name
         self.PanelFail.gameObject:SetActiveEx(self:IsCharacterObsoleteNow(id))
         self._3DCamera:LookAt(id)
-        self._HudTimer = XScheduleManager.ScheduleForever(function()
-            self:UpdateHud()
-        end, 10)
+        XScheduleManagerPro.ScheduleForever(self._OnUpdateHudScheduleCb, self, 10)
         self._3DCamera:PlayRoleEffect()
     else
         self._CurRoleId = 0
@@ -222,10 +220,7 @@ function XUiRacePredict:UpdatePredictBtn()
 end
 
 function XUiRacePredict:RemoverHudTimer()
-    if self._HudTimer then
-        XScheduleManager.UnSchedule(self._HudTimer)
-        self._HudTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateHudScheduleCb, self)
 end
 
 function XUiRacePredict:IsInGuessTime()
@@ -346,6 +341,10 @@ function XUiRacePredict:PlayPlatformUp()
         return
     end
     animator:Play("FloorUpLoop")
+end
+
+function XUiRacePredict:_OnUpdateHudScheduleCb()
+    self:UpdateHud()
 end
 
 return XUiRacePredict

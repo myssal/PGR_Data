@@ -42,18 +42,17 @@ function XUiRegressionActivity:OnEnable()
     else
         self.PanelBtnTab:SelectIndex(DefaultSelectIndex)
     end
-    if not self.Timer then
-        self.Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateTime()
-        end, ScheduleMinute)
+    if not XScheduleManagerPro.HasSchedule(self._OnEnableScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnEnableScheduleCb, self, ScheduleMinute)
     end
 end
 
+function XUiRegressionActivity:_OnEnableScheduleCb()
+        self:UpdateTime()
+end
+
 function XUiRegressionActivity:OnDisable()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
 end
 
 function XUiRegressionActivity:InitUi()

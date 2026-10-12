@@ -49,9 +49,11 @@ end
 
 function XUiPassportUpLevelGrid:ShowEffect()
     self:SetImgEffectActive(true)
-    XScheduleManager.ScheduleOnce(function()
-        self:SetImgEffectActive(false)
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(self._OnSetImgEffectActiveScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+function XUiPassportUpLevelGrid:_OnSetImgEffectActiveScheduleCb()
+    self:SetImgEffectActive(false)
 end
 
 function XUiPassportUpLevelGrid:SetImgEffectActive(isActive)

@@ -37,6 +37,11 @@ function XReformAgency:OnInit()
         --ScrollOffset = 50, -- 滚动偏移
         --EndTimeCode = 20123001, -- 活动时间结束码
     }
+
+    -- 4.9 天平质点子 Agency（一次性封存功能，子 Agency 无 config——config 在子 Control 的 config 分部 XReformBalanceConfigControl）
+    -- 本 Agency 承载天平 RPC / 跨 Agency 事件（待协议接入时填）
+    -- 封存时：删 SubModules/Balance/ 夹 + 去本行 AddSubAgency
+    self.BalanceAgency = self:AddSubAgency(require("XModule/XReform/SubModules/Balance/XReformBalanceAgency"))
 end
 
 function XReformAgency:InitRpc()
@@ -420,6 +425,44 @@ end
 function XReformAgency:GetRootStageId(stageId)
     return self._Model:GetRootStageId(stageId)
 end
+
+--region 4.9 天平（封存时连同 SubModules/Balance 一并删除）
+
+--- 进战数据，非天平关卡返回 nil；由 XReform2ndManager.PreFight 塞进 XPreFightData
+---@param stageId number
+---@return table|nil { WishMassIds = number[], CostMassIds = number[] }
+function XReformAgency:GetBalancePreFightData(stageId)
+    return self._Model:GetBalancePreFightData(stageId)
+end
+
+--- 已选角色砝码对应的可上阵实体 id
+---@return number[]
+function XReformAgency:GetBalanceEntityIds()
+    return self._Model:GetBalanceEntityIds()
+end
+
+--- 编队界面进入时自动上阵的实体 id
+---@return number[]
+function XReformAgency:GetBalanceAutoEntityIds()
+    return self._Model:GetBalanceAutoEntityIds()
+end
+
+--- 编队/选人界面的可选实体（自有角色或试玩机器人）
+---@return table[]
+function XReformAgency:GetBalanceEntityList()
+    local entities = {}
+    for _, entityId in ipairs(self:GetBalanceEntityIds()) do
+        local entity = XRobotManager.CheckIsRobotId(entityId)
+            and XRobotManager.GetRobotById(entityId)
+            or XMVCA.XCharacter:GetCharacter(entityId)
+        if entity then
+            entities[#entities + 1] = entity
+        end
+    end
+    return entities
+end
+
+--endregion
 
 function XReformAgency:IsOnUiStage(stageId)
     if XLuaUiManager.IsUiShow("UiReformList") then

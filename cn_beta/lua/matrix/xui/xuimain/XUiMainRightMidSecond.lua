@@ -33,16 +33,15 @@ function XUiMainRightMidSecond:OnEnable()
     self:UpdateSubMenuList()
     self:UpdateTime()
     -- 每分钟更新一次日期显示
-    self.InfoUpdateTimer = XScheduleManager.ScheduleForever(function()
-        self:UpdateTime()
-    end, 60 * 1000, XTime.GetServerNowTimestamp() % 60 * 1000)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateTimeTimer, self, 60 * 1000, XTime.GetServerNowTimestamp() % 60 * 1000)
+end
+
+function XUiMainRightMidSecond:_OnUpdateTimeTimer()
+    self:UpdateTime()
 end
 
 function XUiMainRightMidSecond:OnDisable()
-    if self.InfoUpdateTimer then
-        XScheduleManager.UnSchedule(self.InfoUpdateTimer)
-        self.InfoUpdateTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnUpdateTimeTimer, self)
 
     if self.MainRedId then
         XRedPointManager.RemoveRedPointEvent(self.MainRedId)

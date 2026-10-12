@@ -56,18 +56,12 @@ function XUiTheatre5SkillHandbook:OnStart()
         self.BtnTab3,
         self.BtnTab4,
     }, function(index)
-        if self._TimerDelaySelectTab then
-            XScheduleManager.UnSchedule(self._TimerDelaySelectTab)
-            self._TimerDelaySelectTab = nil
-        end
+            XScheduleManagerPro.UnSchedule(self._OnStartScheduleCb, self)
         self:OnSelectTab(index)
     end)
 
     -- 延迟一秒播放, 让玩家看到动画
-    self._TimerDelaySelectTab = XScheduleManager.ScheduleOnce(function()
-        self._TimerDelaySelectTab = nil
-        self.PanelBtnTab:SelectIndex(1)
-    end, 500)
+    XScheduleManagerPro.ScheduleOnce(self._OnStartScheduleCb, self, 500)
 end
 
 function XUiTheatre5SkillHandbook:OnEnable()
@@ -85,10 +79,7 @@ function XUiTheatre5SkillHandbook:OnDestroy()
         self:_RemoveTimerIdAndDoCallback(self._TimerDelayInit)
         self._TimerDelayInit = nil
     end
-    if self._TimerDelaySelectTab then
-        XScheduleManager.UnSchedule(self._TimerDelaySelectTab)
-        self._TimerDelaySelectTab = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStartScheduleCb, self)
     -- 重置检查可见性的时间记录
     self._LastCheckVisibleTime = 0
 end
@@ -286,6 +277,10 @@ function XUiTheatre5SkillHandbook:CheckGridVisible(force)
             end
         end
     end
+end
+
+function XUiTheatre5SkillHandbook:_OnStartScheduleCb()
+    self.PanelBtnTab:SelectIndex(1)
 end
 
 return XUiTheatre5SkillHandbook

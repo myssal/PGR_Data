@@ -247,15 +247,12 @@ function XUiGame2048Shop:RefreshTime()
 end
 
 function XUiGame2048Shop:StopLeftTimeTimer()
-    if self._LeftTimeTimerId then
-        XScheduleManager.UnSchedule(self._LeftTimeTimerId)
-        self._LeftTimeTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.RefreshTime, self)
 end
 
 function XUiGame2048Shop:StartLeftTimeTimer()
     self:StopLeftTimeTimer()
-    self._LeftTimeTimerId = XScheduleManager.ScheduleForever(handler(self, self.RefreshTime), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self.RefreshTime, self, XScheduleManagerPro.SECOND)
 end
 
 return XUiGame2048Shop

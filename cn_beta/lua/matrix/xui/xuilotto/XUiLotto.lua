@@ -53,24 +53,36 @@ function XUiLotto:OnDisable()
 end
 
 function XUiLotto:SetBtnCallBack()
-    self.BtnBack.CallBack = function()
-        self:OnBtnBackClick()
-    end
-    self.BtnMainUi.CallBack = function()
-        self:OnBtnMainUiClick()
-    end
-    self.PanelUseItem:GetObject("BtnUseItem").CallBack = function()
-        self:OnBtnUseItemClick()
-    end
-    self.BtnDrawRule.CallBack = function()
-        self:OnBtnDrawRuleClick()
-    end
-    self.PanelDrawButtons:GetObject("BtnDraw").CallBack = function()
-        self:OnBtnDrawClick()
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
+    self.PanelUseItem:GetObject("BtnUseItem"):AddEventListener(handler(self, self.OnBtnUseItemClick))
+    self.BtnDrawRule:AddEventListener(handler(self, self.OnBtnDrawRuleClick))
+    self.PanelDrawButtons:GetObject("BtnDraw"):AddEventListener(handler(self, self.OnBtnDrawClick))
+    if self.BtnChange then
+        self.BtnChange:AddEventListener(handler(self, self.OnBtnChangeClick))
+        self:RefreshBtnChange()
     end
 end
 
+function XUiLotto:RefreshBtnChange()
+    if not self.BtnChange then return end
+    local lottoId = self.LottoGroupData:GetDrawData():GetId()
+    self.BtnChange.gameObject:SetActiveEx(XDataCenter.LottoManager.IsLottoIdBelongSelfChoice(lottoId))
+end
+
+function XUiLotto:OnBtnChangeClick()
+    -- 必须先翻 Entrance.IsChangeMode 再 Close，否则 Entrance.OnEnable 会因 dic 已选直接 CloseImmediately
+    XDataCenter.LottoManager.OpenSelfChoiceEntranceForChange()
+    self:Close()
+end
+
 function XUiLotto:OnBtnBackClick()
+    -- 自选卡池：直接回主界面（Entrance 由 RunMain 一并关闭）
+    local lottoId = self.LottoGroupData:GetDrawData():GetId()
+    if XDataCenter.LottoManager.IsLottoIdBelongSelfChoice(lottoId) then
+        XLuaUiManager.RunMain()
+        return
+    end
     self:Close()
 end
 
@@ -224,26 +236,25 @@ function XUiLotto:PushShow(rewardList)
 end
 
 function XUiLotto:StartTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnStartTimerScheduleCb, self) then
         self:StopTimer()
     end
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        local now = XTime.GetServerNowTimestamp()
-        local drawData = self.LottoGroupData:GetDrawData()
-        local timeId = drawData:GetTimeId()
-        local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
-        if now > endTime then
-            XUiManager.TipText("LottoActivityOver")
-            XLuaUiManager.RunMain()
-        end
-    end,XScheduleManager.SECOND,0)
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self,XScheduleManagerPro.SECOND,0)
+end
+
+function XUiLotto:_OnStartTimerScheduleCb()
+    local now = XTime.GetServerNowTimestamp()
+    local drawData = self.LottoGroupData:GetDrawData()
+    local timeId = drawData:GetTimeId()
+    local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
+    if now > endTime then
+        XUiManager.TipText("LottoActivityOver")
+        XLuaUiManager.RunMain()
+    end
 end
 
 function XUiLotto:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
 end
 
 --region Event

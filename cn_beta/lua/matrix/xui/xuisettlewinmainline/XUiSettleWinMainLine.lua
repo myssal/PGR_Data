@@ -33,14 +33,14 @@ end
 function XUiSettleWinMainLine:OnEnable()
     if not self.IsFirst then
         XLuaUiManager.SetMask(true)
-        XScheduleManager.ScheduleOnce(function()
-            self:PlaySecondAnimation()
-        end, 0)
+        XScheduleManagerPro.ScheduleNextFrame(XUiSettleWinMainLine.PlaySecondAnimation, self)
     end
     self.UiStageSettleSound:PlaySettleSound()
 end
 
 function XUiSettleWinMainLine:OnDestroy()
+    XScheduleManagerPro.UnSchedule(XUiSettleWinMainLine.PlaySecondAnimation, self)
+    XScheduleManagerPro.UnSchedule(XUiSettleWinMainLine._OnRewardAnimScheduleCb, self)
     XDataCenter.AntiAddictionManager.EndFightAction()
     self.UiStageSettleSound:StopSettleSound()
 end
@@ -49,27 +49,25 @@ end
 function XUiSettleWinMainLine:PlayRewardAnimation()
     local delay = XDataCenter.FubenManager.SettleRewardAnimationDelay
     local interval = XDataCenter.FubenManager.SettleRewardAnimationInterval
-    local this = self
 
     -- 没有奖励则直接播放第二个动画
     if not self.GridRewardList or #self.GridRewardList == 0 then
-        XScheduleManager.ScheduleOnce(function()
-            this:PlaySecondAnimation()
-        end, delay)
+        XScheduleManagerPro.ScheduleOnce(XUiSettleWinMainLine.PlaySecondAnimation, self, delay)
         return
     end
 
     self.RewardAnimationIndex = 1
-    XScheduleManager.Schedule(function()
-        if this.RewardAnimationIndex == #self.GridRewardList then
-            this:PlayReward(this.RewardAnimationIndex, function()
-                this:PlaySecondAnimation()
-            end)
-        else
-            this:PlayReward(this.RewardAnimationIndex)
-        end
-        this.RewardAnimationIndex = this.RewardAnimationIndex + 1
-    end, interval, #self.GridRewardList, delay)
+    XScheduleManagerPro.Schedule(XUiSettleWinMainLine._OnRewardAnimScheduleCb, self, interval, #self.GridRewardList, delay)
+end
+
+-- 奖励动画定时器回调
+function XUiSettleWinMainLine:_OnRewardAnimScheduleCb()
+    if self.RewardAnimationIndex == #self.GridRewardList then
+        self:PlayReward(self.RewardAnimationIndex, handler(self, self.PlaySecondAnimation))
+    else
+        self:PlayReward(self.RewardAnimationIndex)
+    end
+    self.RewardAnimationIndex = self.RewardAnimationIndex + 1
 end
 
 -- 第二个动画

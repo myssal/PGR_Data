@@ -3,7 +3,7 @@ local SkillConfig = require("TempSkillConfigs/SkillConfig_8052")
 local EGameplayTag = require("Enum/XGameplayTag")
 local GameplayTag = require("Tools/GameplayTag/GameplayTag")
 --local SkillForMonster = require("TempSkillConfigs/SkillConfigsForMonster")
----空花无人机
+---Nalasr-E炮台
 ---@class XChar3503 : XRelinkMonsterBase
 local XChar3503 = XDlcScriptManager.RegCharScript(3503, "XChar3503", Base)
 
@@ -11,6 +11,8 @@ local XChar3503 = XDlcScriptManager.RegCharScript(3503, "XChar3503", Base)
 ---配置主入口
 
 --技能释放配置
+
+
 function XChar3503:SkillCastConfig()
     self.isOverDriveActive = false --关闭OD
     self.isBreakGaugeActive = false --关闭韧性
@@ -28,30 +30,30 @@ function XChar3503:SkillCastConfig()
         near = { --近距离攻击或游荡
             attack = 50,
             front = 0,
-            back = 80,
-            left = 30,
-            right = 30,
-            daze = 20,
+            back = 0,
+            left = 0,
+            right = 0,
+            daze = 50,
         },
         mid = {--中距离后退或左右游荡
             attack = 50,
             front = 0,
             back = 0,
-            left = 60,
-            right = 60,
-            daze = 0,
+            left = 0,
+            right = 0,
+            daze = 50,
         },
         far = {--远距离攻击或向前游荡
             attack = 50,
             front = 0,
             back = 0,
-            left = 80,
-            right = 80,
-            daze = 0,
+            left = 0,
+            right = 0,
+            daze = 50,
         }
     }
-    self.dazeTimes = {1.5,2}
-    self.wanderTimes = {1.6,2}
+    self:SetSelfAiDelayOpen(4)
+
     self.selectSkillType = Base.SelectSkillType.CastGroup --按照技能释放组去放技能
     self.castGroup= {
         --距离参考{
@@ -66,7 +68,6 @@ function XChar3503:SkillCastConfig()
         },
     }
     self.isOpenChase = true
-    self:SetSelfAiDelayOpen(0.3)
 end
 
 --function XChar3503:Update(dt)

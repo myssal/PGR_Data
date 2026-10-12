@@ -272,18 +272,16 @@ end
 -- 开启能量变化飘字定时器
 function XUiPanelPcgGameCommander:StartEnergyChangeTimer()
     self:ClearEnergyChangeTimer()
-    self.EnergyChangeTimer = XScheduleManager.ScheduleOnce(function()
-        self.TxtEnergyAdd.gameObject:SetActiveEx(false)
-        self.TxtEnergyMinus.gameObject:SetActiveEx(false)
-        self.EnergyChangeTimer = nil
-    end, 1000)
+    XScheduleManagerPro.ScheduleOnce(self._OnStartEnergyChangeTimerScheduleCb, self, 1000)
 end
 
+function XUiPanelPcgGameCommander:_OnStartEnergyChangeTimerScheduleCb()
+    self.TxtEnergyAdd.gameObject:SetActiveEx(false)
+    self.TxtEnergyMinus.gameObject:SetActiveEx(false)
+end
 -- 清除能量变化飘字定时器
 function XUiPanelPcgGameCommander:ClearEnergyChangeTimer()
-    if self.EnergyChangeTimer then
-        XScheduleManager.UnSchedule(self.EnergyChangeTimer)
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStartEnergyChangeTimerScheduleCb, self)
 end
 
 -- 获取受击位置
@@ -300,5 +298,7 @@ end
 function XUiPanelPcgGameCommander:PlayAnimAttack(target)
     -- TODO 指挥官攻击动画
 end
+
+
 
 return XUiPanelPcgGameCommander

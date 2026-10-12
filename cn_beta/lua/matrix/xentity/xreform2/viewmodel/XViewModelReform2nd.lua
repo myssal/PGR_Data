@@ -145,38 +145,6 @@ function XViewModelReform2nd:GetChapterData()
     return chapterData
 end
 
-function XViewModelReform2nd:GetTaskDataByIndex(index)
-    local taskData = {
-        Id = false,
-        RewardsList = false,
-        State = false,
-        StarNumsTxt = false
-    }
-
-    local task = self.TaskList[index]
-    local rewardId = XTaskConfig.GetTaskRewardId(task:GetId())
-    local taskStar = task:GetTotalStar()
-    local nowStar = 0
-
-    for i = 1, self.ChapterTotalNumber do
-        --nowStar = nowStar + self._Model:GetChapterByIndex(i):GetStarNumber(self._Model)
-        local chapter = self._Model:GetChapterByIndex(i)
-        nowStar = nowStar + self._Model:GetChapterStarNumber(chapter, true, true)
-                + self._Model:GetChapterStarNumber(chapter, true, false)
-    end
-
-    if nowStar >= taskStar then
-        nowStar = taskStar
-    end
-
-    taskData.Id = task:GetId()
-    taskData.RewardsList = XRewardManager.GetRewardList(rewardId)
-    taskData.State = task:GetState()
-    taskData.StarNumsTxt = XUiHelper.GetText("ReformTaskStarNumber", nowStar, taskStar)
-
-    return taskData
-end
-
 function XViewModelReform2nd:SetStageSelectByIndex(index)
     local chapter = self._Model:GetChapterByIndex(self.CurrentChapterIndex)
     local stageIds = self._Model:GetChapterStageIdById(chapter:GetId())
@@ -417,33 +385,6 @@ function XViewModelReform2nd:RefreshTaskData()
     self.MaxTaskStar = self.TaskList[self.TaskLength]:GetTotalStar()
 end
 
-function XViewModelReform2nd:SortTaskList()
-    local taskList = {}
-    ---@type XReform2ndTask[]
-    local oldTaskList = self.TaskList
-    local finishTaskList = {}
-    local taskListLength = 0
-    local finishTaskListLength = 0
-
-    for i = 1, self.TaskLength do
-        if oldTaskList[i]:GetState() ~= XDataCenter.TaskManager.TaskState.Finish then
-            taskList[taskListLength + 1] = oldTaskList[i]
-            taskListLength = taskListLength + 1
-        else
-            finishTaskList[finishTaskListLength + 1] = oldTaskList[i]
-            finishTaskListLength = finishTaskListLength + 1
-        end
-    end
-
-    for i = 1, finishTaskListLength do
-        taskList[taskListLength + 1] = finishTaskList[i]
-        taskListLength = taskListLength + 1
-    end
-
-    self.TaskList = taskList
-    self.TaskLength = taskListLength
-end
-
 function XViewModelReform2nd:GetDisplayRewards()
     local rewardIds = self._Model:GetDisplayTaskIds()
     local rewards = {}
@@ -464,19 +405,6 @@ function XViewModelReform2nd:GetDisplayRewards()
     end
 
     return rewards
-end
-
-function XViewModelReform2nd:GetTaskDataList()
-    self:RefreshTaskData()
-    self:SortTaskList()
-
-    local taskData = {}
-
-    for i = 1, self.TaskLength do
-        taskData[i] = self:GetTaskDataByIndex(i)
-    end
-
-    return taskData
 end
 
 function XViewModelReform2nd:GetTaskMaxStar()

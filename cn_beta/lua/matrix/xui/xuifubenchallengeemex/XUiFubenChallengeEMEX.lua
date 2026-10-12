@@ -9,7 +9,7 @@ end
 function XUiFubenChallengeEMEX:OnStart(parent, config)
     self.Parent = parent
     self:Init(config)
-    self.timer = XScheduleManager.ScheduleForever(self.Refresh, 0)
+    XScheduleManagerPro.ScheduleForever(self.Refresh, self, 0)
     self.PanelHover.gameObject:SetActive(false)
     self.OrgPosition = self.PanelMapContainer.transform.localPosition
     self.TargetPosition = self.PanelTargetFlag.transform.position
@@ -19,10 +19,7 @@ function XUiFubenChallengeEMEX:OnStart(parent, config)
 end
 
 function XUiFubenChallengeEMEX:OnDestroy()
-    if self.timer then
-        XScheduleManager.UnSchedule(self.timer)
-        self.timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.Refresh, self)
 
     XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_CLOSE_FUBENSTAGEDETAIL, self.UnFocus, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_REFRESH_STAGE_DATA, self.RefreshStage, self)
@@ -236,10 +233,7 @@ end
 
 function XUiFubenChallengeEMEX:Refresh()
     if XTool.UObjIsNil(self.GameObject) then
-        if self.timer then
-            XScheduleManager.UnSchedule(self.timer)
-            self.timer = nil
-        end
+        XScheduleManagerPro.UnSchedule(self.Refresh, self)
         return
     end
     self.SViewBg.horizontalNormalizedPosition = self.SViewStage.horizontalNormalizedPosition

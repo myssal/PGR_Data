@@ -6,14 +6,10 @@ function XUiLuckyTenantMainStageGrid:OnStart()
     self._Data = false
     XUiHelper.RegisterClickEvent(self, self.BtnChapter, self.OnClick, nil, true)
     XUiHelper.RegisterClickEvent(self, self.BtnGiveUp, self.GiveUp, nil, true)
-    self._Timer = false
 end
 
 function XUiLuckyTenantMainStageGrid:OnDestroy()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnUpdateRemainTimeScheduleCb, self)
 end
 
 function XUiLuckyTenantMainStageGrid:UpdateRemainTime()
@@ -27,10 +23,8 @@ function XUiLuckyTenantMainStageGrid:UpdateRemainTime()
         if remainTime >= 0 then
             local timeStr = XUiHelper.GetTime(math.max(remainTime, 1), XUiHelper.TimeFormatType.ACTIVITY)
             self.TxtTips.text = XUiHelper.GetText("LuckyTenantUnlockAfterTime", timeStr)
-            if not self._Timer then
-                self._Timer = XScheduleManager.ScheduleForever(function()
-                    self:UpdateRemainTime()
-                end, 1000)
+            if not XScheduleManagerPro.HasSchedule(self._OnUpdateRemainTimeScheduleCb, self) then
+                XScheduleManagerPro.ScheduleForever(self._OnUpdateRemainTimeScheduleCb, self, 1000)
             end
             return
         end
@@ -38,7 +32,7 @@ function XUiLuckyTenantMainStageGrid:UpdateRemainTime()
             self.TxtTips.text = XUiHelper.GetText("LuckyTenantPreStageNotClear")
         end
     end
-    if self._Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnUpdateRemainTimeScheduleCb, self) then
         self._Control:UpdateStageList()
         local stages = self._Control:GetUiData().Stages
         local newData
@@ -48,8 +42,7 @@ function XUiLuckyTenantMainStageGrid:UpdateRemainTime()
             end
         end
         if newData and newData.IsCanChallenge then
-            XScheduleManager.UnSchedule(self._Timer)
-            self._Timer = false
+            XScheduleManagerPro.UnSchedule(self._OnUpdateRemainTimeScheduleCb, self)
             self:Update(newData)
         end
     end
@@ -110,4 +103,7 @@ function XUiLuckyTenantMainStageGrid:GiveUp()
     self._Control:GiveUpPlayingRecord(self._Data)
 end
 
+function XUiLuckyTenantMainStageGrid:_OnUpdateRemainTimeScheduleCb()
+    self:UpdateRemainTime()
+end
 return XUiLuckyTenantMainStageGrid

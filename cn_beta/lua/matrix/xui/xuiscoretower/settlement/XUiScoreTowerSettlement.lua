@@ -165,31 +165,35 @@ end
 function XUiScoreTowerSettlement:PlayStarEnableAnim(count)
     self:StopGridAnimTime()
     self:SetGridStageStarAlpha(0)
-    local index = 1
     XLuaUiManager.SetMask(true)
-    self._GridAnimTimeId = XScheduleManager.Schedule(function()
-        local star = self.GridStageStarList[index]
-        if star then
-            local enableAnim = star:GetObject("GridStageStarEnable")
-            if enableAnim then
-                enableAnim:PlayTimelineAnimation()
-            end
-        end
-        index = index + 1
-    end, self.AnimInterval, count)
+    self._AnimIndex = 1
+    XScheduleManagerPro.Schedule(XUiScoreTowerSettlement._OnStarEnableAnimScheduleCb, self, self.AnimInterval, count)
     -- 动画结束 动画间隔 * 星级数量 + 200ms(最后一个星级动画播放时间)
-    XScheduleManager.ScheduleOnce(function()
-        self:StopGridAnimTime()
-        self:SetGridStageStarAlpha(1)
-        XLuaUiManager.SetMask(false)
-    end, self.AnimInterval * count + 200)
+    XScheduleManagerPro.ScheduleOnce(XUiScoreTowerSettlement._OnStarEnableAnimFinishScheduleCb, self, self.AnimInterval * count + 200)
+end
+
+--- 定时器回调：逐个播放星级动画
+function XUiScoreTowerSettlement:_OnStarEnableAnimScheduleCb()
+    local star = self.GridStageStarList[self._AnimIndex]
+    if star then
+        local enableAnim = star:GetObject("GridStageStarEnable")
+        if enableAnim then
+            enableAnim:PlayTimelineAnimation()
+        end
+    end
+    self._AnimIndex = self._AnimIndex + 1
+end
+
+--- 定时器回调：星级动画播放结束
+function XUiScoreTowerSettlement:_OnStarEnableAnimFinishScheduleCb()
+    self:StopGridAnimTime()
+    self:SetGridStageStarAlpha(1)
+    XLuaUiManager.SetMask(false)
 end
 
 function XUiScoreTowerSettlement:StopGridAnimTime()
-    if self._GridAnimTimeId then
-        XScheduleManager.UnSchedule(self._GridAnimTimeId)
-        self._GridAnimTimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiScoreTowerSettlement._OnStarEnableAnimScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(XUiScoreTowerSettlement._OnStarEnableAnimFinishScheduleCb, self)
 end
 
 function XUiScoreTowerSettlement:SetGridStageStarAlpha(alpha)

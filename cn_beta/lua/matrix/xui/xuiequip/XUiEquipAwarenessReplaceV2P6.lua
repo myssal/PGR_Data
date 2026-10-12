@@ -418,10 +418,7 @@ function XUiEquipAwarenessReplaceV2P6:UpdateModel(modelEquipId)
     self.IsEnableShow = false
     self:ReleaseLihuiTimer()
     self.FxUiLihuiChuxian01.gameObject:SetActive(false)
-    self.LihuiTimer = XScheduleManager.ScheduleOnce(function()
-        self.FxUiLihuiChuxian01.gameObject:SetActive(true)
-        self.LihuiTimer = nil
-    end, delayTime)
+    XScheduleManagerPro.ScheduleOnce(self._OnUpdateModelScheduleCb, self, delayTime)
 end
 
 -- 释放模型
@@ -431,10 +428,11 @@ end
 
 -- 释放定时器
 function XUiEquipAwarenessReplaceV2P6:ReleaseLihuiTimer()
-    if self.LihuiTimer then
-        XScheduleManager.UnSchedule(self.LihuiTimer)
-        self.LihuiTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateModelScheduleCb, self)
+end
+
+function XUiEquipAwarenessReplaceV2P6:_OnUpdateModelScheduleCb()
+    self.FxUiLihuiChuxian01.gameObject:SetActive(true)
 end
 
 return XUiEquipAwarenessReplaceV2P6

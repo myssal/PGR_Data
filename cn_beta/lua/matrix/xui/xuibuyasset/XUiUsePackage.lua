@@ -17,7 +17,7 @@ function XUiUsePackage:OnStart(id, successCallback, challengeCountData, buyAmoun
     self:Refresh(id)
     self:AddBtnCallBack()
     if self.Data.TargetId == XDataCenter.ItemManager.ItemId.ActionPoint then
-        self.Timers = XScheduleManager.ScheduleForever(function() self:SetRecTime() end, XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleForever(XUiUsePackage._OnSetRecTimeScheduleCb, self, XScheduleManagerPro.SECOND)
     end
     CsXGameEventManager.Instance:Notify(XEventId.EVENT_UIDIALOG_VIEW_ENABLE)
 end
@@ -31,10 +31,7 @@ function XUiUsePackage:OnDisable()
 end
 
 function XUiUsePackage:OnDestroy()
-    if self.Timers then
-        XScheduleManager.UnSchedule(self.Timers)
-        self.Timers = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiUsePackage._OnSetRecTimeScheduleCb, self)
 
     if self.DynamicTable then
         self.DynamicTable:RecycleAllTableGrid()
@@ -235,4 +232,8 @@ function XUiUsePackage:RefreshSelectItemList()
         local goodsList = XRewardManager.GetRewardList(self.BatteryDatas[DefaultIndex].Data.Template.SubTypeParams[rewardIndex])
         self:SetSelectItemCount(DefaultIndex, 1, goodsList[goodsId].Count)
     end
+end
+
+function XUiUsePackage:_OnSetRecTimeScheduleCb()
+    self:SetRecTime()
 end

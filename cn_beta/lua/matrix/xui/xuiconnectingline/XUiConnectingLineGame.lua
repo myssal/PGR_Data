@@ -31,8 +31,6 @@ function XUiConnectingLineGame:Ctor()
     ---@type XUiConnectingLineBubble
     --self._Bubble = false
 
-    self._Timer = false
-
     self._IsCanPlayAnimationInfoChanged = false
 
     self._ChapterList = {}
@@ -644,28 +642,13 @@ end
 --end
 
 function XUiConnectingLineGame:StartTimer()
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateTime()
-
-            -- kick out
-            if not self._Control:IsActivityOpen() then
-                XUiManager.TipText("CommonActivityNotStart")
-                self:Close()
-                return
-            end
-
-            self:UpdateChapterBtn()
-
-        end, XScheduleManager.SECOND)
+    if not XScheduleManagerPro.HasSchedule(XUiConnectingLineGame._OnUpdateTimeScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(XUiConnectingLineGame._OnUpdateTimeScheduleCb, self, XScheduleManagerPro.SECOND)
     end
 end
 
 function XUiConnectingLineGame:StopTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(XUiConnectingLineGame._OnUpdateTimeScheduleCb, self)
 end
 
 function XUiConnectingLineGame:UpdateBackgroundSize()
@@ -924,6 +907,19 @@ function XUiConnectingLineGame:UpdateChapterBtn()
             XLog.Error("XUiConnectingLineGame:UpdateChapterBtn() chapter is nil")
         end
     end
+end
+
+function XUiConnectingLineGame:_OnUpdateTimeScheduleCb()
+    self:UpdateTime()
+
+    -- kick out
+    if not self._Control:IsActivityOpen() then
+        XUiManager.TipText("CommonActivityNotStart")
+        self:Close()
+        return
+    end
+
+    self:UpdateChapterBtn()
 end
 
 return XUiConnectingLineGame

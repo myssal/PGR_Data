@@ -1968,7 +1968,7 @@
         "Id": 10127,
         "Name": "黑卡月卡",
         "Function": "MonthcardBg02",
-        "Describe": "【黑卡月卡】购买后可立即获得300黑卡。从购买当日开始，持续30日，每日5：00，可领取黑卡*100。\\n 此月卡最多同时购买6张，时间叠加，每天只能领取一次。",
+        "Describe": "【黑卡月卡】购买后可立即获得300黑卡。从购买当日开始，持续30日，每日5：00，可领取黑卡*100，以及中型血清组β*1。\\n 此月卡最多同时购买6张，时间叠加，每天只能领取一次。",
         "IsShowCourse": 2
     },
     {
@@ -2806,9 +2806,9 @@
         "Describe": "忽忽破坏王图文教程",
         "IsShowCourse": 3,
         "ImageAsset": [
-            "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai02V306.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai03V306.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpFangKuai04V306.png"
+            "Assets/Product/Texture/Image/UiFangKuai/V408UiHelpFangKuai01.png",
+            "Assets/Product/Texture/Image/UiFangKuai/V408UiHelpFangKuai02.png",
+            "Assets/Product/Texture/Image/UiFangKuai/V408UiHelpFangKuai03.png"
         ],
         "TextGroupIds": [
             1018701,
@@ -3752,12 +3752,12 @@
         "Function": "TransfiniteTowerHelp",
         "IsShowCourse": 3,
         "ImageAsset": [
-            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation01.png",
-            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation02.png",
-            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation03.png",
-            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation01.png",
-            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation02.png",
-            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation03.png"
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp01.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp02.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp03.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp04.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp05.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp06.png"
         ],
         "TextGroupIds": [
             1023711,
@@ -3774,12 +3774,12 @@
         "Function": "TransfiniteTowerStageHelp",
         "IsShowCourse": 3,
         "ImageAsset": [
-            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation01.png",
-            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation02.png",
-            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation03.png",
-            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation01.png",
-            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation02.png",
-            "Assets/Product/Texture/Image/UiHelp/UiOneClickCultivation03.png"
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp01.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp02.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp03.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp04.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp05.png",
+            "Assets/Product/Texture/Image/UiTransfiniteTower/UiTransfiniteTowerHelp06.png"
         ],
         "TextGroupIds": [
             1023711,
@@ -3801,7 +3801,17 @@
         "Id": 10246,
         "Name": "武器共鸣",
         "Function": "MonthcardBg06",
-        "Describe": "【武器共鸣月卡组合包】购买后立即获得980黑卡，以及6星武器共鸣碎片*30。从购买当日开始，持续30日，每日5：00后可获得一封月卡邮件，内含活动角色研发券*50，以及6星武器共鸣碎片*4。",
+        "Describe": "【武器共鸣月卡组合包】购买后立即获得980黑卡，以及6星武器共鸣碎片*30。从购买当日开始，持续30日，每日5：00后可获得一封月卡邮件，内含狙击武器研发券*50，以及6星武器共鸣碎片*4。",
         "IsShowCourse": 2
+    },
+    {
+        "Id": 10247,
+        "Name": "游鸦归航",
+        "Function": "UiRegressionActivity4",
+        "Describe": "游鸦归航活动说明",
+        "IsShowCourse": 2,
+        "TextGroupIds": [
+            1024701
+        ]
     }
 ]

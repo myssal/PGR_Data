@@ -20,7 +20,6 @@ function XUiGuildWarTwinsPanel:OnAwake()
     --根节点
     self.Node = false
     --定时器
-    self.Timer = false
     --是否选定了节点
     self._SelectedNodeId = false
     -- 注册点击事件
@@ -135,23 +134,21 @@ end
 --开启界面倒计时更新和动画更新 计时器
 function XUiGuildWarTwinsPanel:StartTimer()
     self:UpdateTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateTime()
-    end, 1, 0)
-    self.ActionTimer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, 1, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb2, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiGuildWarTwinsPanel:_OnStartTimerScheduleCb2()
         self:ShowAction()
-    end, XScheduleManager.SECOND, 0)
+end
+
+function XUiGuildWarTwinsPanel:_OnStartTimerScheduleCb()
+        self:UpdateTime()
 end
 --关闭界面倒计时更新和动画更新 计时器
 function XUiGuildWarTwinsPanel:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = false
-    end
-    if self.ActionTimer then
-        XScheduleManager.UnSchedule(self.ActionTimer)
-        self.ActionTimer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb2, self)
 end
 --更新界面
 function XUiGuildWarTwinsPanel:UpdateView()
@@ -325,26 +322,26 @@ end
 
 --Boss合体动画
 function XUiGuildWarTwinsPanel:ShowBossMerge(actionGroup)
-    if not self.ShowBossMergeTimer then
-        self.ShowBossMergeTimer = XScheduleManager.ScheduleOnce(function()
-            self.ShowBossMergeTimer = nil
-            self:UpdateView()
-            self:UpdateNodeClickBoard()
-            self:SetNodeDetail(false)
-            self.UiCamNearBossMix1.gameObject:SetActiveEx(false)
-            self.UiCamFarBossMix1.gameObject:SetActiveEx(false)
-            self.UiCamNearBossMix1.gameObject:SetActiveEx(true)
-            self.UiCamFarBossMix1.gameObject:SetActiveEx(true)
-            self.PanelButtonTop.gameObject:SetActiveEx(false)
-            self:PlayCameraAnim("CameraMix",function()
-                self.PanelButtonTop.gameObject:SetActiveEx(true)
-                self.BattleManager:DoActionFinish(XGuildWarConfig.GWActionType.BossMerge,PlayTypeList)
-            end)
-        end, XScheduleManager.SECOND)
+    if not XScheduleManagerPro.HasSchedule(self._OnShowBossMergeScheduleCb, self) then
+        XScheduleManagerPro.ScheduleOnce(self._OnShowBossMergeScheduleCb, self, XScheduleManagerPro.SECOND)
     end
 end
 
---endregion
+function XUiGuildWarTwinsPanel:_OnShowBossMergeScheduleCb()
+                    self:UpdateView()
+                    self:UpdateNodeClickBoard()
+                    self:SetNodeDetail(false)
+                    self.UiCamNearBossMix1.gameObject:SetActiveEx(false)
+                    self.UiCamFarBossMix1.gameObject:SetActiveEx(false)
+                    self.UiCamNearBossMix1.gameObject:SetActiveEx(true)
+                    self.UiCamFarBossMix1.gameObject:SetActiveEx(true)
+                    self.PanelButtonTop.gameObject:SetActiveEx(false)
+                    self:PlayCameraAnim("CameraMix",function()
+                        self.PanelButtonTop.gameObject:SetActiveEx(true)
+                        self.BattleManager:DoActionFinish(XGuildWarConfig.GWActionType.BossMerge,PlayTypeList)
+                    end)
+end
 
+--endregion
 
 return XUiGuildWarTwinsPanel

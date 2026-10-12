@@ -5,7 +5,7 @@
         "Type": 101,
         "BeginAnim": "AniZhuanchangEnd",
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            "Assets/Product/Texture/Image/BgStory/BgStory1491.jpg"
         ]
     },
     {
@@ -13,31 +13,6565 @@
         "ActionId": 2,
         "Type": 401,
         "Params": [
-            1,
-            36
+            2,
+            4086
         ]
     },
     {
         "Id": 3,
         "ActionId": 3,
-        "Type": 301,
-        "BeginAnim": "DialogEnable",
+        "Type": 401,
         "Params": [
-            "",
-            "",
-            "Placeholder_占位"
+            2,
+            20000040
         ]
     },
     {
         "Id": 4,
         "ActionId": 4,
         "Type": 301,
-        "IsEnd": 1,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "“正如各位在刚才的宣传片上所见，大西洋之眼，作为人类有史以来最庞大的科研基建复合体之一，它的防护将提升至最高等级。”"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 301,
         "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "",
-            "Placeholder_占位"
+            "“世界政府已经决议，在环大西洋辖区，增设新防卫军区。”"
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 502,
+        "EndDelay": 1000.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 107,
+        "Params": [
+            "礼堂",
+            "法奥斯军事学院"
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 401,
+        "Params": [
+            1,
+            381
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "法奥斯军事学院 礼堂"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 108,
+        "EndDelay": 500.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "穹顶之下座无虚席，讲台上的教官音量并不算大，然而内容却仿似重磅炸弹。"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 401,
+        "Params": [
+            2,
+            4086
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "“而在一年后的今天，法奥斯将承办本届军事对抗竞赛。”"
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "“其优胜者，将拥有直升军部在环大西洋防区的机会，无需举荐。”"
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 401,
+        "Params": [
+            2,
+            8225
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "最后的话音落地，礼堂里“嗡”地一下炸开了。"
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 201,
+        "Params": [
+            1,
+            501666
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 301,
+        "Params": [
+            1,
+            "学生A",
+            "无需举荐，法奥斯官方渠道直升？！",
+            1
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 201,
+        "Params": [
+            2,
+            501648,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 301,
+        "Params": [
+            1,
+            "学生B",
+            "环大西洋辖区啊……据说是好多个零点能工程的选址，各种前沿设施，亚特兰蒂斯……还有大西洋之眼，晋升快而且履历漂亮，多少人挤破头的香饽饽。",
+            2
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 301,
+        "Params": [
+            "",
+            "学生A",
+            "不过，以往这种机会不是都留给环大西洋的人么，我听说那里的家族拥有内推渠道。",
+            1
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 301,
+        "Params": [
+            "",
+            "学生B",
+            "那看来已经成为过去式了，在多米尼克先生创办的校园里，机会应像现在这样留给有能之人。",
+            2
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 402,
+        "Params": [
+            20000040
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "兴奋像潮水在座席间传递，唯有一个青年的肩膀越缩越低，仿佛想把自己从这片潮水里拧干。"
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 201,
+        "Params": [
+            1,
+            501818
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 301,
+        "Params": [
+            1,
+            "胆怯的青年",
+            "军事对抗竞赛……为什么会是军事对抗竞赛……",
+            1
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 301,
+        "Params": [
+            "",
+            "胆怯的青年",
+            "实弹吗？应该是实弹吧，要是在模拟赛中被打中了就算不会死掉也是很疼的。",
+            1
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "他小声念叨着，试图朝邻座寻求一点渺茫的安慰。"
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 301,
+        "Params": [
+            "",
+            "胆怯的青年",
+            "同学，你说这种竞赛，是自愿报名的吧？没有强制参加的先例吧？",
+            1
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 201,
+        "Params": [
+            1,
+            501816
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 301,
+        "Params": [
+            1,
+            "冷漠的少女",
+            "…………",
+            1
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 201,
+        "Params": [
+            1,
+            501818
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 301,
+        "Params": [
+            1,
+            "胆怯的青年",
+            "哎，你怎么不说话。",
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 201,
+        "Params": [
+            1,
+            501816
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 301,
+        "Params": [
+            1,
+            "冷漠的少女",
+            "……我们认识？",
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 201,
+        "Params": [
+            1,
+            501818
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 301,
+        "Params": [
+            1,
+            "胆怯的青年",
+            "没，没有，我这不是心里发慌，四下找不着人说……",
+            1
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 301,
+        "Params": [
+            "",
+            "胆怯的青年",
+            "不过你这么一说还真是，战术科的人脸我都认完了。听说近期有特招进来的学生，需要的分数高得离谱……",
+            1
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 301,
+        "Params": [
+            "",
+            "胆怯的青年",
+            "你不会就是新加入的特招生吧？",
+            1
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 201,
+        "Params": [
+            1,
+            501816
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 301,
+        "Params": [
+            1,
+            "冷漠的少女",
+            "安静一点。",
+            1
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 401,
+        "Params": [
+            2,
+            4833
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "青年像是被泼了盆冷水，悻悻地缩回自己的座位，继续独自消化他的忧虑。"
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 201,
+        "Params": [
+            1,
+            501816
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "因此他没有注意到，少女的身影隐藏在暗影中，上身向前倾去……那是一种克制而凶狠的兴奋。"
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她抱着手臂，视线钉在台上那行字里，一动不动。"
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 301,
+        "Params": [
+            "",
+            "冷漠的少女",
+            "“无需举荐”。",
+            1
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 301,
+        "Params": [
+            "",
+            "冷漠的少女",
+            "……终于。",
+            1
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 301,
+        "Params": [
+            "",
+            "冷漠的少女",
+            "一个不需要任何人点头的机会。",
+            1
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "“或许仍有同学对环大西洋的基建不太了解，我们今天有幸请到了来自环大西洋的议员，为同学们解答。”"
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 201,
+        "Params": [
+            1,
+            501816
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "冷漠的少女",
+            "什么？！",
+            1
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "绷紧的声线让青年吓了一跳，他偷偷觑了一眼身边的少女，又将眼光望向台前。"
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1491.jpg"
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 201,
+        "Params": [
+            15,
+            500856,
+            "",
+            60,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 401,
+        "Params": [
+            2,
+            4051
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "",
+            "一位西装革履的男人挂着无可挑剔的笑容走向台前，身后光屏切换成一片蔚蓝。"
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 401,
+        "Params": [
+            2,
+            4086
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 301,
+        "Params": [
+            "",
+            "议员",
+            "那么接下来，请允许我代表环大西洋经济共同体，向诸位未来的英才发出邀请。",
+            15
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 301,
+        "Params": [
+            "",
+            "议员",
+            "如珊瑚礁般生长的塔群，穿行其间的磁悬浮轨道，荧光明灭的拟态载具。未来我们还将建设艺术都市康斯塔雷耶——荟萃着人类整个黄金时代的艺术都市。",
+            15
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 301,
+        "Params": [
+            "",
+            "议员",
+            "而大西洋之眼，她驯服了这颗星球上最狂暴的洋流，也将成为地球仰望星空的眼睛。",
+            15
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "介绍完环大西洋的优美风光，议员开启了下一个话题。"
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 301,
+        "Params": [
+            "",
+            "议员",
+            "相信各位对“启迪奖学金”的项目已经相当熟悉。这项由环大西洋经济共同体与各科研集团联合设立的助学金，与配套的前沿研究基金已经运营多年。",
+            15
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 301,
+        "Params": [
+            "",
+            "议员",
+            "近年来，环大西洋与多方科研集团的合作顺利推进，已经有多项成果在市场上得到商业验证。",
+            15
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 301,
+        "Params": [
+            "",
+            "议员",
+            "为了让这份福祉惠及世界，也为了持续激励科研人才，我受共同体的委托，在此宣布：",
+            15
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 301,
+        "Params": [
+            "",
+            "议员",
+            "自本学期起，奖学金注资规模翻倍，研究基金全面向环大西洋建设相关的实验室开放申请。",
+            15
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg"
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 202,
+        "Params": [
+            15,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 201,
+        "Params": [
+            1,
+            501648,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "学生B",
+            "……又是这一套招揽人才的话术么。",
+            1
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 201,
+        "Params": [
+            2,
+            501666,
+            2,
+            400
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 301,
+        "Params": [
+            1,
+            "学生A",
+            "话术归话术，但他们还真没有撂空话。以前我也是贫困学区出身，就是有了这份奖学金的资助，才一路考上了法奥斯，不然坐在你旁边的可能就要换人了。",
+            2
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 301,
+        "Params": [
+            "",
+            "学生A",
+            "你还记得前段时间你导师的项目资金链断了的事吗？",
+            2
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 301,
+        "Params": [
+            "",
+            "学生B",
+            "我记得，那件事怎么了？",
+            1
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 301,
+        "Params": [
+            "",
+            "学生A",
+            "我听说后来也是他们的基金会帮忙续上的，不求回报。",
+            2
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 201,
+        "Params": [
+            1,
+            500856,
+            "",
+            60,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1491.jpg"
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "议员",
+            "在座的诸位，你们只需要负责成为英才。设备，场地甚或一切需要的支持，请交给我们。",
+            1
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 101,
+        "EndDelay": 1500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1491.jpg"
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "议员",
+            "竞赛之外，环大西洋随时欢迎各位来做客。",
+            1
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 201,
+        "Params": [
+            1,
+            501818,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1517.jpg"
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 401,
+        "Params": [
+            2,
+            4329
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "",
+            "台下掌声雷动。青年也想拍手，抬起的手掌却停在了半空——邻座少女的神色可怕得让他不敢发出任何声音。"
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "方才探进风里的船头，此刻已经收了回来。少女靠回椅背，坐得笔直，像一柄合了鞘的刀。"
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 301,
+        "Params": [
+            "",
+            "胆怯的青年",
+            "你怎么了，不舒服么？",
+            1
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 201,
+        "Params": [
+            2,
+            501816,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 301,
+        "Params": [
+            1,
+            "冷漠的少女",
+            "我没事。",
+            2
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 301,
+        "Params": [
+            "",
+            "胆怯的青年",
+            "嗯……好，注意休息？",
+            1
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "正当青年决定安分守己不再多言时，那声清冷的声音却自顾自地响起。"
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 301,
+        "Params": [
+            "",
+            "冷漠的少女",
+            "法奥斯是多米尼克教授留给全世界的学校，不属于任何一家。",
+            2
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 301,
+        "Params": [
+            "",
+            "胆怯的青年",
+            "嗯？",
+            1
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 301,
+        "Params": [
+            "",
+            "冷漠的少女",
+            "我只是不想看到，那些手也伸到这里来。",
+            2
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -600
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 203,
+        "Params": [
+            2,
+            0.25
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 201,
+        "Params": [
+            3,
+            501649,
+            2,
+            600
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 301,
+        "Params": [
+            1,
+            "少女的同伴",
+            "冷静点，阿娜，这些话在这里不合适。",
+            3
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 301,
+        "Params": [
+            "",
+            "“阿娜”",
+            "……我们该走了，伊瑞萨。",
+            2
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 204,
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 301,
+        "Params": [
+            "",
+            "伊瑞萨",
+            "诶等等，我还想再看看，我还想看看奖学金或者科研资金有什么必要条件。",
+            3
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 301,
+        "Params": [
+            "",
+            "“阿娜”",
+            "那些人的施舍有什么必要接受。",
+            2
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 301,
+        "Params": [
+            "",
+            "伊瑞萨",
+            "就该狠狠花投资人的钱，这怎么能有负罪感。",
+            3
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 301,
+        "Params": [
+            "",
+            "“阿娜”",
+            "那我先走了。",
+            2
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 202,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 401,
+        "EndDelay": 250.0,
+        "Params": [
+            2,
+            13081710
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 204,
+        "Params": [
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "少女利落地起身离席，在青年和自己的同伴中间留下了一个尴尬的空位。"
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "青年张了张嘴，最终什么也没问。他隐约觉得，这句话和自己方才的忧虑，说的不是同一种害怕。"
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 202,
+        "Params": [
+            1,
+            3,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1518.jpg"
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "而礼堂最后方的入口处，一道白发身影抱着一摞资料，本已转身欲走。"
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 201,
+        "Params": [
+            1,
+            501627
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "环大西洋……么？",
+            1
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 401,
+        "Params": [
+            2,
+            4051
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1627.jpg",
+            0,
+            1,
+            0.4
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "光屏上，宣传片正放到那座海下都市的全景：美丽的海底城市沐浴在海水的粼粼闪光中央，横亘其间的轨道流光穿行，最先进的仿生机械协助着人类的海底工程。"
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "——那是她长大的地方。"
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab"
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1627.jpg",
+            1,
+            0,
+            0.4
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 306
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 201,
+        "Params": [
+            1,
+            500567
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 301,
+        "Params": [
+            1,
+            "守卫",
+            "同学，是需要进入会场么，请出示门……",
+            1
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 201,
+        "Params": [
+            1,
+            501627
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "不，我只是碰巧路过。",
+            1
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "——那是她还不想回去的地方。"
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "收起心头泛起的复杂心情，白发少女再次迈开脚步。"
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 101,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1651.jpg"
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 401,
+        "Params": [
+            1,
+            175
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 107,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "战术科教官办公室"
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "另一边，战术科教官办公室"
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 108,
+        "EndDelay": 500.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 401,
+        "Params": [
+            2,
+            4052
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "演讲的转播光屏被随手关掉。下班时间，年轻的客座教官还在整理前辈交接的学生成绩册。"
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 504,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 201,
+        "Params": [
+            1,
+            501650,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 401,
+        "Params": [
+            2,
+            4152
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 301,
+        "Params": [
+            1,
+            "前辈教官",
+            "明天就是你的第一节课了，年轻人，一切顺利。",
+            1
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 201,
+        "Params": [
+            1,
+            501814,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 301,
+        "Params": [
+            1,
+            "维尔斯",
+            "平均绩点、实弹、战术推演……嗯？",
+            1
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "指尖停在一条异常记录上，一场标准三人小队突击任务，却被某个学生单枪匹马执行完毕。"
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "维尔斯",
+            "协作分，应该是0才对，但这上面却写着……",
+            1
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 401,
+        "Params": [
+            2,
+            2979
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 307,
+        "Params": [
+            "100/100",
+            "",
+            50
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "100/100"
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 307,
+        "Params": [
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "他想起交接时，前辈意味深长的那句话。"
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 504,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 201,
+        "Params": [
+            1,
+            501650,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 301,
+        "Params": [
+            1,
+            "前辈教官",
+            "“这是个赫里欧。我快退休了，不想找环大西洋的不痛快。”",
+            1
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 201,
+        "Params": [
+            1,
+            501814,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 301,
+        "Params": [
+            1,
+            "维尔斯",
+            "……呵。四大家族的人么，倒像是他们的作风。",
+            1
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 401,
+        "Params": [
+            2,
+            8226
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 501,
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "维尔斯还没来得及皱完这个眉，通讯请求弹了出来。他看清来电人，率先给信道上了加密。"
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab"
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab"
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 509,
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1597.jpg",
+            1
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 201,
+        "Params": [
+            11,
+            501836,
+            "",
+            -500
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            2,
+            11,
+            11
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 401,
+        "Params": [
+            2,
+            2982
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 301,
+        "Params": [
+            1,
+            "？？",
+            "防窃听的习惯还在，很好。",
+            11
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 301,
+        "Params": [
+            "",
+            "？？",
+            "那么，脱离了参谋部的喧嚣场，归隐法奥斯执教的感受如何？",
+            11
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 201,
+        "Params": [
+            1,
+            501814,
+            8,
+            500
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 301,
+        "Params": [
+            1,
+            "维尔斯",
+            "……你再这么开场，我就当骚扰电话挂了，哈桑。",
+            1
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 301,
+        "Params": [
+            "",
+            "哈桑",
+            "你这脾气得收收，不能坐实你那“太过感情用事，难堪大用”的名头。",
+            11
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "用巴拉德的话来刺我，有意思吗？",
+            1
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "比起跟葛林斯同处一个走廊，我更愿意“难堪大用”。",
+            1
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 301,
+        "Params": [
+            "",
+            "哈桑",
+            "这两位可不是一伙的，我向你保证。",
+            11
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 301,
+        "Params": [
+            "",
+            "哈桑",
+            "前面那位什么脾气你知道。后面那位……他晋升辩论上跟你吵的那一架，你还记着呢？",
+            11
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "一字不差。",
+            1
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "“人类大一统就在眼前，传统战略战术的真才实学已经过时了。未来不需要所谓的英勇和智慧，我们需要的是精通人情人性、懂得利益交换的棋手。”",
+            1
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "维尔斯发出一声冷哼。"
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "第一次见有人把没底线说这么动听。",
+            1
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 301,
+        "Params": [
+            "",
+            "哈桑",
+            "动听的话有时候能带来一些人想要得到、或者想要争取的利益。",
+            11
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 301,
+        "Params": [
+            "",
+            "哈桑",
+            "世界政府需要更多的资金来源，而葛林斯背后的势力能够提供。这是一场辩论开始前就被定性的交易。",
+            11
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "我知道。",
+            1
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 401,
+        "Params": [
+            2,
+            5838
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "他将学生成绩册在桌面上一顿。"
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "……我只是不想忍了。",
+            1
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 301,
+        "Params": [
+            "",
+            "哈桑",
+            "好了，知道你才气高心气傲，上面的人也都知道。这件事参谋部并没有宣判谁对谁错，这不是缓和处理了么？",
+            11
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "但他们还是把我派往了法奥斯。",
+            1
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 301,
+        "Params": [
+            "",
+            "哈桑",
+            "带完一届学生而已，到时候你不想回来也得回来。",
+            11
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 301,
+        "Params": [
+            "",
+            "哈桑",
+            "而且法奥斯好地方啊，多米尼克教授的学校，有些手就算想伸进去也得三思。",
+            11
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "我要修正你一个说辞，就算是多米尼克的学校，墙内我们能保证公平……但墙外的前程，是他们的猎场。",
+            1
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 301,
+        "Params": [
+            "",
+            "哈桑",
+            "……你发现了什么？",
+            11
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "今天大西洋的议员来法奥斯演讲，公布了一系列的资金支持项目。",
+            1
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "凡有给予，必有报偿，你熟悉他们的路数。",
+            1
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "通话的两端同时陷入沉默。半晌，对面原本亲和轻松的声线低沉下来。"
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 301,
+        "Params": [
+            "",
+            "哈桑",
+            "如果事情真的发展到那样，议会也不会袖手旁观。",
+            11
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "嗯。",
+            1
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 301,
+        "Params": [
+            "",
+            "哈桑",
+            "作为同僚，有消息及时汇报。",
+            11
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 301,
+        "Params": [
+            "",
+            "哈桑",
+            "作为朋友，尽管我希望你低调行事，但你大概率不会听。那至少保护好自己。",
+            11
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 301,
+        "Params": [
+            "",
+            "哈桑",
+            "教学顺利，维尔斯教官。",
+            11
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "你也是，哈桑。",
+            1
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "Type": 510,
+        "Params": [
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory1597.jpg"
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
+            11
+        ]
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 202,
+        "Params": [
+            1,
+            11
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "Type": 401,
+        "Params": [
+            2,
+            8227
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "通讯挂断，维尔斯长长地叹了口气，放下了刚才翘起来的二郎腿——也就只有在和哈桑交谈的时候，年轻的教官会允许自己稍微放松一二。"
+        ]
+    },
+    {
+        "Id": 244,
+        "ActionId": 244,
+        "Type": 401,
+        "Params": [
+            2,
+            2626
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "他调整自己的姿态，重新将目光看回刚才那份成绩单。几乎同一秒，门就被敲响了。"
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "Type": 201,
+        "Params": [
+            1,
+            501814
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "Type": 301,
+        "Params": [
+            1,
+            "维尔斯",
+            "请进。",
+            1
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 201,
+        "Params": [
+            1,
+            501627
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "Type": 401,
+        "Params": [
+            2,
+            8228
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "白发少女推门而入，利落地立正行礼，开门见山。"
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "战术科二年级，阿德莱德·赫里欧。有一项成绩记录需要修正，教官。",
+            1
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "Type": 201,
+        "Params": [
+            1,
+            501814
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "Type": 301,
+        "Params": [
+            1,
+            "维尔斯",
+            "讲。",
+            1
+        ]
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "Type": 201,
+        "Params": [
+            1,
+            501627
+        ]
+    },
+    {
+        "Id": 258,
+        "ActionId": 258,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "第7次小队任务，我单独完成，未发生任何协作行为，但协作分却被记上了100分。",
+            1
+        ]
+    },
+    {
+        "Id": 259,
+        "ActionId": 259,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "我希望您能帮我改回零分。",
+            1
+        ]
+    },
+    {
+        "Id": 260,
+        "ActionId": 260,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 261,
+        "ActionId": 261,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "维尔斯打量着眼前的学生——“那个赫里欧”，就在不久之前被他下意识认成家族的关系户的“那个赫里欧”。"
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "但对方却主动上门，请求自己将满分改回去。"
+        ]
+    },
+    {
+        "Id": 263,
+        "ActionId": 263,
+        "Type": 306
+    },
+    {
+        "Id": 264,
+        "ActionId": 264,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
+        "Type": 201,
+        "Params": [
+            1,
+            501814
+        ]
+    },
+    {
+        "Id": 266,
+        "ActionId": 266,
+        "Type": 301,
+        "Params": [
+            1,
+            "维尔斯",
+            "100分可是非常漂亮的分数，你的其他项目都是高分，加上这一项便是最完美的答卷。",
+            1
+        ]
+    },
+    {
+        "Id": 267,
+        "ActionId": 267,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "但协作分0分，这可就往相反的方向去了。",
+            1
+        ]
+    },
+    {
+        "Id": 268,
+        "ActionId": 268,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 269,
+        "ActionId": 269,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "维尔斯故意放了个钩子。"
+        ]
+    },
+    {
+        "Id": 270,
+        "ActionId": 270,
+        "Type": 201,
+        "Params": [
+            1,
+            501627
+        ]
+    },
+    {
+        "Id": 271,
+        "ActionId": 271,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "不属于我的分数，我不需要。",
+            1
+        ]
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "干脆利落的回答，没有半点的犹豫，而维尔斯也没有犹豫。"
+        ]
+    },
+    {
+        "Id": 274,
+        "ActionId": 274,
+        "Type": 201,
+        "Params": [
+            1,
+            501814
+        ]
+    },
+    {
+        "Id": 275,
+        "ActionId": 275,
+        "Type": 301,
+        "Params": [
+            1,
+            "维尔斯",
+            "我尊重你的决定，也尊重法奥斯的原则。",
+            1
+        ]
+    },
+    {
+        "Id": 276,
+        "ActionId": 276,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "好，改回0。",
+            1
+        ]
+    },
+    {
+        "Id": 277,
+        "ActionId": 277,
+        "Type": 401,
+        "Params": [
+            2,
+            8229
+        ]
+    },
+    {
+        "Id": 278,
+        "ActionId": 278,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "他当着她的面修改了记录，然后合上成绩册。"
+        ]
+    },
+    {
+        "Id": 279,
+        "ActionId": 279,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 280,
+        "ActionId": 280,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "不过，同学，让我先自我介绍一下——维尔斯，从明天起，任你的战术实训课教官。",
+            1
+        ]
+    },
+    {
+        "Id": 281,
+        "ActionId": 281,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 282,
+        "ActionId": 282,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "在我的课上，协作分是必修。你要是一直挂着0，绝对毕不了业。",
+            1
+        ]
+    },
+    {
+        "Id": 283,
+        "ActionId": 283,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 284,
+        "ActionId": 284,
+        "Type": 201,
+        "Params": [
+            1,
+            501627
+        ]
+    },
+    {
+        "Id": 285,
+        "ActionId": 285,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "我单独执行的完成度高于队伍平均——",
+            1
+        ]
+    },
+    {
+        "Id": 286,
+        "ActionId": 286,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 287,
+        "ActionId": 287,
+        "Type": 201,
+        "Params": [
+            1,
+            501814
+        ]
+    },
+    {
+        "Id": 288,
+        "ActionId": 288,
+        "Type": 301,
+        "Params": [
+            1,
+            "维尔斯",
+            "在战场上单人执行需要多人配合的任务，这种高傲会要了你的命。",
+            1
+        ]
+    },
+    {
+        "Id": 289,
+        "ActionId": 289,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 290,
+        "ActionId": 290,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            8
+        ]
+    },
+    {
+        "Id": 291,
+        "ActionId": 291,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "…………",
+            1
+        ]
+    },
+    {
+        "Id": 292,
+        "ActionId": 292,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 293,
+        "ActionId": 293,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "好，协作分我也不会忽视。但我希望，法奥斯的规则能够一以贯之，我不能接受自己的分数再与实际产生落差。",
+            1
+        ]
+    },
+    {
+        "Id": 294,
+        "ActionId": 294,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 295,
+        "ActionId": 295,
+        "Type": 201,
+        "Params": [
+            1,
+            501814,
+            1
+        ]
+    },
+    {
+        "Id": 296,
+        "ActionId": 296,
+        "Type": 301,
+        "Params": [
+            1,
+            "维尔斯",
+            "当然。",
+            1
+        ]
+    },
+    {
+        "Id": 297,
+        "ActionId": 297,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 298,
+        "ActionId": 298,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "对方轻快的回答反而让阿德莱德困惑。"
+        ]
+    },
+    {
+        "Id": 299,
+        "ActionId": 299,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "维尔斯的目光落到名单上，上面写着她的全名，“阿德莱德·赫里欧”。"
+        ]
+    },
+    {
+        "Id": 300,
+        "ActionId": 300,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "“那个赫里欧”。"
+        ]
+    },
+    {
+        "Id": 301,
+        "ActionId": 301,
+        "Type": 201,
+        "Params": [
+            1,
+            501814
+        ]
+    },
+    {
+        "Id": 302,
+        "ActionId": 302,
+        "Type": 301,
+        "Params": [
+            1,
+            "维尔斯",
+            "明天第一节课，我会给所有落单的学生重新配队，包括你。",
+            1
+        ]
+    },
+    {
+        "Id": 303,
+        "ActionId": 303,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 304,
+        "ActionId": 304,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "维尔斯的目光抬了起来，正视身前的学生。"
+        ]
+    },
+    {
+        "Id": 305,
+        "ActionId": 305,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "没有异议吧，阿德莱德同学？",
+            1
+        ]
+    },
+    {
+        "Id": 306,
+        "ActionId": 306,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 307,
+        "ActionId": 307,
+        "Type": 201,
+        "Params": [
+            1,
+            501627
+        ]
+    },
+    {
+        "Id": 308,
+        "ActionId": 308,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "……没有，打扰了。",
+            1
+        ]
+    },
+    {
+        "Id": 309,
+        "ActionId": 309,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 310,
+        "ActionId": 310,
+        "Type": 401,
+        "EndDelay": 200.0,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 311,
+        "ActionId": 311,
+        "Type": 401,
+        "Params": [
+            2,
+            4202
+        ]
+    },
+    {
+        "Id": 312,
+        "ActionId": 312,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "门重新合上。"
+        ]
+    },
+    {
+        "Id": 313,
+        "ActionId": 313,
+        "Type": 401,
+        "Params": [
+            2,
+            2765
+        ]
+    },
+    {
+        "Id": 314,
+        "ActionId": 314,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 315,
+        "ActionId": 315,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "维尔斯翻回成绩册，在那条归零的记录上看了片刻，又往后翻去。"
+        ]
+    },
+    {
+        "Id": 316,
+        "ActionId": 316,
+        "Type": 402,
+        "Params": [
+            2765
+        ]
+    },
+    {
+        "Id": 317,
+        "ActionId": 317,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "另一个学号，由南大西洋贫困地区入学，走的是最大众也最难的那条招生渠道和凭借全球名列前茅的统考成绩。"
+        ]
+    },
+    {
+        "Id": 318,
+        "ActionId": 318,
+        "Type": 201,
+        "Params": [
+            1,
+            501816
+        ]
+    },
+    {
+        "Id": 319,
+        "ActionId": 319,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "档案上是一个身披制服的少女，脸上挂着开朗的微笑。"
+        ]
+    },
+    {
+        "Id": 320,
+        "ActionId": 320,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 321,
+        "ActionId": 321,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "档案末尾，附着一页“外部背景复核意见”，措辞干净的官样文章。"
+        ]
+    },
+    {
+        "Id": 322,
+        "ActionId": 322,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "【鉴于该学生存在未结清的背景关联，建议：限制该学生进入指挥序列课程；竞赛报名需教职担保人。】"
+        ]
+    },
+    {
+        "Id": 323,
+        "ActionId": 323,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "落款没有署名，只有一串发文编号。"
+        ]
+    },
+    {
+        "Id": 324,
+        "ActionId": 324,
+        "Type": 306
+    },
+    {
+        "Id": 325,
+        "ActionId": 325,
+        "Type": 401,
+        "Params": [
+            2,
+            8230
+        ]
+    },
+    {
+        "Id": 326,
+        "ActionId": 326,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "维尔斯把这页意见从档案里抽出来对折，随手向身旁的机器一扔。"
+        ]
+    },
+    {
+        "Id": 327,
+        "ActionId": 327,
+        "Type": 401,
+        "Params": [
+            2,
+            8231
+        ]
+    },
+    {
+        "Id": 328,
+        "ActionId": 328,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "碎纸机安静地吞了下去。"
+        ]
+    },
+    {
+        "Id": 329,
+        "ActionId": 329,
+        "Type": 201,
+        "Params": [
+            1,
+            501814,
+            1
+        ]
+    },
+    {
+        "Id": 330,
+        "ActionId": 330,
+        "Type": 402,
+        "Params": [
+            8231
+        ]
+    },
+    {
+        "Id": 331,
+        "ActionId": 331,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "维尔斯",
+            "好了，明天见，同学们。",
+            1
+        ]
+    },
+    {
+        "Id": 332,
+        "ActionId": 332,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 333,
+        "ActionId": 333,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 334,
+        "ActionId": 334,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 335,
+        "ActionId": 335,
+        "Type": 101,
+        "EndDelay": 2200.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1649.jpg"
+        ]
+    },
+    {
+        "Id": 336,
+        "ActionId": 336,
+        "Type": 401,
+        "Params": [
+            1,
+            169
+        ]
+    },
+    {
+        "Id": 337,
+        "ActionId": 337,
+        "Type": 401,
+        "Params": [
+            2,
+            20000041
+        ]
+    },
+    {
+        "Id": 338,
+        "ActionId": 338,
+        "Type": 107,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "露天靶场集训区",
+            "法奥斯",
+            "",
+            "翌日清晨"
+        ]
+    },
+    {
+        "Id": 339,
+        "ActionId": 339,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "翌日清晨\\n法奥斯 露天靶场集训区"
+        ]
+    },
+    {
+        "Id": 340,
+        "ActionId": 340,
+        "Type": 108,
+        "EndDelay": 500.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 341,
+        "ActionId": 341,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "今天是二年级的大型集训日，双人交叉掩护科目。热身区里人声鼎沸，学员们两两成对，压腿抻背，互相报着动作数。"
+        ]
+    },
+    {
+        "Id": 342,
+        "ActionId": 342,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 343,
+        "ActionId": 343,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "一道白发身影径直穿过人群，走向场地边缘的器械架。"
+        ]
+    },
+    {
+        "Id": 344,
+        "ActionId": 344,
+        "Type": 402,
+        "Params": [
+            20000041
+        ]
+    },
+    {
+        "Id": 345,
+        "ActionId": 345,
+        "Type": 201,
+        "Params": [
+            1,
+            501668
+        ]
+    },
+    {
+        "Id": 346,
+        "ActionId": 346,
+        "Type": 301,
+        "Params": [
+            1,
+            "学生C",
+            "喂，那就是赫里欧家那位……听说小队任务是一个人干完的。",
+            1
+        ]
+    },
+    {
+        "Id": 347,
+        "ActionId": 347,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -500
+        ]
+    },
+    {
+        "Id": 348,
+        "ActionId": 348,
+        "Type": 201,
+        "Params": [
+            2,
+            501662,
+            "",
+            500
+        ]
+    },
+    {
+        "Id": 349,
+        "ActionId": 349,
+        "Type": 301,
+        "Params": [
+            1,
+            "学生D",
+            "何止，先前大西洋之眼发生泄密事件的时候，赫里欧家族迅速站出来澄清和科波菲尔的关系，我看这个家族都是些冷血的人吧，说不定哪天也会被她背后捅上一刀。",
+            2
+        ]
+    },
+    {
+        "Id": 350,
+        "ActionId": 350,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -600
+        ]
+    },
+    {
+        "Id": 351,
+        "ActionId": 351,
+        "Type": 203,
+        "Params": [
+            2,
+            0.25
+        ]
+    },
+    {
+        "Id": 352,
+        "ActionId": 352,
+        "Type": 201,
+        "Params": [
+            3,
+            501820,
+            "",
+            600
+        ]
+    },
+    {
+        "Id": 353,
+        "ActionId": 353,
+        "Type": 301,
+        "Params": [
+            1,
+            "学生E",
+            "嘘，小声点。真惹不起的话，去打个招呼混个脸熟才是正路，哪天人家继任家主……",
+            3
+        ]
+    },
+    {
+        "Id": 354,
+        "ActionId": 354,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 355,
+        "ActionId": 355,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "议论声不高不低，刚好能飘进耳朵，但阿德莱德没有理睬。"
+        ]
+    },
+    {
+        "Id": 356,
+        "ActionId": 356,
+        "Type": 401,
+        "Params": [
+            2,
+            4833
+        ]
+    },
+    {
+        "Id": 357,
+        "ActionId": 357,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 358,
+        "ActionId": 358,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她把小腿架上器械架，独自完成了那些本该由搭档互相帮着做的拉伸。"
+        ]
+    },
+    {
+        "Id": 359,
+        "ActionId": 359,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "弯腰压背，这些动作，需要有人在背后轻轻搭一把手。"
+        ]
+    },
+    {
+        "Id": 360,
+        "ActionId": 360,
+        "Type": 306
+    },
+    {
+        "Id": 361,
+        "ActionId": 361,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "今天是阿德莱德在法奥斯度过的第12个大型集训日，而她已经习惯了一个人，也习惯了如何依靠器材和姿态一个人完成热身。"
+        ]
+    },
+    {
+        "Id": 362,
+        "ActionId": 362,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "很久以前，约莫两年前，这些动作是由露莎卡帮忙的。"
+        ]
+    },
+    {
+        "Id": 363,
+        "ActionId": 363,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 364,
+        "ActionId": 364,
+        "Type": 504,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 365,
+        "ActionId": 365,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 366,
+        "ActionId": 366,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory609.jpg"
+        ]
+    },
+    {
+        "Id": 367,
+        "ActionId": 367,
+        "Type": 401,
+        "Params": [
+            2,
+            2589
+        ]
+    },
+    {
+        "Id": 368,
+        "ActionId": 368,
+        "Type": 401,
+        "Params": [
+            2,
+            20000036
+        ]
+    },
+    {
+        "Id": 369,
+        "ActionId": 369,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "又一个温暖的春天，花叶在庄园的后院再一次萌发。"
+        ]
+    },
+    {
+        "Id": 370,
+        "ActionId": 370,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "生命的诞生与消逝似乎总是形影不离，种下它们的人，在见到花开时的又一个春日里永远地阖上双眼。"
+        ]
+    },
+    {
+        "Id": 371,
+        "ActionId": 371,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "家族为她举行的葬礼简短而体面，仪式结束后，人们各自散去，只有阿德莱德还站在母亲的墓碑前。"
+        ]
+    },
+    {
+        "Id": 372,
+        "ActionId": 372,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront175.png",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 373,
+        "ActionId": 373,
+        "Type": 104,
+        "Params": [
+            "0|-50|100",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 374,
+        "ActionId": 374,
+        "Type": 401,
+        "Params": [
+            2,
+            6387
+        ]
+    },
+    {
+        "Id": 375,
+        "ActionId": 375,
+        "Type": 104,
+        "EndDelay": 1000.0,
+        "Params": [
+            "0|0|100",
+            1,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 376,
+        "ActionId": 376,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "她翻开那本写了快十年的手册，在最后一页，写下了最后一条。"
+        ]
+    },
+    {
+        "Id": 377,
+        "ActionId": 377,
+        "Type": 401,
+        "Params": [
+            2,
+            911
+        ]
+    },
+    {
+        "Id": 378,
+        "ActionId": 378,
+        "Type": 109,
+        "Params": [
+            1,
+            "<color=#2e2825><size=35>4月2日，晴，\\n妈妈看到了新开的花。</size></color>",
+            350,
+            100,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 379,
+        "ActionId": 379,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "【4月2日，晴，妈妈看到了新开的花。】"
+        ]
+    },
+    {
+        "Id": 380,
+        "ActionId": 380,
+        "Type": 110,
+        "Params": [
+            "1|1"
+        ]
+    },
+    {
+        "Id": 381,
+        "ActionId": 381,
+        "Type": 402,
+        "Params": [
+            20000036
+        ]
+    },
+    {
+        "Id": 382,
+        "ActionId": 382,
+        "Type": 205,
+        "EndDelay": 1000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront175.png",
+            1,
+            0,
+            1
+        ]
+    },
+    {
+        "Id": 383,
+        "ActionId": 383,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 384,
+        "ActionId": 384,
+        "Type": 504,
+        "Params": [
+            0.7,
+            1004
+        ]
+    },
+    {
+        "Id": 385,
+        "ActionId": 385,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory896.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 386,
+        "ActionId": 386,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory896.jpg"
+        ]
+    },
+    {
+        "Id": 387,
+        "ActionId": 387,
+        "Type": 205,
+        "Params": [
+            1004
+        ]
+    },
+    {
+        "Id": 388,
+        "ActionId": 388,
+        "Type": 401,
+        "Params": [
+            2,
+            8232
+        ]
+    },
+    {
+        "Id": 389,
+        "ActionId": 389,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "两周后，阿德莱德在收拾行装时，露莎卡的身影出现在她身后。"
+        ]
+    },
+    {
+        "Id": 390,
+        "ActionId": 390,
+        "Type": 201,
+        "Params": [
+            1,
+            501798
+        ]
+    },
+    {
+        "Id": 391,
+        "ActionId": 391,
+        "Type": 301,
+        "Params": [
+            1,
+            "露莎卡",
+            "……好些了吗？",
+            1
+        ]
+    },
+    {
+        "Id": 392,
+        "ActionId": 392,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 393,
+        "ActionId": 393,
+        "Type": 201,
+        "Params": [
+            1,
+            501790
+        ]
+    },
+    {
+        "Id": 394,
+        "ActionId": 394,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "我不知道……感谢老师的关心。",
+            1
+        ]
+    },
+    {
+        "Id": 395,
+        "ActionId": 395,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 396,
+        "ActionId": 396,
+        "Type": 201,
+        "Params": [
+            1,
+            501798,
+            9
+        ]
+    },
+    {
+        "Id": 397,
+        "ActionId": 397,
+        "Type": 301,
+        "Params": [
+            1,
+            "露莎卡",
+            "我很遗憾。",
+            1
+        ]
+    },
+    {
+        "Id": 398,
+        "ActionId": 398,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 399,
+        "ActionId": 399,
+        "Type": 401,
+        "Params": [
+            2,
+            8233
+        ]
+    },
+    {
+        "Id": 400,
+        "ActionId": 400,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "阿德莱德拉上最后一条拉链，转身面向露莎卡。"
+        ]
+    },
+    {
+        "Id": 401,
+        "ActionId": 401,
+        "Type": 201,
+        "Params": [
+            1,
+            501790
+        ]
+    },
+    {
+        "Id": 402,
+        "ActionId": 402,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "……老师是来劝我的吧，我已经提交了法奥斯的入学申请。",
+            1
+        ]
+    },
+    {
+        "Id": 403,
+        "ActionId": 403,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 404,
+        "ActionId": 404,
+        "Type": 201,
+        "Params": [
+            1,
+            501798
+        ]
+    },
+    {
+        "Id": 405,
+        "ActionId": 405,
+        "Type": 301,
+        "Params": [
+            1,
+            "露莎卡",
+            "我知道弗洛伦丝的离开让你并不好受，但我还是希望你能留下。",
+            1
+        ]
+    },
+    {
+        "Id": 406,
+        "ActionId": 406,
+        "Type": 301,
+        "Params": [
+            "",
+            "露莎卡",
+            "法奥斯能教你的，家族一样可以。",
+            1
+        ]
+    },
+    {
+        "Id": 407,
+        "ActionId": 407,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 408,
+        "ActionId": 408,
+        "Type": 201,
+        "Params": [
+            1,
+            501790,
+            14
+        ]
+    },
+    {
+        "Id": 409,
+        "ActionId": 409,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "很小的时候母亲对我说，只需要我好好成长便足以令她宽慰。",
+            1
+        ]
+    },
+    {
+        "Id": 410,
+        "ActionId": 410,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 411,
+        "ActionId": 411,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "家族一直教我去赢得什么，可是，以“去赢”作为唯一的方式成长，真的能做成所有事吗？",
+            1
+        ]
+    },
+    {
+        "Id": 412,
+        "ActionId": 412,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 413,
+        "ActionId": 413,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "我在这里找不到答案，所以我要去找一个能弄明白的地方。",
+            1
+        ]
+    },
+    {
+        "Id": 414,
+        "ActionId": 414,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "以及……",
+            1
+        ]
+    },
+    {
+        "Id": 415,
+        "ActionId": 415,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 416,
+        "ActionId": 416,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 417,
+        "ActionId": 417,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "阿德莱德深吸了一口气，将胸中的负面情绪努力向下压。"
+        ]
+    },
+    {
+        "Id": 418,
+        "ActionId": 418,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 419,
+        "ActionId": 419,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "我难以理解家族在“大清洗”中做出的决定。",
+            1
+        ]
+    },
+    {
+        "Id": 420,
+        "ActionId": 420,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 421,
+        "ActionId": 421,
+        "Type": 201,
+        "Params": [
+            1,
+            501798,
+            3
+        ]
+    },
+    {
+        "Id": 422,
+        "ActionId": 422,
+        "Type": 301,
+        "Params": [
+            1,
+            "露莎卡",
+            "…………",
+            1
+        ]
+    },
+    {
+        "Id": 423,
+        "ActionId": 423,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 424,
+        "ActionId": 424,
+        "Type": 301,
+        "Params": [
+            "",
+            "露莎卡",
+            "你只看到了事物的表面，而成大事者要学会牺牲。你会学会的。",
+            1
+        ]
+    },
+    {
+        "Id": 425,
+        "ActionId": 425,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 426,
+        "ActionId": 426,
+        "Type": 201,
+        "Params": [
+            1,
+            501790,
+            5
+        ]
+    },
+    {
+        "Id": 427,
+        "ActionId": 427,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "……我现在不想学。",
+            1
+        ]
+    },
+    {
+        "Id": 428,
+        "ActionId": 428,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 429,
+        "ActionId": 429,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "露莎卡深深地看了她一眼，那眼神里翻滚着许多阿德莱德看不清的感情。"
+        ]
+    },
+    {
+        "Id": 430,
+        "ActionId": 430,
+        "Type": 201,
+        "Params": [
+            1,
+            501798,
+            4
+        ]
+    },
+    {
+        "Id": 431,
+        "ActionId": 431,
+        "Type": 301,
+        "Params": [
+            1,
+            "露莎卡",
+            "你是个固执的孩子，逼迫你做事效果很差，我可以等。",
+            1
+        ]
+    },
+    {
+        "Id": 432,
+        "ActionId": 432,
+        "Type": 301,
+        "Params": [
+            "",
+            "露莎卡",
+            "但即便你是继承人序列里优先级最高的那一个，家族也不会等你很久。",
+            1
+        ]
+    },
+    {
+        "Id": 433,
+        "ActionId": 433,
+        "Type": 301,
+        "Params": [
+            "",
+            "露莎卡",
+            "我也一样。",
+            1
+        ]
+    },
+    {
+        "Id": 434,
+        "ActionId": 434,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 435,
+        "ActionId": 435,
+        "Type": 201,
+        "Params": [
+            1,
+            501790
+        ]
+    },
+    {
+        "Id": 436,
+        "ActionId": 436,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "到我从法奥斯毕业。",
+            1
+        ]
+    },
+    {
+        "Id": 437,
+        "ActionId": 437,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 438,
+        "ActionId": 438,
+        "Type": 201,
+        "Params": [
+            1,
+            501798
+        ]
+    },
+    {
+        "Id": 439,
+        "ActionId": 439,
+        "Type": 301,
+        "Params": [
+            1,
+            "露莎卡",
+            "成交。",
+            1
+        ]
+    },
+    {
+        "Id": 440,
+        "ActionId": 440,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 441,
+        "ActionId": 441,
+        "Type": 201,
+        "Params": [
+            1,
+            501790,
+            4
+        ]
+    },
+    {
+        "Id": 442,
+        "ActionId": 442,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "我会带着新的感悟回来，为一切寻求改变的可能。",
+            1
+        ]
+    },
+    {
+        "Id": 443,
+        "ActionId": 443,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 444,
+        "ActionId": 444,
+        "Type": 201,
+        "Params": [
+            1,
+            501798,
+            1
+        ]
+    },
+    {
+        "Id": 445,
+        "ActionId": 445,
+        "Type": 301,
+        "Params": [
+            1,
+            "露莎卡",
+            "……呵，你有权保留你的看法。",
+            1
+        ]
+    },
+    {
+        "Id": 446,
+        "ActionId": 446,
+        "Type": 301,
+        "Params": [
+            "",
+            "露莎卡",
+            "事教人一教就会。想去闯就自己试试。",
+            1
+        ]
+    },
+    {
+        "Id": 447,
+        "ActionId": 447,
+        "Type": 301,
+        "Params": [
+            "",
+            "露莎卡",
+            "我拭目以待。",
+            1
+        ]
+    },
+    {
+        "Id": 448,
+        "ActionId": 448,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 449,
+        "ActionId": 449,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 450,
+        "ActionId": 450,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab"
+        ]
+    },
+    {
+        "Id": 451,
+        "ActionId": 451,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 452,
+        "ActionId": 452,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1649.jpg"
+        ]
+    },
+    {
+        "Id": 453,
+        "ActionId": 453,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 454,
+        "ActionId": 454,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "…………",
+            1
+        ]
+    },
+    {
+        "Id": 455,
+        "ActionId": 455,
+        "Type": 401,
+        "Params": [
+            2,
+            4833
+        ]
+    },
+    {
+        "Id": 456,
+        "ActionId": 456,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "角落里，她自己撑着自己。"
+        ]
+    },
+    {
+        "Id": 457,
+        "ActionId": 457,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 458,
+        "ActionId": 458,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "登记台前排起长队，学员们两两并肩，报上配对名字。"
+        ]
+    },
+    {
+        "Id": 459,
+        "ActionId": 459,
+        "Type": 201,
+        "Params": [
+            1,
+            501678,
+            3
+        ]
+    },
+    {
+        "Id": 460,
+        "ActionId": 460,
+        "Type": 301,
+        "Params": [
+            1,
+            "？？？",
+            "阿德。",
+            1
+        ]
+    },
+    {
+        "Id": 461,
+        "ActionId": 461,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 462,
+        "ActionId": 462,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "熟悉的嗓音让她直起身，黑发少女站在她面前。她的笑容像从前一般柔和，只是掺进了一丝不易察觉的疲惫。"
+        ]
+    },
+    {
+        "Id": 463,
+        "ActionId": 463,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 464,
+        "ActionId": 464,
+        "Type": 201,
+        "Params": [
+            1,
+            501627
+        ]
+    },
+    {
+        "Id": 465,
+        "ActionId": 465,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "……海伦汀。",
+            1
+        ]
+    },
+    {
+        "Id": 466,
+        "ActionId": 466,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 467,
+        "ActionId": 467,
+        "Type": 201,
+        "Params": [
+            1,
+            501678,
+            3
+        ]
+    },
+    {
+        "Id": 468,
+        "ActionId": 468,
+        "Type": 301,
+        "Params": [
+            1,
+            "海伦汀",
+            "好久不见，最近……还好吗？",
+            1
+        ]
+    },
+    {
+        "Id": 469,
+        "ActionId": 469,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 470,
+        "ActionId": 470,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            1
+        ]
+    },
+    {
+        "Id": 471,
+        "ActionId": 471,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "嗯，你呢。",
+            1
+        ]
+    },
+    {
+        "Id": 472,
+        "ActionId": 472,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 473,
+        "ActionId": 473,
+        "Type": 201,
+        "Params": [
+            1,
+            501678,
+            3
+        ]
+    },
+    {
+        "Id": 474,
+        "ActionId": 474,
+        "Type": 301,
+        "Params": [
+            1,
+            "海伦汀",
+            "还好。",
+            1
+        ]
+    },
+    {
+        "Id": 475,
+        "ActionId": 475,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 476,
+        "ActionId": 476,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "两句寒暄用尽，两个人一时都没有再开口，从前她们不需要刻意找话题的……假如那个女孩还在她们中间的话。"
+        ]
+    },
+    {
+        "Id": 477,
+        "ActionId": 477,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            "",
+            -450
+        ]
+    },
+    {
+        "Id": 478,
+        "ActionId": 478,
+        "Type": 201,
+        "Params": [
+            2,
+            501678,
+            3,
+            450
+        ]
+    },
+    {
+        "Id": 479,
+        "ActionId": 479,
+        "Type": 301,
+        "Params": [
+            1,
+            "海伦汀",
+            "……交叉掩护是双人科目，和我一组吧，阿德。",
+            2
+        ]
+    },
+    {
+        "Id": 480,
+        "ActionId": 480,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "…………",
+            1
+        ]
+    },
+    {
+        "Id": 481,
+        "ActionId": 481,
+        "Type": 204,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 482,
+        "ActionId": 482,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "不了。",
+            1
+        ]
+    },
+    {
+        "Id": 483,
+        "ActionId": 483,
+        "Type": 204,
+        "Params": [
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 484,
+        "ActionId": 484,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "风向没有变，赫里欧和斯贝尔穆的继承人在法奥斯结队，两边的议席都会收到通知。",
+            1
+        ]
+    },
+    {
+        "Id": 485,
+        "ActionId": 485,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 486,
+        "ActionId": 486,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "可能是好事也可能是坏事，但现在我不敢赌，两边的态度都很暧昧。",
+            1
+        ]
+    },
+    {
+        "Id": 487,
+        "ActionId": 487,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 488,
+        "ActionId": 488,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "海伦汀苦涩地点了点头，两人心照不宣。"
+        ]
+    },
+    {
+        "Id": 489,
+        "ActionId": 489,
+        "Type": 204,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 490,
+        "ActionId": 490,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "还有，你妹妹也在法奥斯念书，别让我连累你们。",
+            1
+        ]
+    },
+    {
+        "Id": 491,
+        "ActionId": 491,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 492,
+        "ActionId": 492,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "……“连累”，我们之间，什么时候需要用这个词了。",
+            2
+        ]
+    },
+    {
+        "Id": 493,
+        "ActionId": 493,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 494,
+        "ActionId": 494,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "冗长的沉默再次降临，这种沉默时不时会出现在两人的对话中间，彼此都已经再习惯不过。"
+        ]
+    },
+    {
+        "Id": 495,
+        "ActionId": 495,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "每一次大型集训，海伦汀都会和阿德莱德见面，每一次她们都会像这样，突然在一个对话后断上很久，两个人都不说话。"
+        ]
+    },
+    {
+        "Id": 496,
+        "ActionId": 496,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在短短3米的距离中间，仿佛有一道漫长的伤痕在撕裂。"
+        ]
+    },
+    {
+        "Id": 497,
+        "ActionId": 497,
+        "Type": 201,
+        "Params": [
+            1,
+            501678,
+            10
+        ]
+    },
+    {
+        "Id": 498,
+        "ActionId": 498,
+        "Type": 301,
+        "Params": [
+            1,
+            "海伦汀",
+            "我听说你最近为了一个人打满三个人的任务分，几乎是每天都要训练12个小时以上。",
+            1
+        ]
+    },
+    {
+        "Id": 499,
+        "ActionId": 499,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 500,
+        "ActionId": 500,
+        "Type": 301,
+        "Params": [
+            "",
+            "海伦汀",
+            "你要照顾好自己。",
+            1
+        ]
+    },
+    {
+        "Id": 501,
+        "ActionId": 501,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 502,
+        "ActionId": 502,
+        "Type": 201,
+        "Params": [
+            1,
+            501596,
+            1
+        ]
+    },
+    {
+        "Id": 503,
+        "ActionId": 503,
+        "Type": 401,
+        "Params": [
+            2,
+            5703
+        ]
+    },
+    {
+        "Id": 504,
+        "ActionId": 504,
+        "Type": 301,
+        "Params": [
+            1,
+            "奥菲莉娅",
+            "姐姐！这边，登记要截止了！",
+            1
+        ]
+    },
+    {
+        "Id": 505,
+        "ActionId": 505,
+        "Type": 401,
+        "Params": [
+            2,
+            4276
+        ]
+    },
+    {
+        "Id": 506,
+        "ActionId": 506,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "少女的呼唤声从队伍那头传来，一抹铂金色的长发在阳光下熠熠生辉，那是一种完全不讲道理的生命力。"
+        ]
+    },
+    {
+        "Id": 507,
+        "ActionId": 507,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "或许曾经在某个世界里，这种光芒也蛮不讲理地闯入过阿德莱德的世界里。"
+        ]
+    },
+    {
+        "Id": 508,
+        "ActionId": 508,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 509,
+        "ActionId": 509,
+        "Type": 201,
+        "EndDelay": 1000.0,
+        "Params": [
+            1,
+            501678
+        ]
+    },
+    {
+        "Id": 510,
+        "ActionId": 510,
+        "Type": 204,
+        "EndDelay": 1200.0,
+        "Params": [
+            1,
+            10
+        ]
+    },
+    {
+        "Id": 511,
+        "ActionId": 511,
+        "Type": 203,
+        "Params": [
+            1,
+            0.3,
+            -60
+        ]
+    },
+    {
+        "Id": 512,
+        "ActionId": 512,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 513,
+        "ActionId": 513,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 514,
+        "ActionId": 514,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "海伦汀朝阿德莱德最后看了一眼，转身走进人群。"
+        ]
+    },
+    {
+        "Id": 515,
+        "ActionId": 515,
+        "Type": 401,
+        "Params": [
+            2,
+            4833
+        ]
+    },
+    {
+        "Id": 516,
+        "ActionId": 516,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "登记队列并成一双一双，而阿德莱德独自一人，机械式地进行下一组热身动作。"
+        ]
+    },
+    {
+        "Id": 517,
+        "ActionId": 517,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 518,
+        "ActionId": 518,
+        "Type": 104,
+        "Params": [
+            "-400|80|-400",
+            0
+        ]
+    },
+    {
+        "Id": 519,
+        "ActionId": 519,
+        "Type": 401,
+        "Params": [
+            2,
+            20000042
+        ]
+    },
+    {
+        "Id": 520,
+        "ActionId": 520,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "十分钟后，她转到了候场区。远处靶道枪声连成一片，阿德莱德靠着掩体独自压装弹匣。"
+        ]
+    },
+    {
+        "Id": 521,
+        "ActionId": 521,
+        "Type": 201,
+        "Params": [
+            1,
+            501673
+        ]
+    },
+    {
+        "Id": 522,
+        "ActionId": 522,
+        "Type": 301,
+        "Params": [
+            1,
+            "？？？",
+            "借个位置。",
+            1
+        ]
+    },
+    {
+        "Id": 523,
+        "ActionId": 523,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            "",
+            -100
+        ]
+    },
+    {
+        "Id": 524,
+        "ActionId": 524,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 525,
+        "ActionId": 525,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "一个相貌平平无奇的学生在她旁边蹲下，也开始装弹匣，眼睛看着前方的靶道。"
+        ]
+    },
+    {
+        "Id": 526,
+        "ActionId": 526,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "作战装备标准地别在腰间，几颗扣子都规规矩矩地扣好，普通的身高，普通的脸蛋，普通的服饰，普通到甚至有些刻意，属于被扔到人海里就会瞬间隐身的类型。"
+        ]
+    },
+    {
+        "Id": 527,
+        "ActionId": 527,
+        "Type": 402,
+        "Params": [
+            20000042
+        ]
+    },
+    {
+        "Id": 528,
+        "ActionId": 528,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            400,
+            -100
+        ]
+    },
+    {
+        "Id": 529,
+        "ActionId": 529,
+        "Type": 201,
+        "Params": [
+            2,
+            501627,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 530,
+        "ActionId": 530,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "齐射的时候再聊，格蕾塔同学。",
+            2
+        ]
+    },
+    {
+        "Id": 531,
+        "ActionId": 531,
+        "Type": 401,
+        "EndDelay": 150.0,
+        "Params": [
+            2,
+            10001004
+        ]
+    },
+    {
+        "Id": 532,
+        "ActionId": 532,
+        "Type": 401,
+        "Params": [
+            2,
+            10001004
+        ]
+    },
+    {
+        "Id": 533,
+        "ActionId": 533,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "枪声齐鸣。"
+        ]
+    },
+    {
+        "Id": 534,
+        "ActionId": 534,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 535,
+        "ActionId": 535,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            400
+        ]
+    },
+    {
+        "Id": 536,
+        "ActionId": 536,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "上次我们讲到哪里了？",
+            1
+        ]
+    },
+    {
+        "Id": 537,
+        "ActionId": 537,
+        "Type": 204,
+        "Params": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 538,
+        "ActionId": 538,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "讲到一年前，家族已经向在大清洗中被波及到的人发送了所谓“特赦”的电子邮件，或许是想重新招揽当时有能之士，回大西洋之眼继续建设。",
+            2
+        ]
+    },
+    {
+        "Id": 539,
+        "ActionId": 539,
+        "Type": 204,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 540,
+        "ActionId": 540,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "我从家族的信息流里截下了几封，里面有收件的电子邮件地址。",
+            2
+        ]
+    },
+    {
+        "Id": 541,
+        "ActionId": 541,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "嗯，然后你把它交给了我，剩下的就是我的工作了。",
+            1
+        ]
+    },
+    {
+        "Id": 542,
+        "ActionId": 542,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "通过我家的渠道一层层往下查，结论是那些被流放的人在南大西洋。",
+            1
+        ]
+    },
+    {
+        "Id": 543,
+        "ActionId": 543,
+        "Type": 204,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 544,
+        "ActionId": 544,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "不愧是做海事资信出身的。",
+            2
+        ]
+    },
+    {
+        "Id": 545,
+        "ActionId": 545,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "不许否认我的个人努力。",
+            1
+        ]
+    },
+    {
+        "Id": 546,
+        "ActionId": 546,
+        "Type": 204,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 547,
+        "ActionId": 547,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 548,
+        "ActionId": 548,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "总之，那些人里很可能包括你在意的人，具体来说是在你们家族分部的产业里待过。",
+            1
+        ]
+    },
+    {
+        "Id": 549,
+        "ActionId": 549,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "我记得在那边的产业也是能源工程相关。",
+            2
+        ]
+    },
+    {
+        "Id": 550,
+        "ActionId": 550,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "具体做什么不清楚，再往下查就要踩到红线了。",
+            1
+        ]
+    },
+    {
+        "Id": 551,
+        "ActionId": 551,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "现在只知道那边出过一则罢工新闻，刚好在一年前，和你说的那些特赦邮件的时间基本吻合。",
+            1
+        ]
+    },
+    {
+        "Id": 552,
+        "ActionId": 552,
+        "Type": 204,
+        "Params": [
+            2,
+            8
+        ]
+    },
+    {
+        "Id": 553,
+        "ActionId": 553,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "“特赦”被包装成善意，但实际上却是某种陷阱……吗？",
+            2
+        ]
+    },
+    {
+        "Id": 554,
+        "ActionId": 554,
+        "Type": 204,
+        "Params": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 555,
+        "ActionId": 555,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "但是明明真的有人通过那次机会回到环大西洋了，只是……",
+            2
+        ]
+    },
+    {
+        "Id": 556,
+        "ActionId": 556,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "名单里没有“阿拉克娜”，对么？她不在回到环大西洋的名单里，后续的行踪已经查不到了。",
+            1
+        ]
+    },
+    {
+        "Id": 557,
+        "ActionId": 557,
+        "Type": 401,
+        "EndDelay": 150.0,
+        "Params": [
+            2,
+            10001004
+        ]
+    },
+    {
+        "Id": 558,
+        "ActionId": 558,
+        "Type": 401,
+        "Params": [
+            2,
+            10001004
+        ]
+    },
+    {
+        "Id": 559,
+        "ActionId": 559,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "“砰砰”——齐射再起，格蕾塔将声音压了下来。"
+        ]
+    },
+    {
+        "Id": 560,
+        "ActionId": 560,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 561,
+        "ActionId": 561,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "阿德莱德，到这里就收手吧。",
+            1
+        ]
+    },
+    {
+        "Id": 562,
+        "ActionId": 562,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "人类有时候与真相保持一定的距离反而会让自己更幸福。",
+            1
+        ]
+    },
+    {
+        "Id": 563,
+        "ActionId": 563,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 564,
+        "ActionId": 564,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "如果真像你所说的那样，那我们现在无论做什么，两年前的事都已经是定局了，你改变不了，我也不行。",
+            1
+        ]
+    },
+    {
+        "Id": 565,
+        "ActionId": 565,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "当然，你能够帮我发掘那么多信息，已经足够了。",
+            2
+        ]
+    },
+    {
+        "Id": 566,
+        "ActionId": 566,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "剩下的让我自己来吧。",
+            2
+        ]
+    },
+    {
+        "Id": 567,
+        "ActionId": 567,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 568,
+        "ActionId": 568,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "阿德莱德。",
+            1
+        ]
+    },
+    {
+        "Id": 569,
+        "ActionId": 569,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "情报费照旧结，放心。",
+            2
+        ]
+    },
+    {
+        "Id": 570,
+        "ActionId": 570,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "你知道我说的不是这个。",
+            1
+        ]
+    },
+    {
+        "Id": 571,
+        "ActionId": 571,
+        "Type": 204,
+        "Params": [
+            2,
+            8
+        ]
+    },
+    {
+        "Id": 572,
+        "ActionId": 572,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "………………",
+            2
+        ]
+    },
+    {
+        "Id": 573,
+        "ActionId": 573,
+        "Type": 204,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 574,
+        "ActionId": 574,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 575,
+        "ActionId": 575,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "两年了，为了查清楚一件早就过了时效的事，反而落得自己孤身一人，值得么？",
+            1
+        ]
+    },
+    {
+        "Id": 576,
+        "ActionId": 576,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "人可以向前走，但不能让自己盲目。",
+            2
+        ]
+    },
+    {
+        "Id": 577,
+        "ActionId": 577,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "又是我理解不了的哲学。",
+            1
+        ]
+    },
+    {
+        "Id": 578,
+        "ActionId": 578,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "姑且还是有一个人能聊的，你不就是么。",
+            2
+        ]
+    },
+    {
+        "Id": 579,
+        "ActionId": 579,
+        "Type": 301,
+        "Params": [
+            "",
+            "格蕾塔",
+            "我们不是朋友，只有利益。我只想普通地学习普通地毕业，顺便赚点外快罢了。",
+            1
+        ]
+    },
+    {
+        "Id": 580,
+        "ActionId": 580,
+        "Type": 202,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 581,
+        "ActionId": 581,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 582,
+        "ActionId": 582,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "对方耸了耸肩，不再规劝。简短的告别后，她混入换防的人流中，几秒便消失不见了。"
+        ]
+    },
+    {
+        "Id": 583,
+        "ActionId": 583,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 584,
+        "ActionId": 584,
+        "Type": 401,
+        "Params": [
+            2,
+            2982
+        ]
+    },
+    {
+        "Id": 585,
+        "ActionId": 585,
+        "Type": 301,
+        "Params": [
+            "",
+            "场务广播",
+            "第七批次，进入靶道！"
+        ]
+    },
+    {
+        "Id": 586,
+        "ActionId": 586,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab"
+        ]
+    },
+    {
+        "Id": 587,
+        "ActionId": 587,
+        "Type": 402,
+        "Params": [
+            2982
+        ]
+    },
+    {
+        "Id": 588,
+        "ActionId": 588,
+        "Type": 401,
+        "EndDelay": 200.0,
+        "Params": [
+            2,
+            4779
+        ]
+    },
+    {
+        "Id": 589,
+        "ActionId": 589,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 590,
+        "ActionId": 590,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "阿德莱德整理了一下装束，提枪起身离开。"
+        ]
+    },
+    {
+        "Id": 591,
+        "ActionId": 591,
+        "Type": 402,
+        "Params": [
+            4779
+        ]
+    },
+    {
+        "Id": 592,
+        "ActionId": 592,
+        "Type": 402,
+        "Params": [
+            6708
+        ]
+    },
+    {
+        "Id": 593,
+        "ActionId": 593,
+        "Type": 401,
+        "EndDelay": 500.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 594,
+        "ActionId": 594,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 595,
+        "ActionId": 595,
+        "Type": 101,
+        "EndDelay": 1500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1492.jpg"
+        ]
+    },
+    {
+        "Id": 596,
+        "ActionId": 596,
+        "Type": 107,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "战术实训教室",
+            "午后"
+        ]
+    },
+    {
+        "Id": 597,
+        "ActionId": 597,
+        "Type": 309,
+        "IsBlock": 1,
+        "Params": [
+            "",
+            "午后，战术实训教室"
+        ]
+    },
+    {
+        "Id": 598,
+        "ActionId": 598,
+        "Type": 108,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 599,
+        "ActionId": 599,
+        "Type": 401,
+        "EndDelay": 300.0,
+        "Params": [
+            2,
+            8234
+        ]
+    },
+    {
+        "Id": 600,
+        "ActionId": 600,
+        "Type": 401,
+        "EndDelay": 300.0,
+        "Params": [
+            2,
+            4202
+        ]
+    },
+    {
+        "Id": 601,
+        "ActionId": 601,
+        "Type": 401,
+        "Params": [
+            2,
+            5838
+        ]
+    },
+    {
+        "Id": 602,
+        "ActionId": 602,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "铃声未落，青年教官准时推门而入，将名册往讲台上一放。"
+        ]
+    },
+    {
+        "Id": 603,
+        "ActionId": 603,
+        "Type": 402,
+        "Params": [
+            5488
+        ]
+    },
+    {
+        "Id": 604,
+        "ActionId": 604,
+        "Type": 401,
+        "Params": [
+            1,
+            7122
+        ]
+    },
+    {
+        "Id": 605,
+        "ActionId": 605,
+        "Type": 201,
+        "Params": [
+            1,
+            501814,
+            1
+        ]
+    },
+    {
+        "Id": 606,
+        "ActionId": 606,
+        "Type": 301,
+        "Params": [
+            1,
+            "维尔斯",
+            "同学们好，我叫维尔斯，从今天起接手你们的战术实训课。",
+            1
+        ]
+    },
+    {
+        "Id": 607,
+        "ActionId": 607,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 608,
+        "ActionId": 608,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "事务性通知，本学期有一位新同学，经特招考试转学入学，并共同参与本课程。",
+            1
+        ]
+    },
+    {
+        "Id": 609,
+        "ActionId": 609,
+        "Type": 301,
+        "Params": [
+            "",
+            "维尔斯",
+            "落单的学生，由我指定配队。",
+            1
+        ]
+    },
+    {
+        "Id": 610,
+        "ActionId": 610,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 611,
+        "ActionId": 611,
+        "Type": 201,
+        "Params": [
+            1,
+            501627
+        ]
+    },
+    {
+        "Id": 612,
+        "ActionId": 612,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "…………",
+            1
+        ]
+    },
+    {
+        "Id": 613,
+        "ActionId": 613,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 614,
+        "ActionId": 614,
+        "Type": 401,
+        "Params": [
+            2,
+            4982
+        ]
+    },
+    {
+        "Id": 615,
+        "ActionId": 615,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "教室里响起零星的骚动，所有人都知道，这门课上落单的只有一个人。"
+        ]
+    },
+    {
+        "Id": 616,
+        "ActionId": 616,
+        "Type": 402,
+        "Params": [
+            4982
+        ]
+    },
+    {
+        "Id": 617,
+        "ActionId": 617,
+        "Type": 401,
+        "Params": [
+            2,
+            754
+        ]
+    },
+    {
+        "Id": 618,
+        "ActionId": 618,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "“吱呀”——门开了。"
+        ]
+    },
+    {
+        "Id": 619,
+        "ActionId": 619,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 620,
+        "ActionId": 620,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 621,
+        "ActionId": 621,
+        "Type": 201,
+        "Params": [
+            1,
+            501801,
+            1,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 622,
+        "ActionId": 622,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "蓝色短发随风跃动着，一瞬阿德莱德以为自己眼花了。"
+        ]
+    },
+    {
+        "Id": 623,
+        "ActionId": 623,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 624,
+        "ActionId": 624,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿拉克娜",
+            "阿拉克娜·索拉诺，来自环大西洋，很高兴与各位共同学习。",
+            1
+        ]
+    },
+    {
+        "Id": 625,
+        "ActionId": 625,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 626,
+        "ActionId": 626,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            4
+        ]
+    },
+    {
+        "Id": 627,
+        "ActionId": 627,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "阿德莱德",
+            "！！！",
+            1
+        ]
+    },
+    {
+        "Id": 628,
+        "ActionId": 628,
+        "Type": 401,
+        "Params": [
+            2,
+            2986
+        ]
+    },
+    {
+        "Id": 629,
+        "ActionId": 629,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "心脏猛地攥紧，她推演过一百种重逢，没有一种是在这里。"
+        ]
+    },
+    {
+        "Id": 630,
+        "ActionId": 630,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 631,
+        "ActionId": 631,
+        "Type": 201,
+        "Params": [
+            1,
+            501814
+        ]
+    },
+    {
+        "Id": 632,
+        "ActionId": 632,
+        "Type": 301,
+        "Params": [
+            1,
+            "维尔斯",
+            "阿拉克娜·索拉诺，配入阿德莱德·赫里欧战术小组，是否有异议？",
+            1
+        ]
+    },
+    {
+        "Id": 633,
+        "ActionId": 633,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 634,
+        "ActionId": 634,
+        "Type": 201,
+        "Params": [
+            1,
+            501627,
+            4
+        ]
+    },
+    {
+        "Id": 635,
+        "ActionId": 635,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "……没有。",
+            1
+        ]
+    },
+    {
+        "Id": 636,
+        "ActionId": 636,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 637,
+        "ActionId": 637,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 638,
+        "ActionId": 638,
+        "Type": 201,
+        "Params": [
+            2,
+            501801,
+            1,
+            400
+        ]
+    },
+    {
+        "Id": 639,
+        "ActionId": 639,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "她听见自己的声音在发紧，而讲台前的蓝发少女循着她的声音转过头来——"
+        ]
+    },
+    {
+        "Id": 640,
+        "ActionId": 640,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 641,
+        "ActionId": 641,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 642,
+        "ActionId": 642,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "目光相接。"
+        ]
+    },
+    {
+        "Id": 643,
+        "ActionId": 643,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "两年了，阿德莱德在那双眼睛里搜寻着码头、飞空艇、许愿台、星际漂流瓶……什么都没有。"
+        ]
+    },
+    {
+        "Id": 644,
+        "ActionId": 644,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "那双曾经盛着整片星海的眼睛，此刻平静地望着她，像望着一个陌生人。"
+        ]
+    },
+    {
+        "Id": 645,
+        "ActionId": 645,
+        "Type": 306
+    },
+    {
+        "Id": 646,
+        "ActionId": 646,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 647,
+        "ActionId": 647,
+        "Type": 204,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 648,
+        "ActionId": 648,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "阿拉克娜",
+            "请多指教，赫里欧同学。",
+            2
         ]
     }
 ]

@@ -275,9 +275,11 @@ function XUiGuildWarBoss7Panel:CheckBossLevelChanged()
 end
 
 function XUiGuildWarBoss7Panel:StartTimer()
-    self.ActionTimer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiGuildWarBoss7Panel:_OnStartTimerScheduleCb()
         self:ShowAction()
-    end, XScheduleManager.SECOND, 0)
 end
 
 function XUiGuildWarBoss7Panel:StopTimer()
@@ -285,10 +287,7 @@ function XUiGuildWarBoss7Panel:StopTimer()
         XScheduleManager.UnSchedule(self.Timer)
         self.Timer = false
     end
-    if self.ActionTimer then
-        XScheduleManager.UnSchedule(self.ActionTimer)
-        self.ActionTimer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
 end
 
 --region 动作动画相关

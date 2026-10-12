@@ -15,9 +15,7 @@ end
 function XUiAchievementTips:StartShow()
     if self.StartShowFlag then return end
     self:SetNext()
-    self.ScheduleId = XScheduleManager.ScheduleForever(function()
-                self:SetNext()
-            end, SHOW_TIME)
+    XScheduleManagerPro.ScheduleForever(XUiAchievementTips._OnShowNextAchievementScheduleCb, self, SHOW_TIME)
     self.StartShowFlag = true
 end
 
@@ -40,9 +38,10 @@ end
 function XUiAchievementTips:StopShow()
     if not self.StartShowFlag then return end
     self.StartShowFlag = false
-    if self.ScheduleId then
-        XScheduleManager.UnSchedule(self.ScheduleId)
-        self.ScheduleId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiAchievementTips._OnShowNextAchievementScheduleCb, self)
     self:Close()
+end
+
+function XUiAchievementTips:_OnShowNextAchievementScheduleCb()
+    self:SetNext()
 end

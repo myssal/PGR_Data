@@ -171,17 +171,18 @@ function XUiNewDrawMainV4P5Performance:PlayCharacterPerformance()
         showTime = duration
     end
     if showTime > 0 then
-        local delay = math.floor(showTime * XScheduleManager.SECOND)
-        self.ShowInfoTimerId = XScheduleManager.ScheduleOnce(function()
-            if XTool.UObjIsNil(self.GameObject) then
-                return
-            end
-            self.ShowInfoTimerId = nil
-            self:ShowCharacterInfo()
-        end, delay)
+        local delay = math.floor(showTime * XScheduleManagerPro.SECOND)
+        XScheduleManagerPro.ScheduleOnce(self._OnShowInfoTimer, self, delay)
     else
         self:ShowCharacterInfo()
     end
+end
+
+function XUiNewDrawMainV4P5Performance:_OnShowInfoTimer()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
+    end
+    self:ShowCharacterInfo()
 end
 
 function XUiNewDrawMainV4P5Performance:ShowCharacterInfo()
@@ -199,10 +200,7 @@ end
 --end
 
 function XUiNewDrawMainV4P5Performance:CleanupPerformance()
-    if self.ShowInfoTimerId then
-        XScheduleManager.UnSchedule(self.ShowInfoTimerId)
-        self.ShowInfoTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnShowInfoTimer, self)
     -- 还原被隐藏的 UI 场景渲染
     if not XTool.UObjIsNil(self.PerformanceEventReceiver) then
         self.PerformanceEventReceiver:RestoreScene()

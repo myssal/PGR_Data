@@ -3,7 +3,6 @@ local XUiPurchaseLB = XClass(nil, "XUiPurchaseLB")
 local Next = _G.next
 local CSXTextManagerGetText = CS.XTextManager.GetText
 local XUiPurchaseLBListItem = require("XUi/XUiPurchase/XUiPurchaseLBListItem")
-local CurrentSchedule = nil
 
 function XUiPurchaseLB:Ctor(ui,uiRoot, callBack)
     self.CurState = false
@@ -106,7 +105,7 @@ function XUiPurchaseLB:StartLBTimer()
     end
 
     self.IsStart = true
-    CurrentSchedule = XScheduleManager.ScheduleForever(function() self:UpdateLBTimer()end, 1000)
+    XScheduleManagerPro.ScheduleForever(self.UpdateLBTimer, self, 1000)
 end
 
 function XUiPurchaseLB:UpdateLBTimer()
@@ -199,11 +198,8 @@ function XUiPurchaseLB:ShowPanel()
 end
 
 function XUiPurchaseLB:DestroyTimer()
-    if CurrentSchedule then
-        self.IsStart = false
-        XScheduleManager.UnSchedule(CurrentSchedule)
-        CurrentSchedule = nil
-    end
+    self.IsStart = false
+    XScheduleManagerPro.UnSchedule(self.UpdateLBTimer, self)
 end
 
 function XUiPurchaseLB:Init()

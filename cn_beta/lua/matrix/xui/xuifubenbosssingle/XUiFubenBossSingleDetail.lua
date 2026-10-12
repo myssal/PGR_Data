@@ -125,8 +125,7 @@ end
 function XUiFubenBossSingleDetail:OnDisable()
     self:_RemoveEventListeners()
     self:_RemoveSchedules()
-    XScheduleManager.UnSchedule(self._TimerResetCooldown)
-    self._TimerResetCooldown = false
+    XScheduleManagerPro.UnSchedule(XUiFubenBossSingleDetail._OnResetCooldownScheduleCb, self)
 end
 
 -- endregion
@@ -674,13 +673,15 @@ function XUiFubenBossSingleDetail:ScheduleResetCooldown()
     if not self._Control:IsResetCoolDown() then
         return
     end
-    if not self._TimerResetCooldown then
-        self._TimerResetCooldown = XScheduleManager.ScheduleForever(function()
-            self:_RefreshBtnReset()
-            if not self._Control:IsResetCoolDown() then
-                XScheduleManager.UnSchedule(self._TimerResetCooldown)
-            end
-        end, XScheduleManager.SECOND)
+    XScheduleManagerPro.UnSchedule(XUiFubenBossSingleDetail._OnResetCooldownScheduleCb, self)
+    XScheduleManagerPro.ScheduleForever(XUiFubenBossSingleDetail._OnResetCooldownScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+--- 定时器回调：重置冷却倒计时刷新
+function XUiFubenBossSingleDetail:_OnResetCooldownScheduleCb()
+    self:_RefreshBtnReset()
+    if not self._Control:IsResetCoolDown() then
+        XScheduleManagerPro.UnSchedule(XUiFubenBossSingleDetail._OnResetCooldownScheduleCb, self)
     end
 end
 --endregion reset btn

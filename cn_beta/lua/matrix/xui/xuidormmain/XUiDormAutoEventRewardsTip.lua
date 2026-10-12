@@ -20,7 +20,6 @@ function XUiDormAutoEventRewardsTip:OnStart(characterMoodsChangeList, rewardGood
     self:InitViewData()
     self._CharacterMoodsChangeList = characterMoodsChangeList
     self._RewardGoodsMergeDic = rewardGoodsMergeDic
-    self._CharacterMoodAniScheduleId = 0
 
     self:RegisterBtnListener()
 
@@ -43,9 +42,8 @@ end
 
 -- 释放视图数据
 function XUiDormAutoEventRewardsTip:ReleaseViewData()
-    if self._CharacterMoodAniScheduleId > 0 then
-        XScheduleManager.UnSchedule(self._CharacterMoodAniScheduleId)
-        self._CharacterMoodAniScheduleId = 0
+    if XScheduleManagerPro.HasSchedule(self._OnRefreshCharacterMoodScheduleCb, self) then
+        XScheduleManagerPro.UnSchedule(self._OnRefreshCharacterMoodScheduleCb, self)
     end
     self._CharacterMoodsChangeGrids = nil
     self._RewardGoodGrids = nil
@@ -99,12 +97,7 @@ function XUiDormAutoEventRewardsTip:RefreshCharacterMood()
         grid:OnRefresh(characterMoodChangeValue)
     end
 
-    self._CharacterMoodAniScheduleId = XScheduleManager.ScheduleOnce(function()
-        for _, grid in pairs(self._CharacterMoodsChangeGrids) do
-            grid:PlayTweenAnimation()
-        end
-        self._CharacterMoodAniScheduleId = 0
-    end, TWEEN_ANI_TOTAL_DELAY)
+    XScheduleManagerPro.ScheduleOnce(self._OnRefreshCharacterMoodScheduleCb, self, TWEEN_ANI_TOTAL_DELAY)
 end
 
 function XUiDormAutoEventRewardsTip:RefreshRewardGoods()
@@ -134,5 +127,11 @@ function XUiDormAutoEventRewardsTip:RefreshRewardGoods()
         grid:OnRefresh(rewardGoodInfo)
 
         index = index + 1
+    end
+end
+
+function XUiDormAutoEventRewardsTip:_OnRefreshCharacterMoodScheduleCb()
+    for _, grid in pairs(self._CharacterMoodsChangeGrids) do
+        grid:PlayTweenAnimation()
     end
 end

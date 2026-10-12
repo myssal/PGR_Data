@@ -127,14 +127,16 @@ function XUiPanelActivityCalendar:OnBtnEditClick()
 end
 
 function XUiPanelActivityCalendar:StartTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnStartTimerScheduleCb, self) then
         self:StopTimer()
     end
 
     self:UpdateTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+function XUiPanelActivityCalendar:_OnStartTimerScheduleCb()
         self:UpdateTimer()
-    end, XScheduleManager.SECOND)
 end
 
 function XUiPanelActivityCalendar:UpdateTimer()
@@ -155,10 +157,7 @@ function XUiPanelActivityCalendar:UpdateTimer()
 end
 
 function XUiPanelActivityCalendar:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
 end
 
 -- 播放动画

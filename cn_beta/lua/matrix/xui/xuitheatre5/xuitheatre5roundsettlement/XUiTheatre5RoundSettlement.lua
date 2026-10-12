@@ -288,10 +288,7 @@ function XUiTheatre5RoundSettlement:CheckBeforeEnterShop()
     if not self._Control.PVPControl:CheckPVPInTime() then
         XLuaUiManager.CloseWithCallback('UiTheatre5RoundSettlement', function()
             CS.StatusSyncFight.XFightClient.RequestExitFight()
-            XScheduleManager.ScheduleNextFrame(function()
-                XLuaUiManager.CloseAllUpperUiWithCallback('UiTheatre5Main')
-                XUiManager.TipText('ActivityMainLineEnd')
-            end)
+            XScheduleManagerPro.ScheduleNextFrame(self._OnCheckBeforeEnterShopScheduleCb, self)
         end)
 
         return false
@@ -303,6 +300,11 @@ end
 function XUiTheatre5RoundSettlement:CheckBeforeEnterSettlement()
     -- 进入最终结算的判断和进入商店暂时没区别，直接调用
     return self:CheckBeforeEnterShop()
+end
+
+function XUiTheatre5RoundSettlement:_OnCheckBeforeEnterShopScheduleCb()
+    XLuaUiManager.CloseAllUpperUiWithCallback('UiTheatre5Main')
+    XUiManager.TipText('ActivityMainLineEnd')
 end
 
 return XUiTheatre5RoundSettlement

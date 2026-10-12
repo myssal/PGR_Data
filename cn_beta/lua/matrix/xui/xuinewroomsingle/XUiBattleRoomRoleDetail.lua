@@ -226,6 +226,7 @@ function XUiBattleRoomRoleDetail:RefreshEntityInfo()
     self:RefreshModel()
     self:RefreshOperationBtns()
     self:RefreshChildPanel()
+    self.Proxy:AOPOnCharacterClickAfter(self)
 end
 
 --######################## 私有方法 ########################

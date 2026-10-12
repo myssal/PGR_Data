@@ -65,13 +65,7 @@ function XUiPanelPutOn:Hide()
     self.ImgPutDown.gameObject:SetActive(false)
     self.ImgPutOn.gameObject:SetActive(false)
 
-    XScheduleManager.ScheduleOnce(function()
-        if not self.GameObject.activeSelf or XTool.UObjIsNil(self.Transform) then
-            return
-        end
-
-        self:Close()
-    end, 100)
+    XScheduleManagerPro.ScheduleOnce(XUiPanelPutOn._OnCloseScheduleCb, self, 100)
 end
 
 function XUiPanelPutOn:Close()
@@ -98,6 +92,13 @@ function XUiPanelPutOn:Update()
     end
 
     self:UpdateTransform(self.TargetTransform)
+end
+
+function XUiPanelPutOn:_OnCloseScheduleCb()
+    if not self.GameObject.activeSelf or XTool.UObjIsNil(self.Transform) then
+        return
+    end
+    self:Close()
 end
 
 return XUiPanelPutOn

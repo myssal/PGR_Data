@@ -95,16 +95,13 @@ end
 
 --region 时间显示定时器
 function XUiVersionGift:StopLeftTimer()
-    if self._LeftTimeTimeId then
-        XScheduleManager.UnSchedule(self._LeftTimeTimeId)
-        self._LeftTimeTimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiVersionGift._OnUpdateLeftTimeScheduleCb, self)
 end
 
 function XUiVersionGift:StartLeftTimer()
     self:StopLeftTimer()
     self.TxtTime.gameObject:SetActiveEx(true)
-    self._LeftTimeTimeId = XScheduleManager.ScheduleForever(handler(self, self.UpdateLeftTimeShow), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiVersionGift._OnUpdateLeftTimeScheduleCb, self, XScheduleManagerPro.SECOND)
     self:UpdateLeftTimeShow()
 end
 
@@ -129,5 +126,9 @@ function XUiVersionGift:UpdateLeftTimeShow()
     end
 end
 --endregion
+
+function XUiVersionGift:_OnUpdateLeftTimeScheduleCb()
+    self:UpdateLeftTimeShow()
+end
 
 return XUiVersionGift

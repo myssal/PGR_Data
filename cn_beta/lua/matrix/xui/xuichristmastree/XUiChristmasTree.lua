@@ -720,9 +720,7 @@ function XUiChristmasTree:OnEndDrag(isChangePiece) -- 抬起
     self.CurSelectGridIndex = nil
     self.IsDraging = false
     self.ClickLock = true
-    XScheduleManager.ScheduleOnce(function()
-        self.ClickLock = false
-    end, 100)
+    XScheduleManagerPro.ScheduleOnce(XUiChristmasTree._OnUnlockClickScheduleCb, self, 100)
 end
 
 function XUiChristmasTree:GetPoint()
@@ -744,4 +742,8 @@ function XUiChristmasTree:GetPoint()
     else
         return CS.UnityEngine.Vector3.zero
     end
+end
+
+function XUiChristmasTree:_OnUnlockClickScheduleCb()
+    self.ClickLock = false
 end

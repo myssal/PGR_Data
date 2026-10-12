@@ -30,10 +30,7 @@ function XUiFightLilithGacha:OnEnable()
 end
 
 function XUiFightLilithGacha:OnDisable()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnCheckBtnGachaShowScheduleCb, self)
     XDataCenter.InputManagerPc.ResumeCurInputMap()
 end
 
@@ -76,11 +73,7 @@ function XUiFightLilithGacha:AnimaBeginCallback()
     -- 抽到扭蛋后间隔一段时间才可继续扭蛋
     local intervalTime = self._Control._Model:GetIntervalTime(self.UnlockId)
     self.IsShowBtnGacha = false
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        self.IsShowBtnGacha = true
-        self:CheckBtnGachaShow()
-        self.Timer = nil
-    end, intervalTime * 1000)
+    XScheduleManagerPro.ScheduleOnce(self._OnCheckBtnGachaShowScheduleCb, self, intervalTime * 1000)
 end
 
 function XUiFightLilithGacha:AnimaEndCallback()
@@ -149,6 +142,11 @@ function XUiFightLilithGacha:Close()
         fight.InputControl:OnClick(CS.XNpcOperationClickKey.CommonUiClose, CS.XOperationClickType.KeyUp)
     end
     self.Super.Close(self)
+end
+
+function XUiFightLilithGacha:_OnCheckBtnGachaShowScheduleCb()
+    self.IsShowBtnGacha = true
+    self:CheckBtnGachaShow()
 end
 
 return XUiFightLilithGacha

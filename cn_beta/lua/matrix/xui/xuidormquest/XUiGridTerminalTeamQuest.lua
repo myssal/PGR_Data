@@ -100,14 +100,9 @@ function XUiGridTerminalTeamQuest:OnBtnCloseClick()
 end
 
 function XUiGridTerminalTeamQuest:StartTimer()
-    if self.Timer then
-        self:StopTimer()
-    end
-
+    self:StopTimer()
     self:UpdateTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateTimer()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiGridTerminalTeamQuest._OnUpdateQuestTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiGridTerminalTeamQuest:UpdateTimer()
@@ -130,14 +125,15 @@ function XUiGridTerminalTeamQuest:UpdateTimer()
 end
 
 function XUiGridTerminalTeamQuest:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiGridTerminalTeamQuest._OnUpdateQuestTimeScheduleCb, self)
 end
 
 function XUiGridTerminalTeamQuest:OnClose()
     self:StopTimer()
+end
+
+function XUiGridTerminalTeamQuest:_OnUpdateQuestTimeScheduleCb()
+    self:UpdateTimer()
 end
 
 return XUiGridTerminalTeamQuest

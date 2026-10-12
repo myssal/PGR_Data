@@ -73,20 +73,13 @@ function XUiPurchaseBundle:_SetMainDataSelected()
 end
 
 function XUiPurchaseBundle:OnEnable()
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateTime()
-        end, XScheduleManager.SECOND)
-    end
+    XScheduleManagerPro.ScheduleForever(self.UpdateTime, self, XScheduleManagerPro.SECOND)
 
     XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_SELECT_COMBO_MAIN, self._SetMainDataSelected, self)
 end
 
 function XUiPurchaseBundle:OnDisable()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self.UpdateTime, self)
 
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_SELECT_COMBO_MAIN, self._SetMainDataSelected, self)
 end
@@ -106,8 +99,7 @@ function XUiPurchaseBundle:UpdateTime()
         else
             self.ImgTime.gameObject:SetActive(false)
             self.TXtTime.text = TextManager.GetText("PurchaseLBSettOff")
-            XScheduleManager.UnSchedule(self._Timer)
-            self._Timer = false
+            XScheduleManagerPro.UnSchedule(self.UpdateTime, self)
         end
     end
 end

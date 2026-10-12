@@ -9,10 +9,7 @@ function XUiUnionKillTipCardShare:OnAwake()
 end
 
 function XUiUnionKillTipCardShare:OnDestroy()
-    if self.EndTimer then
-        XScheduleManager.UnSchedule(self.EndTimer)
-        self.EndTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnCloseScheduleCb, self)
 end
 
 function XUiUnionKillTipCardShare:OnStart(shareInfos)
@@ -30,9 +27,11 @@ function XUiUnionKillTipCardShare:OnStart(shareInfos)
         self.ShareCharacters[i].GameObject:SetActiveEx(false)
     end
 
-    self.EndTimer = XScheduleManager.ScheduleOnce(function()
-        self:Close()
-    end, 3000)
+    XScheduleManagerPro.ScheduleOnce(self._OnCloseScheduleCb, self, 3000)
+end
+
+function XUiUnionKillTipCardShare:_OnCloseScheduleCb()
+    self:Close()
 end
 
 function XUiUnionKillTipCardShare:OnBtnMaskClick()

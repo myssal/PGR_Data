@@ -330,9 +330,7 @@ end
 
 function XUiFubenFashionStory:StartTimer()
     self:DestroyTimer()
-    CurrentSchedule = XScheduleManager.ScheduleForever(function()
-        self:UpdateTimer()
-    end, 1000)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateTimerScheduleCb, self, 1000)
 end
 
 function XUiFubenFashionStory:UpdateTimer()
@@ -354,11 +352,8 @@ function XUiFubenFashionStory:RemoveTimerFun(id)
 end
 
 function XUiFubenFashionStory:DestroyTimer()
-    if CurrentSchedule then
-        XScheduleManager.UnSchedule(CurrentSchedule)
-        CurrentSchedule = nil
+        XScheduleManagerPro.UnSchedule(self._OnUpdateTimerScheduleCb, self)
         self.TimerFunctions = {}
-    end
 end
 
 
@@ -421,4 +416,8 @@ end
 
 function XUiFubenFashionStory:OnResume(mode)
     self.Mode = mode
+end
+
+function XUiFubenFashionStory:_OnUpdateTimerScheduleCb()
+    self:UpdateTimer()
 end

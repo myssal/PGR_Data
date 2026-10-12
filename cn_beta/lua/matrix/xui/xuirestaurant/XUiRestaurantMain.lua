@@ -265,22 +265,11 @@ function XUiRestaurantMain:ShowTips(tips)
     self.PanelTips.gameObject:SetActiveEx(true)
     
     XLuaUiManager.SetMask(true)
-    self.TipTimer = XScheduleManager.ScheduleOnce(function()
-        self:StopTipTimer()
-        XLuaUiManager.SetMask(false)
-        if XTool.UObjIsNil(self.PanelTips.gameObject) then
-            return
-        end
-        self.PanelTips.gameObject:SetActiveEx(false)
-    end, XScheduleManager.SECOND * TipShowTime)
+    XScheduleManagerPro.ScheduleOnce(self._OnStopTipTimerScheduleCb, self, XScheduleManagerPro.SECOND * TipShowTime)
 end
 
 function XUiRestaurantMain:StopTipTimer()
-    if not self.TipTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self.TipTimer)
-    self.TipTimer = nil
+    XScheduleManagerPro.UnSchedule(self._OnStopTipTimerScheduleCb, self)
 end
 
 function XUiRestaurantMain:RefreshTaskRedPoint()
@@ -488,4 +477,13 @@ end
 
 function XUiRestaurantMain:GetHashCode()
     return self.GameObject:GetHashCode()
+end
+
+function XUiRestaurantMain:_OnStopTipTimerScheduleCb()
+    self:StopTipTimer()
+    XLuaUiManager.SetMask(false)
+    if XTool.UObjIsNil(self.PanelTips.gameObject) then
+        return
+    end
+    self.PanelTips.gameObject:SetActiveEx(false)
 end

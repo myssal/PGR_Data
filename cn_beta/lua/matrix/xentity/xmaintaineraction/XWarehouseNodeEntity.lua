@@ -31,13 +31,15 @@ function XWarehouseNodeEntity:DoEvent(data)
             local IsAllComplete = XDataCenter.MaintainerActionManager.CheckIsAllComplete()
             if IsAllComplete then
                 XDataCenter.MaintainerActionManager.AddMessageType(XMaintainerActionConfigs.MessageType.EventComplete)
-                XScheduleManager.ScheduleOnce(function()
-                        XDataCenter.MaintainerActionManager.CheckEventCompleteMessage()
-                    end, 100)
+                XScheduleManagerPro.ScheduleOnce(self._OnDoEventScheduleCb, self, 100)
             end
         end)
     data.player:MarkNodeEvent()
     if data.cb then data.cb() end
+end
+
+function XWarehouseNodeEntity:_OnDoEventScheduleCb()
+    XDataCenter.MaintainerActionManager.CheckEventCompleteMessage()
 end
 
 return XWarehouseNodeEntity

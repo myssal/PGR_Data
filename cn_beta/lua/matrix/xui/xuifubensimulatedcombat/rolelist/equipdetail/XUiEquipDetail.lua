@@ -58,9 +58,7 @@ function XUiSimulatedCombatEquipDetail:InitClassifyPanel()
             CS.XResourceManager.Unload(self.Resource)
         end
         self.Resource = resource
-        XScheduleManager.ScheduleOnce(function()
-                self.FxUiLihuiChuxian01.gameObject:SetActiveEx(true)
-            end, 500)
+        XScheduleManagerPro.ScheduleOnce(self._OnInitClassifyPanelScheduleCb, self, 500)
         self.PanelWeapon.gameObject:SetActiveEx(false)
     end
 end
@@ -128,4 +126,8 @@ function XUiSimulatedCombatEquipDetail:OnNotify(evt, ...)
         XLuaUiManager.RunMain()
         XUiManager.TipMsg(CS.XTextManager.GetText("ExpeditionOnClose"))
     end
+end
+
+function XUiSimulatedCombatEquipDetail:_OnInitClassifyPanelScheduleCb()
+        self.FxUiLihuiChuxian01.gameObject:SetActiveEx(true)
 end

@@ -29,12 +29,12 @@ function XUiTRPGWorldBossBossArea:OnStart()
 end
 
 function XUiTRPGWorldBossBossArea:OnEnable()
-    self.Schedule = XScheduleManager.ScheduleForever(function() self:CheckCloseWorldBossArea() end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnCheckCloseWorldBossAreaScheduleCb, self, XScheduleManagerPro.SECOND)
     XDataCenter.TRPGManager.RequestTRPGBossDetailSend(function() self:Refresh() end)
 end
 
 function XUiTRPGWorldBossBossArea:OnDisable()
-    XScheduleManager.UnSchedule(self.Schedule)
+    XScheduleManagerPro.UnSchedule(self._OnCheckCloseWorldBossAreaScheduleCb, self)
 end
 
 function XUiTRPGWorldBossBossArea:Refresh()
@@ -132,4 +132,8 @@ function XUiTRPGWorldBossBossArea:OnNotify(evt)
     if evt == XEventId.EVENT_TRPG_WORLDBOSS_SYNCDATA then
         self:Refresh()
     end
+end
+
+function XUiTRPGWorldBossBossArea:_OnCheckCloseWorldBossAreaScheduleCb()
+    self:CheckCloseWorldBossArea() 
 end

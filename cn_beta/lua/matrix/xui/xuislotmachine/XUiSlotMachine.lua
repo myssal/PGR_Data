@@ -56,16 +56,11 @@ function XUiSlotMachine:OnEnable()
     self:UpdateTimer()
     self:RefreshRedPoint()
 
-    self.UpdateTimerId = XScheduleManager.ScheduleForeverEx(function()
-        self:OnUpdate()
-    end, 500)
+    XScheduleManagerPro.ScheduleForeverEx(self._OnEnableScheduleCb, self, 500)
 end
 
 function XUiSlotMachine:OnDisable()
-    if XTool.IsNumberValid(self.UpdateTimerId) then
-        XScheduleManager.UnSchedule(self.UpdateTimerId)
-        self.UpdateTimerId = 0
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
 end
 
 function XUiSlotMachine:OnDestroy()
@@ -372,4 +367,7 @@ function XUiSlotMachine:DrawCallBack(rockResults, targetRockTimes)
     end)
 end
 
+function XUiSlotMachine:_OnEnableScheduleCb()
+        self:OnUpdate()
+end
 return XUiSlotMachine

@@ -99,7 +99,8 @@ function XUiPanelTheatre6SkillDetail:Refresh(skillId, params)
     self.TxtSp.text = skillConfig.CostTL                                                  --SP消耗
     self.ImgIconSp:SetSprite(self._Control:GetClientConfigValue("IconSp"))                --SP图标
     self.TxtType.text = self._Control:GetClientConfigValue("SkillType", skillConfig.Type) --技能类型
-    self.TxtDesc.text = self._Control:GetSkillDesc(self._SkillId, false, isCanUpgrade)
+    local customModelData = params and params.ModelData
+    self.TxtDesc.text = self._Control:GetSkillDesc(self._SkillId, false, isCanUpgrade, customModelData)
     if self.UiRImgIcon then
         self.UiRImgIcon:SetRawImage(skillConfig.Icon) --技能图标
     end
@@ -156,12 +157,10 @@ function XUiPanelTheatre6SkillDetail:UpdateCSMag(isCanUpgrade)
     if isShowTagScUp then
         local nextSkillConfig = self._Control:GetSkillCfgById(nextSkillLevelId)
         local nextCSMag = math.floor(nextSkillConfig.CSMag / 100)
-        if curCSMag ~= nextCSMag then
-            self.GridTagSc02.gameObject:SetActiveEx(true)
-            self.GridTagSc02:SetNameByGroup(0, XUiHelper.GetText("Theatre6OverClockEfficiency"))
-            self.GridTagSc02:SetNameByGroup(1, string.format("%s%%", curCSMag))
-            self.GridTagSc02:SetNameByGroup(2, string.format("%s%%", nextCSMag))
-        end
+        self.GridTagSc02.gameObject:SetActiveEx(true)
+        self.GridTagSc02:SetNameByGroup(0, XUiHelper.GetText("Theatre6OverClockEfficiency"))
+        self.GridTagSc02:SetNameByGroup(1, string.format("%s%%", curCSMag))
+        self.GridTagSc02:SetNameByGroup(2, string.format("%s%%", nextCSMag))
         return
     end
 

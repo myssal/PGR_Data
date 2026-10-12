@@ -30,7 +30,6 @@ function XUiMission:Init()
     self.DynamicTable:SetProxy(XUiPanelMissionGrid)
     self.DynamicTable:SetDelegate(self)
 
-    self.Timer = nil
     self.PanelPointRect = self.PanelPreview:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self.CompletetTaskList = {}
     local sections = XDataCenter.TaskForceManager.GetTaskForceSectionConfig()
@@ -53,7 +52,6 @@ function XUiMission:Init()
     XEventManager.AddEventListener(XEventId.EVENT_TASKFORCE_SECTIONCHANGE_NOTIFY, self.SetupContent, self)
     XEventManager.AddEventListener(XEventId.EVENT_TASKFORCE_INFO_NOTIFY, self.SetupContent, self)
 
-
 end
 
 function XUiMission:OnDestroy()
@@ -67,7 +65,6 @@ function XUiMission:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_TASKFORCE_SECTIONCHANGE_NOTIFY, self.SetupContent, self)
     self:StopTimer()
 end
-
 
 --任务完成
 function XUiMission:OnTaskComplete(taskList)
@@ -159,20 +156,19 @@ function XUiMission:SetupRefresh()
 end
 
 function XUiMission:StartTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnStartTimerScheduleCb, self) then
         self:StopTimer()
     end
 
-    self.Timer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+function XUiMission:_OnStartTimerScheduleCb()
         self:UpdateTime()
-    end, XScheduleManager.SECOND)
 end
 
 function XUiMission:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
 end
 
 function XUiMission:UpdateTime()

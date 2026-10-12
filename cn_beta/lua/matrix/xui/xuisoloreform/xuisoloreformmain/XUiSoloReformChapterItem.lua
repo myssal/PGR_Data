@@ -5,7 +5,6 @@ local XUiSoloReformChapterItem = XClass(XUiNode, 'XUiSoloReformChapterItem')
 function XUiSoloReformChapterItem:OnStart()
     self._ChapterCfg = nil
     self._IsUnlock = nil
-    self._TimerId = nil
     XUiHelper.RegisterClickEvent(self, self.BtnGridChapter, self.OnClickChapter, true, true, 0.5)
 end
 
@@ -32,7 +31,7 @@ function XUiSoloReformChapterItem:Update(chapterCfg)
     if not self._IsUnlock then
         self:StopTimer()
         self:UpdateChapterTime()
-        self._TimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateChapterTime), XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleForever(self.UpdateChapterTime, self, XScheduleManagerPro.SECOND)
     end
     self._ChapterReddotId = self:AddRedPointEvent(self.BtnGridChapter, self.OnChapterReddotEvent, self, 
         { XRedPointConditions.Types.CONDITION_SOLO_REFORM_CHAPTER }, chapterCfg.Id, true)    
@@ -55,10 +54,7 @@ function XUiSoloReformChapterItem:UpdateChapterTime()
 end
 
 function XUiSoloReformChapterItem:StopTimer()
-    if self._TimerId then
-        XScheduleManager.UnSchedule(self._TimerId)
-        self._TimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.UpdateChapterTime, self)
 end
 
 function XUiSoloReformChapterItem:OnClickChapter()

@@ -1591,10 +1591,7 @@ end
 
 function XSkyGardenCafeRound:OpenBroadcastFirst()
     XLuaUiManager.SetMask(true)
-    XScheduleManager.ScheduleOnce(function()
-        XMVCA.XBigWorldUI:Open("UiSkyGardenCafePopupBroadcastFirst", self._StageId)
-        XLuaUiManager.SetMask(false)
-    end, 900)
+    XScheduleManagerPro.ScheduleOnce(self._OnOpenBroadcastFirstScheduleCb, self, 900)
 end
 
 function XSkyGardenCafeRound:StartTimer()
@@ -1603,20 +1600,11 @@ function XSkyGardenCafeRound:StartTimer()
         self._TipTime = tonumber(self._Model:GetConfig("LongTermInactivity"))
     end
     XMVCA.XSkyGardenCafe:SetLastWaitTime(XTime.GetServerNowTimestamp())
-    self._ForeverTimer = XScheduleManager.ScheduleForever(function()
-        local time = XTime.GetServerNowTimestamp()
-        if time - XMVCA.XSkyGardenCafe:GetLastWaitTime() >= self._TipTime then
-            self._OwnControl:GetMainControl():ChangeGamePetState(XMVCA.XSkyGardenCafe.GamePetState.LongTimeWait)
-        end
-    end, 500)
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, 500)
 end
 
 function XSkyGardenCafeRound:StopTimer()
-    if not self._ForeverTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._ForeverTimer)
-    self._ForeverTimer = nil
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
 end
 
 function XSkyGardenCafeRound:DebugDeckToDeal(cardId)
@@ -1750,5 +1738,16 @@ end
 --endregion
 
 
+
+function XSkyGardenCafeRound:_OnStartTimerScheduleCb()
+    local time = XTime.GetServerNowTimestamp()
+    if time - XMVCA.XSkyGardenCafe:GetLastWaitTime() >= self._TipTime then
+        self._OwnControl:GetMainControl():ChangeGamePetState(XMVCA.XSkyGardenCafe.GamePetState.LongTimeWait)
+    end
+end
+function XSkyGardenCafeRound:_OnOpenBroadcastFirstScheduleCb()
+    XMVCA.XBigWorldUI:Open("UiSkyGardenCafePopupBroadcastFirst", self._StageId)
+    XLuaUiManager.SetMask(false)
+end
 
 return XSkyGardenCafeRound

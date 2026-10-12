@@ -17,9 +17,7 @@ function XUiLuckyTenant2Toast:OnStart(toastData)
     self:Update()
 
     -- 自动关闭：2秒后自动关闭
-    self._AutoCloseTimer = XScheduleManager.ScheduleOnce(function()
-        XLuaUiManager.SafeClose(self.Name)
-    end, 2000)
+    XScheduleManagerPro.ScheduleOnce(self._OnStartScheduleCb, self, 2000)
 
     if self.BtnClose then
         self.BtnClose.gameObject:SetActiveEx(false)
@@ -31,8 +29,8 @@ end
 
 function XUiLuckyTenant2Toast:OnDisable()
     -- 取消自动关闭定时器
-    -- if self._AutoCloseTimer then
-    --     XScheduleManager.UnSchedule(self._AutoCloseTimer)
+    -- if XScheduleManagerPro.HasSchedule(self._OnStartScheduleCb, self) then
+    --     XScheduleManagerPro.UnSchedule(self._OnStartScheduleCb, self)
     --     self._AutoCloseTimer = nil
     --     XLog.Error("XUiLuckyTenant2Toast:OnDisable self._AutoCloseTimer is not nil")
     -- end
@@ -64,15 +62,16 @@ end
 
 function XUiLuckyTenant2Toast:OnDestroy()
     -- 取消自动关闭定时器
-    if self._AutoCloseTimer then
-        XScheduleManager.UnSchedule(self._AutoCloseTimer)
-        self._AutoCloseTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStartScheduleCb, self)
 
     -- Toast关闭时，通知Control显示队列中的下一个Toast
     if self._Control then
         self._Control:ShowNextToast()
     end
+end
+
+function XUiLuckyTenant2Toast:_OnStartScheduleCb()
+    XLuaUiManager.SafeClose(self.Name)
 end
 
 return XUiLuckyTenant2Toast

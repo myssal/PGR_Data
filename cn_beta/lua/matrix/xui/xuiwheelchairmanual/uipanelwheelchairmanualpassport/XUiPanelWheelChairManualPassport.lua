@@ -191,9 +191,7 @@ function XUiPanelWheelChairManualPassport:OnScrollDragEndEvent(index)
     end
 
     self:ClearScrollTimer()
-    self.ScrollTimer = XScheduleManager.ScheduleOnce(function()
-        self.PanelBanner:NextPage()
-    end, self._ScrollSwitchInterval * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(self._OnScrollDragEndEventScheduleCb, self, self._ScrollSwitchInterval * XScheduleManagerPro.SECOND)
     
     self.CurIndex = nowIndex
     self:RefreshDots()
@@ -217,33 +215,17 @@ function XUiPanelWheelChairManualPassport:RefreshDots()
 end
 
 function XUiPanelWheelChairManualPassport:ClearScrollTimer()
-    if self.ScrollTimer then
-        XScheduleManager.UnSchedule(self.ScrollTimer)
-        self.ScrollTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnScrollDragEndEventScheduleCb, self)
 end
 
 function XUiPanelWheelChairManualPassport:StartScrollUpdateTimer()
     if self._ImgShowCount > 1 then
-        self._ScrollCardUpdateTimeId = XScheduleManager.ScheduleForever(function()
-            local nowPosX = self.PanelBannerScroll.content.anchoredPosition.x
-            local targetPosX = -self.ChildPosXs[self.CurIndex]
-            
-            -- 当索引是1时，指向循环队列
-            if self.CurIndex == 1 and math.abs(nowPosX - targetPosX) <= MISTAKE_DISTANCE then
-                self.PanelBanner:SetIndex(self._ImgShowCount - 2)
-            elseif self.CurIndex == self._ImgShowCount and math.abs(nowPosX - targetPosX) <= MISTAKE_DISTANCE then
-                self.PanelBanner:SetIndex(1)
-            end
-        end, 100)
+        XScheduleManagerPro.ScheduleForever(self._OnStartScrollUpdateTimerScheduleCb, self, 100)
     end
 end
 
 function XUiPanelWheelChairManualPassport:ClearScrollUpdateTimer()
-    if self._ScrollCardUpdateTimeId then
-        XScheduleManager.UnSchedule(self._ScrollCardUpdateTimeId)
-        self._ScrollCardUpdateTimeId = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStartScrollUpdateTimerScheduleCb, self)
 end
 
 function XUiPanelWheelChairManualPassport:OnBtnGetClick()
@@ -258,5 +240,20 @@ function XUiPanelWheelChairManualPassport:OnBtnGetClick()
 end
 --endregion
 
+
+function XUiPanelWheelChairManualPassport:_OnStartScrollUpdateTimerScheduleCb()
+    local nowPosX = self.PanelBannerScroll.content.anchoredPosition.x
+    local targetPosX = -self.ChildPosXs[self.CurIndex]
+
+    -- 当索引是1时，指向循环队列
+    if self.CurIndex == 1 and math.abs(nowPosX - targetPosX) <= MISTAKE_DISTANCE then
+        self.PanelBanner:SetIndex(self._ImgShowCount - 2)
+    elseif self.CurIndex == self._ImgShowCount and math.abs(nowPosX - targetPosX) <= MISTAKE_DISTANCE then
+        self.PanelBanner:SetIndex(1)
+    end
+end
+function XUiPanelWheelChairManualPassport:_OnScrollDragEndEventScheduleCb()
+    self.PanelBanner:NextPage()
+end
 
 return XUiPanelWheelChairManualPassport

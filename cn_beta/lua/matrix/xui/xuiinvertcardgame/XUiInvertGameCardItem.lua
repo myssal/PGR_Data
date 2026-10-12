@@ -108,24 +108,22 @@ function XUiInvertGameCardItem:PlayClearEffectAnimation(cb)
     self.ClearEffect.gameObject:SetActiveEx(false)
     self.ClearEffect.gameObject:SetActiveEx(true)
     self._Callback = cb
-    self._TimerClearEffect = XScheduleManager.ScheduleOnce(function()
-        self.ClearEffect.gameObject:SetActiveEx(false)
-        self._TimerClearEffect = false
-        if self._Callback then
-            local callback = self._Callback
-            self._Callback = false
-            callback()
-        end
-    end, ClearEffectDuriation)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayClearEffectAnimationScheduleCb, self, ClearEffectDuriation)
 end
 
 function XUiInvertGameCardItem:StopClearEffectAnimation()
-    if self._TimerClearEffect then
-        XScheduleManager.UnSchedule(self._TimerClearEffect)
-        self._TimerClearEffect = false
+        XScheduleManagerPro.UnSchedule(self._OnPlayClearEffectAnimationScheduleCb, self)
         if self._Callback then
             self._Callback()
         end
+end
+
+function XUiInvertGameCardItem:_OnPlayClearEffectAnimationScheduleCb()
+    self.ClearEffect.gameObject:SetActiveEx(false)
+    if self._Callback then
+        local callback = self._Callback
+        self._Callback = false
+        callback()
     end
 end
 

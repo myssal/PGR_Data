@@ -20,7 +20,6 @@ function XUiSkyGardenShoppingStreetGamePet:OnStart()
     self.PanelTalk.gameObject:SetActive(false)
     self._MascotData = self._Control:GetMascotData()
     self._DelayTime = tonumber(self._Control:GetGlobalConfigByKey("MascotMessageDelayTime")) * 1000
-    self._DelayFunc = handler(self, self._DelayHideFunc)
     self._RunningAnimCallback = handler(self, self.RunningAnimCallback)
 
     self.WWX2.gameObject:SetActive(true)
@@ -125,7 +124,7 @@ function XUiSkyGardenShoppingStreetGamePet:_AddMessage(msg, moodId)
 
     self.TxtTalk.text = msg
     self:_RemoveTimer()
-    self._TimerId = XScheduleManager.ScheduleOnce(self._DelayFunc, self._DelayTime)
+    XScheduleManagerPro.ScheduleOnce(self._DelayHideFunc, self, self._DelayTime)
     
     self._isPlayingAnim = true
     self.Parent:PlayTalkAnim(true, function()
@@ -149,9 +148,7 @@ function XUiSkyGardenShoppingStreetGamePet:_DelayHideFunc()
 end
 
 function XUiSkyGardenShoppingStreetGamePet:_RemoveTimer()
-    if not self._TimerId then return end
-    XScheduleManager.UnSchedule(self._TimerId)
-    self._TimerId = nil
+XScheduleManagerPro.UnSchedule(self._DelayHideFunc, self)
 end
 --endregion
 

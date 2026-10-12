@@ -126,9 +126,7 @@ function XGoldenMinerComponentNetAim:OnVirtualMoveEnd()
     
     self.IsDuraingGrab = true
     
-    XScheduleManager.ScheduleOnce(function()
-        self.IsDuraingGrab = false
-    end, 0.1 * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(self._OnOnVirtualMoveEndScheduleCb, self, 0.1 * XScheduleManagerPro.SECOND)
     
     self._CurMovingTargetIndex = 1
 end
@@ -275,5 +273,9 @@ function XGoldenMinerComponentNetAim:UpdateRoleLength(length, isRevoke, time)
 
 end
 
+
+function XGoldenMinerComponentNetAim:_OnOnVirtualMoveEndScheduleCb()
+    self.IsDuraingGrab = false
+end
 
 return XGoldenMinerComponentNetAim

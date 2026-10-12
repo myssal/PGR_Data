@@ -280,17 +280,13 @@ end
 --region 假界面定时器检查活动
 
 function XUiMainAprilFoolsV403:StopActivityCheckTimer()
-    if self._ActivityCheckTimerId then
-        XScheduleManager.UnSchedule(self._ActivityCheckTimerId)
-        self._ActivityCheckTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiMainAprilFoolsV403._OnActivityCheckScheduleCb, self)
 end
 
 function XUiMainAprilFoolsV403:StartActivityCheckTimer()
     self:StopActivityCheckTimer()
-    
     self:UpdateActivityCheckTimer()
-    self._ActivityCheckTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateActivityCheckTimer), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiMainAprilFoolsV403._OnActivityCheckScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 
@@ -301,5 +297,9 @@ function XUiMainAprilFoolsV403:UpdateActivityCheckTimer()
     end
 end
 --endregion
+
+function XUiMainAprilFoolsV403:_OnActivityCheckScheduleCb()
+    self:UpdateActivityCheckTimer()
+end
 
 return XUiMainAprilFoolsV403

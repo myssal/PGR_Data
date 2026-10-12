@@ -228,6 +228,24 @@ function XTeamPrefab:CheckEquipIdInTeam(equipId)
     return false
 end
 
+--- 检查辅助机Id是否已在队伍预设中使用
+---@param partnerId number 辅助机Id
+---@param excludePos number|nil 需要排除的位置（同位置替换会被覆盖，不算冲突）
+---@return boolean 是否冲突
+function XTeamPrefab:CheckPartnerIdInTeam(partnerId, excludePos)
+    if not XTool.IsNumberValid(partnerId) then return false end
+
+    local partnerPrefab = self:GetPartnerData()
+    if not partnerPrefab then return false end
+
+    local pos = partnerPrefab:GetPosByPartnerId(partnerId)
+    if not XTool.IsNumberValid(pos) then return false end
+
+    if excludePos and pos == excludePos then return false end
+
+    return true
+end
+
 function XTeamPrefab:CheckEquipIdConflict(equipId, targetPos)
     local curPos, slot = self:GetPosByEquipId(equipId)
     if not curPos then

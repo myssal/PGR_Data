@@ -5,11 +5,13 @@
 ---@field _LastCall number 上次请求时间
 local XNetworkCallCd = XClass(nil, "XNetworkCallCd")
 
-function XNetworkCallCd:Ctor(request, cd)
+---@param tipHandler table|nil 提示处理对象，提供 TipMsg/TipCode 方法；不传则使用通用提示
+function XNetworkCallCd:Ctor(request, cd, tipHandler)
     self._Request = request
     self._Cd = cd or 0
     self._LastCall = 0
     self._GetTipFunc = nil
+    self._TipHandler = tipHandler
 end
 
 --- 请求
@@ -29,7 +31,11 @@ function XNetworkCallCd:Call(req, responseCb, cb, errorCb, ignoreTip, ignoreWait
     if subSecond < self._Cd then
         if not ignoreTip then
             local leftCd = math.ceil(math.max(0, self._Cd - subSecond))
-            XUiManager.TipMsg(self:GetNotCdTip(leftCd))
+            if self._TipHandler then
+                self._TipHandler:TipMsg(self:GetNotCdTip(leftCd))
+            else
+                XUiManager.TipMsg(self:GetNotCdTip(leftCd))
+            end
         end
         if cb and not ignoreWaitCb then cb() end
         return
@@ -37,7 +43,11 @@ function XNetworkCallCd:Call(req, responseCb, cb, errorCb, ignoreTip, ignoreWait
     
     XNetwork.Call(self._Request, req, function(res)
         if res.Code ~= XCode.Success then
-            XUiManager.TipCode(res.Code)
+            if self._TipHandler then
+                self._TipHandler:TipCode(res.Code)
+            else
+                XUiManager.TipCode(res.Code)
+            end
             if errorCb then errorCb(res) end
             return
         end

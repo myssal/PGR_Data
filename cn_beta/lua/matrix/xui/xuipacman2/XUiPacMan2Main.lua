@@ -1,5 +1,6 @@
 local XUiPacMan2StageGrid = require("XUi/XUiPacMan2/XUiPacMan2StageGrid")
-
+local StageTipDisplayMilliseconds = 2000
+local StageTipButtonCount = 5
 ---@class XUiPacMan2Main : XLuaUi
 ---@field _Control XPacMan2Control
 local XUiPacMan2Main = XLuaUiManager.Register(XLuaUi, "UiPacMan2Main")
@@ -13,9 +14,33 @@ function XUiPacMan2Main:OnAwake()
     self._IsAnimation = true
     self._LastStageId = false
     self._IsAutoSelect = true
+
+    -- 主界面点击提示只在初始化时读取一次配置。
+    self._StageTipTexts = self._Control:GetMainStageTipTexts()
+    -- 当前已经播放到的文本下标，0表示尚未播放。
+    self._StageTipIndex = 0
+    self._StageTipTimerId = nil
+
+    self.PanelStageTip.gameObject:SetActiveEx(false)
+
+    -- 左侧五个按钮使用同一个提示响应。
+    for index = 1, StageTipButtonCount do
+        local button = self[string.format("Btn%02d", index)]
+
+        if button then
+            XUiHelper.RegisterClickEvent(self, button, self.OnClickStageTip)
+        else
+            XLog.Error("[XUiPacMan2Main] 缺少主界面提示按钮, index=" .. tostring(index))
+        end
+    end
+
+    -- 右下角任务头像与左侧按钮共用同一组轮播文本。
+    XUiHelper.RegisterClickEvent(self, self.BtnStageTipHead, self.OnClickStageTip)
 end
 
 function XUiPacMan2Main:OnStart()
+    -- 10023：记录整个吃豆人玩法的停留时间。
+    XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.PacMan2)
     -- 清除今日红点
     local redPoint = require("XRedPoint/XRedPointConditions/XPacMan2/XRedPointPacMan2")
     redPoint.ClearTodayRed()
@@ -29,10 +54,16 @@ function XUiPacMan2Main:OnStart()
 end
 
 function XUiPacMan2Main:OnDestroy()
+    self:_CancelStageTipTimer()
     if self._Timer then
         XScheduleManager.UnSchedule(self._Timer)
         self._Timer = nil
     end
+end
+
+function XUiPacMan2Main:OnRelease()
+    -- 真正离开吃豆人玩法时结束计时，由公共模块负责上报10023。
+    XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.PacMan2)
 end
 
 function XUiPacMan2Main:OnEnable()
@@ -234,6 +265,54 @@ function XUiPacMan2Main:PlayAnimationAndAutoSelect()
         self:PlayAnimationTweenStage(selectedIndex)
         self._IsAnimation = false
     end
+end
+
+---响应左侧按钮或右下角任务头像点击。
+---文本按照TriggerPram[1]配置的顺序循环播放，连续点击会重新计算两秒显示时间。
+function XUiPacMan2Main:OnClickStageTip()
+    local texts = self._StageTipTexts
+    local count = texts and #texts or 0
+
+    if count <= 0 then
+        XLog.Warning("[XUiPacMan2Main] 没有可用的主界面点击提示配置")
+        return
+    end
+
+    -- 播放到最后一条后，从第一条重新开始。
+    self._StageTipIndex = self._StageTipIndex % count + 1
+    self.TxtStageTip.text = texts[self._StageTipIndex]
+    self.PanelStageTip.gameObject:SetActiveEx(true)
+
+    -- 连续点击时取消旧任务，从本次点击重新显示两秒。
+    self:_CancelStageTipTimer()
+
+    local timerId
+    timerId = XScheduleManager.ScheduleOnce(function()
+        if self._StageTipTimerId ~= timerId then
+            return
+        end
+
+        self._StageTipTimerId = nil
+        self.PanelStageTip.gameObject:SetActiveEx(false)
+    end, StageTipDisplayMilliseconds)
+
+    self._StageTipTimerId = timerId
+end
+
+---取消主界面提示的关闭计时。
+function XUiPacMan2Main:_CancelStageTipTimer()
+    if not self._StageTipTimerId then
+        return
+    end
+
+    XScheduleManager.UnSchedule(self._StageTipTimerId)
+    self._StageTipTimerId = nil
+end
+
+---隐藏主界面提示并停止计时。
+function XUiPacMan2Main:_HideStageTip()
+    self:_CancelStageTipTimer()
+    self.PanelStageTip.gameObject:SetActiveEx(false)
 end
 
 return XUiPacMan2Main

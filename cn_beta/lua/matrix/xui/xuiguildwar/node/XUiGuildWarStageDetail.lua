@@ -17,7 +17,6 @@ function XUiGuildWarStageDetail:OnAwake()
     ---@type XGWNode
     self.Node = nil
     self.IsMonsterStatus = false
-    self.TimeId = nil
     self.CurrentChildPanel = nil
     self:RegisterUiEvents()
     XUiHelper.NewPanelActivityAssetSafe({ XGuildWarConfig.ActivityPointItemId }
@@ -131,12 +130,8 @@ end
 
 function XUiGuildWarStageDetail:OnEnable()
     XUiGuildWarStageDetail.Super.OnEnable(self)
-    if not self.TimeId then
-        self.TimeId = XScheduleManager.ScheduleForever(function()
-            return
-            -- 4期的时候这里的逻辑就是不生效了，不确定是不是设计如此，先只注释掉不会生效的代码
-            -- self:RefreshTimeData()
-        end, XScheduleManager.SECOND, 0)
+    if not XScheduleManagerPro.HasSchedule(XUiGuildWarStageDetail._OnEnableScheduleCb, XUiGuildWarStageDetail) then
+        XScheduleManagerPro.ScheduleForever(XUiGuildWarStageDetail._OnEnableScheduleCb, XUiGuildWarStageDetail, XScheduleManagerPro.SECOND, 0)
     end
 
     XEventManager.AddEventListener(XEventId.EVENT_GUILDWAR_ACTIONLIST_CHANGE, self.CheckClose, self)
@@ -144,13 +139,16 @@ function XUiGuildWarStageDetail:OnEnable()
     XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_STAGEDETAIL_CHANGE, self.Node:GetStageIndexName(), self.IsMonsterStatus)
 end
 
+function XUiGuildWarStageDetail:_OnEnableScheduleCb()
+        return
+                    -- 4期的时候这里的逻辑就是不生效了，不确定是不是设计如此，先只注释掉不会生效的代码
+                    -- self:RefreshTimeData()
+end
+
 function XUiGuildWarStageDetail:OnDisable()
     XUiGuildWarStageDetail.Super.OnDisable(self)
 
-    if self.TimeId then
-        XScheduleManager.UnSchedule(self.TimeId)
-        self.TimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiGuildWarStageDetail._OnEnableScheduleCb, XUiGuildWarStageDetail)
     XEventManager.RemoveEventListener(XEventId.EVENT_GUILDWAR_ACTIONLIST_CHANGE, self.CheckClose, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_GUILDWAR_TIME_REFRESH, self.RefreshNode, self)
 end

@@ -43,9 +43,7 @@ function XUiLifeTreeOpen:Refresh()
     self.PanelVideo:SetInfoByVideoId(clientConfig.Values[1])
     self.PanelVideo.ActionEnded = function()
         -- 延迟一帧，等视频的End逻辑跑完再执行回调
-        XScheduleManager.ScheduleOnce(function()
-            self:OnVideoEnd()
-        end, 0)
+        XScheduleManagerPro.ScheduleOnce(self._OnOnVideoEndScheduleCb, self, 0)
     end
     self.PanelVideo:SetSeekPositionByFrame(0)
     self.PanelVideo:Pause()
@@ -63,6 +61,10 @@ function XUiLifeTreeOpen:OnVideoEnd()
         self.CloseCallback()
     end
     self:Close()
+end
+
+function XUiLifeTreeOpen:_OnOnVideoEndScheduleCb()
+    self:OnVideoEnd()
 end
 
 return XUiLifeTreeOpen

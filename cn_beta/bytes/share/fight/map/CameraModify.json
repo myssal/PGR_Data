@@ -4823,21 +4823,25 @@
             "MaxHeight",
             "MinVerticalAngle",
             "MaxVerticalAngle",
-            "DefaultFOV"
+            "DefaultFOV",
+            "DefaultToFocusDuration",
+            "FocusToDefaultDuration"
         ],
         "Values": [
             4.0,
             4.5,
             6.0,
-            120.0,
-            60.0,
-            0.5,
-            0.3499,
-            0.3499,
+            180.0,
+            180.0,
+            0.6499,
+            0.6499,
+            0.6499,
             0.8,
-            20.0,
-            25.0,
-            50.0
+            13.0,
+            17.0,
+            45.0,
+            2.0,
+            2.0
         ]
     },
     {
@@ -5171,6 +5175,33 @@
             4.0,
             4.0,
             0.8
+        ]
+    },
+    {
+        "Id": 127101,
+        "Names": [
+            "FocusMaxAngle"
+        ],
+        "Values": [
+            0.0
+        ]
+    },
+    {
+        "Id": 127102,
+        "Names": [
+            "FocusMaxAngle"
+        ],
+        "Values": [
+            35.0
+        ]
+    },
+    {
+        "Id": 127103,
+        "Names": [
+            "FocusMaxAngle"
+        ],
+        "Values": [
+            45.0
         ]
     }
 ]

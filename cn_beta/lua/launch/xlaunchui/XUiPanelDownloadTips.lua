@@ -167,6 +167,8 @@ function XUiPanelDownloadTips:OnDestroy()
         self.DynamicTable:Clear()
         self.DynamicTable = nil
     end
+    self.GridClickCb = nil
+    self.Parent = nil
 end
 
 return XUiPanelDownloadTips

@@ -43,14 +43,11 @@ function XGame2048ActionsControl:OnInit()
     
     self._AnimationUidPool = 1
 
-    self._TickTimeId = XScheduleManager.ScheduleForever(handler(self, self.Update), 0.2 * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self.Update, self, 0.2 * XScheduleManagerPro.SECOND)
 end
 
 function XGame2048ActionsControl:OnRelease()
-    if self._TickTimeId then
-        XScheduleManager.UnSchedule(self._TickTimeId)
-        self._TickTimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.Update, self)
 end
 
 function XGame2048ActionsControl:GetAnimationFromPool()

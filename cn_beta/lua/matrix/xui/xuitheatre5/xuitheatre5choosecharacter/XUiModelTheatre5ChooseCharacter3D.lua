@@ -24,10 +24,7 @@ end
 function XUiModelTheatre5ChooseCharacter3D:OnDisable()
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CHARACTER_FASHION_CHANGED, self.RefreshCharacterShow, self)
     XEventManager.RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_STORY_LINE_PROCESS_UPDATE, self.OnStoryLineProcessUpdate, self)
-    if self._TimerResetAllActionAndUiEffect then
-        XScheduleManager.UnSchedule(self._TimerResetAllActionAndUiEffect)
-        self._TimerResetAllActionAndUiEffect = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnLoadCharactersScheduleCb, self)
 end
 
 function XUiModelTheatre5ChooseCharacter3D:OnDestroy()
@@ -67,10 +64,11 @@ function XUiModelTheatre5ChooseCharacter3D:LoadCharacters(characterCfgs)
     end
 
     -- 从新手战斗退出之后，从ui栈恢复ui时，出现动作和模型不一致问题，需要重置
-    self._TimerResetAllActionAndUiEffect = XScheduleManager.ScheduleNextFrame(function()
+    XScheduleManagerPro.ScheduleNextFrame(self._OnLoadCharactersScheduleCb, self)
+end
+
+function XUiModelTheatre5ChooseCharacter3D:_OnLoadCharactersScheduleCb()
         self:ResetAllActionAndUiEffect()
-        self._TimerResetAllActionAndUiEffect = false
-    end)
 end
 
 function XUiModelTheatre5ChooseCharacter3D:RefreshCharacterShow(charaCfg)

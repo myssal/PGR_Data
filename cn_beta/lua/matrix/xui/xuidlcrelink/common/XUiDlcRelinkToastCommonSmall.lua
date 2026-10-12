@@ -7,12 +7,7 @@ function XUiDlcRelinkToastCommonSmall:Refresh(content)
     self.TxtDesc.text = XUiHelper.ConvertLineBreakSymbol(content)
     self:PlayAnimation("AnimShow")
     self:StopTimer()
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
-        self:Close()
-    end, TIP_MSG_SHOW_TIME)
+    XScheduleManagerPro.ScheduleOnce(self._OnCloseScheduleCb, self, TIP_MSG_SHOW_TIME)
 end
 
 function XUiDlcRelinkToastCommonSmall:OnDisable()
@@ -20,10 +15,14 @@ function XUiDlcRelinkToastCommonSmall:OnDisable()
 end
 
 function XUiDlcRelinkToastCommonSmall:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
+        XScheduleManagerPro.UnSchedule(self._OnCloseScheduleCb, self)
+end
+
+function XUiDlcRelinkToastCommonSmall:_OnCloseScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
     end
+    self:Close()
 end
 
 return XUiDlcRelinkToastCommonSmall

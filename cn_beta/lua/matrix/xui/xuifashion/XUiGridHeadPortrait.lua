@@ -16,11 +16,7 @@ end
 function XUiGridHeadPortrait:PlayAnimation()
     if XTool.UObjIsNil(self.GridFashionTimeline) then return end
 
-    XScheduleManager.ScheduleOnce(function()
-        if self.GridFashionTimeline.gameObject.activeInHierarchy then
-            self.GridFashionTimeline:PlayTimelineAnimation()
-        end
-    end, 40)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayAnimationScheduleCb, self, 40)
 end
 
 function XUiGridHeadPortrait:CheckAnimationFinish()
@@ -69,6 +65,12 @@ function XUiGridHeadPortrait:Refresh(headInfo, characterId)
     end
 
     self:SetRedPoint(XDataCenter.FashionManager.GetAllHeadPortraitIsOwnDic(headInfo.HeadFashionId, headInfo.HeadFashionType).IsNew)
+end
+
+function XUiGridHeadPortrait:_OnPlayAnimationScheduleCb()
+    if self.GridFashionTimeline.gameObject.activeInHierarchy then
+        self.GridFashionTimeline:PlayTimelineAnimation()
+    end
 end
 
 return XUiGridHeadPortrait

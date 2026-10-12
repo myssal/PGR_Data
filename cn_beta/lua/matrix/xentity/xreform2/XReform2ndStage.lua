@@ -18,6 +18,9 @@ function XReform2ndStage:Ctor(id)
     ---@type XReform2ndEnv[]
     self._EnvGroup = nil
     self._SelectedEnvironmentId = nil
+
+    -- 天平玩法：历史最高愿望质量（服务端 XReformStageDb.BalanceMaxWishQuality 下发）
+    self._BalanceMaxWishQuality = 0
 end
 
 function XReform2ndStage:GetId()
@@ -95,9 +98,14 @@ function XReform2ndStage:GetEnvironments(model)
     if self._EnvGroup then
         return self._EnvGroup
     end
-    self._EnvGroup = {}
     local difficultyConfig = model:GetStageDifficultyByStage(self:GetId())
     local envGroupId = difficultyConfig.ReformEnv
+    if not XTool.IsNumberValid(envGroupId) then
+        self._EnvGroup = table.empty
+        return self._EnvGroup
+    end
+
+    self._EnvGroup = {}
     local group = model:GetReformEnvGroup(envGroupId)
     local XReform2ndEnv = require("XEntity/XReform2/XReform2ndEnv")
     for i = 1, #group do
@@ -124,6 +132,15 @@ end
 function XReform2ndStage:IsHardStage(model)
     local difficulty = model:GetStageGoalDifficultyById(self:GetId())
     return difficulty == XEnumConst.REFORM.DIFFICULTY.HARD
+end
+
+-- 天平玩法：历史最高愿望质量（服务端 XReformStageDb.BalanceMaxWishQuality 下发，反序列化时 Set）
+function XReform2ndStage:GetBalanceMaxWishQuality()
+    return self._BalanceMaxWishQuality
+end
+
+function XReform2ndStage:SetBalanceMaxWishQuality(quality)
+    self._BalanceMaxWishQuality = quality or 0
 end
 
 return XReform2ndStage

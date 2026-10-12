@@ -401,4 +401,9 @@ function XSkyGardenDormAgency:GetFashionCount(templateId)
     return unlock and 1 or 0
 end
 
+function XSkyGardenDormAgency:_OnOpenFurnitureWallScheduleCb()
+    self:OpenFurnitureWall(self.XSgDormAreaType.GiftShelf)
+end
+
+
 return XSkyGardenDormAgency

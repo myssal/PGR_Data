@@ -199,20 +199,19 @@ end
 
 --region 无操作检查定时器
 function XGame2048BoardShowControl:StopNoOperationCheckTimer()
-    if self._NoOperationCheckTimeId then
-        XScheduleManager.UnSchedule(self._NoOperationCheckTimeId)
-        self._NoOperationCheckTimeId = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnOnNoOperationStayEventScheduleCb, self)
 end
 
 function XGame2048BoardShowControl:StartNoOperationCheckTimer()
     self:StopNoOperationCheckTimer()
 
-    self._NoOperationCheckTimeId = XScheduleManager.ScheduleForever(function() 
-        local passTime = CS.UnityEngine.Time.time - self._LatestOperationTime
-        self:OnNoOperationStayEvent(passTime)
-    end, XScheduleManager.SECOND * 0.1)
+    XScheduleManagerPro.ScheduleForever(self._OnOnNoOperationStayEventScheduleCb, self, XScheduleManagerPro.SECOND * 0.1)
 end
 --endregion
+
+function XGame2048BoardShowControl:_OnOnNoOperationStayEventScheduleCb()
+    local passTime = CS.UnityEngine.Time.time - self._LatestOperationTime
+    self:OnNoOperationStayEvent(passTime)
+end
 
 return XGame2048BoardShowControl

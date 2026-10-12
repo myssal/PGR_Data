@@ -121,9 +121,7 @@ end
 function XUiExpeditionMain:SetResetTimer()
     self:StopTimer()
     self:SetResetTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-            self:SetResetTime()
-        end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnSetResetTimeScheduleCb, self, XScheduleManagerPro.SECOND, 0)
 end
 
 function XUiExpeditionMain:SetResetTime()
@@ -137,10 +135,7 @@ function XUiExpeditionMain:SetResetTime()
 end
 
 function XUiExpeditionMain:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnSetResetTimeScheduleCb, self)
 end
 
 --=============
@@ -206,4 +201,8 @@ end
 function XUiExpeditionMain:RefreshTaskRedPoint()
     local isShowRed = XDataCenter.ExpeditionManager.CheckExpeditionTaskRedPoint()
     self.BtnTask:ShowReddot(isShowRed)
+end
+
+function XUiExpeditionMain:_OnSetResetTimeScheduleCb()
+    self:SetResetTime()
 end

@@ -138,9 +138,7 @@ function XUiVideoPlayer:OnClickBtnMask()
 end
 
 function XUiVideoPlayer:LoopPointReached()
-    XScheduleManager.ScheduleOnce(function()
-        self:Close()
-    end, 0)
+    XScheduleManagerPro.ScheduleOnce(self._OnLoopPointReachedScheduleCb, self, 0)
 end
 
 function XUiVideoPlayer:ActionErrorCb()
@@ -155,4 +153,8 @@ function XUiVideoPlayer:Pause()
     else
         self.VideoPlayerUgui:Resume()
     end
+end
+
+function XUiVideoPlayer:_OnLoopPointReachedScheduleCb()
+        self:Close()
 end

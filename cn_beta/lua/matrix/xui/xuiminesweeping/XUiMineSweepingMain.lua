@@ -32,9 +32,7 @@ function XUiMineSweepingMain:OnEnable()
 end
 
 function XUiMineSweepingMain:OnDisable()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer) 
-    end
+    XScheduleManagerPro.UnSchedule(self._OnCreatrTimerScheduleCb, self)
     if self.AllGridPanel:ResetEffect() then
         XLuaUiManager.SetMask(false)
     end
@@ -64,11 +62,11 @@ function XUiMineSweepingMain:Init()
 end
 
 function XUiMineSweepingMain:CreatrTimer()
-    if not self.Timer then
-        self.Timer = XScheduleManager.ScheduleForever(function()
-                self:CheckTime()
-            end, XScheduleManager.SECOND , 0)
-    end
+    XScheduleManagerPro.ScheduleForever(self._OnCreatrTimerScheduleCb, self, XScheduleManagerPro.SECOND , 0)
+end
+
+function XUiMineSweepingMain:_OnCreatrTimerScheduleCb()
+    self:CheckTime()
 end
 
 function XUiMineSweepingMain:SetButtonCallBack()

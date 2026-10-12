@@ -112,14 +112,12 @@ end
 --region 剩余时间
 
 function XUiGridExpeditionStage:StartTime()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnUpdateTimeScheduleCb, self) then
         self:StopTime()
     end
 
     self:UpdateTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiGridExpeditionStage:UpdateTime()
@@ -141,12 +139,13 @@ function XUiGridExpeditionStage:UpdateTime()
 end
 
 function XUiGridExpeditionStage:StopTime()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateTimeScheduleCb, self)
 end
 
 --endregion
+
+function XUiGridExpeditionStage:_OnUpdateTimeScheduleCb()
+    self:UpdateTime()
+end
 
 return XUiGridExpeditionStage

@@ -11,7 +11,6 @@ function XUiTheatre5RewardShop:OnAwake()
     self.FirstTab2IndexDict = {}
     self.TabBtns = {}
     self.SelectIndex = nil
-    self._TimerId = nil
     self:RegisterClickEvent(self.BtnBack, self.Close, true)
     self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick, true)
 
@@ -219,16 +218,12 @@ function XUiTheatre5RewardShop:StartTimer(taskShopCfg)
 
     self.TxtTime.gameObject:SetActiveEx(true)
     self:UpdateTime(taskShopCfg)
-    self._TimerId = XScheduleManager.ScheduleForever(function()
-        self:UpdateTime(taskShopCfg)
-    end, XScheduleManager.SECOND)
+    self._TimerTaskShopCfg = taskShopCfg
+    XScheduleManagerPro.ScheduleForever(self._OnRewardTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiTheatre5RewardShop:StopTimer()
-    if self._TimerId then
-        XScheduleManager.UnSchedule(self._TimerId)
-        self._TimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnRewardTimeScheduleCb, self)
 end
 
 function XUiTheatre5RewardShop:UpdateTime(taskShopCfg)
@@ -265,14 +260,11 @@ function XUiTheatre5RewardShop:StartTotalTimer()
     self:StopTotalTimer()
     
     self:UpdateTotalTimer()
-    self._TotalTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateTotalTimer), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self.UpdateTotalTimer, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiTheatre5RewardShop:StopTotalTimer()
-    if self._TotalTimerId then 
-        XScheduleManager.UnSchedule(self._TotalTimerId)
-        self._TotalTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.UpdateTotalTimer, self)
 end
 
 function XUiTheatre5RewardShop:UpdateTotalTimer()
@@ -346,7 +338,6 @@ function XUiTheatre5RewardShop:OnDestroy()
     self.TabIndexDic = nil
     self.TabBtns = nil
     self.SelectIndex = nil
-    self._TimerId = nil
 end
 
 function XUiTheatre5RewardShop:UpdateRedDot()
@@ -398,6 +389,10 @@ function XUiTheatre5RewardShop:UpdateRedDot()
             XLog.Error("[XUiTheatre5RewardShop] UpdateRedDot: button not exist:" .. btnIndex)
         end
     end
+end
+
+function XUiTheatre5RewardShop:_OnRewardTimeScheduleCb()
+    self:UpdateTime(self._TimerTaskShopCfg)
 end
 
 return XUiTheatre5RewardShop

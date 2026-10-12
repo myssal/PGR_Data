@@ -2685,13 +2685,13 @@
     },
     {
         "Id": 1411003,
-        "Type": 2,
-        "Model": "Assets/Product/Role/Room/Prefab/QR5KalieninaMd010011.prefab",
-        "Name": "占位",
-        "NameFrist": "占位",
-        "NameLast": "占位",
-        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR5Kalienina1Q.png",
-        "HeadRoundIcon": "Assets/Product/Texture/Image/Role/RoleHeadR5Kalienina2Q.png",
+        "Type": 8,
+        "Model": "Assets/Product/Role/Room/Prefab/QR3KurumiMd010011.prefab",
+        "Name": "时崎狂三",
+        "NameFrist": "时崎狂三",
+        "NameLast": "时崎狂三",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Kurumi1Q.png",
+        "HeadRoundIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Kurumi2Q.png",
         "ExpFondleWidgetHeight": 0.85,
         "ExpDetailWidgetHeight": 0.6999,
         "PutOnWidgetHight": 1.2,
@@ -2699,26 +2699,18 @@
         "DailogTouchHight": 0.5099,
         "EffectWidgetHight": 1.0,
         "TouchWidgetHight": 0.6,
-        "LoveType": 1,
-        "LikeType": 3,
-        "LikeCharIds": [
-            1041005,
-            1291003
-        ],
-        "LikePetIds": [
-            1001,
-            1002
-        ],
+        "LoveType": 2,
+        "LikeType": 1,
         "QuestAttrib": [
-            4,
-            5,
+            1,
+            2,
             6
         ]
     },
     {
         "Id": 1421003,
         "Type": 2,
-        "Model": "Assets/Product/Role/Room/Prefab/QR3KurumiMd010011.prefab",
+        "Model": "Assets/Product/Role/Room/Prefab/QR3AdelaideMd010011.prefab",
         "Name": "阿德莱德 破渊",
         "NameFrist": "阿德莱德",
         "NameLast": "破渊",
@@ -2743,6 +2735,40 @@
             1,
             3,
             5
+        ]
+    },
+    {
+        "Id": 1431003,
+        "Type": 2,
+        "Model": "Assets/Product/Role/Room/Prefab/QR1LuxiyaMd010011.prefab",
+        "Name": "露西亚 红莲",
+        "NameFrist": "露西亚",
+        "NameLast": "红莲",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadluxiyaQ.png",
+        "HeadRoundIcon": "Assets/Product/Texture/Image/Role/RoleHeadluxiya3Q.png",
+        "ExpFondleWidgetHeight": 0.85,
+        "ExpDetailWidgetHeight": 0.6999,
+        "PutOnWidgetHight": 1.2,
+        "DailogWidgetHight": 1.3999,
+        "DailogTouchHight": 0.5099,
+        "EffectWidgetHight": 1.0,
+        "TouchWidgetHight": 0.6,
+        "LoveType": 2,
+        "LikeType": 3,
+        "LikeCharIds": [
+            1031001,
+            1011003,
+            1061003
+        ],
+        "HateCharIds": [
+            1071002
+        ],
+        "LikePetIds": [
+            1001,
+            1002
+        ],
+        "QuestAttrib": [
+            1
         ]
     }
 ]

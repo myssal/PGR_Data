@@ -332,19 +332,18 @@ function XUiFubenPractice:StartTimer()
 
     local activityId = XMVCA.XSimulateTrain:GetActivityId()
     self.EndTime = XMVCA.XSimulateTrain:GetActivityEndTime(activityId)
-    self.ActivityTimer = XScheduleManager.ScheduleForever(function()
-        local gameTime = self.EndTime - XTime.GetServerNowTimestamp()
-        if gameTime < 1 then
-            XMVCA.XSimulateTrain:HandleActivityEnd()
-        end
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+function XUiFubenPractice:_OnStartTimerScheduleCb()
+    local gameTime = self.EndTime - XTime.GetServerNowTimestamp()
+    if gameTime < 1 then
+        XMVCA.XSimulateTrain:HandleActivityEnd()
+    end
 end
 
 function XUiFubenPractice:ClearTimer()
-    if self.ActivityTimer then
-        XScheduleManager.UnSchedule(self.ActivityTimer)
-        self.ActivityTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
 end
 
 

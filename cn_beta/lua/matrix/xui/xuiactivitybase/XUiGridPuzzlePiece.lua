@@ -16,14 +16,8 @@ function XUiGridPuzzlePiece:OnDestroy()
 end
 
 function XUiGridPuzzlePiece:RemoveTimer()
-    if self.OpenTimer then
-        XScheduleManager.UnSchedule(self.OpenTimer)
-        self.OpenTimer = nil
-    end
-    if self.CloseTimer then
-        XScheduleManager.UnSchedule(self.CloseTimer)
-        self.CloseTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiGridPuzzlePiece._OnOpenEffectScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(XUiGridPuzzlePiece._OnCloseEffectScheduleCb, self)
 end
 
 function XUiGridPuzzlePiece:SetButtonCallBack()
@@ -62,12 +56,8 @@ end
 function XUiGridPuzzlePiece:ShowFlipEffect()
     self:RemoveTimer()
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.Common_UiObtain)
-    self.OpenTimer = XScheduleManager.ScheduleOnce(function()
-        self.EffectFlip.gameObject:SetActiveEx(true)
-    end, 20)
-    self.CloseTimer = XScheduleManager.ScheduleOnce(function()
-        self.EffectFlip.gameObject:SetActiveEx(false)
-    end, 1500)
+    XScheduleManagerPro.ScheduleOnce(XUiGridPuzzlePiece._OnOpenEffectScheduleCb, self, 20)
+    XScheduleManagerPro.ScheduleOnce(XUiGridPuzzlePiece._OnCloseEffectScheduleCb, self, 1500)
 end
 
 function XUiGridPuzzlePiece:Init(puzzleId, index)
@@ -75,6 +65,14 @@ function XUiGridPuzzlePiece:Init(puzzleId, index)
     self.Index = index    
     self.PieceTemplate = XDataCenter.PuzzleActivityManager.GetPieceTemplate(puzzleId, index)
     self.Btn:SetRawImage(self.PieceTemplate.CoverImage)
+end
+
+function XUiGridPuzzlePiece:_OnOpenEffectScheduleCb()
+    self.EffectFlip.gameObject:SetActiveEx(true)
+end
+
+function XUiGridPuzzlePiece:_OnCloseEffectScheduleCb()
+    self.EffectFlip.gameObject:SetActiveEx(false)
 end
 
 return XUiGridPuzzlePiece

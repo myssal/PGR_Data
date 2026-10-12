@@ -49,14 +49,9 @@ function XUiGridCharacterTowerChapter:OnActivityEnd()
 end
 
 function XUiGridCharacterTowerChapter:StartTimer()
-    if self.Timer then
-        self:StopTimer()
-    end
-
+    self:StopTimer()
     self:UpdateTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateTimer()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiGridCharacterTowerChapter._OnUpdateActivityTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiGridCharacterTowerChapter:UpdateTimer()
@@ -78,14 +73,15 @@ function XUiGridCharacterTowerChapter:UpdateTimer()
 end
 
 function XUiGridCharacterTowerChapter:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiGridCharacterTowerChapter._OnUpdateActivityTimeScheduleCb, self)
 end
 
 function XUiGridCharacterTowerChapter:OnClose()
     self:StopTimer()
+end
+
+function XUiGridCharacterTowerChapter:_OnUpdateActivityTimeScheduleCb()
+    self:UpdateTimer()
 end
 
 return XUiGridCharacterTowerChapter

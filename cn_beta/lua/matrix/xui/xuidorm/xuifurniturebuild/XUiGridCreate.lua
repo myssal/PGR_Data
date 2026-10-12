@@ -13,7 +13,6 @@ function XUiGridCreate:Ctor(ui)
     self.Transform = ui.transform
 
     self.CurrentState = nil
-    self.WorkingTimer = nil
     self.CreateState = CREATE_STATE.AVALIABLE
     self.RemainingTime = 0
 
@@ -170,23 +169,7 @@ function XUiGridCreate:AddWorkingTimer()
     self:RemoveWorkingTimer()
     local dataTime = XUiHelper.GetTime(self.RemainingTime, XUiHelper.TimeFormatType.HOSTEL)
     self.TxtRemaining.text = dataTime
-    self.WorkingTimer = XScheduleManager.ScheduleForever(function()
-        if XTool.UObjIsNil(self.Transform) then
-            self:RemoveWorkingTimer()
-            return
-        end
-        local dataTimeNew
-        self.RemainingTime = self.RemainingTime - 1
-        if self.RemainingTime <= 0 then
-            dataTimeNew = XUiHelper.GetTime(0, XUiHelper.TimeFormatType.HOSTEL)
-            self.TxtRemaining.text = dataTimeNew
-            self:RemoveWorkingTimer()
-            self:UpdateCreate()
-        else
-            dataTimeNew = XUiHelper.GetTime(self.RemainingTime, XUiHelper.TimeFormatType.HOSTEL)
-            self.TxtRemaining.text = dataTimeNew
-        end
-    end, 1000)
+    XScheduleManagerPro.ScheduleForever(self._OnRemoveWorkingTimerScheduleCb, self, 1000)
 end
 
 function XUiGridCreate:GetProgress()
@@ -202,10 +185,7 @@ function XUiGridCreate:GetProgress()
 end
 
 function XUiGridCreate:RemoveWorkingTimer()
-    if self.WorkingTimer then
-        XScheduleManager.UnSchedule(self.WorkingTimer)
-        self.WorkingTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRemoveWorkingTimerScheduleCb, self)
 end
 
 function XUiGridCreate:OnBtnStartClick()
@@ -228,6 +208,24 @@ function XUiGridCreate:OnBtnCheckClick()
             XLuaUiManager.Open("UiFurnitureDetail", furnitureList[1].Id, furnitureList[1].ConfigId)
 
         end)
+    end
+end
+
+function XUiGridCreate:_OnRemoveWorkingTimerScheduleCb()
+    if XTool.UObjIsNil(self.Transform) then
+        self:RemoveWorkingTimer()
+        return
+    end
+    local dataTimeNew
+    self.RemainingTime = self.RemainingTime - 1
+    if self.RemainingTime <= 0 then
+        dataTimeNew = XUiHelper.GetTime(0, XUiHelper.TimeFormatType.HOSTEL)
+        self.TxtRemaining.text = dataTimeNew
+        self:RemoveWorkingTimer()
+        self:UpdateCreate()
+    else
+        dataTimeNew = XUiHelper.GetTime(self.RemainingTime, XUiHelper.TimeFormatType.HOSTEL)
+        self.TxtRemaining.text = dataTimeNew
     end
 end
 

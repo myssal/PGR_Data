@@ -255,36 +255,31 @@ function XBigWorldMessageControl:_SortMessageHandle(messageA, messageB)
     local createTimeB = self._Model:GetMessageCreateTime(messageBId)
     local messageAPriority = self._Model:GetBigWorldMessagePriorityById(messageAId)
     local messageBPriority = self._Model:GetBigWorldMessagePriorityById(messageBId)
+    local isMassageAQuest = messageA:IsQuest()
+    local isMassageBQuest = messageB:IsQuest()
 
-    if createTimeA > createTimeB then
-        return true
-    end
-
-    if messageA:IsQuest() and not messageB:IsQuest() then
-        return true
-    end
-    if messageB:IsQuest() and not messageA:IsQuest() then
-        return false
-    end
-    if messageB:IsQuest() and messageA:IsQuest() then
+    if isMassageAQuest ~= isMassageBQuest then
+        return isMassageAQuest
+    elseif isMassageAQuest and isMassageBQuest then
         local questAId = self:GetMessageQuestId(messageAId)
-        local questAData = XMVCA.XBigWorldQuest:GetQuestData(questAId)
         local questBId = self:GetMessageQuestId(messageBId)
-        local questBData = XMVCA.XBigWorldQuest:GetQuestData(questBId)
+        local finishA = XMVCA.XBigWorldQuest:CheckQuestFinish(questAId)
+        local finishB = XMVCA.XBigWorldQuest:CheckQuestFinish(questBId)
 
-        if questAData and questBData then
-            if questAData:IsFinish() and not questBData:IsFinish() then
-                return false
-            elseif not questAData:IsFinish() and questBData:IsFinish() then
-                return true
-            end
+        if finishA ~= finishB then
+            return not finishA
         end
     end
-    if messageAPriority == messageBPriority then
-        return messageAId > messageBId
+
+    if createTimeA ~= createTimeB then
+        return createTimeA > createTimeB
     end
 
-    return messageAPriority > messageBPriority
+    if messageAPriority ~= messageBPriority then
+        return messageAPriority > messageBPriority
+    end
+
+    return messageAId > messageBId
 end
 
 ---@param messageListA XBWMessageEntity[]
@@ -324,6 +319,17 @@ end
 function XBigWorldMessageControl:_CheckMessageListHasNonComplete(messageList)
     if not XTool.IsTableEmpty(messageList) then
         for _, message in ipairs(messageList) do
+            if not message:IsComplete() then
+                return true
+            end
+        end
+    end
+
+    return false
+end
+
+return XBigWorldMessageControl
+t) do
             if not message:IsComplete() then
                 return true
             end

@@ -1,0 +1,773 @@
+[
+    {
+        "Id": 101101,
+        "AffixType": 1,
+        "AffixName": "人造太阳",
+        "FightEventId": 2501101,
+        "Desc": "角色光效应伤害提30%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "伤害强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 101102,
+        "AffixType": 1,
+        "AffixName": "冻彻圣山",
+        "FightEventId": 2501102,
+        "Desc": "角色冰属性伤害提升20%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "伤害强化"
+        ]
+    },
+    {
+        "Id": 102101,
+        "AffixType": 1,
+        "AffixName": "刹那定格",
+        "FightEventId": 2502101,
+        "Desc": "超算空间冷却时间减少5秒",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 102102,
+        "AffixType": 1,
+        "AffixName": "现实干涉",
+        "FightEventId": 2502102,
+        "Desc": "释放必杀时额外进入一次独立冷却的超算空间",
+        "StoryDesc": "虚伪的星空映照真实的现实，每一颗星辰都有它存在的意义。——凡妮莎",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "必杀强化"
+        ]
+    },
+    {
+        "Id": 103101,
+        "AffixType": 1,
+        "AffixName": "往复新生",
+        "FightEventId": 2503101,
+        "Desc": "每两次三消后，立即返回一组三消球",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 103102,
+        "AffixType": 1,
+        "AffixName": "默契接力",
+        "FightEventId": 2503102,
+        "Desc": "释放qte后，驻场角色补充1组三消，双拉时，获得3组三消球",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "qte强化"
+        ]
+    },
+    {
+        "Id": 103103,
+        "AffixType": 1,
+        "AffixName": "残响成律",
+        "FightEventId": 2503103,
+        "Desc": "每次三消后，获得一层残响，获得3层残响，10秒内所有消球视为三消",
+        "StoryDesc": "我坚信这条路是正确的，他们的牺牲也是有意义的。——凡妮莎",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 104101,
+        "AffixType": 1,
+        "AffixName": "微小真空",
+        "FightEventId": 2504101,
+        "Desc": "切换角色后，角色获得3秒无敌",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 104102,
+        "AffixType": 1,
+        "AffixName": "以身作筹",
+        "FightEventId": 2504102,
+        "Desc": "角色生命值每降低10%，攻击力提升10%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 104103,
+        "AffixType": 1,
+        "AffixName": "轮转援护",
+        "FightEventId": 2504103,
+        "Desc": "qte冷却减少3秒，释放任意qte时，驻场角色恢复20%生命值",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 105101,
+        "AffixType": 1,
+        "AffixName": "绝境蓄势",
+        "FightEventId": 2505101,
+        "Desc": "闪避成功时，充满一次必杀能量",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 105102,
+        "AffixType": 1,
+        "AffixName": "信标如炬",
+        "FightEventId": 2505102,
+        "Desc": "进入超算空间时，每秒获得20点必杀能量",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 105103,
+        "AffixType": 1,
+        "AffixName": "信号寻回",
+        "FightEventId": 2505103,
+        "Desc": "释放qte时，充满一次必杀能量",
+        "StoryDesc": "水晶内部流动着细碎光芒，放映着漫不经心流逝的日常。——黑野澪",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 106101,
+        "AffixType": 1,
+        "AffixName": "穿隙锋芒",
+        "FightEventId": 2506101,
+        "Desc": "三消可无视护盾直接对怪物血量造成伤害。",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 106102,
+        "AffixType": 1,
+        "AffixName": "百击爆破",
+        "FightEventId": 2506102,
+        "Desc": "连击达到100时，清除所有怪物护盾，并产生爆炸，对所有怪物造成10000真实伤害",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 106103,
+        "AffixType": 1,
+        "AffixName": "漆黑收束",
+        "FightEventId": 2506103,
+        "Desc": "进入超算空间时，护盾解除，并且10秒内不在获得护盾",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 111101,
+        "AffixType": 1,
+        "AffixName": "人造太阳",
+        "FightEventId": 2511101,
+        "Desc": "角色光效应伤害提30%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "伤害强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 111102,
+        "AffixType": 1,
+        "AffixName": "冻彻圣山",
+        "FightEventId": 2511102,
+        "Desc": "角色冰属性伤害提升20%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "伤害强化"
+        ]
+    },
+    {
+        "Id": 112101,
+        "AffixType": 1,
+        "AffixName": "刹那定格",
+        "FightEventId": 2512101,
+        "Desc": "超算空间冷却时间减少5秒",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 112102,
+        "AffixType": 1,
+        "AffixName": "现实干涉",
+        "FightEventId": 2512102,
+        "Desc": "释放必杀时额外进入一次独立冷却的超算空间",
+        "StoryDesc": "虚伪的星空映照真实的现实，每一颗星辰都有它存在的意义。——凡妮莎",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "必杀强化"
+        ]
+    },
+    {
+        "Id": 113101,
+        "AffixType": 1,
+        "AffixName": "往复新生",
+        "FightEventId": 2513101,
+        "Desc": "每两次三消后，立即返回一组三消球",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 113102,
+        "AffixType": 1,
+        "AffixName": "默契接力",
+        "FightEventId": 2513102,
+        "Desc": "释放qte后，驻场角色补充1组三消，双拉时，获得3组三消球",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "qte强化"
+        ]
+    },
+    {
+        "Id": 113103,
+        "AffixType": 1,
+        "AffixName": "残响成律",
+        "FightEventId": 2513103,
+        "Desc": "每次三消后，获得一层残响，获得3层残响，10秒内所有消球视为三消",
+        "StoryDesc": "我坚信这条路是正确的，他们的牺牲也是有意义的。——凡妮莎",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 114101,
+        "AffixType": 1,
+        "AffixName": "微小真空",
+        "FightEventId": 2514101,
+        "Desc": "切换角色后，角色获得3秒无敌",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 114102,
+        "AffixType": 1,
+        "AffixName": "以身作筹",
+        "FightEventId": 2514102,
+        "Desc": "角色生命值每降低10%，攻击力提升10%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 114103,
+        "AffixType": 1,
+        "AffixName": "轮转援护",
+        "FightEventId": 2514103,
+        "Desc": "qte冷却减少3秒，释放任意qte时，驻场角色恢复20%生命值",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 115101,
+        "AffixType": 1,
+        "AffixName": "绝境蓄势",
+        "FightEventId": 2515101,
+        "Desc": "闪避成功时，充满一次必杀能量",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 115102,
+        "AffixType": 1,
+        "AffixName": "信标如炬",
+        "FightEventId": 2515102,
+        "Desc": "进入超算空间时，每秒获得20点必杀能量",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 115103,
+        "AffixType": 1,
+        "AffixName": "信号寻回",
+        "FightEventId": 2515103,
+        "Desc": "释放qte时，充满一次必杀能量",
+        "StoryDesc": "水晶内部流动着细碎光芒，放映着漫不经心流逝的日常。——黑野澪",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 116101,
+        "AffixType": 1,
+        "AffixName": "穿隙锋芒",
+        "FightEventId": 2516101,
+        "Desc": "三消可无视护盾直接对怪物血量造成伤害。",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 116102,
+        "AffixType": 1,
+        "AffixName": "百击爆破",
+        "FightEventId": 2516102,
+        "Desc": "连击达到100时，清除所有怪物护盾，并产生爆炸，对所有怪物造成10000真实伤害",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 116103,
+        "AffixType": 1,
+        "AffixName": "漆黑收束",
+        "FightEventId": 2516103,
+        "Desc": "进入超算空间时，护盾解除，并且10秒内不在获得护盾",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 101201,
+        "AffixType": 2,
+        "AffixName": "冰隙增殖",
+        "FightEventId": 2501201,
+        "Desc": "怪物血量提升50%，冰抗降低50%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 101202,
+        "AffixType": 2,
+        "AffixName": "光蚀增殖",
+        "FightEventId": 2501202,
+        "Desc": "怪物血量提升50%，光抗降低50%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 102201,
+        "AffixType": 2,
+        "AffixName": "超算停潮",
+        "FightEventId": 2502201,
+        "Desc": "怪物获得攻击力提升100%，进入超算空间时解除",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 102202,
+        "AffixType": 2,
+        "AffixName": "步幅剥夺",
+        "FightEventId": 2502202,
+        "Desc": "每次受到怪物攻击，闪避值扣除100点",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 103201,
+        "AffixType": 2,
+        "AffixName": "乱忆冲栏",
+        "FightEventId": 2503201,
+        "Desc": "被怪物命中时，打乱消球栏",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 103202,
+        "AffixType": 2,
+        "AffixName": "残命壁垒",
+        "FightEventId": 2503202,
+        "Desc": "怪物生命值低于30%时，免疫除三消外所有伤害",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 104201,
+        "AffixType": 2,
+        "AffixName": "濒危处决",
+        "FightEventId": 2504201,
+        "Desc": "角色生命值低于30%时，受到怪物攻击直接秒杀",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 104202,
+        "AffixType": 2,
+        "AffixName": "无声闪袭",
+        "FightEventId": 2504202,
+        "Desc": "怪物每10秒隐身，并闪现到角色面前攻击",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 105201,
+        "AffixType": 2,
+        "AffixName": "终式破抗",
+        "FightEventId": 2505201,
+        "Desc": "怪物抗性提升30%，受到必杀伤害后10秒内抗性提升效果消失",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 105202,
+        "AffixType": 2,
+        "AffixName": "终式激怒",
+        "FightEventId": 2505202,
+        "Desc": "每次受到必杀伤害，怪物进入暴走10秒，攻击提升50%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 105203,
+        "AffixType": 2,
+        "AffixName": "常击追猎",
+        "FightEventId": 2505203,
+        "Desc": "怪物受到非必杀伤害时，闪现到角色面前攻击，冷却5秒",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 106201,
+        "AffixType": 2,
+        "AffixName": "甲壳主宰",
+        "FightEventId": 2506201,
+        "Desc": "拥有护盾时，获得霸体，攻击力提升50%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 106202,
+        "AffixType": 2,
+        "AffixName": "迟爆护壳",
+        "FightEventId": 2506202,
+        "Desc": "拥有护盾时，如果10秒内未击破，则护盾爆炸，对角色造成生命值30%伤害",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 106203,
+        "AffixType": 2,
+        "AffixName": "永久枯损",
+        "FightEventId": 2506203,
+        "Desc": "被拥有护盾的怪物攻击后，角色血量上限永久降低10%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 111201,
+        "AffixType": 2,
+        "AffixName": "冰隙增殖",
+        "FightEventId": 2511201,
+        "Desc": "怪物血量提升50%，冰抗降低50%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 111202,
+        "AffixType": 2,
+        "AffixName": "光蚀增殖",
+        "FightEventId": 2511202,
+        "Desc": "怪物血量提升50%，光抗降低50%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 112201,
+        "AffixType": 2,
+        "AffixName": "超算停潮",
+        "FightEventId": 2512201,
+        "Desc": "怪物获得攻击力提升100%，进入超算空间时解除",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 112202,
+        "AffixType": 2,
+        "AffixName": "步幅剥夺",
+        "FightEventId": 2512202,
+        "Desc": "每次受到怪物攻击，闪避值扣除100点",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 113201,
+        "AffixType": 2,
+        "AffixName": "乱忆冲栏",
+        "FightEventId": 2513201,
+        "Desc": "被怪物命中时，打乱消球栏",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 113202,
+        "AffixType": 2,
+        "AffixName": "残命壁垒",
+        "FightEventId": 2513202,
+        "Desc": "怪物生命值低于30%时，免疫除三消外所有伤害",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 114201,
+        "AffixType": 2,
+        "AffixName": "濒危处决",
+        "FightEventId": 2514201,
+        "Desc": "角色生命值低于30%时，受到怪物攻击直接秒杀",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 114202,
+        "AffixType": 2,
+        "AffixName": "无声闪袭",
+        "FightEventId": 2514202,
+        "Desc": "怪物每10秒隐身，并闪现到角色面前攻击",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 115201,
+        "AffixType": 2,
+        "AffixName": "终式破抗",
+        "FightEventId": 2515201,
+        "Desc": "怪物抗性提升30%，受到必杀伤害后10秒内抗性提升效果消失",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 115202,
+        "AffixType": 2,
+        "AffixName": "终式激怒",
+        "FightEventId": 2515202,
+        "Desc": "每次受到必杀伤害，怪物进入暴走10秒，攻击提升50%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 115203,
+        "AffixType": 2,
+        "AffixName": "常击追猎",
+        "FightEventId": 2515203,
+        "Desc": "怪物受到非必杀伤害时，闪现到角色面前攻击，冷却5秒",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 116201,
+        "AffixType": 2,
+        "AffixName": "甲壳主宰",
+        "FightEventId": 2516201,
+        "Desc": "拥有护盾时，获得霸体，攻击力提升50%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 116202,
+        "AffixType": 2,
+        "AffixName": "迟爆护壳",
+        "FightEventId": 2516202,
+        "Desc": "拥有护盾时，如果10秒内未击破，则护盾爆炸，对角色造成生命值30%伤害",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化",
+            "超算强化"
+        ]
+    },
+    {
+        "Id": 116203,
+        "AffixType": 2,
+        "AffixName": "永久枯损",
+        "FightEventId": 2516203,
+        "Desc": "被拥有护盾的怪物攻击后，角色血量上限永久降低10%",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "三消强化"
+        ]
+    },
+    {
+        "Id": 107101,
+        "AffixType": 1,
+        "AffixName": "先意觉行",
+        "FightEventId": 2507201,
+        "Desc": "莱亚改造1",
+        "StoryDesc": "要记得感谢莱亚大人。——莱亚",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "角色强化"
+        ]
+    },
+    {
+        "Id": 107102,
+        "AffixType": 1,
+        "AffixName": "共赴星途",
+        "FightEventId": 2507202,
+        "Desc": "莱亚改造2",
+        "StoryDesc": "终于能大展身手了！——莱亚",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "角色强化"
+        ]
+    },
+    {
+        "Id": 107103,
+        "AffixType": 1,
+        "AffixName": "星球英雄",
+        "FightEventId": 2507203,
+        "Desc": "莱亚改造3",
+        "StoryDesc": "写莱亚大英雄拯救了一颗星球！——莱亚",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "角色强化"
+        ]
+    },
+    {
+        "Id": 108101,
+        "AffixType": 1,
+        "AffixName": "清庭白鹭的坚持",
+        "FightEventId": 2508101,
+        "Desc": "莱亚+邦比",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "角色强化"
+        ]
+    },
+    {
+        "Id": 108102,
+        "AffixType": 1,
+        "AffixName": "清庭白鹭的意志",
+        "FightEventId": 2508102,
+        "Desc": "莱亚 +凡妮莎 +邦比",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "角色强化"
+        ]
+    },
+    {
+        "Id": 108103,
+        "AffixType": 1,
+        "AffixName": "清庭白鹭的羁绊",
+        "FightEventId": 2508103,
+        "Desc": "莱亚 +凡妮莎 +邦比 +黑野澪",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Label": [
+            "角色强化"
+        ]
+    }
+]

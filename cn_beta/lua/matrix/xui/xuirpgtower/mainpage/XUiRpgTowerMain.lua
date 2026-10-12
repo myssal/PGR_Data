@@ -189,9 +189,11 @@ end
 function XUiRpgTowerMain:SetTimer()
     self:StopTimer()
     self:SetResetTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-            self:SetResetTime()
-        end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnSetTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiRpgTowerMain:_OnSetTimerScheduleCb()
+        self:SetResetTime()
 end
 --================
 --显示倒计时与处理倒计时完成时事件
@@ -210,10 +212,7 @@ end
 --停止界面计时器
 --================
 function XUiRpgTowerMain:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnSetTimerScheduleCb, self)
 end
 
 --================

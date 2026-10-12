@@ -8,8 +8,8 @@ function XUiPanelLuosaitaTalk:OnStart()
     self.TipsGreen.gameObject:SetActiveEx(false)
     self.TipsRed.gameObject:SetActiveEx(false)
     
-    self.AutoTalkTime = self._Control:GetConfig():GetConfigNumber("MessageShowTime", 1) / XScheduleManager.SECOND
-    self.AutoTalkDurationTime = self._Control:GetConfig():GetConfigNumber("MessageShowTime", 2) / XScheduleManager.SECOND
+    self.AutoTalkTime = self._Control:GetConfig():GetConfigNumber("MessageShowTime", 1) / XScheduleManagerPro.SECOND
+    self.AutoTalkDurationTime = self._Control:GetConfig():GetConfigNumber("MessageShowTime", 2) / XScheduleManagerPro.SECOND
 end
 
 function XUiPanelLuosaitaTalk:OnEnable()
@@ -76,9 +76,7 @@ end
 
 function XUiPanelLuosaitaTalk:StartTimer()
     self:StopTimer()
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateTime()
-    end, 100)
+    XScheduleManagerPro.ScheduleForever(XUiPanelLuosaitaTalk.UpdateTime, self, 100)
 end
 
 function XUiPanelLuosaitaTalk:UpdateTime()
@@ -111,10 +109,7 @@ function XUiPanelLuosaitaTalk:UpdateTime()
 end
 
 function XUiPanelLuosaitaTalk:StopTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(XUiPanelLuosaitaTalk.UpdateTime, self)
 end
 
 return XUiPanelLuosaitaTalk

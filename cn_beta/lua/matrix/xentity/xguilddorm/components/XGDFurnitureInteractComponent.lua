@@ -48,9 +48,7 @@ function XGDFurnitureInteractComponent:BeginInteract(currentInteractInfo, isDire
     else
         if not self.MoveAgent:SetDestination(currentInteractInfo.InteractPos.transform) then
             XLog.Error("当前家具交互导航点错误，无法前往。家具Id:" .. currentInteractInfo.Id)
-            XScheduleManager.ScheduleOnce(function()
-                self.Role:UpdateInteractStatus(XGuildDormConfig.InteractStatus.End)
-            end, 1)
+            XScheduleManagerPro.ScheduleOnce(self._OnBeginInteractScheduleCb, self, 1)
             return
         end
     end
@@ -78,6 +76,10 @@ function XGDFurnitureInteractComponent:Update(dt)
             end
         end
     end
+end
+
+function XGDFurnitureInteractComponent:_OnBeginInteractScheduleCb()
+    self.Role:UpdateInteractStatus(XGuildDormConfig.InteractStatus.End)
 end
 
 return XGDFurnitureInteractComponent

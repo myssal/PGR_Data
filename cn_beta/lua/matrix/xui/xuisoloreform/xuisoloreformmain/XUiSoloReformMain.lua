@@ -7,7 +7,6 @@ local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 
 function XUiSoloReformMain:OnAwake()
     self._ChapterCellList = {}
-    self._TimerId = nil
     self:RegisterClickEvent(self.BtnBack, self.OnclickClose, true)
     self:RegisterClickEvent(self.BtnMainUi, self.OnReturnMain, true)
     self:RegisterClickEvent(self.BtnTask, self.OnClickTask, true)
@@ -60,7 +59,7 @@ function XUiSoloReformMain:RefreshActivityTime()
     end
     self:StopTimer()
     self:UpdateActivityTime()
-    self._TimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateActivityTime), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self.UpdateActivityTime, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiSoloReformMain:UpdateActivityTime()
@@ -152,10 +151,7 @@ end
 
 
 function XUiSoloReformMain:StopTimer()
-    if self._TimerId then
-        XScheduleManager.UnSchedule(self._TimerId)
-        self._TimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.UpdateActivityTime, self)
 end
 
 function XUiSoloReformMain:OnclickClose()

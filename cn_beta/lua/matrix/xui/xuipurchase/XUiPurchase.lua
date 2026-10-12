@@ -41,7 +41,6 @@ function XUiPurchase:OnAwake()
     self:AddRedPointEvent(self.LBBtn or self.GameObject, self.LBRedPoint, self, { XRedPointConditions.Types.CONDITION_PURCHASE_LB_RED })
     self:AddRedPointEvent(self.BtnLjcz or self.GameObject, self.AccumulateRedPoint, self, { XRedPointConditions.Types.CONDITION_ACCUMULATE_PAY_RED })
     self:AddRedPointEvent(self.GameObject, self.UpdateRecommendRed, self, { XRedPointConditions.Types.CONDITION_PURCHASE_RECOMMEND_RED }, nil, false)
-    self.TimeId = nil
 end
 
 function XUiPurchase:OnEnable()
@@ -56,11 +55,7 @@ function XUiPurchase:OnEnable()
     end
     XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_RECOMMEND_RED, self.UpdateRecommendRed, self)
     XEventManager.AddEventListener(XEventId.EVENT_LB_UPDATE, self.RefreshLBGroupTab, self)
-    if not self.TimeId then
-        self.TimeId = XScheduleManager.ScheduleForever(function()
-            self:RefreshTimeData()
-        end, XScheduleManager.SECOND, 0)
-    end
+    XScheduleManagerPro.ScheduleForever(self.RefreshTimeData, self, XScheduleManagerPro.SECOND, 0)
 end
 
 function XUiPurchase:OnStart(tab, isClearData, childTabIndex, customParams)
@@ -696,10 +691,7 @@ function XUiPurchase:OnDisable()
     end
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_RECOMMEND_RED, self.UpdateRecommendRed, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_LB_UPDATE, self.RefreshLBGroupTab, self)
-    if self.TimeId then
-        XScheduleManager.UnSchedule(self.TimeId)
-        self.TimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.RefreshTimeData, self)
 end
 
 function XUiPurchase:OnDestroy()
@@ -707,7 +699,9 @@ function XUiPurchase:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_FIGHT_BEFORE_ENTER, self.SignDontClearDataOnFight, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FASHION_SUIT_PURCHASE_BUY, self.UpdateFashionSuitBuy, self)
     self.Btns = nil
-    if self.IsClearData and not XLuaUiManager.IsUiLoad("UiPurchase")  then
+    local isUiPurchaseExist = XLuaUiManager.IsUiLoad("UiPurchase")
+    local isFashionDetailExist = XLuaUiManager.IsUiPushing("UiFashionDetail") or XLuaUiManager.IsUiLoad("UiFashionDetail")
+    if self.IsClearData and not isUiPurchaseExist and not isFashionDetailExist then
         XDataCenter.PurchaseManager.ClearData()
     end
 

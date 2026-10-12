@@ -7,9 +7,7 @@ function XUiFullScreenCharacterActionBreakTip:OnAwake()
     self.IsShowBtnClose = false
     self.NextAutoHideBtnTimeStamp = nil
 
-    self.Timer = XScheduleManager.ScheduleForever(function ()
-        self:UpdateSecond()
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(XUiFullScreenCharacterActionBreakTip._OnActionStateUpdateScheduleCb, self, XScheduleManagerPro.SECOND, 0)
 end
 
 function XUiFullScreenCharacterActionBreakTip:UpdateSecond()
@@ -55,9 +53,7 @@ function XUiFullScreenCharacterActionBreakTip:OnBtnMaskClick()
 end
 
 function XUiFullScreenCharacterActionBreakTip:OnDestroy()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-    end
+    XScheduleManagerPro.UnSchedule(XUiFullScreenCharacterActionBreakTip._OnActionStateUpdateScheduleCb, self)
 end
 
 function XUiFullScreenCharacterActionBreakTip:OnCloseCb()
@@ -72,4 +68,8 @@ end
 function XUiFullScreenCharacterActionBreakTip:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_ROLE_ACTION_UIANIM_END, self.OnCloseCb, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_UIMAIN_DISABLE, self.OnCloseCb, self)
+end
+
+function XUiFullScreenCharacterActionBreakTip:_OnActionStateUpdateScheduleCb()
+    self:UpdateSecond()
 end

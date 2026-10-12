@@ -60,9 +60,7 @@ end
 
 function XUiTheatreRecruit:UpdateSceneUrl()
     XDataCenter.TheatreManager.UpdateSceneUrl(self)
-    XScheduleManager.ScheduleOnce(function()
-        XDataCenter.TheatreManager.ShowRoleModelCamera(self, "FarCameraRecruit", "NearCameraRecruit")
-    end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnUpdateSceneUrlScheduleCb, self, 1)
 end
 
 --刷新次数
@@ -148,4 +146,8 @@ function XUiTheatreRecruit:UpdateBg()
         local bgB = XTheatreConfigs.GetChapterBgB(chapterId)
         self.RImgBgB:SetRawImage(bgB)
     end
+end
+
+function XUiTheatreRecruit:_OnUpdateSceneUrlScheduleCb()
+    XDataCenter.TheatreManager.ShowRoleModelCamera(self, "FarCameraRecruit", "NearCameraRecruit")
 end

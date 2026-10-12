@@ -16,7 +16,6 @@ function XUiDlcHuntChipMain:Ctor()
     ---@type DlcHuntChipMainModel[]
     self._ModelChip = {}
     self._Callback = false
-    self._Timer = false
 end
 
 function XUiDlcHuntChipMain:OnAwake()
@@ -84,10 +83,8 @@ function XUiDlcHuntChipMain:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_DLC_HUNT_CHIP_GROUP_CLOSE, self.HideGroupList, self)
     self:HideScreenEffect4ChipMain()
 
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateGuideChipBtnPosition()
-        end, 0)
+    if not XScheduleManagerPro.HasSchedule(self._OnUpdateGuideChipBtnPositionScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnUpdateGuideChipBtnPositionScheduleCb, self, 0)
     end
     self:SelectCamera4Ipad()
 end
@@ -97,10 +94,7 @@ function XUiDlcHuntChipMain:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_DLC_HUNT_CHIP_GROUP_CLOSE, self.HideGroupList, self)
     self:ShowScreenEffect4ChipMain()
 
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateGuideChipBtnPositionScheduleCb, self)
 end
 
 function XUiDlcHuntChipMain:Update()
@@ -284,6 +278,10 @@ function XUiDlcHuntChipMain:SelectCamera4Ipad()
         local camUiIpad = XUiHelper.TryGetComponent(self.UiModelGo.transform, "UiRoot/CamUiIpad", "Transform")
         camUiIpad.gameObject:SetActiveEx(true)
     end
+end
+
+function XUiDlcHuntChipMain:_OnUpdateGuideChipBtnPositionScheduleCb()
+    self:UpdateGuideChipBtnPosition()
 end
 
 return XUiDlcHuntChipMain

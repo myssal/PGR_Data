@@ -385,9 +385,7 @@ function XLineArithmeticAnimation:UpdateEatFinalGrid(ui, deltaTime)
             self._AnimationState = EAT_FINAL_GRID_STATE.END
 
             -- 结算完，万事完成时，播放一次，音效ID：4706
-            XScheduleManager.ScheduleOnce(function()
-                XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.LineArithmeticFinishFinalGrid)
-            end, 500)
+            XScheduleManagerPro.ScheduleOnce(self._OnUpdateEatFinalGridScheduleCb, self, 500)
         end
         return
     end
@@ -695,6 +693,10 @@ function XLineArithmeticAnimation:SetMapDataAfterEvent(ui, mapDataAfterEvent)
         uiGrid:SetTextNumber(mapData.Number)
         uiGrid:SetScorePreview(mapData.NumberOnPreview)
     end
+end
+
+function XLineArithmeticAnimation:_OnUpdateEatFinalGridScheduleCb()
+    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.LineArithmeticFinishFinalGrid)
 end
 
 return XLineArithmeticAnimation

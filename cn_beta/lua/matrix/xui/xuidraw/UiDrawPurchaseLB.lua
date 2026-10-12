@@ -4,7 +4,6 @@ local TableInsert = table.insert
 local Next = _G.next
 local XUiDrawPurchaseLB = XLuaUiManager.Register(XLuaUi, "UiDrawPurchaseLB")
 local XUiPurchaseLBListItem = require("XUi/XUiPurchase/XUiPurchaseLBListItem")
-local CurrentSchedule = nil
 
 function XUiDrawPurchaseLB:OnAwake()
     self:AutoRegisterListener()
@@ -220,7 +219,7 @@ function XUiDrawPurchaseLB:StartLBTimer()
     end
 
     self.IsStart = true
-    CurrentSchedule = XScheduleManager.ScheduleForever(function() self:UpdateLBTimer()end, 1000)
+    XScheduleManagerPro.ScheduleForever(self.UpdateLBTimer, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiDrawPurchaseLB:UpdateLBTimer()
@@ -252,9 +251,8 @@ function XUiDrawPurchaseLB:RegisterTimerFun(id, fun)
 end
 
 function XUiDrawPurchaseLB:DestroyTimer()
-    if CurrentSchedule then
+    if self.IsStart then
         self.IsStart = false
-        XScheduleManager.UnSchedule(CurrentSchedule)
-        CurrentSchedule = nil
+        XScheduleManagerPro.UnSchedule(self.UpdateLBTimer, self)
     end
 end

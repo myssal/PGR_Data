@@ -308,6 +308,7 @@ function XUiBlackRockChessBattle:OnDestroy()
         self:DelPCKeyListener()
     end
     self:ClearBigSkillTipsTimer()
+    XScheduleManagerPro.UnSchedule(XUiBlackRockChessBattle._OnHideRoundBroadcastScheduleCb, self)
 end
 
 function XUiBlackRockChessBattle:RefreshBattleView(isUpdateToast)
@@ -993,25 +994,13 @@ function XUiBlackRockChessBattle:ShowRoundBroadcast(text)
     end
     self.PanelTransition.gameObject:SetActiveEx(true)
     self.TxtTransition.text = text
-    if not self.RoundTimer then
-        self.RoundTimer = XScheduleManager.ScheduleOnce(function()
-            if XTool.UObjIsNil(self.GameObject) then
-                self:StopRoundTimer()
-                return
-            end
-            self.PanelTransition.gameObject:SetActiveEx(false)
-            self:StopRoundTimer()
-        end, XScheduleManager.SECOND * 2.5)
+    if not XScheduleManagerPro.HasSchedule(XUiBlackRockChessBattle._OnHideRoundBroadcastScheduleCb, self) then
+        XScheduleManagerPro.ScheduleOnce(XUiBlackRockChessBattle._OnHideRoundBroadcastScheduleCb, self, XScheduleManagerPro.SECOND * 2.5)
     end
 end
 
 function XUiBlackRockChessBattle:StopRoundTimer()
-    if not self.RoundTimer then
-        self:BroadcastByCache()
-        return
-    end
-    XScheduleManager.UnSchedule(self.RoundTimer)
-    self.RoundTimer = nil
+    XScheduleManagerPro.UnSchedule(XUiBlackRockChessBattle._OnHideRoundBroadcastScheduleCb, self)
     self:BroadcastByCache()
 end
 
@@ -1327,6 +1316,13 @@ end
 function XUiBlackRockChessBattle:RefreshKillAndRound()
     self.TxtNumber1.text = self._Control:GetChessGamer():GetKillTotal()
     self.TxtNumber2.text = self._Control:GetChessGamer():GetRoundTotal()
+end
+
+function XUiBlackRockChessBattle:_OnHideRoundBroadcastScheduleCb()
+    if not XTool.UObjIsNil(self.GameObject) then
+        self.PanelTransition.gameObject:SetActiveEx(false)
+    end
+    self:StopRoundTimer()
 end
 
 return XUiBlackRockChessBattle

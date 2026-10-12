@@ -7,9 +7,7 @@ function XUiLeftPopupTips:OnStart(data, delayTime)
     self.GridDic = {}
     self:InitView()
 
-    XScheduleManager.ScheduleOnce(function()
-        self:Close()
-    end, XScheduleManager.SECOND * delayTime)
+    XScheduleManagerPro.ScheduleOnce(self._OnCloseScheduleCb, self, XScheduleManagerPro.SECOND * delayTime)
 end
 
 function XUiLeftPopupTips:InitView()
@@ -27,6 +25,10 @@ function XUiLeftPopupTips:InitView()
         grid.TxtTitle.text = data.Title
         grid.TxtContent.text = data.Content
     end
+end
+
+function XUiLeftPopupTips:_OnCloseScheduleCb()
+    self:Close()
 end
 
 return XUiLeftPopupTips

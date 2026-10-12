@@ -22,12 +22,7 @@ function XUiFubenMaintaineractionTipLayer:OnStart(hintText, msgList, type, cb)
         end
     end
 
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-            if not self.closeState then
-                self.closeState = true
-                self.CloseFunc()
-            end
-        end, TIP_MSG_SHOW_TIME)
+    XScheduleManagerPro.ScheduleOnce(self._OnStartScheduleCb, self, TIP_MSG_SHOW_TIME)
     
     local msg1 = msgList and msgList[1]
     local msg2 = msgList and msgList[2]
@@ -57,7 +52,7 @@ function XUiFubenMaintaineractionTipLayer:OnBtnCloseClick()
     end
 
     self.closeState = true
-    XScheduleManager.UnSchedule(self.Timer)
+    XScheduleManagerPro.UnSchedule(self._OnStartScheduleCb, self)
     self.BtnClose.interactable = false
     if self.CloseFunc then
         self:CloseFunc()
@@ -71,8 +66,12 @@ function XUiFubenMaintaineractionTipLayer:OnDestroy()
     if self.Cb then
         self.Cb()
     end
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
+        XScheduleManagerPro.UnSchedule(self._OnStartScheduleCb, self)
+end
+
+function XUiFubenMaintaineractionTipLayer:_OnStartScheduleCb()
+    if not self.closeState then
+        self.closeState = true
+        self.CloseFunc()
     end
 end

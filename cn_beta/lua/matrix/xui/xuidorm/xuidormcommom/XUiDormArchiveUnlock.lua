@@ -24,14 +24,7 @@ function XUiGridDormArchive:PlayEffect()
     if not self.IsNew then
         return
     end
-    XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
-        -- 播放特效
-        self.NEW.gameObject:SetActiveEx(false)
-        self.NEW.gameObject:SetActiveEx(true)
-    end, 200)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayEffectScheduleCb, self, 200)
 end
 
 
@@ -182,4 +175,13 @@ function XUiDormArchiveUnlock:OnBtnShowTemplateClick()
     end
     
     XLuaUiManager.Open("UiDormFieldGuide", self.SuitId)
+end
+
+function XUiGridDormArchive:_OnPlayEffectScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
+    end
+    -- 播放特效
+    self.NEW.gameObject:SetActiveEx(false)
+    self.NEW.gameObject:SetActiveEx(true)
 end

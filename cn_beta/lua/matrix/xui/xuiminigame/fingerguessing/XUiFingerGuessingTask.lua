@@ -59,9 +59,7 @@ end
 --================
 function XUiFingerGuessingTask:OnEnable()
     self:StopTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-            self:SetGameTimer()
-        end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnSetGameTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
     self:AddEventListeners()
     self:OnShowPanel()
 end
@@ -87,10 +85,7 @@ end
 --停止计时器
 --================
 function XUiFingerGuessingTask:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnSetGameTimerScheduleCb, self)
 end
 --================
 --活动周期结束时弹回主界面
@@ -123,4 +118,8 @@ function XUiFingerGuessingTask:RemoveEventListeners()
     if not self.AlreadyAddEvents then return end
     self.AlreadyAddEvents = false
     XEventManager.RemoveEventListener(XEventId.EVENT_TASK_SYNC, self.RefreshTasks, self)
+end
+
+function XUiFingerGuessingTask:_OnSetGameTimerScheduleCb()
+    self:SetGameTimer()
 end

@@ -222,16 +222,11 @@ function XUiUnionKillMember:ProcessTipEmoji(senderId, emoji)
     self:EndProcessTipTalk()
 
     self:TipEmoji(emoji)
-    self.EmojiTimer = XScheduleManager.ScheduleOnce(function()
-        self:EndTipEmoji()
-    end, 3000)
+    XScheduleManagerPro.ScheduleOnce(self._OnEndTipEmojiScheduleCb, self, 3000)
 end
 
 function XUiUnionKillMember:EndProcessTipEmoji()
-    if self.EmojiTimer then
-        XScheduleManager.UnSchedule(self.EmojiTimer)
-        self.EmojiTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnEndTipEmojiScheduleCb, self)
 end
 
 function XUiUnionKillMember:ProcessTipTalk(senderId, talkContent)
@@ -241,16 +236,11 @@ function XUiUnionKillMember:ProcessTipTalk(senderId, talkContent)
     self:EndProcessTipEmoji()
 
     self:TipTalk(talkContent)
-    self.TalkTimer = XScheduleManager.ScheduleOnce(function()
-        self:EndTipTalk()
-    end, 3000)
+    XScheduleManagerPro.ScheduleOnce(self._OnEndTipTalkScheduleCb, self, 3000)
 end
 
 function XUiUnionKillMember:EndProcessTipTalk()
-    if self.TalkTimer then
-        XScheduleManager.UnSchedule(self.TalkTimer)
-        self.TalkTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnEndTipTalkScheduleCb, self)
 end
 
 function XUiUnionKillMember:TipEmoji(emoji)
@@ -275,4 +265,11 @@ function XUiUnionKillMember:EndTipTalk()
 end
 
 -------------------------------------------------------------------------------
+function XUiUnionKillMember:_OnEndTipTalkScheduleCb()
+    self:EndTipTalk()
+end
+function XUiUnionKillMember:_OnEndTipEmojiScheduleCb()
+    self:EndTipEmoji()
+end
+
 return XUiUnionKillMember

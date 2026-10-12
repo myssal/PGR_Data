@@ -64,10 +64,8 @@ end
 
 function XUiComGame2048GridAction:StopCurAnimation()
     -- 插值动画
-    if self._CurAnimTimeId then
-        XScheduleManager.UnSchedule(self._CurAnimTimeId)
-        self._CurAnimTimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnDoDispelScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(self.EndCurSubAnimation, self)
 
     -- DOTWeen动画
     if self._CurTweener then
@@ -92,10 +90,6 @@ function XUiComGame2048GridAction:StopCurAnimation()
 end
 
 function XUiComGame2048GridAction:_EndCurAnimation()
-    -- 插值动画
-    if self._CurAnimTimeId then
-        self._CurAnimTimeId = nil
-    end
 
     -- DOTWeen动画
     if self._CurTweener then
@@ -199,39 +193,42 @@ function XUiComGame2048GridAction:DoDispel(cb)
     self.EffectDispel.gameObject:SetActiveEx(true)
     if XTool.IsNumberValid(self._DispelHideTime) then
         -- 分数方块的隐藏特效，当特效完全覆盖方块UI时需要隐藏方块UI
-        self._CurAnimTimeId = XScheduleManager.ScheduleOnce(function()
-            -- 隐藏
-            if self.TxtNum then
-                self.TxtNum.gameObject:SetActiveEx(false)
-            end
-            
-            if self.Image then
-                self.Image.gameObject:SetActiveEx(false)
-            end
-
-            if self.ImgIcon then
-                self.ImgIcon.gameObject:SetActiveEx(false)
-            end
-
-            if self.GridPoint then
-                self.GridPoint.transform.parent.gameObject:SetActiveEx(false)
-            end
-
-            local delayTime = self._DispelPlayTime - self._DispelHideTime
-
-            if delayTime < 0 then
-                delayTime = 0
-            end
-
-            self._CurAnimTimeId = XScheduleManager.ScheduleOnce(self._EndCurAnimationHandler, delayTime * XScheduleManager.SECOND)
-        end, self._DispelHideTime * XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleOnce(self._OnDoDispelScheduleCb, self, self._DispelHideTime * XScheduleManagerPro.SECOND)
     else
-        self._CurAnimTimeId = XScheduleManager.ScheduleOnce(self._EndCurAnimationHandler, self._DispelPlayTime * XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleOnce(self.EndCurSubAnimation, self, self._DispelPlayTime * XScheduleManagerPro.SECOND)
     end
 
     if self.EffectDispelAimShow then
         self.EffectDispelAimShow.gameObject:SetActiveEx(false)
     end
+end
+
+
+function XUiComGame2048GridAction:_OnDoDispelScheduleCb()
+        -- 隐藏
+        if self.TxtNum then
+            self.TxtNum.gameObject:SetActiveEx(false)
+        end
+
+        if self.Image then
+            self.Image.gameObject:SetActiveEx(false)
+        end
+
+        if self.ImgIcon then
+            self.ImgIcon.gameObject:SetActiveEx(false)
+        end
+
+        if self.GridPoint then
+            self.GridPoint.transform.parent.gameObject:SetActiveEx(false)
+        end
+
+        local delayTime = self._DispelPlayTime - self._DispelHideTime
+
+        if delayTime < 0 then
+            delayTime = 0
+        end
+
+        XScheduleManagerPro.ScheduleOnce(self.EndCurSubAnimation, self, delayTime * XScheduleManagerPro.SECOND)
 end
 
 --- 碰撞动画

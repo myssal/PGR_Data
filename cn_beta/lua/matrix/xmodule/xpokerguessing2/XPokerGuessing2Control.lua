@@ -64,13 +64,15 @@ function XPokerGuessing2Control:OnInit()
 end
 
 function XPokerGuessing2Control:AddAgencyEvent()
-    self._Timer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnAddAgencyEventScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+function XPokerGuessing2Control:_OnAddAgencyEventScheduleCb()
         self:UpdateTime()
-    end, XScheduleManager.SECOND)
 end
 
 function XPokerGuessing2Control:RemoveAgencyEvent()
-    XScheduleManager.UnSchedule(self._Timer)
+    XScheduleManagerPro.UnSchedule(self._OnAddAgencyEventScheduleCb, self)
 end
 
 function XPokerGuessing2Control:OnRelease()

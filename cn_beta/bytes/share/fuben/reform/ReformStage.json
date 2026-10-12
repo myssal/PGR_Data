@@ -551,7 +551,7 @@
         "PressureHard": 1500
     },
     {
-        "Id": 30162540,
+        "Id": 30162551,
         "StageType": 1,
         "Name": "元素预兆",
         "Difficulty": 1,
@@ -781,5 +781,411 @@
         "RecommendCharacterGroupId": 204,
         "PressureEasy": 1000,
         "PressureHard": 1500
+    },
+    {
+        "Id": 30162552,
+        "StageType": 1,
+        "Name": "黑暗之中升阳",
+        "Difficulty": 1,
+        "StageGroupId": 1,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 28,
+        "StageDiff": [
+            40001
+        ],
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "UseCharaGroup": 4,
+        "EnemyGroupId": 1001,
+        "AffixGroupId": 1001,
+        "MinQuality": 100,
+        "WishWeightSlotNum": 2,
+        "CostWeightSlotNum": 3,
+        "DifficultyMassThresholds": [
+            0,
+            300,
+            600
+        ],
+        "DifficultyBuffIds": [
+            2520101,
+            2520201,
+            2520301
+        ],
+        "BalanceBondIds": [
+            4
+        ]
+    },
+    {
+        "Id": 30162553,
+        "StageType": 1,
+        "Name": "愿望于此生根",
+        "Difficulty": 1,
+        "StageGroupId": 1,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 28,
+        "StageDiff": [
+            40002
+        ],
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "UseCharaGroup": 4,
+        "EnemyGroupId": 1002,
+        "AffixGroupId": 1002,
+        "MinQuality": 150,
+        "WishWeightSlotNum": 3,
+        "CostWeightSlotNum": 4,
+        "DifficultyMassThresholds": [
+            0,
+            300,
+            600
+        ],
+        "DifficultyBuffIds": [
+            2520102,
+            2520202,
+            2520302
+        ],
+        "BalanceBondIds": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 30162554,
+        "StageType": 1,
+        "Name": "记忆流入川海",
+        "Difficulty": 1,
+        "StageGroupId": 1,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 28,
+        "StageDiff": [
+            40003
+        ],
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "UseCharaGroup": 4,
+        "EnemyGroupId": 1003,
+        "AffixGroupId": 1003,
+        "MinQuality": 150,
+        "WishWeightSlotNum": 3,
+        "CostWeightSlotNum": 4,
+        "DifficultyMassThresholds": [
+            0,
+            300,
+            600
+        ],
+        "DifficultyBuffIds": [
+            2520103,
+            2520203,
+            2520303
+        ],
+        "BalanceBondIds": [
+            5
+        ]
+    },
+    {
+        "Id": 30162555,
+        "StageType": 1,
+        "Name": "天平不可称量",
+        "Difficulty": 1,
+        "StageGroupId": 1,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 28,
+        "StageDiff": [
+            40004
+        ],
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "UseCharaGroup": 4,
+        "EnemyGroupId": 1004,
+        "AffixGroupId": 1004,
+        "MinQuality": 200,
+        "WishWeightSlotNum": 4,
+        "CostWeightSlotNum": 4,
+        "DifficultyMassThresholds": [
+            0,
+            300,
+            600
+        ],
+        "DifficultyBuffIds": [
+            2520104,
+            2520204,
+            2520304
+        ],
+        "BalanceBondIds": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 30162556,
+        "StageType": 1,
+        "Name": "心念倾斜之际",
+        "Difficulty": 1,
+        "StageGroupId": 1,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 28,
+        "StageDiff": [
+            40005
+        ],
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "UseCharaGroup": 4,
+        "EnemyGroupId": 1005,
+        "AffixGroupId": 1005,
+        "MinQuality": 200,
+        "WishWeightSlotNum": 4,
+        "CostWeightSlotNum": 5,
+        "DifficultyMassThresholds": [
+            0,
+            300,
+            600
+        ],
+        "DifficultyBuffIds": [
+            2520105,
+            2520205,
+            2520305
+        ],
+        "BalanceBondIds": [
+            6
+        ]
+    },
+    {
+        "Id": 30162557,
+        "StageType": 1,
+        "Name": "群星尽头同行",
+        "Difficulty": 1,
+        "StageGroupId": 1,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 28,
+        "StageDiff": [
+            40006
+        ],
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "UseCharaGroup": 4,
+        "EnemyGroupId": 1006,
+        "AffixGroupId": 1006,
+        "MinQuality": 250,
+        "WishWeightSlotNum": 5,
+        "CostWeightSlotNum": 6,
+        "DifficultyMassThresholds": [
+            0,
+            300,
+            600
+        ],
+        "DifficultyBuffIds": [
+            2520106,
+            2520206,
+            2520306
+        ],
+        "BalanceBondIds": [
+            3,
+            4
+        ]
+    },
+    {
+        "Id": 30162558,
+        "StageType": 1,
+        "Name": "愿望于此生根",
+        "Difficulty": 2,
+        "StageGroupId": 1,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 28,
+        "StageDiff": [
+            40007
+        ],
+        "FullPoint": 2,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "UseCharaGroup": 4,
+        "EnemyGroupId": 1007,
+        "AffixGroupId": 1007,
+        "MinQuality": 500,
+        "WishWeightSlotNum": 4,
+        "CostWeightSlotNum": 5,
+        "FixedEnemyIds": [
+            10704
+        ],
+        "DifficultyMassThresholds": [
+            0,
+            600,
+            1200
+        ],
+        "DifficultyBuffIds": [
+            2520107,
+            2520207,
+            2520307
+        ],
+        "BalanceBondIds": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 30162559,
+        "StageType": 1,
+        "Name": "记忆流入川海",
+        "Difficulty": 2,
+        "StageGroupId": 1,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 28,
+        "StageDiff": [
+            40008
+        ],
+        "FullPoint": 2,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "UseCharaGroup": 4,
+        "EnemyGroupId": 1008,
+        "AffixGroupId": 1008,
+        "MinQuality": 500,
+        "WishWeightSlotNum": 4,
+        "CostWeightSlotNum": 5,
+        "FixedEnemyIds": [
+            10804
+        ],
+        "DifficultyMassThresholds": [
+            0,
+            600,
+            1200
+        ],
+        "DifficultyBuffIds": [
+            2520108,
+            2520208,
+            2520308
+        ],
+        "BalanceBondIds": [
+            7
+        ]
+    },
+    {
+        "Id": 30162560,
+        "StageType": 1,
+        "Name": "天平不可称量",
+        "Difficulty": 2,
+        "StageGroupId": 1,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 28,
+        "StageDiff": [
+            40009
+        ],
+        "FullPoint": 2,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "UseCharaGroup": 4,
+        "EnemyGroupId": 1009,
+        "AffixGroupId": 1009,
+        "MinQuality": 600,
+        "WishWeightSlotNum": 5,
+        "CostWeightSlotNum": 6,
+        "FixedEnemyIds": [
+            10904
+        ],
+        "DifficultyMassThresholds": [
+            0,
+            600,
+            1200
+        ],
+        "DifficultyBuffIds": [
+            2520109,
+            2520209,
+            2520309
+        ],
+        "BalanceBondIds": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 30162561,
+        "StageType": 1,
+        "Name": "心念倾斜之际",
+        "Difficulty": 2,
+        "StageGroupId": 1,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 28,
+        "StageDiff": [
+            40010
+        ],
+        "FullPoint": 2,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "UseCharaGroup": 4,
+        "EnemyGroupId": 1010,
+        "AffixGroupId": 1010,
+        "MinQuality": 600,
+        "WishWeightSlotNum": 5,
+        "CostWeightSlotNum": 6,
+        "FixedEnemyIds": [
+            11005
+        ],
+        "DifficultyMassThresholds": [
+            0,
+            600,
+            1200
+        ],
+        "DifficultyBuffIds": [
+            2520110,
+            2520210,
+            2520310
+        ],
+        "BalanceBondIds": [
+            8
+        ]
+    },
+    {
+        "Id": 30162562,
+        "StageType": 1,
+        "Name": "群星尽头同行",
+        "Difficulty": 2,
+        "StageGroupId": 1,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 28,
+        "StageDiff": [
+            40011
+        ],
+        "FullPoint": 2,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "UseCharaGroup": 4,
+        "EnemyGroupId": 1011,
+        "AffixGroupId": 1011,
+        "MinQuality": 700,
+        "WishWeightSlotNum": 6,
+        "CostWeightSlotNum": 7,
+        "FixedEnemyIds": [
+            11105
+        ],
+        "DifficultyMassThresholds": [
+            0,
+            600,
+            1200
+        ],
+        "DifficultyBuffIds": [
+            2520111,
+            2520211,
+            2520311
+        ],
+        "BalanceBondIds": [
+            3,
+            4
+        ]
     }
 ]

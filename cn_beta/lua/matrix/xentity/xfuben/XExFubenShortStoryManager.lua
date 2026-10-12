@@ -178,6 +178,9 @@ function XExFubenShortStoryManager:GetChapterViewModel(id, difficulty)
                     return true
                 end
 
+                return proxy:GetBusinessIsLocked()
+            end,
+            GetBusinessIsLocked = function(proxy)
                 local result = not XDataCenter.ShortStoryChapterManager.IsUnlock(proxy:GetId())    
                 local isActivity = proxy:CheckHasTimeLimitTag()
                 -- 如果锁定并且是活动，判断下一层
@@ -191,6 +194,9 @@ function XExFubenShortStoryManager:GetChapterViewModel(id, difficulty)
                     return XUiHelper.GetText("NecessaryResourcesNotDownloaded")
                 end
 
+                return proxy:GetBusinessLockTip()
+            end,
+            GetBusinessLockTip = function(proxy)
                 local isActivity = proxy:CheckHasTimeLimitTag()
                 if not isActivity then 
                     local ret, desc = XDataCenter.ShortStoryChapterManager.CheckOpenCondition(proxy:GetId())

@@ -8,7 +8,6 @@ local TIME_SCALE = XPlanetExploreConfigs.TIME_SCALE_FIGHT
 local XUiPlanetFightMain = XLuaUiManager.Register(XLuaUi, "UiPlanetFightMain")
 
 function XUiPlanetFightMain:Ctor()
-    self._Timer = false
     ---@type XUiPlanetRunningFight
     self._Fight = false
 end
@@ -36,18 +35,13 @@ end
 
 function XUiPlanetFightMain:OnEnable()
     self:UpdateBtnAuto()
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:Update()
-        end, 0)
+    if not XScheduleManagerPro.HasSchedule(self._OnEnableScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnEnableScheduleCb, self, 0)
     end
 end
 
 function XUiPlanetFightMain:OnDisable()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
     CS.UnityEngine.Time.timeScale = TIME_SCALE.NORMAL
 end
 
@@ -194,5 +188,10 @@ function XUiPlanetFightMain:CalculatePosition(position1, position2, needAmount)
     end
     return {}
 end
+
+function XUiPlanetFightMain:_OnEnableScheduleCb()
+        self:Update()
+end
+
 
 return XUiPlanetFightMain

@@ -196,20 +196,19 @@ end
 
 function XUiArenaNew:_ShowEnterEffect()
     self:_RemoveEnterTimer()
-    self._EnterTimer = XScheduleManager.ScheduleOnce(function()
-        if self._Scene then
-            self._Scene:ShowEnterEffect()
-            self._Scene:ShowChangeEffect()
-        end
-        self._EnterTimer = nil
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(XUiArenaNew._OnEnterEffectScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+--- 定时器回调：延迟播放入场特效
+function XUiArenaNew:_OnEnterEffectScheduleCb()
+    if self._Scene then
+        self._Scene:ShowEnterEffect()
+        self._Scene:ShowChangeEffect()
+    end
 end
 
 function XUiArenaNew:_RemoveEnterTimer()
-    if self._EnterTimer then
-        XScheduleManager.UnSchedule(self._EnterTimer)
-        self._EnterTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiArenaNew._OnEnterEffectScheduleCb, self)
 end
 
 --- 检查并显示新纪录弹窗

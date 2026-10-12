@@ -182,20 +182,7 @@ end
 
 function XUiCharacterTowerFetter:RefreshProgress()
     -- 异形屏适配需要
-    XScheduleManager.ScheduleOnce(function()
-        if not self.GameObject or not self.GameObject:Exist() then
-            return
-        end
-
-        local finishCount, _ = self.RelationViewModel:GetRelationProgress()
-        local width, finishWidth = self:GetFetterProgressWidthAndFinishWidth(finishCount)
-        -- 更新进度条长度
-        local deltaY = self.PanelDegree.sizeDelta.y
-        self.PanelDegree.sizeDelta = CS.UnityEngine.Vector2(width, deltaY)
-        -- 刷新进度
-        local totalWidth = self.PanelDegree.rect.size.x
-        self.ImgPercent.fillAmount = finishWidth / totalWidth
-    end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnGetFetterProgressWidthAndFinishWidthScheduleCb, self, 1)
 end
 
 function XUiCharacterTowerFetter:GetFetterProgressWidthAndFinishWidth(count)
@@ -354,6 +341,21 @@ end
 
 function XUiCharacterTowerFetter:OnBtnCloseClick()
     self:CancelSelect()
+end
+
+function XUiCharacterTowerFetter:_OnGetFetterProgressWidthAndFinishWidthScheduleCb()
+    if not self.GameObject or not self.GameObject:Exist() then
+        return
+    end
+
+    local finishCount, _ = self.RelationViewModel:GetRelationProgress()
+    local width, finishWidth = self:GetFetterProgressWidthAndFinishWidth(finishCount)
+    -- 更新进度条长度
+    local deltaY = self.PanelDegree.sizeDelta.y
+    self.PanelDegree.sizeDelta = CS.UnityEngine.Vector2(width, deltaY)
+    -- 刷新进度
+    local totalWidth = self.PanelDegree.rect.size.x
+    self.ImgPercent.fillAmount = finishWidth / totalWidth
 end
 
 return XUiCharacterTowerFetter

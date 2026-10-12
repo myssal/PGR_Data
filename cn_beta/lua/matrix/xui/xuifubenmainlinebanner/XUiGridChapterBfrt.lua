@@ -64,9 +64,13 @@ function XUiGridChapterBfrt:OpenSelectEffect()
     for _, grid in ipairs(self._GridShowRewardList) do
         grid:OpenFlashEffect()
     end
-    XScheduleManager.ScheduleOnce(function()
-        XEventManager.DispatchEvent(XEventId.EVENT_BFRT_CHAPTER_EFFECT_CLOSE)
-    end, 500)
+    XScheduleManagerPro.UnSchedule(XUiGridChapterBfrt._OnEffectCloseScheduleCb, self)
+    XScheduleManagerPro.ScheduleOnce(XUiGridChapterBfrt._OnEffectCloseScheduleCb, self, 500)
+end
+
+-- 延迟派发特效关闭事件
+function XUiGridChapterBfrt:_OnEffectCloseScheduleCb()
+    XEventManager.DispatchEvent(XEventId.EVENT_BFRT_CHAPTER_EFFECT_CLOSE)
 end
 
 function XUiGridChapterBfrt:CloseSelectEffect()

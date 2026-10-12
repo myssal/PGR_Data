@@ -58,20 +58,18 @@ function XInputSignalMediator:StartInputSignalUpdateTimer()
 
     self:ClearAllInputSignalRecord()
     
-    self.SignalHandleTimer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartInputSignalUpdateTimerScheduleCb, self, 100)
+end
+
+function XInputSignalMediator:_OnStartInputSignalUpdateTimerScheduleCb()
         self:Update()
-    end, 100)
 end
 
 function XInputSignalMediator:StopInputSignalUpdateTimer()
-    if not self.SignalHandleTimer then
-        return
+    if XScheduleManagerPro.HasSchedule(self._OnStartInputSignalUpdateTimerScheduleCb, self) then
+        XScheduleManagerPro.UnSchedule(self._OnStartInputSignalUpdateTimerScheduleCb, self)
+        self:ClearAllInputSignalRecord()
     end
-
-    XScheduleManager.UnSchedule(self.SignalHandleTimer)
-    self.SignalHandleTimer = nil
-
-    self:ClearAllInputSignalRecord()
 end
 
 --- 更新逻辑主体，执行时按照顺序读取第一个信号输入，调用对应的处理函数，其信号值作为参数传入

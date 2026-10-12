@@ -63,22 +63,13 @@ function XUiBigWorldDIYGridPosition:SetSelect(isSelect, isPlayEnable)
 end
 
 function XUiBigWorldDIYGridPosition:StopAnimationTimer()
-    if not self._AnimationTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._AnimationTimer)
-    self._AnimationTimer = false
+    XScheduleManagerPro.UnSchedule(XUiBigWorldDIYGridPosition._OnPlayEnableAnimationScheduleCb, self)
 end
 
 function XUiBigWorldDIYGridPosition:PlayEnableAnimation(index)
     self:StopAnimationTimer()
     self.CanvasGroup.alpha = 0
-    self._AnimationTimer = XScheduleManager.ScheduleOnce(function()
-        if self:IsNodeShow() then
-            self.GridEnable:PlayTimelineAnimation()
-        end
-        self:StopAnimationTimer()
-    end, 80 * index)
+    XScheduleManagerPro.ScheduleOnce(XUiBigWorldDIYGridPosition._OnPlayEnableAnimationScheduleCb, self, 80 * index)
 end
 
 -- region 按钮事件
@@ -207,5 +198,11 @@ function XUiBigWorldDIYGridPosition:_RegisterRedPointEvents()
     -- self:AddRedPointEvent(...)
 end
 -- endregion
+
+function XUiBigWorldDIYGridPosition:_OnPlayEnableAnimationScheduleCb()
+    if self:IsNodeShow() then
+        self.GridEnable:PlayTimelineAnimation()
+    end
+end
 
 return XUiBigWorldDIYGridPosition

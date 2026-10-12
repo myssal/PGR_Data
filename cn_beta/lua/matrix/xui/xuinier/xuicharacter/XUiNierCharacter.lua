@@ -50,9 +50,7 @@ function XUiNierCharacter:OnEnable()
     
     
     if XDataCenter.NieRManager.GetIsActivityEnd() then
-        XScheduleManager.ScheduleOnce(function()
-            XDataCenter.NieRManager.OnActivityEnd()
-        end, 1)
+        XScheduleManagerPro.ScheduleOnce(self._OnOnEnableScheduleCb, self, 1)
     else
         self.PanelCharacterTypeBtns:SelectIndex(self.CurToggleType)
     end
@@ -131,4 +129,8 @@ function XUiNierCharacter:OnBtnTabPanelSelect(index)
         self.UiPanelTeaching:InitAllInfo()
         self.CurToggleType = PANEL_INDEX.Teaching
     end
+end
+
+function XUiNierCharacter:_OnOnEnableScheduleCb()
+    XDataCenter.NieRManager.OnActivityEnd()
 end

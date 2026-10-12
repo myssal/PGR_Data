@@ -13,7 +13,6 @@ function XUiGridDormBagItem:Ctor(ui, rootUi)
     end)
     
     self.RefreshListCb = handler(rootUi, rootUi.SetupFurnitureDynamicTable)
-    self.DelayPlayCb = handler(self, self.DelayPlay)
 end
 
 function XUiGridDormBagItem:OnBtnCreateClick()
@@ -34,7 +33,7 @@ function XUiGridDormBagItem:Refresh(furnitureId, typeId)
         self.UiGridFurniture:Refresh(furnitureId)
     end
     
-    XScheduleManager.ScheduleOnce(self.DelayPlayCb, 1)
+    XScheduleManagerPro.ScheduleOnce(self.DelayPlay, self, 1)
     
 end
 
@@ -95,7 +94,6 @@ function XUiGridDormChoiceItem:OnBtnCloseClick()
     local furniture = XDataCenter.FurnitureManager.GetFurnitureById(self.FurnitureId)
     self.RootUi:OnFurnitureGridClick(self.FurnitureId, furniture:GetConfigId(), grid)
 end
-
 
 --=========================================类分界线=========================================--
 
@@ -476,7 +474,6 @@ function XUiDormBagChoice:OnBtnSelectClick()
     if self.SelectCb then self.SelectCb(self.SelectIds) end
 end
 --endregion------------------UI事件 finish------------------
-
 
 --region   ------------------初始化数据 start-------------------
 

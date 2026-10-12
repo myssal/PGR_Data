@@ -80,12 +80,16 @@ function XUiPanelLuosaitaSection:Refresh(isCheckSwitchSection, checkWaitTime)
 
     if checkWaitTime and checkWaitTime > 0 then
         self:RemoveAnimWaitTimer()
-        self.AnimWaitTimer = XScheduleManager.ScheduleOnce(function()
-            self:CheckAnim(isCheckSwitchSection)
-        end, checkWaitTime)
+        self._IsCheckSwitchSection = isCheckSwitchSection
+        XScheduleManagerPro.ScheduleOnce(XUiPanelLuosaitaSection._OnAnimWaitScheduleCb, self, checkWaitTime)
     else
         self:CheckAnim(isCheckSwitchSection)
     end
+end
+
+-- 动画等待定时器回调
+function XUiPanelLuosaitaSection:_OnAnimWaitScheduleCb()
+    self:CheckAnim(self._IsCheckSwitchSection)
 end
 
 function XUiPanelLuosaitaSection:CheckAnim(isCheckSwitchSection)
@@ -648,10 +652,7 @@ end
 
 -- 移除动画等待时间
 function XUiPanelLuosaitaSection:RemoveAnimWaitTimer()
-    if self.AnimWaitTimer then
-        XScheduleManager.UnSchedule(self.AnimWaitTimer)
-        self.AnimWaitTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiPanelLuosaitaSection._OnAnimWaitScheduleCb, self)
 end
 
 function XUiPanelLuosaitaSection:IsDragOperation()

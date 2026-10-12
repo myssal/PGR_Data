@@ -14,18 +14,20 @@ function XUiBiancaTheatreLoading:OnStart()
     self.RImgTitleIcon:SetRawImage(self.CurrentChapter:GetOpenTitleIcon())
     self.BgCommonBai:SetRawImage(self.CurrentChapter:GetOpenBg())
 
-    XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
-        self.BtnClose.gameObject:SetActiveEx(true)
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(XUiBiancaTheatreLoading._OnShowCloseButtonScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiBiancaTheatreLoading:OnBtnCloseClick()
     XDataCenter.BiancaTheatreManager.SetIsAutoOpen(true)
     XLuaUiManager.Remove("UiBiancaTheatreLoading")
     XDataCenter.BiancaTheatreManager.CheckOpenView()
+end
+
+function XUiBiancaTheatreLoading:_OnShowCloseButtonScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
+    end
+    self.BtnClose.gameObject:SetActiveEx(true)
 end
 
 return XUiBiancaTheatreLoading

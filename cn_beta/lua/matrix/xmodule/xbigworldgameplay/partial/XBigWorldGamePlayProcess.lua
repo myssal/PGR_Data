@@ -24,6 +24,9 @@ function XBigWorldGamePlayAgency:EnterWorld(worldId, levelId, enterOp, ...)
     end
     self._EnterOperate = enterOp
     self._EnterOpParam = { ... }
+    if CS.XAssetCollectManager.SetAutoSkyGardenCollect then
+        CS.XAssetCollectManager.SetAutoSkyGardenCollect(true)
+    end
     XNetwork.Call("BigWorldEnterWorldRequest", {
         WorldId = worldId,
         LevelId = levelId,
@@ -113,6 +116,9 @@ function XBigWorldGamePlayAgency:ExitWorld()
         gameAgency:Exit()
     end
     CS.XProfilingLuaUtils.PerfSightRegionExit()
+    if CS.XAssetCollectManager.SetAutoSkyGardenCollect then
+        CS.XAssetCollectManager.SetAutoSkyGardenCollect(false)
+    end
 end
 
 --- 更新进入大世界玩法数据

@@ -22,11 +22,7 @@ end
 
 function XUiSameColorGameBossMain:OnStart()
     self.TxtTitle.text = self._Control:GetClientCfgStringValue("Name")
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        for _, grid in pairs(self.BossGridList) do
-            grid:RefreshStatus()
-        end
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnStartScheduleCb, self, XScheduleManagerPro.SECOND, 0)
     --self:InitAutoClose()
 end
 
@@ -53,10 +49,7 @@ end
 function XUiSameColorGameBossMain:OnDestroy()
     --self.SameColorGameManager.ClearMainUiModelInfo()
     XUiSameColorGameBossMain.Super.OnDestroy(self)
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStartScheduleCb, self)
 end
 
 --region Ui - AutoClose
@@ -140,5 +133,11 @@ function XUiSameColorGameBossMain:OnBtnStoreClicked()
     self._Control:OpenShop()
 end
 --endregion
+
+function XUiSameColorGameBossMain:_OnStartScheduleCb()
+    for _, grid in pairs(self.BossGridList) do
+        grid:RefreshStatus()
+    end
+end
 
 return XUiSameColorGameBossMain

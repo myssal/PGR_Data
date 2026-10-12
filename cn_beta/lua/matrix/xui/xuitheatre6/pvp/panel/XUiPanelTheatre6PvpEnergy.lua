@@ -88,16 +88,11 @@ end
 
 function XUiPanelTheatre6PvpEnergy:StartTimer()
     self:StopTimer()
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateRecoverText()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateRecoverTextScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiPanelTheatre6PvpEnergy:StopTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateRecoverTextScheduleCb, self)
 end
 
 function XUiPanelTheatre6PvpEnergy:OnBtnEnergyClick()
@@ -114,6 +109,10 @@ function XUiPanelTheatre6PvpEnergy:CloseBubble()
     self:StopTimer()
     self.PanelBubbleEnergy.gameObject:SetActiveEx(false)
     self.IsClickBubble = false
+end
+
+function XUiPanelTheatre6PvpEnergy:_OnUpdateRecoverTextScheduleCb()
+    self:UpdateRecoverText()
 end
 
 return XUiPanelTheatre6PvpEnergy

@@ -106,9 +106,7 @@ function XUiPianoSimulator:OnStart()
     self:OnToggleSceneMusicClick()
     self:OnToggleInstrumentMusicClick()
 
-    self.CheckTimeId = XScheduleManager.ScheduleForever(function()
-        self:CheckPianoKeyPressToSync()
-    end, 50, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnCheckPianoKeyPressToSyncScheduleCb, self, 50, 0)
 end
 
 function XUiPianoSimulator:CheckPianoKeyPressToSync()
@@ -137,10 +135,7 @@ function XUiPianoSimulator:OnDestroy()
     XDataCenter.GuildDormManager.SaveToggleSceneMusicCache(self.ToggleSceneMusic.isOn and 1 or 0)
     XDataCenter.GuildDormManager.SaveToggleInstrumentMusicCache(self.ToggleInstrumentMusic.isOn and 1 or 0)
 
-    if self.CheckTimeId then
-        XScheduleManager.UnSchedule(self.CheckTimeId)
-        self.CheckTimeId = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnCheckPianoKeyPressToSyncScheduleCb, self)
 
     XMVCA.XInstrumentSimulator:SetInstrumentPlayingState(self.InstrumentFurnitureId, false)
 end
@@ -153,6 +148,10 @@ end
 function XUiPianoSimulator:OnDisable()
     XEventManager.DispatchEvent(XEventId.EVENT_GUILD_DORM_UI_SETTING, true)
     XEventManager.DispatchEvent(XEventId.EVENT_GUILD_DORM_UI_SETTING_RIGHT, true)
+end
+
+function XUiPianoSimulator:_OnCheckPianoKeyPressToSyncScheduleCb()
+    self:CheckPianoKeyPressToSync()
 end
 
 return XUiPianoSimulator

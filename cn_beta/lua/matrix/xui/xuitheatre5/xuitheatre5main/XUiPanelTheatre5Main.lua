@@ -39,20 +39,14 @@ end
 
 function XUiPanelTheatre5Main:OnDisable()
     self:StopPVPTimer()
-    if self._TimerNewStoryLine then
-        XScheduleManager.UnSchedule(self._TimerNewStoryLine)
-        self._TimerNewStoryLine = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnRemindNewStoryLineScheduleCb, self)
 
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_PVP_END_IN_MATCH, self.OnPVPEndInMacthEvent, self)
 end
 
 function XUiPanelTheatre5Main:OnRelease()
     self:StopPVPTimer()
-    if self._TimerNewStoryLine then
-        XScheduleManager.UnSchedule(self._TimerNewStoryLine)
-        self._TimerNewStoryLine = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnRemindNewStoryLineScheduleCb, self)
 end
 
 function XUiPanelTheatre5Main:TryPlayAnimationWithMask(animName, cb, wrapMode)
@@ -561,11 +555,8 @@ function XUiPanelTheatre5Main:RemindNewStoryLine()
         self.PanelPopup.gameObject:SetActiveEx(true)
         self.PopupText.text = XUiHelper.ReplaceTextNewLine(tipsNewStoryLine)
         --XLog.Debug("新增共通线提示:" .. tipsNewStoryLine)
-        if not self._TimerNewStoryLine then
-            self._TimerNewStoryLine = XScheduleManager.ScheduleOnce(function()
-                self.PanelPopup.gameObject:SetActiveEx(false)
-                self._TimerNewStoryLine = nil
-            end, 5 * XScheduleManager.SECOND)
+        if not XScheduleManagerPro.HasSchedule(self._OnRemindNewStoryLineScheduleCb, self) then
+            XScheduleManagerPro.ScheduleOnce(self._OnRemindNewStoryLineScheduleCb, self, 5 * XScheduleManagerPro.SECOND)
         end
     end
 end
@@ -595,4 +586,7 @@ function XUiPanelTheatre5Main:BindHelpBtn(...)
 end
 --endregion
 
+function XUiPanelTheatre5Main:_OnRemindNewStoryLineScheduleCb()
+        self.PanelPopup.gameObject:SetActiveEx(false)
+end
 return XUiPanelTheatre5Main

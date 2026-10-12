@@ -154,13 +154,7 @@ function XUiSuperSmashBrosReady:OnEnterFight()
     self.Enemy:OnEnterFight()
     self.Own:OnEnterFight()
     self:PlayAnimation("UiDisable")
-    XScheduleManager.ScheduleOnce(function()
-        XLuaUiManager.SetMask(false)
-        local stageConfig = XDataCenter.FubenManager.GetStageCfg(self.Mode:GetNextStageId())
-        local isAssist = false
-        local challengeCount = 1
-        XDataCenter.FubenManager.EnterFight(stageConfig, nil, isAssist, challengeCount)
-    end, 1000)
+    XScheduleManagerPro.ScheduleOnce(self._OnOnEnterFightScheduleCb, self, 1000)
 
 end
 --==============
@@ -189,4 +183,12 @@ end
 function XUiSuperSmashBrosReady:OnResume(data)
     self.FirstIn = data.FirstIn
     self.IsBattleQuit = data.IsBattleQuit
+end
+
+function XUiSuperSmashBrosReady:_OnOnEnterFightScheduleCb()
+    XLuaUiManager.SetMask(false)
+    local stageConfig = XDataCenter.FubenManager.GetStageCfg(self.Mode:GetNextStageId())
+    local isAssist = false
+    local challengeCount = 1
+    XDataCenter.FubenManager.EnterFight(stageConfig, nil, isAssist, challengeCount)
 end

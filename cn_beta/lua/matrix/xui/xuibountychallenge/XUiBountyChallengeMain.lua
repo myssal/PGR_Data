@@ -27,14 +27,11 @@ end
 function XUiBountyChallengeMain:OnEnable()
     self:Update()
     self:UpdateTime()
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiBountyChallengeMain._OnActivityTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiBountyChallengeMain:OnDisable()
-    XScheduleManager.UnSchedule(self._Timer)
-    self._Timer = nil
+    XScheduleManagerPro.UnSchedule(XUiBountyChallengeMain._OnActivityTimeScheduleCb, self)
 end
 
 function XUiBountyChallengeMain:Update()
@@ -49,6 +46,10 @@ end
 
 function XUiBountyChallengeMain:OnResume()
     self._IsStartPlayed = true
+end
+
+function XUiBountyChallengeMain:_OnActivityTimeScheduleCb()
+    self:UpdateTime()
 end
 
 return XUiBountyChallengeMain

@@ -127,9 +127,7 @@ XLivWarmExtActivityCreator = function()
     --------红点end-----
 
     local function ResetData()
-		if not XTool.IsNumberValid(LivWarmExtTimeId) then
-        	XScheduleManager.UnSchedule(LivWarmExtTimeId)
-		end
+		XScheduleManagerPro.UnSchedule(XLivWarmExtActivityManager._OnTimerScheduleCb, XLivWarmExtActivityManager)
         XLivWarmExtActivityManager.SetActivityEnd()
         _ActivityId = 0 --当前开放活动Id
         LivWarmExtTimeId = 0
@@ -146,11 +144,12 @@ XLivWarmExtActivityCreator = function()
     end
 
     function XLivWarmExtActivityManager.Init()
-        LivWarmExtTimeId = XScheduleManager.ScheduleForever(function()
-            XEventManager.DispatchEvent(XEventId.EVENT_XLIVWARM_EXT_ACTIVITY_TIME)
-        end,CheckLivExtBtnInterval,0)
+        XScheduleManagerPro.ScheduleForever(XLivWarmExtActivityManager._OnTimerScheduleCb, XLivWarmExtActivityManager,CheckLivExtBtnInterval,0)
     end
 
+    function XLivWarmExtActivityManager:_OnTimerScheduleCb()
+            XEventManager.DispatchEvent(XEventId.EVENT_XLIVWARM_EXT_ACTIVITY_TIME)
+    end
     XLivWarmExtActivityManager.Init()
 
     return XLivWarmExtActivityManager

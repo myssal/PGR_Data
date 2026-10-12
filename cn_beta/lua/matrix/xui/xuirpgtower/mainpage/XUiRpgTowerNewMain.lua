@@ -14,7 +14,6 @@ function XUiRpgTowerNewMain:OnAwake()
     XEventManager.AddEventListener(XEventId.EVENT_RPGTOWER_TEAM_LV_REFRESH, self.RefreshTeamLevel, self)
 end
 
-
 function XUiRpgTowerNewMain:InitButtons()
     XUiHelper.RegisterClickEvent(self, self.BtnBack, self.Close)
     XUiHelper.RegisterClickEvent(self, self.BtnMainUi, function() XLuaUiManager.RunMain() end)
@@ -154,9 +153,11 @@ end
 function XUiRpgTowerNewMain:SetTimer()
     self:StopTimer()
     self:SetResetTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-            self:SetResetTime()
-        end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnSetTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiRpgTowerNewMain:_OnSetTimerScheduleCb()
+        self:SetResetTime()
 end
 
 --显示倒计时与处理倒计时完成时事件
@@ -173,10 +174,7 @@ end
 
 --停止界面计时器
 function XUiRpgTowerNewMain:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnSetTimerScheduleCb, self)
 end
 
 --活动周期结束时弹回主界面

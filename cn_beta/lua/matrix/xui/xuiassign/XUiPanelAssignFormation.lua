@@ -77,17 +77,11 @@ function XUiPanelAssignFormation:RefreshForAnim()
 
     self:Refresh()
     self:RefreshMemberEffect(XDataCenter.FubenAssignManager.FormationState.Effect)
-    self.scheduleId = XScheduleManager.ScheduleOnce(function()
-        self:RefreshMemberEffect(XDataCenter.FubenAssignManager.FormationState.Reset)
-        XLuaUiManager.SetMask(false)
-    end, XDataCenter.FubenAssignManager.FomationAnimFinishDelay)
+    XScheduleManagerPro.ScheduleOnce(XUiPanelAssignFormation._OnResetMemberEffectScheduleCb, self, XDataCenter.FubenAssignManager.FomationAnimFinishDelay)
 end
 
 function XUiPanelAssignFormation:RemoveTimer()
-    if self.scheduleId then
-        XScheduleManager.UnSchedule(self.scheduleId)
-        self.scheduleId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiPanelAssignFormation._OnResetMemberEffectScheduleCb, self)
 end
 
 function XUiPanelAssignFormation:OnBtnConfirmClick()
@@ -99,6 +93,11 @@ end
 function XUiPanelAssignFormation:OnBtnCloseClick()
     self:Close()
     CsXGameEventManager.Instance:Notify(XEventId.EVENT_FUBEN_ASSIGN_FORMATION_CONFIRM)
+end
+
+function XUiPanelAssignFormation:_OnResetMemberEffectScheduleCb()
+    self:RefreshMemberEffect(XDataCenter.FubenAssignManager.FormationState.Reset)
+    XLuaUiManager.SetMask(false)
 end
 
 return XUiPanelAssignFormation

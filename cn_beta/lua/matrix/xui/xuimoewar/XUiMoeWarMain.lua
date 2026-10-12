@@ -208,25 +208,24 @@ function XUiMoeWarMain:OnClickBtnVote()
 end
 
 function XUiMoeWarMain:StartTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnStopTimerScheduleCb, self) then
         self:StopTimer()
     end
 
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        if XTool.UObjIsNil(self.TxtTime) then
-            self:StopTimer()
-            return
-        end
-        self:RefreshVoteTime()
-        self:RefreshActivityTime()
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnStopTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiMoeWarMain:_OnStopTimerScheduleCb()
+    if XTool.UObjIsNil(self.TxtTime) then
+        self:StopTimer()
+        return
+    end
+    self:RefreshVoteTime()
+    self:RefreshActivityTime()
 end
 
 function XUiMoeWarMain:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnStopTimerScheduleCb, self)
 end
 
 function XUiMoeWarMain:RefreshVotePanel()

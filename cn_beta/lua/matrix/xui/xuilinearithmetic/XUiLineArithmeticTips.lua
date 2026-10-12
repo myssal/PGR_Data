@@ -6,7 +6,6 @@ local XUiLineArithmeticTips = XLuaUiManager.Register(XLuaUi, "UiLineArithmeticTi
 
 function XUiLineArithmeticTips:OnAwake()
     self:BindExitBtns(self.BtnTanchuangCloseBig)
-    self._Timer = false
 
     ---@type XUiLineArithmeticGameGrid[]
     self._UiGrids = {}
@@ -23,20 +22,19 @@ end
 
 function XUiLineArithmeticTips:OnEnable()
     self.TxtSpeak.text = XUiHelper.GetText("LineArithmeticHelpText")
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:Update()
-        end, 0)
+    if not XScheduleManagerPro.HasSchedule(self._OnEnableScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnEnableScheduleCb, self, 0)
     end
     self._Control:StartHelpGame()
     self:UpdateMap()
 end
 
+function XUiLineArithmeticTips:_OnEnableScheduleCb()
+        self:Update()
+end
+
 function XUiLineArithmeticTips:OnDisable()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
 end
 
 function XUiLineArithmeticTips:Update()

@@ -73,17 +73,12 @@ function XUiNewYearLuckMain:OnClickBtnRule()
 end
 
 function XUiNewYearLuckMain:StartTimer()
-    if self.Timer then
-        self:StopTimer()
-    end
-    self.Timer = XScheduleManager.ScheduleForever(handler(self, self.RefreshTime), XScheduleManager.SECOND, 0)
+    self:StopTimer()
+    XScheduleManagerPro.ScheduleForever(self.RefreshTime, self, XScheduleManagerPro.SECOND, 0)
 end
 
 function XUiNewYearLuckMain:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.RefreshTime, self)
 end
 
 function XUiNewYearLuckMain:RefreshTime()

@@ -299,11 +299,13 @@ XMemorySaveManagerCreator = function ()
             return false
         end
         -- 防止UI界面动画开启被打断
-        XScheduleManager.ScheduleOnce(function()
-            XLuaUiManager.RunMain()
-            XUiManager.TipText("CommonActivityEnd")
-        end, 1000)
+        XScheduleManagerPro.ScheduleOnce(XMemorySaveManager._OnTimerScheduleCb, XMemorySaveManager, 1000)
         return true
+    end
+
+    function XMemorySaveManager:_OnTimerScheduleCb()
+        XLuaUiManager.RunMain()
+        XUiManager.TipText("CommonActivityEnd")
     end
 
     function XMemorySaveManager.EnterUiMain()

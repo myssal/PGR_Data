@@ -335,26 +335,14 @@ function XUiBigWorldPanelQuest:RefreshScore(oldValue, newValue)
 end
 
 function XUiBigWorldPanelQuest:TryStartScoreTimer()
-    if self._ScoreTimer then
+    if XScheduleManagerPro.HasSchedule(XUiBigWorldPanelQuest._OnRefreshScoreScheduleCb, self) then
         return
     end
-    self._ScoreTimer = XScheduleManager.ScheduleForever(function()
-        if #self._StepChangeValue <= 0 then
-            self:StopScoreTimer()
-            return
-        end
-        local value = table.remove(self._StepChangeValue, 1)
-        self:RefreshScore(self._StepLastValue, value)
-        self._StepLastValue = value
-    end, 50)
+    XScheduleManagerPro.ScheduleForever(XUiBigWorldPanelQuest._OnRefreshScoreScheduleCb, self, 50)
 end
 
 function XUiBigWorldPanelQuest:StopScoreTimer()
-    if not self._ScoreTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._ScoreTimer)
-    self._ScoreTimer = nil
+    XScheduleManagerPro.UnSchedule(XUiBigWorldPanelQuest._OnRefreshScoreScheduleCb, self)
 end
 
 function XUiBigWorldPanelQuest:AddStepValueChangeListener(questId, key)
@@ -509,5 +497,15 @@ function XUiBigWorldPanelQuest:IsDisplay()
     return self.CanvasGroup.alpha > 0
 end
 
+
+function XUiBigWorldPanelQuest:_OnRefreshScoreScheduleCb()
+    if #self._StepChangeValue <= 0 then
+        self:StopScoreTimer()
+        return
+    end
+    local value = table.remove(self._StepChangeValue, 1)
+    self:RefreshScore(self._StepLastValue, value)
+    self._StepLastValue = value
+end
 
 return XUiBigWorldPanelQuest

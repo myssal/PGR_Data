@@ -84,21 +84,11 @@ function XUiSlotMachinePanel:AsynWaitTime(second, cb)
         return
     end
     self.WaitCb = cb
-    self.WaitTime = XScheduleManager.ScheduleOnce(function()
-        local tempCb = self.WaitCb
-        self.WaitCb = nil
-        self.WaitTime = nil
-        if tempCb then
-            tempCb()
-        end
-    end, second * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(self._OnAsynWaitTimeScheduleCb, self, second * XScheduleManagerPro.SECOND)
 end
 
 function XUiSlotMachinePanel:KillWaitTime()
-    if self.WaitTime then
-        XScheduleManager.UnSchedule(self.WaitTime)
-        self.WaitTime = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnAsynWaitTimeScheduleCb, self)
     local tempCb = self.WaitCb
     self.WaitCb = nil
     if tempCb then
@@ -146,6 +136,14 @@ end
 function XUiSlotMachinePanel:SetShowCardSound(isPrix)
     self.SoundRootPrix.gameObject:SetActiveEx(isPrix)
     self.SoundRootNormal.gameObject:SetActiveEx(not isPrix)
+end
+
+function XUiSlotMachinePanel:_OnAsynWaitTimeScheduleCb()
+    local tempCb = self.WaitCb
+    self.WaitCb = nil
+    if tempCb then
+        tempCb()
+    end
 end
 
 return XUiSlotMachinePanel

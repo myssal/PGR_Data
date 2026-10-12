@@ -44,16 +44,18 @@ end
 
 --自动滑动进度奖励，把玩家的积分对应的下一档奖励，放在中间位置
 function XUiPanelFetters:AutoMoveCourseScroll()
-    XScheduleManager.ScheduleOnce(function()
-        local posX = 0
-        for _, gridReward in ipairs(self.GridRewardList) do
-            posX = gridReward.Transform.localPosition.x
-            if self.InviteManager:GetAllPlayerTotalPoint() < gridReward:GetNeedPoint() then
-                break
-            end
+    XScheduleManagerPro.ScheduleOnce(self._OnAutoMoveCourseScrollScheduleCb, self, 0)
+end
+
+function XUiPanelFetters:_OnAutoMoveCourseScrollScheduleCb()
+    local posX = 0
+    for _, gridReward in ipairs(self.GridRewardList) do
+        posX = gridReward.Transform.localPosition.x
+        if self.InviteManager:GetAllPlayerTotalPoint() < gridReward:GetNeedPoint() then
+            break
         end
-        self.PanelCourseContainer.transform.localPosition = CS.UnityEngine.Vector3(-posX, self.PanelCourseContainerPoxY, 0)
-    end, 0)
+    end
+    self.PanelCourseContainer.transform.localPosition = CS.UnityEngine.Vector3(-posX, self.PanelCourseContainerPoxY, 0)
 end
 
 function XUiPanelFetters:RefreshByEvent()
@@ -194,5 +196,7 @@ function XUiPanelFetters:OnRewardListDrag(eventData)
     self.SpecialGridReward:Refresh(XNewRegressionConfigs.GetInviteRewardData(lastSpecialRewardId))
     self.TxtSpecialPoint.text = XNewRegressionConfigs.GetInviteNeedPoint(lastSpecialRewardId)
 end
+
+
 
 return XUiPanelFetters

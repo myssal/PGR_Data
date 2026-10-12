@@ -10,8 +10,6 @@ local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
 local XUiGuildWarSupport = XLuaUiManager.Register(XLuaUi, "UiGuildWarSupport")
 
 function XUiGuildWarSupport:Ctor()
-    self._Timer = false
-    self._TimerRefresh = false
     self.DynamicTableLog = false
 end
 
@@ -161,27 +159,25 @@ function XUiGuildWarSupport:UpdateTimeSupply()
 end
 
 function XUiGuildWarSupport:StartTimer()
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateTimeSupply()
-        end, 1)
+    if not XScheduleManagerPro.HasSchedule(self._OnStartTimerScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, 1)
     end
-    if not self._TimerRefresh then
-        self._TimerRefresh = XScheduleManager.ScheduleForever(function()
-            XDataCenter.GuildWarManager.RequestAssistantDetail()
-        end, INTERVAL_REFRESH * XScheduleManager.SECOND)
+    if not XScheduleManagerPro.HasSchedule(self._OnStartTimerScheduleCb2, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb2, self, INTERVAL_REFRESH * XScheduleManagerPro.SECOND)
     end
 end
 
+function XUiGuildWarSupport:_OnStartTimerScheduleCb2()
+    XDataCenter.GuildWarManager.RequestAssistantDetail()
+end
+
+function XUiGuildWarSupport:_OnStartTimerScheduleCb()
+    self:UpdateTimeSupply()
+end
+
 function XUiGuildWarSupport:StopTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
-    if self._TimerRefresh then
-        XScheduleManager.UnSchedule(self._TimerRefresh)
-        self._TimerRefresh = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb2, self)
 end
 
 function XUiGuildWarSupport:UpdateBtnDeploy(supplyTime, assistantSupply)

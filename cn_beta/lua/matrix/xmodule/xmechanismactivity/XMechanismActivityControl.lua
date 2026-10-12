@@ -22,7 +22,7 @@ end
 function XMechanismActivityControl:StartTimeUpdater()
     self:StopTimeUpdater()
     self:OnTimeUpdate()
-    self._TimerUpdaterId = XScheduleManager.ScheduleForever(handler(self, self.OnTimeUpdate), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self.OnTimeUpdate, self, XScheduleManagerPro.SECOND)
 end
 
 function XMechanismActivityControl:OnTimeUpdate()
@@ -35,10 +35,7 @@ function XMechanismActivityControl:OnTimeUpdate()
 end
 
 function XMechanismActivityControl:StopTimeUpdater()
-    if self._TimerUpdaterId then
-        XScheduleManager.UnSchedule(self._TimerUpdaterId)
-        self._TimerUpdaterId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.OnTimeUpdate, self)
 end
 --endregion
 

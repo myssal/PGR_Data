@@ -333,23 +333,25 @@
     {
         "Key": "MainShowCardIds",
         "Values": [
-            30005,
             10004,
+            10003,
+            30005,
             30006
         ]
     },
     {
         "Key": "MainShowAnimas",
         "Values": [
-            "Talk01",
             "Stand01",
+            "Stand02",
+            "Talk01",
             "StandReward01"
         ]
     },
     {
         "Key": "PlayerHurtPopupRandomRangeX",
         "Values": [
-            120
+            100
         ]
     },
     {
@@ -361,7 +363,7 @@
     {
         "Key": "EnemyHurtPopupRandomRangeX",
         "Values": [
-            120
+            100
         ]
     },
     {
@@ -448,20 +450,14 @@
     {
         "Key": "PunishaarMaxConcurrentDamagePop",
         "Values": [
-            20
+            15
         ]
     },
     {
         "Key": "PunishaarMaxConcurrentEffect",
         "Values": [
-            10
+            8
         ]
-    },
-    {
-        "Key": "DamageTextColor"
-    },
-    {
-        "Key": "DamageTextOutlineColor"
     },
     {
         "Key": "DiscardMasterCardSuccess"
@@ -531,7 +527,37 @@
         "Key": "BuyTips",
         "Values": [
             "将花费{0}金币",
-            "<color=#FF0000>将花费{0}金币</color>"
+            "<o=d01717|1.5>将花费{0}金币</o>"
+        ]
+    },
+    {
+        "Key": "MainLeftTimeText",
+        "Values": [
+            "剩余时间：{0}"
+        ]
+    },
+    {
+        "Key": "CDAccIntervalTick",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "BallEffectStayAnimTime",
+        "Values": [
+            0.15
+        ]
+    },
+    {
+        "Key": "BallEffectFlyAnimTime",
+        "Values": [
+            0.45
+        ]
+    },
+    {
+        "Key": "PunishaarDragMainCardScale",
+        "Values": [
+            1
         ]
     }
 ]

@@ -341,11 +341,8 @@ end
 
 ---停止定时器
 function XTimelineSwitchProxy:StopSwitchTimer()
-    if self._SwitchTimerId then
-        XScheduleManager.UnSchedule(self._SwitchTimerId)
-        self._SwitchTimerId = nil
+        XScheduleManagerPro.UnSchedule(self._OnResetSwitchTickScheduleCb, self)
         XLog.Debug('[丽芙场景]定时器已停止')
-    end
 end
 
 ---开启定时器
@@ -353,21 +350,7 @@ function XTimelineSwitchProxy:StartSwitchTimer()
     self:StopSwitchTimer()
     self:ResetSwitchTick()
 
-    self._SwitchTimerId = XScheduleManager.ScheduleForever(function()
-        self._SwitchTick = self._SwitchTick + 1
-
-        if self._SwitchTick % 10 == 0 then
-            XLog.Debug('[丽芙场景]定时器计时：' .. tostring(self._SwitchTick) .. '/' .. tostring(self._AutoSwitchInterval))
-        end
-
-        if self._SwitchTick >= self._AutoSwitchInterval then
-            -- 重置时间
-            self:ResetSwitchTick()
-
-            -- 执行自动切换
-            self:_OnAutoSwitch()
-        end
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnResetSwitchTickScheduleCb, self, XScheduleManagerPro.SECOND)
 
     XLog.Debug('[丽芙场景]定时器已开启，间隔：' .. tostring(self._AutoSwitchInterval) .. '秒')
 end
@@ -975,5 +958,21 @@ function XTimelineSwitchProxy:GetInverseDirection(direction)
 end
 
 --endregion
+
+function XTimelineSwitchProxy:_OnResetSwitchTickScheduleCb()
+    self._SwitchTick = self._SwitchTick + 1
+
+    if self._SwitchTick % 10 == 0 then
+        XLog.Debug('[丽芙场景]定时器计时：' .. tostring(self._SwitchTick) .. '/' .. tostring(self._AutoSwitchInterval))
+    end
+
+    if self._SwitchTick >= self._AutoSwitchInterval then
+        -- 重置时间
+        self:ResetSwitchTick()
+
+        -- 执行自动切换
+        self:_OnAutoSwitch()
+    end
+end
 
 return XTimelineSwitchProxy

@@ -25,14 +25,8 @@ end
 
 function XUiCharacterTowerPhotograph:OnEnable()
     -- 重启计时器
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
-    
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:Update()
-    end, 0)
+    XScheduleManagerPro.UnSchedule(XUiCharacterTowerPhotograph._OnUpdateScheduleCb, self)
+    XScheduleManagerPro.ScheduleForeverEx(XUiCharacterTowerPhotograph._OnUpdateScheduleCb, self, 0)
 
     if self.SignBoardPlayer then
         self.SignBoardPlayer:OnEnable()
@@ -56,10 +50,7 @@ function XUiCharacterTowerPhotograph:Update()
 end
 
 function XUiCharacterTowerPhotograph:OnDisable()
-    if self.Timer ~= nil then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiCharacterTowerPhotograph._OnUpdateScheduleCb, self)
 
     if self.SignBoardPlayer then
         self.SignBoardPlayer:OnDisable()
@@ -69,10 +60,7 @@ function XUiCharacterTowerPhotograph:OnDisable()
 end
 
 function XUiCharacterTowerPhotograph:OnDestroy()
-    if self.Timer ~= nil then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiCharacterTowerPhotograph._OnUpdateScheduleCb, self)
 
     if self.SignBoardPlayer then
         self.SignBoardPlayer:OnDestroy()
@@ -240,6 +228,10 @@ end
 
 function XUiCharacterTowerPhotograph:OnBtnAgainClick()
     self:Replay()
+end
+
+function XUiCharacterTowerPhotograph:_OnUpdateScheduleCb()
+    self:Update()
 end
 
 return XUiCharacterTowerPhotograph

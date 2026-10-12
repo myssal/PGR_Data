@@ -31,11 +31,12 @@ function XUiRestaurantRadio:OnNotify(evt, ...)
 end
 
 function XUiRestaurantRadio:OnRelease()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnInitViewScheduleCb, self)
     self.Super.OnRelease(self)
+end
+
+function XUiRestaurantRadio:_OnInitViewScheduleCb()
+        self:Close()
 end
 
 function XUiRestaurantRadio:Close()
@@ -49,9 +50,7 @@ end
 function XUiRestaurantRadio:InitView()
     self.TxtDesc.text = self.TxtTip
     self.PanelText.gameObject:SetActiveEx(true)
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        self:Close()
-    end, TIP_MSG_SHOW_TIME)
+    XScheduleManagerPro.ScheduleOnce(self._OnInitViewScheduleCb, self, TIP_MSG_SHOW_TIME)
 end
 
 --- 监听界面销毁事件

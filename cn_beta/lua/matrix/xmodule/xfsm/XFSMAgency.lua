@@ -3,7 +3,6 @@
 local XFSMAgency = XClass(XAgency, "XFSMAgency")
 function XFSMAgency:OnInit()
     --初始化一些变量
-    self.AutoUpdateTimer = nil  -- 自动Update的计时器，自动状态机通过计时器刷新
 
     ---@type table<XUpdatableFSM, any>
     self.ActiveFSMDic = {} -- 当前存活中的FSM
@@ -112,18 +111,17 @@ end
 function XFSMAgency:CheckNeedAutoUpdate()
     if XTool.IsNumberValid(self.IsAutoPlayCount) then
         -- 需要开启update
-        if not self.AutoUpdateTimer then
-            self.AutoUpdateTimer = XScheduleManager.ScheduleForever(function()
-                self:UpdateFSM()
-            end, 0, 0)
+        if not XScheduleManagerPro.HasSchedule(self._OnCheckNeedAutoUpdateScheduleCb, self) then
+            XScheduleManagerPro.ScheduleForever(self._OnCheckNeedAutoUpdateScheduleCb, self, 0, 0)
         end
     else
         -- 需要停止update
-        if self.AutoUpdateTimer then
-            XScheduleManager.UnSchedule(self.AutoUpdateTimer)
-            self.AutoUpdateTimer = nil
-        end
+        XScheduleManagerPro.UnSchedule(self._OnCheckNeedAutoUpdateScheduleCb, self)
     end
+end
+
+function XFSMAgency:_OnCheckNeedAutoUpdateScheduleCb()
+        self:UpdateFSM()
 end
 --endregion AutoMode start
 ---@param xFSM XUpdatableFSM

@@ -34,7 +34,6 @@ end
 function XUiRestaurantPopupChat:InitCb()
     self.BtnClose.CallBack = function() self:OnBtnCloseClick() end
     
-    self.OnChatRefreshCb = handler(self, self.OnChatRefresh)
 end
 
 function XUiRestaurantPopupChat:InitView()
@@ -89,19 +88,14 @@ function XUiRestaurantPopupChat:OnChatRefresh()
 end
 
 function XUiRestaurantPopupChat:StartTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self.OnChatRefresh, self) then
         self:StopTimer()
     end
-    self.Timer = XScheduleManager.ScheduleOnce(self.OnChatRefreshCb, self:GetDuration())
+    XScheduleManagerPro.ScheduleOnce(self.OnChatRefresh, self, self:GetDuration())
 end
 
 function XUiRestaurantPopupChat:StopTimer()
-    if not self.Timer then
-        return
-    end
-    
-    XScheduleManager.UnSchedule(self.Timer)
-    self.Timer = nil
+    XScheduleManagerPro.UnSchedule(self.OnChatRefresh, self)
 end
 
 function XUiRestaurantPopupChat:GetDuration()

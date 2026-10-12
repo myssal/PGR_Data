@@ -35,4 +35,12 @@ function XUiActivityBossSingleRoot:OnResume()
     self._IsResumeRun = true
 end
 
+return XUiActivityBossSingleRootngleRoot:OnResume()
+    self._IsResumeRun = true
+end
+
+function XUiActivityBossSingleRoot:OnDestroy()
+    XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.FubenActivitySingleBoss)
+end
+
 return XUiActivityBossSingleRoot

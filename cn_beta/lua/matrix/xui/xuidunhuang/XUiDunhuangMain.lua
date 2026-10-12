@@ -7,8 +7,6 @@ local XUiDunhuangRewardGrid = require("XUi/XUiDunhuang/XUiDunhuangRewardGrid")
 local XUiDunhuangMain = XLuaUiManager.Register(XLuaUi, "UiDunhuangMain")
 
 function XUiDunhuangMain:Ctor()
-    self._Timer = false
-
     self.UiPaintings = {}
     self._UiReward = {}
 
@@ -59,18 +57,13 @@ function XUiDunhuangMain:OnDisable()
 end
 
 function XUiDunhuangMain:StartTimer()
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateTime()
-        end, XScheduleManager.SECOND)
+    if not XScheduleManagerPro.HasSchedule(XUiDunhuangMain._OnUpdateTimeScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(XUiDunhuangMain._OnUpdateTimeScheduleCb, self, XScheduleManagerPro.SECOND)
     end
 end
 
 function XUiDunhuangMain:StopTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(XUiDunhuangMain._OnUpdateTimeScheduleCb, self)
 end
 
 function XUiDunhuangMain:UpdateTime(notKickOut)
@@ -178,6 +171,10 @@ function XUiDunhuangMain:UpdateRedDot()
 
     local isAfford = self._Control:IsPaintingAfford()
     self.RedAfford.gameObject:SetActiveEx(isAfford)
+end
+
+function XUiDunhuangMain:_OnUpdateTimeScheduleCb()
+    self:UpdateTime()
 end
 
 return XUiDunhuangMain

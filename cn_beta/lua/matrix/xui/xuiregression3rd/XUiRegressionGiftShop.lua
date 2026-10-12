@@ -18,18 +18,13 @@ end
 function XUiRegressionGiftShop:OnEnable()
     self.Super.OnEnable(self)
     self:UpdateTime()
-    if not self.Timer then
-        self.Timer = XScheduleManager.ScheduleForever(function() 
-            self:UpdateTime()
-        end, XScheduleManager.SECOND * 60)
+    if not XScheduleManagerPro.HasSchedule(self._OnUpdateTimeScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnUpdateTimeScheduleCb, self, XScheduleManagerPro.SECOND * 60)
     end
 end
 
 function XUiRegressionGiftShop:OnDisable()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateTimeScheduleCb, self)
 end
 
 function XUiRegressionGiftShop:InitCb()
@@ -102,3 +97,7 @@ end
 function XUiRegressionGiftShop:UpdateTime()
     self.TxtTime.text = self.ViewModel:GetLeftTimeDescWithoutPrefix("236778", XUiHelper.TimeFormatType.ACTIVITY)
 end 
+
+function XUiRegressionGiftShop:_OnUpdateTimeScheduleCb()
+    self:UpdateTime()
+end

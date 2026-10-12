@@ -17,12 +17,10 @@ local XUiDlcHuntPlayerRoom = XLuaUiManager.Register(XLuaUi, "UiDlcHuntPlayerRoom
 function XUiDlcHuntPlayerRoom:Ctor()
     ---@type XUiDlcHuntGridPlayerRoomChar[]
     self.GridList = {}
-    self._Timer = false
     self._IsShowReconnect = nil
 
     self.RoomKickCountDownTime = XDlcHuntConfigs.GetRoomKickCountDownTime()
     self.RoomKickCountDownShowTime = XDlcHuntConfigs.GetRoomKickCountDownShowTime()
-    self._TimerCheckAllReadyKickOutLeader = false
     self._CurCountDownGrid = false
 end
 
@@ -88,14 +86,11 @@ function XUiDlcHuntPlayerRoom:OnEnable()
     self:RefreshAbilityLimit()
     self:HandleTutorial()
     self:Tick()
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        self:Tick()
-    end, 1)
+    XScheduleManagerPro.ScheduleForever(self.Tick, self, 1)
 end
 
 function XUiDlcHuntPlayerRoom:OnDisable()
-    XScheduleManager.UnSchedule(self._Timer)
-    self._Timer = false
+    XScheduleManagerPro.UnSchedule(self.Tick, self)
 end
 
 function XUiDlcHuntPlayerRoom:InitCamera()
@@ -484,7 +479,7 @@ end
 
 ----------------------- 倒计时 -----------------------
 function XUiDlcHuntPlayerRoom:CheckLeaderCountDown()
-    if self._TimerCheckAllReadyKickOutLeader then
+    if XScheduleManagerPro.HasSchedule(self.UpdateTimer, self) then
         if not self:CheckListFullAndAllReady() then
             self:StopTimer()
         end
@@ -497,7 +492,7 @@ end
 
 function XUiDlcHuntPlayerRoom:StartTimer()
     self.StartTime = XTime.GetServerNowTimestamp()
-    self._TimerCheckAllReadyKickOutLeader = XScheduleManager.ScheduleForever(handler(self, self.UpdateTimer), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self.UpdateTimer, self, XScheduleManagerPro.SECOND)
     self._CurCountDownGrid = self:GetLeaderGrid()
     self:UpdateTimer()
 end
@@ -507,10 +502,7 @@ function XUiDlcHuntPlayerRoom:StopTimer()
         self._CurCountDownGrid:ShowCountDownPanel(false)
         self._CurCountDownGrid = nil
     end
-    if self._TimerCheckAllReadyKickOutLeader then
-        XScheduleManager.UnSchedule(self._TimerCheckAllReadyKickOutLeader)
-        self._TimerCheckAllReadyKickOutLeader = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.UpdateTimer, self)
 end
 
 function XUiDlcHuntPlayerRoom:UpdateTimer()

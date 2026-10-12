@@ -7,24 +7,18 @@ local XTempleConfigControl = require("XModule/XTemple/XTempleConfigControl")
 local XTempleUiControl = XClass(XTempleConfigControl, "XTempleUiControl")
 
 function XTempleUiControl:Ctor()
-    self._ExpireTimer = false
 
     self._StageId = false
 end
 
 function XTempleUiControl:OnInit()
-    if not self._ExpireTimer then
-        self._ExpireTimer = XScheduleManager.ScheduleForever(function()
-            self:CheckExpire()
-        end, XScheduleManager.SECOND)
+    if not XScheduleManagerPro.HasSchedule(self._OnCheckExpireScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnCheckExpireScheduleCb, self, XScheduleManagerPro.SECOND)
     end
 end
 
 function XTempleUiControl:OnRelease()
-    if self._ExpireTimer then
-        XScheduleManager.UnSchedule(self._ExpireTimer)
-        self._ExpireTimer = false
-    end
+        XScheduleManagerPro.UnSchedule(self._OnCheckExpireScheduleCb, self)
 end
 
 function XTempleUiControl:CheckExpire()
@@ -491,6 +485,10 @@ end
 
 function XTempleUiControl:GetChapterJustUnlockKey(chapterId)
     return XMVCA.XTemple:GetChapterJustUnlockKey(chapterId)
+end
+
+function XTempleUiControl:_OnCheckExpireScheduleCb()
+    self:CheckExpire()
 end
 
 return XTempleUiControl

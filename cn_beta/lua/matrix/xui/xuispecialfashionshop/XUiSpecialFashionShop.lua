@@ -20,7 +20,6 @@ function XUiSpecialFashionShop:OnAwake()
     self.SelectTag = nil
 
     self.TimerFunctions = {}
-    self.ScheduleId = nil
     self:InitNewFashionFilterShopList()
     self:AddListener()
     self:InitDynamicTable()
@@ -365,13 +364,8 @@ end
 
 ------------------------------------------------------- 定时器start -------------------------------------------------------
 function XUiSpecialFashionShop:StartTimer()
-    if self.ScheduleId then
-        return
-    end
 
-    self.ScheduleId = XScheduleManager.ScheduleForever(function()
-        self:UpdateTimer()
-    end, 1000)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateTimerScheduleCb, self, 1000)
 end
 
 function XUiSpecialFashionShop:UpdateTimer()
@@ -393,9 +387,10 @@ function XUiSpecialFashionShop:RemoveTimerFun(id)
 end
 
 function XUiSpecialFashionShop:DestroyTimer()
-    if self.ScheduleId then
-        XScheduleManager.UnSchedule(self.ScheduleId)
-        self.ScheduleId = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateTimerScheduleCb, self)
 end
 ------------------------------------------------------- 定时器end -------------------------------------------------------
+
+function XUiSpecialFashionShop:_OnUpdateTimerScheduleCb()
+    self:UpdateTimer()
+end

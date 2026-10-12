@@ -16,23 +16,17 @@ local ServerDataReadyMaxCount = 1 --增加不同系统类型抽卡时记得酌�
 local DEFAULT_UP_IMG = CS.XGame.ClientConfig:GetString("DrawDefaultUpImg")
 local GUIDE_SHOW_GROUP = CS.XGame.ClientConfig:GetInt("GuideShowGroup")
 
-function XUiNewDrawMain:OnStart(ruleType, groupId, defaultDrawId, groupIdPool, optionKey)
-    self.RuleType = ruleType
-    self.DefaultGroupId = groupId
+function XUiNewDrawMain:OnStart(optionKey)
     self.DefaultOptionKey = optionKey or ""
-    self.CurrentOptionKey = ""
-    --2.7支持多卡池查找
-    if groupIdPool and type(groupIdPool) == 'string' then
-        --切割字符串
-        local idStrs = string.Split(groupIdPool, '|')
-        self.GroupIdPool = {}
-        for i, v in ipairs(idStrs) do
-            table.insert(self.GroupIdPool, assert(tonumber(v)))
-        end
+    self.DefaultGroupId = XDataCenter.DrawManager._ParseOptionKey(self.DefaultOptionKey)
+    if not XTool.IsNumberValid(self.DefaultGroupId) then
+        self.DefaultGroupId = nil
     end
+    self.CurrentOptionKey = ""
 
     if XLuaUiManager.IsUiShow("UiGuide") then
         self.DefaultGroupId = GUIDE_SHOW_GROUP
+        self.DefaultOptionKey = XDataCenter.DrawManager._MakeOptionKey(GUIDE_SHOW_GROUP, 0)
     end
 
     ---@type XUiComponent.XUiButton[]
@@ -43,16 +37,12 @@ function XUiNewDrawMain:OnStart(ruleType, groupId, defaultDrawId, groupIdPool, o
     ---@type XUiNewGridDrawBanner
     self.CurBanner = nil
     self.BtnIndex = 0
-    self.DefaultDrawId = defaultDrawId
     self.IsFirstIn = true
     self.CurrentSelectTemplateId = false
     ---@type XUiDrawPanelLbItem
     self.CurPanelLbItem = XUiDrawPanelLbItem.New(self.PanelLbItem, self)
     ---@type XUiDrawPanelCanLiverJourneyReward
     self.CurPanelCanLiverJourneyReward = XUiDrawPanelCanLiverJourneyReward.New(self.PanelCanLiverReward, self)
-
-    --2.7处理多卡池情况
-    self:FindDrawGroupId()
 
     self:InitScene()
     self:InitAssetPanel()
@@ -84,19 +74,12 @@ function XUiNewDrawMain:OnDestroy()
     self:RemoveEventListener()
     self:MarkAllNewTag()
     XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.DRAW, false)
-    if self.AfterRefreshPowerTagTimeId then
-        XScheduleManager.UnSchedule(self.AfterRefreshPowerTagTimeId)
-        self.AfterRefreshPowerTagTimeId = nil
-    end
+    self:_ReleaseAllPowerTagTrackHandel()
 end
 
 function XUiNewDrawMain:Refresh()
-    if XTool.IsNumberValid(self.DefaultDrawId) then
-        self:RefreshDefaultDraw()
-    else
-        self:OnSelectUp(self.DrawInfo.Id)
-        self:RefreshScene()
-    end
+    self:OnSelectUp(self.DrawInfo.Id)
+    self:RefreshScene()
     self:RefreshWelfare()
     self:RefreshPanelTwoForOne()
     self:_RefreshCharacterDrawTarget()
@@ -125,20 +108,20 @@ function XUiNewDrawMain:RefreshNormalUiShow()
 end
 -- region 鬼泣五相关
 function XUiNewDrawMain:RefreshPanelTwoForOne()
-    local isDevilMayGroupId = XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.GroupId)
-    self.PanelTwoForOne.gameObject:SetActiveEx(isDevilMayGroupId)
+    local isLinkageGroupId = XDataCenter.DrawManager:CheckIsLinkageGroupId(self.GroupId)
+    self.PanelTwoForOne.gameObject:SetActiveEx(isLinkageGroupId)
 
-    local canReceiveCount = XDataCenter.DrawManager:CheckIsCanReceiveCharacterByDrawId(self.DrawInfo.Id)
+    local canReceiveCount = XDataCenter.DrawManager:CheckIsCanReceiveLinkageRole(self.DrawInfo.Id)
     self.PanelTwoForOne:GetObject("BtnReceive").gameObject:SetActiveEx(XTool.IsNumberValid(canReceiveCount))
 
-    local leftCount = XDataCenter.DrawManager:GetLeftCanGetDevilCharacterCount(self.DrawInfo.Id)
+    local leftCount = XDataCenter.DrawManager:GetLeftCanGetLinkageCharacterCount(self.DrawInfo.Id)
     local textComponent = self.PanelTwoForOne:GetObject("TxtNum")
     textComponent.text = leftCount or 0
     textComponent.color = (XTool.IsNumberValid(leftCount)) and CS.UnityEngine.Color.white or CS.UnityEngine.Color.red
 end
 
 function XUiNewDrawMain:OnDevilMayCryBtnReceiveClick()
-    local lfc, needRequestTaskList = XDataCenter.DrawManager:CheckIsCanReceiveCharacterByDrawId(self.DrawInfo.Id)
+    local _, needRequestTaskList = XDataCenter.DrawManager:CheckIsCanReceiveLinkageRole(self.DrawInfo.Id)
     if XTool.IsTableEmpty(needRequestTaskList) then
         return
     end
@@ -152,30 +135,6 @@ end
 function XUiNewDrawMain:UpdateDrawControl()
     if self.DrawControl then
         self.DrawControl:Update(self.DrawInfo, self.GroupId)
-    end
-end
-
---2.7针对多卡池，选定一个
-function XUiNewDrawMain:FindDrawGroupId()
-    if not XTool.IsTableEmpty(self.GroupIdPool) then
-        local drawId = self.DefaultDrawId
-        local exist=false
-        for i, v in pairs(self.GroupIdPool) do --遍历每个卡池
-            local infoList = XDataCenter.DrawManager.GetDrawGroupInfoByGroupId(v)
-            if not XTool.IsTableEmpty(infoList) and not XTool.IsTableEmpty(infoList.OptionalDrawIdList) then
-                if infoList.EndTime > 0 and infoList.EndTime - XTime.GetServerNowTimestamp()<=0 then
-                    break
-                end
-                for _, info in pairs(infoList.OptionalDrawIdList) do
-                    if info == drawId and not exist then
-                        exist = true
-                        self.DefaultGroupId=v
-                        break
-                    end
-                end
-            end
-            if exist then break end
-        end
     end
 end
 
@@ -224,41 +183,6 @@ function XUiNewDrawMain:_PreloadAllGroupDrawInfos(cb)
     end
 end
 
-function XUiNewDrawMain:RefreshDefaultDraw()
-    if not XTool.IsNumberValid(self.DefaultDrawId) then
-        return
-    end
-
-    local drawId = self.DefaultDrawId
-    self.DefaultDrawId = nil
-
-    local infoList
-    if not string.IsNilOrEmpty(self.CurrentOptionKey) then
-        infoList = XDataCenter.DrawManager.GetDrawInfoListByOptionKey(self.CurrentOptionKey)
-    end
-    if XTool.IsTableEmpty(infoList) then
-        infoList = XDataCenter.DrawManager.GetDrawInfoListByGroupId(self.GroupId)
-    end
-
-    local exist = false
-    for _, info in pairs(infoList) do
-        if info.Id == drawId then
-            exist = true
-            break
-        end
-    end
-
-    -- 跳转携带的 DrawId 只负责定位并刷新默认展示，不在这里保存狙击目标
-    if exist then
-        self:OnSelectUp(drawId)
-        self:RefreshScene()
-    else
-        XUiManager.TipText("EquipGuideDrawNoWeaponTip")
-        self:OnSelectUp(self.DrawInfo.Id)
-        self:RefreshScene()
-    end
-end
-
 function XUiNewDrawMain:_CheckServerDataReady()
     --增加不同系统类型抽卡时记得检查“ServerDataReadyMaxCount”是否相应的增加
     self.readyCount = self.readyCount + 1
@@ -285,7 +209,8 @@ function XUiNewDrawMain:_InitDrawTabs()
     ---@type XUiComponent.XUiButton[]
     self.AllBtnList = {} -- 保存所有标签按钮物体，包括一级、二级标签按钮物体
 
-    self.SkipIndexDic = {} -- DrawGroupId对应ButtonGroup的索引
+    self.GroupIndexDic = {} -- DrawGroupId对应原始Option按钮的索引
+    self.OptionIndexDic = {} -- OptionKey对应ButtonGroup的索引
 
     self:_CreateDrawTabData(self.NormalGroupInfoList, XNormalDrawGroupBtnEntity) --普通抽卡
     self:_SortDrawTabData()
@@ -345,36 +270,13 @@ function XUiNewDrawMain:_SortDrawTabData()
     end)
 end
 
---- 从跳转携带的默认 DrawId 反推默认 OptionKey，兼容没有显式传 optionKey 的旧跳转配置
-function XUiNewDrawMain:_TryInitDefaultOptionKeyByDrawId()
-    if not string.IsNilOrEmpty(self.DefaultOptionKey) then
-        return
-    end
-    if not XTool.IsNumberValid(self.DefaultDrawId) then
-        return
-    end
-
-    local drawInfo = XDataCenter.DrawManager.GetDrawInfo(self.DefaultDrawId)
-    if not drawInfo or not XTool.IsNumberValid(drawInfo.GroupSubType) then
-        return
-    end
-
-    local groupId = self.DefaultGroupId
-    if not XTool.IsNumberValid(groupId) then
-        groupId = drawInfo.GroupId
-        self.DefaultGroupId = groupId
-    elseif XTool.IsNumberValid(drawInfo.GroupId) and drawInfo.GroupId ~= groupId then
-        return
-    end
-    if not XTool.IsNumberValid(groupId) then
-        return
-    end
-
-    self.DefaultOptionKey = XDataCenter.DrawManager._MakeOptionKey(groupId, drawInfo.GroupSubType)
-end
-
 --- 初始化按钮组，选择默认标签
 function XUiNewDrawMain:_InitButtonGroup()
+    -- 每个页签一个跟踪对象（一个跟踪对象只允许绑定一个回调）。
+    -- 重复初始化时先归还上一轮的跟踪对象，其名下尚未触发的延迟刷新一并取消
+    self:_ReleaseAllPowerTagTrackHandel()
+    ---@type XScheduleProTrackHandelObject[]
+    self._PowerTagTrackHandelList = self._PowerTagTrackHandelList or {}
     self:_BtnInit(self.MainBtnList)
     self:_BtnInit(self.SubBtnList)
 
@@ -385,8 +287,6 @@ function XUiNewDrawMain:_InitButtonGroup()
         end
     end
 
-    self:_TryInitDefaultOptionKeyByDrawId()
-
     local curBtnIndex = 0
     local tmpGroupId = 0
 
@@ -394,10 +294,10 @@ function XUiNewDrawMain:_InitButtonGroup()
         tmpGroupId = self.DefaultGroupId
         -- 优先用 OptionKey 查找
         if not string.IsNilOrEmpty(self.DefaultOptionKey) then
-            curBtnIndex = self:GetBtnIndexByOptionKey(self.RuleType, self.DefaultOptionKey)
+            curBtnIndex = self:GetBtnIndexByOptionKey(self.DefaultOptionKey)
         end
         if not curBtnIndex or curBtnIndex == 0 then
-            curBtnIndex = self:GetBtnIndexByGroupId(self.RuleType, tmpGroupId)
+            curBtnIndex = self:GetBtnIndexByGroupId(tmpGroupId)
         end
         self.DefaultGroupId = nil
         self.DefaultOptionKey = ""
@@ -411,26 +311,25 @@ function XUiNewDrawMain:_InitButtonGroup()
             -- 优先用上次选中的 OptionKey
             local lastOptionKey = XDataCenter.DrawManager.GetLostSelectOptionKey()
             if not string.IsNilOrEmpty(lastOptionKey) then
-                curBtnIndex = self:GetBtnIndexByOptionKey(XDrawConfigs.RuleType.Normal, lastOptionKey)
+                curBtnIndex = self:GetBtnIndexByOptionKey(lastOptionKey)
             end
             if not curBtnIndex or curBtnIndex == 0 then
-                curBtnIndex = self:GetBtnIndexByGroupId(XDrawConfigs.RuleType.Normal, tmpGroupId)
+                curBtnIndex = self:GetBtnIndexByGroupId(tmpGroupId)
             end
         else
             tmpGroupId = XDataCenter.DrawManager.GetLostSelectDrawGroupId()
-            local tmptype = XDataCenter.DrawManager.GetLostSelectDrawType()
             -- 优先用上次选中的 OptionKey
             local lastOptionKey = XDataCenter.DrawManager.GetLostSelectOptionKey()
             if not string.IsNilOrEmpty(lastOptionKey) then
-                curBtnIndex = self:GetBtnIndexByOptionKey(tmptype, lastOptionKey)
+                curBtnIndex = self:GetBtnIndexByOptionKey(lastOptionKey)
             end
             if not curBtnIndex or curBtnIndex == 0 then
-                curBtnIndex = self:GetBtnIndexByGroupId(tmptype, tmpGroupId)
+                curBtnIndex = self:GetBtnIndexByGroupId(tmpGroupId)
             end
         end
         if not curBtnIndex then
             local groupId = XDataCenter.DrawManager.GetGroupIdWithMaxOrder()
-            curBtnIndex = self:GetBtnIndexByGroupId(self.RuleType, groupId)
+            curBtnIndex = self:GetBtnIndexByGroupId(groupId)
         end
     end
 
@@ -491,27 +390,16 @@ function XUiNewDrawMain:_BtnInit(BtnList)
     end
 end
 
-function XUiNewDrawMain:GetBtnIndexByGroupId(ruleType, groupId)
-    local curBtnIndex = self.SkipIndexDic and
-            self.SkipIndexDic[ruleType] and
-            self.SkipIndexDic[ruleType][groupId]
-    return curBtnIndex
+function XUiNewDrawMain:GetBtnIndexByGroupId(groupId)
+    return self.GroupIndexDic and self.GroupIndexDic[groupId]
 end
 
 --- 根据 OptionKey 查找按钮索引
-function XUiNewDrawMain:GetBtnIndexByOptionKey(ruleType, optionKey)
+function XUiNewDrawMain:GetBtnIndexByOptionKey(optionKey)
     if not optionKey or optionKey == "" then
         return nil
     end
-    -- 遍历所有按钮实体查找匹配的 OptionKey
-    for index, entity in ipairs(self.AllTabEntityList or {}) do
-        if entity.GetOptionKey and entity:GetOptionKey() == optionKey then
-            return index
-        end
-    end
-    -- 回退到 groupId 查找
-    local groupId, _ = XDataCenter.DrawManager._ParseOptionKey(optionKey)
-    return self:GetBtnIndexByGroupId(ruleType, groupId)
+    return self.OptionIndexDic and self.OptionIndexDic[optionKey]
 end
 
 function XUiNewDrawMain:GetFirstOpenBtnIndex()
@@ -554,14 +442,7 @@ end
 function XUiNewDrawMain:CreateBanner(data)
     local groupActivityTargetData = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(self.GroupId)
     local activeTargetId = groupActivityTargetData and groupActivityTargetData:GetActivityId()
-    -- 使用 option 维度获取 drawInfo
-    local drawInfo
-    if not string.IsNilOrEmpty(self.CurrentOptionKey) then
-        drawInfo = XDataCenter.DrawManager.GetUseDrawInfoByOptionKey(self.CurrentOptionKey)
-    end
-    if not drawInfo then
-        drawInfo = XDataCenter.DrawManager.GetUseDrawInfoByGroupId(data:GetId())
-    end
+    local drawInfo = self.DrawInfo
 
     -- 切换创建新的banner要销毁上一个
     if self.CurBanner then
@@ -734,7 +615,7 @@ function XUiNewDrawMain:_RefreshCharacterDrawTarget()
     local isHaveTarget = XTool.IsNumberValid(groupActivityTargetData:GetTargetId())
 
     -- rule按钮文本
-    self.BtnOptionalDraw.gameObject:SetActiveEx(not self.CurBanner.TargetBtnDetails and not self:CheckIsNewDraw() and not XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.GroupId))
+    self.BtnOptionalDraw.gameObject:SetActiveEx(not self.CurBanner.TargetBtnDetails and not self:CheckIsNewDraw() and not XDataCenter.DrawManager:CheckIsLinkageGroupId(self.GroupId))
     if self.CurBanner.TargetBtnDetails then
         local targetCount = groupActivityTargetData:GetTargetCount()
         local txt = isHaveTarget and XDrawConfigs.GetDrawActivityTargetShowActiveTipTxt(groupActivityTargetData:GetActivityId())
@@ -872,6 +753,11 @@ function XUiNewDrawMain:RefreshTabRedDot()
     end
 end
 
+-- “检定活动”仅属于传统检定卡池，并让位于 New 和新手标签
+local function CheckIsShowActivityTag(groupId, groupTargetData, isShowTag, isNewbieShow)
+    return groupId == 1 and groupTargetData and not isShowTag and not isNewbieShow
+end
+
 -- 刷新页签标签
 function XUiNewDrawMain:_RefreshBtnTag()
     local groupTargetData
@@ -900,8 +786,8 @@ function XUiNewDrawMain:_RefreshBtnTag()
 
             if btnObjDir.PanelActivity and data:GetId() == self.GroupId then
                 local isNewbieShow = (not data.IsExtraOption) and data.MaxBottomTimes == data:GetNewHandBottomCount()
-                local isShow = not isShowTag and groupTargetData and not isNewbieShow
-                btnObjDir.PanelActivity.gameObject:SetActiveEx(isShow)
+                local isShowActivityTag = CheckIsShowActivityTag(self.GroupId, groupTargetData, isShowTag, isNewbieShow)
+                btnObjDir.PanelActivity.gameObject:SetActiveEx(isShowActivityTag)
 
                 if btnObjDir.PanelNewTag then
                     btnObjDir.PanelNewTag.gameObject:SetActiveEx(isNewbieShow)
@@ -915,8 +801,11 @@ end
 ---校准活动按钮刷新
 ---@param groupActivityTargetData XDrawActivityTargetInfo
 function XUiNewDrawMain:OnSelectTargetActivity(groupActivityTargetData)
-    if not groupActivityTargetData or not self.CurBanner.TargetBtnDetails then
+    if not groupActivityTargetData then
         return
+    end
+    if not self.CurBanner.TargetBtnDetails then
+        return self:RefreshScene()
     end
     --这是一个物品id,集合N种物品,包括道具、人物、装备、辅助机等
     --因为是通过id规则分配类型的,所以要用XGoodsCommonManager.GetGoodsShowParamsByTemplateId处理一下
@@ -984,15 +873,16 @@ function XUiNewDrawMain:CreateMainBtn(data)
     -- 校准一级页签
     local groupTargetData
     local isShowTag = false
-    local isDevilCanReceive = false
+    local isLinkageCanReceive = false
     local isTenDiscount = false
     for _, drawData in ipairs(data.DrawGroupList) do
         groupTargetData = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(drawData.Id)
         if groupTargetData then
             isShowTag = true
         end
-        if XDataCenter.DrawManager.CheckIsCanReceiveCharacterByDrawId(drawData.Id) then
-            isDevilCanReceive = true
+        local receiveCount, _ = XDataCenter.DrawManager:CheckIsCanReceiveLinkageRole(drawData.Id)
+        if XTool.IsNumberValid(receiveCount) then
+            isLinkageCanReceive = true
         end
         if XDataCenter.DrawManager.IsShowTagTenDiscount(drawData.Id) then
             isTenDiscount = true
@@ -1015,37 +905,15 @@ function XUiNewDrawMain:CreateMainBtn(data)
             uiObject:GetObject("Txt10Discount").text = XUiHelper.GetText("SnapLabel")
         end
 
-        self.AfterRefreshPowerTagTimeId = XScheduleManager.ScheduleOnce(function()
-            if XTool.UObjIsNil(uiButton) then
-                return
-            end
-
-            -- 检查Power标签是否需要显示
-            local tagPower = uiObject:GetObject("TagPower")
-            local needShowPower = false
-            if tagPower then
-                for _, drawGroup in ipairs(data.DrawGroupList) do
-                    local groupId = drawGroup.Id
-                    local drawInfoList = XDataCenter.DrawManager.GetDrawInfoListByGroupId(groupId)
-                    if drawInfoList then
-                        for _, drawInfo in ipairs(drawInfoList) do
-                            if XDrawConfigs.GetDrawPower(drawInfo.Id) then
-                                needShowPower = true
-                                break
-                            end
-                        end
-                    end
-                    if needShowPower then break end
-                end
-                tagPower.gameObject:SetActiveEx(needShowPower)
-            end
-    
-            -- ✅ Power优先逻辑：Power显示时禁用NewImg, 折扣显示时禁用NewImg
-            local canShowTag = (not needShowPower) and (data:IsShowTag() and (not data:IsShowFreeTip()) or isShowTag) and (not isTenDiscount)
-            uiButton:ShowTag(canShowTag)
-            -- uiButton:ShowReddot(data:IsShowFreeTip()) -- [Fixed] Removed to prevent overwriting CanLiver RedDot
-            uiObject:GetObject("TagReceive").gameObject:SetActiveEx(isDevilCanReceive)
-        end, XScheduleManager.SECOND * 0.7)
+        local trackHandel = XScheduleManagerPro.BuildTrackHandelObject(self)
+        table.insert(self._PowerTagTrackHandelList, trackHandel)
+        trackHandel:SetParm("UiButton", uiButton)
+        trackHandel:SetParm("UiObject", uiObject)
+        trackHandel:SetParm("Data", data)
+        trackHandel:SetParm("IsShowTag", isShowTag)
+        trackHandel:SetParm("IsTenDiscount", isTenDiscount)
+        trackHandel:SetParm("IsLinkageCanReceive", isLinkageCanReceive)
+        XScheduleManagerPro.ScheduleOnce(XUiNewDrawMain._OnPowerTagScheduleCb, trackHandel, XScheduleManagerPro.SECOND * 0.7)
 
         table.insert(self.AllBtnList, uiButton)
         table.insert(self.AllTabEntityList, data)
@@ -1055,6 +923,66 @@ function XUiNewDrawMain:CreateMainBtn(data)
     self.BtnIndex = self.BtnIndex + 1
     self.MainBtnCount = self.MainBtnCount + 1
     return subGroupIndex
+end
+  
+--- Power标签延迟刷新定时器回调（类级方法，非闭包）：
+--- 从跟踪对象取回宿主UI，参数经黑板读取后直接刷新Power标签
+---@param trackHandel XScheduleProTrackHandelObject
+function XUiNewDrawMain._OnPowerTagScheduleCb(trackHandel)
+    ---@type XUiNewDrawMain
+    local ui = trackHandel:GetHandelObject()
+    if not ui then
+        return
+    end
+
+    local uiButton = trackHandel:GetParm("UiButton")
+    local uiObject = trackHandel:GetParm("UiObject")
+    local data = trackHandel:GetParm("Data")
+    local isShowTag = trackHandel:GetParm("IsShowTag")
+    local isTenDiscount = trackHandel:GetParm("IsTenDiscount")
+    local isLinkageCanReceive = trackHandel:GetParm("IsLinkageCanReceive")
+
+    if XTool.UObjIsNil(uiButton) then
+        return
+    end
+    -- 检查Power标签是否需要显示
+    local tagPower = uiObject:GetObject("TagPower")
+    local needShowPower = false
+    if tagPower then
+        for _, drawGroup in ipairs(data.DrawGroupList) do
+            local groupId = drawGroup.Id
+            local drawInfoList = XDataCenter.DrawManager.GetDrawInfoListByGroupId(groupId)
+            if drawInfoList then
+                for _, drawInfo in ipairs(drawInfoList) do
+                    if XDrawConfigs.GetDrawPower(drawInfo.Id) then
+                        needShowPower = true
+                        break
+                    end
+                end
+            end
+            if needShowPower then break end
+        end
+        tagPower.gameObject:SetActiveEx(needShowPower)
+    end
+
+    -- ✅ Power优先逻辑：Power显示时禁用NewImg, 折扣显示时禁用NewImg
+    local canShowTag = (not needShowPower) and (data:IsShowTag() and (not data:IsShowFreeTip()) or isShowTag) and (not isTenDiscount)
+    uiButton:ShowTag(canShowTag)
+    -- uiButton:ShowReddot(data:IsShowFreeTip()) -- [Fixed] Removed to prevent overwriting CanLiver RedDot
+    uiObject:GetObject("TagReceive").gameObject:SetActiveEx(isLinkageCanReceive)
+end
+
+--- 归还全部Power标签跟踪对象（归还前按约束先清掉名下定时器）
+function XUiNewDrawMain:_ReleaseAllPowerTagTrackHandel()
+    if not self._PowerTagTrackHandelList then
+        return
+    end
+    for i = #self._PowerTagTrackHandelList, 1, -1 do
+        local trackHandel = self._PowerTagTrackHandelList[i]
+        XScheduleManagerPro.UnScheduleAllByHandlerObject(trackHandel)
+        XScheduleManagerPro.ReturnTrackHandelObject(trackHandel)
+        self._PowerTagTrackHandelList[i] = nil
+    end
 end
 
 --- 一级标签的按钮状态为Disable时传入的index为它自己的index，否则为它的第一个子标签的index
@@ -1066,7 +994,6 @@ function XUiNewDrawMain:OnSelectedTog(index)
     end
 
     local IsTypeTab = entity:GetRuleType() == XDrawConfigs.RuleType.Tab
-    local ruleType = not IsTypeTab and entity:GetRuleType() or self.RuleType
     if entity:IsMainButton() then
         if not entity:JudgeCanOpen(true) then
             return
@@ -1079,7 +1006,6 @@ function XUiNewDrawMain:OnSelectedTog(index)
         index = subBtnIndex
         entity = subEntity
         IsTypeTab = false
-        ruleType = entity:GetRuleType()
     elseif not entity:JudgeCanOpen(false) then
         if self.CurSelectId and self.AllTabEntityList[self.CurSelectId] and self.AllTabEntityList[self.CurSelectId]:JudgeCanOpen(false) then
             entity:JudgeCanOpen(true)
@@ -1097,10 +1023,8 @@ function XUiNewDrawMain:OnSelectedTog(index)
     end
 
     self.GroupId = entity:GetId()
-    self.RuleType = ruleType
     if not IsTypeTab then
         XDataCenter.DrawManager.SetLostSelectDrawGroupId(entity:GetId())
-        XDataCenter.DrawManager.SetLostSelectDrawType(self.RuleType)
     end
 
     local optionKey = ""
@@ -1147,7 +1071,7 @@ end
 --- 选择第一个页签
 function XUiNewDrawMain:SelectFirstTab()
     local groupId = XDataCenter.DrawManager.GetGroupIdWithMaxOrder()
-    local curBtnIndex = self:GetBtnIndexByGroupId(self.RuleType, groupId)
+    local curBtnIndex = self:GetBtnIndexByGroupId(groupId)
     local entity = curBtnIndex and self.AllTabEntityList[curBtnIndex]
     if entity and not entity:IsMainButton() and entity:JudgeCanOpen(false) then
         self.PanelNoticeTitleBtnGroup:SelectIndex(curBtnIndex)
@@ -1199,9 +1123,9 @@ function XUiNewDrawMain:CreateSubBtn(subGroupIndex, data)
             if not drawInfo then
                 drawInfo = XDataCenter.DrawManager.GetUseDrawInfoByGroupId(data.Id)
             end
-            local isCanReceive = XDataCenter.DrawManager:CheckIsCanReceiveCharacterByDrawId(drawInfo and drawInfo.Id)
+            local isCanReceive = XDataCenter.DrawManager:CheckIsCanReceiveLinkageRole(drawInfo and drawInfo.Id)
             uiObject:GetObject("TagReceive").gameObject:SetActiveEx(XTool.IsNumberValid(isCanReceive))
-            uiObject:GetObject("TagDiscount").gameObject:SetActiveEx(XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(data.Id))
+            uiObject:GetObject("TagDiscount").gameObject:SetActiveEx(XDataCenter.DrawManager:CheckIsLinkageGroupId(data.Id))
             local isTenDiscount, discountText = XDataCenter.DrawManager.IsShowTagTenDiscount(data:GetId())
             uiObject:GetObject("Tag10Discount").gameObject:SetActiveEx(isTenDiscount)
             if isTenDiscount then
@@ -1234,14 +1158,18 @@ function XUiNewDrawMain:CreateSubBtn(subGroupIndex, data)
             uiButton:ShowTag(canShowTag)
     
             if btnObjDir.PanelActivity then
-                btnObjDir.PanelActivity.gameObject:SetActiveEx(not canShowTag and groupTargetData)
+                local isShowActivityTag = CheckIsShowActivityTag(data:GetId(), groupTargetData, isShowTag, isNewbieShow)
+                btnObjDir.PanelActivity.gameObject:SetActiveEx(isShowActivityTag)
             end
         end)
 
-        self.SkipIndexDic[data:GetRuleType()] = self.SkipIndexDic[data:GetRuleType()] or {}
+        local optionKey = data.GetOptionKey and data:GetOptionKey()
+        if not string.IsNilOrEmpty(optionKey) then
+            self.OptionIndexDic[optionKey] = self.BtnIndex
+        end
         -- 只有原始 option 才写入 groupId 索引，避免 ExtraOption 覆盖
         if not data.IsExtraOption then
-            self.SkipIndexDic[data:GetRuleType()][data:GetId()] = self.BtnIndex
+            self.GroupIndexDic[data:GetId()] = self.BtnIndex
         end
 
         uiButton:ShowReddot(data:IsShowFreeTip())
@@ -1262,7 +1190,7 @@ function XUiNewDrawMain:CheckAutoOpen()
         return
     end
 
-    if XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.GroupId) then
+    if XDataCenter.DrawManager:CheckIsLinkageGroupId(self.GroupId) then
         return
     end
 
@@ -1317,7 +1245,7 @@ end
 
 function XUiNewDrawMain:UpdateOptionalBtn()
     local isShow = not self:CheckIsNewDraw()
-                   and not XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.GroupId)
+                   and not XDataCenter.DrawManager:CheckIsLinkageGroupId(self.GroupId)
                    and not XDataCenter.DrawManager:CheckIsHideOptionalBtnGroupId(self.GroupId)
                    and not (self.CurBanner and self.CurBanner.TargetBtnDetails)
     self.BtnOptionalDraw.gameObject:SetActiveEx(isShow)
@@ -1620,6 +1548,11 @@ function XUiNewDrawMain:RefreshScene()
     end
     self.LastSceneId = self.DrawInfo.Id
     local drawSceneCfg = XDrawConfigs.GetDrawSceneCfg(self.DrawInfo.Id)
+    if not drawSceneCfg and XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(self.GroupId) then
+        -- 校准活动没有场景配置，直接刷新 Banner
+        self._LastActivityTargetId = targetId
+        self.CurBanner:UpdateNewDrawView(drawSceneCfg, XTool.IsNumberValid(targetId) and targetId)
+    end
     if not drawSceneCfg then
         return
     end

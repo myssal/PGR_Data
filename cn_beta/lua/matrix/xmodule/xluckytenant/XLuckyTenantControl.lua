@@ -84,17 +84,13 @@ end
 function XLuckyTenantControl:AddAgencyEvent()
     --control在生命周期启动的时候需要对Agency及对外的Agency进行注册
     self:UpdateActivityTimeLeft()
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateActivityTimeLeft()
-        self:CheckInTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateActivityTimeLeftScheduleCb, self, XScheduleManagerPro.SECOND)
     XEventManager.AddEventListener(XEventId.EVENT_LUCKY_TENANT_SET_TEST_CASE, self._SetTestCase, self)
     XEventManager.AddEventListener(XEventId.EVENT_LUCKY_TENANT_CLEAR_BAG, self._TestClearBag, self)
 end
 
 function XLuckyTenantControl:RemoveAgencyEvent()
-    XScheduleManager.UnSchedule(self._Timer)
-    self._Timer = false
+    XScheduleManagerPro.UnSchedule(self._OnUpdateActivityTimeLeftScheduleCb, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_LUCKY_TENANT_SET_TEST_CASE, self._SetTestCase, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_LUCKY_TENANT_CLEAR_BAG, self._TestClearBag, self)
 end
@@ -1136,6 +1132,11 @@ function XLuckyTenantControl:GetIcon4Animation(amount)
     local array = self._UiData.Icon4Animation
     local result = RandomSelect(array, amount)
     return result
+end
+
+function XLuckyTenantControl:_OnUpdateActivityTimeLeftScheduleCb()
+    self:UpdateActivityTimeLeft()
+    self:CheckInTime()
 end
 
 return XLuckyTenantControl

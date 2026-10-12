@@ -74,12 +74,7 @@ function XUiPanelNameplate:UpdateDataById(id)
         end
 
         if not XTool.UObjIsNil(self.EffectGo) and res ~= currInstatiePrefabUrl then -- 防止重复Init
-            XScheduleManager.ScheduleOnce(function()
-                if XTool.UObjIsNil(self.Effect) then
-                    return
-                end
-                self.Effect:GetComponent("XUiEffectLayer"):Init()   -- 延时初始化，因为自动初始化过早，render还未加载出来
-            end, 50)
+            XScheduleManagerPro.ScheduleOnce(self._OnUpdateDataByIdScheduleCb, self, 50)
         end
     else
         if self.Enablenim then
@@ -132,6 +127,13 @@ function XUiPanelNameplate:SetEffectActive(isActive)
     if not XTool.UObjIsNil(self.EffectGo) then
         self.EffectGo.gameObject:SetActiveEx(isActive)
     end
+end
+
+function XUiPanelNameplate:_OnUpdateDataByIdScheduleCb()
+    if XTool.UObjIsNil(self.Effect) then
+        return
+    end
+    self.Effect:GetComponent("XUiEffectLayer"):Init()   -- 延时初始化，因为自动初始化过早，render还未加载出来
 end
 
 return XUiPanelNameplate

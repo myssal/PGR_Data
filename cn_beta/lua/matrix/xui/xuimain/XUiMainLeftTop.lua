@@ -238,9 +238,12 @@ function XUiMainLeftTop:UpdatePassportLeftTime()
 end
 
 function XUiMainLeftTop:StopPassportTimer()
-    if self.PassportTimer then
-        XScheduleManager.UnSchedule(self.PassportTimer)
-        self.PassportTimer = nil
+    XScheduleManagerPro.UnSchedule(self._OnPassportTimer, self)
+end
+
+function XUiMainLeftTop:_OnPassportTimer()
+    if self.BtnPassport then
+        self:UpdatePassportLeftTime()
     end
 end
 
@@ -252,13 +255,8 @@ function XUiMainLeftTop:OnPassportOpenStatusUpdate()
     if bpClosed or XUiManager.IsHideFunc then
         self.BtnPassport.gameObject:SetActiveEx(false)
     else
-        self:StopPassportTimer()
         self:UpdatePassportLeftTime()
-        self.PassportTimer = XScheduleManager.ScheduleForever(function()
-            if self.BtnPassport then
-                self:UpdatePassportLeftTime()
-            end
-        end, XScheduleManager.SECOND, 0)
+        XScheduleManagerPro.ScheduleForever(self._OnPassportTimer, self, XScheduleManagerPro.SECOND)
     end
 end
 
@@ -316,10 +314,6 @@ function XUiMainLeftTop:UpdateNewRegressionBtnIcon()
 end
 
 function XUiMainLeftTop:StopNewRegressionTimer()
-    if self.NewRegressionTimer then
-        XScheduleManager.UnSchedule(self.NewRegressionTimer)
-        self.NewRegressionTimer = nil
-    end
 end
 
 function XUiMainLeftTop:UpdateNewRegressionLeftTime()
@@ -420,10 +414,6 @@ function XUiMainLeftTop:OnBtnRegression()
 end
 
 function XUiMainLeftTop:StopRegressionTimer()
-    if self.RegressionTimeSchedule then
-        XScheduleManager.UnSchedule(self.RegressionTimeSchedule)
-        self.RegressionTimeSchedule = nil
-    end
 end
 
 --endregion------------------回归活动 finish------------------
@@ -451,10 +441,6 @@ function XUiMainLeftTop:UpdateRegression3rdLeftTime()
 end
 
 function XUiMainLeftTop:StopRegression3rdTimer()
-    if self.Regression3rdTimer then
-        XScheduleManager.UnSchedule(self.Regression3rdTimer)
-        self.Regression3rdTimer = nil
-    end
 end
 
 --endregion------------------特殊回归活动 finish------------------

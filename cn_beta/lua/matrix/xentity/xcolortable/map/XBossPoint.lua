@@ -99,14 +99,16 @@ end
 
 function XBossPoint:_PlayLvUpDownAnim()
     self.TxtLvUpDown.gameObject:SetActiveEx(true)
-    XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
-        self.TxtLvUpDown.gameObject:SetActive(false)
-    end, 2000)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayLvUpDownAnimScheduleCb, self, 2000)
 end
 
 -------------------------------------------------------------------
+
+function XBossPoint:_OnPlayLvUpDownAnimScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
+    end
+    self.TxtLvUpDown.gameObject:SetActive(false)
+end
 
 return XBossPoint

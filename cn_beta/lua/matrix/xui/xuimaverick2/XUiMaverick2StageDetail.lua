@@ -203,20 +203,14 @@ function XUiMaverick2StageDetail:GetRewardGridCommon(index)
 end
 
 function XUiMaverick2StageDetail:StartTimer()
-    if self.Timer then return end
 
     self:RefreshDailyCountDown()
     self:StopTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:RefreshDailyCountDown()
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnRefreshDailyCountDownScheduleCb, self, XScheduleManagerPro.SECOND, 0)
 end
 
 function XUiMaverick2StageDetail:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRefreshDailyCountDownScheduleCb, self)
 end
 
 -- 刷新每日关卡文本的倒计时
@@ -225,4 +219,8 @@ function XUiMaverick2StageDetail:RefreshDailyCountDown()
     local nowTime = XTime.GetServerNowTimestamp()
     local showTime = XUiHelper.GetTime(refreshTime - nowTime, XUiHelper.TimeFormatType.ACTIVITY)
     self.TextTime.text = XUiHelper.GetText("DrawFreeTicketCoolDown", showTime)   
+end
+
+function XUiMaverick2StageDetail:_OnRefreshDailyCountDownScheduleCb()
+    self:RefreshDailyCountDown()
 end

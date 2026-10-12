@@ -54,9 +54,7 @@ function XUiTemple2Game:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_TEMPLE2_UPDATE_BLOCK_OPTION, self.UpdateBlockOptionOnShow, self)
     XEventManager.AddEventListener(XEventId.EVENT_TEMPLE2_UPDATE_AFTER_REPLAY, self.UpdateAfterReplay, self)
 
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateGame()
-    end, 0, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateGameScheduleCb, self, 0, 0)
     self:UpdateHead()
 end
 
@@ -66,8 +64,7 @@ function XUiTemple2Game:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_TEMPLE2_SETTLE, self.ShowUiSettlement, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_TEMPLE2_UPDATE_BLOCK_OPTION, self.UpdateBlockOptionOnShow, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_TEMPLE2_UPDATE_AFTER_REPLAY, self.UpdateAfterReplay, self)
-    XScheduleManager.UnSchedule(self._Timer)
-    self._Timer = false
+    XScheduleManagerPro.UnSchedule(self._OnUpdateGameScheduleCb, self)
 end
 
 function XUiTemple2Game:UpdateGame()
@@ -259,6 +256,10 @@ function XUiTemple2Game:_OnClickHelp()
     XUiManager.ShowHelpTip("Temple2Help", function()
         self._IsShotScreen = false
     end)
+end
+
+function XUiTemple2Game:_OnUpdateGameScheduleCb()
+    self:UpdateGame()
 end
 
 return XUiTemple2Game

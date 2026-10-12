@@ -90,16 +90,11 @@ function XUiGridUnionStageMember:ProcessTipMsg(tip_msg)
             self:TipTalk(fullMsg)
         end
     end
-    self.TipMsgTimer = XScheduleManager.ScheduleOnce(function()
-        self:EndProcessTipMsg()
-    end, 3000)
+    XScheduleManagerPro.ScheduleOnce(self._OnEndProcessTipMsgScheduleCb, self, 3000)
 end
 
 function XUiGridUnionStageMember:EndProcessTipMsg()
-    if self.TipMsgTimer then
-        XScheduleManager.UnSchedule(self.TipMsgTimer)
-        self.TipMsgTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnEndProcessTipMsgScheduleCb, self)
     self.IsTiping = false
     self:EndTipEmoji()
     self:EndTipTalk()
@@ -128,6 +123,10 @@ end
 
 function XUiGridUnionStageMember:ResetTiping()
     self.IsTiping = false
+end
+
+function XUiGridUnionStageMember:_OnEndProcessTipMsgScheduleCb()
+    self:EndProcessTipMsg()
 end
 
 return XUiGridUnionStageMember

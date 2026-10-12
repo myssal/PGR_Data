@@ -46,7 +46,6 @@ end
 --region Ui - LineChange
 function XUiTheatre3Main:InitLineChange()
     self._IsA = true
-    self._LineTimer = nil
 end
 
 function XUiTheatre3Main:StartLineChangeTimer()
@@ -59,17 +58,16 @@ function XUiTheatre3Main:StartLineChangeTimer()
         return
     end
     self:StopLineChangeTimer()
-    self._LineTimer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartLineChangeTimerScheduleCb, self, self._Control:GetClientConfigNumber("QuantumMainChangeCD") or 10000,0)
+end
+
+function XUiTheatre3Main:_OnStartLineChangeTimerScheduleCb()
         self._IsA = not self._IsA
         self:_RefreshStyleByAnim(self._IsA)
-    end, self._Control:GetClientConfigNumber("QuantumMainChangeCD") or 10000,0)
 end
 
 function XUiTheatre3Main:StopLineChangeTimer()
-    if self._LineTimer then
-        XScheduleManager.UnSchedule(self._LineTimer)
-    end
-    self._LineTimer = nil
+    XScheduleManagerPro.UnSchedule(self._OnStartLineChangeTimerScheduleCb, self)
 end
 
 function XUiTheatre3Main:_RefreshStyle(isA)

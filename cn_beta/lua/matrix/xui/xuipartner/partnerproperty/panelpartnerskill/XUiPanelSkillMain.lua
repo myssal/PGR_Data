@@ -81,13 +81,15 @@ function XUiPanelSkillMain:UpdatePassiveSkill()
 end
 
 function XUiPanelSkillMain:PlayEnableAnime()
-    XScheduleManager.ScheduleOnce(function()
-        local timeline=self.Base.Animation:GetObject("PanelSkillMainEnable")
-        --仅当该组件在场景中处于活跃状态且控件开启下才播放动画
-        if not XTool.UObjIsNil(timeline.gameObject) and timeline.gameObject.activeInHierarchy==true then
-            timeline:PlayTimelineAnimation()
-        end
-    end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayEnableAnimeScheduleCb, self, 1)
+end
+
+function XUiPanelSkillMain:_OnPlayEnableAnimeScheduleCb()
+    local timeline=self.Base.Animation:GetObject("PanelSkillMainEnable")
+    --仅当该组件在场景中处于活跃状态且控件开启下才播放动画
+    if not XTool.UObjIsNil(timeline.gameObject) and timeline.gameObject.activeInHierarchy==true then
+        timeline:PlayTimelineAnimation()
+    end
 end
 
 return XUiPanelSkillMain

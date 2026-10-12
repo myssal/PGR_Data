@@ -747,7 +747,6 @@
         "Id": 77,
         "ActionId": 77,
         "Type": 301,
-        "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "塞万提斯",
@@ -759,6 +758,7 @@
         "Id": 78,
         "ActionId": 78,
         "Type": 302,
+        "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "七实……",
@@ -4076,7 +4076,6 @@
         "Id": 413,
         "ActionId": 413,
         "Type": 301,
-        "EndAnim": "AniZhuanchangBegin",
         "Params": [
             "",
             "七实",
@@ -4086,6 +4085,34 @@
     },
     {
         "Id": 414,
+        "ActionId": 415,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 415,
+        "ActionId": 416,
+        "Type": 502,
+        "EndDelay": 400.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 416,
+        "ActionId": 417,
+        "Type": 302,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "不只是“推演”，对吧。",
+            418
+        ]
+    },
+    {
+        "Id": 417,
         "ActionId": 414,
         "Type": 101,
         "Params": [
@@ -4097,36 +4124,10 @@
         ]
     },
     {
-        "Id": 415,
-        "ActionId": 415,
-        "Type": 202,
-        "Params": [
-            1
-        ]
-    },
-    {
-        "Id": 416,
-        "ActionId": 416,
-        "Type": 502,
-        "EndDelay": 400.0,
-        "Params": [
-            "DialogDisable"
-        ]
-    },
-    {
-        "Id": 417,
-        "ActionId": 417,
-        "Type": 302,
-        "Params": [
-            "",
-            "不只是“推演”，对吧。",
-            418
-        ]
-    },
-    {
         "Id": 418,
         "ActionId": 418,
         "Type": 401,
+        "EndDelay": 2000.0,
         "Params": [
             1,
             36

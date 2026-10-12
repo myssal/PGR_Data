@@ -7,11 +7,15 @@ function XUiConcertPreHeatingTuningStage:OnAwake()
     self._Sliders = { self.Slider1, self.Slider2, self.Slider3, self.Slider4 }
     local lights = { self.ImgSliderLightOn1, self.ImgSliderLightOn2, self.ImgSliderLightOn3, self.ImgSliderLightOn4 }
     self._SliderTargetLights = lights
-    self._SliderValues = {}
+    self._ControlValues = {}
 
     self:InitButton()
     self:InitSliderEvent()
     self:InitPanelSpine()
+end
+
+function XUiConcertPreHeatingTuningStage:OnDestroy()
+    self:StopSnapTransition()
 end
 
 function XUiConcertPreHeatingTuningStage:InitButton()
@@ -89,23 +93,23 @@ function XUiConcertPreHeatingTuningStage:InitPointCloudMorph()
     self.TargetImagePointCloudMorph:SetMorphProgress(0)
 end
 
-local function GetSignalTipText(tuneProgress)
-    if tuneProgress < 70 then
+local function GetSignalTipText(stageProgress)
+    if stageProgress < 70 then
         return XUiHelper.GetText("ConcertPreHeatingTuneSignalFar")
     end
 
-    if tuneProgress < 80 then
+    if stageProgress < 80 then
         return XUiHelper.GetText("ConcertPreHeatingTuneSignalNear")
     end
 
-    if tuneProgress < 95 then
+    if stageProgress < 95 then
         return XUiHelper.GetText("ConcertPreHeatingTuneSignalVeryNear")
     end
 
     return XUiHelper.GetText("ConcertPreHeatingTuneSignalSyncing")
 end
 
-function XUiConcertPreHeatingTuningStage:RefreshChannelTips(tuneProgress)
+function XUiConcertPreHeatingTuningStage:RefreshChannelTips(stageProgress)
     self.PanelChannelTips.gameObject:SetActiveEx(not self._IsFinished)
     if self._IsFinished then
         return
@@ -115,7 +119,7 @@ function XUiConcertPreHeatingTuningStage:RefreshChannelTips(tuneProgress)
     self.PanelSignal.gameObject:SetActiveEx(self._HasSearch)
 
     if self._HasSearch then
-        self.TxtSignalTips.text = GetSignalTipText(tuneProgress or 0)
+        self.TxtSignalTips.text = GetSignalTipText(stageProgress or 0)
     end
 end
 
@@ -130,29 +134,29 @@ function XUiConcertPreHeatingTuningStage:RefreshSliderTargetLights()
     end
 end
 
--- 按当前滑条值刷新调频表现，并返回当前调频进度。
+-- 按当前滑条值刷新调频表现，并返回权威关卡完成度。
 function XUiConcertPreHeatingTuningStage:RefreshSliderDrivenState()
-    local sliderValues = self._SliderValues
+    local controlValues = self._ControlValues
     for index, controlParamCfg in ipairs(self._ControlParamCfgs) do
         local slider = self._Sliders[index]
-        sliderValues[index] = slider and slider.value or controlParamCfg.MinParam
+        controlValues[index] = slider and slider.value or controlParamCfg.MinParam
         if slider and not string.IsNilOrEmpty(controlParamCfg.AisacControlName) then
-            local aisacValue = self._Control.GetTuneAisacValue(controlParamCfg, sliderValues[index])
+            local aisacValue = self._Control.GetTuneAisacValue(controlParamCfg, controlValues[index])
             CS.XAudioManager.ChangeMusicSourceAisac(controlParamCfg.AisacControlName, aisacValue)
         end
     end
 
-    for index = #self._ControlParamCfgs + 1, #sliderValues do
-        sliderValues[index] = nil
+    for index = #self._ControlParamCfgs + 1, #controlValues do
+        controlValues[index] = nil
     end
 
-    local tuneProgress = self._Control:CalculateTuneProgress(self._TuningStageId, sliderValues)
+    local stageProgress = self._Control:CalculateTuneStageProgress(self._TuningStageId, controlValues)
     self:RefreshSliderTargetLights()
-    self.TargetImagePointCloudMorph:SetMorphProgress((tuneProgress or 0) / 100)
-    self:RefreshChannelTips(tuneProgress)
+    self.TargetImagePointCloudMorph:SetMorphProgress((stageProgress or 0) / 100)
+    self:RefreshChannelTips(stageProgress)
     -- TODO：SandControlType/CueControlType 枚举和表现接口确定后，在这里驱动音频和强度分档表现。
 
-    return tuneProgress
+    return stageProgress
 end
 
 function XUiConcertPreHeatingTuningStage:OnSliderValueChanged()
@@ -161,34 +165,82 @@ function XUiConcertPreHeatingTuningStage:OnSliderValueChanged()
     end
 
     self._HasSearch = true
-    local tuneProgress = self:RefreshSliderDrivenState()
-    self:TryFinishTuneStage(tuneProgress)
+    local stageProgress = self:RefreshSliderDrivenState()
+    self:TryFinishTuneStage(stageProgress)
 end
 
--- 玩家操作后检查是否完成调频关卡。
-function XUiConcertPreHeatingTuningStage:TryFinishTuneStage(tuneProgress)
+-- 玩家操作后使用权威关卡完成度检查是否完成调频关卡。
+function XUiConcertPreHeatingTuningStage:TryFinishTuneStage(stageProgress)
     if self._IsFinished then
         return
     end
 
-    if not self._Control.IsTuneComplete(tuneProgress) then
+    if not self._Control.IsTuneStageComplete(stageProgress) then
         return
     end
 
     self:FinishTuneStage()
 end
 
--- 完成时将滑条吸附到目标值。
-function XUiConcertPreHeatingTuningStage:SyncSliderToTarget()
+-- 完成时将滑条吸附到目标值：配置过渡时间 > 0 时逐帧平滑过渡，否则瞬间吸附。
+function XUiConcertPreHeatingTuningStage:SyncSliderToTarget(onComplete)
+    self:StopSnapTransition()
+
+    local transitionTime = self._Control:GetTuneSnapTransitionTime()
+    if not transitionTime or transitionTime <= 0 then
+        self:ApplySliderTargetValues(1)
+        if onComplete then
+            onComplete()
+        end
+        return
+    end
+
+    -- 记录每条滑条的起点值，按归一化进度插值到目标。
+    self._SnapStartValues = {}
     for index, controlParamCfg in ipairs(self._ControlParamCfgs) do
         local slider = self._Sliders[index]
-        local target = controlParamCfg.Target or controlParamCfg.MinParam or 0
+        self._SnapStartValues[index] = slider and slider.value or (controlParamCfg.MinParam or 0)
+    end
+
+    local elapsed = 0
+    self._SnapTransitionTimer = XScheduleManager.ScheduleForever(function()
+        elapsed = elapsed + (CS.UnityEngine.Time.deltaTime or 0)
+        local progress = XMath.Clamp(elapsed / transitionTime, 0, 1)
+        self:ApplySliderTargetValues(progress)
+
+        if progress >= 1 then
+            self:StopSnapTransition()
+            if onComplete then
+                onComplete()
+            end
+        end
+    end, 0)
+end
+
+-- 按归一化进度把滑条从起点插值到目标值；progress>=1 直接落到目标。
+function XUiConcertPreHeatingTuningStage:ApplySliderTargetValues(progress)
+    for index, controlParamCfg in ipairs(self._ControlParamCfgs) do
+        local slider = self._Sliders[index]
         if slider then
-            slider:SetValueWithoutNotify(target)
+            local target = controlParamCfg.Target or controlParamCfg.MinParam or 0
+            local value = target
+            if progress < 1 then
+                local startValue = self._SnapStartValues and self._SnapStartValues[index] or target
+                value = startValue + (target - startValue) * progress
+            end
+            slider:SetValueWithoutNotify(value)
         end
     end
 
     self:RefreshSliderDrivenState()
+end
+
+function XUiConcertPreHeatingTuningStage:StopSnapTransition()
+    if self._SnapTransitionTimer then
+        XScheduleManager.UnSchedule(self._SnapTransitionTimer)
+        self._SnapTransitionTimer = nil
+    end
+    self._SnapStartValues = nil
 end
 
 function XUiConcertPreHeatingTuningStage:FinishTuneStage()
@@ -198,11 +250,14 @@ function XUiConcertPreHeatingTuningStage:FinishTuneStage()
         slider.interactable = false
     end
 
-    self:SyncSliderToTarget()
-    self.TargetImagePointCloudMorph.gameObject:SetActiveEx(false)
-
-    XMVCA.XConcertPreHeating:ConcertPreHeatingSettleRequest(self._TuningStageId, XTime.GetServerNowTimestamp() - self._StageStartTime)
-    XLuaUiManager.Open("UiConcertPreHeatingTuningStageCorrectTips", function() self:OnCorrectTipsClose() end)
+    -- 完成耗时在命中时刻固定，不把吸附过渡时间算进上报值。
+    local settleDuration = XTime.GetServerNowTimestamp() - self._StageStartTime
+    -- 吸附过渡结束后再隐藏点云并发起结算，保证过渡过程玩家可见。
+    self:SyncSliderToTarget(function()
+        self.TargetImagePointCloudMorph.gameObject:SetActiveEx(false)
+        XMVCA.XConcertPreHeating:ConcertPreHeatingSettleRequest(self._TuningStageId, settleDuration)
+        XLuaUiManager.Open("UiConcertPreHeatingTuningStageCorrectTips", function() self:OnCorrectTipsClose() end)
+    end)
 end
 
 function XUiConcertPreHeatingTuningStage:OnCorrectTipsClose()

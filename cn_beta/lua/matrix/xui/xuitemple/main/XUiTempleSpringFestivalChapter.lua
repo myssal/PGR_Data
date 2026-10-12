@@ -15,7 +15,6 @@ function XUiTempleSpringFestivalChapter:Ctor()
 
     self.Items = {}
 
-    self._TimerReward = false
 end
 
 function XUiTempleSpringFestivalChapter:OnAwake()
@@ -40,10 +39,7 @@ end
 
 function XUiTempleSpringFestivalChapter:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_TEMPLE_UPDATE_STAGE, self.Update, self)
-    if self._TimerReward then
-        XScheduleManager.UnSchedule(self._TimerReward)
-        self._TimerReward = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnUpdateRewardScheduleCb, self)
 end
 
 function XUiTempleSpringFestivalChapter:Update()
@@ -120,11 +116,12 @@ function XUiTempleSpringFestivalChapter:UpdateReward()
     XUiHelper.CreateTemplates(self, self.Items, rewardList, XUiGridCommon.New, self.Grid256New, self.Grid256New.transform.parent, function(grid, data)
         grid:Refresh(data, nil, nil, false)
     end)
-    if not self._TimerReward then
-        self._TimerReward = XScheduleManager.ScheduleOnce(function()
-            self.Grid256New.transform.parent.gameObject:SetActiveEx(false)
-        end, 3 * XScheduleManager.SECOND)
+    if not XScheduleManagerPro.HasSchedule(self._OnUpdateRewardScheduleCb, self) then
+        XScheduleManagerPro.ScheduleOnce(self._OnUpdateRewardScheduleCb, self, 3 * XScheduleManagerPro.SECOND)
     end
 end
 
+function XUiTempleSpringFestivalChapter:_OnUpdateRewardScheduleCb()
+        self.Grid256New.transform.parent.gameObject:SetActiveEx(false)
+end
 return XUiTempleSpringFestivalChapter

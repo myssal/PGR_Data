@@ -76,9 +76,7 @@ end
 function XUiWhiteValentineTask:SetTimer()
     self:StopTimer()
     self:SetResetTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-            self:SetResetTime()
-        end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnSetResetTimeScheduleCb, self, XScheduleManagerPro.SECOND, 0)
 end
 --================
 --显示倒计时与处理倒计时完成时事件
@@ -95,10 +93,7 @@ end
 --停止界面计时器
 --================
 function XUiWhiteValentineTask:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnSetResetTimeScheduleCb, self)
 end
 
 --================
@@ -132,4 +127,8 @@ function XUiWhiteValentineTask:RemoveEventListeners()
     if not self.AlreadyAddEvents then return end
     self.AlreadyAddEvents = false
     XEventManager.RemoveEventListener(XEventId.EVENT_TASK_SYNC, self.RefreshTasks, self)
+end
+
+function XUiWhiteValentineTask:_OnSetResetTimeScheduleCb()
+    self:SetResetTime()
 end

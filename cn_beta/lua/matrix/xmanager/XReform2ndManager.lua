@@ -429,6 +429,12 @@ XReform2ndManagerCreator = function()
             preFight.GeneralSkill = team:GetCurGeneralSkill()
         end
 
+        -- 4.9 天平砝码选择随进战数据上行，服务端据此校验配平（封存时删本段）
+        local balanceData = XMVCA.XReform:GetBalancePreFightData(rootStageId)
+        if balanceData then
+            preFight.ReformBalanceData = balanceData
+        end
+
         return preFight
     end
     --endregion

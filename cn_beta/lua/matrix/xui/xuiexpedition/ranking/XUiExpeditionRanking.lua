@@ -39,9 +39,7 @@ end
 function XUiExpeditionRanking:SetResetTimer()
     self:StopTimer()
     self:SetResetTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-            self:SetResetTime()
-        end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnSetResetTimeScheduleCb, self, XScheduleManagerPro.SECOND, 0)
 end
 
 function XUiExpeditionRanking:SetResetTime()
@@ -55,10 +53,7 @@ function XUiExpeditionRanking:SetResetTime()
 end
 
 function XUiExpeditionRanking:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnSetResetTimeScheduleCb, self)
 end
 
 function XUiExpeditionRanking:OnActivityReset()
@@ -79,4 +74,8 @@ end
 
 function XUiExpeditionRanking:OnBtnMainUiClick()
     XLuaUiManager.RunMain()
+end
+
+function XUiExpeditionRanking:_OnSetResetTimeScheduleCb()
+    self:SetResetTime()
 end

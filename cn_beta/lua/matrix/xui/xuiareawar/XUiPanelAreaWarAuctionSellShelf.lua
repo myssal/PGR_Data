@@ -58,16 +58,11 @@ end
 
 function XUiPanelAreaWarAuctionSellShelf:StartTimer()
     self:StopTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:RefreshOrderTime()
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(XUiPanelAreaWarAuctionSellShelf._OnRefreshOrderTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiPanelAreaWarAuctionSellShelf:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiPanelAreaWarAuctionSellShelf._OnRefreshOrderTimeScheduleCb, self)
 end
 
 function XUiPanelAreaWarAuctionSellShelf:RefreshOrderTime()
@@ -76,6 +71,10 @@ function XUiPanelAreaWarAuctionSellShelf:RefreshOrderTime()
     end
     
     XMVCA.XAreaWar:CheckSettleOrders()
+end
+
+function XUiPanelAreaWarAuctionSellShelf:_OnRefreshOrderTimeScheduleCb()
+    self:RefreshOrderTime()
 end
 
 return XUiPanelAreaWarAuctionSellShelf

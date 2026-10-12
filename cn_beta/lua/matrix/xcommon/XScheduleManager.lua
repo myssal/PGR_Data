@@ -54,6 +54,7 @@ end
 -- 这样本帧 Schedule() 创建的定时器仍在 AddList 里、不参与本帧触发，保证
 -- ScheduleNextFrame(Delay=0,Interval=0) 必然下一帧才执行。
 function XScheduleManager.Update(now)
+
     -- 1. 遍历检查触发（本帧新加的还在 AddList，不参与）
     for id, s in pairs(ScheduleTable) do
         if not DeleteSet[id] then
@@ -98,6 +99,8 @@ function XScheduleManager.Update(now)
     if hasDelete then
         DeleteSet = {}
     end
+
+    XScheduleManagerPro.Update(now)
 end
 
 ---------- 公开API（签名与原有完全一致）----------

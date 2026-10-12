@@ -59,9 +59,7 @@ function XUiGuildDormMusicPlayer:OnDisable()
 end
 
 function XUiGuildDormMusicPlayer:OnDestroy()
-    if self.ScheduleId then
-        XScheduleManager.UnSchedule(self.ScheduleId)
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateSpectrumScheduleCb, self)
     XEventManager.DispatchEvent(XEventId.EVENT_GUILD_DORM_ROLE_INTERACT_SHOW, true)
     XRedPointManager.RemoveRedPointEvent(self.BtnEditEventId)
 end
@@ -155,14 +153,8 @@ function XUiGuildDormMusicPlayer:InitButtonEvent()
 end
 
 function XUiGuildDormMusicPlayer:UpdateSpectrum()
-    if self.ScheduleId then
-        XScheduleManager.UnSchedule(self.ScheduleId)
-        self.ScheduleId = nil
-    end
-    self.ScheduleId = XScheduleManager.ScheduleForever(function()
-        local spectrumData = CSXAudioManager.GetSpectrumLvData()
-        self.PanelSpectrum:UpdateSpectrum(spectrumData)
-    end, ScheduleIntervalTime, 0)
+        XScheduleManagerPro.UnSchedule(self._OnUpdateSpectrumScheduleCb, self)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateSpectrumScheduleCb, self, ScheduleIntervalTime, 0)
 end
 
 function XUiGuildDormMusicPlayer:UpdateMusicAnim()
@@ -192,6 +184,11 @@ function XUiGuildDormMusicPlayer:OnClickBtnEditRedPoint(count)
     -- 首次进入显示红点
     local isFirst = XDataCenter.GuildDormManager.GetGuildDormBgmBtnFirst()
     self.BtnEdit:ShowReddot(count >= 0 or not isFirst)
+end
+
+function XUiGuildDormMusicPlayer:_OnUpdateSpectrumScheduleCb()
+    local spectrumData = CSXAudioManager.MusicVisualSpectrumProcessor:Get()
+    self.PanelSpectrum:UpdateSpectrum(spectrumData)
 end
 
 return XUiGuildDormMusicPlayer

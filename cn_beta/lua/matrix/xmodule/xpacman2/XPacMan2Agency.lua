@@ -139,4 +139,73 @@ function XPacMan2Agency:HasStageNotPassedAndCanChallenge()
     return false
 end
 
+return XPacMan2AgencyonResponse(res)
+        --不处理旧请求的回调。
+        if self._PendingSettleToken ~= token then
+            return
+        end
+        -- 这次本地运行已经结束。
+        -- 不论服务器返回成功还是业务错误，都不应继续占用本地进行中状态。
+        self._Model.IsPlaying = false
+        if res then
+            if res.Code ~= XCode.Success then
+                XUiManager.TipCode(res.Code)
+            else
+                if res.StageData then
+                    self._Model:SetStageData(res.StageData)
+                end
+
+                if res.RewardGoodsList then
+                    XUiManager.OpenUiObtain(res.RewardGoodsList)
+                end
+            end
+        end
+        
+        self._PendingSettleToken = nil
+        
+        local pendingStart = self._PendingStageStart
+        self._PendingStageStart = nil
+        if pendingStart then
+            pendingStart()
+        end
+    end
+    XNetwork.Call("PacMan2SettleRequest", data, onResponse, nil,nil, function()
+        onResponse(nil)
+    end)
+    return true
+end
+
+function XPacMan2Agency:ExCheckInTime()
+    local activityConfig = self._Model:GetActivityConfig()
+    if not activityConfig then
+        return false
+    end
+    local isInTime = XFunctionManager.CheckInTimeByTimeId(activityConfig.TimeId)
+    return isInTime
+end
+
+function XPacMan2Agency:HasStageNotPassedAndCanChallenge()
+    local stages = self._Model:GetStageConfigs()
+    for _, stage in ipairs(stages) do
+        --  判断关卡是否通过
+        if not self._Model:IsStagePassed(stage.Id) then
+            --  判断时间
+            if XFunctionManager.CheckInTimeByTimeId(stage.TimeId) then
+                -- 判断前置关卡
+                local preStageId = stage.PreStageId
+                if preStageId == 0 or preStageId == nil or self._Model:IsStagePassed(preStageId) then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
+
+function XPacMan2Agency:ResetAll()
+    -- 保留请求编号计数器，避免旧、新请求复用编号。
+    self._PendingSettleToken = nil
+    self._PendingStageStart = nil
+end
+
 return XPacMan2Agency

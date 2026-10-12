@@ -929,7 +929,7 @@ end
 
 ----------------------- 倒计时 -----------------------
 function XUiMultiplayerRoom:CheckLeaderCountDown()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self.UpdateTimer, self) then
         if not self:CheckListFullAndAllReady() then
             self:StopTimer()
         end
@@ -942,7 +942,7 @@ end
 
 function XUiMultiplayerRoom:StartTimer()
     self.StartTime = XTime.GetServerNowTimestamp()
-    self.Timer = XScheduleManager.ScheduleForever(handler(self, self.UpdateTimer), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self.UpdateTimer, self, XScheduleManagerPro.SECOND)
     local role = self:GetLeaderRole()
     self.CurCountDownGrid = self:GetGrid(role.Id)
     self:UpdateTimer()
@@ -953,10 +953,7 @@ function XUiMultiplayerRoom:StopTimer()
         self.CurCountDownGrid:ShowCountDownPanel(false)
         self.CurCountDownGrid = nil
     end
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.UpdateTimer, self)
 end
 
 function XUiMultiplayerRoom:UpdateTimer()
@@ -1289,13 +1286,12 @@ function XUiMultiplayerRoom:InsertTips(tipstype, cb)
         return a.TipsType > b.TipsType
     end)
 
-    if self.TipsDelayTimerId then
-        XScheduleManager.UnSchedule(self.TipsDelayTimerId)
-    end
-    self.TipsDelayTimerId = XScheduleManager.ScheduleOnce(function()
-        self:ShowRoomTips()
-        self.TipsDelayTimerId = nil
-    end, 500)
+    XScheduleManagerPro.UnSchedule(self._OnInsertTipsScheduleCb, self)
+    XScheduleManagerPro.ScheduleOnce(self._OnInsertTipsScheduleCb, self, 500)
+end
+
+function XUiMultiplayerRoom:_OnInsertTipsScheduleCb()
+    self:ShowRoomTips()
 end
 
 function XUiMultiplayerRoom:InsertFightSuccessTips()

@@ -601,14 +601,11 @@ end
 function XGame2048Control:StartCheckOverTimer()
     self:StopCheckOverTimer()
     self:UpdateTimer()
-    self._CheckOverTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateTimer), XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self.UpdateTimer, self, XScheduleManagerPro.SECOND)
 end
 
 function XGame2048Control:StopCheckOverTimer()
-    if self._CheckOverTimerId then
-        XScheduleManager.UnSchedule(self._CheckOverTimerId)
-        self._CheckOverTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.UpdateTimer, self)
 end
 
 function XGame2048Control:UpdateTimer()

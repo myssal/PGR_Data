@@ -15,11 +15,7 @@ end
 
 function XUiGridFashion:PlayAnimation()
     if XTool.UObjIsNil(self.GridFashionTimeline) then return end
-    XScheduleManager.ScheduleOnce(function()
-        if self.GridFashionTimeline.gameObject.activeInHierarchy then
-            self.GridFashionTimeline:PlayTimelineAnimation()
-        end
-    end, 40)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayAnimationScheduleCb, self, 40)
 end
 
 function XUiGridFashion:CheckAnimationFinish()
@@ -92,6 +88,12 @@ end
 
 function XUiGridFashion:RefreshColorDot(colorIds)
     self.ColorTag.gameObject:SetActiveEx(colorIds and #colorIds > 0)
+end
+
+function XUiGridFashion:_OnPlayAnimationScheduleCb()
+    if self.GridFashionTimeline.gameObject.activeInHierarchy then
+        self.GridFashionTimeline:PlayTimelineAnimation()
+    end
 end
 
 return XUiGridFashion

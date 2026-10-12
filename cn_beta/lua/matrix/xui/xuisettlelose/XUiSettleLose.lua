@@ -65,10 +65,7 @@ function XUiSettleLose:OnEnable()
     
     local IsSkipSettleLose = XFubenConfigs.CheckStepIsSkip(self.StageId, XFubenConfigs.StepSkipType.SettleLose)
     if IsSkipSettleLose then
-        XScheduleManager.ScheduleOnce(function()
-                self.GameObject:SetActiveEx(false)
-                self:Close()
-            end, 0)
+        XScheduleManagerPro.ScheduleOnce(self._OnCloseScheduleCb, self, 0)
     end
     if self.UiStageSettleSound then
         self.UiStageSettleSound:PlaySettleSound()
@@ -256,3 +253,8 @@ function XUiSettleLose:OnBtnTongRed()
         self:Close()
     end
 end 
+
+function XUiSettleLose:_OnCloseScheduleCb()
+    self.GameObject:SetActiveEx(false)
+    self:Close()
+end

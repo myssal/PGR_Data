@@ -813,7 +813,7 @@ end
 ---@return boolean canOpen
 ---@return string tips
 function XMainLine2Agency:_CheckChapterOpenCondition(chapterId, mainId)
-    -- 与 XMainLine2Main:GetIsLocked 的参数语义保持一致：分包校验统一使用 mainId
+    -- 4.9 review 保留按章节 Id 映射到 201~204 的兼容关系。
     if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, mainId) then
         return false
     end

@@ -186,12 +186,7 @@ end
 function XUiLivWarmRaceMain:StartTimer()
     self:RemoveTimer()
     self:RefreshActivityTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        if not XDataCenter.LivWarmRaceManager.CheckActivityIsOpen() then
-            return
-        end
-        self:RefreshActivityTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnRefreshActivityTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiLivWarmRaceMain:RefreshActivityTime()
@@ -203,8 +198,12 @@ function XUiLivWarmRaceMain:RefreshActivityTime()
 end
 
 function XUiLivWarmRaceMain:RemoveTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
+        XScheduleManagerPro.UnSchedule(self._OnRefreshActivityTimeScheduleCb, self)
+end
+
+function XUiLivWarmRaceMain:_OnRefreshActivityTimeScheduleCb()
+    if not XDataCenter.LivWarmRaceManager.CheckActivityIsOpen() then
+        return
     end
+    self:RefreshActivityTime()
 end

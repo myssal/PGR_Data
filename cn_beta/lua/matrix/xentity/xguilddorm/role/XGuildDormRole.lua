@@ -156,15 +156,7 @@ function XGuildDormRole:StopInteract()
     CsXGameEventManager.Instance:Notify(XEventId.EVENT_DORM_INTERACT_STOP
         , self:GetPlayerId())
     -- 这里是为了特殊处理玩家进入后，其他玩家重复检查停止交互的逻辑
-    XScheduleManager.ScheduleOnce(function()
-        local agent = self:GetAgent()
-        if agent == nil then return end
-        local isSuccess = agent:GetVarDicByKey("InteractStopSuccess")
-        if not isSuccess and self:GetIsInteracting() then
-            self:StopInteract()
-        end
-        agent:SetVarDicByKey("InteractStopSuccess", nil)
-    end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnGetAgentScheduleCb, self, 1)
 end
 
 function XGuildDormRole:CheckIsSelfPlayer()
@@ -181,6 +173,16 @@ end
 
 function XGuildDormRole:GetTriangleType()
     return XGuildDormConfig.TriangleType.Player
+end
+
+function XGuildDormRole:_OnGetAgentScheduleCb()
+    local agent = self:GetAgent()
+    if agent == nil then return end
+    local isSuccess = agent:GetVarDicByKey("InteractStopSuccess")
+    if not isSuccess and self:GetIsInteracting() then
+        self:StopInteract()
+    end
+    agent:SetVarDicByKey("InteractStopSuccess", nil)
 end
 
 return XGuildDormRole

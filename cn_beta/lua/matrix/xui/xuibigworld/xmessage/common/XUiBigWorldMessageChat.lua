@@ -51,8 +51,6 @@ function XUiBigWorldMessageChat:OnStart(audioPlayer)
 
     self._AudioPlayer = audioPlayer
 
-    self._Timer = false
-
     self._TaskUi:Close()
     self:_InitUi()
     self:_RegisterButtonClicks()
@@ -208,10 +206,8 @@ end
 
 function XUiBigWorldMessageChat:_RemoveSchedules()
     -- 在此处移除定时器
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    XScheduleManagerPro.UnSchedule(XUiBigWorldMessageChat._OnRefreshEndScheduleCb, self)
+    self._ScheduleContent = nil
 end
 
 function XUiBigWorldMessageChat:_RegisterListeners()
@@ -256,7 +252,7 @@ function XUiBigWorldMessageChat:_RefreshAnswerOptions(content)
             XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_OPTION_SELECT_NOTIFY, index)
         end)
     end
-    for i = count + 1, table.nums(self._AnswerGroup) do
+    for i = count + 1, table.size(self._AnswerGroup) do
         self._AnswerGroup[i].gameObject:SetActiveEx(false)
     end
 end
@@ -405,10 +401,8 @@ function XUiBigWorldMessageChat:_RefreshPrepareEnd(content, isComplete)
     if isComplete then
         self:_RefreshEnd(content)
     else
-        self._Timer = XScheduleManager.ScheduleOnce(function()
-            self._Timer = false
-            self:_RefreshEnd(content)
-        end, 0.5 * XScheduleManager.SECOND)
+        self._ScheduleContent = content
+        XScheduleManagerPro.ScheduleOnce(XUiBigWorldMessageChat._OnRefreshEndScheduleCb, self, 0.5 * XScheduleManagerPro.SECOND)
     end
 end
 
@@ -486,5 +480,11 @@ function XUiBigWorldMessageChat:_PlayMessage(message)
 end
 
 -- endregion
+
+function XUiBigWorldMessageChat:_OnRefreshEndScheduleCb()
+    local content = self._ScheduleContent
+    self._ScheduleContent = nil
+    self:_RefreshEnd(content)
+end
 
 return XUiBigWorldMessageChat

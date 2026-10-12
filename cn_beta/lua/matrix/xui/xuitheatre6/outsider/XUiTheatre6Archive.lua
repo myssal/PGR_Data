@@ -27,13 +27,12 @@ function XUiTheatre6Archive:OnStart(roleId)
 end
 
 function XUiTheatre6Archive:OnEnable()
-    local timerId = XScheduleManager.ScheduleNextFrame(function()
-        self:PlayArchiveCamAnim()
-    end)
-    self:_AddTimerId(timerId)
+    XScheduleManagerPro.ScheduleNextFrame(self._OnPlayArchiveCamAnimScheduleCb, self)
 end
 
 function XUiTheatre6Archive:OnDestroy()
+    XScheduleManagerPro.UnSchedule(self._OnPlayArchiveCamAnimScheduleCb, self)
+
     local index = self:_GetRoleIndex()
     if index then
         -- 不调用 BackToMain，避免重置 CurSelectIndex 与重播 ChooseAnim
@@ -175,6 +174,10 @@ function XUiTheatre6Archive:_GetRoleIndex()
         end
     end
     return nil
+end
+
+function XUiTheatre6Archive:_OnPlayArchiveCamAnimScheduleCb()
+    self:PlayArchiveCamAnim()
 end
 
 return XUiTheatre6Archive

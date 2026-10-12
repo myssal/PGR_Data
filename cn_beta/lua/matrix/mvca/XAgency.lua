@@ -107,6 +107,7 @@ function XAgency:Release()
     self:RemoveEvent()
     self:ClearEvent()
     self:OnRelease()
+    XScheduleManagerPro.UnScheduleAllByHandlerObject(self) -- 兜底回收该节点名下所有 Pro 定时器，不建议故意不回收
     self._MainAgency = nil
     self._TabConfig = nil
     self._Event = nil

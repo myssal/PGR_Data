@@ -63,10 +63,7 @@ function XGameCollectionAgency:TryOpenBreakRecord(onClose)
 end
 
 function XGameCollectionAgency:_PumpBreakRecord(allowDeferForLateNotify)
-    if self._BreakRecordPumpTimer then
-        XScheduleManager.UnSchedule(self._BreakRecordPumpTimer)
-        self._BreakRecordPumpTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnPumpBreakRecordScheduleCb, self)
 
     if XLuaUiManager.IsUiShow("UiMiniGamesCollectionBreakTheRecord") then
         -- 弹窗已显示,暂存的 onClose 会在弹窗链结束后触发
@@ -88,10 +85,7 @@ function XGameCollectionAgency:_PumpBreakRecord(allowDeferForLateNotify)
     if XTool.IsTableEmpty(record) then
         if allowDeferForLateNotify and self._PendingBreakRecordCb then
             -- 给 Notify 一小段时间到达,期间若 Notify 写入记录会再次触发并取消本定时器
-            self._BreakRecordPumpTimer = XScheduleManager.ScheduleOnce(function()
-                self._BreakRecordPumpTimer = nil
-                self:_PumpBreakRecord(false)
-            end, 200)
+            XScheduleManagerPro.ScheduleOnce(self._OnPumpBreakRecordScheduleCb, self, 200)
             return
         end
         FlushPendingCb()
@@ -248,5 +242,9 @@ function XGameCollectionAgency:HasGoodCanBuy()
     return false
 end
 
+
+function XGameCollectionAgency:_OnPumpBreakRecordScheduleCb()
+    self:_PumpBreakRecord(false)
+end
 
 return XGameCollectionAgency

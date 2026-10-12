@@ -565,9 +565,7 @@ function XUiActivityBriefShop:StartCountDown()
         self.TxtTime.gameObject:SetActiveEx(hasTimeLimit)
     end
     if hasTimeLimit then
-        self.CountDownTimer = XScheduleManager.ScheduleForever(function()
-            self:UpdateCountDown()
-        end, XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleForever(XUiActivityBriefShop._OnCountDownScheduleCb, self, XScheduleManagerPro.SECOND)
         self:UpdateCountDown()
     end
 end
@@ -592,22 +590,16 @@ function XUiActivityBriefShop:CheckHasTimeLimit(shopId)
 end
 
 function XUiActivityBriefShop:ClearCountDown()
-    if self.CountDownTimer then
-        XScheduleManager.UnSchedule(self.CountDownTimer)
-        self.CountDownTimer = nil
-        if self.TxtTime then
-            self.TxtTime.gameObject:SetActiveEx(false)
-        end
+    XScheduleManagerPro.UnSchedule(XUiActivityBriefShop._OnCountDownScheduleCb, self)
+    if self.TxtTime then
+        self.TxtTime.gameObject:SetActiveEx(false)
     end
 end
 
 function XUiActivityBriefShop:StopTabTimer()
-    if self._TabTimer then
-        XScheduleManager.UnSchedule(self._TabTimer)
-        self._TabTimer = nil
-        self._TimerTabs = nil
-        self._RemoveTabTimerList = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiActivityBriefShop._OnTabTimerScheduleCb, self)
+    self._TimerTabs = nil
+    self._RemoveTabTimerList = nil
 end
 
 function XUiActivityBriefShop:StartTabTimer()
@@ -625,9 +617,7 @@ function XUiActivityBriefShop:StartTabTimer()
     if not XTool.IsTableEmpty(self._TimerTabs) then
         self._RemoveTabTimerList = {}
         self:TabTimerUpdater()
-        self._TabTimer = XScheduleManager.ScheduleForever(function()
-            self:TabTimerUpdater()
-        end, XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleForever(XUiActivityBriefShop._OnTabTimerScheduleCb, self, XScheduleManagerPro.SECOND)
     end
 end
 
@@ -677,4 +667,12 @@ function XUiActivityBriefShop:TabTimerUpdater()
             self:Close()
         end
     end
+end
+
+function XUiActivityBriefShop:_OnCountDownScheduleCb()
+    self:UpdateCountDown()
+end
+
+function XUiActivityBriefShop:_OnTabTimerScheduleCb()
+    self:TabTimerUpdater()
 end

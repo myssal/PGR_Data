@@ -85,9 +85,7 @@ function XUiTempleBattleEditor:OnEnable()
     XUiTempleBattle.OnEnable(self)
     XEventManager.AddEventListener(XEventId.EVENT_TEMPLE_UPDATE_EDIT, self.UpdateByState, self)
     XEventManager.AddEventListener(XEventId.EVENT_TEMPLE_EDIT_BLOCK_FROM_OPTION, self.UpdateByState, self)
-    XScheduleManager.ScheduleNextFrame(function()
-        self:UpdateByState()
-    end)
+    XScheduleManagerPro.ScheduleNextFrame(self._OnUpdateByStateScheduleCb, self)
 end
 
 function XUiTempleBattleEditor:OnDisable()
@@ -184,6 +182,10 @@ end
 
 function XUiTempleBattleEditor:UpdateEditRule()
     self._PanelRule:Update()
+end
+
+function XUiTempleBattleEditor:_OnUpdateByStateScheduleCb()
+    self:UpdateByState()
 end
 
 return XUiTempleBattleEditor

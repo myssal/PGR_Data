@@ -34,16 +34,19 @@ end
 
 function XUiSameColorGameGiveUp:OnBtnRePlayClick()
     self:Close()
-    XScheduleManager.ScheduleOnce(function()
-            if self.RePlayCb then self.RePlayCb() end
-        end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnOnBtnRePlayClickScheduleCb, self, 1)
 
 end
 
 function XUiSameColorGameGiveUp:OnBtnExitClick()
     self:Close()
-    XScheduleManager.ScheduleOnce(function()
-            XDataCenter.SameColorActivityManager.RequestGiveUp(self.Boss:GetId())
-            if self.BackCb then self.BackCb() end
-        end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnOnBtnExitClickScheduleCb, self, 1)
+end
+
+function XUiSameColorGameGiveUp:_OnOnBtnExitClickScheduleCb()
+    XDataCenter.SameColorActivityManager.RequestGiveUp(self.Boss:GetId())
+    if self.BackCb then self.BackCb() end
+end
+function XUiSameColorGameGiveUp:_OnOnBtnRePlayClickScheduleCb()
+    if self.RePlayCb then self.RePlayCb() end
 end

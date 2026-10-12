@@ -71,10 +71,7 @@ function XUiButtonLongClick:OnDown(eventData)
     self.frameCount = 0
     self.PressTime = 0
     self:RemoveTimer()
-    self.Timer = XScheduleManager.ScheduleForever(
-    function() self:Tick() end,
-    self.Interval
-    )
+    XScheduleManagerPro.ScheduleForever(XUiButtonLongClick._OnLongPressTickScheduleCb, self, self.Interval)
     self.DownTime = CS.UnityEngine.Time.time
 end
 
@@ -172,10 +169,7 @@ function XUiButtonLongClick:Reset()
 end
 
 function XUiButtonLongClick:RemoveTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiButtonLongClick._OnLongPressTickScheduleCb, self)
 end
 
 function XUiButtonLongClick:Destroy()
@@ -192,6 +186,10 @@ function XUiButtonLongClick:Destroy()
     self.ClickCallbacks = nil
     self.LongClickCallback = nil
     self.longClickUpCallbacks = nil
+end
+
+function XUiButtonLongClick:_OnLongPressTickScheduleCb()
+    self:Tick()
 end
 
 return XUiButtonLongClick

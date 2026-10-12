@@ -16,9 +16,7 @@ function XUiExpensiveItemsTips:InitDynamicTable()
     self.DynamicTable:SetProxy(XUiGridConsumeActivityTaskItem, self)
     self.DynamicTable:SetDelegate(self)
 
-    self.Timer = XScheduleManager.ScheduleForever(function ()
-        self:RefreshTime()
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(XUiExpensiveItemsTips._OnRefreshTimeScheduleCb, self, XScheduleManagerPro.SECOND, 0)
 end
 
 function XUiExpensiveItemsTips:RefreshDynamicTable()
@@ -53,11 +51,13 @@ function XUiExpensiveItemsTips:OnDynamicTableEvent(event, index, grid)
 end
 
 function XUiExpensiveItemsTips:OnDestroy()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-    end
+    XScheduleManagerPro.UnSchedule(XUiExpensiveItemsTips._OnRefreshTimeScheduleCb, self)
 
     XEventManager.DispatchEvent(XEventId.EVENT_MAINUI_TERMINAL_NEED_REFRESH)
+end
+
+function XUiExpensiveItemsTips:_OnRefreshTimeScheduleCb()
+    self:RefreshTime()
 end
 
 return XUiExpensiveItemsTips

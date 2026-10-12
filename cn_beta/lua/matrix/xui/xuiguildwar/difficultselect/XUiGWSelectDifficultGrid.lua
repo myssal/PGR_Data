@@ -58,12 +58,8 @@ function XUiGWSelectDifficultGrid:RefreshBuff()
 end
 
 function XUiGWSelectDifficultGrid:StartOpenTimeCount()
-    if self.TimeId then return end
     self:RefreshOpenTime()
-    self.TimeId = XScheduleManager.ScheduleForever(function()
-            if XTool.UObjIsNil(self.GameObject) then self:StopCount() return end
-            self:RefreshOpenTime()
-        end, 1000)
+    XScheduleManagerPro.ScheduleForever(self._OnStopCountScheduleCb, self, 1000)
 end
 
 function XUiGWSelectDifficultGrid:RefreshOpenTime()
@@ -89,8 +85,7 @@ function XUiGWSelectDifficultGrid:RefreshOpenTime()
 end
 
 function XUiGWSelectDifficultGrid:StopCount()
-    XScheduleManager.UnSchedule(self.TimeId)
-    self.TimeId = nil
+    XScheduleManagerPro.UnSchedule(self._OnStopCountScheduleCb, self)
 end
 
 function XUiGWSelectDifficultGrid:GetBuff(index)
@@ -141,5 +136,10 @@ function XUiGWSelectDifficultGrid:UpdatePanelDifficultyNextRound()
 end
 
 --endregion
+
+function XUiGWSelectDifficultGrid:_OnStopCountScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then self:StopCount() return end
+    self:RefreshOpenTime()
+end
 
 return XUiGWSelectDifficultGrid

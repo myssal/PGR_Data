@@ -57,11 +57,7 @@ function XUiGridBWRoleTeam:OnClickBtnRole()
 end
 
 function XUiGridBWRoleTeam:StopAnimationTimer()
-    if not self._AnimationTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._AnimationTimer)
-    self._AnimationTimer = false
+    XScheduleManagerPro.UnSchedule(XUiGridBWRoleTeam._OnPlayEnableAnimationScheduleCb, self)
 end
 
 function XUiGridBWRoleTeam:PlayEnableAnimation(index)
@@ -69,10 +65,12 @@ function XUiGridBWRoleTeam:PlayEnableAnimation(index)
     if not XTool.UObjIsNil(self._CanvasGroup) then
         self._CanvasGroup.alpha = 0
     end
-    self._AnimationTimer = XScheduleManager.ScheduleOnce(function()
-        self:PlayAnimation("CharacterGridEnable")
-        self:StopAnimationTimer()
-    end, (index - 1) * Delay)
+    local delay = (index - 1) * Delay
+    if delay <= 1 then
+        XScheduleManagerPro.ScheduleNextFrame(XUiGridBWRoleTeam._OnPlayEnableAnimationScheduleCb, self)
+    else
+        XScheduleManagerPro.ScheduleOnce(XUiGridBWRoleTeam._OnPlayEnableAnimationScheduleCb, self, delay)
+    end
 end
 
 ---@class XUiPanelBWRoleSheet : XUiNode 快捷编队
@@ -188,6 +186,11 @@ function XUiPanelBWRoleSheet:PlayEnableAnimation()
         end
     end
     self._IsPlayed = true
+end
+
+function XUiGridBWRoleTeam:_OnPlayEnableAnimationScheduleCb()
+    self:PlayAnimation("CharacterGridEnable")
+    self:StopAnimationTimer()
 end
 
 return XUiPanelBWRoleSheet

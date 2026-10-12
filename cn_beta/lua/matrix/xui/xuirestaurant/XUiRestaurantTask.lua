@@ -174,15 +174,11 @@ end
 
 function XUiRestaurantTask:StartTimer()
     self:StopTimer()
-    self.TimeUpdater = XScheduleManager.ScheduleForever(function ()
-        self:UpdateTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiRestaurantTask:StopTimer()
-    if self.TimeUpdater then
-        XScheduleManager.UnSchedule(self.TimeUpdater)
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateTimeScheduleCb, self)
 end
 
 --------------------------------------------------------------------------------
@@ -199,3 +195,7 @@ function XUiRestaurantTask:AddBtnListener()
 end
 
 --------------------------------------------------------------------------------
+
+function XUiRestaurantTask:_OnUpdateTimeScheduleCb()
+    self:UpdateTime()
+end

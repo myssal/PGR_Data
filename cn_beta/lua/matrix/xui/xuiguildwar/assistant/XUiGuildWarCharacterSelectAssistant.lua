@@ -12,7 +12,6 @@ function XUiGuildWarCharacterSelectAssistant:Ctor(ui, selectCharacterCb, closeUi
     self._Pos = pos
     self._Index = false
     self.WearingAwarenessGrids = {}
-    self._Timer = false
     self._FilterKey = false
     self._MemberData = false
     ---@type XUiGuildWarCharacterFilter
@@ -331,19 +330,13 @@ end
 
 function XUiGuildWarCharacterSelectAssistant:StartTimerCd()
     self:UpdateTime()
-    if not self._Timer then
-        self._Timer = XScheduleManager.ScheduleForever(function()
-            self:UpdateTime()
-            self:UpdateGridCd()
-        end, 1)
+    if not XScheduleManagerPro.HasSchedule(self._OnUpdateTimeScheduleCb, self) then
+        XScheduleManagerPro.ScheduleForever(self._OnUpdateTimeScheduleCb, self, 1)
     end
 end
 
 function XUiGuildWarCharacterSelectAssistant:StopTimerCd()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateTimeScheduleCb, self)
 end
 
 function XUiGuildWarCharacterSelectAssistant:UpdateTime()
@@ -382,6 +375,11 @@ function XUiGuildWarCharacterSelectAssistant:UpdateGridCd()
     for i, grid in pairs(grids) do
         grid:UpdateCdAndInTeam()
     end
+end
+
+function XUiGuildWarCharacterSelectAssistant:_OnUpdateTimeScheduleCb()
+    self:UpdateTime()
+    self:UpdateGridCd()
 end
 
 return XUiGuildWarCharacterSelectAssistant

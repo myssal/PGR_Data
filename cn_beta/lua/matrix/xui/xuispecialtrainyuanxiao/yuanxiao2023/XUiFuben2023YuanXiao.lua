@@ -5,7 +5,6 @@ local XUiFubenYuanXiao = require("XUi/XUiSpecialTrainYuanXiao/XUiFubenYuanXiao")
 local XUiFuben2023YuanXiao = XLuaUiManager.Register(XUiFubenYuanXiao, "UiFuben2023YuanXiao")
 
 function XUiFuben2023YuanXiao:Ctor()
-    self._TimerTask = false
     ---@type XUiFuben2023YuanXiaoTaskGrid[]
     self._GridTaskList = {}
 end
@@ -59,20 +58,16 @@ function XUiFuben2023YuanXiao:UpdateTaskRefreshTime()
 end
 
 function XUiFuben2023YuanXiao:StartTimer()
-    if self._TimerTask then
-        return
-    end
-    self._TimerTask = XScheduleManager.ScheduleForever(function()
-        self:UpdateTaskRefreshTime()
-        self:UpdateRefreshTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateTaskRefreshTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiFuben2023YuanXiao:EndTimer()
-    if self._TimerTask then
-        XScheduleManager.UnSchedule(self._TimerTask)
-        self._TimerTask = false
-    end
+    XScheduleManagerPro.UnSchedule(self._OnUpdateTaskRefreshTimeScheduleCb, self)
+end
+
+function XUiFuben2023YuanXiao:_OnUpdateTaskRefreshTimeScheduleCb()
+    self:UpdateTaskRefreshTime()
+    self:UpdateRefreshTime()
 end
 
 return XUiFuben2023YuanXiao

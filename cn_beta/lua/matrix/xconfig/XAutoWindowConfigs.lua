@@ -23,6 +23,7 @@ XAutoWindowConfigs.AutoFunctionType = {
     WeekCard       = 12,     -- 周卡
     ThreeDayCard = 13, --三日礼包
     MonthPlus = 14, --月卡Plus
+    Regression4 = 15,    -- 回归活动4期
     NewYearZhanBu   = 500,     -- 日服元旦占卜
     NewYearDrawActivity = 501, -- 日服元旦抽奖
 }

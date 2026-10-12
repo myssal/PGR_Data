@@ -13,11 +13,11 @@ function XUiHostelQte:InitAutoScript()
 end
 
 function XUiHostelQte:AutoInitUi()
-    self.ImgHitArea = self.Transform:Find("FullScreenBackground/ImgHitArea"):GetComponent("Image")
-    self.ImgSuperHitArea = self.Transform:Find("FullScreenBackground/ImgSuperHitArea"):GetComponent("Image")
-    self.ImgLine = self.Transform:Find("FullScreenBackground/ImgLine"):GetComponent("Image")
-    self.BtnOk = self.Transform:Find("FullScreenBackground/BtnOk"):GetComponent("Button")
-    self.TxtRemainTime = self.Transform:Find("SafeAreaContentPane/TxtRemainTime"):GetComponent("Text")
+    self.ImgHitArea = self.Transform:Find("FullScreenBackground/ImgHitArea"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgSuperHitArea = self.Transform:Find("FullScreenBackground/ImgSuperHitArea"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.ImgLine = self.Transform:Find("FullScreenBackground/ImgLine"):GetComponent(typeof(CS.UnityEngine.UI.Image))
+    self.BtnOk = self.Transform:Find("FullScreenBackground/BtnOk"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtRemainTime = self.Transform:Find("SafeAreaContentPane/TxtRemainTime"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.SliTime = self.Transform:Find("SafeAreaContentPane/SliTime"):GetComponent(typeof(CS.UnityEngine.UI.Slider))
 end
 

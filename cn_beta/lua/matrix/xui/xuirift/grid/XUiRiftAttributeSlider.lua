@@ -16,9 +16,7 @@ function XUiRiftAttributeSlider:OnStart(index)
 
 	self:RegisterEvent()
 	self:InitView()
-	XScheduleManager.ScheduleOnce(function()
-		self:InitSystemPropNodePos()  -- 异形屏适配 延迟执行
-	end, 1)
+	XScheduleManagerPro.ScheduleOnce(self._OnInitSystemPropNodePosScheduleCb, self, 1)
 	---@type XUiPanelRiftSysAttribute
 	self.Bubble = XUiPanelRiftSysAttribute.New(self.PanelBuffBubble, self.Parent, index)
 end
@@ -184,6 +182,10 @@ function XUiRiftAttributeSlider:SetPosition()
 		local curPos = self.PanelBuffBubble.anchoredPosition
 		self.PanelBuffBubble.anchoredPosition = CS.UnityEngine.Vector2(curPos.x, curPos.y + offset)
 	end
+end
+
+function XUiRiftAttributeSlider:_OnInitSystemPropNodePosScheduleCb()
+    self:InitSystemPropNodePos()  -- 异形屏适配 延迟执行
 end
 
 return XUiRiftAttributeSlider

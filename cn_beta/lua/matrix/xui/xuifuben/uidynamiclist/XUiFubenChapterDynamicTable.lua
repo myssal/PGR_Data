@@ -73,10 +73,7 @@ function XUiFubenChapterDynamicTable:OnDynamicTableEvent(event, index, grid)
                     grid:PlayOpenAnim(false, self.RootUi)
                 end
                 -- XLuaUiManager.SetMask(true)
-                self.Timer1 = XScheduleManager.ScheduleOnce(function()
-                    -- 松开时开启点击
-                    -- XLuaUiManager.SetMask(false)
-                end, math.max(math.ceil(self.GridDic[index]:GetOpenDuration() * 1000 - 500), 500))
+                XScheduleManagerPro.ScheduleOnce(self._OnDynamicTableEventScheduleCb, self, math.max(math.ceil(self.GridDic[index]:GetOpenDuration() * 1000 - 500), 500))
             elseif index > self.CurrentSelectedIndex then
                 grid:PlayMoveRightAnim(false, true)
                 grid:PlayCloseAnim(false, self.RootUi)
@@ -159,15 +156,7 @@ function XUiFubenChapterDynamicTable:UpdateSelectedIndex(index, grid)
     else 
         time = math.max(math.ceil(self.GridDic[index]:GetOpenDuration() * 1000 - 500), 500)
     end
-    self.Timer2 = XScheduleManager.ScheduleOnce(function()
-        -- 松开时开启点击
-        -- XLuaUiManager.SetMask(false)
-        if self.Callback then
-            self.Callback()
-            self.Callback = nil
-            self.WaitTime = -1
-        end
-    end, time)
+    XScheduleManagerPro.ScheduleOnce(self._OnUpdateSelectedIndexScheduleCb, self, time)
 end
 
 function XUiFubenChapterDynamicTable:TweenToIndex(index, waitTime, callback)
@@ -177,15 +166,9 @@ function XUiFubenChapterDynamicTable:TweenToIndex(index, waitTime, callback)
 end
 
 function XUiFubenChapterDynamicTable:StopTimer()
-    if self.Timer1 then
-        XScheduleManager.UnSchedule(self.Timer1)
-    end
-    self.Timer1 = nil
+    XScheduleManagerPro.UnSchedule(self._OnDynamicTableEventScheduleCb, self)
 
-    if self.Timer2 then
-        XScheduleManager.UnSchedule(self.Timer2)
-    end
-    self.Timer2 = nil
+    XScheduleManagerPro.UnSchedule(self._OnUpdateSelectedIndexScheduleCb, self)
 end
 
 function XUiFubenChapterDynamicTable:GetCurrentSelectedIndex()
@@ -211,6 +194,21 @@ function XUiFubenChapterDynamicTable:OnDestroy()
             end
         end
     end
+end
+
+function XUiFubenChapterDynamicTable:_OnDynamicTableEventScheduleCb()
+        -- 松开时开启点击
+        -- XLuaUiManager.SetMask(false)
+end
+
+function XUiFubenChapterDynamicTable:_OnUpdateSelectedIndexScheduleCb()
+        -- 松开时开启点击
+                -- XLuaUiManager.SetMask(false)
+                if self.Callback then
+                    self.Callback()
+                    self.Callback = nil
+                    self.WaitTime = -1
+                end
 end
 
 return XUiFubenChapterDynamicTable

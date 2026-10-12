@@ -57,18 +57,11 @@ function XUiBigWorldObtainSpecial:RegisterForceShow()
     local time = self:GetForceShowTime()
     self:SetCloseInfoVisible(false)
     self:UnRegisterForceShow()
-    self._ForceShowTimer = XScheduleManager.ScheduleOnce(function() 
-        self._ForceShowTimer = nil
-        self:SetCloseInfoVisible(true)
-    end, XScheduleManager.SECOND * time)
+    XScheduleManagerPro.ScheduleOnce(XUiBigWorldObtainSpecial._OnEnableCloseInfoScheduleCb, self, XScheduleManagerPro.SECOND * time)
 end
 
 function XUiBigWorldObtainSpecial:UnRegisterForceShow()
-    if not self._ForceShowTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._ForceShowTimer)
-    self._ForceShowTimer = nil
+    XScheduleManagerPro.UnSchedule(XUiBigWorldObtainSpecial._OnEnableCloseInfoScheduleCb, self)
 end
 
 function XUiBigWorldObtainSpecial:SetCloseInfoVisible(visible)
@@ -76,4 +69,8 @@ function XUiBigWorldObtainSpecial:SetCloseInfoVisible(visible)
     if self.Txt then
         self.Txt.gameObject:SetActiveEx(visible)
     end
+end
+
+function XUiBigWorldObtainSpecial:_OnEnableCloseInfoScheduleCb()
+    self:SetCloseInfoVisible(true)
 end

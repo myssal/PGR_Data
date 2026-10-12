@@ -87,7 +87,8 @@ function XPacMan2Control:GetStageList()
             RewardId = stage.KeyReward,
             IsLock4PreStage = isLock4PreStage,
             IsLock4Time = isLock4Time,
-            Time = isLock4Time and XFunctionManager.GetStartTimeByTimeId(timeId)
+            Time = isLock4Time and XFunctionManager.GetStartTimeByTimeId(timeId),
+            StageIcon = stage.StageIcon,
         }
         table.insert(stageList, data)
     end
@@ -216,16 +217,80 @@ function XPacMan2Control:GetCurrentStageId()
     end
 end
 
-function XPacMan2Control:GetStageTips()
-    return self._Model:GetStageTips()
-end
-
 function XPacMan2Control:GetToggleTouch()
     return self._Model:GetToggleTouch()
 end
 
 function XPacMan2Control:SetToggleTouch(value)
     self._Model:SetToggleTouch(value)
+end
+
+
+function XPacMan2Control:GetStageEventConfig(stageId)
+    return self._Model:GetStageEventConfig(stageId)
+end
+
+function XPacMan2Control:GetEventRuleConfigs()
+    return self._Model:GetEventRuleConfigs()
+end
+
+function XPacMan2Control:GetEventGroupConfig(eventGroupId)
+    return self._Model:GetEventGroupConfig(eventGroupId)
+end
+
+function XPacMan2Control:GetAtomicEventConfig(atomicEventId)
+    return self._Model:GetAtomicEventConfig(atomicEventId)
+end
+
+---获取主界面点击提示文本。
+---TriggerType已经废弃，当前复用本表配置主界面提示；TriggerPram[1]表示文本轮播顺序。
+---@return string[]
+function XPacMan2Control:GetMainStageTipTexts()
+    local configs = self._Model:GetStageTipConfigs()
+    local orderedConfigs = {}
+
+    for _, config in pairs(configs) do
+        local triggerPram = config.TriggerPram or {}
+        local order = tonumber(triggerPram[1]) or config.Id or 0
+
+        orderedConfigs[#orderedConfigs + 1] = {
+            Id = config.Id or 0,
+            Order = order,
+            Text = config.TipsContent or "",
+        }
+    end
+
+    table.sort(orderedConfigs, function(left, right)
+        if left.Order == right.Order then
+            return left.Id < right.Id
+        end
+
+        return left.Order < right.Order
+    end)
+
+    local texts = {}
+
+    for _, config in ipairs(orderedConfigs) do
+        local text = config.Text
+
+        if text ~= "" then
+            texts[#texts + 1] = text
+        end
+    end
+
+    return texts
+end
+
+function XPacMan2Control:RecordGameEntry(isRestart)
+    self._Model:RecordGameEntry(isRestart)
+end
+
+function XPacMan2Control:GetRestartTimes()
+    return self._Model:GetRestartTimes()
+end
+
+function XPacMan2Control:CalculateStageStar(stageId,score)
+    return self._Model:CalculateStageStar(stageId,score)
 end
 
 return XPacMan2Control

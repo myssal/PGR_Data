@@ -90,34 +90,33 @@ function XUiFightCerberusDialogBoxGrid:StartTimer()
         return
     end
     
-    self.Timer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+function XUiFightCerberusDialogBoxGrid:_OnStartTimerScheduleCb()
         self.ShowTime = self.ShowTime - 1
-        if self.ShowTime <= 0 then
-            self:StopTimer()
-            self:StopCurCv()
-            if not XTool.UObjIsNil(self.GameObject) then
-                if self.AnimEnable and self.AnimEnable.gameObject.activeInHierarchy then
-                    self.AnimEnable:Stop()
-                end
-                if self.AnimDisable and self.AnimDisable.gameObject.activeInHierarchy then
-                    self.AnimDisable.transform:PlayTimelineAnimation(function(isFinished)
-                        if isFinished then
+                if self.ShowTime <= 0 then
+                    self:StopTimer()
+                    self:StopCurCv()
+                    if not XTool.UObjIsNil(self.GameObject) then
+                        if self.AnimEnable and self.AnimEnable.gameObject.activeInHierarchy then
+                            self.AnimEnable:Stop()
+                        end
+                        if self.AnimDisable and self.AnimDisable.gameObject.activeInHierarchy then
+                            self.AnimDisable.transform:PlayTimelineAnimation(function(isFinished)
+                                if isFinished then
+                                    self.GameObject:SetActiveEx(false)
+                                end
+                            end)
+                        else
                             self.GameObject:SetActiveEx(false)
                         end
-                    end)
-                else
-                    self.GameObject:SetActiveEx(false)
+                    end
                 end
-            end
-        end
-    end, XScheduleManager.SECOND)
 end
 
 function XUiFightCerberusDialogBoxGrid:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
 end
 
 return XUiFightCerberusDialogBoxGrid

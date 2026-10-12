@@ -70,37 +70,35 @@ end
 function XUiPanelMainLeftTopActivityBtns:CheckActivityBtnTimerStart()
     if self.ActiveGridActivityCount <= 0 and self.WaitForOpenGridActivityCount <= 0 then
         self:StopActivityButtonsTimer()
-    elseif (self.ActiveGridActivityCount > 0 or self.WaitForOpenGridActivityCount > 0) and not self.ActivityButtonDicTimer then
+    elseif self.ActiveGridActivityCount > 0 or self.WaitForOpenGridActivityCount > 0 then
         self:StartActivityButtonsTimer()
     end
 end
 
 
 function XUiPanelMainLeftTopActivityBtns:StartActivityButtonsTimer()
-    self.ActivityButtonDicTimer = XScheduleManager.ScheduleForever(function()
-        -- wait列表判断开启
-        for grid, v in pairs(self.WaitForGridActivityButtonDic) do
-            if grid:CheckShow() then
-                self:AddActiveGridActivityButtonDic(grid)
-            end
-        end
+    XScheduleManagerPro.ScheduleForever(self._OnActivityButtonsTimer, self, XScheduleManagerPro.SECOND)
+end
 
-        -- 激活列表判断关闭
-        for grid, v in pairs(self.ActiveGridActivityButtonDic) do
-            grid:RefreshByTimeUpdate()
-            if not grid:CheckShow() then
-                self:RemoveActiveGridActivityButtonDic(grid)
-            end
+function XUiPanelMainLeftTopActivityBtns:_OnActivityButtonsTimer()
+    -- wait列表判断开启
+    for grid, v in pairs(self.WaitForGridActivityButtonDic) do
+        if grid:CheckShow() then
+            self:AddActiveGridActivityButtonDic(grid)
         end
+    end
 
-    end, XScheduleManager.SECOND, 0)
+    -- 激活列表判断关闭
+    for grid, v in pairs(self.ActiveGridActivityButtonDic) do
+        grid:RefreshByTimeUpdate()
+        if not grid:CheckShow() then
+            self:RemoveActiveGridActivityButtonDic(grid)
+        end
+    end
 end
 
 function XUiPanelMainLeftTopActivityBtns:StopActivityButtonsTimer()
-    if self.ActivityButtonDicTimer then
-        XScheduleManager.UnSchedule(self.ActivityButtonDicTimer)
-        self.ActivityButtonDicTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnActivityButtonsTimer, self)
 end
 
 --endregion

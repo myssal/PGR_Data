@@ -72,7 +72,7 @@ function XUiSummerSignInTips:OnBtnTcanchaungBlueLightClick()
     if self.CancelCb then
         self.CancelCb()
     end
-    XDataCenter.DrawManager.OpenDrawUi(nil, nil, nil, true)
+    XDataCenter.DrawManager.OpenDrawUi(nil, true)
 end
 
 return XUiSummerSignInTips

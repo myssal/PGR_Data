@@ -22,7 +22,7 @@ function XUiPurchaseBuyCoatingTips:OnStart(viewModel, buyCb, closeDetailCb)
 
     self.TxtName.text = viewModel.Title or ''
     self.Desc.text = viewModel.SubTitle or ''
-    self.WorldDesc.text = viewModel.DetailDesc or ''
+    self.WorldDesc.text = viewModel.IsHideWorldDesc and '' or viewModel.DetailDesc
 
     self._IsTimeLimit = viewModel.IsTimeLimit or false
     self._EndTime = viewModel.EndTime
@@ -107,18 +107,17 @@ function XUiPurchaseBuyCoatingTips:OnSettOff()
 end
 
 function XUiPurchaseBuyCoatingTips:StartTimer()
-    if not self._IsTimeLimit or self._IsSettOff or self._Timer then return end
-    self._Timer = XScheduleManager.ScheduleForever(function()
-        if XTool.UObjIsNil(self.GameObject) then return end
-        self:RefreshTime()
-    end, 1000)
+    if not self._IsTimeLimit or self._IsSettOff then return end
+    XScheduleManagerPro.ScheduleForever(self._OnRefreshTimeTimer, self, 1000)
+end
+
+function XUiPurchaseBuyCoatingTips:_OnRefreshTimeTimer()
+    if XTool.UObjIsNil(self.GameObject) then return end
+    self:RefreshTime()
 end
 
 function XUiPurchaseBuyCoatingTips:DestroyTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnRefreshTimeTimer, self)
 end
 
 function XUiPurchaseBuyCoatingTips:CheckIsSettOff()
@@ -202,3 +201,4 @@ return XUiPurchaseBuyCoatingTips
 ---@field OriginCost number | nil 原价
 ---@field ItemId number 货币Id
 ---@field AssetsItemIds number[] | nil 资源栏展示item
+---@field IsHideWorldDesc boolean 套装购买时，如果fashion.tab的这个涂装GiftId配置为空，就隐藏WorldDesc的UI组件

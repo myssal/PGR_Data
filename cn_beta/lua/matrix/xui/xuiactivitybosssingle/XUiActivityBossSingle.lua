@@ -3,7 +3,6 @@ local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local tableInsert = table.insert
 local CsXTextManager = CS.XTextManager
-local CsXScheduleManager = XScheduleManager
 
 local XUiGridActivityBossSingle = require("XUi/XUiActivityBossSingle/XUiGridActivityBossSingle")
 local XUiActivityBossSingle = XLuaUiManager.Register(XLuaUi, "UiActivityBossSingle")
@@ -68,47 +67,49 @@ function XUiActivityBossSingle:CreateActivityTimer()
         end
     end
 
-    self.ActivityTimer = CsXScheduleManager.ScheduleForever(function()
-            if XTool.UObjIsNil(self.TxtLeftTime) then
-                self:DestroyActivityTimer()
-                return
-            end
+    XScheduleManagerPro.ScheduleForever(XUiActivityBossSingle._OnActivityTimeScheduleCb, self, XScheduleManagerPro.SECOND)
+end
 
-            time = time + 1
+-- 活动倒计时定时器回调
+function XUiActivityBossSingle:_OnActivityTimeScheduleCb()
+    if XTool.UObjIsNil(self.TxtLeftTime) then
+        self:DestroyActivityTimer()
+        return
+    end
 
-            if time >= activityEndTime then
-                self:DestroyActivityTimer()
-                XDataCenter.FubenActivityBossSingleManager.OnActivityEnd()
-            elseif fightEndTime <= time then
-                local leftTime = activityEndTime - time
-                if leftTime > 0 then
-                    self.TxtResetDesc.text = shopStr
-                    self.TxtLeftTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
-                    if self.TxtLeftTimeMirror then
-                        self.TxtLeftTimeMirror.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
-                    end
-                end
-            else
-                local leftTime = fightEndTime - time
-                if leftTime > 0 then
-                    self.TxtResetDesc.text = fightStr
-                    self.TxtLeftTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
-                    if self.TxtLeftTimeMirror then
-                        self.TxtLeftTimeMirror.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
-                    end
-                else
-                    self:DestroyActivityTimer()
-                    self:CreateActivityTimer()
-                end
+    local time = XTime.GetServerNowTimestamp()+1
+    local fightEndTime = XDataCenter.FubenActivityBossSingleManager.GetFightEndTime()
+    local activityEndTime = XDataCenter.FubenActivityBossSingleManager.GetActivityEndTime()
+
+    if time >= activityEndTime then
+        self:DestroyActivityTimer()
+        XDataCenter.FubenActivityBossSingleManager.OnActivityEnd()
+    elseif fightEndTime <= time then
+        local leftTime = activityEndTime - time
+        if leftTime > 0 then
+            self.TxtResetDesc.text = CsXTextManager.GetText("ActivityBranchShopLeftTime")
+            self.TxtLeftTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
+            if self.TxtLeftTimeMirror then
+                self.TxtLeftTimeMirror.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
             end
-        end, CsXScheduleManager.SECOND, 0)
+        end
+    else
+        local leftTime = fightEndTime - time
+        if leftTime > 0 then
+            self.TxtResetDesc.text = CsXTextManager.GetText("ActivityBranchFightLeftTime")
+            self.TxtLeftTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
+            if self.TxtLeftTimeMirror then
+                self.TxtLeftTimeMirror.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
+            end
+        else
+            self:DestroyActivityTimer()
+            self:CreateActivityTimer()
+        end
+    end
 end
 
 function XUiActivityBossSingle:DestroyActivityTimer()
-    if self.ActivityTimer then
-        CsXScheduleManager.UnSchedule(self.ActivityTimer)
-        self.ActivityTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiActivityBossSingle._OnActivityTimeScheduleCb, self)
 end
 
 --初始化副本选择卡,选择卡是定死的，不使用滑动条

@@ -78,20 +78,19 @@ function XUiPanelAd:InitCenterScroll()
         end
 
         self:ClearTimer()
-        self.Timer = XScheduleManager.ScheduleOnce(function()
-            self.CenterScroll:NextPage()
-        end, interval * 1000)
+        XScheduleManagerPro.ScheduleOnce(self._OnNextPageTimer, self, interval * 1000)
 
         self.CurIndex = nowIndex
         self:UpdatePage()
     end)
 end
 
+function XUiPanelAd:_OnNextPageTimer()
+    self.CenterScroll:NextPage()
+end
+
 function XUiPanelAd:ClearTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnNextPageTimer, self)
 end
 
 function XUiPanelAd:AddPointerClickListener()

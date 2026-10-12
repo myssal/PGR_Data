@@ -19,8 +19,7 @@ local XBossSingleStageStatus = {
 ---@field ListSelectableFeatures UnityEngine.RectTransform  -- v4.2 新增：可选词缀列表
 ---@field GridSelectableFeature UnityEngine.RectTransform  -- v4.2 新增：可选词缀Grid模板
 ---@field _Control XFubenBossSingleControl
----@field _AnimationDelayTimerId number|nil 动画延迟定时器ID
----@field _AnimationPlayTimerId number|nil 动画播放延迟定时器ID
+---@field _SettleData table|nil 结算数据本体（OnStart 传入的一次性快照，无处再取，随 UI 生死）
 ---@field _IsInAnimationDelay boolean 是否在动画延迟期间（配合Unity动画演出）
 --- 囚笼 Boss 结算界面
 --- 必须继承 XLuaUiSettle，基类会在 OnDestroyUi 时自动 Dispatch EVENT_FIGHT_FINISH_SETTLE
@@ -38,6 +37,7 @@ function XUiFubenBossSingleSettlement:OnAwake()
 end
 
 function XUiFubenBossSingleSettlement:OnStart(data)
+    self._SettleData = data
     self:ShowPanel(data)
     XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_RESET, self.OnActivityEnd, self)
 end
@@ -154,7 +154,6 @@ function XUiFubenBossSingleSettlement:ShowPanel(data)
     self.StageId = data.StageId
     self.IsSave = true
 
-    local isChallenge = self._Control:IsBossSingleChallenge()
     local difficultName = self._Control:GetBossDifficultName(data.StageId)
 
     -- 设置文本类型的内容（名称、标题等）
@@ -181,12 +180,6 @@ function XUiFubenBossSingleSettlement:ShowPanel(data)
     local showLeftTime = result.MaxTimeScore
     SafeSetActive(self.PanelLeftTime, showLeftTime > 0)
 
-    local myTotalHistory = self:GetMyTotalHistory()
-    local stageInfo = self._Control:GetBossStageInfo(data.StageId)
-    local bossTotalScore = (stageInfo and stageInfo.Score or 0) + self._Control:GetBaseScoreByStageId(data.StageId)
-    local curBossTotalScore = self._Control:GetBossCurSettleScore(data.StageId, result.TotalScore)
-    local curBossMaxScore = self._Control:GetBossMaxScoreByStageId(data.StageId)
-
     self.CurAllScore = result.TotalScore
 
     SafeSetText(self.TxtBossAllLoseHpScore, XUiHelper.GetText("BossSingleAutoFightDesc10", result.MaxBossDamageScore))
@@ -202,19 +195,34 @@ function XUiFubenBossSingleSettlement:ShowPanel(data)
 
     -- 延迟3秒后播放音效、分数动画和刷新UI（配合Unity动画演出）
     self:_ClearAnimationPlayTimer()
-    self._AnimationPlayTimerId = XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.Transform) then
-            return
-        end
-        self._AnimationPlayTimerId = nil
-        -- 播放音效
-        self.AudioInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX,
-            XLuaAudioManager.UiBasicsMusic.UiSettle_Win_Number)
-        -- 播放分数动画
-        self:PlayScoreAnimation(result, myTotalHistory, bossTotalScore, curBossTotalScore, curBossMaxScore, isChallenge)
-        -- 刷新按钮
-        self:RefreshButton(data)
-    end, 3 * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(XUiFubenBossSingleSettlement._OnAnimationPlayScheduleCb, self, 3 * XScheduleManagerPro.SECOND)
+end
+
+--- 定时器回调：延迟3秒后播放音效、分数动画和刷新UI
+function XUiFubenBossSingleSettlement:_OnAnimationPlayScheduleCb()
+    if XTool.UObjIsNil(self.Transform) then
+        return
+    end
+    local data = self._SettleData
+    if not data then
+        return
+    end
+    local result = data.SettleData and data.SettleData.BossSingleFightResult
+    if not result then
+        return
+    end
+    -- 播放音效
+    self.AudioInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX,
+        XLuaAudioManager.UiBasicsMusic.UiSettle_Win_Number)
+    local myTotalHistory = self:GetMyTotalHistory()
+    local stageInfo = self._Control:GetBossStageInfo(self.StageId)
+    local bossTotalScore = (stageInfo and stageInfo.Score or 0) + self._Control:GetBaseScoreByStageId(self.StageId)
+    local curBossTotalScore = self._Control:GetBossCurSettleScore(self.StageId, result.TotalScore)
+    local curBossMaxScore = self._Control:GetBossMaxScoreByStageId(self.StageId)
+    local isChallenge = self._Control:IsBossSingleChallenge()
+    self:PlayScoreAnimation(result, myTotalHistory, bossTotalScore, curBossTotalScore, curBossMaxScore, isChallenge)
+    -- 刷新按钮
+    self:RefreshButton(data)
 end
 
 -- 播放分数动画
@@ -609,18 +617,12 @@ end
 
 --- 清理动画延迟定时器
 function XUiFubenBossSingleSettlement:_ClearAnimationDelayTimer()
-    if self._AnimationDelayTimerId then
-        XScheduleManager.UnSchedule(self._AnimationDelayTimerId)
-        self._AnimationDelayTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiFubenBossSingleSettlement._OnAnimationDelayScheduleCb, self)
 end
 
 --- 清理动画播放定时器
 function XUiFubenBossSingleSettlement:_ClearAnimationPlayTimer()
-    if self._AnimationPlayTimerId then
-        XScheduleManager.UnSchedule(self._AnimationPlayTimerId)
-        self._AnimationPlayTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiFubenBossSingleSettlement._OnAnimationPlayScheduleCb, self)
 end
 
 --- 启动动画延迟（延迟3秒后允许操作，配合Unity动画演出）
@@ -629,13 +631,15 @@ function XUiFubenBossSingleSettlement:_StartAnimationDelay()
     self._IsInAnimationDelay = true
     
     -- 延迟3秒后允许操作
-    self._AnimationDelayTimerId = XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.Transform) then
-            return
-        end
-        self._IsInAnimationDelay = false
-        self._AnimationDelayTimerId = nil
-    end, 3 * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(XUiFubenBossSingleSettlement._OnAnimationDelayScheduleCb, self, 3 * XScheduleManagerPro.SECOND)
+end
+
+--- 定时器回调：动画延迟结束，允许操作
+function XUiFubenBossSingleSettlement:_OnAnimationDelayScheduleCb()
+    if XTool.UObjIsNil(self.Transform) then
+        return
+    end
+    self._IsInAnimationDelay = false
 end
 
 -- v4.2 新增：计算并刷新总讨伐值倍率

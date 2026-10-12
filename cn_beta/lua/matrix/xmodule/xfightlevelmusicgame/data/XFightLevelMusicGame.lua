@@ -321,9 +321,7 @@ function XFightLevelMusicGame:_UpdateGameState()
     if self._CurTrackIndex > #self._TrackIdList then
         self._State = XEnumConst.FIGHT_LEVEL_MUSIC.GAME_STATE.CLEAR
         -- 延后0.5秒走完最后一个
-        XScheduleManager.ScheduleOnce(function()
-            XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_LEVEL_MUSIC_WIN)
-        end, 500)
+        XScheduleManagerPro.ScheduleOnce(self._OnUpdateGameStateScheduleCb, self, 500)
         return
     end
 
@@ -354,5 +352,9 @@ function XFightLevelMusicGame:_UpdateAreaPoint(time)
     end
 end
 --endregion
+
+function XFightLevelMusicGame:_OnUpdateGameStateScheduleCb()
+    XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_LEVEL_MUSIC_WIN)
+end
 
 return XFightLevelMusicGame

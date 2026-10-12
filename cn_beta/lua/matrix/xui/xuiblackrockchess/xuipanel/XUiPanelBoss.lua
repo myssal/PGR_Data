@@ -125,17 +125,11 @@ function XUiPanelBoss:ShowTalk(args)
     
     -- 隐藏
     self:ClearHideTalkTimer()
-    self.HideTalkTimer = XScheduleManager.ScheduleOnce(function()
-        self.PanelTalk.gameObject:SetActiveEx(false)
-        self.HideTalkTimer = nil
-    end, duration)
+    XScheduleManagerPro.ScheduleOnce(XUiPanelBoss._OnHideTalkScheduleCb, self, duration)
 end
 
 function XUiPanelBoss:ClearHideTalkTimer()
-    if self.HideTalkTimer then
-        XScheduleManager.UnSchedule(self.HideTalkTimer)
-        self.HideTalkTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiPanelBoss._OnHideTalkScheduleCb, self)
 end
 
 -- 进入关卡显示喊话
@@ -232,6 +226,10 @@ function XUiPanelBoss:StopTweenSequence()
     if self._Seq then
         self._Seq:Pause()
     end
+end
+
+function XUiPanelBoss:_OnHideTalkScheduleCb()
+    self.PanelTalk.gameObject:SetActiveEx(false)
 end
 
 return XUiPanelBoss

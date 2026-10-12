@@ -51,14 +51,18 @@ function XUiGridStrongholdBuff:Refresh(buffId, isBossBuff)
 
         if self.OldIsActive ~= nil then
             if self.OldIsActive ~= isBuffActive then
-                XScheduleManager.ScheduleOnce(function()
-                    if XTool.UObjIsNil(self.Effect) then return end
-                    self.Effect.gameObject:SetActiveEx(true)
-                end, 0.5 * XScheduleManager.SECOND)
+                XScheduleManagerPro.UnSchedule(XUiGridStrongholdBuff._OnShowEffectScheduleCb, self)
+                XScheduleManagerPro.ScheduleOnce(XUiGridStrongholdBuff._OnShowEffectScheduleCb, self, 0.5 * XScheduleManagerPro.SECOND)
             end
         end
         self.OldIsActive = isBuffActive
     end
+end
+
+--- 定时器回调：延迟显示Buff激活特效
+function XUiGridStrongholdBuff:_OnShowEffectScheduleCb()
+    if XTool.UObjIsNil(self.Effect) then return end
+    self.Effect.gameObject:SetActiveEx(true)
 end
 
 function XUiGridStrongholdBuff:SetDisable(value)

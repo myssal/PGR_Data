@@ -185,20 +185,15 @@ function XUiNewbieTaskAnim:SoundStop()
 end
 
 function XUiNewbieTaskAnim:StartTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnUpdateScheduleCb, self) then
         self:StopTimer()
     end
 
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:Update()
-    end,0)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateScheduleCb, self, 0)
 end
 
 function XUiNewbieTaskAnim:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateScheduleCb, self)
 end
 
 function XUiNewbieTaskAnim:SetPlayOne(bPlayOne)
@@ -235,6 +230,10 @@ function XUiNewbieTaskAnim:ActiveTriggerAnimation(conditionId)
         return
     end
     self.AnimPlayer:Play(configs[1])
+end
+
+function XUiNewbieTaskAnim:_OnUpdateScheduleCb()
+    self:Update()
 end
 
 return XUiNewbieTaskAnim

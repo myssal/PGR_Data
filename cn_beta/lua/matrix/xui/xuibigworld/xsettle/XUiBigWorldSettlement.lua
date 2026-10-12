@@ -26,11 +26,7 @@ function XUiGridBWSettleTarget:Update(objectiveId, index)
 end
 
 function XUiGridBWSettleTarget:StopAnimationTimer()
-    if not self._AnimationTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._AnimationTimer)
-    self._AnimationTimer = false
+    XScheduleManagerPro.UnSchedule(XUiGridBWSettleTarget._OnPlaySeqAnimationScheduleCb, self)
 end
 
 function XUiGridBWSettleTarget:PlaySeqAnimation(index)
@@ -38,10 +34,12 @@ function XUiGridBWSettleTarget:PlaySeqAnimation(index)
     if not XTool.UObjIsNil(self._CanvasGroup) then
         self._CanvasGroup.alpha = 0
     end
-    self._AnimationTimer = XScheduleManager.ScheduleOnce(function()
-        self:PlayAnimation("GridTargetEnable")
-        self:StopAnimationTimer()
-    end, (index - 1) * Delay)
+    local delay = (index - 1) * Delay
+    if delay <= 1 then
+        XScheduleManagerPro.ScheduleNextFrame(XUiGridBWSettleTarget._OnPlaySeqAnimationScheduleCb, self)
+    else
+        XScheduleManagerPro.ScheduleOnce(XUiGridBWSettleTarget._OnPlaySeqAnimationScheduleCb, self, delay)
+    end
 end
 
 ---@class XUiBigWorldSettlement : XBigWorldUi
@@ -122,20 +120,14 @@ function XUiBigWorldSettlement:DoSettleLose()
     self.PanelSettleSuccessful.gameObject:SetActiveEx(false)
     self.PanelSettleFail.gameObject:SetActiveEx(true)
     --倒计时
-    local Cd = 30
-    self.TxtCoolDown.text = Cd
+    self._CoolDown = 30
+    self.TxtCoolDown.text = self._CoolDown
     self:StopCoolTimer()
     
     self:PlayAnimationWithMask("FailEnable", function()
         self:PlayScoreAnimation(self.TxtFailScore)
 
-        self._CoolTimer = XScheduleManager.ScheduleForever(function()
-            Cd = Cd - 1
-            self.TxtCoolDown.text = Cd
-            if Cd <= 0 then
-                self:OnBtnCancelClick()
-            end
-        end, XScheduleManager.SECOND)
+        XScheduleManagerPro.ScheduleForever(XUiBigWorldSettlement._OnCoolDownScheduleCb, self, XScheduleManagerPro.SECOND)
     end)
 end
 
@@ -144,11 +136,7 @@ function XUiBigWorldSettlement:CheckObjectiveFinish(objectiveId)
 end
 
 function XUiBigWorldSettlement:StopCoolTimer()
-    if not self._CoolTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._CoolTimer)
-    self._CoolTimer = nil
+    XScheduleManagerPro.UnSchedule(XUiBigWorldSettlement._OnCoolDownScheduleCb, self)
 end
 
 function XUiBigWorldSettlement:OnBtnCancelClick()
@@ -191,4 +179,17 @@ function XUiBigWorldSettlement:CsCollection2Table(collection)
         list[#list + 1] = collection[i]
     end
     return list
+end
+
+function XUiBigWorldSettlement:_OnCoolDownScheduleCb()
+    self._CoolDown = self._CoolDown - 1
+    self.TxtCoolDown.text = self._CoolDown
+    if self._CoolDown <= 0 then
+        self:OnBtnCancelClick()
+    end
+end
+
+function XUiGridBWSettleTarget:_OnPlaySeqAnimationScheduleCb()
+    self:PlayAnimation("GridTargetEnable")
+    self:StopAnimationTimer()
 end

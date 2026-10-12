@@ -19,7 +19,7 @@ function XExFubenMainLineManager:ExOpenChapterUi(viewModel, difficulty)
     local extralData = viewModel:GetExtralData()
     local chapterMainId = extralData.MainId
     local chapterConfig = XDataCenter.FubenMainLineManager.GetChapterCfgByChapterMain(chapterMainId, difficulty)
-    if not viewModel:GetIsLocked() then
+    if not viewModel:GetBusinessIsLocked() then
         if chapterMainId == XDataCenter.FubenMainLineManager.TRPGChapterId then
             XDataCenter.TRPGManager.PlayStartStory()
         elseif chapterMainId == XDataCenter.FubenMainLineManager.MainLine3DId then
@@ -257,7 +257,10 @@ function XExFubenMainLineManager:GetChapterViewModel(chapterMainId, difficulty, 
                 if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(self:ExGetFunctionNameType(), proxy:GetId()) then
                     return true
                 end
-            
+
+                return proxy:GetBusinessIsLocked()
+            end,
+            GetBusinessIsLocked = function(proxy)
                 return self:ExGetChapterIsLockAndLockTip(proxy:GetExtralData().MainId, proxy:GetExtralData().Difficulty)
             end,
             GetLockTip = function(proxy)
@@ -265,6 +268,9 @@ function XExFubenMainLineManager:GetChapterViewModel(chapterMainId, difficulty, 
                     return XUiHelper.GetText("NecessaryResourcesNotDownloaded")
                 end
 
+                return proxy:GetBusinessLockTip()
+            end,
+            GetBusinessLockTip = function(proxy)
                 if proxy:CheckHasTimeLimitTag() then
                     local ret, desc = XDataCenter.FubenMainLineManager.CheckActivityCondition(proxy:GetId())
                     if not ret then
@@ -369,7 +375,7 @@ function XExFubenMainLineManager:ExGetCurrentGroupIndexAndChapterIndex(groupId)
     for i, config in ipairs(groupConfigs) do
         local viewModels = self:ExGetChapterViewModels(config.Id, XDataCenter.FubenManager.DifficultNormal)
         for i, viewModel in ipairs(viewModels) do
-            if not viewModel:GetIsLocked() then
+            if not viewModel:GetBusinessIsLocked() then
                 lockAll = false
             end
             extralData = viewModel:GetExtralData()
@@ -393,7 +399,7 @@ function XExFubenMainLineManager:ExGetCurrentGroupIndexAndChapterIndex(groupId)
                 end
             end
             -- 记录当前玩家打到的关卡
-            if viewModel:GetIsLocked() and lastModelInfo and lastModelInfo.ViewModel and not lastModelInfo.ViewModel:GetIsLocked() then
+            if viewModel:GetBusinessIsLocked() and lastModelInfo and lastModelInfo.ViewModel and not lastModelInfo.ViewModel:GetBusinessIsLocked() then
                 playerCurrModelInfo = {ViewModel = lastModelInfo.ViewModel, Index = lastModelInfo.Index}
             end
 

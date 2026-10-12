@@ -34,24 +34,31 @@ function XUiGridBirthdayRole:PlayTimelineAnimation(index)
     if self.IsPlay then
         return
     end
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(XUiGridBirthdayRole._OnPlayTimelineAnimationScheduleCb, self) then
         return
     end
     local canvasGroup = self.GridBirthdayEnable.parent.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
     canvasGroup.alpha = 0
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GridBirthdayEnable) then
-            return
-        end
-        self.GridBirthdayEnable:PlayTimelineAnimation(function()
-            canvasGroup.alpha = 1
-        end)
-        self.IsPlay = true
-    end, (index - 1) * Duration)
+    local delay = (index - 1) * Duration
+    if delay <= 1 then
+        XScheduleManagerPro.ScheduleNextFrame(XUiGridBirthdayRole._OnPlayTimelineAnimationScheduleCb, self)
+    else
+        XScheduleManagerPro.ScheduleOnce(XUiGridBirthdayRole._OnPlayTimelineAnimationScheduleCb, self, delay)
+    end
 end
 
 function XUiGridBirthdayRole:OnBtnClick()
     self._Control:ShowSingleStory(self.StoryId)
+end
+
+function XUiGridBirthdayRole:_OnPlayTimelineAnimationScheduleCb()
+    if XTool.UObjIsNil(self.GridBirthdayEnable) then
+        return
+    end
+    self.GridBirthdayEnable:PlayTimelineAnimation(function()
+        self.GridBirthdayEnable.parent.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).alpha = 1
+    end)
+    self.IsPlay = true
 end
 
 return XUiGridBirthdayRole

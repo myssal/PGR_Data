@@ -16,6 +16,7 @@ XPhotographConfigs.BackGroundType = {
     Date = 2,           -- 昼夜模式
     Normal=3,           -- 普通类型，无特殊模式
     Gyro = 4,           -- 交互模式（陀螺仪）
+    Music = 5,          -- 音乐模式
 }
 
 XPhotographConfigs.SceneRotationType = {
@@ -164,6 +165,13 @@ function XPhotographConfigs.GetBackgroundTabTag(id)
         return nil
     end
     return SceneTemplates[id].TabTag or ''
+end
+
+function XPhotographConfigs.GetBackgroundHintText(id)
+    if not SceneTemplates then
+        return nil
+    end
+    return SceneTemplates[id].HintText or nil
 end
 
 function XPhotographConfigs.SetLogoOrInfoPos(rectTransform, alignment, delayFrame, offsetX, offsetY, autoLayout)

@@ -125,10 +125,7 @@ function XUiEquipAwarenessV2P6:PlaySwitchEffect()
     local isFirst = not self.IsPlayed
     if isFirst then
         self:ReleasePlayEffectTimer()
-        self.PlayEffectTimer = XScheduleManager.ScheduleOnce(function() 
-            self.PlayEffectTimer = nil
-            self:PlaySwitchEffect()
-        end, 500)
+        XScheduleManagerPro.ScheduleOnce(XUiEquipAwarenessV2P6._OnPlaySwitchEffectScheduleCb, self, 500)
         self.IsPlayed = true
         return
     end
@@ -142,10 +139,11 @@ function XUiEquipAwarenessV2P6:PlaySwitchEffect()
 end
 
 function XUiEquipAwarenessV2P6:ReleasePlayEffectTimer()
-    if self.PlayEffectTimer then
-        XScheduleManager.UnSchedule(self.PlayEffectTimer)
-        self.PlayEffectTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiEquipAwarenessV2P6._OnPlaySwitchEffectScheduleCb, self)
+end
+
+function XUiEquipAwarenessV2P6:_OnPlaySwitchEffectScheduleCb()
+    self:PlaySwitchEffect()
 end
 
 return XUiEquipAwarenessV2P6

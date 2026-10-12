@@ -68,12 +68,14 @@ function XRestaurantControl:OnRelease()
     end
 
     self:ClearRequest()
-    self:UnloadAll()
 
     XMVCA.XRestaurant:SetInActivity(false)
 end
 
 function XRestaurantControl:InitRequire()
+    require("XRestaurant/XRestaurantCharAgent")
+    require("XRestaurant/XRestaurantPerformAgent")
+    
     --带Cd的请求
     XNetworkCallCd = require("XCommon/XNetworkCallCd")
     --工作台
@@ -1208,25 +1210,19 @@ end
 --- 厨房开始模拟
 --------------------------
 function XRestaurantControl:StartSimulation()
-    if self._SimulationTimer then
+    if XScheduleManagerPro.HasSchedule(self._OnSimulationScheduleCb, self) then
         self:StopSimulation()
     end
     --上次模拟时间
     self._LastSimulationTime = XTime.GetServerNowTimestamp()
-    local delay = XScheduleManager.SECOND
-    self._SimulationTimer = XScheduleManager.ScheduleForever(function() 
-        self:Simulation()
-    end, XScheduleManager.SECOND, delay)
+    local delay = XScheduleManagerPro.SECOND
+    XScheduleManagerPro.ScheduleForever(self._OnSimulationScheduleCb, self, XScheduleManagerPro.SECOND, delay)
 end
 
 --- 停止模拟
 --------------------------
 function XRestaurantControl:StopSimulation()
-    if not self._SimulationTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._SimulationTimer)
-    self._SimulationTimer = nil
+    XScheduleManagerPro.UnSchedule(self._OnSimulationScheduleCb, self)
 end
 
 --- 厨房模拟运行
@@ -2604,5 +2600,9 @@ function XRestaurantControl:RequestDoScreenShot(performId, taskId, func)
 end
 
 --endregion------------------协议请求 finish------------------
+
+function XRestaurantControl:_OnSimulationScheduleCb()
+    self:Simulation()
+end
 
 return XRestaurantControl

@@ -152,21 +152,12 @@ function XUiTheatre6RoomBoss:WaitForPlayDragGuideAnim()
         return
     end
     self:StopDragGuideAnim()
-    self._DragGuideTimerId = XScheduleManager.ScheduleOnce(function()
-        self.PanelTipsAnim.gameObject:SetActiveEx(true)
-        self.PanelTipsAnim.time = 0
-        self.PanelTipsAnim:Play()
-        self.PanelTipsAnim:Evaluate()
-        self._TipsAnimPlaying = true
-    end, self._IdleTime)
+    XScheduleManagerPro.ScheduleOnce(self._OnWaitForPlayDragGuideAnimScheduleCb, self, self._IdleTime)
 end
 
 ---停止播放拖动引导动画
 function XUiTheatre6RoomBoss:StopDragGuideAnim()
-    if self._DragGuideTimerId then
-        XScheduleManager.UnSchedule(self._DragGuideTimerId)
-        self._DragGuideTimerId = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnWaitForPlayDragGuideAnimScheduleCb, self)
     if not self.PanelTipsAnim then
         return
     end
@@ -177,6 +168,14 @@ function XUiTheatre6RoomBoss:StopDragGuideAnim()
         self.PanelTipsAnim.gameObject:SetActiveEx(false)
         self._TipsAnimPlaying = false
     end
+end
+
+function XUiTheatre6RoomBoss:_OnWaitForPlayDragGuideAnimScheduleCb()
+    self.PanelTipsAnim.gameObject:SetActiveEx(true)
+    self.PanelTipsAnim.time = 0
+    self.PanelTipsAnim:Play()
+    self.PanelTipsAnim:Evaluate()
+    self._TipsAnimPlaying = true
 end
 
 return XUiTheatre6RoomBoss

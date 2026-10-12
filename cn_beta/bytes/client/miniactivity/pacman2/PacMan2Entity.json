@@ -1,23 +1,23 @@
 [
     {
         "Id": 1,
-        "Desc": "能跑起来的代码，良性代码块的数量是判断是否抢险成功的重要指标。",
+        "Desc": "TEXT",
         "Type": 1,
-        "Name": "良性代码块",
+        "Name": "TEXT",
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon07.png"
     },
     {
         "Id": 2,
-        "Desc": "收集指定数量良性代码块后，进入即可结束工程。",
+        "Desc": "TEXT",
         "Type": 2,
-        "Name": "逻辑块结束点",
+        "Name": "TEXT",
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon15.png"
     },
     {
         "Id": 3,
-        "Desc": "拾取后可恢复生命。",
+        "Desc": "TEXT",
         "Type": 3,
-        "Name": "语法高亮",
+        "Name": "TEXT",
         "Params": [
             1
         ],
@@ -25,9 +25,9 @@
     },
     {
         "Id": 4,
-        "Desc": "进入追击阶段后可拾取，拾取后短时间内可以通过触碰击杀怪物。",
+        "Desc": "TEXT",
         "Type": 4,
-        "Name": "故障排除模式",
+        "Name": "TEXT",
         "Params": [
             5,
             10
@@ -36,9 +36,9 @@
     },
     {
         "Id": 5,
-        "Desc": "拾取后，一定时间内移动速度变快，地图上的怪物都会变成跑鞋，触碰跑鞋即可刷新持续时间。",
+        "Desc": "TEXT",
         "Type": 5,
-        "Name": "加速冲刺",
+        "Name": "TEXT",
         "Params": [
             5
         ],
@@ -46,17 +46,17 @@
     },
     {
         "Id": 6,
-        "Desc": "最常见，最好排障的报错，根据固定路线巡逻。",
+        "Desc": "TEXT",
         "Type": 6,
-        "Name": "语法报错",
+        "Name": "TEXT",
         "Speed": 55,
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon02.png"
     },
     {
         "Id": 7,
-        "Desc": "算力世界里的怪兽，会在直线范围内横冲直撞。但是貌似不怎么灵活。",
+        "Desc": "TEXT",
         "Type": 7,
-        "Name": "月蚀怪",
+        "Name": "TEXT",
         "Speed": 30,
         "TurningDuration": 1,
         "AlertX": 4,
@@ -66,9 +66,9 @@
     },
     {
         "Id": 8,
-        "Desc": "算力世界里的怪兽，能让自身一定范围内的流速变慢。靠近它的时候会自动获得减速效果。",
+        "Desc": "TEXT",
         "Type": 8,
-        "Name": "异魔怪",
+        "Name": "TEXT",
         "Speed": 18,
         "AlertX": 4,
         "AlertY": 4,
@@ -81,9 +81,9 @@
     },
     {
         "Id": 9,
-        "Desc": "跑鞋（1=持续时间（待删除），2=吃的时候变成多少速度，3=叠层加速）",
+        "Desc": "TEXT",
         "Type": 9,
-        "Name": "鞋子",
+        "Name": "TEXT",
         "Speed": 18,
         "Params": [
             5,
@@ -94,9 +94,9 @@
     },
     {
         "Id": 10,
-        "Desc": "拾取后，马上在地图上创造一个吸引怪兽的分身，触碰分身的怪物会被眩晕。分身一样拥有可吞噬算力结晶的效果。",
+        "Desc": "TEXT",
         "Type": 10,
-        "Name": "幻影分身",
+        "Name": "TEXT",
         "Speed": 30,
         "Params": [
             2,
@@ -106,24 +106,24 @@
     },
     {
         "Id": 11,
-        "Desc": "食物怪",
+        "Desc": "TEXT",
         "Type": 11,
-        "Name": "食物",
+        "Name": "TEXT",
         "Speed": 30,
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon06.png"
     },
     {
         "Id": 12,
-        "Desc": "通过触碰，可以在相同颜色的断点间传送。",
+        "Desc": "TEXT",
         "Type": 12,
-        "Name": "循环断点",
+        "Name": "TEXT",
         "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon11.png"
     },
     {
         "Id": 13,
-        "Desc": "很像另一款游戏的会出现的存在，会根据固定路线巡逻，吃掉代码块后会变长。",
+        "Desc": "TEXT",
         "Type": 13,
-        "Name": "栈溢出",
+        "Name": "TEXT",
         "Speed": 60,
         "Params": [
             7
@@ -132,9 +132,9 @@
     },
     {
         "Id": 14,
-        "Desc": "报错界的大胃袋，开局会高速吞噬良性代码块，吃饱后会降低移速，无固定路线。",
+        "Desc": "TEXT",
         "Type": 14,
-        "Name": "内存泄漏",
+        "Name": "TEXT",
         "Speed": 80,
         "Params": [
             55,
@@ -144,9 +144,9 @@
     },
     {
         "Id": 15,
-        "Desc": "拾取后，可令所有报错移动速度降低，更好排查问题。",
+        "Desc": "TEXT",
         "Type": 15,
-        "Name": "单步调试",
+        "Name": "TEXT",
         "Params": [
             5000,
             5
@@ -155,9 +155,9 @@
     },
     {
         "Id": 16,
-        "Desc": "拾取后，可在持续时间内提升移动速度。",
+        "Desc": "TEXT",
         "Type": 16,
-        "Name": "快速遍历",
+        "Name": "TEXT",
         "Params": [
             5000,
             5

@@ -83,20 +83,12 @@ end
 --- 战斗侧关闭不会销毁，传参依靠OnEnable
 function XUiFightHackerGameV440:OnEnable(...)
     self:OnGameInit(...)
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        -- 按下esc
-        if CS.UnityEngine.Input.GetKeyDown(CS.UnityEngine.KeyCode.Escape) then
-            self:Close()
-        end
-    end, 0)
+    XScheduleManagerPro.ScheduleNextFrame(XUiFightHackerGameV440._OnCheckEscapeScheduleCb, self)
     XEventManager.AddEventListener(XEventId.EVENT_CONNECTING_LINE_RESET_STAGE, self.OnResetStage, self)
 end
 
 function XUiFightHackerGameV440:OnDisable()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiFightHackerGameV440._OnCheckEscapeScheduleCb, self)
     for i = 1, #self._GridList do
         self._GridList[i]:Close()
     end
@@ -557,6 +549,14 @@ function XUiFightHackerGameV440:Close()
 
     if not startSuccess then
         XLuaUi.Close(self)
+    end
+end
+
+function XUiFightHackerGameV440:_OnCheckEscapeScheduleCb()
+    if CS.UnityEngine.Input.GetKeyDown(CS.UnityEngine.KeyCode.Escape) then
+        self:Close()
+    else
+        XScheduleManagerPro.ScheduleNextFrame(XUiFightHackerGameV440._OnCheckEscapeScheduleCb, self)
     end
 end
 

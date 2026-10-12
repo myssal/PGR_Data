@@ -155,7 +155,7 @@ function XRestaurantCamera:SetGameObject(obj)
         physicsRaycaster = self.GameObject:AddComponent(typeof(CS.UnityEngine.EventSystems.PhysicsRaycaster))
     end
     --设置响应事件遮罩
-    physicsRaycaster:SetEventMask(CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.HomeCharacter) | CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.Room))
+    physicsRaycaster:SetEventMask(CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Npc) | CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Room))
     CS.XGraphicManager.BindCamera(self.Camera)
 end
 
@@ -423,24 +423,12 @@ function XRestaurantCamera:InvokeOnCameraViewChange()
 end
 
 function XRestaurantCamera:StartPhotoTimer()
-    if self.PhotoTimer then
-        return
-    end
     self.LastCheckTime = CsTime.time
-    self.PhotoTimer = XScheduleManager.ScheduleForever(function()
-        if CsTime.time - self.LastCheckTime < 0.2 then
-            return
-        end
-        self:InvokeOnCameraViewChange()
-    end, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnInvokeOnCameraViewChangeScheduleCb, self, 0)
 end
 
 function XRestaurantCamera:StopPhotoTimer()
-    if not self.PhotoTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self.PhotoTimer)
-    self.PhotoTimer = nil
+    XScheduleManagerPro.UnSchedule(self._OnInvokeOnCameraViewChangeScheduleCb, self)
 end
 
 function XRestaurantCamera:GetPhotoEleCache(id)
@@ -455,5 +443,12 @@ function XRestaurantCamera:GetMoveDuration()
     return self._Duration
 end
 --endregion------------------getter and setter finish------------------
+
+function XRestaurantCamera:_OnInvokeOnCameraViewChangeScheduleCb()
+    if CsTime.time - self.LastCheckTime < 0.2 then
+        return
+    end
+    self:InvokeOnCameraViewChange()
+end
 
 return XRestaurantCamera

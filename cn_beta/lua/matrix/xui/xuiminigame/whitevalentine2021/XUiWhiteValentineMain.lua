@@ -32,10 +32,12 @@ end
 --================
 function XUiWhiteValentineMain:SetTimer()
     self:StopTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-            self:SetEnergyTimer()
-            self:SetGameTimer()
-        end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnSetEnergyTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiWhiteValentineMain:_OnSetEnergyTimerScheduleCb()
+    self:SetEnergyTimer()
+    self:SetGameTimer()
 end
 --================
 --设置体力恢复计时器
@@ -68,10 +70,7 @@ end
 --停止计时器
 --================
 function XUiWhiteValentineMain:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnSetEnergyTimerScheduleCb, self)
 end
 
 function XUiWhiteValentineMain:OnGetEvents()

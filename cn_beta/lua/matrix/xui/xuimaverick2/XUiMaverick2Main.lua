@@ -5,7 +5,6 @@ local CSXGoInputHandler = CS.XGoInputHandler
 
 function XUiMaverick2Main:OnAwake()
     self.Timer = nil -- 倒计时定时器
-
     self:InitUiObject()
     self:SetButtonCallBack()
 end
@@ -102,19 +101,13 @@ end
 ---------------------------------------- 倒计时 begin ----------------------------------------
 
 function XUiMaverick2Main:StartTimer()
-    if self.Timer then return end
 
     self:RefreshActivityTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:RefreshActivityTime()
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnRefreshActivityTimeScheduleCb, self, XScheduleManagerPro.SECOND, 0)
 end
 
 function XUiMaverick2Main:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRefreshActivityTimeScheduleCb, self)
 end
 
 function XUiMaverick2Main:RefreshActivityTime()
@@ -172,4 +165,8 @@ function XUiMaverick2Main:RefreshChapterBgAndBgm()
     if showEffect then
         self.Effect:LoadUiEffect(chapterCfg.BackgroundEffect)
     end
+end
+
+function XUiMaverick2Main:_OnRefreshActivityTimeScheduleCb()
+    self:RefreshActivityTime()
 end

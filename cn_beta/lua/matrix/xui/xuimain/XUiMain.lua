@@ -64,6 +64,8 @@ function XUiMain:InitPanel()
     self.MainBoardEffect = XUiMainBoardEffect.New(self)
     ---@type XUiPanelSwitchableSceneAnim
     self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
+    ---@type XUiPanelMusicScene
+    self.MusicScene = require("XUi/XUiMusicScene/XUiPanelMusicScene").New(self)
 
     self._CGFinishCallBack = function()
         self.SwitchableScene:OnVideoEnd()
@@ -166,7 +168,7 @@ function XUiMain:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_DLC_RECEIVE_INVITE, self.OnDlcReceiveInvite, self)
     XMVCA.XFavorability:AddRoleActionUiAnimListener(self)
     if not XLoginManager.IsFirstOpenMainUi() then
-        self:PlayEquipGuide(false)
+        self:PlayTeamRecommend(false)
     end
 
     -- 开启时钟
@@ -209,10 +211,9 @@ function XUiMain:OnDisable()
         XUiHelper.StopClockTimeTempFun(self, self.ClockTimer)
         self.ClockTimer = nil
     end
-    if self.CloseMaskTimerId ~= nil then
+    if XScheduleManagerPro.HasSchedule(self._OnCloseMaskTimer, self) then
         XLuaUiManager.SetMask(false)
-        XScheduleManager.UnSchedule(self.CloseMaskTimerId)
-        self.CloseMaskTimerId = nil
+        XScheduleManagerPro.UnSchedule(self._OnCloseMaskTimer, self)
     end
     
     self.HasUpdataThemed = false
@@ -226,6 +227,7 @@ function XUiMain:OnDisable()
     end
 
     self.SwitchableScene:Stop()
+    self.MusicScene:Stop()
 
     XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UIMAIN_DISABLE)
 
@@ -239,6 +241,7 @@ function XUiMain:OnDestroy()
     self.LeftTop:OnDestroy()
     self.RightBottom:OnDestroy()
     self.SwitchableScene:OnDestory()
+    self.MusicScene:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_PRE_ENTER_FIGHT, self.PreEnterFightCallback)
     XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_UIMAIN_RIGHTMIDTYPE_CHANGE, self.ForceChangeUiMainRightMidType, self)
     self._IsClose = true
@@ -421,6 +424,10 @@ function XUiMain:UpdateRightMenu()
     end
 end
 
+function XUiMain:_OnCloseMaskTimer()
+    XLuaUiManager.SetMask(false)
+end
+
 --播放主界面打开动画
 function XUiMain:PlayEnterAnim()
     local anim, endCb
@@ -440,7 +447,7 @@ function XUiMain:PlayEnterAnim()
             anim = "AnimEnter2"
             self:PlayAnimation(anim, endCb)
             self:UpdateCamera(CameraIndex.Main)
-            self:PlayEquipGuide(true)
+            self:PlayTeamRecommend(true)
             XLoginManager.SetFirstOpenMainUi(false)
             --第一次进入界面，拦截公告请求
             self.InterceptNotice = true
@@ -449,10 +456,7 @@ function XUiMain:PlayEnterAnim()
             XLoginManager.SetStartGuide(true)
             XEventManager.DispatchEvent(XEventId.EVENT_MAINUI_ENABLE)
             XEventManager.DispatchEvent(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN)
-            self.CloseMaskTimerId = XScheduleManager.ScheduleNextFrame(function()
-                XLuaUiManager.SetMask(false)
-                self.CloseMaskTimerId = nil
-            end)
+            XScheduleManagerPro.ScheduleNextFrame(self._OnCloseMaskTimer, self)
             -- if XDataCenter.UiPcManager.IsPc() then 
             --     CS.XPCCheat.BeginCheatCheck()
             -- end
@@ -460,6 +464,7 @@ function XUiMain:PlayEnterAnim()
             -- if XDataCenter.DlcRoomManager.IsCanReconnect() then
             --     XDataCenter.DlcRoomManager.DialogReconnect()
             -- end
+
             --- 打开邀请界面
             self:OnDlcReceiveInvite()
             --发送公告请求
@@ -489,17 +494,17 @@ function XUiMain:PlayMainChatIn()
     self:PlayAnimation("AnimChatOut")
 end
 
---播放装备目标动画
-function XUiMain:PlayEquipGuide(isFirst)
-    local isSetEquipTarget = XDataCenter.EquipGuideManager.IsSetEquipTarget()
-    if not isSetEquipTarget then
+-- 播放队伍养成推荐入口动画
+function XUiMain:PlayTeamRecommend(isFirst)
+    local hasTeamRecommendTarget = XMVCA.XTeamRecommend:GetFirstServerCharacterTargetId() ~= nil
+    if not hasTeamRecommendTarget then
         return
     end
     local anim = isFirst and "EquipGuideEnableLong" or "EquipGuideEnableShort"
     self:PlayAnimation(anim, function()
-        self.RightMid:SetBtnEquipGuideState(false)
+        self.RightMid:SetBtnTeamRecommendState(false)
     end, function() 
-        self.RightMid:SetBtnEquipGuideState(true)
+        self.RightMid:SetBtnTeamRecommendState(true)
     end)
 end
 
@@ -602,6 +607,12 @@ function XUiMain:OnUiSceneLoaded(particleGroupName)
         self:UpdateCamera(camera)
     end
     self.SwitchableScene:Play(self.CurSceneId, self.UiSceneInfo.Transform)
+
+    if XDataCenter.PhotographManager.IsInScenePreview() then
+        self.MusicScene:SetForbidSwitch()
+        self.MusicScene:DontSaveData()
+    end
+    self.MusicScene:Play(self.CurSceneId, self.UiSceneInfo.Transform)
 end
 
 function XUiMain:IsShowTerminal()
@@ -661,7 +672,11 @@ function XUiMain:PlayRoleActionUiDisableAnim(signBoardid, stopTime)
     end
     if XMVCA.XFavorability:CheckIsUseNormalUiAnim(signBoardid, self.Name) then
         XEventManager.DispatchEvent(XEventId.EVENT_MAIN_SCENE_ANIM_PLAY_BEGIN)
-        self:PlayAnimation("UiDisable")
+        self:PlayAnimation("UiDisable", function()
+            if self.CG:IsCGPlaying() then
+                self.UiSceneInfo:SetActive(false)
+            end
+        end)
     end
 end
 
@@ -675,6 +690,7 @@ function XUiMain:PlayRoleActionUiEnableAnim(signBoardid)
             XEventManager.DispatchEvent(XEventId.EVENT_MAIN_SCENE_ANIM_PLAY_END)
         end)
     elseif XMVCA.XFavorability:CheckIsUseNormalUiAnim(signBoardid, self.Name) then
+        self.UiSceneInfo:SetActive(true)
         self:PlayAnimationWithMask("UiEnable", function()
             XEventManager.DispatchEvent(XEventId.EVENT_MAIN_SCENE_ANIM_PLAY_END)
         end)

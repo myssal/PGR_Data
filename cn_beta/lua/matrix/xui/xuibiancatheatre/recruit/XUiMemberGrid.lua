@@ -64,15 +64,17 @@ end
 function XUiMemberGrid:PlayEffect()
     self.PanelEffectLvUp.gameObject:SetActiveEx(false)
     self.PanelEffectLvUp.gameObject:SetActiveEx(true)
-    XScheduleManager.ScheduleOnce(function()
-        if not XTool.UObjIsNil(self.PanelEffectLvUp) then
-            self.PanelEffectLvUp.gameObject:SetActiveEx(false)
-        end
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(XUiMemberGrid._OnHideLevelUpEffectScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiMemberGrid:SetPanelSelectedActive(isActive)
     self.PanelSelected.gameObject:SetActiveEx(isActive)
+end
+
+function XUiMemberGrid:_OnHideLevelUpEffectScheduleCb()
+    if not XTool.UObjIsNil(self.PanelEffectLvUp) then
+        self.PanelEffectLvUp.gameObject:SetActiveEx(false)
+    end
 end
 
 return XUiMemberGrid

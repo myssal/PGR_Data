@@ -140,20 +140,19 @@ end
 
 function XUiSimulateTrainBossDetail:StartTimer()
     self:ClearTimer()
-    self.ActivityTimer = XScheduleManager.ScheduleForever(function()
-        local gameTime = self.EndTime - XTime.GetServerNowTimestamp()
-        if gameTime < 1 then
-            self._Control:HandleActivityEnd()
-            return
-        end
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
-function XUiSimulateTrainBossDetail:ClearTimer()
-    if self.ActivityTimer then
-        XScheduleManager.UnSchedule(self.ActivityTimer)
-        self.ActivityTimer = nil
+
+function XUiSimulateTrainBossDetail:_OnStartTimerScheduleCb()
+    local gameTime = self.EndTime - XTime.GetServerNowTimestamp()
+    if gameTime < 1 then
+        self._Control:HandleActivityEnd()
+        return
     end
 end
 
+function XUiSimulateTrainBossDetail:ClearTimer()
+        XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
+end
 return XUiSimulateTrainBossDetail

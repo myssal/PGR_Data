@@ -199,33 +199,23 @@ function XUiAccumulateDraw:_RemoveListeners()
 end
 
 function XUiAccumulateDraw:_RegisterActivityTimer()
-    if self._Timer then
-        self:_RemoveActivityTimer()
-    end
-
-    self._Timer = XScheduleManager.ScheduleForever(Handler(self, self._SetTime), XScheduleManager.SECOND)
+    self:_RemoveActivityTimer()
+    XScheduleManagerPro.ScheduleForever(XUiAccumulateDraw._OnUpdateActivityTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiAccumulateDraw:_RemoveActivityTimer()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiAccumulateDraw._OnUpdateActivityTimeScheduleCb, self)
 end
 
 function XUiAccumulateDraw:_RegisterSpecialRewardTimer()
-    if self._SpecialTimer then
-        self:_RemoveSpecialRewardTimer()
-    end
-
-    self._SpecialTimer = XScheduleManager.ScheduleForever(Handler(self, self.OnRefreshSpecialReward), 1)
+    self:_RemoveSpecialRewardTimer()
+    self._IsSpecialRewardTimerActive = true
+    XScheduleManagerPro.ScheduleNextFrame(XUiAccumulateDraw._OnRefreshSpecialRewardScheduleCb, self)
 end
 
 function XUiAccumulateDraw:_RemoveSpecialRewardTimer()
-    if self._SpecialTimer then
-        XScheduleManager.UnSchedule(self._SpecialTimer)
-        self._SpecialTimer = nil
-    end
+    self._IsSpecialRewardTimerActive = false
+    XScheduleManagerPro.UnSchedule(XUiAccumulateDraw._OnRefreshSpecialRewardScheduleCb, self)
 end
 
 function XUiAccumulateDraw:_SetTime()
@@ -314,5 +304,16 @@ function XUiAccumulateDraw:_InitUi()
 end
 
 -- endregion
+
+function XUiAccumulateDraw:_OnUpdateActivityTimeScheduleCb()
+    self:_SetTime()
+end
+
+function XUiAccumulateDraw:_OnRefreshSpecialRewardScheduleCb()
+    self:OnRefreshSpecialReward()
+    if self._IsSpecialRewardTimerActive then
+        XScheduleManagerPro.ScheduleNextFrame(XUiAccumulateDraw._OnRefreshSpecialRewardScheduleCb, self)
+    end
+end
 
 return XUiAccumulateDraw

@@ -46,20 +46,7 @@ function XUiBossInshotPopupChangeBoss:OnStart(
     self._FlyInIndex = 1
 
     XLuaUiManager.SetMask(true)
-    self._FlyInSchedule = XScheduleManager.ScheduleForever(
-        function()
-            local grid = self._BossGrids[self._FlyInIndex]
-            if grid then
-                grid:Open()
-                grid:PlayFlyInAnimation()
-                self._FlyInIndex = self._FlyInIndex + 1
-            else
-                XScheduleManager.UnSchedule(self._FlyInSchedule)
-                self._FlyInSchedule = nil
-                XLuaUiManager.SetMask(false)
-            end
-        end,
-        CS.XGame.ClientConfig:GetInt("BossInshotTowerChangeBossGridShowInterval"),
+    XScheduleManagerPro.ScheduleForever(self._OnOnStartScheduleCb, self, CS.XGame.ClientConfig:GetInt("BossInshotTowerChangeBossGridShowInterval"),
         CS.XGame.ClientConfig:GetInt("BossInshotTowerChangeBossGridShowDelay"))
 end
 
@@ -76,6 +63,18 @@ function XUiBossInshotPopupChangeBoss:_OnConfirm()
     assert(self._SelectedStageId)
     self._OnSelectConfirmCb(self._SelectedStageId)
     self:Close()
+end
+
+function XUiBossInshotPopupChangeBoss:_OnOnStartScheduleCb()
+    local grid = self._BossGrids[self._FlyInIndex]
+    if grid then
+        grid:Open()
+        grid:PlayFlyInAnimation()
+        self._FlyInIndex = self._FlyInIndex + 1
+    else
+        XScheduleManagerPro.UnSchedule(self._OnOnStartScheduleCb, self)
+        self.XLuaUiManager.SetMask(false)
+    end
 end
 
 return XUiBossInshotPopupChangeBoss

@@ -1,18 +1,15 @@
 local UnityPlayerPrefs = CS.UnityEngine.PlayerPrefs
-local KEY_GAME_DOWNLOAD_RECORD = "KEY_GAME_DOWNLOAD_RECORD"
 local KEY_LAUNCH_DOWNLOAD_RECORD = "KEY_LAUNCH_DOWNLOAD_RECORD"
 local KEY_REMOVE_RESID_LIST = "KEY_REMOVE_RESID_LIST"
 local KEY_DOWNLOADED = "KEY_DOWNLOADED"
 
-local DLC_NEED_DOWNLOAD_KEY = "DLC_NEED_DOWNLOAD_KEY"
-local HAS_SELECT_DOWNLOAD_PART_KEY = "HAS_SELECT_DOWNLOAD_PART_KEY"
+local HAS_SELECT_DOWNLOAD_PART_KEY = "HAS_SELECT_DOWNLOAD_PART_KEY_XF_FORCE_ONCE"
 local HAS_SELECT_ALL_DOWNLOAD_KEY = "HAS_SELECT_ALL_DOWNLOAD_KEY"
 local IS_SELECT_WIFI_AUTO_DOWNLOAD = "IS_SELECT_WIFI_AUTO_DOWNLOAD" --是否选中wifi自动下载
 local KEY_UNINSTALLED_RESID_LIST = "KEY_UNINSTALLED_RESID_LIST" -- 新增Key
 local KEY_SUBPACKAGE_FINISHED = "KEY_SUBPACKAGE_FINISHED_" -- 分包下载完成状态
 local KEY_SUBPACKAGE_ACTIVE = "KEY_SUBPACKAGE_ACTIVE_" -- 分包激活状态（用户意图）
 local KEY_SUBPACKAGE_SKIP_AUTO_COMPLETE = "KEY_SUBPACKAGE_SKIP_AUTO_COMPLETE_" -- 分包跳过热更自动补全标记
-local KEY_FASHION_SUB4000_FORCE_DOWNLOADED_46 = "FASHION_SUB4000_FORCE_DOWNLOADED_46" -- 4.6强制下载标记
 local CsLog = CS.XLog
 
 ---@class XLaunchDlcManager 分包资源-启动管理类
@@ -20,7 +17,6 @@ local M = {}
 local XLaunchDlcManager = M
 
 local DlcIdList = {}
-local ApplicationIndexTable = {}
 
 local LaunchDownloadRecord = {} -- 热更时已选择的下载
 local DownloadedDic = {} -- 已下载
@@ -29,29 +25,20 @@ local DlcIndexInfo = {}
 local DlcIgnoreDownloadIfNotDownload --未下载过的ResId在热更时进行忽略
 
 local NeedLaunchTest = CS.XResourceManager.NeedLaunchTest
-local IsInGame = false
-
-local DLC_BASE_INDEX = 0 -- 基础资源包索引
-local DLC_COMMON_INDEX = -1 -- 通用资源包索引
 
 local STATE_DEFAULT = 0 -- 未开始下载
 local STATE_START = 1 -- 已开始（选择）下载
 
+local IsDirtyMap = false
 local DownloadedMap = {}
-local PathModule = nil
-local FileModule = nil
-local VersionModule = nil
 
 local IsInit = false
 local IsRecordAllDlcId = true --所有的DlcId均被标记已经下载了
 
-local Split = function(str)
-    local arr = {}
-    for v in string.gmatch(str, "[^,]*") do
-        table.insert(arr, v)
-    end
-    return arr
-end
+require("XLaunchUpdate/XLaunchConst")
+require("XLaunchUpdate/XLaunchUpdatePlatform")
+local platformInfo = XLaunchUpdatePlatform.GetPlatformInfo()
+local CacheWriterPath = string.format("%s/download_cache", platformInfo.DocumentFilePath)
 
 --====启动逻辑接口 begin=====
 M.Init = function(dlcIndexTable)
@@ -63,7 +50,6 @@ M.Init = function(dlcIndexTable)
     for dlcId, info in pairs(dlcIndexTable) do
         table.insert(DlcIdList, dlcId)
     end
-    
     
     for i, dlcId in pairs(DlcIdList) do
         local value = UnityPlayerPrefs.GetInt(KEY_LAUNCH_DOWNLOAD_RECORD .. dlcId, STATE_DEFAULT)
@@ -90,20 +76,10 @@ M.SetDownloadedMap = function(downloadedMap)
     DownloadedMap = downloadedMap
 end
 
-M.AddDownloadedMap = function(updateTable)
-    local count = 0
-    for name, info in pairs(updateTable) do
-        if not DownloadedMap[name] then
-            count = count + 1
-        end
-        DownloadedMap[name] = true
-    end
-    CsLog.Debug("[DLC] AddDownloadedMap, Count: " .. count)
-end
-
 -- 目前仅游戏内以Traditional下载方式时调用
 M.SetDownloadedFile = function(name, downloaded)
-    DownloadedMap[name] = downloaded
+    -- DownloadedMap[name] = downloaded
+    M.WriteDownloadCache(name, downloaded)
     -- CsLog.Debug("[DLC] SetDownloadedFile, downloaded:"..tostring(downloaded) .. ", file name " .. name)
 end
 
@@ -126,19 +102,13 @@ M.CheckNeedDownload = function(dlcId, needShowSelect)
     return false
 end
 
--- 修正下载记录
-M.SetDlcDownloadedRecord = function(dlcId, downloaded)
-    DownloadedDic[dlcId] = downloaded and STATE_START or STATE_DEFAULT
-    UnityPlayerPrefs.SetInt(KEY_DOWNLOADED .. dlcId, downloaded and STATE_START or STATE_DEFAULT)
-end
-
 -- 修正下载记录(仅本次)
 M.FixDownloadedDlc = function(dlcId, downloaded)
     -- print(".. FixDownloadedDlc dlcId:" .. dlcId .. ", downloaded:" .. tostring(downloaded) .. "\n" .. debug.traceback())
     DownloadedDic[dlcId] = downloaded and STATE_START or STATE_DEFAULT
 end
 
-M.DoneDownloadInLaunch = function(dlcIds)
+M.DoneDownloadInLaunch = function()
     for dlcId, v in pairs(LaunchDownloadRecord) do
         if v == STATE_START then
             DownloadedDic[dlcId] = STATE_START
@@ -153,8 +123,14 @@ M.HasDownloadedDlc = function(id)
 end
 
 M.SetAllLaunchDownloadRecord = function()
-    for i, dlcId in pairs(DlcIdList) do
-        M.SetLaunchDownloadRecord(dlcId)
+    for resId, info in pairs(DlcIndexInfo) do
+        M.SetLaunchDownloadRecord(resId)
+    end
+end
+
+M.ClearAllLaunchDownloadRecord = function()
+    for resId, info in pairs(DlcIndexInfo) do
+        M.ClearLaunchDownloadRecord(resId)
     end
 end
 
@@ -168,10 +144,6 @@ M.NeedShowSelect = function(appVer)
         return false
     end
 
-    --全部分包已经被标记下载完成过
-    if IsRecordAllDlcId then
-        return false
-    end
     --调整为只有新包才会弹
     return UnityPlayerPrefs.GetInt(HAS_SELECT_DOWNLOAD_PART_KEY, STATE_DEFAULT) == STATE_DEFAULT
 end
@@ -190,11 +162,11 @@ M.IsFullDownload = function()
     return state == STATE_START
 end
 
-M.SetIsFullDownload = function(isFullDownload) 
+M.SetIsFullDownload = function(isFullDownload)
     UnityPlayerPrefs.SetInt(HAS_SELECT_ALL_DOWNLOAD_KEY, isFullDownload and STATE_START or STATE_DEFAULT)
 end
 
-M.IsAllDlcIdRecord = function() 
+M.IsAllDlcIdRecord = function()
     return IsRecordAllDlcId
 end
 
@@ -301,11 +273,11 @@ M.ClearDownloadRecord = function(resId)
                 end
             end
             if not isShared then
-                DownloadedMap[fileName] = nil
+                M.SetDownloadedFile(fileName, false)
             end
         end
     end
-
+    XLaunchDlcManager.RewriteDownloadCache()
     UnityPlayerPrefs.Save()
 
     CsLog.Debug("[XLaunchDlcManager] ClearDownloadRecord 完成, resId = " .. tostring(resId))
@@ -313,17 +285,24 @@ end
 
 M.SetLaunchDownloadRecord = function (id)
     local state = STATE_START
-    CsLog.Debug("SetLaunchDownloadRecord:" .. tostring(id))
     LaunchDownloadRecord[id] = state
     UnityPlayerPrefs.SetInt(KEY_LAUNCH_DOWNLOAD_RECORD .. id, state)
+    if M.OpenLog then CsLog.Debug("SetLaunchDownloadRecord:" .. tostring(id)) end
 end
 
-M.SetRemoveResIdsRecord = function (resIdList)
+M.ClearLaunchDownloadRecord = function (id)
+    local state = STATE_DEFAULT
+    LaunchDownloadRecord[id] = state
+    UnityPlayerPrefs.SetInt(KEY_LAUNCH_DOWNLOAD_RECORD .. id, state)
+    if M.OpenLog then CsLog.Debug("ClearLaunchDownloadRecord:" .. tostring(id)) end
+end
+
+M.SetRemoveResIdsRecord = function (resIdList, isFull)
     -- print("SP/DN SetRemoveResIdsRecord",resIdList,resIdList and resIdList[1], debug.traceback())
     if type(resIdList) == "table" then
         resIdList = table.concat(resIdList, ",")
     else
-        resIdList = ""    
+        resIdList = ""
     end
     UnityPlayerPrefs.SetString(KEY_REMOVE_RESID_LIST, resIdList)
 end
@@ -399,75 +378,6 @@ end
 
 --======== 游戏业务层接口 begin ====
 
---- 清除需要下载的DlcId标记(仅仅本次）
---------------------------
-
-M.CheckGameNeedDownload = function(dlcId)
-    return not M.HasDownloadedDlc(dlcId)
-end
-
-M.GetPathModule = function()
-    if not PathModule then
-        PathModule = require("XLaunchAppPathModule")
-    end
-    return PathModule
-end
-
-
----@return XLaunchFileModule
---------------------------
-M.GetFileModule = function()
-    if not FileModule then
-        local FileModuleCreator = require("XLaunchFileModule")
-        FileModule = FileModuleCreator()
-    end
-    return FileModule
-end
-
-M.GetVersionModule = function()
-    if not VersionModule then
-        VersionModule = require("XLaunchAppVersionModule")
-    end
-    return VersionModule
-end
-
-M.DoDownloadDlc = function(progressCb, doneCb, exitCb)
-    CsLog.Error("此函数已经废弃，如果还有调用请联系牟文检查！")
-    --local PathModule = M.GetPathModule()
-    --local DocFileModule = M.GetFileModule()
-    --local VersionModule = M.GetVersionModule()
-    --DocFileModule.SetIsInGame(IsInGame)
-    --XMVCA.XSubPackage:SetFileModule(DocFileModule)
-    --DocFileModule.Check(RES_FILE_TYPE.MATRIX_FILE, PathModule, VersionModule, doneCb, progressCb, exitCb)
-end
-
--- 游戏内调用下载
-M.DownloadDlc = function (ids, processCb, doneCb, exitCb)
-    CsLog.Error("此函数已经废弃，如果还有调用请联系牟文检查！")
-   -- IsInGame = true
-   -- --清除一下记录
-   -- M.ClearGameDownloadRecord()
-   -- --标记本次需要下载DLCId
-   -- for _, id in pairs(ids) do
-   --     M.SetGameDownloadRecord(id)
-   -- end
-   -- --CsLog.Error("Prepare Download" .. table.concat(ids, ", "))
-   ---- todo 下载模块，无需界面
-   ---- CS.XUiManager.Instance:OpenWithCallback("UiLaunch", function()
-   --     M.DoDownloadDlc(processCb, 
-   --         function(isPause)
-   --             XLuaUiManager.Close("UiLaunch")
-   --             if doneCb then
-   --                 doneCb(isPause)
-   --             end
-   --         end, 
-   --         function()
-   --             XLuaUiManager.Close("UiLaunch")
-   --             if exitCb then exitCb() end
-   --         end)
-   -- -- end)
-end
-
 M.GetIndexInfo = function()
     return DlcIndexInfo
 end
@@ -492,7 +402,7 @@ M.CheckSubpackageChannel = function()
     if channels == nil or channels == "nil" or channels == "0" then
         return false
     end
-    local channelList = Split(channels)
+    local channelList = XLaunchConst.Split(channels, ",")
     for _, channel in ipairs(channelList) do
         if string.find(channel, channelId) then
             return true
@@ -613,13 +523,11 @@ end
 
 --====AutoDownload涂装资源 begin=====
 local AutoDownloadResIds = nil
-local NeedForceSub4000Download46 = nil
 
 --- 清理在热更阶段产生的local变量
 M.ClearLaunchCache = function()
     DlcIgnoreDownloadIfNotDownload = nil
     AutoDownloadResIds = nil
-    NeedForceSub4000Download46 = nil
 end
 
 --- 初始化AutoDownload涂装ResId列表（从LaunchConfig读取）
@@ -654,34 +562,6 @@ M.IsAutoDownloadRes = function(resId)
     return AutoDownloadResIds[resId] == true
 end
 --====AutoDownload涂装资源 end=====
-
---====4.6 Sub4000强制下载 begin=====
---- 检查是否需要为4.6用户强制下载sub=4000的资源
----@return boolean
-M.CheckNeedForceSub4000Download46 = function()
-    if NeedForceSub4000Download46 ~= nil then
-        return NeedForceSub4000Download46
-    end
-
-    if UnityPlayerPrefs.GetInt(KEY_FASHION_SUB4000_FORCE_DOWNLOADED_46, 0) == 1 then
-        NeedForceSub4000Download46 = false
-        CsLog.Debug("[DLC] ForceSub4000_46: already triggered, skip")
-        return NeedForceSub4000Download46
-    end
-
-    NeedForceSub4000Download46 = true
-    CsLog.Debug("[DLC] ForceSub4000_46: need trigger")
-    return NeedForceSub4000Download46
-end
-
---- 标记4.6 sub=4000强制下载已触发
-M.MarkForceSub4000Downloaded46 = function()
-    UnityPlayerPrefs.SetInt(KEY_FASHION_SUB4000_FORCE_DOWNLOADED_46, 1)
-    UnityPlayerPrefs.Save()
-    NeedForceSub4000Download46 = false
-    CsLog.Debug("[DLC] ForceSub4000_46: marked as triggered")
-end
---====4.6 Sub4000强制下载 end=====
 
 --====Sub级auto-complete冲突检测 begin=====
 --- 检查某个 SubPackage 下是否有任何 ResId 存在 RES级卸载意图
@@ -735,5 +615,247 @@ end
 --====Sub级auto-complete冲突检测 end=====
 
 --======== 业务层接口 end ====
+
+-- region 热更新逻辑
+
+local ResId2SubIdMap = nil              -- ResId到SubId的映射
+-- 初始化资源ID与子资源ID的映射表
+M.InitResIdToSubIdMap = function()
+    if ResId2SubIdMap then return end
+    ResId2SubIdMap = {}
+    local subPackageStorage = CS.XLaunchManager.SubPackageTab
+    if subPackageStorage then
+        local spPairs = subPackageStorage.keyValuePairs
+        for i = 0, spPairs.Length - 1 do
+            local kv = spPairs[i]
+            local subId = kv.Key
+            local resIdsStr = kv.Value
+            for resId in string.gmatch(tostring(resIdsStr), "[^,]+") do
+                ResId2SubIdMap[tonumber(resId)] = subId
+            end
+        end
+    end
+end
+
+local ResIdSizeDic = {}
+local Asset2InfoMap = {}
+local NecessaryMap = {}
+
+-- 获取ResId大小表，key为ResId，value为ResId对应的大小资源大
+M.GetResSizeDic = function()
+    return ResIdSizeDic
+end
+
+-- 是DLC分包资源
+M.IsDlcAsset = function(fileName)
+    return Asset2InfoMap[fileName] ~= nil
+end
+
+-- 进入游戏必须下载的资源
+M.IsNecessaryAsset = function(fileName)
+    return NecessaryMap[fileName] ~= nil
+end
+
+-- 初始化资源表
+M.InitResTable = function(resMap, tableMap)
+    if IsInit then return end
+    IsInit = true
+
+    for resId, fileNameMap in pairs(resMap) do
+        local isNecessary = M.IsBaseAssetByResId(resId)
+        local infoMap = {}
+        for _, fileName in pairs(fileNameMap) do
+            local infoData = tableMap[fileName]
+            if infoData then
+                -- 游戏内分包仍按旧索引结构读取 info[1] 作为物理文件名
+                local dlcInfo = {}
+                for index, value in pairs(infoData) do
+                    dlcInfo[index] = value
+                end
+                dlcInfo[XLaunchConst.XFileInfoNameIndex] = fileName
+                infoMap[fileName] = dlcInfo
+                Asset2InfoMap[fileName] = infoData
+                if isNecessary then
+                    NecessaryMap[fileName] = infoData
+                end
+            end
+        end
+        M.SetDlcIndexInfo(resId, infoMap)
+        
+        local value = UnityPlayerPrefs.GetInt(KEY_LAUNCH_DOWNLOAD_RECORD .. resId, STATE_DEFAULT)
+        LaunchDownloadRecord[resId] = value
+        if IsRecordAllDlcId and value == STATE_DEFAULT then
+            IsRecordAllDlcId = false
+        end
+        
+        local downloadState = UnityPlayerPrefs.GetInt(KEY_DOWNLOADED .. resId, STATE_DEFAULT)
+        DownloadedDic[resId] = downloadState
+    end
+
+    M.InitResIdToSubIdMap()
+    M.ReadDownloadCache(CacheWriterPath)
+    CsLog.Debug("[DLC] dlc is all record = " .. tostring(IsRecordAllDlcId))
+end
+
+-- 初始化包res id
+M.IsFirstPackageResId = function(resId)
+    if not M._FirstPackageResIdsMap then return false end
+    return M._FirstPackageResIdsMap[resId]-- == true
+end
+
+-- 设置初始包res id
+M.SetFirstPackageResIds = function(resIds)
+    if not resIds or M._FirstPackageResIdsMap then return end
+    M._FirstPackageResIdsMap = {}
+    for _, resId in pairs(resIds) do
+        M._FirstPackageResIdsMap[resId] = true
+    end
+end
+
+-- resId是否需要下载
+M.CalculateDownloadSize = function(resMap, needAbMap, needPatchMap)
+    local XFileInfoSizeIndex = XLaunchConst.XFileInfoSizeIndex
+    local repeatMap = {}
+    for resId, fileNameMap in pairs(resMap) do
+        ResIdSizeDic[resId] = 0
+        for _, fileName in pairs(fileNameMap) do
+            if not repeatMap[fileName] then
+                if needAbMap[fileName] or needPatchMap[fileName] then
+                    local info = Asset2InfoMap[fileName]
+                    if info then
+                        local size = info[XFileInfoSizeIndex]
+                        ResIdSizeDic[resId] = ResIdSizeDic[resId] + size
+                        -- if repeatMap[fileName] then
+                        --     CsLog.Warning(string.format("[XLaunchDlcManager] [CalculateDownloadSize] fileName: %s, resId: %s, repeat, size: %d", fileName, resId, size))
+                        -- end
+                        repeatMap[fileName] = true
+                    end
+                end
+            end
+        end
+    end
+end
+
+-- resId是否必须进包的dlc资源
+M.IsBaseAssetByResId = function(resId)
+    -- 不卸载资源的情况，自动下载的资源必须下载
+    if M.IsAutoDownloadRes(resId) then
+        return true
+    end
+    if M.IsFirstPackageResId(resId) then
+        return true
+    end
+    return false
+end
+
+-- resId是否需要下载
+M.NeedDownloadByResId = function(resId)
+    -- 关闭分包功能就是全部需要下载
+    if not M.CheckSubpackageOpen() then
+        return true
+    end
+
+    -- 如果卸载了就不用下载
+    if M.HasUninstalledResId(resId) then
+        return false
+    end
+
+    -- 是不是必须进包的dlc资源
+    if M.IsBaseAssetByResId(resId) then
+        return true
+    end
+
+    local downloadMark = M.CheckNeedDownload(resId)
+    -- 在选择的移除列表中的资源不用下载(最初的选择列表)
+    local removeResIdsRecord = M.GetRemoveResIdsRecord()
+    if not downloadMark and removeResIdsRecord[resId] then
+        return false
+    end
+
+    -- 在忽略列表中的资源不用下载
+    if M.CheckResIsIgnoreDownload(resId) then
+        return false
+    end
+
+    -- 以上列表都没有命中，查看是不是下载缓存的需要下载
+    if downloadMark then
+        return true
+    end
+
+    -- 是子模块资源包需要下载
+    local parentSubId = ResId2SubIdMap and ResId2SubIdMap[resId]
+    if parentSubId and M.IsSubPackageActive(parentSubId) then
+        return true
+    end
+
+    -- 其余情况不能下载
+    return false
+end
+
+M.WriteDownloadAllCache = function ()
+    for resId, fileNameMap in pairs(DlcIndexInfo) do
+        for fileName, info in pairs(fileNameMap) do
+            DownloadedMap[fileName] = true
+        end
+    end
+    IsDirtyMap = true
+    M.RewriteDownloadCache()
+end
+
+-- 写入下载缓存
+---@param finishName string 下载完成的文件名
+M.WriteDownloadCache = function(finishName, downloaded, isFileName, isSkipWrite)
+    local fileName
+    if isFileName then
+        fileName = finishName
+    else
+        fileName = XLaunchConst.GetFileName(finishName)
+    end
+    if not downloaded then
+        if DownloadedMap[fileName] then
+            DownloadedMap[fileName] = nil
+            IsDirtyMap = true
+        end
+        return
+    end
+    if DownloadedMap[fileName] then return end
+    DownloadedMap[fileName] = downloaded
+    if not isSkipWrite then
+        XLaunchConst.WriteAllText(CacheWriterPath, fileName .. "\n", "a")
+    end
+end
+
+M.WriteTempDownloadCache = function(str)
+    XLaunchConst.WriteAllText(CacheWriterPath, str, "a")
+end
+
+M.RewriteDownloadCache = function()
+    if not IsDirtyMap then return end
+    local content = ""
+    for fileName, isDownloaded in pairs(DownloadedMap) do
+        if isDownloaded then
+            content = content .. fileName .. "\n"
+        end
+    end
+    XLaunchConst.WriteAllText(CacheWriterPath, content, "w")
+    IsDirtyMap = false
+end
+
+-- 读取下载缓存
+M.ReadDownloadCache = function(path)
+    if not CS.System.IO.File.Exists(path) then return end
+
+    local content = XLaunchConst.ReadAllText(path)
+    local contentList = XLaunchConst.Split(content, "\n")
+    for _, name in ipairs(contentList) do
+        DownloadedMap[name] = true
+    end
+    local emptyStr = ""
+    if DownloadedMap[emptyStr] then
+        DownloadedMap[emptyStr] = nil
+    end
+end
+
+-- endregion 热更新逻辑
 
 return XLaunchDlcManager

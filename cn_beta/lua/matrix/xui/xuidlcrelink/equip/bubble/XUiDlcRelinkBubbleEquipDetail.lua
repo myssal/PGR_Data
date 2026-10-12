@@ -50,17 +50,7 @@ function XUiDlcRelinkBubbleEquipDetail:OnEnable()
     end
 
     --异形屏适配需要
-    XScheduleManager.ScheduleOnce(function()
-        self:LayoutEquipDetailNode()
-        self:LayoutPanelSkill()
-
-        if self.CanvasGroupDetail then
-            self.CanvasGroupDetail.alpha = 1
-        end
-        if self.CanvasGroupSkill then
-            self.CanvasGroupSkill.alpha = 1
-        end
-    end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnLayoutEquipDetailNodeScheduleCb, self, 1)
 end
 
 function XUiDlcRelinkBubbleEquipDetail:SetAnchorAndPivot()
@@ -234,6 +224,18 @@ function XUiDlcRelinkBubbleEquipDetail:OnBtnCloseClick()
         self.CallBack()
     end
     self:Close()
+end
+
+function XUiDlcRelinkBubbleEquipDetail:_OnLayoutEquipDetailNodeScheduleCb()
+    self:LayoutEquipDetailNode()
+    self:LayoutPanelSkill()
+
+    if self.CanvasGroupDetail then
+        self.CanvasGroupDetail.alpha = 1
+    end
+    if self.CanvasGroupSkill then
+        self.CanvasGroupSkill.alpha = 1
+    end
 end
 
 return XUiDlcRelinkBubbleEquipDetail

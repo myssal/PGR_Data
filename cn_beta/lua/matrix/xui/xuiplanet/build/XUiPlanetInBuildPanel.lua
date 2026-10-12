@@ -15,6 +15,7 @@ function XUiPlanetInBuildPanel:Ctor(rootUi, ui, isTalent)
     self.GameObject:SetActiveEx(false)
     self:AddBtnClickListener()
 end
+    self.FollowTimer = nil
 
 function XUiPlanetInBuildPanel:SetCallBack(openCb, closeCb)
     self.OpenCb = openCb
@@ -44,20 +45,11 @@ end
 --region 面板跟随
 function XUiPlanetInBuildPanel:StartFollowTimer()
     self:StopFollowTimer()
-    self.FollowTimer = XScheduleManager.ScheduleForever(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            self:StopFollowTimer()
-            return
-        end
-        self:FollowBuilding()
-    end, 0, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnStopFollowTimerScheduleCb, self, 0, 0)
 end
 
 function XUiPlanetInBuildPanel:StopFollowTimer()
-    if self.FollowTimer then
-        XScheduleManager.UnSchedule(self.FollowTimer)
-    end
-    self.FollowTimer = nil
+        XScheduleManagerPro.UnSchedule(self._OnStopFollowTimerScheduleCb, self)
 end
 
 function XUiPlanetInBuildPanel:FollowBuilding()
@@ -105,5 +97,13 @@ function XUiPlanetInBuildPanel:OnDrag(eventData)
     self.Scene:MoveCurBuildingList(tile.TileId)
 end
 --endregion
+
+function XUiPlanetInBuildPanel:_OnStopFollowTimerScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        self:StopFollowTimer()
+        return
+    end
+    self:FollowBuilding()
+end
 
 return XUiPlanetInBuildPanel

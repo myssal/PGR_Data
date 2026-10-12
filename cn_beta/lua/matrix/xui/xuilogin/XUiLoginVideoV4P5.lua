@@ -75,9 +75,7 @@ function XUiLoginVideoV4P5:OnStart(forceId)
     self.FadeStartTime = math.huge
     self.Video1HideTime = math.huge
 
-    self.TimerId = XScheduleManager.ScheduleForever(function()
-        self:Update()
-    end, 0)
+    XScheduleManagerPro.ScheduleForever(XUiLoginVideoV4P5._OnVideoUpdateScheduleCb, self, 0)
 end
 
 function XUiLoginVideoV4P5:Update()
@@ -167,7 +165,7 @@ function XUiLoginVideoV4P5:Update()
             self.VideoFade3Timer = 0
             self.IsFading3 = true
             self.VideoPlayerUgui3.ActionEnded = function()
-                XScheduleManager.ScheduleOnce(function() self:DoGo() end, 0)
+                XScheduleManagerPro.ScheduleNextFrame(XUiLoginVideoV4P5._OnGoToTargetNextFrameScheduleCb, self)
             end
         end
     end
@@ -249,10 +247,17 @@ function XUiLoginVideoV4P5:OnDestroy()
 end
 
 function XUiLoginVideoV4P5:CloseVideo()
-    if self.TimerId then
-        XScheduleManager.UnSchedule(self.TimerId)
-    end
+    XScheduleManagerPro.UnSchedule(XUiLoginVideoV4P5._OnVideoUpdateScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(XUiLoginVideoV4P5._OnGoToTargetNextFrameScheduleCb, self)
     if not XTool.UObjIsNil(self.VideoPlayerUgui1) then self.VideoPlayerUgui1:Stop() end
     if not XTool.UObjIsNil(self.VideoPlayerUgui2) then self.VideoPlayerUgui2:Stop() end
     if not XTool.UObjIsNil(self.VideoPlayerUgui3) then self.VideoPlayerUgui3:Stop() end
+end
+
+function XUiLoginVideoV4P5:_OnVideoUpdateScheduleCb()
+    self:Update()
+end
+
+function XUiLoginVideoV4P5:_OnGoToTargetNextFrameScheduleCb()
+    self:DoGo()
 end

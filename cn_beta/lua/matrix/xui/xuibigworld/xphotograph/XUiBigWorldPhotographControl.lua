@@ -468,26 +468,23 @@ function XUiBigWorldPhotographControl:InitFightConfig(detectionNpcPlaceIdList, d
 end
 
 function XUiBigWorldPhotographControl:_AddUpdateTimerLoop()
-    if self._TimerId then return end
-    self._TimerId = XScheduleManager.ScheduleForever(function() self:_UpdateFollowUi() end, 30)
+    if XScheduleManagerPro.HasSchedule(XUiBigWorldPhotographControl._OnUpdateFollowUiScheduleCb, self) then
+        return
+    end
+    XScheduleManagerPro.ScheduleForever(XUiBigWorldPhotographControl._OnUpdateFollowUiScheduleCb, self, 30)
 end
 
 function XUiBigWorldPhotographControl:_RemoveUpdateTimerLoop()
-    if not self._TimerId then return end
-    XScheduleManager.UnSchedule(self._TimerId)
-    self._TimerId = nil
+    XScheduleManagerPro.UnSchedule(XUiBigWorldPhotographControl._OnUpdateFollowUiScheduleCb, self)
 end
 
 function XUiBigWorldPhotographControl:_AddTickTimerLoop()
-    if self._TickTimer then return end
-    self._TickTimer = XScheduleManager.ScheduleForever(handler(self, self._UpdateHandler), 10)
+    if XScheduleManagerPro.HasSchedule(self._UpdateHandler, self) then return end
+    XScheduleManagerPro.ScheduleForever(self._UpdateHandler, self, 10)
 end
 
 function XUiBigWorldPhotographControl:_RemoveTickTimerLoop()
-    if XTool.IsNumberValid(self._TickTimer) then
-        XScheduleManager.UnSchedule(self._TickTimer)
-        self._TickTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._UpdateHandler, self)
 end
 
 function XUiBigWorldPhotographControl:UpdateMoveDirectionFunc(vec2)
@@ -725,12 +722,16 @@ function XUiBigWorldPhotographControl:OnBtnQuitClick()
     self._isQuit = true
     self:PlayAnimation("Disable")
     self:RemoveAnimTimer()
-    XScheduleManager.ScheduleOnce(function()
-        self:X3CCameraPhotographExit()
-    end, 200)
-    self._AnimTimerId = XScheduleManager.ScheduleOnce(function()
-        self:Close()
-    end, 330)
+    XScheduleManagerPro.ScheduleOnce(self._OnBtnQuitClickScheduleCb, self, 200)
+    XScheduleManagerPro.ScheduleOnce(self._OnBtnQuitClickScheduleCb2, self, 330)
+end
+
+function XUiBigWorldPhotographControl:_OnBtnQuitClickScheduleCb2()
+    self:Close()
+end
+
+function XUiBigWorldPhotographControl:_OnBtnQuitClickScheduleCb()
+    self:X3CCameraPhotographExit()
 end
 
 function XUiBigWorldPhotographControl:ShowPersonButton(isInit)
@@ -751,56 +752,60 @@ function XUiBigWorldPhotographControl:ShowPersonButton(isInit)
 end
 
 function XUiBigWorldPhotographControl:RemoveAnimTimer()
-    if not self._AnimTimerId then return end
-    XScheduleManager.UnSchedule(self._AnimTimerId)
-    self._AnimTimerId = nil
+    XScheduleManagerPro.UnSchedule(self._OnBtnQuitClickScheduleCb2, self)
+    XScheduleManagerPro.UnSchedule(self._OnBtnFirstPersonClickScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(self._OnBtnThirdPersonClickScheduleCb, self)
 end
 
 function XUiBigWorldPhotographControl:OnBtnFirstPersonClick()
     self:PlayAnimation("PersonSwitch")
     self:RemoveAnimTimer()
-    self._AnimTimerId = XScheduleManager.ScheduleOnce(function()
-        if self._PersonSwitchFake then
-            local config = self._SettingConfig[#self._SettingConfig]
-            config.Callback(true)
-            self._PersonSwitchFake = false
-        end
-        self._ThirdPersonMode = true
-        self._recordData["is_first_person"] = self._ThirdPersonMode and 0 or 1
-        self._Control:ReadUnlock(UnlockType.FirstPerson)
-        local t = XMVCA.XBigWorldAlbum:X3CChangePerspective(self._ThirdPersonMode)
-        if t and t.InitZoom then
-            self:SetScaleValue(t.InitZoom, true)
-        end
-        if self._HideCharTag then
-            XMVCA.XBigWorldGamePlay:SetCurNpcActive(not self._HideCharTag)
-        end
-        self.SliderRotate.value = self._defaultRotateValue
-        self:ShowPersonButton(true)
-        self:RemoveAnimTimer()
-    end, 200)
+    XScheduleManagerPro.ScheduleOnce(self._OnBtnFirstPersonClickScheduleCb, self, 200)
+end
+
+function XUiBigWorldPhotographControl:_OnBtnFirstPersonClickScheduleCb()
+    if self._PersonSwitchFake then
+        local config = self._SettingConfig[#self._SettingConfig]
+        config.Callback(true)
+        self._PersonSwitchFake = false
+    end
+    self._ThirdPersonMode = true
+    self._recordData["is_first_person"] = self._ThirdPersonMode and 0 or 1
+    self._Control:ReadUnlock(UnlockType.FirstPerson)
+    local t = XMVCA.XBigWorldAlbum:X3CChangePerspective(self._ThirdPersonMode)
+    if t and t.InitZoom then
+        self:SetScaleValue(t.InitZoom, true)
+    end
+    if self._HideCharTag then
+        XMVCA.XBigWorldGamePlay:SetCurNpcActive(not self._HideCharTag)
+    end
+    self.SliderRotate.value = self._defaultRotateValue
+    self:ShowPersonButton(true)
+    self:RemoveAnimTimer()
 end
 
 function XUiBigWorldPhotographControl:OnBtnThirdPersonClick()
     self:PlayAnimation("PersonSwitch")
     self:RemoveAnimTimer()
-    self._AnimTimerId = XScheduleManager.ScheduleOnce(function()
-        local config = self._SettingConfig[#self._SettingConfig]
-        if config.IsOn then
-            self._PersonSwitchFake = true
-            config.Callback(false)
-        end
+    XScheduleManagerPro.ScheduleOnce(self._OnBtnThirdPersonClickScheduleCb, self, 200)
+end
 
-        self._ThirdPersonMode = false
-        self._recordData["is_first_person"] = self._ThirdPersonMode and 0 or 1
-        self._Control:ReadUnlock(UnlockType.FirstPerson)
-        self:ShowPersonButton()
-        local t = XMVCA.XBigWorldAlbum:X3CChangePerspective(self._ThirdPersonMode)
-        if t and t.InitZoom then
-            self:SetScaleValue(t.InitZoom, true)
-        end
-        self:RemoveAnimTimer()
-    end, 200)
+function XUiBigWorldPhotographControl:_OnBtnThirdPersonClickScheduleCb()
+    local config = self._SettingConfig[#self._SettingConfig]
+    if config.IsOn then
+        self._PersonSwitchFake = true
+        config.Callback(false)
+    end
+
+    self._ThirdPersonMode = false
+    self._recordData["is_first_person"] = self._ThirdPersonMode and 0 or 1
+    self._Control:ReadUnlock(UnlockType.FirstPerson)
+    self:ShowPersonButton()
+    local t = XMVCA.XBigWorldAlbum:X3CChangePerspective(self._ThirdPersonMode)
+    if t and t.InitZoom then
+        self:SetScaleValue(t.InitZoom, true)
+    end
+    self:RemoveAnimTimer()
 end
 
 function XUiBigWorldPhotographControl:_RegisterButtonClicks()
@@ -918,6 +923,10 @@ function XUiBigWorldPhotographControl:_UpdateFollowUi()
             self._DetectedActorList[uid]:UpdateFollowPos(pos)
         end
     end
+end
+
+function XUiBigWorldPhotographControl:_OnUpdateFollowUiScheduleCb()
+    self:_UpdateFollowUi()
 end
 
 return XUiBigWorldPhotographControl

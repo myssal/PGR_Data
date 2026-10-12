@@ -58,9 +58,11 @@ function XUiFunbenKoroTutorial:StartActivityTimer()
     self.TxtDay.text = XUiHelper.GetTime(self.ActivityEndTime - now, XUiHelper.TimeFormatType.ACTIVITY)
     self:CloseActivityTimer()
 
-    self.TimerId = XScheduleManager.ScheduleForever(function()
-        self:RefreshActivityTime()
-    end, XScheduleManager.SECOND, 0)
+    XScheduleManagerPro.ScheduleForever(self._OnStartActivityTimerScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiFunbenKoroTutorial:_OnStartActivityTimerScheduleCb()
+    self:RefreshActivityTime()
 end
 
 function XUiFunbenKoroTutorial:RefreshActivityTime()
@@ -75,10 +77,7 @@ function XUiFunbenKoroTutorial:RefreshActivityTime()
 end
 
 function XUiFunbenKoroTutorial:CloseActivityTimer()
-    if self.TimerId then
-        XScheduleManager.UnSchedule(self.TimerId)
-        self.TimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartActivityTimerScheduleCb, self)
 end
 
 --切换到挑战界面或者教学关界面

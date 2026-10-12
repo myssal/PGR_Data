@@ -68,19 +68,14 @@ function XUiFangKuaiMain:UpdateTask()
     self.PanelItem.gameObject:SetActiveEx(true)
 
     self:StopBubbleTimer()
-    self._BubbleTimer = XScheduleManager.ScheduleOnce(function()
-        self.PanelItem.gameObject:SetActiveEx(false)
-    end, keepTime)
+    XScheduleManagerPro.ScheduleOnce(self._OnUpdateTaskScheduleCb, self, keepTime)
 
     local isRed = self._Control:CheckTaskRedPoint()
     self.BtnTask:ShowReddot(isRed)
 end
 
 function XUiFangKuaiMain:StopBubbleTimer()
-    if self._BubbleTimer then
-        XScheduleManager.UnSchedule(self._BubbleTimer)
-        self._BubbleTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnUpdateTaskScheduleCb, self)
 end
 
 function XUiFangKuaiMain:UpdateChapter()
@@ -141,6 +136,10 @@ function XUiFangKuaiMain:StopCountDown()
         XScheduleManager.UnSchedule(self._Timer)
         self._Timer = nil
     end
+end
+
+function XUiFangKuaiMain:_OnUpdateTaskScheduleCb()
+    self.PanelItem.gameObject:SetActiveEx(false)
 end
 
 return XUiFangKuaiMain

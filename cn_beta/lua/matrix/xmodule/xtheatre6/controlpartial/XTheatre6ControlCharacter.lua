@@ -366,11 +366,13 @@ function XTheatre6Control:SkillMoveOrSwapRequest(skillId, dstSlotType, dstPositi
             cb()
         end
     end)
-    XScheduleManager.ScheduleOnce(function()
-        if XLuaUiManager.IsMaskShow(MoveSkillMaskKey) then
-            XLuaUiManager.SetMask(false, MoveSkillMaskKey)
-        end
-    end, 200)
+    XScheduleManagerPro.ScheduleOnce(self._OnSkillMoveOrSwapRequestScheduleCb, self, 200)
+end
+
+function XTheatre6Control:_OnSkillMoveOrSwapRequestScheduleCb()
+    if XLuaUiManager.IsMaskShow(MoveSkillMaskKey) then
+        XLuaUiManager.SetMask(false, MoveSkillMaskKey)
+    end
 end
 
 ---溢出技能出售请求

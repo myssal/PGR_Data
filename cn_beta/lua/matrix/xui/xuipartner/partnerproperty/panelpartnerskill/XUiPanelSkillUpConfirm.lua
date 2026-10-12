@@ -22,12 +22,7 @@ function XUiPanelSkillUpConfirm:HidePanel()
 end
 
 function XUiPanelSkillUpConfirm:PlayEnableAnime()
-    XScheduleManager.ScheduleOnce(function()
-            XLuaUiManager.SetMask(true)
-            self.PanelSkillUpConfirmEnable.gameObject:PlayTimelineAnimation(function ()
-                    XLuaUiManager.SetMask(false)
-                end)
-        end, 1)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayEnableAnimeScheduleCb, self, 1)
 end
 
 function XUiPanelSkillUpConfirm:UpdatePartnerInfo(data, skillUpInfo)
@@ -64,6 +59,13 @@ end
 function XUiPanelSkillUpConfirm:OnBtnCloseClick()
     self.Base:SetSkillInfoState()
     self.Base:ShowPanel()
+end
+
+function XUiPanelSkillUpConfirm:_OnPlayEnableAnimeScheduleCb()
+    XLuaUiManager.SetMask(true)
+    self.PanelSkillUpConfirmEnable.gameObject:PlayTimelineAnimation(function ()
+        XLuaUiManager.SetMask(false)
+    end)
 end
 
 return XUiPanelSkillUpConfirm

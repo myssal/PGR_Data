@@ -78,16 +78,11 @@ end
 
 function XUiChessPursuitRank:SetRefreshTimer()
     self:RemoveTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:CheckIsClose()
-    end, 1000)
+    XScheduleManagerPro.ScheduleForever(self._OnCheckIsCloseScheduleCb, self, 1000)
 end
 
 function XUiChessPursuitRank:RemoveTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnCheckIsCloseScheduleCb, self)
 end
 
 function XUiChessPursuitRank:CheckIsClose()
@@ -102,4 +97,8 @@ end
 
 function XUiChessPursuitRank:OnBtnMainUiClick()
     XLuaUiManager.RunMain()
+end
+
+function XUiChessPursuitRank:_OnCheckIsCloseScheduleCb()
+    self:CheckIsClose()
 end

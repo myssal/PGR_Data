@@ -108,9 +108,11 @@ function XUiDlcRelinkMain:StartTipsTimer()
     end
     self:StopTipsTimer()
     self.PanelTips.gameObject:SetActiveEx(true)
-    self.TipsTimer = XScheduleManager.ScheduleForeverEx(function()
+    XScheduleManagerPro.ScheduleForeverEx(self._OnStartTipsTimerScheduleCb, self, self.TipSwitchInterval)
+end
+
+function XUiDlcRelinkMain:_OnStartTipsTimerScheduleCb()
         self:RefreshTip()
-    end, self.TipSwitchInterval)
 end
 
 function XUiDlcRelinkMain:RefreshTip()
@@ -122,10 +124,7 @@ function XUiDlcRelinkMain:RefreshTip()
 end
 
 function XUiDlcRelinkMain:StopTipsTimer()
-    if self.TipsTimer then
-        XScheduleManager.UnSchedule(self.TipsTimer)
-        self.TipsTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartTipsTimerScheduleCb, self)
     self.CurrentTipIndex = -1
 end
 

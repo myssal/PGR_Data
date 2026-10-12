@@ -43,10 +43,8 @@ function XUiDiceGame:InitGamePanels()
 end
 
 function XUiDiceGame:CreateTimeListener()
-	if not self.Timer then
-		self.Timer = XScheduleManager.ScheduleForever(function()
-			self:AutoQuitOnFinish()
-		end, XScheduleManager.SECOND , 0)
+	if not XScheduleManagerPro.HasSchedule(XUiDiceGame._OnAutoQuitScheduleCb, self) then
+		XScheduleManagerPro.ScheduleForever(XUiDiceGame._OnAutoQuitScheduleCb, self, XScheduleManagerPro.SECOND, 0)
 	end
 end
 
@@ -114,9 +112,7 @@ function XUiDiceGame:UpdatePanel(stage, signal, animFlag)
 end
 
 function XUiDiceGame:OnDisable()
-	if self.Timer then
-		XScheduleManager.UnSchedule(self.Timer)
-	end
+	XScheduleManagerPro.UnSchedule(XUiDiceGame._OnAutoQuitScheduleCb, self)
 end
 
 function XUiDiceGame:OnDestroy()
@@ -147,3 +143,7 @@ local XUiDiceGameSubPanel = {}
 ---@param playAnim boolean
 ---@param disableFinishCb fun():void
 function XUiDiceGameSubPanel:SetActive(active, signal, playAnim, disableFinishCb) end
+
+function XUiDiceGame:_OnAutoQuitScheduleCb()
+	self:AutoQuitOnFinish()
+end

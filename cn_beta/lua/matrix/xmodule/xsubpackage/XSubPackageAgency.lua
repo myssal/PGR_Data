@@ -3,19 +3,17 @@
 ---@field private _SubpackageWaitDnLdQueue number[] 分包下载Id列表
 ---@field private _LaunchDlcManager XLaunchDlcManager 下载管理器
 ---@field private _DownloadCenter XMTDownloadCenter 多线程下载器
+---@field private _RegisteredResTaskGroups table<number, boolean> 已注册下载任务组的ResId
 local XSubPackageAgency = XClass(XAgency, "XSubPackageAgency")
 
 local MIN_SIZE = 1024
 local BATCH_DELETE_COUNT = 10
+local MUSIC_SUBPACKAGE_ID = 3000
 
 local CheckStageId = 10030304
 
-local LaunchTestPath = CS.UnityEngine.Application.dataPath .. "/../../../Product/Temp/LocalCdn"
-local LaunchTestDirApp = CS.UnityEngine.Application.dataPath .. "/../../../Product/Temp/LocalDirApp"
-local LaunchTestDirDoc = CS.UnityEngine.Application.dataPath .. "/../../../Product/Temp/LocalDirDoc"
-
-local SingleThreadCount = 1 --单线程线程数
-local MultiThreadCount = 5 --多线程线程数
+local SingleThreadCount = 3 --单线程线程数
+local MultiThreadCount = 15 --多线程线程数
 
 local pairs = pairs
 local ipairs = ipairs
@@ -25,6 +23,7 @@ local DebugForceOpenSubpackage = false
 local IsDebugBuild = CS.XApplication.Debug
 local IsSkipGMTest = false
 local CsLog = CS.XLog
+local CSDownloadTaskGroupState = XTool.GetDownloadStateEnum()
 
 --分包下载源
 local CsXApplication = CS.XApplication
@@ -34,6 +33,8 @@ function XSubPackageAgency:OnInit()
     self._SubpackageWaitDnLdQueue = {}
     self._ResWaitDnLdQueue = {}
     self._FileToResIds = {}
+    -- SubpackageId -> 物理文件名 -> 文件大小，避免跨 Res 共享文件重复累计
+    self._SubpackageFileSizeMap = {}
 
     self._IsUninstalling = false
     self._UninstallVersion = 0
@@ -69,13 +70,16 @@ function XSubPackageAgency:OnInit()
     --是否需要测试
     self._IsNeedLaunchTest = CS.XResourceManager.NeedLaunchTest
 
-    self._DocumentUrl = self._LaunchDlcManager.GetPathModule().GetDocumentUrl()
+    local ModuleUpdateInfoClass = require("XLaunchUpdate/XModuleUpdateInfo")
+    local moduleUpdateInfo = ModuleUpdateInfoClass.New()
+    moduleUpdateInfo:Init(RES_FILE_TYPE.MATRIX_FILE)
 
-    self._DocumentVersion = self._LaunchDlcManager.GetVersionModule().GetNewDocVersion()
-
-    self._DocumentFilePath = self._LaunchDlcManager.GetPathModule().GetDocumentFilePath()
+    self._ModuleUpdateInfo = moduleUpdateInfo
+    self._DocumentFilePath = moduleUpdateInfo:GetDocumentFilePath()
+    self._DocumentVersion = moduleUpdateInfo:GetNewVersion()
 
     self._DownloadCenter = nil
+    self._RegisteredResTaskGroups = nil
 
     self:ResolveResIndex()
 end
@@ -286,44 +290,25 @@ function XSubPackageAgency:TransformSize(size)
     return math.ceil(num), unit
 end
 
-function XSubPackageAgency:GetSubpackageTotalSize(subpackageId)
+function XSubPackageAgency:GetSubpackageDownloadSize(subpackageId)
+    local map = self._SubpackageFileSizeMap[subpackageId]
+    if not map then return 0 end
     local size = 0
-    local t = self._Model:GetSubpackageTemplate(subpackageId)
-    local resIds = t.ResIds
-
-    -- 字典表优化
-    local dict = self._tempDict
-    if not dict then
-        dict = {}
-        self._tempDict = dict
-    else
-        -- 清空字典表，准备复用
-        for k in pairs(dict) do
-            dict[k] = nil
+    for fileName, fileSize in pairs(map) do
+        if self._LaunchDlcManager.IsNameDownloaded(fileName) then
+            size = size + fileSize
         end
     end
+    return size
+end
 
-    if not XTool.IsTableEmpty(resIds) then
-        for _, resId in pairs(resIds) do
-            local indexInfo = self._SubIndexInfo[resId]
-            if indexInfo then
-                for _, info in pairs(indexInfo) do
-                    local fileName = info[1]
-                    --如果有同名文件只记录一次
-                    if not dict[fileName] then
-                        dict[fileName] = true
-                        size = size + info[3]
-                    end
-                end
-            else
-                if IsDebugBuild then
-                    local str = stringFormat("分包 SubpackageId = %s 不存在IndexInfo, ResId = %s", subpackageId, resId)
-                    XLog.Warning(str)
-                end
-            end
-        end
+function XSubPackageAgency:GetSubpackageTotalSize(subpackageId)
+    local map = self._SubpackageFileSizeMap[subpackageId]
+    if not map then return 0 end
+    local size = 0
+    for _, fileSize in pairs(map) do
+        size = size + fileSize
     end
-
     return size
 end
 
@@ -385,6 +370,42 @@ function XSubPackageAgency:GetResListTotalSize(resIdTable)
     return size
 end
 
+--- 按文件名统计Res文件大小，供预览总量和进度使用
+function XSubPackageAgency:CreateResListSizeInfo(resIds)
+    local fileSizeMap = {}
+    local totalSize = 0
+    for _, resId in ipairs(resIds) do
+        local indexInfo = self._SubIndexInfo[resId]
+        if indexInfo then
+            for _, info in pairs(indexInfo) do
+                local fileName = info[1]
+                if not fileSizeMap[fileName] then
+                    local fileSize = info[3]
+                    fileSizeMap[fileName] = fileSize
+                    totalSize = totalSize + fileSize
+                end
+            end
+        else
+            CS.XLog.Warning(string.format("XSubPackageAgency:ResId %d 没有索引信息", resId))
+        end
+    end
+    return {
+        FileSizeMap = fileSizeMap,
+        TotalSize = totalSize,
+    }
+end
+
+--- 按文件落盘状态计算已下载大小
+function XSubPackageAgency:GetSizeInfoDownloadSize(sizeInfo)
+    local downloadSize = 0
+    for fileName, fileSize in pairs(sizeInfo.FileSizeMap) do
+        if self._LaunchDlcManager.IsNameDownloaded(fileName) then
+            downloadSize = downloadSize + fileSize
+        end
+    end
+    return downloadSize
+end
+
 --- Res粒度开始下载
 --------------------------
 function XSubPackageAgency:AddResToDownload(resId)
@@ -426,16 +447,30 @@ function XSubPackageAgency:DoResDownload()
         if XTool.IsTableEmpty(self._ResWaitDnLdQueue) then
             break
         end
+        -- [安全网] 完成通知的递归回调可能已启动下一个Res，避免重复启动
+        if XTool.IsNumberValid(self._DownloadingResId) then
+            return
+        end
         local targetResId = self._ResWaitDnLdQueue[1]
         table.remove(self._ResWaitDnLdQueue, 1)
 
         local resItem = self._Model:GetResourceItem(targetResId)
         if resItem and resItem:GetState() ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE then
-            resItem:StartDownload()
+            -- 确保下载中心存在并已批量注册任务组（首次下载时构建全部待下载Res的任务，之后按需StartById）
             self:InitDownloader()
-            self._DownloadingResId = targetResId
-            self._DownloadCenter:StartById(targetResId)
-            return
+            if not resItem:HasDownloadTasks() then
+                -- 所有文件均已落盘（可能已被其他分包/资源先下载），无需真实下载，直接完成收尾
+                resItem:Complete()
+                self._LaunchDlcManager.SetLaunchDownloadRecord(targetResId)
+                CS.UnityEngine.PlayerPrefs.Save()
+                self:_NotifySubpackageResComplete(targetResId)
+                -- 不return，继续循环处理队列中的下一个Res
+            else
+                resItem:StartDownload()
+                self._DownloadingResId = targetResId
+                self._DownloadCenter:StartById(targetResId)
+                return
+            end
         end
     end
 
@@ -481,13 +516,10 @@ function XSubPackageAgency:OnResDownloadRelease(callbackResId)
     end
 
     if XTool.IsNumberValid(self._PreparePauseSubpackageId) then
-        local item = self._Model:GetSubpackageItem(self._PreparePauseSubpackageId)
-        item:Pause()
-        self._TipDialog = false
-
+        local pausedSubpackageId = self._PreparePauseSubpackageId
         -- [修正] Sub pause 完成收口：确保该 sub 下所有非 COMPLETE 的 res 都稳定落成 PAUSE
         -- 防止 PREPARE_DOWNLOAD 残留导致 IsSubOrResDownloading 误判
-        local pauseTemplate = self._Model:GetSubpackageTemplate(self._PreparePauseSubpackageId)
+        local pauseTemplate = self._Model:GetSubpackageTemplate(pausedSubpackageId)
         if pauseTemplate and pauseTemplate.ResIds then
             local resQueueSet = {}
             for _, qId in ipairs(self._ResWaitDnLdQueue) do
@@ -509,10 +541,7 @@ function XSubPackageAgency:OnResDownloadRelease(callbackResId)
             end
         end
 
-        XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PAUSE, self._PreparePauseSubpackageId)
-    end
-
-    if XTool.IsNumberValid(self._PreparePauseSubpackageId) then -- subPackage正在暂停
+        self:FinishSubpackageDownload()
         return
     end
 
@@ -592,11 +621,11 @@ function XSubPackageAgency:ResumePausedResInSubpackage(subpackageId)
 end
 
 --- 将必要资源添加到下载队列
-function XSubPackageAgency:AddNecessaryToDownload()
+function XSubPackageAgency:AddNecessaryToDownload(forceResumePausedRes)
     --开始下载必要资源
     local subIds = self._Model:GetNecessarySubIds()
     for _, subId in ipairs(subIds) do
-        self:AddToDownload(subId)
+        self:AddToDownload(subId, forceResumePausedRes)
     end
 end
 
@@ -705,17 +734,14 @@ function XSubPackageAgency:PauseDownload(subpackageId)
         end
         table.remove(self._ResWaitDnLdQueue, removeIndices[i])
     end
-    if self._DownloadCenter and targetPauseResId then
-        local resItem = self._Model:GetResourceItem(targetPauseResId)
-        -- XLog.Warning("SP/DN 暂停TG 1 ", targetPauseResId, resItem:GetTaskGroup().State)
-        self._DownloadCenter:PauseById(targetPauseResId)
-        -- XLog.Warning("SP/DN 暂停TG 2 ", targetPauseResId, resItem:GetTaskGroup().State)
-    end
-
-    --等待暂停
+    -- 先设置暂停标记，PauseById 可能同步触发状态回调。
     self._PreparePauseSubpackageId = subpackageId
-    --事件通知
     XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subpackageId)
+    if self._DownloadCenter and targetPauseResId and self._RegisteredResTaskGroups[targetPauseResId] then
+        self._DownloadCenter:PauseById(targetPauseResId)
+    else
+        self:FinishSubpackageDownload()
+    end
 end
 
 -- 暂停必要资源下载
@@ -757,9 +783,8 @@ function XSubPackageAgency:PauseAll()
     XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_COMPLETE)
 end
 
---释放下载器
-function XSubPackageAgency:OnDownloadRelease()
-    -- XLog.Warning("SP/DN OnDownloadRelease", self._PreparePauseSubpackageId, self._SubpackageWaitDnLdQueue, self._IsDownloading)
+-- 分包暂停、完成或失败后，清理调度状态并继续下载队列。
+function XSubPackageAgency:FinishSubpackageDownload()
     if not self:IsOpen() then
         return
     end
@@ -768,12 +793,11 @@ function XSubPackageAgency:OnDownloadRelease()
     if XTool.IsNumberValid(pausedSubpackageId) then
         local item = self._Model:GetSubpackageItem(pausedSubpackageId)
         item:Pause()
+        item._WaitPause = false
         self._TipDialog = false
     end
 
-    --下载队列为空了
     if XTool.IsTableEmpty(self._SubpackageWaitDnLdQueue) then
-        --切换为单线程下载
         self:ChangeThread(true)
     end
 
@@ -783,14 +807,14 @@ function XSubPackageAgency:OnDownloadRelease()
     self._PreparePauseSubpackageId = 0
     self._PreparePauseResId = nil
     self._PendingResumeResId = nil
+    self._IsPause = false
     self._Downloader = nil
 
-    -- 先清完所有 Sub 级标记，再派发事件，确保 Grid 刷新时 IsSubOrResDownloading 能正确判定
+    -- UI 刷新前清掉调度标记。
     if XTool.IsNumberValid(pausedSubpackageId) then
         XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PAUSE, pausedSubpackageId)
     end
 
-    -- 保底若 OnResDownloadRelease 被拦截了 这里还能再处理一次队列下载
     if not XTool.IsNumberValid(self._DownloadingResId) then
         self:DoResDownload()
     end
@@ -958,10 +982,8 @@ function XSubPackageAgency:UninstallResourcesByIds(resIds, cb)
             return
         end
 
-        -- 卸载后销毁下载器，确保下次下载时重新创建并注册新的 TaskGroup
-        if self._DownloadCenter then
-            self._DownloadCenter = nil
-        end
+        -- 卸载后销毁下载器，确保下次下载时重新创建并重新按需注册 TaskGroup
+        self:_ResetDownloadCenter()
 
         self._IsUninstalling = false
         XLog.Warning("[XSubPackageAgency] 批量资源卸载完成")
@@ -996,6 +1018,27 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
             self._IsUninstalling = false
             if cb then cb() end
             return
+        end
+
+        local currentMusicInfo = XLuaAudioManager.GetCurrentMusicAudioInfo()
+        local currentCueId = currentMusicInfo and currentMusicInfo.CueId
+        local fallbackAlbumId = CS.XGame.ClientConfig:GetInt("MusicPlayerFallbackAlbumId")
+        local fallbackAlbumCo = XMVCA.XMusicPlayer:COGetMusicPlayerAlbumCOByid(fallbackAlbumId)
+        local fallbackCueId = fallbackAlbumCo and fallbackAlbumCo.CueId
+
+        -- 卸载CD机分包且当前正在播放CD机音乐时，先切换到不依赖该分包的fallback音乐，再释放旧CueSheet
+        if subpackageId == MUSIC_SUBPACKAGE_ID and XTool.IsNumberValid(currentCueId) and CS.XAudioManager.CheckCueIsCDMusic(currentCueId) and currentCueId ~= fallbackCueId then
+            local oldCueSheetId = currentMusicInfo.CueSheetId
+            if not XMVCA.XMusicPlayer:TryEnterFallbackForUninstall() then
+                self._IsUninstalling = false
+                XLog.Warning("[XSubPackageAgency] CD机分包卸载前切换fallback音乐失败")
+                if cb then cb() end
+                return
+            end
+
+            CS.XAudioManager.RemoveCueSheetById(oldCueSheetId)
+            -- RemoveCueSheetById没有句柄释放完成回调，物理删除前让出一帧，为旧AudioInfo和CueSheet提供释放边界
+            asynWaitSecond(0)
         end
 
         XLog.Warning(string.format("[XSubPackageAgency] 开始协程卸载 SubpackageId=%d", subpackageId))
@@ -1039,10 +1082,8 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
         end
         XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_COMPLETE)
 
-        -- 卸载后销毁下载器，确保下次下载时重新创建并注册新的 TaskGroup
-        if self._DownloadCenter then
-            self._DownloadCenter = nil
-        end
+        -- 卸载后销毁下载器，确保下次下载时重新创建并重新按需注册 TaskGroup
+        self:_ResetDownloadCenter()
 
         self._IsUninstalling = false
         XLog.Warning("[XSubPackageAgency] 卸载完成")
@@ -1267,7 +1308,13 @@ function XSubPackageAgency:ResolveResIndex()
                 for _, subpackageId in pairs(subpackageIds) do
                     local item = self._Model:GetSubpackageItem(subpackageId)
                     if item then
+                        local fileSizeMap = self._SubpackageFileSizeMap[subpackageId]
+                        if not fileSizeMap then
+                            fileSizeMap = {}
+                            self._SubpackageFileSizeMap[subpackageId] = fileSizeMap
+                        end
                         for assetPath, info in pairs(indexInfo) do
+                            fileSizeMap[info[1]] = info[3]
                             item:InitFileInfo(assetPath, info, resId)
                         end
                     end
@@ -1282,53 +1329,91 @@ function XSubPackageAgency:ResolveResIndex()
     self._IsResolve = true
 end
 
+-- 首次下载时批量构建任务，全部注册后再启动下载中心。
 function XSubPackageAgency:InitDownloader()
     if not self._DownloadCenter then
         self._DownloadCenter = XTool.CreateDownloadManager()
         self._DownloadCenter:SetThreadNumber(self._ThreadCount)
-        local groupIds = self._Model:GetGroupIdList()
-        for _, groupId in ipairs(groupIds) do
-            local group = self._Model:GetGroupTemplate(groupId)
-            for _, subpackageId in ipairs(group.SubPackageId) do
-                local item = self._Model:GetSubpackageItem(subpackageId)
-                if item and not item:IsComplete() then
-                    local taskGroups = item:GetTaskGroups()
-                    for k, taskGroup in pairs(taskGroups) do
-                        taskGroup.NotifyStateChanged = handler(self, self.OnStateChanged)
-                        taskGroup.NotifyProgressChanged = handler(self, self.OnProgressUpdate)
-                        self._DownloadCenter:RegisterTaskGroup(taskGroup)
-                    end
-                end
-            end
+        self._RegisteredResTaskGroups = {}
+
+        local resItemDic = self:GetAllResAndSubpackageItemDic()
+        for resId, _ in pairs(resItemDic) do
+            self:_RegisterResTaskGroup(resId)
         end
     end
 
     self._DownloadCenter:Run()
 end
 
-function XSubPackageAgency:GetSavePath(fileName)
-    if self._IsNeedLaunchTest then
-        return stringFormat("%s/%s/%s", LaunchTestDirDoc, RES_FILE_TYPE.MATRIX_FILE, fileName)
+--- 注册未完成资源的下载任务，必须在 Run 前调用
+---@param resId number
+function XSubPackageAgency:_RegisterResTaskGroup(resId)
+    if self._RegisteredResTaskGroups[resId] then
+        return
     end
+
+    local resItem = self._Model:GetResourceItem(resId)
+    -- 已完成的Res无需下载，跳过注册（其任务组可能已Release）
+    if resItem:GetState() == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE then
+        return
+    end
+
+    local taskGroup = resItem:EnsureTaskGroupBuilt()
+    if not resItem:HasDownloadTasks() then
+        -- 所有文件已落盘，不注册空任务组
+        return
+    end
+
+    taskGroup.NotifyStateChanged = handler(self, self.OnStateChanged)
+    taskGroup.NotifyProgressChanged = handler(self, self.OnProgressUpdate)
+    taskGroup.NotifyUrlDownloadFinish = function(url)
+        self:OnSingleTaskFinishByUrl(url)
+    end
+    self._DownloadCenter:RegisterTaskGroup(taskGroup)
+    self._RegisteredResTaskGroups[resId] = true
+end
+
+--- 无需下载时，通知所属分包更新完成状态
+---@param resId number
+function XSubPackageAgency:_NotifySubpackageResComplete(resId)
+    local subpackageIds = self._Model:GetSubpackageIdByResId(resId)
+    if XTool.IsTableEmpty(subpackageIds) then return end
+
+    for _, subpackageId in pairs(subpackageIds) do
+        local subpackageItem = self._Model:GetSubpackageItem(subpackageId)
+        if subpackageItem then
+            subpackageItem:OnStateChanged(CSDownloadTaskGroupState.Complete)
+        end
+    end
+end
+
+--- 卸载后重置下载中心
+function XSubPackageAgency:_ResetDownloadCenter()
+    if self._DownloadCenter then
+        self._DownloadCenter:Clear()
+        self._DownloadCenter = nil
+        -- Clear 会清空全部任务组，其他资源也必须重新整理任务和进度。
+        local resItems, subpackageItems = self:GetAllResAndSubpackageItemDic()
+        for resId, resItem in pairs(resItems) do
+            local fileInfos = self._SubIndexInfo[resId]
+            if fileInfos then
+                resItem:ResetDownloadTaskGroup(fileInfos)
+            end
+        end
+        for _, subpackageItem in pairs(subpackageItems) do
+            subpackageItem:InvalidateTaskGroupsCache()
+        end
+    end
+    self._RegisteredResTaskGroups = nil
+end
+
+function XSubPackageAgency:GetSavePath(fileName)
     return stringFormat("%s/%s/%s", self._DocumentFilePath, RES_FILE_TYPE.MATRIX_FILE, fileName)
 end
 
-function XSubPackageAgency:GetUrlPath(fileName)
-
-    return stringFormat("%s/%s", self:GetUrlPrefix(), fileName)
-end
-
-function XSubPackageAgency:GetUrlPrefix()
-    if self._UrlPrefix then
-        return self._UrlPrefix
-    end
-    if self._IsNeedLaunchTest then
-        self._UrlPrefix = stringFormat("%s/%s/%s", "client/patch/com.kurogame.haru.internal.debug.subpack/1.0.0/android", CS.XRemoteConfig.DocumentVersion, RES_FILE_TYPE.MATRIX_FILE)
-        return self._UrlPrefix
-    end
-    self._UrlPrefix = stringFormat("%s/%s/%s", self._DocumentUrl, CS.XRemoteConfig.DocumentVersion, RES_FILE_TYPE.MATRIX_FILE)
-
-    return self._UrlPrefix
+function XSubPackageAgency:GetUrlPath(fileName, version)
+    local DocumentUrl = self._ModuleUpdateInfo:GetUrlByVersion(version)
+    return stringFormat("%s/%s/%s/%s", DocumentUrl, version, RES_FILE_TYPE.MATRIX_FILE, fileName)
 end
 
 function XSubPackageAgency:GetNecessarySubIds()
@@ -1476,6 +1561,13 @@ function XSubPackageAgency:CheckStageIdListResIdListDownloadComplete(stageIdList
             for _, resId in ipairs(config.ResIdList) do
                 resIdSet[resId] = true -- 去重
             end
+        end
+    end
+
+    -- 过滤无实质下载内容的ResId（总大小<=0，即0b），避免在视频拦截弹窗显示条目并阻塞进关
+    for resId, _ in pairs(resIdSet) do
+        if self:GetResTotalSize(resId) <= 0 then
+            resIdSet[resId] = nil
         end
     end
 
@@ -1637,7 +1729,7 @@ function XSubPackageAgency:CheckSubpackage(enterType, param, ignorePopUi)
 
     -- 4. 收集散装涂装Res数据（传入Sub的resIdSet用于去重）
     local subResIdSet = self:_BuildSubResIdSet(subIds, weakSubIds)
-    local fashionResIds, fashionIsWeak = self:CollectFashionResIds(enterType, param, subResIdSet)
+    local fashionResIds, fashionIsWeak = self:CollectFashionResIds(enterType, subResIdSet)
     local hasExtraRes = not XTool.IsTableEmpty(fashionResIds)
     -- 散装强Res视为强选项
     local hasStrongExtraRes = hasExtraRes and not fashionIsWeak
@@ -1931,7 +2023,7 @@ function XSubPackageAgency:OnLoginSuccess()
     --开始下载必要资源
     local subIds = self._Model:GetNecessarySubIds()
     for _, subId in ipairs(subIds) do
-        self:AddToDownload(subId)
+        self:AddToDownload(subId, true)
     end
 end
 
@@ -1947,14 +2039,15 @@ function XSubPackageAgency:OnLoginOut()
     self:PauseAll()
 end
 
-function XSubPackageAgency:OnSingleTaskFinish(eventName, args)
-    local resourceName = args[0]
-    --resourceName 是带前缀的
-    local fullLen = string.len(resourceName)
-    local prefixLen = string.len(self:GetUrlPrefix())
-    --Lua 下标从1开始，去掉斜杠
-    local fileName = string.sub(resourceName, prefixLen + 2, fullLen)
+function XSubPackageAgency:OnSingleTaskFinishByUrl(url)
+    local fileName = XLaunchConst.GetFileName(url)
     self._LaunchDlcManager.SetDownloadedFile(fileName, true)
+end
+
+function XSubPackageAgency:OnSingleTaskFinish(eventName, args)
+    -- 完整url
+    local resourceName = args[0]
+    self:OnSingleTaskFinishByUrl(resourceName)
 end
 
 function XSubPackageAgency:IsPreparePause()
@@ -2420,11 +2513,10 @@ end
 --- 收集玩法关联的散装涂装ResIds
 --- 会对比subResIdSet去重：如果散装resId已存在于Sub选项的resIds中，跳过并输出warning
 ---@param enterType number 入口类型（对应FunctionIdFashionRelative的FunctionId）
----@param param number|nil 附加参数（ChapterMainId等，注意不是ChapterFashionRelative的拼接主键）
 ---@param subResIdSet table<number, boolean>|nil Sub选项已包含的resId集合，用于去重
 ---@return table|nil resIds列表
 ---@return boolean|nil isWeak 是否弱拦截
-function XSubPackageAgency:CollectFashionResIds(enterType, param, subResIdSet)
+function XSubPackageAgency:CollectFashionResIds(enterType, subResIdSet)
     if not enterType then
         return nil, nil
     end
@@ -2433,28 +2525,12 @@ function XSubPackageAgency:CollectFashionResIds(enterType, param, subResIdSet)
     local resIdDict = {}
     local hasStrongConfig = false
 
-    -- 1. 收集玩法关联配置（FunctionIdFashionRelative）
+    -- 收集玩法关联配置（FunctionIdFashionRelative）
     local funcConfig = self._Model:GetFunctionIdFashionRelativeConfig(enterType)
     if funcConfig then
         self:_AppendFashionResIds(resIds, resIdDict, funcConfig.FashionIds, funcConfig.IsWeakInterput, subResIdSet)
         if not funcConfig.IsWeakInterput and not XTool.IsTableEmpty(funcConfig.FashionIds) then
             hasStrongConfig = true
-        end
-    end
-
-    -- 2. 收集章节关联配置（ChapterFashionRelative）
-    -- 注意：ChapterFashionRelative的主键是拼接Id = enterType * 10000 + param
-    -- 参见 XSubPackageEditorTool.CollectRawChapterStages() 的注释:
-    -- Key: FunctionType * 10000 + ChapterMainId/ChapterId
-    if param and type(param) == "number" then
-        local chapterHashId = enterType * 10000 + param
-        local chapterConfig = self._Model:GetChapterFashionRelativeConfig(chapterHashId)
-        if chapterConfig then
-            local chapterIsWeak = chapterConfig.IsWeakInterput
-            self:_AppendFashionResIds(resIds, resIdDict, chapterConfig.FashionIds, chapterIsWeak, subResIdSet)
-            if not chapterIsWeak and not XTool.IsTableEmpty(chapterConfig.FashionIds) then
-                hasStrongConfig = true
-            end
         end
     end
 

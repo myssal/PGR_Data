@@ -12,16 +12,11 @@ function XUiWorldBossMain:OnStart()
     self:InitBossArea()
     self:SetButtonCallBack()
 
-    self.UpdateTimer = XScheduleManager.ScheduleForever(function()
-            XDataCenter.WorldBossManager.GetWorldBossGlobalData()
-            XDataCenter.WorldBossManager.GetWorldBossReport()
-        end, XScheduleManager.SECOND * SERVERDATAGETTIME, 0)
+    XScheduleManagerPro.ScheduleForever(XUiWorldBossMain._OnRequestWorldBossDataScheduleCb, self, XScheduleManagerPro.SECOND * SERVERDATAGETTIME)
 end
 
 function XUiWorldBossMain:OnDestroy()
-    if self.UpdateTimer then
-        XScheduleManager.UnSchedule(self.UpdateTimer)
-    end
+    XScheduleManagerPro.UnSchedule(XUiWorldBossMain._OnRequestWorldBossDataScheduleCb, self)
 end
 
 function XUiWorldBossMain:OnEnable()
@@ -218,6 +213,11 @@ function XUiWorldBossMain:OnBtnShopClick()
     if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon) then
         XLuaUiManager.Open("UiShop", XShopManager.ShopType.WorldBoss)
     end
+end
+
+function XUiWorldBossMain:_OnRequestWorldBossDataScheduleCb()
+    XDataCenter.WorldBossManager.GetWorldBossGlobalData()
+    XDataCenter.WorldBossManager.GetWorldBossReport()
 end
 
 function XUiWorldBossMain:OnBtnWarReportClick()

@@ -5,7 +5,6 @@
 local XUiPanelDyeMergeFinish = XClass(XUiNode, "XUiPanelDyeMergeFinish")
 
 function XUiPanelDyeMergeFinish:OnStart()
-    self._CloseHandler = handler(self, self.Close)
 end
 
 function XUiPanelDyeMergeFinish:OnEnable()
@@ -13,7 +12,7 @@ function XUiPanelDyeMergeFinish:OnEnable()
     
     local delay = math.floor(XScheduleManager.SECOND * XMVCA.XDyeMergeGame:GetClientDyeMergeNumberByKey("GameFinishPanelDelayCloseTime"))
     
-    self._DelayCloseTimerId = XScheduleManager.ScheduleOnce(self._CloseHandler, delay)
+    XScheduleManagerPro.ScheduleOnce(self.Close, self, delay)
     
     XLuaUiManager.SetMask(true)
 end
@@ -25,10 +24,7 @@ function XUiPanelDyeMergeFinish:OnDisable()
 end
 
 function XUiPanelDyeMergeFinish:_StopDelayCloseTimer()
-    if self._DelayCloseTimerId then
-        XScheduleManager.UnSchedule(self._DelayCloseTimerId)
-        self._DelayCloseTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.Close, self)
 end
 
 return XUiPanelDyeMergeFinish

@@ -95,33 +95,38 @@ end
 function XUiFightAchievementGrid:StartAnime()
     self:PlayAnim(self.Enable)
     
-    self.ScheduleId = XScheduleManager.ScheduleOnce(function()
+    XScheduleManagerPro.ScheduleOnce(self._OnStartAnimeScheduleCb, self, ToInt(self.Enable.playableAsset.duration * 1000))
+end
+
+function XUiFightAchievementGrid:_OnStartAnimeScheduleCb()
         self:LoopAnime()
-    end, ToInt(self.Enable.playableAsset.duration * 1000))
 end
 
 function XUiFightAchievementGrid:LoopAnime()
     self:PlayAnim(self.Loop)
     
-    self.ScheduleId = XScheduleManager.ScheduleOnce(function()
+    XScheduleManagerPro.ScheduleOnce(self._OnLoopAnimeScheduleCb, self, ToInt(self.Config.LoopTime * 1000))
+end
+
+function XUiFightAchievementGrid:_OnLoopAnimeScheduleCb()
         self:EndAnime()
-    end, ToInt(self.Config.LoopTime * 1000))
 end
 
 function XUiFightAchievementGrid:EndAnime()
     self:ResetAnim(self.Loop)
     self:PlayAnim(self.Disable)
 
-    self.ScheduleId = XScheduleManager.ScheduleOnce(function()
+    XScheduleManagerPro.ScheduleOnce(self._OnEndAnimeScheduleCb, self, ToInt(self.Disable.playableAsset.duration * 1000))
+end
+
+function XUiFightAchievementGrid:_OnEndAnimeScheduleCb()
         self.Parent:Complete(self.Id)
-    end, ToInt(self.Disable.playableAsset.duration * 1000))
 end
 
 function XUiFightAchievementGrid:StopTimer()
-    if self.ScheduleId ~= nil then
-        XScheduleManager.UnSchedule(self.ScheduleId)
-        self.ScheduleId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartAnimeScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(self._OnLoopAnimeScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(self._OnEndAnimeScheduleCb, self)
 end
 
 function XUiFightAchievementGrid:Dispose()

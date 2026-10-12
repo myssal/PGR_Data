@@ -1298,7 +1298,7 @@
         "Type": 1,
         "Sex": 2,
         "StoryChapterId": 1,
-        "Intro": "\"由遗忘者独立开发,专为应对严苛的作战而设计的机体。在意识海的搭载模块上，采用了与以往完全不同的设计理念。\"",
+        "Intro": "由遗忘者独立开发,专为应对严苛的作战而设计的机体。在意识海的搭载模块上，采用了与以往完全不同的设计理念。",
         "ItemId": 567,
         "LevelUpTemplateId": 1,
         "Priority": 2330,
@@ -1801,6 +1801,7 @@
         "Priority": 2520,
         "EquipType": 59,
         "EquipId": 2594001,
+        "ExclusiveEquipId": 2596001,
         "EmotionIcon": "Assets/Product/Texture/Image/IconType/IconCharacter3.png",
         "DefaultNpcFashtionId": 6005501,
         "CaptainSkillId": 138322,
@@ -2030,7 +2031,7 @@
         "Type": 1,
         "Sex": 1,
         "StoryChapterId": 1,
-        "Intro": "TEXT",
+        "Intro": "和时之天使“刻刻帝”结下契约的精灵少女，拥有着操纵影子和时间的能力。",
         "ItemId": 595,
         "LevelUpTemplateId": 1,
         "Priority": 2610,
@@ -2054,7 +2055,7 @@
         "Type": 1,
         "Sex": 1,
         "StoryChapterId": 1,
-        "Intro": "TEXT",
+        "Intro": "环大西洋赫里欧家族前继承人，现法奥斯非常驻军事实训教官。身为空中花园军部初代构造体之一，其机体经多次迭代更新，长期活跃于前线战场与教学之间，其深渊破阵的信念始终如一。",
         "ItemId": 596,
         "LevelUpTemplateId": 1,
         "Priority": 2620,
@@ -2070,5 +2071,31 @@
             3
         ],
         "Career": 9
+    },
+    {
+        "Id": 1431003,
+        "Name": "莱亚",
+        "TradeName": "祈星",
+        "LogName": "莱亚·祈星",
+        "EnName": "不明",
+        "Type": 1,
+        "Sex": 1,
+        "StoryChapterId": 1,
+        "Intro": "不明",
+        "ItemId": 597,
+        "LevelUpTemplateId": 1,
+        "Priority": 2630,
+        "EquipType": 70,
+        "EquipId": 2704001,
+        "EmotionIcon": "Assets/Product/Texture/Image/IconType/IconCharacter3.png",
+        "DefaultNpcFashtionId": 6006601,
+        "CaptainSkillId": 143322,
+        "MissionInfo": "未命名",
+        "Code": "不明",
+        "Element": 3,
+        "GeneralSkillIds": [
+            5
+        ],
+        "Career": 8
     }
 ]

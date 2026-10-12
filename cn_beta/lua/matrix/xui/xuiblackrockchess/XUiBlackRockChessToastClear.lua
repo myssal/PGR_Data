@@ -4,8 +4,11 @@ local XUiBlackRockChessToastClear = XLuaUiManager.Register(XLuaUi, "UiBlackRockC
 
 function XUiBlackRockChessToastClear:OnStart(title)
     local time = tonumber(self._Control:GetClientConfig("ToastShowTime"))
-    local timerId = XScheduleManager.ScheduleOnce(handler(self, self.Close), time)
-    self:_AddTimerId(timerId)
+    XScheduleManagerPro.ScheduleOnce(self.Close, self, time)
+end
+
+function XUiBlackRockChessToastClear:OnDestroy()
+    XScheduleManagerPro.UnSchedule(self.Close, self)
 end
 
 return XUiBlackRockChessToastClear

@@ -191,13 +191,7 @@ function XUiGridDlcRelinkMultiPlayerChar:RefreshChat(chatData, receiveTime)
             self.TxtDesc.text = chatData.Content or ""
         end
 
-        self.ChatTimer = XScheduleManager.ScheduleOnce(function()
-            if XTool.UObjIsNil(self.GameObject) then
-                return
-            end
-            self.ChatTimer = nil
-            self.PanelChat.gameObject:SetActiveEx(false)
-        end, XScheduleManager.SECOND * leftTime)
+        XScheduleManagerPro.ScheduleOnce(self._OnRefreshChatScheduleCb, self, XScheduleManagerPro.SECOND * leftTime)
 
         self.PanelChat.gameObject:SetActiveEx(true)
         self.PanelDailog.gameObject:SetActiveEx(not isEmoji)
@@ -210,10 +204,7 @@ function XUiGridDlcRelinkMultiPlayerChar:RefreshChat(chatData, receiveTime)
 end
 
 function XUiGridDlcRelinkMultiPlayerChar:StopChatTimer()
-    if self.ChatTimer then
-        XScheduleManager.UnSchedule(self.ChatTimer)
-        self.ChatTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRefreshChatScheduleCb, self)
     self.PanelChatEnable.gameObject:SetActiveEx(false)
     self.PanelChat.gameObject:SetActiveEx(false)
 end
@@ -390,5 +381,13 @@ function XUiGridDlcRelinkMultiPlayerChar:OpenOtherRole(member)
 end
 
 --endregion
+
+function XUiGridDlcRelinkMultiPlayerChar:_OnRefreshChatScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        return
+    end
+    self.ChatTimer = nil
+    self.PanelChat.gameObject:SetActiveEx(false)
+end
 
 return XUiGridDlcRelinkMultiPlayerChar

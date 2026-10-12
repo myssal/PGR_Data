@@ -141,7 +141,7 @@ function XUiSkillDetailsForEnhanceV2P6:InitSkillBtn()
         if isShowTreeIcon then
             local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(self.CharacterId)
             if powerConfig and btn.TagObj then
-                btn.TagObj:GetComponent("Image"):SetSprite(powerConfig.IconSkill)
+                btn.TagObj:GetComponent(typeof(CS.UnityEngine.UI.Image)):SetSprite(powerConfig.IconSkill)
             end
         end
     end
@@ -173,7 +173,7 @@ end
 
 -- 上一个
 function XUiSkillDetailsForEnhanceV2P6:OnBtnLast()
-    self.ParentUi:SwitchToLastSkillDetails()
+    self.ParentUi:SetSkillPos(XEnumConst.CHARACTER.MAX_SHOW_SKILL_POS)
 end
 
 function XUiSkillDetailsForEnhanceV2P6:OnDisable()

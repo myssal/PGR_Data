@@ -577,9 +577,7 @@ end
 
 function XUiPracticeBossDetail:StartTimer()
     self:ClearTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:OnTimerRefresh()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnOnTimerRefreshScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiPracticeBossDetail:OnTimerRefresh()
@@ -587,10 +585,11 @@ function XUiPracticeBossDetail:OnTimerRefresh()
 end
 
 function XUiPracticeBossDetail:ClearTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnOnTimerRefreshScheduleCb, self)
+end
+
+function XUiPracticeBossDetail:_OnOnTimerRefreshScheduleCb()
+    self:OnTimerRefresh()
 end
 
 return XUiPracticeBossDetail

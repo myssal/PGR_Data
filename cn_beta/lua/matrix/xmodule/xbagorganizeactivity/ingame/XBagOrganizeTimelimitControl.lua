@@ -88,7 +88,7 @@ function XBagOrganizeTimelimitControl:StartTimelimit()
     
     self._LastTickTime = CS.UnityEngine.Time.time
     self:TimelimitTick(nil, true)
-    self._TimelimitRuleTimer = XScheduleManager.ScheduleForever(handler(self, self.TimelimitTick), XScheduleManager.SECOND * 0.05)
+    XScheduleManagerPro.ScheduleForever(XBagOrganizeTimelimitControl.TimelimitTick, self, XScheduleManagerPro.SECOND * 0.05)
 end
 
 function XBagOrganizeTimelimitControl:PauseTimelimit()
@@ -105,10 +105,7 @@ function XBagOrganizeTimelimitControl:ResumeTimelimit()
 end
 
 function XBagOrganizeTimelimitControl:StopTimelimit()
-    if self._TimelimitRuleTimer then
-        XScheduleManager.UnSchedule(self._TimelimitRuleTimer)
-        self._TimelimitRuleTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XBagOrganizeTimelimitControl.TimelimitTick, self)
 end
 
 function XBagOrganizeTimelimitControl:IsPause()

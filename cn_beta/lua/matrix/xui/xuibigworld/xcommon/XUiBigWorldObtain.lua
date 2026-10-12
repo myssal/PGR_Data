@@ -8,8 +8,6 @@ local XUiSGGridItem = require("XUi/XUiBigWorld/XCommon/Grid/XUiGridBWItem")
 local OpType = XMVCA.XBigWorldQuest.QuestOpType
 
 function XUiBigWorldObtain:OnAwake()
-    self._AutoCloseTimer = nil
-
     self:InitUi()
     self:InitCb()
 
@@ -86,10 +84,7 @@ function XUiBigWorldObtain:RegisterAutoClose()
     local time = self:GetShowTime()
 
     self:UnRegisterAutoClose()
-    self._AutoCloseTimer = XScheduleManager.ScheduleOnce(function()
-        self._AutoCloseTimer = nil
-        self:Close()
-    end, XScheduleManager.SECOND * time)
+    XScheduleManagerPro.ScheduleOnce(XUiBigWorldObtain._OnAutoCloseScheduleCb, self, XScheduleManagerPro.SECOND * time)
 end
 
 function XUiBigWorldObtain:IsSetGridClickProxy()
@@ -104,10 +99,11 @@ function XUiBigWorldObtain:GetShowTime()
 end
 
 function XUiBigWorldObtain:UnRegisterAutoClose()
-    if XTool.IsNumberValid(self._AutoCloseTimer) then
-        XScheduleManager.UnSchedule(self._AutoCloseTimer)
-        self._AutoCloseTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiBigWorldObtain._OnAutoCloseScheduleCb, self)
+end
+
+function XUiBigWorldObtain:_OnAutoCloseScheduleCb()
+    self:Close()
 end
 
 return XUiBigWorldObtain

@@ -83,17 +83,12 @@ end
 
 function XUiSimulateTrainMain:StartTimer()
     self:ClearTimer()
-    self.ActivityTimer = XScheduleManager.ScheduleForever(function()
-        self:RefreshTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnRefreshTimeScheduleCb, self, XScheduleManagerPro.SECOND)
     self:RefreshTime()
 end
 
 function XUiSimulateTrainMain:ClearTimer()
-    if self.ActivityTimer then
-        XScheduleManager.UnSchedule(self.ActivityTimer)
-        self.ActivityTimer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRefreshTimeScheduleCb, self)
 end
 
 -- 刷新Boss列表
@@ -148,6 +143,10 @@ function XUiSimulateTrainMain:GetBossTaskData(bossId)
     end
     
     return finishCnt, allCnt, rewardIds
+end
+
+function XUiSimulateTrainMain:_OnRefreshTimeScheduleCb()
+    self:RefreshTime()
 end
 
 return XUiSimulateTrainMain

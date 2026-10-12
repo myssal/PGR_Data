@@ -209,7 +209,7 @@ function XUiGridTheatre5ShopItem:_CheckIsCanDrag(eventData)
             
             -- 添加保底逻辑定时器
             self:StopEndDragErrorCheckTimer()
-            self.EndErrorCheckTimeId = XScheduleManager.ScheduleForever(handler(self, self.EndDragErrorCheckTimer), 0)
+            XScheduleManagerPro.ScheduleForever(self.EndDragErrorCheckTimer, self, 0)
             
             return true
         end
@@ -275,10 +275,7 @@ function XUiGridTheatre5ShopItem:EndDragErrorCheckTimer()
 end
 
 function XUiGridTheatre5ShopItem:StopEndDragErrorCheckTimer()
-    if self.EndErrorCheckTimeId then
-        XScheduleManager.UnSchedule(self.EndErrorCheckTimeId)
-        self.EndErrorCheckTimeId = nil
-    end
+        XScheduleManagerPro.UnSchedule(self.EndDragErrorCheckTimer, self)
 end
 
 --- 保底逻辑：检查当前是否卡缓存了

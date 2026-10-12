@@ -299,6 +299,11 @@ XBackManagerCreator = function()
                 if uiRestaurant then
                     ui = uiRestaurant
                 end
+            elseif uiName == "UiSkyTowerCommon" then
+                local uiSkyTower = CsXUiManager.Instance:FindTopUi("UiSkyTowerMain")
+                if uiSkyTower then
+                    ui = uiSkyTower
+                end
             end
 
             ---@type XLuaUi

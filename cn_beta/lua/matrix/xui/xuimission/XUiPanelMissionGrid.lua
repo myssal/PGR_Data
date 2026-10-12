@@ -7,7 +7,6 @@ function XUiPanelMissionGrid:Ctor(ui)
     self.GridList = {}
     XTool.InitUiObject(self)
     self:InitAutoScript()
-    self.Timer = nil
     self.ShowCompletedAnimation = false
     self.TxtTimeRect = self.TxtTime.gameObject:GetComponent(typeof(CS.UnityEngine.RectTransform))
     self.GridCommonA.gameObject:SetActive(false)
@@ -18,20 +17,19 @@ function XUiPanelMissionGrid:OnRecycle()
 end
 
 function XUiPanelMissionGrid:StartTimer()
-    if self.Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnStartTimerScheduleCb, self) then
         self:StopTimer()
     end
 
-    self.Timer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartTimerScheduleCb, self, XScheduleManagerPro.SECOND)
+end
+
+function XUiPanelMissionGrid:_OnStartTimerScheduleCb()
         self:UpdateTime()
-    end, XScheduleManager.SECOND)
 end
 
 function XUiPanelMissionGrid:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartTimerScheduleCb, self)
 end
 
 function XUiPanelMissionGrid:UpdateTime()

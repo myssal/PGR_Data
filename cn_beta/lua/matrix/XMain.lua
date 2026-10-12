@@ -79,6 +79,7 @@ local function ImportXCommonDir()
     -- Rpc按名字排序位置
     require("XCommon/XSaveTool")
     require("XCommon/XScheduleManager")
+    require("XCommon/XScheduleManagerPro/XScheduleManagerPro")
     require("XCommon/XSignBoardPlayer")
     require("XCommon/XString")
     require("XCommon/XTableExtension")

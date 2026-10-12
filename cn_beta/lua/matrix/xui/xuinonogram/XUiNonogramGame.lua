@@ -28,21 +28,15 @@ end
 
 function XUiNonogramGame:OnEnable()
     self:AddEventListener()
-    self.UpdateTimer = XScheduleManager.ScheduleForever(handler(self, self.OnUpdate), 17)
+    XScheduleManagerPro.ScheduleForever(self.OnUpdate, self, 17)
 end
 
 function XUiNonogramGame:OnDisable()
     self:RemoveEventListener()
 
-    if self.UpdateTimer then
-        XScheduleManager.UnSchedule(self.UpdateTimer)
-        self.UpdateTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.OnUpdate, self)
 
-    if self.DeductTimeTimerId then
-        XScheduleManager.UnSchedule(self.DeductTimeTimerId)
-        self.DeductTimeTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnShowDeductTimeScheduleCb, self)
 end
 
 function XUiNonogramGame:OnDestroy()
@@ -236,17 +230,15 @@ function XUiNonogramGame:RefreshPanelTime()
 end
 
 function XUiNonogramGame:ShowDeductTime(deductTime)
-    if self.DeductTimeTimerId then
-        XScheduleManager.UnSchedule(self.DeductTimeTimerId)
-        self.DeductTimeTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnShowDeductTimeScheduleCb, self)
 
     self.TxtMinus.gameObject:SetActiveEx(true)
     self.TxtMinus.text = "-" .. deductTime
-    self.DeductTimeTimerId = XScheduleManager.ScheduleOnce(function()
-        self.TxtMinus.gameObject:SetActiveEx(false)
-        self.DeductTimeTimerId = nil
-    end, 1000)
+    XScheduleManagerPro.ScheduleOnce(self._OnShowDeductTimeScheduleCb, self, 1000)
+end
+
+function XUiNonogramGame:_OnShowDeductTimeScheduleCb()
+    self.TxtMinus.gameObject:SetActiveEx(false)
 end
 
 function XUiNonogramGame:RefreshPanelCheckerboard()

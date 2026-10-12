@@ -96,14 +96,11 @@ function XUiTemple2Editor:OnEnable()
         XLog.Error(msg)
     end)
 
-    local timer = XScheduleManager.ScheduleForever(function()
-        self:GetControl():UpdateGame(self._CheckBoard)
-    end, 0, 0)
-    self:_AddTimerId(timer)
+    XScheduleManagerPro.ScheduleForever(self._OnGetControlScheduleCb, self, 0, 0)
 end
 
 function XUiTemple2Editor:OnDisable()
-
+    XScheduleManagerPro.UnSchedule(self._OnGetControlScheduleCb, self)
 end
 
 function XUiTemple2Editor:Update()
@@ -196,6 +193,10 @@ end
 function XUiTemple2Editor:OnClickReset()
     self:GetControl():ResetMap()
     self:UpdateMap()
+end
+
+function XUiTemple2Editor:_OnGetControlScheduleCb()
+    self:GetControl():UpdateGame(self._CheckBoard)
 end
 
 return XUiTemple2Editor

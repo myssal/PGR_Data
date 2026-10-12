@@ -123,22 +123,19 @@ function XUiBigWorldBackpackItem:_InitItemGrid()
 end
 
 function XUiBigWorldBackpackItem:StopAnimationTimer()
-    if not self._AnimationTimer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._AnimationTimer)
-    self._AnimationTimer = false
+    XScheduleManagerPro.UnSchedule(XUiBigWorldBackpackItem._OnPlayEnableAnimationScheduleCb, self)
 end
 
 function XUiBigWorldBackpackItem:PlayEnableAnimation(index)
     self:StopAnimationTimer()
     self.CanvasGroup.alpha = 0
-    self._AnimationTimer = XScheduleManager.ScheduleOnce(function()
-        self.GridEnable:PlayTimelineAnimation()
-        self:StopAnimationTimer()
-    end, 80 * index)
+    XScheduleManagerPro.ScheduleOnce(XUiBigWorldBackpackItem._OnPlayEnableAnimationScheduleCb, self, 80 * index)
 end
 
 -- endregion
+
+function XUiBigWorldBackpackItem:_OnPlayEnableAnimationScheduleCb()
+    self.GridEnable:PlayTimelineAnimation()
+end
 
 return XUiBigWorldBackpackItem

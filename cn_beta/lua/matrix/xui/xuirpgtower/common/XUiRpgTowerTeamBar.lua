@@ -92,46 +92,45 @@ function XUiRpgTowerTeamBar:CalculateExpOverFlow(addExp, preExp, preLevel)
 end
 
 function XUiRpgTowerTeamBar:StartFillTimer()
-    if self.TimerId then return end
     --每帧处理
-    self.TimerId = XScheduleManager.ScheduleForever(function()
-            if XTool.UObjIsNil(self.Transform) then
-                self:StopTimer()
-                return
+    XScheduleManagerPro.ScheduleForever(self._OnStopTimerScheduleCb, self, 0)
+end
+
+function XUiRpgTowerTeamBar:_OnStopTimerScheduleCb()
+    if XTool.UObjIsNil(self.Transform) then
+        self:StopTimer()
+        return
+    end
+    --若还有剩余的播放升级处理次数，则播放升级处理
+    if self.PlayLevelUpCount > 0 or ((not self:CheckIsMaxLevel()) and (self.TargetExp > self.CurrentExp)) then
+        local nextFillAmount = self.ImgProgressbar.fillAmount + (self.FillAmountUnit * FILL_SPEED)
+        if nextFillAmount >= 1 then
+            nextFillAmount = 1
+            self.ImgProgressbar.fillAmount = 1
+            self:SetExpText(self.NextExp)
+            self:SetLevel(self.Level + 1)
+            self:SetExpText(0)
+            self.PlayLevelUpCount = self.PlayLevelUpCount - 1
+        else
+            local nextFillAmount = self.ImgProgressbar.fillAmount + (self.FillAmountUnit * FILL_SPEED)
+            self.ImgProgressbar.fillAmount = nextFillAmount
+            local nextExp = math.floor(self.NextExp * self.ImgProgressbar.fillAmount)
+            if self.PlayLevelUpCount == 0 and (nextExp > self.TargetExp) then
+                nextExp = self.TargetExp
             end
-            --若还有剩余的播放升级处理次数，则播放升级处理
-            if self.PlayLevelUpCount > 0 or ((not self:CheckIsMaxLevel()) and (self.TargetExp > self.CurrentExp)) then
-                local nextFillAmount = self.ImgProgressbar.fillAmount + (self.FillAmountUnit * FILL_SPEED)
-                if nextFillAmount >= 1 then
-                    nextFillAmount = 1
-                    self.ImgProgressbar.fillAmount = 1
-                    self:SetExpText(self.NextExp)
-                    self:SetLevel(self.Level + 1)
-                    self:SetExpText(0)
-                    self.PlayLevelUpCount = self.PlayLevelUpCount - 1
-                else
-                    local nextFillAmount = self.ImgProgressbar.fillAmount + (self.FillAmountUnit * FILL_SPEED)
-                    self.ImgProgressbar.fillAmount = nextFillAmount
-                    local nextExp = math.floor(self.NextExp * self.ImgProgressbar.fillAmount)
-                    if self.PlayLevelUpCount == 0 and (nextExp > self.TargetExp) then
-                        nextExp = self.TargetExp
-                    end
-                    self:SetExpText(nextExp)
-                end
-            else
-                self:StopTimer()
-                if self.DoingLevelUp then
-                    self.DoingLevelUp = false
-                    self:ShowLevelUpTips()
-                end
-            end
-        end, 0)
+            self:SetExpText(nextExp)
+        end
+    else
+        self:StopTimer()
+        if self.DoingLevelUp then
+            self.DoingLevelUp = false
+            self:ShowLevelUpTips()
+        end
+    end
 end
 
 function XUiRpgTowerTeamBar:StopTimer()
-    if not self.TimerId then return end
-    XScheduleManager.UnSchedule(self.TimerId)
-    self.TimerId = nil
+    XScheduleManagerPro.UnSchedule(self._OnStopTimerScheduleCb, self)
 end
 
 function XUiRpgTowerTeamBar:ShowLevelUpTips()
@@ -141,5 +140,7 @@ end
 function XUiRpgTowerTeamBar:OnDisable()
     self:StopTimer()
 end
+
+
 
 return XUiRpgTowerTeamBar

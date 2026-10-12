@@ -28,6 +28,7 @@ end
 
 function XUiGridMovieBg:OnDestroy()
     self:RemoveBlurTimer()
+    self:RemoveBlurGrayTimer()
 end
 
 -- 设置GameObject显示
@@ -74,10 +75,6 @@ end
 
 function XUiGridMovieBg:SetPivot(pivot)
     self.RImgBg.transform.pivot = pivot
-end
-
-function XUiGridMovieBg:SetPivotWithoutGC(x, y)
-	self.RImgBgRect:SetPivot(x, y)
 end
 
 function XUiGridMovieBg:SetNativeSize()
@@ -291,7 +288,7 @@ end
 -- 重置BgRoot的透明度，这个透明度是由动画控制的，代码控制的是RImgBg的透明度
 function XUiGridMovieBg:ResetBgRootAlpha()
     self:StopAnimtion("RImgBgDisableSlow")
-    self.BgRoot:GetComponent("CanvasGroup").alpha = 1
+    self.BgRoot:GetComponent(typeof(CS.UnityEngine.CanvasGroup)).alpha = 1
 end
 
 function XUiGridMovieBg:SetAlpha(alpha, duration, ease)
@@ -350,12 +347,19 @@ function XUiGridMovieBg:RemoveBlurTimer()
     end
 end
 
+function XUiGridMovieBg:RemoveBlurGrayTimer()
+    if self.BlurGrayTimer then
+        XScheduleManager.UnSchedule(self.BlurGrayTimer)
+        self.BlurGrayTimer = nil
+    end
+end
+
 -- 设置模糊
 -- blurType: 0=关闭, 1=Directional, 2=Radial, 3=Gaussian
 -- strength: 0~1
 -- duration: 秒，>0 时对 strength 做插值（开启渐入/关闭渐出），<=0 为瞬时
 -- extra: 类型相关参数表（angle / focusX/focusY / radius / gradient / noiseScale）
-function XUiGridMovieBg:SetBlur(blurType, strength, duration, extra)
+function XUiGridMovieBg:SetBlur(blurType, strength, duration, extra, grayscale, grayDuration)
     local image = self.RImgBg
     if XTool.UObjIsNil(image) then return end
 
@@ -365,9 +369,27 @@ function XUiGridMovieBg:SetBlur(blurType, strength, duration, extra)
     end
 
     self:RemoveBlurTimer()
+    if grayscale ~= nil then
+        self:RemoveBlurGrayTimer()
+    end
 
     local BlurTypeNone = CS.XUiBlurController.BlurType.None
     local isClose = blurType == 0 or strength <= 0
+
+    if grayscale ~= nil then
+        if not grayDuration or grayDuration <= 0 then
+            controller:SetGrayScale(grayscale)
+        else
+            local startGrayScale = controller.grayscale
+            self.BlurGrayTimer = XUiHelper.Tween(grayDuration, function(t)
+                local cur = startGrayScale + (grayscale - startGrayScale) * t
+                controller:SetGrayScale(cur)
+            end, function()
+                controller:SetGrayScale(grayscale)
+                self.BlurGrayTimer = nil
+            end)
+        end
+    end
 
     -- 瞬时
     if not duration or duration <= 0 then

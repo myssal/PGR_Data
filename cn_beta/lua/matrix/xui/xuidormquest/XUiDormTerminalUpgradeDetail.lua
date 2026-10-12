@@ -107,14 +107,9 @@ function XUiDormTerminalUpgradeDetail:InitBtnConfirmState()
 end
 
 function XUiDormTerminalUpgradeDetail:StartTimer()
-    if self.Timer then
-        self:StopTimer()
-    end
-
+    self:StopTimer()
     self:UpdateTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:UpdateTimer()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(XUiDormTerminalUpgradeDetail._OnUpdateUpgradeTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiDormTerminalUpgradeDetail:UpdateTimer()
@@ -135,10 +130,7 @@ function XUiDormTerminalUpgradeDetail:UpdateTimer()
 end
 
 function XUiDormTerminalUpgradeDetail:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiDormTerminalUpgradeDetail._OnUpdateUpgradeTimeScheduleCb, self)
 end
 
 function XUiDormTerminalUpgradeDetail:RegisterUiEvents()
@@ -179,6 +171,10 @@ function XUiDormTerminalUpgradeDetail:OnBtnConfirmClick()
         end
         self:OnBtnCloseClick()
     end)
+end
+
+function XUiDormTerminalUpgradeDetail:_OnUpdateUpgradeTimeScheduleCb()
+    self:UpdateTimer()
 end
 
 return XUiDormTerminalUpgradeDetail

@@ -1016,20 +1016,22 @@ end
 function XUiDlcRelinkEquipBag:StartDragTracking()
     self:StopDragTracking()
     self:RefreshDragClonePos()
-    self.DragTrackingTimer = XScheduleManager.ScheduleForeverEx(function()
+    XScheduleManagerPro.ScheduleForeverEx(self._OnStartDragTrackingScheduleCb, self, 0)
+end
+
+function XUiDlcRelinkEquipBag:_OnStartDragTrackingScheduleCb()
         if XTool.UObjIsNil(self.GameObject) then
-            self:StopDragTracking()
-            return
-        end
-        -- 获取屏幕坐标
-        local screenPos = self:GetScreenPoint()
-        if not screenPos then
-            -- 手指真正抬起
-            self:EndDrag()
-            return
-        end
-        self:RefreshDragClonePos(screenPos)
-    end, 0)
+                    self:StopDragTracking()
+                    return
+                end
+                -- 获取屏幕坐标
+                local screenPos = self:GetScreenPoint()
+                if not screenPos then
+                    -- 手指真正抬起
+                    self:EndDrag()
+                    return
+                end
+                self:RefreshDragClonePos(screenPos)
 end
 
 function XUiDlcRelinkEquipBag:RefreshDragClonePos(screenPos)
@@ -1047,10 +1049,7 @@ function XUiDlcRelinkEquipBag:RefreshDragClonePos(screenPos)
 end
 
 function XUiDlcRelinkEquipBag:StopDragTracking()
-    if self.DragTrackingTimer then
-        XScheduleManager.UnSchedule(self.DragTrackingTimer)
-        self.DragTrackingTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartDragTrackingScheduleCb, self)
 end
 
 --endregion

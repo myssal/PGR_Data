@@ -56,23 +56,11 @@ end
 
 function XUiFightInfestorExplore:AddTimer()
     self:RemoveTimer()
-    self.scheduleId = XScheduleManager.ScheduleForever(function()
-        self:CheckRemoveItemList()
-        local lastScore = self.Score
-        self.Score = XDataCenter.FightInfestorExploreManager.CalcScore(self.Score)
-        if lastScore ~= self.Score then
-            XDataCenter.FightInfestorExploreManager.SetScore(self.Score)
-            self:UpdateScrollViewOffset(self.Score)
-            self:RefreshScoreText()
-        end
-    end, XDataCenter.FightInfestorExploreManager.COLLECT_SCORE_TIME)
+    XScheduleManagerPro.ScheduleForever(self._OnCheckRemoveItemListScheduleCb, self, XDataCenter.FightInfestorExploreManager.COLLECT_SCORE_TIME)
 end
 
 function XUiFightInfestorExplore:RemoveTimer()
-    if self.scheduleId then
-        XScheduleManager.UnSchedule(self.scheduleId)
-        self.scheduleId = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnCheckRemoveItemListScheduleCb, self)
 end
 
 --动态列表事件
@@ -237,5 +225,16 @@ function XUiFightInfestorExplore:CheckRemoveItemList()
         if item and not XTool.UObjIsNil(item.GameObject) then
             CS.UnityEngine.Object.Destroy(item.GameObject)
         end
+    end
+end
+
+function XUiFightInfestorExplore:_OnCheckRemoveItemListScheduleCb()
+    self:CheckRemoveItemList()
+    local lastScore = self.Score
+    self.Score = XDataCenter.FightInfestorExploreManager.CalcScore(self.Score)
+    if lastScore ~= self.Score then
+        XDataCenter.FightInfestorExploreManager.SetScore(self.Score)
+        self:UpdateScrollViewOffset(self.Score)
+        self:RefreshScoreText()
     end
 end

@@ -3,6 +3,7 @@ local UIBindControl = {
     UiFavoriteMailTag = ModuleId.XMail,
     -- 成员
     UiCharacterV2P6 = ModuleId.XCharacter,
+    UiCharacterPropertyV2P6 = ModuleId.XCharacter,
     XPanelQualitySingleV2P6 = ModuleId.XCharacter,
     XUiPanelModelV2P6 = ModuleId.XCharacter,
     UiSkillDetailsForEnhanceV2P6 = ModuleId.XCharacter,
@@ -10,6 +11,9 @@ local UIBindControl = {
     UiCharacterDetail = ModuleId.XCharacter,
     UiEnhanceSkillActivation = ModuleId.XCharacter,
     UiCharacterQualitySystemV2P6 = ModuleId.XCharacter,
+    UiRoleCultureDetailMain = ModuleId.XCharacter,
+    UiEquipEnhanceProgressPopup = ModuleId.XCharacter,
+    UiRoleStrengthenTip = ModuleId.XCharacter,
 
     --region 装备
     UiEquipDetailChildV2P6 = ModuleId.XEquip,
@@ -38,6 +42,15 @@ local UIBindControl = {
     UiEquipAwarenessV2P6 = ModuleId.XEquip,
     UiEquipResonanceSelectAfter = ModuleId.XEquip,
     UiEquipResonanceQuick = ModuleId.XEquip,
+    UiEquipAwarenessEnhanceMain = ModuleId.XEquip,
+    UiEquipAwarenessOneClickPopup = ModuleId.XEquip,
+    UiEquipAwarenessEnhanceProgressPopup = ModuleId.XEquip,
+    UiEquipChooseAwarenessResonanceSkillPopup = ModuleId.XEquip,
+    UiEquipChooseCostAwarenessPopup = ModuleId.XEquip,
+    UiEquipChooseCostWeaponPopup = ModuleId.XEquip,
+    UiEquipOneClickAutoCommonSetting = ModuleId.XEquip,
+    UiEquipGridWeaponResonanceDetailPopup = ModuleId.XEquip,
+    UiTeamRecommendResonanceSkillPopup = ModuleId.XEquip,
     --endregion
 
     --region 肉鸽3.0
@@ -320,6 +333,8 @@ local UIBindControl = {
     UiReform2 = ModuleId.XReform,
     UiReformList = ModuleId.XReform,
     UiReformCombatSettleWin = ModuleId.XReform,
+    UiReformEnterTips = ModuleId.XReform,
+    UiReformBalance = ModuleId.XReform,
     --endregion
 
     --region 2.10言灵
@@ -457,6 +472,27 @@ local UIBindControl = {
     UiRestaurantPopupChat = ModuleId.XRestaurant,
     UiRestaurantPopupStory = ModuleId.XRestaurant,
     UiRestaurantPopupUpgrade = ModuleId.XRestaurant,
+    --endregion
+
+    --region 通天塔
+    UiSkyTowerMain = ModuleId.XSkyTower,
+    UiSkyTowerCommon = ModuleId.XSkyTower,
+    UiSkyTowerBill = ModuleId.XSkyTower,
+    UiSkyTowerPopup = ModuleId.XSkyTower,
+    UiSkyTowerExamine = ModuleId.XSkyTower,
+    UiSkyTowerWork = ModuleId.XSkyTower,
+    UiSkyTowerCook = ModuleId.XSkyTower,
+    UiSkyTowerShop = ModuleId.XSkyTower,
+    UiSkyTowerTask = ModuleId.XSkyTower,
+    UiSkyTowerMenu = ModuleId.XSkyTower,
+    UiSkyTowerEntrance = ModuleId.XSkyTower,
+    UiSkyTowerObtain = ModuleId.XSkyTower,
+    UiSkyTowerUnlockFood = ModuleId.XSkyTower,
+    UiSkyTowerPopupChat = ModuleId.XSkyTower,
+    UiSkyTowerPopupStory = ModuleId.XSkyTower,
+    UiSkyTowerLevelUp = ModuleId.XSkyTower,
+    UiSkyTowerLoading = ModuleId.XSkyTower,
+    UiSkyTowerAcceleratePopup = ModuleId.XSkyTower,
     --endregion
 
     --region Dlc猫鼠游戏
@@ -1185,7 +1221,13 @@ local UIBindControl = {
     UiPBRGenius = ModuleId.XPBRGame,
     UiPBRTask = ModuleId.XPBRGame,
     UiPBRMainFightTips = ModuleId.XPBRGame,
+    UiPBRPopupSkillReplace = ModuleId.XPBRGame,
+    UiPBRPopupComTips = ModuleId.XPBRGame,
+    UiPBRCalibration = ModuleId.XPBRGame,
+    UiPBRPopupMusicChoose = ModuleId.XPBRGame,
+    UiPBRPopupSkin = ModuleId.XPBRGame,
     --endregion
+    
     --region XLineArithmetic3
     UiLineArithmetic3Chapter = ModuleId.XLineArithmetic3,
     UiLineArithmetic3Game = ModuleId.XLineArithmetic3,
@@ -1285,6 +1327,72 @@ local UIBindControl = {
     UiDyeMergeTask = ModuleId.XDyeMergeGame,
     --endregion
 
+    --region XMusicPlayer
+    UiMusicPlayerMain = ModuleId.XMusicPlayer,
+    UiCdPlayerMusicDetailPopup = ModuleId.XMusicPlayer,
+    --endregion
+    --region v4.7 七夕开包玩法
+    UiEnvelopeGuessingMain = ModuleId.XEnvelopeGuessing,
+    UiEnvelopeGuessingTask = ModuleId.XEnvelopeGuessing,
+    UiEnvelopeGuessingCollection = ModuleId.XEnvelopeGuessing,
+    UiEnvelopeGuessingDetail = ModuleId.XEnvelopeGuessing,
+    UiEnvelopeGuessingInvitation = ModuleId.XEnvelopeGuessing,
+    UiEnvelopeGuessingOpenPackage = ModuleId.XEnvelopeGuessing,
+    --endregion
+
+    --region v4.8 大巴扎玩法
+    UiPunishaarMain = ModuleId.XPunishaar,
+    UiPunishaarChooseStage = ModuleId.XPunishaar,
+    UiPunishaarExploreDetail = ModuleId.XPunishaar,
+    UiPunishaarTask = ModuleId.XPunishaar,
+    UiPunishaarCollection = ModuleId.XPunishaar,
+    UiPunishaarFightMain = ModuleId.XPunishaar,
+    UiPunishaarBattleSettlement = ModuleId.XPunishaar,
+    UiPunishaarEventSelection = ModuleId.XPunishaar,
+    --endregion
+
+    --region 一键养成
+    UiEquipOneClickCulturePartnerMain = ModuleId.XPartner,
+    UiEquipPartnerOneClickPopup = ModuleId.XPartner,
+    UiEquipOneClickCultureDetailMain = ModuleId.XEquip,
+    UiEquipWeaponOneClickPopup = ModuleId.XEquip,
+    UiEquipWeaponEnhanceProgressPopup = ModuleId.XEquip,
+    UiEquipChooseWeaponResonanceSkillPopup = ModuleId.XEquip,
+    --endregion
+    --region XPartnerOneKeyCulture
+    UiEquipPartnerOneKeyCultureSelectClipPopup = ModuleId.XPartner,
+    UiEquipPartnerEnhanceProgressPopup = ModuleId.XPartner,
+    UiEquipOneClickCulturePartnerSkillPopup = ModuleId.XPartner,
+    --endregion
+    
+    UiTransfiniteTowerMain = ModuleId.XTransfiniteTower,
+    UiTransfiniteTowerStage = ModuleId.XTransfiniteTower,
+    UiTransfiniteTowerHide = ModuleId.XTransfiniteTower,
+    UiTransfiniteTowerTeach = ModuleId.XTransfiniteTower,
+    UiTransfiniteTowerTask = ModuleId.XTransfiniteTower,
+    UiTransfiniteTowerLastSettlement = ModuleId.XTransfiniteTower,
+    UiTransfiniteTowerSwitchMvpPopup = ModuleId.XTransfiniteTower,
+    UiTransfiniteTowerRank = ModuleId.XTransfiniteTower,
+    UiTransfiniteTowerSettlement = ModuleId.XTransfiniteTower,
+    UiTransfiniteTowerSettlementPopup = ModuleId.XTransfiniteTower,
+
+    --region XRegression4
+    UiRegression4Activity = ModuleId.XRegression4,
+    UiRegression4AutoWindow = ModuleId.XRegression4,
+    UiRegression4Tips = ModuleId.XRegression4,
+    --endregion
+
+    --region XPunishaar
+    UiPunishaarChallengeSettlement = ModuleId.XPunishaar,
+    UiPunishaarStagePause = ModuleId.XPunishaar,
+    UiPunishaarMainCardLevelupTip = ModuleId.XPunishaar,
+    UiPunishaarEventSettlement = ModuleId.XPunishaar,
+    UiPunishaarSellCardTip = ModuleId.XPunishaar,
+    --endregion
+
+    --region 周年前瞻预热
+    UiAnniversaryPreHeating = ModuleId.XAnniversaryPreHeating,
+    --endregion
 }
 
 return UIBindControl

@@ -52,12 +52,7 @@ end
 function XUiLivWarmRaceFightMain:StartTimer()
     self:RemoveTimer()
     self:RefreshActivityTime()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        if not XDataCenter.LivWarmRaceManager.CheckActivityIsOpen() then
-            return
-        end
-        self:RefreshActivityTime()
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnRefreshActivityTimeScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiLivWarmRaceFightMain:RefreshActivityTime()
@@ -69,10 +64,7 @@ function XUiLivWarmRaceFightMain:RefreshActivityTime()
 end
 
 function XUiLivWarmRaceFightMain:RemoveTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRefreshActivityTimeScheduleCb, self)
 end
 
 function XUiLivWarmRaceFightMain:OpenEnterDialog(stageId)
@@ -89,4 +81,11 @@ end
 
 function XUiLivWarmRaceFightMain:OnResume(data)
     self.LastData = data
+end
+
+function XUiLivWarmRaceFightMain:_OnRefreshActivityTimeScheduleCb()
+    if not XDataCenter.LivWarmRaceManager.CheckActivityIsOpen() then
+        return
+    end
+    self:RefreshActivityTime()
 end

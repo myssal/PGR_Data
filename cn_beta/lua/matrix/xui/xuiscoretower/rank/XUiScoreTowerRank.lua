@@ -83,30 +83,33 @@ function XUiScoreTowerRank:PlayGridRankAnim()
     end
     self:StopDynamicGridTime()
     self:SetGridRankAlpha(0)
-    local animIndex = 1
     local gridCount = table.nums(grids)
     XLuaUiManager.SetMask(true)
-    self._DynamicGridTimeId = XScheduleManager.Schedule(function()
-        local grid = grids[animIndex]
-        if grid then
-            grid:PlayEnableAnim()
-        end
-        animIndex = animIndex + 1
-    end, self.AnimInterval, gridCount)
-    -- 动画结束 动画间隔 * 格子数量 + 300ms(最后一个格子动画播放时间)
-    XScheduleManager.ScheduleOnce(function()
-        self:StopDynamicGridTime()
-        self:SetGridRankAlpha(1)
-        XLuaUiManager.SetMask(false)
-    end, self.AnimInterval * gridCount + 300)
+    self._AnimIndex = 1
+    XScheduleManagerPro.Schedule(XUiScoreTowerRank._OnGridRankAnimScheduleCb, self, self.AnimInterval, gridCount)
+    XScheduleManagerPro.ScheduleOnce(XUiScoreTowerRank._OnGridRankAnimFinishScheduleCb, self, self.AnimInterval * gridCount + 300)
+end
+
+--- 定时器回调：逐个播放排行格子动画
+function XUiScoreTowerRank:_OnGridRankAnimScheduleCb()
+    local grids = self.DynamicTable and self.DynamicTable:GetGrids()
+    local grid = grids and grids[self._AnimIndex]
+    if grid then
+        grid:PlayEnableAnim()
+    end
+    self._AnimIndex = self._AnimIndex + 1
+end
+
+function XUiScoreTowerRank:_OnGridRankAnimFinishScheduleCb()
+    self:StopDynamicGridTime()
+    self:SetGridRankAlpha(1)
+    XLuaUiManager.SetMask(false)
 end
 
 -- 停止排行榜动画
 function XUiScoreTowerRank:StopDynamicGridTime()
-    if self._DynamicGridTimeId then
-        XScheduleManager.UnSchedule(self._DynamicGridTimeId)
-        self._DynamicGridTimeId = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiScoreTowerRank._OnGridRankAnimScheduleCb, self)
+    XScheduleManagerPro.UnSchedule(XUiScoreTowerRank._OnGridRankAnimFinishScheduleCb, self)
 end
 
 -- 设置排行格子透明度

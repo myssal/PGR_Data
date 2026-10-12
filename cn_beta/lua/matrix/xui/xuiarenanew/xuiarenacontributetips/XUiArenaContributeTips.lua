@@ -99,7 +99,7 @@ end
 function XUiArenaContributeTips:_RefreshScroll()
     if self._IsScrollEnd then
         self:_RemoveScrollTimer()
-        self._ScrollTimer = XScheduleManager.ScheduleOnce(Handler(self, self._ScrollTo), 1)
+        XScheduleManagerPro.ScheduleNextFrame(XUiArenaContributeTips._ScrollTo, self)
     end
 end
 
@@ -149,15 +149,11 @@ function XUiArenaContributeTips:_InitGridReward()
 end
 
 function XUiArenaContributeTips:_ScrollTo()
-    self._ScrollTimer = nil
     XUiHelper.ScrollTo(self.PanelDetail, self.PanelContribute)
 end
 
 function XUiArenaContributeTips:_RemoveScrollTimer()
-    if self._ScrollTimer then
-        XScheduleManager.UnSchedule(self._ScrollTimer)
-        self._ScrollTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiArenaContributeTips._ScrollTo, self)
 end
 
 -- endregion

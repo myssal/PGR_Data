@@ -1,9 +1,9 @@
 ---@class XResource
 ---@field _Id number
----@field _TaskGroup XMTDownloadTaskGroup
+---@field _TaskGroup XMTDownloadTaskGroup 下载任务组（延迟到实际下载时才构建任务）
 local XResource = XClass(nil, "XResource")
 local XLaunchDlcManager = require("XLaunchDlcManager")
-local CSXMTDownloadTaskGroupState = XTool.GetDownloadStateEnum()
+local CSDownloadTaskGroupState = XTool.GetDownloadStateEnum()
 
 function XResource:Ctor(resId)
     self._Id = resId
@@ -11,7 +11,11 @@ function XResource:Ctor(resId)
     self._DownSize = 0
     self._TotalSize = 0
     self._MaxProgress = 0
-    self._TaskGroup = XTool.CreateDownloadTaskGroup(resId) -- 以ResId为唯一标识
+    -- 首次下载时再构建任务组。
+    self._TaskGroup = nil
+    self._TaskGroupBuilt = false
+    self._HasDownloadTasks = false
+    self._PendingFileInfos = {}
     self._WaitPause = false
 end
 
@@ -179,7 +183,7 @@ function XResource:GetSourceSizeWithUnit()
 end
 
 function XResource:InitFileInfo(filePath, data)
-    local fileName, sha1, size = data[1], data[2], data[3]
+    local fileName, size = data[1], data[3]
     if self._RepeatName[fileName] then
         return
     end
@@ -187,23 +191,83 @@ function XResource:InitFileInfo(filePath, data)
     local isComplete = XLaunchDlcManager.IsNameDownloaded(fileName)
     if isComplete then
         self._DownSize = self._DownSize + size
-    else --只添加未下载
-        self._TaskGroup:AddTask(XMVCA.XSubPackage:GetUrlPath(fileName), XMVCA.XSubPackage:GetSavePath(fileName), size, sha1)
+    else
+        -- 保存待下载文件，首次下载时再添加任务。
+        self._PendingFileInfos[fileName] = data
     end
 end
 
 function XResource:FileInitComplete()
-    self._TaskGroup:AddFinishedSizeAfterAddTask(self._DownSize)
     self:InitState()
     self._RepeatName = nil
 end
 
 ---@return XMTDownloadTaskGroup
 function XResource:GetTaskGroup()
+    if not self._TaskGroup then
+        self._TaskGroup = XTool.CreateDownloadTaskGroup(self._Id)
+    end
     return self._TaskGroup
 end
 
+--- 是否包含待执行的下载任务
+---@return boolean
+function XResource:HasDownloadTasks()
+    return self._HasDownloadTasks
+end
+
+--- 首次下载前构建任务，并补计其他资源已下载的共享文件
+---@return XMTDownloadTaskGroup taskGroup
+---@return number addedCount 本次新增任务数（0表示所有文件已落盘，无需真实下载）
+function XResource:EnsureTaskGroupBuilt()
+    if self._TaskGroupBuilt then
+        return self._TaskGroup, 0
+    end
+
+    local taskGroup = self:GetTaskGroup()
+    local downloadedSize = self._DownSize
+    local addedCount = 0
+    for fileName, info in pairs(self._PendingFileInfos) do
+        -- 共享文件可能已被其他资源下载。
+        if XLaunchDlcManager.IsNameDownloaded(fileName) then
+            downloadedSize = downloadedSize + info[3]
+        else
+            taskGroup:AddTask(XMVCA.XSubPackage:GetUrlPath(fileName, info[4]), XMVCA.XSubPackage:GetSavePath(fileName), info[3], info[2])
+            addedCount = addedCount + 1
+        end
+    end
+    self._PendingFileInfos = nil
+    taskGroup:AddFinishedSizeAfterAddTask(downloadedSize)
+    self._TaskGroupBuilt = true
+    self._HasDownloadTasks = addedCount > 0
+    return taskGroup, addedCount
+end
+
+-- 下载中心清空后，按完整索引重新整理任务，保留资源的业务状态。
+function XResource:ResetDownloadTaskGroup(fileInfos)
+    self:Release()
+    self._TaskGroup = nil
+    self._TaskGroupBuilt = false
+    self._HasDownloadTasks = false
+    self._PendingFileInfos = {}
+    self._DownSize = 0
+    self._MaxProgress = 0
+    self._WaitPause = false
+    self._RepeatName = {}
+    for filePath, info in pairs(fileInfos) do
+        self:InitFileInfo(filePath, info)
+    end
+    self._RepeatName = nil
+end
+
 function XResource:GetProgress()
+    if not self._TaskGroupBuilt then
+        local totalSize = self:GetTotalSize()
+        if totalSize and totalSize > 0 then
+            return self._DownSize / totalSize
+        end
+        return 0
+    end
     return self._TaskGroup.ProgressRatio
 end
 
@@ -228,27 +292,36 @@ function XResource:GetTotalSize()
 end
 
 function XResource:GetDownloadSize()
+    if not self._TaskGroupBuilt then
+        return self._DownSize
+    end
     return self._TaskGroup.DownloadedBytes
 end
 
 function XResource:IsComplete()
-    return self._TaskGroup.State == CSXMTDownloadTaskGroupState.Complete
+    if self._State == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE then
+        return true
+    end
+    if self._TaskGroupBuilt then
+        return self._TaskGroup.State == CSDownloadTaskGroupState.Complete
+    end
+    return false
 end
 
 ---@param center XMTDownloadCenter
 function XResource:OnStateChanged()
     local state = self._TaskGroup.State
     -- print("SP/DN XResource:OnStateChanged", self._Id, state)
-    if state == CSXMTDownloadTaskGroupState.Registered and self._WaitPause then
+    if state == CSDownloadTaskGroupState.Registered and self._WaitPause then
         XMVCA.XSubPackage:OnResDownloadRelease(self._Id)
         self._WaitPause = false
-    elseif state == CSXMTDownloadTaskGroupState.Complete then
+    elseif state == CSDownloadTaskGroupState.Complete then
         self:Complete()
         XMVCA.XSubPackage:OnResDownloadRelease(self._Id)
         self._WaitPause = false
-    elseif state == CSXMTDownloadTaskGroupState.Pausing then
+    elseif state == CSDownloadTaskGroupState.Pausing then
         self._WaitPause = true
-    elseif state == CSXMTDownloadTaskGroupState.CompleteError then
+    elseif state == CSDownloadTaskGroupState.CompleteError then
         XMVCA.XSubPackage:OnResDownloadRelease(self._Id)
     end
 

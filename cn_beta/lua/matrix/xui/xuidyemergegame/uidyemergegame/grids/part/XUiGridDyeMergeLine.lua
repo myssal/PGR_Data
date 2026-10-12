@@ -59,21 +59,20 @@ end
 
 --- 启动 UV 滚动动画
 function XUiGridDyeMergeLine:_StartUVScroll()
-    if self._UVTimerId then return end
+    if XScheduleManagerPro.HasSchedule(self._OnStartUVScrollScheduleCb, self) then return end
     self._UVOffset = 0
     self.RImgLine.uvRect = CS.UnityEngine.Rect(0, 0, self._TileX, 1)
-    self._UVTimerId = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartUVScrollScheduleCb, self, UV_SCROLL_INTERVAL)
+end
+
+function XUiGridDyeMergeLine:_OnStartUVScrollScheduleCb()
         self._UVOffset = (self._UVOffset + UV_SCROLL_SPEED) % 256
         self.RImgLine.uvRect = CS.UnityEngine.Rect(self._UVOffset, 0, self._TileX, 1)
-    end, UV_SCROLL_INTERVAL)
 end
 
 --- 停止 UV 滚动动画并重置
 function XUiGridDyeMergeLine:_StopUVScroll()
-    if self._UVTimerId then
-        XScheduleManager.UnSchedule(self._UVTimerId)
-        self._UVTimerId = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartUVScrollScheduleCb, self)
     self._UVOffset = 0
     if self.RImgLine then
         self.RImgLine.uvRect = CS.UnityEngine.Rect(0, 0, 1, 1)

@@ -6,7 +6,6 @@ local XUiSpecialTrainBreakthroughSettleGrid = require("XUi/XUiSpecialTrainBreakt
 local XUiSpecialTrainBreakthroughSettle = XLuaUiManager.Register(XLuaUi, "UiSpecialTrainBreakthroughSettle")
 
 function XUiSpecialTrainBreakthroughSettle:Ctor()
-    self._Timer = false
     ---@type XUiSpecialTrainBreakthroughSettleGrid[]
     self._Panels = {}
     self._PhaseTeamScore = { Type = AnimationPhase.Phase1, Time = 0 }
@@ -23,21 +22,19 @@ function XUiSpecialTrainBreakthroughSettle:OnDisable()
 end
 
 function XUiSpecialTrainBreakthroughSettle:StartCountDown()
-    if self._Timer then
+    if XScheduleManagerPro.HasSchedule(self._OnStartCountDownScheduleCb, self) then
         return
     end
     self:Tick(0)
-    self._Timer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnStartCountDownScheduleCb, self, 0)
+end
+
+function XUiSpecialTrainBreakthroughSettle:_OnStartCountDownScheduleCb()
         self:Tick(CS.XUnityEx.DeltaTime)
-    end, 0)
 end
 
 function XUiSpecialTrainBreakthroughSettle:StopCountDown()
-    if not self._Timer then
-        return
-    end
-    XScheduleManager.UnSchedule(self._Timer)
-    self._Timer = false
+    XScheduleManagerPro.UnSchedule(self._OnStartCountDownScheduleCb, self)
 end
 
 function XUiSpecialTrainBreakthroughSettle:OnStart(winData)

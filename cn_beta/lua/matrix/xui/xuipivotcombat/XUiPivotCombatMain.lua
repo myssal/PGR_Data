@@ -134,7 +134,7 @@ end
 local XUiPivotCombatMain = XLuaUiManager.Register(XLuaUi, "UiPivotCombatMain")
 
 local MAX_SECONDARY_MEMBERS = 5 --次级区域按钮数量
-local TIME_REFRESH_MINUTE = XScheduleManager.SECOND * 60 --一分钟刷新一次
+local TIME_REFRESH_MINUTE = XScheduleManagerPro.SECOND * 60 --一分钟刷新一次
 
 --region 生命周期
 
@@ -199,9 +199,7 @@ function XUiPivotCombatMain:OnEnable()
     if not XDataCenter.PivotCombatManager.IsAllSecondaryOpen() then
         --更新解锁时间
         self:RefreshTimer()
-        self.LockTimeSchedule = XScheduleManager.ScheduleForever(function()
-            self:RefreshTimer()
-        end, TIME_REFRESH_MINUTE)
+        XScheduleManagerPro.ScheduleForever(self._OnRefreshTimerScheduleCb, self, TIME_REFRESH_MINUTE)
     end
     --检测红点
     self:CheckRedPoint()
@@ -212,10 +210,7 @@ function XUiPivotCombatMain:OnDisable()
     if self.UiMoveTimeLine then
         self.UiMoveTimeLine:Stop(true)
     end
-    if self.LockTimeSchedule then
-        XScheduleManager.UnSchedule(self.LockTimeSchedule)
-        self.LockTimeSchedule = nil
-    end
+        XScheduleManagerPro.UnSchedule(self._OnRefreshTimerScheduleCb, self)
 end
 
 
@@ -251,10 +246,7 @@ end
 --更新时间显示
 function XUiPivotCombatMain:RefreshTimer()
     if XDataCenter.PivotCombatManager.IsAllSecondaryOpen() then
-        if self.LockTimeSchedule then
-            XScheduleManager.UnSchedule(self.LockTimeSchedule)
-        end
-        self.LockTimeSchedule = nil
+            XScheduleManagerPro.UnSchedule(self._OnRefreshTimerScheduleCb, self)
         return
     end
     local regions = self.SecondaryRegions
@@ -391,3 +383,7 @@ function XUiPivotCombatMain:OnCheckTargetRedDot(count)
 end
 
 --endregion
+
+function XUiPivotCombatMain:_OnRefreshTimerScheduleCb()
+    self:RefreshTimer()
+end

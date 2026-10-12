@@ -1,6 +1,5 @@
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiReform2ndPanelGroup = require("XUi/XUiReform2nd/MainPage/XUiReform2ndPanelGroup")
-local XUiReform2ndPanelTasks = require("XUi/XUiReform2nd/MainPage/XUiReform2ndPanelTasks")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 
 ---@field _Control XReformControl
@@ -11,7 +10,6 @@ function XUiReform2:Ctor()
     --self.StagePanel = nil
     ---@type XUiReform2ndPanelGroup
     self.ChapterGroup = nil
-    self.PanelTasks = nil
     self.RewardList = {}
     self.TaskRedPoint = nil
 
@@ -70,6 +68,7 @@ function XUiReform2:OnAwake()
 end
 
 function XUiReform2:OnEnable()
+    XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.Reform)
     self._IsJustEnableToggle = true
     ---@type UnityEngine.UI.Toggle
     local toggle = self.TogHell
@@ -118,13 +117,17 @@ function XUiReform2:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_ETCD_TIME_CHANGE, self.RefreshEndTime, self)
 end
 
+function XUiReform2:Close()
+    XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.Reform)
+    XUiReform2.Super.Close(self)
+end
+
 function XUiReform2:OnDestroy()
     XRedPointManager.RemoveRedPointEvent(self.TaskRedPoint)
 
     self._ViewModel:ReleaseConfig()
     --self.StagePanel = nil
     self.ChapterGroup = nil
-    self.PanelTasks = nil
     self.RewardList = nil
     self.TaskRedPoint = nil
     self._ViewModel = nil
@@ -187,37 +190,13 @@ function XUiReform2:Refresh()
     self.PressImgTaskExp.fillAmount = imgExp
 end
 
-function XUiReform2:RefreshTask()
-    local taskData = self._ViewModel:GetTaskDataList()
-
-    self.PanelTasks:SetData(taskData)
-    self.PanelTasks:Refresh()
-
-    if self.TaskRedPoint then
-        XRedPointManager.Check(self.TaskRedPoint)
-    end
-end
-
 function XUiReform2:OpenStagePanel()
     local stage = self._ViewModel:GetCurrentStage()
-    --viewModel:SaveIndexToManager()
-    XLuaUiManager.Open("UiReformList", stage)
-
-    --self:InitPanel(false)
-    --
-    --self.StagePanel:RefreshStageGrid()
-    --self.StagePanel:RefreshDetailPanel()
-    --self:RegisterClickEvent(self.BtnBack, self.CloseStagePanel, true)
+    XLuaUiManager.Open("UiReformBalance", stage)
 end
 
 function XUiReform2:OpenTaskReward()
-    self.PanelTaskReward.gameObject:SetActiveEx(true)
-
-    if not self.PanelTasks then
-        self.PanelTasks = XUiReform2ndPanelTasks.New(self, self.PanelTaskReward, self._ViewModel)
-    end
-
-    self:RefreshTask()
+    XLuaUiManager.Open("UiReformTask")
 end
 
 function XUiReform2:CloseStagePanel()

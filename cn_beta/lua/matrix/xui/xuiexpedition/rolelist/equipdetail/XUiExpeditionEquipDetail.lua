@@ -52,9 +52,7 @@ function XUiExpeditionEquipDetail:InitClassifyPanel()
         self.Loader = self.Loader or self.Transform:GetLoader()
         local texture = self.Loader:Load(resPath)
         self.MeshLihui.sharedMaterial:SetTexture("_MainTex", texture)
-        XScheduleManager.ScheduleOnce(function()
-                self.FxUiLihuiChuxian01.gameObject:SetActiveEx(true)
-            end, 500)
+        XScheduleManagerPro.ScheduleOnce(self._OnInitClassifyPanelScheduleCb, self, 500)
         self.PanelWeapon.gameObject:SetActiveEx(false)
     end
 end
@@ -123,4 +121,8 @@ function XUiExpeditionEquipDetail:OnNotify(evt, ...)
         XLuaUiManager.RunMain()
         XUiManager.TipMsg(CS.XTextManager.GetText("ExpeditionOnClose"))
     end
+end
+
+function XUiExpeditionEquipDetail:_OnInitClassifyPanelScheduleCb()
+    self.FxUiLihuiChuxian01.gameObject:SetActiveEx(true)
 end

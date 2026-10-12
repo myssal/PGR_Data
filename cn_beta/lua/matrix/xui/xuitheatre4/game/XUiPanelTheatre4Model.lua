@@ -151,22 +151,20 @@ end
 
 -- 添加相机位置变动计时器
 function XUiPanelTheatre4Model:AddCameraPosTimer()
-    if self.CameraPosTimer then
-        XScheduleManager.UnSchedule(self.CameraPosTimer)
-        self.CameraPosTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnAddCameraPosTimerScheduleCb, self)
     -- 添加相机位置变动计时器
-    self.CameraPosTimer = XScheduleManager.ScheduleForeverEx(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            XScheduleManager.UnSchedule(self.CameraPosTimer)
-            self.CameraPosTimer = nil
-            return
-        end
-        if not self.IsShow then
-            return
-        end
-        self:CheckCameraPosChange()
-    end, 0)
+    XScheduleManagerPro.ScheduleForeverEx(self._OnAddCameraPosTimerScheduleCb, self, 0)
+end
+
+function XUiPanelTheatre4Model:_OnAddCameraPosTimerScheduleCb()
+    if XTool.UObjIsNil(self.GameObject) then
+        XScheduleManagerPro.UnSchedule(self._OnAddCameraPosTimerScheduleCb, self)
+        return
+    end
+    if not self.IsShow then
+        return
+    end
+    self:CheckCameraPosChange()
 end
 
 -- 检查相机位置是否发生变化

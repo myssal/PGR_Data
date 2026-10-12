@@ -9,7 +9,6 @@ local XUiDlcMultiPlayerGiftTask = XClass(XUiNode, "XUiDlcMultiPlayerGiftTask")
 
 function XUiDlcMultiPlayerGiftTask:OnStart()
     self._DataSource = nil
-    self._DelayUpdateTaskTimer = nil
     self._IsKeepUpdateTask = false
     self._CurTaskType = XMVCA.XDlcMultiMouseHunter.DlcMouseHunterTaskType.Daily
 
@@ -32,16 +31,13 @@ end
 
 function XUiDlcMultiPlayerGiftTask:_OnEvtRefresh()
     --一键领取奖励和一键完成任务会频繁刷新，加个延迟防卡顿
-    if self._DelayUpdateTaskTimer then
+    if XScheduleManagerPro.HasSchedule(XUiDlcMultiPlayerGiftTask._OnDelayUpdateTaskScheduleCb, self) then
         self._IsKeepUpdateTask = true
         return
     end
 
     self:_Refresh(self._CurTaskType)
-    self._DelayUpdateTaskTimer = XScheduleManager.ScheduleOnce(function()
-        self:_Refresh(self._CurTaskType)
-        self:_RemoveDelayUpdateTaskTimer()
-    end, 500)
+    XScheduleManagerPro.ScheduleOnce(XUiDlcMultiPlayerGiftTask._OnDelayUpdateTaskScheduleCb, self, 500)
 end
 
 function XUiDlcMultiPlayerGiftTask:_Refresh(taskType)
@@ -71,10 +67,7 @@ function XUiDlcMultiPlayerGiftTask:OnDynamicTableEvent(event, index, grid)
 end
 
 function XUiDlcMultiPlayerGiftTask:_RemoveDelayUpdateTaskTimer()
-    if self._DelayUpdateTaskTimer then
-        XScheduleManager.UnSchedule(self._DelayUpdateTaskTimer)
-        self._DelayUpdateTaskTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiDlcMultiPlayerGiftTask._OnDelayUpdateTaskScheduleCb, self)
     self._IsKeepUpdateTask = false
 end
 
@@ -94,5 +87,10 @@ function XUiDlcMultiPlayerGiftTask:_PlayOffFrameAnimation()
     self._Control:PlayOffFrameAnimation(self.ListTaskTable:GetGrids(), "PanelTaskGridTaskEnable", nil, 0.05, 0.2)
 end
 
+
+function XUiDlcMultiPlayerGiftTask:_OnDelayUpdateTaskScheduleCb()
+    self:_Refresh(self._CurTaskType)
+    self:_RemoveDelayUpdateTaskTimer()
+end
 
 return XUiDlcMultiPlayerGiftTask

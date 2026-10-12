@@ -8,7 +8,6 @@ local XUiBigWorldTeachTips = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldTeachTip
 
 function XUiBigWorldTeachTips:OnAwake()
     self._TeachId = 0
-    self._Timer = false
     self._ShowTime = 0
     self._BeginTime = 0
 
@@ -105,10 +104,8 @@ end
 
 function XUiBigWorldTeachTips:_RemoveSchedules()
     -- 在此处移除定时器
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+    self._IsTeachTipUpdating = false
+    XScheduleManagerPro.UnSchedule(XUiBigWorldTeachTips._OnUpdateTeachTipScheduleCb, self)
 end
 
 function XUiBigWorldTeachTips:_RegisterRedPointEvents()
@@ -123,7 +120,8 @@ function XUiBigWorldTeachTips:_Refresh()
     self.ImgNomalFillBar.fillAmount = 1
     self.ImgPressFillBar.fillAmount = 1
 
-    self._Timer = XScheduleManager.ScheduleForever(Handler(self, self._Update), 1)
+    self._IsTeachTipUpdating = true
+    XScheduleManagerPro.ScheduleNextFrame(XUiBigWorldTeachTips._OnUpdateTeachTipScheduleCb, self)
 end
 
 function XUiBigWorldTeachTips:_Update()
@@ -151,5 +149,12 @@ function XUiBigWorldTeachTips:_GetUiNameByUiData(ui)
 end
 
 -- endregion
+
+function XUiBigWorldTeachTips:_OnUpdateTeachTipScheduleCb()
+    self:_Update()
+    if self._IsTeachTipUpdating then
+        XScheduleManagerPro.ScheduleNextFrame(XUiBigWorldTeachTips._OnUpdateTeachTipScheduleCb, self)
+    end
+end
 
 return XUiBigWorldTeachTips

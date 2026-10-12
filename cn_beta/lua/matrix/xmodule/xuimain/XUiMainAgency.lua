@@ -12,7 +12,6 @@ function XUiMainAgency:OnInit()
     self._ActivityToastHallSceneKey = nil
     self._ActivityToastHallQueue = nil
     self._ActivityToastHallPendingIdMap = nil
-    self._ActivityToastHallTimer = nil
     self:CheckClearAllPanelTipClicked()
 end
 
@@ -370,6 +369,22 @@ function XUiMainAgency:GetActivityBtnConfigById(id)
     return self._Model:GetActivityBtnConfigById(id)
 end
 
+--region 活动按钮永久一次性红点
+
+function XUiMainAgency:GetActivityBtnIdentityKey(activityBtnConfig)
+    return self._Model:GetActivityBtnIdentityKey(activityBtnConfig)
+end
+
+function XUiMainAgency:SaveActivityBtnRedOnceClicked(key)
+    self._Model:SaveActivityBtnRedOnceClicked(key)
+end
+
+function XUiMainAgency:IsActivityBtnRedOnceClicked(key)
+    return self._Model:IsActivityBtnRedOnceClicked(key)
+end
+
+--endregion
+
 function XUiMainAgency:GetActivityToastHallCfgs()
     return self._Model:GetActivityToastHallCfgs()
 end
@@ -414,17 +429,16 @@ function XUiMainAgency:StartActivityToastHallTimer(sceneKey)
     self:UpdateActivityToastHallQueue()
     self:TryPopActivityToastHall()
 
-    self._ActivityToastHallTimer = XScheduleManager.ScheduleForever(function()
-        self:UpdateActivityToastHallQueue()
-        self:TryPopActivityToastHall()
-    end, ActivityToastHallCheckIntervalSecond * XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleForever(self._OnStartActivityToastHallTimerScheduleCb, self, ActivityToastHallCheckIntervalSecond * XScheduleManagerPro.SECOND)
+end
+
+function XUiMainAgency:_OnStartActivityToastHallTimerScheduleCb()
+    self:UpdateActivityToastHallQueue()
+    self:TryPopActivityToastHall()
 end
 
 function XUiMainAgency:StopActivityToastHallTimer()
-    if self._ActivityToastHallTimer then
-        XScheduleManager.UnSchedule(self._ActivityToastHallTimer)
-        self._ActivityToastHallTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStartActivityToastHallTimerScheduleCb, self)
 
     if self._ActivityToastHallQueue then
         self._ActivityToastHallQueue:Clear()

@@ -99,17 +99,16 @@ XDoomsdayManagerCreator = function()
         end
 
         --延迟是为了防止打断UI动画
-        XScheduleManager.ScheduleOnce(
-            function()
-                XLuaUiManager.RunMain()
-                XUiManager.TipText("DoomsdayActivityEnd")
-            end,
-            1000
-        )
+        XScheduleManagerPro.ScheduleOnce(XDoomsdayManager._OnTimerScheduleCb, XDoomsdayManager, 1000)
 
         XDoomsdayManager.ClearActivityEnd()
 
         return true
+    end
+
+    function XDoomsdayManager:_OnTimerScheduleCb()
+            XLuaUiManager.RunMain()
+            XUiManager.TipText("DoomsdayActivityEnd")
     end
 
     --任务分组（1.普通任务；2.日记碎片）
@@ -1233,7 +1232,6 @@ XDoomsdayManagerCreator = function()
         local stageId = action.StageId
         XDoomsdayManager.UpdateBroadcast(stageId, action.ActionType, action.DeathCount)
     end
-
     return XDoomsdayManager
 end
 ---------------------Notify begin------------------

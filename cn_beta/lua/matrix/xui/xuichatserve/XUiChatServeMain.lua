@@ -113,7 +113,10 @@ function XUiChatServeMain:OnStart(isMain, ...)
 end
 
 function XUiChatServeMain:OnEnable()
+    -- 有坑：必须先于 Refresh
+    XDataCenter.ChatManager.SetChatBoardNeedPlayEnableAnim(true)
     self:Refresh()
+    XDataCenter.ChatManager.SetChatBoardNeedPlayEnableAnim(false)
     XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UICHAT_ENABLE)
 end
 
@@ -329,6 +332,7 @@ function XUiChatServeMain:Close()
     if self.InputField.isFocused then
         return
     end
+    XEventManager.DispatchEvent(XEventId.EVENT_CHAT_BOARD_PLAY_DISABLE)
     --关闭聊天
     self:PlayAnimationWithMask("AnimChatOut", function()
         self.Super.Close(self)
@@ -537,11 +541,24 @@ function XUiChatServeMain:ShowChangeChatChannel(channelId)
     self.PanelMsgTips.gameObject:SetActive(true)
 
     local currentChannelId = XDataCenter.ChatManager.GetCurrentChatChannelId()
+    local showChannelId = currentChannelId
     if not XOverseaManager.IsOverSeaRegion() then
-        currentChannelId = currentChannelId >= 5 and (currentChannelId + 1) or currentChannelId
+        showChannelId = currentChannelId >= 5 and (currentChannelId + 1) or currentChannelId
     end
 
-    self.TxtMsgCount.text = CS.XTextManager.GetText("ChannelChanged", currentChannelId ~= XDataCenter.ChatManager.GetRecruitChannelId() and tostring(currentChannelId) or CS.XTextManager.GetText("ChannelRecruitIdStr"))
+    local roomNumStr = ''
+
+    if currentChannelId == XDataCenter.ChatManager.GetRecruitChannelId() then
+        -- 优先招募频道
+        roomNumStr = CS.XTextManager.GetText("ChannelRecruitIdStr")
+    elseif XMVCA.XReCallActivity:CheckInviteActivityOpen() and currentChannelId == XMVCA.XReCallActivity:GetCurReCallChatChannelId() + 1 then -- 客户端缓存的频道id在服务端基础上+1，所以配置也要+1保持一致
+        -- 回归频道次之
+        roomNumStr = XMVCA.XReCallActivity:GetClientConfigReCallText('InviteChannelTitle', 2)
+    else
+        roomNumStr = tostring(showChannelId)
+    end
+
+    self.TxtMsgCount.text = CS.XTextManager.GetText("ChannelChanged", roomNumStr)
     -- 开计时器关闭
     self:StartMsgTipsTimer()
 end
@@ -690,7 +707,7 @@ function XUiChatServeMain:UpdateCurrentChannel()
     
     local roomNumStr = ''
 
-    if showChannelId == XDataCenter.ChatManager.GetRecruitChannelId() then
+    if currentChannelId == XDataCenter.ChatManager.GetRecruitChannelId() then
         -- 优先招募频道
         roomNumStr = CS.XTextManager.GetText("ChannelRecruitIdStr")
     elseif XMVCA.XReCallActivity:CheckInviteActivityOpen() and currentChannelId == XMVCA.XReCallActivity:GetCurReCallChatChannelId() + 1 then -- 客户端缓存的频道id在服务端基础上+1，所以配置也要+1保持一致
@@ -851,7 +868,7 @@ function XUiChatServeMain:StartConcertPreHeatingToastScroll()
     ui.Content1.anchoredPosition = Vector2(startPosX, 0)
     ui.Content2.anchoredPosition = Vector2(startPosX, 0)
 
-    self._ConcertPreHeatingScrollTimer = XUiHelper.Tween(scrollSeconds, function(t)
+    self._ConcertPreHeatingScrollTimer = self:Tween(scrollSeconds, function(t)
         if not ui.Content1:Exist() or not ui.Content2:Exist() then
             return true
         end

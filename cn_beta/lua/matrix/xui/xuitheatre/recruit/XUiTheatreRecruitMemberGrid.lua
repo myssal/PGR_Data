@@ -64,15 +64,17 @@ end
 function XUiTheatreRecruitMemberGrid:PlayEffect()
     self.PanelEffectLvUp.gameObject:SetActiveEx(false)
     self.PanelEffectLvUp.gameObject:SetActiveEx(true)
-    XScheduleManager.ScheduleOnce(function()
-        if not XTool.UObjIsNil(self.PanelEffectLvUp) then
-            self.PanelEffectLvUp.gameObject:SetActiveEx(false)
-        end
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(self._OnPlayEffectScheduleCb, self, XScheduleManagerPro.SECOND)
 end
 
 function XUiTheatreRecruitMemberGrid:SetPanelSelectedActive(isActive)
     self.PanelSelected.gameObject:SetActiveEx(isActive)
+end
+
+function XUiTheatreRecruitMemberGrid:_OnPlayEffectScheduleCb()
+    if not XTool.UObjIsNil(self.PanelEffectLvUp) then
+        self.PanelEffectLvUp.gameObject:SetActiveEx(false)
+    end
 end
 
 return XUiTheatreRecruitMemberGrid

@@ -45,21 +45,20 @@ function XUiPokerGuessing2StoryGrid:PlayEnableAnimation(index)
     self.GameObject:SetActiveEx(true)
     if self.GameObject.activeInHierarchy and not self._IsPlay then
         self.CanvasGroup.alpha = 0
-        self._Timer = XScheduleManager.ScheduleOnce(function()
-            self.CanvasGroup.alpha = 1
-            self:PlayAnimation("AnimEnable", function()
-                self._IsPlay = true
-            end)
-            self._Timer = false
-        end, (index - 1) * 90)
+        XScheduleManagerPro.ScheduleOnce(self._OnPlayAnimationScheduleCb, self, (index - 1) * 90)
     end
 end
 
+function XUiPokerGuessing2StoryGrid:_OnPlayAnimationScheduleCb()
+    self.CanvasGroup.alpha = 1
+    self:PlayAnimation("AnimEnable", function()
+        self._IsPlay = true
+    end)
+            self._Timer = false
+end
+
 function XUiPokerGuessing2StoryGrid:OnDestroy()
-    if self._Timer then
-        XScheduleManager.UnSchedule(self._Timer)
-        self._Timer = false
-    end
+        XScheduleManagerPro.UnSchedule(self._OnPlayAnimationScheduleCb, self)
 end
 
 return XUiPokerGuessing2StoryGrid

@@ -39,12 +39,8 @@ end
 
 -- 倒计时
 function XUiPanelTerminalLevelUpgrade:StartTimer()
-    if self.Timer then
-        self:StopTimer()
-    end
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        self.GameObject:SetActiveEx(false)
-    end, XScheduleManager.SECOND * AutoCloseTime)
+    self:StopTimer()
+    XScheduleManagerPro.ScheduleOnce(XUiPanelTerminalLevelUpgrade._OnHideLevelUpgradeScheduleCb, self, XScheduleManagerPro.SECOND * AutoCloseTime)
 end
 
 function XUiPanelTerminalLevelUpgrade:OnBtnDarkBgClick()
@@ -53,14 +49,15 @@ function XUiPanelTerminalLevelUpgrade:OnBtnDarkBgClick()
 end
 
 function XUiPanelTerminalLevelUpgrade:StopTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiPanelTerminalLevelUpgrade._OnHideLevelUpgradeScheduleCb, self)
 end
 
 function XUiPanelTerminalLevelUpgrade:OnDisable()
     self:StopTimer()
+    self.GameObject:SetActiveEx(false)
+end
+
+function XUiPanelTerminalLevelUpgrade:_OnHideLevelUpgradeScheduleCb()
     self.GameObject:SetActiveEx(false)
 end
 

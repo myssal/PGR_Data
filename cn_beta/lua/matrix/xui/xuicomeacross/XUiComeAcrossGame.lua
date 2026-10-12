@@ -23,9 +23,7 @@ function XUiComeAcrossGame:Init()
 
     self.PanelMask.gameObject:SetActive(false)
 
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        self:Update()
-    end, 0)
+    XScheduleManagerPro.ScheduleForeverEx(XUiComeAcrossGame._OnUpdateScheduleCb, self, 0)
 end
 
 
@@ -87,10 +85,7 @@ end
 
 
 function XUiComeAcrossGame:OnDestroy()
-    if self.Timer ~= nil then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiComeAcrossGame._OnUpdateScheduleCb, self)
 end
 
 
@@ -140,4 +135,8 @@ end
 
 function XUiComeAcrossGame:OnSliderFavorClick()
 
+end
+
+function XUiComeAcrossGame:_OnUpdateScheduleCb()
+    self:Update()
 end

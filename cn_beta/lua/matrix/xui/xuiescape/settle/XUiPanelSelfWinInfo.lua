@@ -74,7 +74,7 @@ function XUiPanelSelfWinInfo:Refresh(winData)
     self.TxtTime.text = XUiHelper.GetTime(remainTime - awardTime, XUiHelper.TimeFormatType.ESCAPE_REMAIN_TIME)
 
     self:UpdateByNotify()
-    XScheduleManager.ScheduleOnce(handler(self, self.UpdateRemainTime), RemainTimeDelay)
+    XScheduleManagerPro.ScheduleOnce(self.UpdateRemainTime, self, RemainTimeDelay)
 end
 
 function XUiPanelSelfWinInfo:UpdateByNotify()

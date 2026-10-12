@@ -118,22 +118,21 @@ end
 
 function XUiPanelDormTaskDaily:StartSchedule()
     self:StopSchedule()
-    DailyTimeSchedule = XScheduleManager.ScheduleForever(function()
-        if self.DynamicTable then
-            for i = 1, #self.DailyTasks do
-                local grid = self.DynamicTable:GetGridByIndex(i)
-                if grid then
-                    grid:UpdateTimes()
-                end
-            end
-        end
-    end, 1000 * 60)
+    XScheduleManagerPro.ScheduleForever(self._OnStartScheduleScheduleCb, self, 1000 * 60)
 end
 
 function XUiPanelDormTaskDaily:StopSchedule()
-    if DailyTimeSchedule then
-        XScheduleManager.UnSchedule(DailyTimeSchedule)
-        DailyTimeSchedule = nil
+        XScheduleManagerPro.UnSchedule(self._OnStartScheduleScheduleCb, self)
+end
+
+function XUiPanelDormTaskDaily:_OnStartScheduleScheduleCb()
+    if self.DynamicTable then
+        for i = 1, #self.DailyTasks do
+            local grid = self.DynamicTable:GetGridByIndex(i)
+            if grid then
+                grid:UpdateTimes()
+            end
+        end
     end
 end
 

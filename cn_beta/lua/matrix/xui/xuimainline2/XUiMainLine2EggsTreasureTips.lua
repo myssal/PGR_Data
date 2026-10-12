@@ -37,17 +37,11 @@ end
 
 function XUiMainLine2EggsTreasureTips:StartTimer()
     self:RemoveTimer()
-    self.Timer = XScheduleManager.ScheduleOnce(function()
-        self.Timer = nil
-        self:OnBtnTipsClick()
-    end, 1000)
+    XScheduleManagerPro.ScheduleOnce(XUiMainLine2EggsTreasureTips.OnBtnTipsClick, self, 1000)
 end
 
 function XUiMainLine2EggsTreasureTips:RemoveTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(XUiMainLine2EggsTreasureTips.OnBtnTipsClick, self)
 end
 
 return XUiMainLine2EggsTreasureTips

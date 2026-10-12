@@ -12,12 +12,14 @@ function XUiChessPursuitMain:OnAwake()
     self:AutoAddListener()
     self:Init()
 
-    self.UpdateTimer = XScheduleManager.ScheduleForever(function()
-        self:IsTimeToFinish()
-    end, 1)
+    XScheduleManagerPro.ScheduleForever(self._OnAwakeScheduleCb, self, 1)
 
     --引导开启
     CsXGameEventManager.Instance:RegisterEvent(XEventId.EVENT_GUIDE_START, handler(self, self.OnGuideStart))
+end
+
+function XUiChessPursuitMain:_OnAwakeScheduleCb()
+        self:IsTimeToFinish()
 end
 
 function XUiChessPursuitMain:OnStart()
@@ -38,10 +40,7 @@ function XUiChessPursuitMain:OnDestroy()
         self.UiChessPursuitMainBase = nil
     end
 
-    if self.UpdateTimer then
-        XScheduleManager.UnSchedule(self.UpdateTimer)
-        self.UpdateTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnAwakeScheduleCb, self)
 
     --等dispose的完了再清场景
     XChessPursuitCtrl.LeaveScene()

@@ -9,18 +9,11 @@ function XUiPanelFangKuaiCommander:OnStart()
 end
 
 function XUiPanelFangKuaiCommander:OnEnable()
-    if self._PopTimer then
-        XScheduleManager.UnSchedule(self._PopTimer)
-        self._PopTimer = nil
-    end
-    XScheduleManager.ScheduleOnce(handler(self, self.Close), self._CommandantPopTime * 1000)
+    XScheduleManagerPro.ScheduleOnce(self.Close, self, self._CommandantPopTime * 1000)
 end
 
 function XUiPanelFangKuaiCommander:OnDestroy()
-    if self._PopTimer then
-        XScheduleManager.UnSchedule(self._PopTimer)
-        self._PopTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self.Close, self)
 end
 
 return XUiPanelFangKuaiCommander

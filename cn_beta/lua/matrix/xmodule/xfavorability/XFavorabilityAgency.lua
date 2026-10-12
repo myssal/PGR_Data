@@ -434,9 +434,20 @@ function XFavorabilityAgency:CheckStoryIsSatisfyUnlockCondition(characterId, Id)
     return self._Model:IsStorySatisfyUnlock(characterId, Id)
 end
 
----@param entranceType @入口类型：埋点约定1看板交流界面，2试玩关，3支线剧情
----@return number @打开结果：0成功，-1分包问题， -2角色传参问题
+---好感剧情入口，统一检查功能与分包
+---@param entranceType number|nil @仅用于埋点：1看板交流，2角色档案/试玩，3支线，4其他；不传则不记录
+---@return number @0已提交打开请求，-1分包未通过（1402对应包或必要包），-2角色参数无效，-3功能屏蔽
 function XFavorabilityAgency:OpenUiStory(characterId, entranceType)
+    local functionId = XFunctionManager.FunctionName.FavorabilityStory
+    if XFunctionManager.CheckFunctionFitter(functionId) then
+        XUiManager.TipMsg(CS.XTextManager.GetText("FunctionalMaintain"))
+        return -3
+    end
+
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.FavorabilityStory) then
+        return -1
+    end
+
     if not XMVCA.XSubPackage:CheckSubpackage() then
         return -1
     end
@@ -1147,21 +1158,11 @@ end
 function XFavorabilityAgency:StartBreakTimer(stopTime)
     self:StopBreakTimer()
     self._Model._StopTime = stopTime
-    self._Model._Timer = XScheduleManager.ScheduleForeverEx(function ()
-        if self._Model._StopTime < 0 then
-            self:StopBreakTimer()
-            return
-        end
-        self._Model._StopTime = self._Model._StopTime - self._Model._Delay / 1000
-        self:OnBreakClick()
-    end, self._Model._Delay)
+    XScheduleManagerPro.ScheduleForeverEx(self._OnStopBreakTimerScheduleCb, self, self._Model._Delay)
 end
 
 function XFavorabilityAgency:StopBreakTimer()
-    if self._Model._Timer then
-        XScheduleManager.UnSchedule(self._Model._Timer)
-        self._Model._Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnStopBreakTimerScheduleCb, self)
     self._Model._StopTime = 0
 end
 
@@ -1434,9 +1435,7 @@ end
 function XFavorabilityAgency:RequestTouchBoard(characterId)
     if self._Model._RequestTouchBoardLock then return end
     self._Model._RequestTouchBoardLock = true
-    XScheduleManager.ScheduleOnce(function()
-        self._Model._RequestTouchBoardLock = false;
-    end, XScheduleManager.SECOND)
+    XScheduleManagerPro.ScheduleOnce(self._OnRequestTouchBoardScheduleCb, self, XScheduleManagerPro.SECOND)
     XNetwork.Call(XEnumConst.Favorability.REQUEST_NAME.ClickRequest, {
         CharacterId = characterId
     } , function(response) end)
@@ -1632,5 +1631,17 @@ OnLoginSuccessEvent=function(self)
     CS.UnityEngine.PlayerPrefs.SetInt(key, self._Model._LoginTime)
 end
 --endregion----------private end----------
+
+function XFavorabilityAgency:_OnRequestTouchBoardScheduleCb()
+    self._Model._RequestTouchBoardLock = false;
+end
+function XFavorabilityAgency:_OnStopBreakTimerScheduleCb()
+    if self._Model._StopTime < 0 then
+        self:StopBreakTimer()
+        return
+    end
+    self._Model._StopTime = self._Model._StopTime - self._Model._Delay / 1000
+    self:OnBreakClick()
+end
 
 return XFavorabilityAgency

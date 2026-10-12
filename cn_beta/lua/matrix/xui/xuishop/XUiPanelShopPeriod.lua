@@ -6,7 +6,6 @@ function XUiPanelShopPeriod:Ctor(ui, parent)
     self.Parent = parent
     self:InitAutoScript()
     self.RefShopTime = nil
-    self.CloseTimer = nil
 end
 
 function XUiPanelShopPeriod:InitAutoScript()
@@ -37,10 +36,7 @@ function XUiPanelShopPeriod:HidePanel()
 end
 
 function XUiPanelShopPeriod:RemoveTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnPeriodTimer, self)
 end
 
 function XUiPanelShopPeriod:ShowPanel(shopId)
@@ -160,72 +156,74 @@ function XUiPanelShopPeriod:ShowTimer()
         return
     end
 
-    local refreshFunc, closedFunc
+    self._TimeInfo = timeInfo
+    self._RefreshTicking = timeInfo.RefreshLeftTime and timeInfo.RefreshLeftTime > 0 or false
+    self._ClosedTicking = timeInfo.ClosedLeftTime and timeInfo.ClosedLeftTime > 0 or false
 
-    if timeInfo.RefreshLeftTime and timeInfo.RefreshLeftTime > 0 then
-        refreshFunc = function()
-            local dataTime = XUiHelper.GetTime(timeInfo.RefreshLeftTime, XUiHelper.TimeFormatType.SHOP_REFRESH)
-            self.TxtRefreshTime.text = CS.XTextManager.GetText("ShopAutoRefresh") .. dataTime
-            timeInfo.RefreshLeftTime = timeInfo.RefreshLeftTime - 1
-
-            if timeInfo.RefreshLeftTime < 0 then
-                refreshFunc = nil
-            end
-        end
-    end
-
-    if timeInfo.ClosedLeftTime and timeInfo.ClosedLeftTime > 0 then
-        closedFunc = function()
-            local dataTime = XUiHelper.GetTime(timeInfo.ClosedLeftTime, XUiHelper.TimeFormatType.SHOP_REFRESH)
-            self.TxtLeftTime.text = CS.XTextManager.GetText("ActiveTime", dataTime)
-            timeInfo.ClosedLeftTime = timeInfo.ClosedLeftTime - 1
-
-            if timeInfo.ClosedLeftTime < 0 then
-                closedFunc = nil
-            end
-        end
-    end
-
-    if not refreshFunc and not closedFunc then
+    if not self._RefreshTicking and not self._ClosedTicking then
         return
     end
 
-    if refreshFunc then
-        refreshFunc()
+    if self._RefreshTicking then
+        self:_TickRefreshTime()
         self.TxtRefreshTime.gameObject:SetActive(true)
     end
 
-    if closedFunc then
-        closedFunc()
+    if self._ClosedTicking then
+        self:_TickClosedTime()
         self.TxtLeftTime.gameObject:SetActive(true)
     end
 
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        if timeInfo.ClosedLeftTime and not closedFunc then
-            self:RemoveTimer()
-            XShopManager.GetShopInfo(self.ShopId, function()
-                    self.Parent:RefreshBuy()
-            end)
-            return
-        end
-        if timeInfo.RefreshLeftTime and not refreshFunc then
-           self:RemoveTimer()
-            XShopManager.GetShopInfo(self.ShopId, function()
-                    self.Parent:RefreshBuy()
-                    self:ShowTimer()
-            end)
-            return
-        end
+    XScheduleManagerPro.ScheduleForever(self._OnPeriodTimer, self, 1000)
+end
 
+function XUiPanelShopPeriod:_TickRefreshTime()
+    local timeInfo = self._TimeInfo
+    local dataTime = XUiHelper.GetTime(timeInfo.RefreshLeftTime, XUiHelper.TimeFormatType.SHOP_REFRESH)
+    self.TxtRefreshTime.text = CS.XTextManager.GetText("ShopAutoRefresh") .. dataTime
+    timeInfo.RefreshLeftTime = timeInfo.RefreshLeftTime - 1
 
-        if refreshFunc then
-            refreshFunc()
-        end
+    if timeInfo.RefreshLeftTime < 0 then
+        self._RefreshTicking = false
+    end
+end
 
-        if closedFunc then
-            closedFunc()
-        end
-    end, 1000)
+function XUiPanelShopPeriod:_TickClosedTime()
+    local timeInfo = self._TimeInfo
+    local dataTime = XUiHelper.GetTime(timeInfo.ClosedLeftTime, XUiHelper.TimeFormatType.SHOP_REFRESH)
+    self.TxtLeftTime.text = CS.XTextManager.GetText("ActiveTime", dataTime)
+    timeInfo.ClosedLeftTime = timeInfo.ClosedLeftTime - 1
+
+    if timeInfo.ClosedLeftTime < 0 then
+        self._ClosedTicking = false
+    end
+end
+
+function XUiPanelShopPeriod:_OnPeriodTimer()
+    local timeInfo = self._TimeInfo
+    if timeInfo.ClosedLeftTime and not self._ClosedTicking then
+        self:RemoveTimer()
+        XShopManager.GetShopInfo(self.ShopId, function()
+                self.Parent:RefreshBuy()
+        end)
+        return
+    end
+    if timeInfo.RefreshLeftTime and not self._RefreshTicking then
+        self:RemoveTimer()
+        XShopManager.GetShopInfo(self.ShopId, function()
+                self.Parent:RefreshBuy()
+                self:ShowTimer()
+        end)
+        return
+    end
+
+    if self._RefreshTicking then
+        self:_TickRefreshTime()
+    end
+
+    if self._ClosedTicking then
+        self:_TickClosedTime()
+    end
 end
 
 function XUiPanelShopPeriod:SetPanelActive()

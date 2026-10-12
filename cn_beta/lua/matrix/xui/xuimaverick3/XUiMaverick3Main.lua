@@ -46,14 +46,16 @@ function XUiMaverick3Main:OnEnable()
             -- 从角色界面返回需要隐藏UI动画 为了和镜头动画对齐
             self._IsNeedDelayAnim = false
             XLuaUiManager.SetMask(true)
-            self._AnimTimer = XScheduleManager.ScheduleOnce(function()
-                XLuaUiManager.SetMask(false)
-                self:PlayAnimationWithMask("QieHuanEnable")
-            end, 1000)
+            XScheduleManagerPro.ScheduleOnce(self._OnEnableScheduleCb, self, 1000)
         else
             self:PlayAnimationWithMask("QieHuanEnable")
         end
     end
+end
+
+function XUiMaverick3Main:_OnEnableScheduleCb()
+        XLuaUiManager.SetMask(false)
+        self:PlayAnimationWithMask("QieHuanEnable")
 end
 
 function XUiMaverick3Main:OnDisable()
@@ -61,10 +63,7 @@ function XUiMaverick3Main:OnDisable()
 end
 
 function XUiMaverick3Main:OnDestroy()
-    if self._AnimTimer then
-        XScheduleManager.UnSchedule(self._AnimTimer)
-        self._AnimTimer = nil
-    end
+    XScheduleManagerPro.UnSchedule(self._OnEnableScheduleCb, self)
 end
 
 function XUiMaverick3Main:InitComponent()

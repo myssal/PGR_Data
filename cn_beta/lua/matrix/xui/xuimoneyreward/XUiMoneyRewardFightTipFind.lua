@@ -11,9 +11,11 @@ function XUiMoneyRewardFightTipFind:OnStart()
 end
 
 function XUiMoneyRewardFightTipFind:TryExitFight()
-    self.Timer = XScheduleManager.ScheduleForever(function()
+    XScheduleManagerPro.ScheduleForever(self._OnTryExitFightScheduleCb, self, XScheduleManagerPro.SECOND, 0)
+end
+
+function XUiMoneyRewardFightTipFind:_OnTryExitFightScheduleCb()
         self:ExitFight()
-    end, XScheduleManager.SECOND, 0)
 end
 
 function XUiMoneyRewardFightTipFind:ExitFight()
@@ -21,7 +23,7 @@ function XUiMoneyRewardFightTipFind:ExitFight()
 end
 
 function XUiMoneyRewardFightTipFind:OnDestroy()
-    XScheduleManager.UnSchedule(self.Timer)
+    XScheduleManagerPro.UnSchedule(self._OnTryExitFightScheduleCb, self)
 end
 
 -- auto

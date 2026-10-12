@@ -3,15 +3,6 @@ local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 ---@field _Control XCharacterControl
 local XUiCharacterDetail = XLuaUiManager.Register(XLuaUi, "UiCharacterDetail")
 
-local CharDetailUiType = {
-    Detail = 1, --详细信息
-    Parner = 2, --推荐角色
-    Equip = 3, --推荐装备
-}
-
-local CHILD_UI_EQUIP = "UiPanelEquipInfo"
-local CHILD_UI_TEAM = "UiPanelTeamInfo"
-
 -- auto
 -- Automatic generation of code, forbid to edit
 function XUiCharacterDetail:InitAutoScript()
@@ -45,17 +36,12 @@ function XUiCharacterDetail:AutoAddListener()
 end
 -- auto
 function XUiCharacterDetail:OnBtnTeamRecomendClick()
-    self:SwitchView(CharDetailUiType.Parner)
-    self.Bg.gameObject:SetActiveEx(false)
-    self.Bg2.gameObject:SetActiveEx(false)
+    -- 队伍推荐：跳转一键培养主界面，定位到「按阵容培养」页签
+    XLuaUiManager.Open("UiTeamRecommendMain", self.CharacterId, XEnumConst.TeamRecommend.MainTabIndex.Formation)
 end
 
 function XUiCharacterDetail:OnBtnEquipRecomendClick()
-    --self:SwitchView(CharDetailUiType.Equip)
-    local isOwn = XMVCA:GetAgency(ModuleId.XCharacter):IsOwnCharacter(self.CharacterId)
-    local isUnlock = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipGuideRecommend)
-    local canSet = isOwn and isUnlock
-    XDataCenter.EquipGuideManager.OpenEquipGuideRecommend(self.CharacterId, not canSet)
+    XMVCA.XTeamRecommend:OpenCharacterRecommend(self.CharacterId)
 end
 
 function XUiCharacterDetail:OnBtnDetialClick()
@@ -148,14 +134,22 @@ function XUiCharacterDetail:OnStart(CharacterId)
 
     self.CharacterId = CharacterId
 
+    -- 无剧情的角色隐藏剧情按钮
+    local hasPlot = XMVCA.XPlotExhibition:HasCharacterPlot(CharacterId)
+    if self.BtnPlot then
+        self.BtnPlot.gameObject:SetActiveEx(hasPlot)
+    end
+
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
-    self.PanelContentRtf = self.PanelContent:GetComponent(typeof(CS.UnityEngine.RectTransform))
     -- self.BtnArchive.gameObject:SetActiveEx(true)
     self.BtnDetial.gameObject:SetActiveEx(false)
     self.AssetPanel:Close()
-    self.BtnEquipRecomend.gameObject:SetActiveEx(XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipGuideRecommend))
+    -- 队伍推荐、装备推荐都跳转一键培养系统，统一按功能开关控制显隐
+    local isTeamRecommendOpen = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.TeamRecommend)
+    self.BtnEquipRecomend.gameObject:SetActiveEx(isTeamRecommendOpen)
+    self.BtnTeamRecomend.gameObject:SetActiveEx(isTeamRecommendOpen)
     
-    self:SwitchView(CharDetailUiType.Detail)
+    self:UpdateStateView()
 
     XEventManager.AddEventListener(XEventId.EVENT_CHARACTER_SKILL_UNLOCK, self.UpdateStateView, self)
     XEventManager.AddEventListener(XEventId.EVENT_CHARACTER_SKILL_UP, self.UpdateStateView, self)
@@ -170,29 +164,10 @@ function XUiCharacterDetail:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_CHARACTER_ENHANCESKILL_UP, self.UpdateStateView, self)
 end
 
-function XUiCharacterDetail:SwitchView(uiType)
-    self.CurUiType = uiType
-    self:UpdateStateView()
-end
-
 function XUiCharacterDetail:UpdateStateView()
-    if self.CurUiType == CharDetailUiType.Detail then
-        self.AssetPanel:Close()
-        self.PanelDetailInfo.gameObject:SetActiveEx(true)
-        self:UpdateRightElementView()
-        self:CloseChildUi(CHILD_UI_EQUIP)
-        self:CloseChildUi(CHILD_UI_TEAM)
-    elseif self.CurUiType == CharDetailUiType.Equip then
-        self.AssetPanel:Open()
-        self.PanelDetailInfo.gameObject:SetActiveEx(false)
-        self:OpenChildUi(CHILD_UI_EQUIP, self.CharacterId, self)
-        self:CloseChildUi(CHILD_UI_TEAM)
-    elseif self.CurUiType == CharDetailUiType.Parner then
-        self.AssetPanel:Open()
-        self.PanelDetailInfo.gameObject:SetActiveEx(false)
-        self:CloseChildUi(CHILD_UI_EQUIP)
-        self:OpenChildUi(CHILD_UI_TEAM, self.CharacterId, self)
-    end
+    self.AssetPanel:Close()
+    self.PanelDetailInfo.gameObject:SetActiveEx(true)
+    self:UpdateRightElementView()
 end
 
 function XUiCharacterDetail:UpdateRightElementView()
@@ -340,20 +315,7 @@ function XUiCharacterDetail:UpdateRightElementView()
 end
 
 function XUiCharacterDetail:OnBtnBackClick()
-    if self.CurUiType == CharDetailUiType.Parner or self.CurUiType == CharDetailUiType.Equip then
-        self:SwitchView(CharDetailUiType.Detail)
-        self.Bg.gameObject:SetActiveEx(true)
-        self.Bg2.gameObject:SetActiveEx(true)
-    else
-        -- local tPos = self.PanelContentRtf.anchoredPosition
-        -- if tPos.x > -400 then
-        --     self.PanelContentRtf.anchoredPosition = CS.UnityEngine.Vector2(-450, tPos.y)
-        --     self.BtnArchive.gameObject:SetActiveEx(true)
-        --     self.BtnDetial.gameObject:SetActiveEx(false)
-        -- else
-        -- end
-        self:Close()
-    end
+    self:Close()
 end
 
 function XUiCharacterDetail:OnBtnMainUiClick()
