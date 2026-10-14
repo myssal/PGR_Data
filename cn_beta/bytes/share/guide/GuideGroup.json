@@ -522,6 +522,7 @@
     {
         "Id": 53403,
         "Priority": 53403,
+        "Ignore": 1,
         "Desc": "引导根据玩法一键养成",
         "GuideType": 1,
         "ConditionId": [
@@ -8990,6 +8991,7 @@
     {
         "Id": 63800,
         "Priority": 63800,
+        "Ignore": 1,
         "Desc": "v3.5 引导界限构解6.0 首次进关",
         "GuideType": 1,
         "ConditionId": [
@@ -9003,6 +9005,7 @@
     {
         "Id": 63801,
         "Priority": 63801,
+        "Ignore": 1,
         "Desc": "v3.5 引导界限构解6.0 第二关",
         "GuideType": 1,
         "ConditionId": [
@@ -9017,6 +9020,7 @@
     {
         "Id": 63802,
         "Priority": 63802,
+        "Ignore": 1,
         "Desc": "v3.5 引导界限构解6.0 困难模式",
         "GuideType": 1,
         "ConditionId": [
@@ -10034,6 +10038,7 @@
     {
         "Id": 64301,
         "Priority": 64301,
+        "Ignore": 1,
         "Desc": "v4.1 引导吃豆人2.0",
         "GuideType": 1,
         "ConditionId": [
@@ -12330,5 +12335,213 @@
         "CompleteId": 65051,
         "ActiveUi": "UiMain",
         "GroupId": 65051
+    },
+    {
+        "Id": 65101,
+        "Priority": 65101,
+        "Ignore": 1,
+        "Desc": "v4.9 吃豆人3.0",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65101,
+        "ActiveUi": "UiPacMan2Main",
+        "GroupId": 65101
+    },
+    {
+        "Id": 65111,
+        "Priority": 65111,
+        "Desc": "v4.9 界限构解主界面",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65111,
+        "ActiveUi": "UiReform2",
+        "GroupId": 65111
+    },
+    {
+        "Id": 65112,
+        "Priority": 65112,
+        "Desc": "v4.9 界限构解配平",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65112,
+        "ActiveUi": "UiReformEnterTips",
+        "GroupId": 65112
+    },
+    {
+        "Id": 65113,
+        "Priority": 65113,
+        "Desc": "v4.9 界限构解困难模式",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863022
+        ],
+        "CompleteId": 65113,
+        "ActiveUi": "UiReform2",
+        "GroupId": 65113
+    },
+    {
+        "Id": 65120,
+        "Priority": 65120,
+        "Desc": "v4.9 通天塔主界面",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65120,
+        "ActiveUi": "UiSkyTowerEntrance",
+        "GroupId": 65120
+    },
+    {
+        "Id": 65121,
+        "Priority": 65121,
+        "Desc": "v4.9 通天塔制作流程",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65121,
+        "ActiveUi": "UiSkyTowerCommon",
+        "GroupId": 65121
+    },
+    {
+        "Id": 65122,
+        "Priority": 65122,
+        "Desc": "v4.9 通天塔采购酬宾流程",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65122,
+        "ActiveUi": "UiSkyTowerWork",
+        "CheckNodeActive": "PanelNoChoose",
+        "GroupId": 65122
+    },
+    {
+        "Id": 65123,
+        "Priority": 65123,
+        "Ignore": 1,
+        "Desc": "v4.9 通天塔快速完成",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65123,
+        "ActiveUi": "UiSkyTowerWork",
+        "CheckNodeActive": "PanelBtnExpedite",
+        "GroupId": 65123
+    },
+    {
+        "Id": 65124,
+        "Priority": 65124,
+        "Desc": "v4.9 通天塔大楼升级",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863272
+        ],
+        "CompleteId": 65124,
+        "ActiveUi": "UiSkyTowerCommon",
+        "GroupId": 65124
+    },
+    {
+        "Id": 65125,
+        "Priority": 65125,
+        "Desc": "v4.9 通天塔二层比安卡上阵",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863271
+        ],
+        "CompleteId": 65125,
+        "ActiveUi": "UiSkyTowerUnlockFood|UiSkyTowerCommon",
+        "GroupId": 65125
+    },
+    {
+        "Id": 65130,
+        "Priority": 65126,
+        "Desc": "v4.9 通天塔比安卡换位",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863270
+        ],
+        "CompleteId": 65130,
+        "ActiveUi": "UiSkyTowerCommon",
+        "GroupId": 65130
+    },
+    {
+        "Id": 65126,
+        "Priority": 65127,
+        "Desc": "v4.9 通天塔六层",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863273
+        ],
+        "CompleteId": 65126,
+        "ActiveUi": "UiSkyTowerUnlockFood",
+        "GroupId": 65126
+    },
+    {
+        "Id": 65127,
+        "Priority": 65128,
+        "Ignore": 1,
+        "Desc": "v4.9 通天塔八层",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800,
+            863274
+        ],
+        "CompleteId": 65127,
+        "ActiveUi": "UiSkyTowerUnlockFood",
+        "GroupId": 65127
+    },
+    {
+        "Id": 65128,
+        "Priority": 65129,
+        "Ignore": 1,
+        "Desc": "v4.9 通天塔指定工位",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65128,
+        "ActiveUi": "UiSkyTowerCommon",
+        "GroupId": 65128
+    },
+    {
+        "Id": 65129,
+        "Priority": 65130,
+        "Ignore": 1,
+        "Desc": "v4.9 通天塔建筑订单",
+        "GuideType": 1,
+        "ConditionId": [
+            862112,
+            774800
+        ],
+        "CompleteId": 65129,
+        "ActiveUi": "UiSkyTowerCommon",
+        "GroupId": 65129
     }
 ]
