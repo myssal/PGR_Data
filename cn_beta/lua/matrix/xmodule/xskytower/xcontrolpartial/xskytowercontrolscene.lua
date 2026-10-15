@@ -79,6 +79,8 @@ function XSkyTowerControl:EnterRoom()
     XLuaBehaviorManager.LoadBehaviorTree(CS.BehaviorTree.XGamePlayType.SkyTower)
     --添加场景相机
     self._Camera = self:AddEntity(require("XModule/XSkyTower/XGameObject/XSkyTowerCamera"))
+    -- 场景类型和相机就绪后统一应用光照，所有楼层共用主场景配置。
+    XMVCA.XSkyTower:InitSceneSetting()
     --进入场景
     for floorId, floorGo in pairs(XMVCA.XSkyTower:GetFloorObjHash()) do
         self:GetRoom(floorId):SetGameObject(floorGo)
@@ -93,27 +95,21 @@ function XSkyTowerControl:ExitRoom()
     if self:IsActivityInTime() then
         self._NeedRequestWhenRelease = true
     end
+    --避免界面非正常关闭时，资源未被销毁
+    XLuaUiManager.Remove("UiSkyTowerCommon")
+    XLuaUiManager.Remove("UiSkyTowerMain")
+end
+
+function XSkyTowerControl:ExitRoomClearRes()
     --场景释放
     for _, room in pairs(self._Rooms) do
         room:Release()
     end
-    --避免界面非正常关闭时，资源未被销毁
-    XLuaUiManager.Remove("UiSkyTowerCommon")
-    XLuaUiManager.Remove("UiSkyTowerMain")
-    --资源释放
-    self:ResetSceneObj()
     self._Rooms = {}
+    --资源释放
+    XMVCA.XSkyTower:ResetSceneObj()
     --卸载行为树
     XLuaBehaviorManager.UnloadBehaviorTree(CS.BehaviorTree.XGamePlayType.SkyTower)
-end
-
-function XSkyTowerControl:ResetSceneObj()
-    ---@type XLoaderUtil
-    local loader = self:GetLoader()
-    for url in pairs(XMVCA.XSkyTower:GetLoadedAssetUrls()) do
-        loader:Unload(url)
-    end
-    XMVCA.XSkyTower:ResetSceneObj()
 end
 
 ---3D房间表现推进（每秒回调）
@@ -160,7 +156,9 @@ function XSkyTowerControl:LocateFloor(floorId, immediate, offsetY)
     if not camera then
         return false
     end
+    XLuaUiManager.SetMask(true)
     return camera:LocateFloor(floorId, immediate, function()
+        XLuaUiManager.SetMask(false)
         self:SetCurFloorId(floorId)
     end, offsetY)
 end
@@ -183,8 +181,10 @@ function XSkyTowerControl:LocatePerform(performId, immediate)
     if not camera or not room then
         return false
     end
+    XLuaUiManager.SetMask(true)
     local node = room:GetPerformNode(config.Type)
     return camera:LocateNode(node, floorId, immediate, function()
+        XLuaUiManager.SetMask(false)
         self:SetCurFloorId(floorId)
     end)
 end
@@ -224,17 +224,16 @@ function XSkyTowerControl:BeginDragEdgeScroll()
     if #floorIds <= 0 then
         return
     end
-    camera:SetHeightLimit(camera:GetFloorLocalY(floorIds[1]), camera:GetFloorLocalY(floorIds[#floorIds]))
+    camera:SetHeightLimit(camera:GetFloorLocalY(floorIds[1]), camera:GetFloorCeilingLocalY(floorIds[#floorIds]))
 end
 
---- 抬手时解锁区间并把越出区间的镜头回弹回来
+--- 抬手时解锁区间
 function XSkyTowerControl:EndDragEdgeScroll()
     self._DragEdgeGroupId = nil
     local camera = self:GetCameraModel()
     if not camera then
         return
     end
-    camera:SnapBackToHeightLimit()
     camera:ClearHeightLimit()
 end
 
@@ -253,7 +252,5 @@ function XSkyTowerControl:GetCurEdgeGroupId()
     return self._DragEdgeGroupId or self:GetCurFloorGroupId()
 end
 --endregion
-
-return XSkyTowerControl
 
 return XSkyTowerControl

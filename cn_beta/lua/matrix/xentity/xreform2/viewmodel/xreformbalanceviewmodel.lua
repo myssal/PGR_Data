@@ -13,6 +13,7 @@ function XReformBalanceViewModel:Ctor()
     self.Data.DifficultyResult = false-- 质量难度档（XReformBalanceLogic.DifficultyResult: Normal/Hard/Nightmare）
     self.Data.WishTotal = 0            -- 愿望总质量
     self.Data.CostTotal = 0            -- 代价总质量
+    self.Data.TiltResult = 0           -- 天平倾斜档（XReformBalanceLogic.TiltResult）
 end
 
 return XReformBalanceViewModel

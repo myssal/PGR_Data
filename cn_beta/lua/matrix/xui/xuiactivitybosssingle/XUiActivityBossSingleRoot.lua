@@ -3,6 +3,7 @@
 local XUiActivityBossSingleRoot = XLuaUiManager.Register(XLuaUi, 'UiActivityBossSingleRoot')
 
 function XUiActivityBossSingleRoot:OnStart(sectionId)
+    XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.FubenActivitySingleBoss)
     local activityId = XDataCenter.FubenActivityBossSingleManager.GetCurActivityId()
 
     if XTool.IsNumberValid(activityId) then
@@ -32,10 +33,6 @@ function XUiActivityBossSingleRoot:OnStart(sectionId)
 end
 
 function XUiActivityBossSingleRoot:OnResume()
-    self._IsResumeRun = true
-end
-
-return XUiActivityBossSingleRootngleRoot:OnResume()
     self._IsResumeRun = true
 end
 

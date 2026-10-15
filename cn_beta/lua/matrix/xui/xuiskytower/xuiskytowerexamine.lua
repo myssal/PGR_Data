@@ -231,7 +231,7 @@ function XUiSkyTowerExamine:OnDynamicTableEvent(evt, index, grid)
 end
 
 function XUiSkyTowerExamine:RefreshProfitData()
-    --与主界面仓库共用统计缓存，统计页只读取理论速率；库存变化不重新计算工位速率
+    --与主界面仓库共用统计缓存，收益读取实际速率，产销读取理论速率；库存变化不重新计算工位速率
     self.ProfitData = self._Control:GetProductionStatistics()
 end
 
@@ -244,8 +244,8 @@ end
 
 function XUiSkyTowerExamine:RefreshProfitView()
     local groupData = self.ProfitData[self.FloorGroupId]
-    local goldSpeed = self._Control:GetFloorValue(groupData and groupData.TheoreticalGoldSpeed or 0, XMVCA.XSkyTower.Digital.One)
-    local characterSpeed = self._Control:GetFloorValue(groupData and groupData.TheoreticalCharacterSpeed or 0, XMVCA.XSkyTower.Digital.One)
+    local goldSpeed = self._Control:GetFloorValue(groupData and groupData.GoldSpeed or 0, XMVCA.XSkyTower.Digital.One)
+    local characterSpeed = self._Control:GetFloorValue(groupData and groupData.CharacterSpeed or 0, XMVCA.XSkyTower.Digital.One)
     if self._GoldSpeed ~= goldSpeed then
         self._GoldSpeed = goldSpeed
         if self.TxtReward1 then

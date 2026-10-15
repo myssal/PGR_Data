@@ -111,7 +111,7 @@ function XUiGridSkyTower3DWorkBench:RefreshSkillTip()
     if self._IsSwapWaiting then
         return
     end
-    if not XTool.IsNumberValid(self.FloorId) or not XTool.IsNumberValid(self.Index) then
+    if self._IsDragClone or not XTool.IsNumberValid(self.FloorId) or not XTool.IsNumberValid(self.Index) then
         self.BubbleSkillTip.gameObject:SetActiveEx(false)
         return
     end
@@ -264,6 +264,8 @@ end
 -- 改造成跟手克隆体：上下文只写anchoredPosition，锚点与轴心必须都落在中心
 function XUiGridSkyTower3DWorkBench:SetupAsDragClone()
     self._IsDragClone = true
+    -- 跟手不显示技能气泡
+    self.BubbleSkillTip.gameObject:SetActiveEx(false)
     local center = CS.UnityEngine.Vector2(0.5, 0.5)
     self.Transform.anchorMin = center
     self.Transform.anchorMax = center

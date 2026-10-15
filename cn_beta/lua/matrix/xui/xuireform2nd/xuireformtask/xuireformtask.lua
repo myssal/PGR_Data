@@ -57,9 +57,7 @@ function XUiReformTask:_Refresh()
         return
     end
 
-    local tasks = XDataCenter.TaskManager.GetTaskList(XDataCenter.TaskManager.TaskType.Reform)
-    XDataCenter.TaskManager.SortTaskList(tasks)
-    tasks = XDataCenter.TaskManager.AddReceiveDataIfAchieved(tasks)
+    local tasks = XMVCA.XReform:GetTaskList(true)
     self._DynamicTable:SetDataSource(tasks)
     self._DynamicTable:ReloadDataASync()
 

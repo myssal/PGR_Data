@@ -12,7 +12,7 @@ function XSkyTowerControl:InitTask()
     self._TaskDataDict = {}
     ---<楼层Id><演出类型><演出Id>
     ---@type table<number,table<number,number>>
-    self._FloorPerformDict = {}
+    --self._FloorPerformDict = {}
     --累计类型
     self._AccumulateTaskType = {
         [TaskType.GainGold] = true,
@@ -76,19 +76,15 @@ function XSkyTowerControl:UpdateTaskSchedule()
 end
 
 function XSkyTowerControl:_UpdatePerformSchedule(floorId, performType)
-    local oldPerformId = self:_GetCurFloorPerformId(floorId, performType)
     local curPerformId = self:GetRunningPerformIdByType(performType, floorId)
-    if XTool.IsNumberValid(oldPerformId) and oldPerformId ~= curPerformId then
-        self:_ClearTaskData(oldPerformId)
-    end
-    self._FloorPerformDict[floorId] = self._FloorPerformDict[floorId] or {}
-    self._FloorPerformDict[floorId][performType] = curPerformId
+    --self._FloorPerformDict[floorId] = self._FloorPerformDict[floorId] or {}
+    --self._FloorPerformDict[floorId][performType] = curPerformId
     self:_UpdateSchedule(curPerformId)
 end
 
-function XSkyTowerControl:_GetCurFloorPerformId(floorId, performType)
-    return self._FloorPerformDict[floorId] and self._FloorPerformDict[floorId][performType] or nil
-end
+--function XSkyTowerControl:_GetCurFloorPerformId(floorId, performType)
+--    return self._FloorPerformDict[floorId] and self._FloorPerformDict[floorId][performType] or nil
+--end
 
 function XSkyTowerControl:_UpdateSchedule(performId)
     if not XTool.IsNumberValid(performId) then
@@ -105,6 +101,7 @@ function XSkyTowerControl:_UpdateSchedule(performId)
         local conditionCfg = XTaskConfig.GetTaskCondition(conditionId)
         local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
         local schedule = taskData.Schedule[1].Value
+        local isNewTask = self._TaskDataDict[taskId] == nil
         ---@type XSkyTowerTaskSchedule
         local scheduleData = self._TaskDataDict[taskId] or {}
         scheduleData.TaskId = taskId
@@ -117,6 +114,10 @@ function XSkyTowerControl:_UpdateSchedule(performId)
             self._TempTaskSchedule[taskId] = schedule
         end
         self._TaskDataDict[taskId] = scheduleData
+        --进入场景或新任务加入时，按任务目标分区补算当前金币速度
+        if isNewTask and scheduleData.TaskType == TaskType.GainGoldSpeed then
+            self:AddTaskCommand(TaskType.GainGoldSpeed, scheduleData.Params[1])
+        end
         :: continue ::
     end
 end
@@ -299,6 +300,7 @@ function XSkyTowerControl:_AddGainGoldSpeedSchedule(scheduleData, value)
     if not table.contains(value, floorGroupId) then
         return
     end
+    --判断是否满足工作数量限制
     local workLimit = scheduleData.Params[3]
     local saleWorkCount = 0
     if XTool.IsNumberValid(workLimit) then
@@ -308,15 +310,20 @@ function XSkyTowerControl:_AddGainGoldSpeedSchedule(scheduleData, value)
                 if info and info.WorkType == XMVCA.XSkyTower.WorkType.Sale then
                     saleWorkCount = saleWorkCount + 1
                     if saleWorkCount > workLimit then
-                        scheduleData.Schedule = 0
                         return
                     end
                 end
             end
         end
     end
+    --进度记录最大值
     local profitData = self:GetProductionStatistics()
-    scheduleData.Schedule = profitData[floorGroupId].GoldSpeed
+    local goldSpeed = math.floor(profitData[floorGroupId].GoldSpeed)
+    if scheduleData.Schedule then
+        scheduleData.Schedule = math.max(scheduleData.Schedule, goldSpeed)
+    else
+        scheduleData.Schedule = goldSpeed
+    end
 end
 
 return XSkyTowerControl

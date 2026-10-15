@@ -361,6 +361,18 @@ function XReformAgency:GetActivityId()
     return self._Model:GetActivityId()
 end
 
+--- 当前活动任务列表（任务组驱动，红点/VM/UI 共用）
+---@return XTaskData[]
+function XReformAgency:GetTaskList(isSort)
+    return self._Model:GetTaskList(isSort)
+end
+
+--- 当前活动任务组 Id（ReformCfg.TaskGroupId -> TaskTimeLimit.Id）
+---@return number
+function XReformAgency:GetTaskGroupId()
+    return self._Model:GetTaskGroupId()
+end
+
 function XReformAgency:GetIsOpen()
     return self._Model:GetIsOpen()
 end

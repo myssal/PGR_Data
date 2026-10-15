@@ -43,7 +43,10 @@ function XUiPanelSkyTowerCommonArea:OnUpdateLoopFloor(floorId)
     else
         local target = self:GetTarget(room, floorId)
         if target and self:IsTargetInScreen(room, target) then
-            self:CreateAreaText(floorId, target):UpdateTransform(room)
+            grid = self:CreateAreaText(floorId, target)
+            if grid then
+                grid:UpdateTransform(room)
+            end
         end
     end
 end
@@ -51,6 +54,9 @@ end
 function XUiPanelSkyTowerCommonArea:CreateAreaText(floorId, target)
     ---@type XUiGridSkyTower3DBase
     local grid = self:CreateGridWithPool()
+    if not grid then
+        return nil
+    end
     grid:SetName(string.format("FloorArea_%s", floorId))
     grid:SetTarget(target)
     grid:Show(self._FloorGroupHash[floorId])

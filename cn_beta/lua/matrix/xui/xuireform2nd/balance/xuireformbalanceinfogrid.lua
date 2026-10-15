@@ -27,8 +27,7 @@ function XUiReformBalanceInfoGrid:Update(side)
     local titleKey = "ReformBalanceCostMassTitle"
     local totalMass = viewModelData.CostTotal
     if isWishSide then
-        titleKey = "ReformBalanceWishMassTitle"
-        totalMass = viewModelData.WishTotal
+        totalMass = viewModelData.WishTotal.."/"..balanceControl:GetMinQuality()
     end
     self.TxtTarget.text = XUiHelper.GetText(titleKey)
     self.TxtWeight.text = totalMass

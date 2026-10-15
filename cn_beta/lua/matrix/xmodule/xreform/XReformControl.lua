@@ -1,6 +1,11 @@
 ---@class XReformControl : XControl
 ---@field private _Model XReformModel
 local XReformControl = XClass(XControl, "XReformControl")
+
+-- 主页章节列表里质量进度已达成值的配色：普通关蓝 / 困难关红
+local QUALITY_COLOR_NORMAL = "5d60ff"
+local QUALITY_COLOR_HARD = "de3333"
+
 function XReformControl:OnInit()
     --初始化内部变量
     self._Model:InitWithServerData()
@@ -91,7 +96,7 @@ function XReformControl:GetStageQualityDesc(stageId)
     return self._Model:GetStageQualityDesc(stageId)
 end
 
--- 主页章节列表用：按难度取该关质量进度（"已完成/目标"）
+-- 主页章节列表用：按难度取该关质量进度，已达成值按难度着色
 ---@param chapter XReform2ndChapter
 ---@param isHardMode boolean
 function XReformControl:GetChapterQualityDescByDifficulty(chapter, isHardMode)
@@ -99,7 +104,9 @@ function XReformControl:GetChapterQualityDescByDifficulty(chapter, isHardMode)
     if not stage then
         return ""
     end
-    return self._Model:GetStageQualityDesc(stage:GetId())
+    local achievedQuality, targetQuality = self._Model:GetStageBalanceQuality(stage:GetId())
+    return string.format("<color=#%s>%s</color>/%s",
+        isHardMode and QUALITY_COLOR_HARD or QUALITY_COLOR_NORMAL, achievedQuality, targetQuality)
 end
 
 function XReformControl:IsChapterFinished(chapter)

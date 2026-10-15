@@ -48,9 +48,8 @@ local XUiPacMan2ConditionField = {
     -- 反杀道具刚刚整体开放，可以被玩家拾取。
     -- 不表示玩家已经拾取道具或进入反杀阶段。
     KillItemActivated = "KillItemActivated",
-}
-
-return XUiPacMan2ConditionField��时正常完成。
+    
+    -- 普通开局的321倒计时正常完成。
     -- 包括正常播放或跳过开局剧情后的倒计时，以及结算界面再来一局。
     -- 不包括暂停菜单内重新挑战。
     OpeningCountdownCompleted = "OpeningCountdownCompleted",

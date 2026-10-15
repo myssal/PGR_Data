@@ -79,6 +79,10 @@ end
 
 function XUiShopItem:AutoAddListener()
 
+    if self.BtnTen then
+        self.BtnTen:AddEventListener(handler(self, self.OnBtnTenClick))
+    end
+    
     self.BtnMax.CallBack = function()
         self:OnBtnMaxClick()
     end
@@ -180,6 +184,19 @@ end
 
 function XUiShopItem:OnBtnMaxClick()
     self.Count = math.min(self.MaxCount, self.CanBuyCount)
+    self:RefreshConsumes()
+    self:JudgeBuy()
+    self.TxtSelect.text = self.Count
+    self:SetCanAddOrMinusBtn()
+end
+
+function XUiShopItem:OnBtnTenClick()
+    if self.Count >= self.MaxCount then
+        XMVCA.XEquip:ShowBoxOverLimitText()
+        return
+    end
+
+    self.Count = math.min(self.Count + 10, self.MaxCount)
     self:RefreshConsumes()
     self:JudgeBuy()
     self.TxtSelect.text = self.Count
@@ -505,20 +522,6 @@ function XUiShopItem:CheckBuyItemTypeOfWeaponFashion(cb)
         end
     end
     cb()
-end
-
-function XUiShopItem:GetCountProxy(id)
-    if self.Proxy and self.Proxy.GetCount then
-        return self.Proxy.GetCount(id)
-    end
-    return XDataCenter.ItemManager.GetCount(id)
-end
-
-function XUiShopItem:TipDialog(cancelCb, confirmCb, TextKey)
-    XLuaUiManager.Open("UiDialog", CS.XTextManager.GetText("TipTitle"), CS.XTextManager.GetText(TextKey), XUiManager.DialogType.Normal, cancelCb, confirmCb)
-end
-
-return XUiShopItem()
 end
 
 function XUiShopItem:GetCountProxy(id)

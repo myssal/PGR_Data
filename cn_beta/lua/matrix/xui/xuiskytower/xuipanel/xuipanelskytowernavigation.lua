@@ -293,9 +293,6 @@ function XUiPanelSkyTowerNavigation:GetPerformDesc(performId)
     if not XTool.IsNumberValid(performId) then
         return nil
     end
-    if not self._Control:IsPerformShow(performId) then
-        return nil
-    end
     local taskIds = self._Control:GetPerformTaskIds(performId)
     for _, taskId in ipairs(taskIds) do
         if not self._Control:CheckPerformTaskFinish(taskId) then

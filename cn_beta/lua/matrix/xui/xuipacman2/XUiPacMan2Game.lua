@@ -4,9 +4,13 @@ local XUiToggle = require("XUi/XUiCommon/XUiToggle")
 local XUiPacMan2EventRuntime = require("XUi/XUiPacMan2/XUiPacMan2EventRuntime")
 local XUiPacMan2VisualController = require("XUi/XUiPacMan2/XUiPacMan2VisualController")
 local EventDefine = require("XUi/XUiPacMan2/XUiPacMan2EventDefine")
+local XPacMan2Statistics = require("XUi/XUiPacMan2/XPacMan2Statistics")
+local LeaveType = XPacMan2Statistics.LeaveType
 
 local PacMan2SignalType = CS.XPacMan2.XPacMan2SignalType
 local GamePauseReason = CS.XPacMan2.XPacMan2GamePauseReason
+local CsEntityEnum = CS.XPacMan2.XPacMan2EntityEnum
+local CountdownSource = EventDefine.CountdownSource
 
 -- 当前美术血格支持的玩家生命上限；初始生命仍读取关卡配置。
 local PlayerMaxLives = 6
@@ -33,6 +37,11 @@ local DisabledItemSoundCueId = 0
 local InputToggleValue = {
     Joystick = 0,
     Touch = 1,
+}
+
+local SettleType = {
+    Abort = 0,
+    Normal = 1,
 }
 
 -- 游戏实体类型枚举
@@ -163,6 +172,16 @@ function XUiPacMan2Game:OnAwake()
     self._IsStageStartRequestCompleted = false
     self._IsOpeningFlowStarted = false
     self._OpeningControlLockToken = nil
+
+    ---@type XPacMan2Statistics
+    self._Statistics = nil
+
+    -- 服务器是否真正接受了本次开局。
+    -- 与调试模式下允许继续播放开局流程的标记分开。
+    self._HasServerStageStarted = false
+
+    -- 本次运行是否已经提交过结算，不表示服务器返回成功。
+    self._HasSubmittedSettle = false
 end
 
 ---@param stageId number
@@ -173,7 +192,7 @@ function XUiPacMan2Game:OnStart(stageId, isRestart)
     -- 只记录本次进入方式，不保存关卡播放历史。
     -- 普通进入不传参数，默认播放开局事件。
     self._IsRestart = isRestart == true
-
+    self._Control:RecordGameEntry(self._IsRestart)
     self:StartGame()
 end
 
@@ -192,6 +211,8 @@ function XUiPacMan2Game:OnDestroy()
     self:_ReleaseOpeningControlLock()
     -- 禁用道具音效（需要在 _StagePrefab 被置为 nil 之前调用）
     self:_DisableItemSounds()
+
+    self._Statistics = nil
 
     if self._EventRuntime then
         self._EventRuntime:Dispose()
@@ -299,6 +320,9 @@ function XUiPacMan2Game:StartGame()
     self._OpeningEventGroupRuntimeId = nil
     self._IsOpeningFlowFinished = false
     
+    self._HasServerStageStarted = false
+    self._HasSubmittedSettle = false
+    
     local stageConfig = self._Control:GetStageConfig(self._StageId)
     local prefab = stageConfig.Prefab
     if not prefab or prefab == "" then
@@ -315,6 +339,8 @@ function XUiPacMan2Game:StartGame()
     self._InputManager:BindMovement(self._PlayerMovement)
     self:ImportConfig()
 
+    -- 每次关卡运行创建独立统计对象，不继承上一局的数据。
+    self._Statistics = XPacMan2Statistics.New(self._GameManager:GetGhostState())
 
     -- let's start the game
     self._GameManager:Pause()
@@ -330,27 +356,27 @@ function XUiPacMan2Game:StartGame()
     self._EventRuntime:InitializeContext(self._GameManager)
     self._GameUiController:BindGameManager(self._GameManager)
     self._GameUiController:Refresh()
+    local gameManager = self._GameManager
+    local function isCurrentGame()
+        return self._GameManager == gameManager
+    end
     XMVCA.XPacMan2:PacMan2StageStartRequest(self._StageId, function(isSuccess)
         if isSuccess then
+            self._HasServerStageStarted = true
             self._IsStageStartRequestCompleted = true
             self:_TryStartOpeningFlow()
             return
         end
-
         XLog.Warning("[XUiPacMan2Game] PacMan2StageStartRequest失败")
-
-        -- Debug环境下允许跳过服务器检查，继续测试开局流程。
         if XMain.IsZLBDebug then
             self._IsStageStartRequestCompleted = true
             self:_TryStartOpeningFlow()
             return
         end
-
-        -- 正式环境请求失败时不能继续游戏。
-        -- 释放开局锁并关闭游戏界面，避免玩家永久停留在无法操作的界面。
+        
         self:_ReleaseOpeningControlLock()
         self:Close()
-    end)
+    end,isCurrentGame)
 
     self:InitBackground()
     self._GameUiController:InitStarPosition()
@@ -363,39 +389,12 @@ function XUiPacMan2Game:OpenSettlement()
         self._InputManager:RestoreCursor()
         self._InputManager:Disable()
     end
-    
-    -- 只有成功才发送请求
-    if self._GameManager:GetGameState() == GameState.GameClear then
-        local data = {
-            StageId = self._StageId,
-            Score = self._GameManager:GetOrbs(),
-            --玩法耗时
-            Time = math.floor(self._GameManager.Duration),
-            --算力结晶
-            Orbs = self._GameManager.Orbs,
-            --吸入怪兽
-            Kills = self._GameManager.Kills,
-            --剩余生命
-            Hp = self._GameManager:GetPlayerHp(),
-            --是否触发1血保底系统
-            IsLastHp = self._GameManager.IsLastHp,
-            --冲刺穿越
-            Shoe = {
-                -- 普通怪
-                { Id = EntityEnum.Ghost, Times = self._GameManager.ShoeNormalGhost, },
-                -- 范围怪
-                { Id = EntityEnum.RangeGhost, Times = self._GameManager.ShoeRangeGhost, },
-                -- 淤泥怪
-                { Id = EntityEnum.SlowGhost, Times = self._GameManager.ShoeSlowGhost, },
-                -- 跑鞋道具
-                { Id = EntityEnum.Shoe, Times = self._GameManager.ShoeProp, }
-            },
-            --夺回豆子数-埋点
-            TakeBackPoint = self._GameManager.OrbsPayback,
-            --是否触发全图追击-埋点
-            IsTriggerChase = self._GameManager:GetGhostState() == CS.XPacMan2.XPacMan2GhostState.Attack or self._GameManager:GetGhostState() == CS.XPacMan2.XPacMan2GhostState.ReviveProtectionTime
-        }
-        XMVCA.XPacMan2:PacMan2SettleRequest(data)
+
+    local gameState = self._GameManager:GetGameState()
+    if gameState == GameState.GameClear then
+        self:_SubmitSettle(SettleType.Normal)
+    elseif gameState == GameState.GameOver then
+        self:_SubmitSettle(SettleType.Abort)
     end
 
     ---@class XPacMan2SettlementData
@@ -413,7 +412,14 @@ function XUiPacMan2Game:OpenSettlement()
         --ShoeScore = self._GameManager.ShoeScore,
         OrbsPayback = self._GameManager.OrbsPayback,
     }
-    XLuaUiManager.Open("UiPacMan2PopupSettlement", data)
+    XLuaUiManager.Open("UiPacMan2PopupSettlement", data, function()
+        -- 使用打开结算页面时的本局结果快照。
+        if data.IsWin then
+            self:ReportRoundLeave(LeaveType.RestartAfterClear, data.Score)
+        else
+            self:ReportRoundLeave(LeaveType.Restart)
+        end
+    end)
 end
 
 function XUiPacMan2Game:ImportConfig()
@@ -505,7 +511,9 @@ function XUiPacMan2Game:ImportConfig()
     local ghostPatrols = stagePrefab:GetComponentsInChildren(typeof(CS.XPacMan2.XPacMan2BehaviorGhostPatrol), true)
     for i = 0, ghostPatrols.Length - 1 do
         local ghost = ghostPatrols[i]
-
+        local ghostEntity = ghost:GetComponent(typeof(CS.XPacMan2.XPacMan2Ghost))
+        ghostEntity:SetEntityType(CsEntityEnum.Ghost)
+        
         local speed = ghostConfig.Speed
         local movement = ghost:GetComponent(typeof(CS.XPacMan2.XPacMan2Movement))
         movement.Speed = self:Divide1000(speed)
@@ -526,6 +534,9 @@ function XUiPacMan2Game:ImportConfig()
     for i = 0, ghostRanges.Length - 1 do
         local ghost = ghostRanges[i]
         if ghost:GetType().Name == "XPacMan2BehaviorGhostRange" then
+            local ghostEntity = ghost:GetComponent(typeof(CS.XPacMan2.XPacMan2Ghost))
+            ghostEntity:SetEntityType(CsEntityEnum.RangeGhost)
+            
             local speed = ghostRangeConfig.Speed
             local movement = ghost:GetComponent(typeof(CS.XPacMan2.XPacMan2Movement))
             movement.Speed = self:Divide1000(speed)
@@ -547,6 +558,10 @@ function XUiPacMan2Game:ImportConfig()
     for i = 0, ghostSlowDowns.Length - 1 do
         ---@type XPacMan2.XPacMan2SlowDown
         local ghost = ghostSlowDowns[i]
+        
+        local ghostEntity = ghost.transform.parent:GetComponent(typeof(CS.XPacMan2.XPacMan2Ghost))
+        ghostEntity:SetEntityType(CsEntityEnum.SlowGhost)
+        
         local speed = ghostSlowConfig.Speed
         local movement = ghost.transform.parent:GetComponent(typeof(CS.XPacMan2.XPacMan2Movement))
         movement.Speed = self:Divide1000(speed)
@@ -615,6 +630,10 @@ function XUiPacMan2Game:ImportConfig()
         local snakes = stagePrefab:GetComponentsInChildren(typeof(CS.XPacMan2.XPacMan2SnakeHead), true)
         for i = 0, snakes.Length - 1 do
             local snake = snakes[i]
+            
+            local ghostEntity = snake:GetComponent(typeof(CS.XPacMan2.XPacMan2Ghost))
+            ghostEntity:SetEntityType(CsEntityEnum.Snake)
+            
             snake.MaxLength = snakeConfig.Params[1]
 
             local movement = snake:GetComponent(typeof(CS.XPacMan2.XPacMan2Movement))
@@ -628,6 +647,10 @@ function XUiPacMan2Game:ImportConfig()
         local ghostEatOrbs = stagePrefab:GetComponentsInChildren(typeof(CS.XPacMan2.XPacMan2BehaviorGhostEatOrb), true)
         for i = 0, ghostEatOrbs.Length - 1 do
             local ghostEatOrb = ghostEatOrbs[i]
+            
+            local ghostEntity = ghostEatOrb:GetComponent(typeof(CS.XPacMan2.XPacMan2Ghost))
+            ghostEntity:SetEntityType(CsEntityEnum.EatGhost)
+            
             ghostEatOrb.SpeedHungry = self:Divide1000(ghostEatOrbConfig.Speed)
             ghostEatOrb.SpeedFull = self:Divide1000(ghostEatOrbConfig.Params[1])
             ghostEatOrb.Full = ghostEatOrbConfig.Params[2]
@@ -787,7 +810,23 @@ function XUiPacMan2Game:_CancelSettlementSchedule()
     self._SettlementTimerId = nil
 end
 
+---播放321倒计时，并在正常完成后恢复原有游戏流程。
+---根据本次来源，额外通知事件系统对应的倒计时完成条件。
+---@param pauseReason XPacMan2.XPacMan2GamePauseReason|nil
 function XUiPacMan2Game:StartCountDown(pauseReason)
+    -- 开始时确定本次倒计时来源，完成回调直接使用该结果。
+    -- 受伤恢复优先按本次pauseReason判断；
+    -- _IsRestart只用于区分关卡开始时的普通开局和局内重开。
+    local countdownSource
+
+    if pauseReason == GamePauseReason.DamageRecovery then
+        countdownSource = CountdownSource.DamageRecovery
+    elseif pauseReason == nil then
+        countdownSource = self._IsRestart and CountdownSource.Restart or CountdownSource.Opening
+    end
+
+    -- 关闭暂停菜单继续游戏时，不产生这三个倒计时完成条件。
+
     if self._InputManager then
         self._InputManager:Disable()
     end
@@ -804,13 +843,20 @@ function XUiPacMan2Game:StartCountDown(pauseReason)
         if pauseReason == GamePauseReason.DamageRecovery then
             self._GameManager.IsPauseOnHpDecrease = false
         end
+
         self._GameManager:Resume()
 
         if self._InputManager then
             self._InputManager:Enable()
         end
+
         if pauseReason and self._EventRuntime then
             self._EventRuntime:ReleasePause(pauseReason)
+        end
+
+        -- 原有倒计时结束及恢复流程完成后，再报告本次瞬时条件。
+        if countdownSource and self._EventRuntime then
+            self._EventRuntime:OnCountdownCompleted(countdownSource)
         end
     end)
 end
@@ -834,6 +880,9 @@ function XUiPacMan2Game:OpenPauseUi()
     -- 修复:复活触发倒计时的时候，点快点能打开暂停界面
     if self._GameManager:GetGameState() == GameState.Playing then
         self._GameManager:Pause()
+        if self._Statistics then
+            self._Statistics:BeginManualPause()
+        end
         if self._EventRuntime then
             self._EventRuntime:OnGamePauseRequested(GamePauseReason.PauseMenu)
         end
@@ -842,10 +891,22 @@ function XUiPacMan2Game:OpenPauseUi()
             self._InputManager:RestoreCursor()
             self._InputManager:Disable()
         end
-        XLuaUiManager.Open("UiPacMan2PopupStageStop", self._StageId, function()
-            self:StartCountDown(GamePauseReason.PauseMenu)
-            --self._GameManager:Resume()
-        end)
+        XLuaUiManager.Open("UiPacMan2PopupStageStop", self._StageId,
+            function()
+                -- ESC菜单停留结束，后面的恢复倒计时计入对局时长。
+                if self._Statistics then
+                    self._Statistics:EndManualPause()
+                end
+
+                self:StartCountDown(GamePauseReason.PauseMenu)
+            end,
+            function()
+                self:SubmitAbortSettlement()
+            end,
+            function(isRestart)
+                local leaveType = isRestart and LeaveType.Restart or LeaveType.Abort
+                self:ReportRoundLeave(leaveType)
+            end)
     else
         XLog.Warning("[XUiPacMan2Game] 游戏不在进行中，禁止打开暂停界面")
     end
@@ -1190,6 +1251,14 @@ function XUiPacMan2Game:OnNotify(eventId, gameManager, message, ...)
     end
 
     -- 其余消息必须是C#已经收集完成的完整业务Transaction。
+    
+    -- 先记录业务事实，再执行可能产生表现和流程回调的逻辑。
+    -- Statistics只更新统计数据，不触发游戏流程。
+    if self._Statistics then
+        self._Statistics:OnGameSignalTransaction(message)
+    end
+    
+
     -- Runtime先处理暂停请求，保证本事务命中的0秒事件不会提前播放。
     if self._EventRuntime then
         self._EventRuntime:OnGameSignalTransaction(message)
@@ -1328,6 +1397,10 @@ function XUiPacMan2Game:_TryStartOpeningFlow()
 
     self._IsOpeningFlowStarted = true
 
+    if self._HasServerStageStarted and self._Statistics then
+        self._Statistics:BeginRound()
+    end
+
     XLog.Debug("[XUiPacMan2Game] OpeningFlowStarted, stageId=" .. tostring(self._StageId))
 
     -- 局内重开仍然等待场景加载和服务器开始请求完成，
@@ -1349,82 +1422,6 @@ function XUiPacMan2Game:_TryStartOpeningFlow()
     local onOpeningCompleted = function()
         XLog.Debug("[XUiPacMan2Game] OpeningEventCompleted, stageId=" .. tostring(self._StageId))
         self:_FinishOpeningFlow()
-    end
-
-    if not self._EventRuntime then
-        onOpeningCompleted()
-        return
-    end
-
-    local groupRuntimeId = self._EventRuntime:ExecuteOpeningEvent(self._StageId, onOpeningCompleted)
-
-    -- 零秒事件可能同步完成，不能把已经结束的运行Id重新写回来。
-    if not self._IsOpeningFlowFinished then
-        self._OpeningEventGroupRuntimeId = groupRuntimeId
-    end
-end
-
----正常播放完成、主动跳过和局内重开共用的开局结束入口。
----撤销本流程提供的跳过响应，再进入原有倒计时。
----不负责打开或关闭Overlay，页面是否关闭由具体业务操作决定。
-function XUiPacMan2Game:_FinishOpeningFlow()
-    if not self._IsOpeningFlowStarted or self._IsOpeningFlowFinished then
-        return
-    end
-
-    self._IsOpeningFlowFinished = true
-    self._OpeningEventGroupRuntimeId = nil
-
-    -- 开局已经结束，撤销“跳过开局”的入口，但不关闭Overlay。
-    if self._VisualController then
-        self._VisualController:SetOverlaySkipCallback(nil)
-    end
-
-    XLog.Debug("[XUiPacMan2Game] OpeningFlowFinished, stageId=" .. tostring(self._StageId))
-
-    -- 保持原有顺序：先启动倒计时停用输入，再释放开局操作锁。
-    self:StartCountDown()
-    self:_ReleaseOpeningControlLock()
-end
-
----由Overlay的跳过入口调用。
----先取消事件组，再关闭页面，页面关闭后继续倒计时。
----@return boolean 是否受理
-function XUiPacMan2Game:OnOverlaySkipRequested()
-    local groupRuntimeId = self._OpeningEventGroupRuntimeId
-
-    if self._IsOpeningFlowFinished or not groupRuntimeId then
-        return false
-    end
-
-    if not self._EventRuntime or not self._VisualController then
-        return false
-    end
-
-    -- 只取消当前开局实例，不调用正常完成回调，也不重置整个Runtime。
-    if not self._EventRuntime:CancelEventGroup(groupRuntimeId) then
-        return false
-    end
-
-    -- 清除Id后，重复请求不会再次进入。
-    self._OpeningEventGroupRuntimeId = nil
-
-    XLog.Debug("[XUiPacMan2Game] OpeningSkipRequested")
-
-    -- 关闭期间仍保留Game的开局操作锁。
-    -- 直到页面关闭、开始321后，再由统一结束入口释放。
-    self._VisualController:SetOverlayEnabled(false, function()
-        self:_FinishOpeningFlow()
-    end)
-
-    return true
-end
-
-function XUiPacMan2Game:OnPacMan2EventGroupCompleted(groupRuntime)
-    XLog.Debug("[XUiPacMan2Game] EventGroup completed, eventGroupId=" .. tostring(groupRuntime.EventGroupId) .. ", runtimeId=" .. tostring(groupRuntime.RuntimeId))
-end
-
-return XUiPacMan2Game:_FinishOpeningFlow()
     end
 
     if not self._EventRuntime then

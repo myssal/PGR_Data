@@ -496,13 +496,14 @@ function XUiPanelAwarenessOneClickResonance:RefreshSetting()
     local cachedSkillMap = settingControl:GetCharacterSetting(characterId, settingType.AwarenessResonanceSelectedSkillMap)
     self.CachedSelectedResonanceSkillMap = cachedSkillMap
     self.SelectedItemIdMap = settingControl:GetCharacterSetting(characterId, settingType.AwarenessResonanceSelectedItemIdMap)
-    self:RefreshSelectedResonanceSkillMap(cachedSkillMap)
 
     -- 恢复按钮组选中态；索引 0 表示未选择
     RestoreButtonGroupSelect(self.PanelChooseTimes, self.TimesIndex)
 
     -- 技能类型按钮先恢复可选状态，再按缓存恢复选中并设置禁用态，避免选择禁用按钮触发回调。
     self:RefreshSkillTypeButtonState()
+    -- 按按钮刷新后的最终匹配模式恢复选择，保持目标计数与选择弹窗一致。
+    self:RefreshSelectedResonanceSkillMap(cachedSkillMap)
 
     local buttonState = self.IsChoose and CS.UiButtonState.Select or CS.UiButtonState.Normal
     self.BtnChoose:SetButtonState(buttonState)
@@ -1724,12 +1725,6 @@ function XUiPanelAwarenessOneClickResonance:OnChooseMaterialClick(data)
         local settingControl = self._Control.OneClickAutoSettingControl
         local settingType = XMVCA.XEquip.Enum.OneClickAutoSettingType
         settingControl:SetCharacterSetting(self.Parent.CharacterId, settingType.AwarenessResonanceSelectedItemIdMap, self.SelectedItemIdMap)
-        self.Parent:RefreshPreview()
-    end
-end
-
-return XUiPanelAwarenessOneClickResonance
-dItemIdMap)
         self.Parent:RefreshPreview()
     end
 end

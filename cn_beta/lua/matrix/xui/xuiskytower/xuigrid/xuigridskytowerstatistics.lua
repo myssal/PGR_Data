@@ -74,19 +74,19 @@ function XUiGridSkyTowerStatistics:RefreshProfit(data, forceRefresh)
     local produceSpeed = data and data.TheoreticalProduceSpeed or 0
     if forceRefresh or self._RawProduceSpeed ~= produceSpeed then
         self._RawProduceSpeed = produceSpeed
-        local displaySpeed = self._Control:GetAroundValue(produceSpeed, digital)
+        local displaySpeed = self._Control:GetFloorValue(produceSpeed, digital)
         self.GridProduce:Refresh(self.Titles[1], displaySpeed, self.Unit)
     end
     local consumeSpeed = data and data.TheoreticalConsumeSpeed or 0
     if forceRefresh or self._RawConsumeSpeed ~= consumeSpeed then
         self._RawConsumeSpeed = consumeSpeed
-        local displaySpeed = self._Control:GetAroundValue(consumeSpeed, digital)
+        local displaySpeed = self._Control:GetFloorValue(consumeSpeed, digital)
         self.GridConsume:Refresh(self.Titles[2], -displaySpeed, self.Unit)
     end
     local changeSpeed = data and data.TheoreticalChangeSpeed or 0
     if forceRefresh or self._RawChangeSpeed ~= changeSpeed then
         self._RawChangeSpeed = changeSpeed
-        local displaySpeed = self._Control:GetAroundValue(changeSpeed, digital)
+        local displaySpeed = self._Control:GetFloorValue(changeSpeed, digital)
         self.GridChange:Refresh(self.Titles[3], displaySpeed, self.Unit)
     end
     local count = data and data.Count or 0

@@ -1,6 +1,7 @@
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiReform2ndChapterGrid = require("XUi/XUiReform2nd/MainPage/XUiReform2ndChapterGrid")
+local XUiButton = require("XUi/XUiCommon/XUiButton")
 
 ---@class XUiReform2ndChapterData
 ---@field Name string
@@ -31,10 +32,15 @@ function XUiReform2New:OnAwake()
 
     XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint)
     self:BindExitBtns(self.BtnBack, self.BtnMainUi)
-    self:BindHelpBtn(self.BtnHelp, self._Control:GetHelpKey())
+    local helpKey = self._Control:GetHelpKey()
+    self:BindHelpBtn(self.BtnHelp, helpKey)
 
     self.BtnGiftNor:AddEventListener(handler(self, self.OnBtnGiftClick))
     self.BtnGiftHard:AddEventListener(handler(self, self.OnBtnGiftClick))
+    ---@type XUiButtonLua
+    self._BtnGiftNorLua = XUiButton.New(self.BtnGiftNor)
+    ---@type XUiButtonLua
+    self._BtnGiftHardLua = XUiButton.New(self.BtnGiftHard)
     self.BtnChangeNorToHard:AddEventListener(handler(self, self.OnBtnChangeToHardClick))
     self.BtnChangeHardToNor:AddEventListener(handler(self, self.OnBtnChangeToNorClick))
 
@@ -178,10 +184,13 @@ end
 
 function XUiReform2New:RefreshTaskProgress()
     local txt, imgExp = self._ViewModel:GetTaskProgressTextAndImgExp()
-    local button = self._IsHard and self.BtnGiftHard or self.BtnGiftNor
+    local button, luaButton = self.BtnGiftNor, self._BtnGiftNorLua
+    if self._IsHard then
+        button, luaButton = self.BtnGiftHard, self._BtnGiftHardLua
+    end
 
     button:SetNameByGroup(0, txt)
-    button:SetFillAmount("Level/ImgExp", imgExp)
+    luaButton:SetFillAmount("Level/ImgExp", imgExp)
 end
 
 function XUiReform2New:RefreshDifficultyStyle()
@@ -241,7 +250,11 @@ function XUiReform2New:OnChapterClick(index)
 
     local chapterIndex = data.ChapterIndex
     if not data.IsUnlocked then
-        XUiManager.TipMsg(self._ViewModel:GetHardChapterLockedTipByIndex(chapterIndex))
+        if self._IsHard then
+            XUiManager.TipMsg(self._ViewModel:GetHardChapterLockedTipByIndex(chapterIndex))
+        else
+            XUiManager.TipMsg(self._ViewModel:GetChapterLockedTipByIndex(chapterIndex))
+        end
         return
     end
 
@@ -255,7 +268,7 @@ end
 
 function XUiReform2New:OnBtnChangeToHardClick()
     if not self._Control:IsUnlockAllStageHard() and not self._Control:IsSuperior() then
-        XUiManager.TipText("ReformLockDifficulty")
+        XUiManager.TipText("ReformLockHardDifficulty")
         return
     end
     self:SwitchDifficulty(true)
@@ -272,7 +285,11 @@ function XUiReform2New:SwitchDifficulty(isHard)
     if self._TaskRedPoint then
         XRedPointManager.Check(self._TaskRedPoint)
     end
-    self:PlayAnimation("ModeQiehuan")
+    if self._IsHard then
+        self:PlayAnimation("TabHard")
+    else
+        self:PlayAnimation("TabNor")
+    end
 end
 
 function XUiReform2New:OnBtnGiftClick()

@@ -7,6 +7,8 @@ local XReformBalanceControl = XClassPartial("XReformBalanceControl")
 local ConfigKey = {
     PerfectBalanceMassBonusRate = "PerfectBalanceMassBonusRate",       -- 完美配平质量加成（百分数，如 10 表示 +10%）
     NormalBalanceMassDifferenceRate = "NormalBalanceMassDifferenceRate", -- 普通配平差异阈值（百分数，如 10 表示 10%）
+    SevereMassDifferenceRate = "SevereMassDifferenceRate",             -- 大幅倾斜差异阈值（百分数）
+    SpineTweenTime = "SpineTweenTime",                                 -- 天平倾斜动效过渡时长（秒）
     MinSelectCharacterCount = "MinSelectCharacterCount",               -- 最少选择角色数
     MinSelectEnemyCount = "MinSelectEnemyCount",                       -- 最少选择敌人数
 }
@@ -46,14 +48,37 @@ function XReformBalanceControl:RefreshBalanceResult()
     local normalThreshold = self:GetBalanceConfigRate(ConfigKey.NormalBalanceMassDifferenceRate)
     local balanceResult = logic:JudgeBalance(wishTotal, costTotal, normalThreshold)
     local difficultyResult = logic:JudgeDifficulty(costTotal, self:_GetStageConfig().DifficultyMassThresholds)
+    local tiltResult = logic:JudgeTilt(wishTotal, costTotal, normalThreshold,
+        self:GetBalanceConfigRate(ConfigKey.SevereMassDifferenceRate))
 
     local viewModel = self:GetBalanceViewModel()
     viewModel.Data.WishTotal = wishTotal
     viewModel.Data.CostTotal = costTotal
     viewModel.Data.BalanceResult = balanceResult
     viewModel.Data.DifficultyResult = difficultyResult
+    viewModel.Data.TiltResult = tiltResult
 
     self:RefreshSpecialAffix()
+end
+
+--- 天平倾斜动效的过渡时长（秒）
+---@return number
+function XReformBalanceControl:GetSpineTweenTime()
+    return self:GetBalanceConfigNumber(ConfigKey.SpineTweenTime)
+end
+
+--- 完美配平的额外愿望质量
+--- 仅困难关走质量加成，普通关的完美配平给的是战斗 buff
+---@return number
+function XReformBalanceControl:GetPerfectBonusMass()
+    local viewModelData = self:GetBalanceViewModel().Data
+    if viewModelData.BalanceResult ~= self:GetBalanceLogic().BalanceResult.Perfect
+        or self:GetStageDifficulty() ~= XEnumConst.REFORM.DIFFICULTY.HARD then
+        return 0
+    end
+    local wishTotal = viewModelData.WishTotal
+    local boostRate = self:GetBalanceConfigRate(ConfigKey.PerfectBalanceMassBonusRate)
+    return math.floor(self:GetBalanceLogic():ApplyPerfectBoost(wishTotal, boostRate) - wishTotal)
 end
 
 --- 当前愿望质量是否达关卡最低目标（进关条件之一）
@@ -82,7 +107,6 @@ function XReformBalanceControl:IsMinSelectCountMet()
 end
 
 --- 当前已触发的羁绊（特殊词缀候选）
---- Bond 表无关卡列，取全表交给 Logic 按已选角色/词缀逐行判定
 ---@return table[] [{ BondId, UpgradedAffixIds, UnlockedAffixIds }]
 function XReformBalanceControl:GetTriggeredBonds()
     return self:GetBalanceLogic():JudgeBonds(
@@ -92,14 +116,19 @@ function XReformBalanceControl:GetTriggeredBonds()
     )
 end
 
+--- 本关可触发的羁绊配置
 ---@return table[]
 function XReformBalanceControl:_GetBondRows()
-    if not self._BondRows then
+    if self._BondRowsStageId ~= self._StageId then
         local bondRows = {}
-        for _, bondConfig in pairs(self:GetAllBalanceBond()) do
-            bondRows[#bondRows + 1] = bondConfig
+        for _, bondId in ipairs(self:_GetStageConfig().BalanceBondIds or table.empty) do
+            local bondConfig = self:GetBalanceBond(bondId)
+            if bondConfig then
+                bondRows[#bondRows + 1] = bondConfig
+            end
         end
         self._BondRows = bondRows
+        self._BondRowsStageId = self._StageId
     end
     return self._BondRows
 end
@@ -109,11 +138,21 @@ end
 --- 代价总质量是否超出预设
 ---@return boolean
 function XReformBalanceControl:IsCostMassExceed()
-    local thresholds = self:_GetStageConfig().DifficultyMassThresholds
-    if not thresholds or #thresholds == 0 then
+    local costMassLimit = self:GetCostMassLimit()
+    if costMassLimit <= 0 then
         return false
     end
-    return self:GetBalanceViewModel().Data.CostTotal > thresholds[#thresholds]
+    return self:GetBalanceViewModel().Data.CostTotal > costMassLimit
+end
+
+--- 代价质量预设上限
+---@return number
+function XReformBalanceControl:GetCostMassLimit()
+    local thresholds = self:_GetStageConfig().DifficultyMassThresholds
+    if not thresholds or #thresholds == 0 then
+        return 0
+    end
+    return thresholds[#thresholds]
 end
 
 --region 特殊词缀（羁绊触发）
@@ -123,17 +162,28 @@ end
 ---   UpgradedAffixIds = 自身强化类
 function XReformBalanceControl:RefreshSpecialAffix()
     local specialAffixIdSet = {}
-    local specialAffixSource = {}
     local unlockedAffixIds = {}
+    local enhanceAffixIdSet = {}
     local hits = self:GetTriggeredBonds()
     for index = 1, #hits do
         local hit = hits[index]
-        self:_MarkSpecialAffix(specialAffixIdSet, specialAffixSource, hit.UpgradedAffixIds, hit.BondId)
-        self:_MarkSpecialAffix(specialAffixIdSet, specialAffixSource, hit.UnlockedAffixIds, hit.BondId, unlockedAffixIds)
+        self:_MarkSpecialAffix(specialAffixIdSet, hit.UpgradedAffixIds)
+        self:_MarkSpecialAffix(specialAffixIdSet, hit.UnlockedAffixIds, unlockedAffixIds)
+        -- 强化箭头只给被强化词缀
+        self:_MarkSpecialAffix(enhanceAffixIdSet, hit.UpgradedAffixIds)
     end
     self._SpecialAffixIdSet = specialAffixIdSet
-    self._SpecialAffixSource = specialAffixSource
     self._UnlockedAffixIds = unlockedAffixIds
+    self._EnhanceAffixIdSet = enhanceAffixIdSet
+end
+
+--- 该砝码是否展示强化箭头（只有我方词缀会亮）
+function XReformBalanceControl:IsWeightBondEnhanced(massId)
+    local massConfig = self:GetBalanceMass(massId)
+    if massConfig.WeightType ~= self.WeightType.MyAffix then
+        return false
+    end
+    return (self._EnhanceAffixIdSet or table.empty)[massConfig.TargetId] == true
 end
 
 --- 羁绊解锁的新增词缀 id（需插入词缀列表首位）
@@ -183,25 +233,15 @@ function XReformBalanceControl:IsSpecialAffix(affixId)
     return self:GetSpecialAffixIdSet()[affixId] == true
 end
 
---- 特殊词缀来源角色名（气泡蓝色标签用）
+--- 词缀要展示的标签
 ---@param affixId number
----@return string
-function XReformBalanceControl:GetSpecialAffixSourceName(affixId)
-    local bondId = self._SpecialAffixSource and self._SpecialAffixSource[affixId]
-    if not bondId then
-        return ""
-    end
-    local bondConfig = self:GetBalanceBond(bondId)
-    local characterIds = bondConfig.RequiredCharacterIds
-    if not characterIds or not characterIds[1] then
-        return ""
-    end
-    local characterConfig = self:GetBalanceCharacter(characterIds[1])
-    return XMVCA.XCharacter:GetCharacterName(XRobotManager.GetCharacterId(characterConfig.RobotId))
+---@return string[]
+function XReformBalanceControl:GetAffixTags(affixId)
+    return self:GetBalanceAffix(affixId).Label or table.empty
 end
 
 ---@param collectIds number[]|nil 传入时额外按顺序收集
-function XReformBalanceControl:_MarkSpecialAffix(affixIdSet, affixSource, affixIds, bondId, collectIds)
+function XReformBalanceControl:_MarkSpecialAffix(affixIdSet, affixIds, collectIds)
     if not affixIds then
         return
     end
@@ -212,7 +252,6 @@ function XReformBalanceControl:_MarkSpecialAffix(affixIdSet, affixSource, affixI
                 collectIds[#collectIds + 1] = affixId
             end
             affixIdSet[affixId] = true
-            affixSource[affixId] = bondId
         end
     end
 end

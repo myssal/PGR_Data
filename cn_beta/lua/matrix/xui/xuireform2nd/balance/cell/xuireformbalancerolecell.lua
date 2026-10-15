@@ -5,6 +5,7 @@
 ---@field GoPanelNor UnityEngine.RectTransform
 ---@field RImgHead UnityEngine.UI.RawImage
 ---@field ImgRoleEnhance UnityEngine.RectTransform
+---@field BalanceHightGlow UnityEngine.RectTransform
 ---@field ImgSelect UnityEngine.RectTransform
 ---@field ImgRoleLock UnityEngine.RectTransform
 ---@field TagWeight UnityEngine.RectTransform
@@ -43,10 +44,9 @@ function XUiReformBalanceRoleCell:RefreshTarget(targetId)
     end
 
     local characterConfig = configControl:GetBalanceCharacter(targetId)
-    local robotId = characterConfig.RobotId
-    self.RImgHead:SetRawImage(XRobotManager.GetRobotSmallHeadIcon(robotId))
-    self.TxtName.text = XMVCA.XCharacter:GetCharacterLogName(XRobotManager.GetCharacterId(robotId))
-    self:RefreshTags({ XRobotManager.GetRobotAbility(robotId) })
+    self.RImgHead:SetRawImage(configControl:GetCharacterShowHeadIcon(characterConfig))
+    self.TxtName.text = XMVCA.XCharacter:GetCharacterLogName(XRobotManager.GetCharacterId(characterConfig.RobotId))
+    self:RefreshTags({ configControl:GetCharacterShowAbility(characterConfig) })
 end
 
 ---@param labels string[]|nil
@@ -65,10 +65,15 @@ function XUiReformBalanceRoleCell:RefreshSelectState()
     self.ImgSelect.gameObject:SetActiveEx(isSelected)
 end
 
---- 强化态：参与了已触发的羁绊才亮
+--- 强化标：完美配平时亮（由所在列表统一驱动）
 ---@param isEnhanced boolean
 function XUiReformBalanceRoleCell:SetEnhanced(isEnhanced)
     self.ImgRoleEnhance.gameObject:SetActiveEx(isEnhanced)
+end
+
+--- 高亮动效（完美配平时由所在列表统一触发）
+function XUiReformBalanceRoleCell:PlayHightGlow()
+    self.BalanceHightGlow:PlayTimelineAnimation()
 end
 
 function XUiReformBalanceRoleCell:GetMassId()

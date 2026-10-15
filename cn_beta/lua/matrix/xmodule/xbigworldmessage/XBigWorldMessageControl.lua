@@ -329,14 +329,3 @@ function XBigWorldMessageControl:_CheckMessageListHasNonComplete(messageList)
 end
 
 return XBigWorldMessageControl
-t) do
-            if not message:IsComplete() then
-                return true
-            end
-        end
-    end
-
-    return false
-end
-
-return XBigWorldMessageControl

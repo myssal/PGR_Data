@@ -17,7 +17,7 @@ XReformBalanceControl.Side = Side
 ---@param stage table
 ---@param wishSlotNum number  Stage.WishWeightSlotNum
 ---@param costSlotNum number  Stage.CostWeightSlotNum
----@param fixedMassIds number[]|nil  关卡固定怪的 massId（caller 由 FixedEnemyIds 转好传入）
+---@param fixedMassIds number[]|nil  关卡固定怪的 massId；省略则不占槽，由 caller 稍后调 PlaceFixedWeights
 function XReformBalanceControl:InitBalanceSlots(stage, wishSlotNum, costSlotNum, fixedMassIds)
     self._Stage = stage
     self._SlotMax = {
@@ -34,14 +34,15 @@ function XReformBalanceControl:InitBalanceSlots(stage, wishSlotNum, costSlotNum,
             self._Slots[side][index] = { WeightId = false, IsFixed = false }
         end
     end
-    self:_InitFixed(fixedMassIds)
+    if fixedMassIds then
+        self:PlaceFixedWeights(fixedMassIds)
+    end
 end
 
 -- 固定怪按配置顺序从代价侧1号起依次占槽 + 锁
-function XReformBalanceControl:_InitFixed(fixedMassIds)
-    if not fixedMassIds then
-        return
-    end
+---@param fixedMassIds number[]|nil 省略则取当前关卡配置
+function XReformBalanceControl:PlaceFixedWeights(fixedMassIds)
+    fixedMassIds = fixedMassIds or self:GetFixedEnemyMassIds()
     local slots = self._Slots[Side.Cost]
     local slotMax = self._SlotMax[Side.Cost]
     local placeIndex = 1
@@ -105,7 +106,7 @@ function XReformBalanceControl:RemoveWeight(side, slotIndex)
 end
 
 -- 移除 slotIndex 后，后续非固定槽前移补空（对齐父 MobGroup SetMob→table.remove 范式：compact 无洞）
--- 固定槽从1号起连续（_InitFixed），非固定在后；removeIndex 必为非固定（CanRemove 已挡固定）→ 后续皆非固定，简单前移
+-- 固定槽从1号起连续（PlaceFixedWeights），非固定在后；removeIndex 必为非固定（CanRemove 已挡固定）→ 后续皆非固定，简单前移
 function XReformBalanceControl:_CompactAfterRemove(side, removeIndex)
     local slots = self._Slots[side]
     local slotMax = #slots

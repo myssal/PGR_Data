@@ -88,8 +88,12 @@ end
 function XUiReformBalancePanelMiddle:RefreshMassText(balanceControl, viewModelData)
     self.TxtHopeWeightLeft.text = XUiHelper.GetText("ReformBalanceWishMass", viewModelData.WishTotal, balanceControl:GetMinQuality())
     self.TxtHopeWeightRight.text = viewModelData.CostTotal
-    -- 困难关完美配平的额外积分待结算协议落地后填，暂不显示
-    self.TxtPlus.gameObject:SetActiveEx(false)
+
+    local bonusMass = balanceControl:GetPerfectBonusMass()
+    self.TxtPlus.gameObject:SetActiveEx(bonusMass > 0)
+    if bonusMass > 0 then
+        self.TxtPlus.text = "+" .. bonusMass
+    end
 end
 
 --- 秤盘格按关卡槽位数克隆；超过第一行容量摆到第二行
@@ -127,9 +131,16 @@ function XUiReformBalancePanelMiddle:RefreshBalanceTag(balanceControl, viewModel
         and #balanceControl:GetSelectedMassIds(Side.Cost) > 0
     local BalanceResult = balanceControl:GetBalanceLogic().BalanceResult
     local balanceResult = viewModelData.BalanceResult
-    self.TagPerfect.gameObject:SetActiveEx(hasWeightOnBothSides and balanceResult == BalanceResult.Perfect)
-    self.TagCompleted.gameObject:SetActiveEx(hasWeightOnBothSides and balanceResult == BalanceResult.Normal)
-    self.TagIncomplete.gameObject:SetActiveEx(hasWeightOnBothSides and balanceResult == BalanceResult.Unbalanced)
+    self:SetBalanceTagActive(self.TagPerfect, hasWeightOnBothSides and balanceResult == BalanceResult.Perfect)
+    self:SetBalanceTagActive(self.TagCompleted, hasWeightOnBothSides and balanceResult == BalanceResult.Normal)
+    self:SetBalanceTagActive(self.TagIncomplete, hasWeightOnBothSides and balanceResult == BalanceResult.Unbalanced)
+end
+
+---@param tagNode UnityEngine.RectTransform
+---@param isActive boolean
+function XUiReformBalancePanelMiddle:SetBalanceTagActive(tagNode, isActive)
+    tagNode.gameObject:SetActiveEx(false)
+    tagNode.gameObject:SetActiveEx(isActive)
 end
 
 --- 底部提示五态互斥：数量不足 → 质量不足 → 低/中/高难度
@@ -177,13 +188,18 @@ end
 --- BtnInfo 红点：气泡内容变了就亮，点过即消
 function XUiReformBalancePanelMiddle:RefreshInfoReddot()
     local contentKey = self.Parent:GetBubbleDetailContentKey()
-    self.BtnInfo:ShowReddot(contentKey ~= self._SeenInfoContentKey)
+    if self._LastInfoContentKey ~= contentKey then
+        self._LastInfoContentKey = contentKey
+        self._IsInfoReddotOn = true
+    end
+    self.BtnInfo:ShowReddot(self._IsInfoReddotOn == true)
 end
 
 --- 进关按钮达标才可点；重置按钮无选中时置灰
 function XUiReformBalancePanelMiddle:RefreshButtonState(balanceControl)
     local canEnter = balanceControl:IsMinSelectCountMet() and balanceControl:IsMinQualityMet()
     self.BtnSave:SetButtonState(canEnter and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
+    self.BtnReset:SetButtonState(balanceControl:HasSelectedWeight() and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
 end
 
 --region 按钮回调
@@ -225,6 +241,7 @@ function XUiReformBalancePanelMiddle:OnBtnResetClick()
     end
     balanceControl:ClearSelectedWeights()
     self.Parent:OnWeightChanged()
+    self.Parent:PlayAnimation("TabZero")
 end
 
 --- 莱亚的直觉：一键应用策划配置的保底方案
@@ -280,7 +297,7 @@ end
 --- 底部难度详情气泡
 function XUiReformBalancePanelMiddle:OnBtnInfoClick()
     self.Parent:CloseTransientPanels()
-    self._SeenInfoContentKey = self.Parent:GetBubbleDetailContentKey()
+    self._IsInfoReddotOn = false
     self.BtnInfo:ShowReddot(false)
     self.Parent:ShowBubbleDetail()
 end

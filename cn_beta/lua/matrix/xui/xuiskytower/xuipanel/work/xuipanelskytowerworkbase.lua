@@ -41,6 +41,15 @@ function XUiPanelSkyTowerWorkBase:RefreshView()
     self:RefreshChoose()
 end
 
+-- 事件只刷新格子当前绑定的产品，保留列表顺序和选中态
+function XUiPanelSkyTowerWorkBase:RefreshData()
+    local floorId = self.Parent:GetFloorId()
+    for _, grid in pairs(self.DynamicTable:GetGrids()) do
+        grid:SetData(floorId, grid.ProductId)
+    end
+    self:RefreshChoose()
+end
+
 -- 没选中产品时展示占位图，选中后才展示产品详情与确认按钮
 function XUiPanelSkyTowerWorkBase:RefreshChoose()
     local isEmpty = not XTool.IsNumberValid(self._SelectProductId)
@@ -107,20 +116,6 @@ end
 ---@return number 本页签对应的工作类型
 function XUiPanelSkyTowerWorkBase:GetTargetWorkType()
     return XMVCA.XSkyTower.WorkType.None
-end
-
----@return UnityEngine.RectTransform 挂XDynamicTableNormal的节点
-function XUiPanelSkyTowerWorkBase:GetDynamicTable()
-    return self.PanelFoodList
-end
-
-function XUiPanelSkyTowerWorkBase:GetGridProxy()
-    return nil
-end
---endregion
-
-return XUiPanelSkyTowerWorkBase
-   return XMVCA.XSkyTower.WorkType.None
 end
 
 ---@return UnityEngine.RectTransform 挂XDynamicTableNormal的节点

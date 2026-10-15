@@ -5,6 +5,16 @@ local XFubenActivityAgency = require("XModule/XBase/XFubenActivityAgency")
 local XPacMan2Agency = XClass(XFubenActivityAgency, "XPacMan2Agency")
 function XPacMan2Agency:OnInit()
     self:RegisterActivityAgency()
+
+    -- 结算请求编号分配器，在同一个Agency实例内持续递增。
+    -- ResetAll时不能归零，避免旧回调与新请求编号重复。
+    self._SettleTokenCounter = 0
+    -- 当前等待响应的结算请求编号，nil表示没有待响应请求。
+    self._PendingSettleToken = nil
+
+    -- 等待旧结算完成后执行的开局请求。
+    -- 当前只允许存在一个待开始的Game。
+    self._PendingStageStart = nil
 end
 
 function XPacMan2Agency:InitRpc()
@@ -75,15 +85,27 @@ function XPacMan2Agency:NotifyPacMan2Activity(data)
     self._Model:SetDataFromServer(data)
 end
 
-function XPacMan2Agency:PacMan2StageStartRequest(stageId, callback)
+function XPacMan2Agency:PacMan2StageStartRequest(stageId, callback, isOwnerValid)
+    if isOwnerValid and not isOwnerValid() then
+        return
+    end
+    if self._PendingSettleToken then
+        self._PendingStageStart = function()
+            self:PacMan2StageStartRequest(stageId,callback,isOwnerValid)
+        end
+        return
+    end
     if self._Model.IsPlaying then
-        XLog.Error("[XPacMan2Agency] playing状态出错, 很麻烦")
+        XLog.Error("[XPacMan2Agency] 上一局尚未结束，不能发送开局请求")
         callback(false)
         return
     end
-    XNetwork.Call("PacMan2StageStartRequest", {
-        StageId = stageId
-    }, function(res)
+    
+    XNetwork.Call("PacMan2StageStartRequest",{StageId = stageId}, function(res)
+        if isOwnerValid and not isOwnerValid() then
+            return
+        end
+
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
             callback(false)
@@ -94,52 +116,24 @@ function XPacMan2Agency:PacMan2StageStartRequest(stageId, callback)
     end)
 end
 
+---提交一次已经结束的本地运行。
+---@return boolean accepted 是否接收了本次提交，不代表服务器已结算成功
 function XPacMan2Agency:PacMan2SettleRequest(data)
-    if not self._Model.IsPlaying then
-        XLog.Warning("[XPacMan2Agency] 未开始游戏")
-        return
-    end
-    XNetwork.Call("PacMan2SettleRequest", data, function(res)
-        if res.Code ~= XCode.Success then
-            XUiManager.TipCode(res.Code)
-            return
-        end
-        self._Model:SetStageData(res.StageData)
-        self._Model.IsPlaying = false
-        if res.RewardGoodsList then
-            XUiManager.OpenUiObtain(res.RewardGoodsList)
-        end
-    end)
-end
-
-function XPacMan2Agency:ExCheckInTime()
-    local activityConfig = self._Model:GetActivityConfig()
-    if not activityConfig then
+    if self._PendingSettleToken then
+        XLog.Warning("[XPacMan2Agency] 已有结算请求等待响应，拒绝重复提交")
         return false
     end
-    local isInTime = XFunctionManager.CheckInTimeByTimeId(activityConfig.TimeId)
-    return isInTime
-end
 
-function XPacMan2Agency:HasStageNotPassedAndCanChallenge()
-    local stages = self._Model:GetStageConfigs()
-    for _, stage in ipairs(stages) do
-        --  判断关卡是否通过
-        if not self._Model:IsStagePassed(stage.Id) then
-            --  判断时间
-            if XFunctionManager.CheckInTimeByTimeId(stage.TimeId) then
-                -- 判断前置关卡
-                local preStageId = stage.PreStageId
-                if preStageId == 0 or preStageId == nil or self._Model:IsStagePassed(preStageId) then
-                    return true
-                end
-            end
-        end
+    if not self._Model.IsPlaying then
+        XLog.Warning("[XPacMan2Agency] 未开始游戏，不能提交结算")
+        return false
     end
-    return false
-end
-
-return XPacMan2AgencyonResponse(res)
+    
+    self._SettleTokenCounter = self._SettleTokenCounter + 1
+    local token = self._SettleTokenCounter
+    self._PendingSettleToken = token
+    
+    local function onResponse(res)
         --不处理旧请求的回调。
         if self._PendingSettleToken ~= token then
             return

@@ -6,7 +6,7 @@ local TableKey = {
     -- 活动总控
     SkyTowerActivity = { CacheType = XConfigUtil.CacheType.Normal },
     -- 活动配置（键值表，按Key索引）
-    SkyTowerConfig = { ReadFunc = XConfigUtil.ReadType.String, Identifier = "Key" },
+    SkyTowerConfig = { CacheType = XConfigUtil.CacheType.Normal, ReadFunc = XConfigUtil.ReadType.String, Identifier = "Key" },
     -- 通天塔等级
     SkyTowerLv = { CacheType = XConfigUtil.CacheType.Normal, Identifier = "Lv" },
     -- 员工信息
@@ -471,17 +471,6 @@ end
 function XSkyTowerModel:GetCustomerProperty()
     local config = self:GetClientConfig("CustomerProperty")
     return tonumber(config.Values[1]), tonumber(config.Values[2])
-end
-
-function XSkyTowerModel:GetGlobalIllumination(level)
-    if not level then
-        level = self:GetSkyTowerLv()
-    end
-    local config = self:GetClientConfig("GlobalIlluminationPath")
-    local paths = config.Values
-    local count = #paths
-    local index = math.min(level, count)
-    return paths[index]
 end
 --endregion
 

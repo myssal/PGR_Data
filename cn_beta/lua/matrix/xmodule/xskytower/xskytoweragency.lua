@@ -4,10 +4,6 @@ local XFubenActivityAgency = require("XModule/XBase/XFubenActivityAgency")
 ---@field private _Model XSkyTowerModel
 local XSkyTowerAgency = XClass(XFubenActivityAgency, "XSkyTowerAgency", true)
 
-local IsShopComplete
-local IsEnterActivity
-local CsClamp = CS.UnityEngine.Mathf.Clamp
-
 --region 部分类初始化
 XClassPartialRequire("XModule/XSkyTower/XAgencyPartial/XSkyTowerAgencyEnum", "XSkyTowerAgency")
 XClassPartialRequire("XModule/XSkyTower/XAgencyPartial/XSkyTowerAgencyScene", "XSkyTowerAgency")
@@ -18,14 +14,11 @@ function XSkyTowerAgency:OnInit()
     self:InitScene()
     self.IsInitOnce = false --只会初始化一次
     self._InActivity = false --是否处于活动玩法中
-    IsShopComplete = nil
-    IsEnterActivity = nil
     self.RichTextImageCallBack = handler(self, self.OnRichTextImageCallBack)
 end
 
 function XSkyTowerAgency:OnLoginOut()
-    IsShopComplete = nil
-    IsEnterActivity = nil
+
 end
 
 function XSkyTowerAgency:InitRpc()
@@ -33,6 +26,7 @@ function XSkyTowerAgency:InitRpc()
     XRpc.NotifySkyTowerCharacter = handler(self, self.NotifySkyTowerCharacter)
     XRpc.NotifySkyTowerPerform = handler(self, self.NotifySkyTowerPerform)
     XRpc.NotifySkyTowerLevel = handler(self, self.NotifySkyTowerLevel)
+    XRpc.NotifySkyTowerSpeedUpDailyReset = handler(self, self.NotifySkyTowerSpeedUpDailyReset)
 end
 
 function XSkyTowerAgency:InitEvent()
@@ -59,7 +53,8 @@ function XSkyTowerAgency:OpenUi()
     end
     --先拉全量数据，再走进入流程
     self:SkyTowerActivityDataRequest(function()
-        self:LoadScene()
+        -- 先播放 Loading 入场动画，资源加载由 Loop 阶段启动
+        XLuaUiManager.Open("UiSkyTowerLoading")
     end)
     return true
 end
@@ -185,7 +180,8 @@ end
 
 --region 工具接口
 ---@param msg string
-function XSkyTowerAgency:TipMsg(msg)
+---@param isPlayEffect boolean 是否播放烟花特效，默认不播放
+function XSkyTowerAgency:TipMsg(msg, isPlayEffect)
     if not msg then
         XLog.Error("XSkyTowerAgency:TipMsg error, msg is nil")
         return
@@ -195,7 +191,7 @@ function XSkyTowerAgency:TipMsg(msg)
         return
     end
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.Tip_small)
-    XLuaUiManager.Open(uiName, msg)
+    XLuaUiManager.Open(uiName, msg, isPlayEffect)
 end
 
 ---@param key string
@@ -219,10 +215,6 @@ function XSkyTowerAgency:StrPos2Vector3(str, separator)
         num[i] = str and tonumber(value) or 0
     end
     return Vector3(num[1], num[2], num[3])
-end
-
---- 埋点（XRecord，暂未启用，UI仍有调用故保留空桩）
-function XSkyTowerAgency:Burying(btnId, uiName)
 end
 
 function XSkyTowerAgency:CheckBaseOpen()
@@ -271,11 +263,6 @@ function XSkyTowerAgency:CheckAchievementTaskRedPoint()
     return false
 end
 
---- 食谱任务红点（3期通天塔不配置食谱任务，恒false）
-function XSkyTowerAgency:CheckRecipeTaskRedPoint()
-    return false
-end
-
 --任务入口
 function XSkyTowerAgency:CheckTaskRedPoint()
     if not self:CheckBaseOpen() then
@@ -285,52 +272,28 @@ function XSkyTowerAgency:CheckTaskRedPoint()
     if self:CheckDailyTaskRedPoint() then
         return true
     end
+
     if self:CheckAchievementTaskRedPoint() then
         return true
     end
-    if self:CheckRecipeTaskRedPoint() then
-        return true
-    end
+
     return false
 end
 
-function XSkyTowerAgency:CheckIndentRedPoint()
-    return false
-end
-
-function XSkyTowerAgency:CheckPerformRedPoint()
-    return false
-end
-
-function XSkyTowerAgency:CheckEntranceRedPoint()
+---当玩家距离上次进入玩法内过了Config中的MaxSettleTime时间，并且通天塔不处于最高等级时，开始游戏按钮右上方需要显示蓝点
+function XSkyTowerAgency:CheckEnterBtnRedPoint()
     if not self:CheckBaseOpen() then
         return false
     end
 
-    if IsShopComplete == nil and self:CheckShopOpen() then
-        self:CheckShopComplete()
-        return false
-    end
+    if not self:IsMaxLevel() then
+        if not self._MaxSettleTime then
+            self._MaxSettleTime = tonumber(self._Model:GetConfigValue("MaxSettleTime"))
+        end
 
-    --策划要求-商店购买完成后，外部红点全部关闭
-    if IsShopComplete then
-        return false
-    end
-
-    if not self._Model:IsActivityInTime() then
-        return false
-    end
-
-    if self:CheckIsFirstEnter() then
-        return true
-    end
-
-    if self:CheckTaskRedPoint() then
-        return true
-    end
-
-    if self:CheckIndentRedPoint() then
-        return true
+        if XTime.GetServerNowTimestamp() - self._Model:GetEntranceTime() > self._MaxSettleTime then
+            return true
+        end
     end
 
     if self:CheckPerformRedPoint() then
@@ -340,78 +303,63 @@ function XSkyTowerAgency:CheckEntranceRedPoint()
     return false
 end
 
-function XSkyTowerAgency:CheckIsFirstEnter()
-    if IsEnterActivity then
+function XSkyTowerAgency:CheckPerformRedPoint()
+    local infos = self._Model:GetPerformInfos()
+    if XTool.IsTableEmpty(infos) then
         return false
     end
-    if self._Model:IsFirstEnterActivity() then
-        return true
+
+    for performId in pairs(infos) do
+        if self._Model.Perform:CheckPerformClaimReward(performId) then
+            return true
+        end
     end
-    IsEnterActivity = true
+
     return false
 end
 
-function XSkyTowerAgency:MarkFirstEnterActivity()
-    if IsEnterActivity then
-        return
-    end
-    if not self._Model:IsFirstEnterActivity() then
-        return
+function XSkyTowerAgency:CheckLevelUpRedPoint()
+    if not self:CheckBaseOpen() then
+        return false
     end
 
-    self._Model:MarkFirstEnterActivity()
-    IsEnterActivity = true
+    if self:IsMaxLevel() then
+        return false
+    end
+
+    local targetLv = self._Model:GetSkyTowerLv() + 1
+    local template = self._Model:GetLvConfig(targetLv)
+    local ownGoldCount = self._Model:GetGoldCount()
+
+    if ownGoldCount < template.NeedGoldCount then
+        return false
+    end
+
+    if XTool.IsNumberValid(template.ConditionId) and not XConditionManager.CheckCondition(template.ConditionId) then
+        return false
+    end
+
+    return true
 end
 
-function XSkyTowerAgency:CheckShopOpen()
-    local functionId = XFunctionManager.FunctionName.ShopCommon
-    return XFunctionManager.JudgeCanOpen(functionId) and XFunctionManager.JudgeOpen(functionId)
-end
-
-function XSkyTowerAgency:CheckShopComplete(cb)
-    if IsShopComplete ~= nil then
-        if cb then
-            cb(IsShopComplete)
-        end
-    end
-    if not self:CheckShopOpen() then
-        if cb then
-            cb(false)
-        end
-        return
-    end
-    local shopId = self._Model:GetActivityShopId()
-    if not XTool.IsNumberValid(shopId) then
-        if cb then
-            cb(false)
-        end
-        return
+function XSkyTowerAgency:CheckEntranceRedPoint()
+    if not self:CheckBaseOpen() then
+        return false
     end
 
-    IsShopComplete = false
-    XShopManager.GetShopInfo(shopId, function()
-        local goodsList = XShopManager.GetShopGoodsList(shopId, true, true)
-        local complete = true
-        for _, goods in ipairs(goodsList) do
-            --不限制次数, 商店无法购买完成 || 购买次数小于上限
-            if goods.BuyTimesLimit <= 0 or (goods.TotalBuyTimes < goods.BuyTimesLimit) then
-                complete = false
-                break
-            end
-        end
-        IsShopComplete = complete
-        if cb then
-            cb(complete)
-        end
-    end, true)
-end
-
-function XSkyTowerAgency:ClearShotComplete()
-    --如果已经完成了，就不需要清除了
-    if IsShopComplete then
-        return
+    if self:CheckTaskRedPoint() then
+        return true
     end
-    IsShopComplete = nil
+
+    if self:CheckEnterBtnRedPoint() then
+        return true
+    end
+
+    if self:CheckLevelUpRedPoint() then
+        return true
+    end
+
+    return false
 end
 
 function XSkyTowerAgency:OnActivityEnd()
@@ -462,6 +410,16 @@ function XSkyTowerAgency:NotifySkyTowerLevel(notifyData)
     self._Model:UpdateSkyTowerLvLoginIn(notifyData.Level)
 end
 
+--- 每日加速次数重置推送
+function XSkyTowerAgency:NotifySkyTowerSpeedUpDailyReset(notifyData)
+    if not notifyData then
+        return
+    end
+    self._Model:UpdateSpeedUpDailyUsedCount(notifyData.SpeedUpDailyUsedCount)
+    self._Model:UpdateSpeedUpItemCount(notifyData.SpeedUpItemCount)
+    XEventManager.DispatchEvent(XEventId.EVENT_SKY_TOWER_DAILY_RESET)
+end
+
 function XSkyTowerAgency:SkyTowerActivityDataRequest(responseCb)
     XNetwork.Call("SkyTowerActivityDataRequest", nil, function(res)
         if res.Code ~= XCode.Success then
@@ -471,7 +429,6 @@ function XSkyTowerAgency:SkyTowerActivityDataRequest(responseCb)
         self._Model:UpdateNotifyData(res.ActivityData)
         -- 离线收益服务端已直接入账并清零，这里只拿来展示账单
         self._Model:UpdateAccount(res.OfflineBill, res.OfflineTime, res.OfflineCharacterLvUpItemCount)
-        self:MarkFirstEnterActivity()
         if responseCb then
             responseCb()
         end

@@ -45,7 +45,7 @@ function XUiReformBalanceInfoDesc:Update(massId)
     self:ShowTags(balanceControl:GetAffixTags(affixId))
 end
 
----@param tags table[]
+---@param tags string[]
 function XUiReformBalanceInfoDesc:ShowTags(tags)
     XTool.UpdateDynamicItem(self._Tags, tags, self.PanelSpecialBalance, XUiReformBalanceExclusiveTag, self)
 end

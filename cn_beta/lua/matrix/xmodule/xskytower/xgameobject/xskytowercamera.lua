@@ -7,6 +7,8 @@ local CsPointerEventData = CS.UnityEngine.EventSystems.PointerEventData
 local CsEventSystem = CS.UnityEngine.EventSystems.EventSystem
 local CsRaycastResultList = CS.System.Collections.Generic.List(CS.UnityEngine.EventSystems.RaycastResult)
 
+local CheckInterval = 0.05
+
 ---@class XSkyTowerCamera : XSkyTowerIScene 通天塔摄像机
 ---@field SceneTransform UnityEngine.Transform 场景根节点
 ---@field GameObject UnityEngine.GameObject
@@ -55,10 +57,12 @@ function XSkyTowerCamera:SetGameObject(obj)
     self.CameraWork = obj.CameraWork
     self.CameraFloor = obj.CameraFloor
     self.GameObject = self.Camera.gameObject
+    --Brain挂在真实摄像机上，播放镜头动画时用它判断blend是否结束
+    self._Brain = self.GameObject:GetComponent(typeof(CS.Cinemachine.CinemachineBrain))
 
     self:ShowDefault()
     self:RefreshCameraParam(obj.CameraParam)
-    self:ShowEntranceCamera()
+    self:ShowEntranceCamera(true)
 
     local physicsRaycaster = self.GameObject:GetComponent(typeof(CS.UnityEngine.EventSystems.PhysicsRaycaster))
     if not physicsRaycaster then
@@ -67,8 +71,6 @@ function XSkyTowerCamera:SetGameObject(obj)
     self._PhysicsRaycaster = physicsRaycaster
     --设置响应事件遮罩
     physicsRaycaster:SetEventMask(CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Npc) | CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Room))
-    --Brain挂在真实摄像机上，播放镜头动画时用它判断blend是否结束
-    self._Brain = self.GameObject:GetComponent(typeof(CS.Cinemachine.CinemachineBrain))
     CS.XGraphicManager.BindCamera(self.Camera)
 end
 
@@ -113,20 +115,41 @@ function XSkyTowerCamera:RefreshMoveCameraLens()
     self._MoveTanHalfFov = CsMathf.Tan(self.CameraMove.m_Lens.FieldOfView * 0.5 * CsMathf.Deg2Rad)
 end
 
----按当前已解锁楼层数计算镜头高度上下限与最远缩放距离，楼层解锁后需重新调用
+---统一缓存镜头配置，并按当前已解锁楼层数计算移动范围，配置变更或楼层解锁后需重新调用
 function XSkyTowerCamera:RefreshMoveRange()
-    if not self._CameraParam then
+    local cameraParam = self._CameraParam
+    if not cameraParam then
         return
     end
+    local heightParam = cameraParam.Height
+    local zoomParam = cameraParam.Zoom
+    local detectionParam = cameraParam.FloorDetection
+    local scrollParam = cameraParam.DragEdgeScroll
     local floorCount = math.max(self._Model:GetMaxFloorId(), 1)
     local floorHeight = XMVCA.XSkyTower:GetFloorTotalHeight()
-    self._MinLocalY = self._CameraParam.Height.MinLocalY
-    self._MaxLocalY = floorCount * floorHeight + self._CameraParam.Height.MaxHeightOffset
+    self._MinLocalY = heightParam.MinLocalY
+    self._MaxLocalY = floorCount * floorHeight + heightParam.MaxHeightOffset
     self._MaxLocalY = math.max(self._MinLocalY, self._MaxLocalY)
-    self._FarthestLocalZ = self._CameraParam.Zoom.BaseFarthestLocalZ - self._CameraParam.Zoom.FloorCountToExtraPullBack:Evaluate(floorCount)
-    self._FarthestLocalZ = math.min(self._FarthestLocalZ, self._CameraParam.Zoom.NearestLocalZ)
-    self._TopDistanceThreshold = self._CameraParam.FloorDetection.TopDistanceThreshold
-    self._DragDistancePerPixel = self._CameraParam.Height.DragDistancePerPixel
+    self._NearestLocalZ = zoomParam.NearestLocalZ
+    self._FarthestLocalZ = zoomParam.BaseFarthestLocalZ - zoomParam.FloorCountToExtraPullBack:Evaluate(floorCount)
+    self._FarthestLocalZ = math.min(self._FarthestLocalZ, self._NearestLocalZ)
+    self._TopDistanceThreshold = detectionParam.TopDistanceThreshold
+    self._DragDistancePerPixel = heightParam.DragDistancePerPixel
+    self._DefaultLocalOffsetY = heightParam.DefaultLocalOffsetY
+    self._LocateFloorDuration = heightParam.LocateFloorDuration
+    self._InertiaDuration = heightParam.InertiaDuration
+    self._InertiaVelocityScale = heightParam.InertiaVelocityScale
+    self._MaxInertiaSpeed = heightParam.MaxInertiaSpeed
+    self._InertiaStopSpeed = heightParam.InertiaStopSpeed
+    self._InertiaSpeedCurve = heightParam.InertiaSpeedCurve
+    self._DefaultLocalZ = zoomParam.DefaultLocalZ
+    self._PinchSensitivity = zoomParam.PinchSensitivity
+    self._MouseWheelSensitivity = zoomParam.MouseWheelSensitivity
+    self._HideUiBelowLocalZ = zoomParam.HideUiBelowLocalZ
+    self._HideUiAboveLocalZ = zoomParam.HideUiAboveLocalZ
+    self._ScreenEdgePixels = scrollParam.ScreenEdgePixels
+    self._AutoMoveSpeed = scrollParam.AutoMoveSpeed
+    self._CrossGroupAllowedDistance = scrollParam.CrossGroupAllowedDistance
 end
 
 ---把镜头当前位置夹回合法的高度与缩放范围内
@@ -136,7 +159,7 @@ function XSkyTowerCamera:ClampCameraPosition()
     end
     local localX, localY, localZ = self.CameraMoveTran:GetLocalPosition()
     localY = CsMathf.Clamp(localY, self._MinLocalY, self._MaxLocalY)
-    localZ = CsMathf.Clamp(localZ, self._FarthestLocalZ, self._CameraParam.Zoom.NearestLocalZ)
+    localZ = CsMathf.Clamp(localZ, self._FarthestLocalZ, self._NearestLocalZ)
     self.CameraMoveTran:SetLocalPosition(localX, localY, localZ)
 end
 
@@ -171,10 +194,8 @@ end
 ---解除主界面的镜头操作绑定，并停掉所有正在进行的镜头运动
 function XSkyTowerCamera:ReleaseMainInput()
     self:StopInertia()
-    self:StopZoomTimer()
     self:StopLocate()
     self._IsHeightDragging = false
-    self._IsZooming = false
     if not XTool.UObjIsNil(self._InputHandler) then
         self._InputHandler:RemoveAllListeners()
     end
@@ -207,9 +228,7 @@ function XSkyTowerCamera:SetMainInputEnabled(value)
         self:RefreshMoveRange()
     else
         self._IsHeightDragging = false
-        self._IsZooming = false
         self:StopInertia()
-        self:StopZoomTimer()
         self:StopLocate()
     end
     self:NotifyGameplayUiState()
@@ -223,7 +242,7 @@ function XSkyTowerCamera:ResetMainCameraPosition()
     self:RefreshMoveRange()
     local localX, localY = self.CameraMoveTran:GetLocalPosition()
     localY = CsMathf.Clamp(localY, self._MinLocalY, self._MaxLocalY)
-    local localZ = CsMathf.Clamp(self._CameraParam.Zoom.DefaultLocalZ, self._FarthestLocalZ, self._CameraParam.Zoom.NearestLocalZ)
+    local localZ = CsMathf.Clamp(self._DefaultLocalZ, self._FarthestLocalZ, self._NearestLocalZ)
     self.CameraMoveTran:SetLocalPosition(localX, localY, localZ)
     self:NotifyGameplayUiState()
 end
@@ -239,7 +258,7 @@ function XSkyTowerCamera:LocateFloor(floorId, immediate, onFinish, offsetY)
     end
     offsetY = offsetY or 0
     self:RefreshMoveRange()
-    return self:LocatePosition(self:GetFloorLocalY(floorId) + offsetY, floorId, immediate, onFinish)
+    return self:LocatePosition(self:GetFloorLocalY(floorId, true) + offsetY, floorId, immediate, onFinish)
 end
 
 ---保持镜头朝向和缩放，将场景挂点定位到画面中心，高度受镜头行程限制
@@ -268,7 +287,7 @@ function XSkyTowerCamera:LocateNode(node, floorId, immediate, onFinish)
     if distance <= 0 then
         return false
     end
-    local targetY = positionY - directionY * distance + self._CameraParam.Height.LocatePerformOffset
+    local targetY = positionY - directionY * distance
     return self:LocatePosition(targetY, floorId, immediate, onFinish)
 end
 
@@ -277,8 +296,6 @@ end
 function XSkyTowerCamera:LocatePosition(targetY, floorId, immediate, onFinish)
     self:StopInertia()
     self:StopLocate()
-    self:StopZoomTimer()
-    self._IsZooming = false
     self:RefreshMoveRange()
 
     local localX, localY, localZ = self.CameraMoveTran:GetLocalPosition()
@@ -289,13 +306,13 @@ function XSkyTowerCamera:LocatePosition(targetY, floorId, immediate, onFinish)
         self.CameraMoveTran:SetLocalPosition(localX, targetY, localZ)
         self:NotifyGameplayUiState()
         if onFinish then
-            onFinish()
+            onFinish(self:CalcCurFloorId())
         end
         return true
     end
 
     local beginY = localY
-    self._LocateTimer = XUiHelper.Tween(self._CameraParam.Height.LocateFloorDuration, function(progress)
+    self._LocateTimer = XUiHelper.Tween(self._LocateFloorDuration, function(progress)
         if XTool.UObjIsNil(self.CameraMoveTran) then
             return true
         end
@@ -315,12 +332,45 @@ end
 
 ---楼层对应的摄像机localPosition.y
 ---楼层在场景中按 FloorHeight * (FloorId - 1) 摆放（见XSkyTowerRoom），
----这里以允许到达的最低高度MinLocalY作为1层的取景高度，逐层向上偏移
+---未居中时以MinLocalY作为1层的取景高度；居中时按当前镜头计算，仍受高度范围限制
 ---@param floorId number
+---@param isCenter boolean 是否定位到楼层中间点
 ---@return number
-function XSkyTowerCamera:GetFloorLocalY(floorId)
+function XSkyTowerCamera:GetFloorLocalY(floorId, isCenter)
     local floorHeight = XMVCA.XSkyTower:GetFloorTotalHeight()
     local targetY = self._MinLocalY + floorHeight * (floorId - 1)
+    if isCenter then
+        local floorObj = XMVCA.XSkyTower:GetFloorObjHash()[floorId]
+        if not XTool.UObjIsNil(floorObj) and not XTool.UObjIsNil(self.CameraMoveTran) then
+            --地板上方半层高作为楼层中心，镜头空间的y为0时处于屏幕纵向中线
+            local positionX, positionY, positionZ = floorObj.transform:GetPosition()
+            local _, centerY, centerZ = self.CameraMoveTran:InverseTransformPointEx(positionX, positionY + floorHeight * 0.5, positionZ)
+            --镜头沿父节点的局部y轴移动，换算到镜头空间后求出让centerY归零的位移
+            local moveX, moveY, moveZ = 0, 1, 0
+            local parent = self.CameraMoveTran.parent
+            if not XTool.UObjIsNil(parent) then
+                local direction = parent:TransformVector(0, 1, 0)
+                moveX, moveY, moveZ = direction.x, direction.y, direction.z
+            end
+            local _, directionY, directionZ = self.CameraMoveTran:InverseTransformVectorEx(moveX, moveY, moveZ)
+            if math.abs(directionY) > MinRayDirection then
+                local offsetY = centerY / directionY
+                if centerZ - directionZ * offsetY > MinRayDirection then
+                    local _, localY = self.CameraMoveTran:GetLocalPosition()
+                    targetY = localY + offsetY
+                end
+            end
+        end
+    end
+    return CsMathf.Clamp(targetY, self._MinLocalY, self._MaxLocalY)
+end
+
+---楼层天花板对应的摄像机localPosition.y
+---@param floorId number
+---@return number
+function XSkyTowerCamera:GetFloorCeilingLocalY(floorId)
+    local floorHeight = XMVCA.XSkyTower:GetFloorTotalHeight()
+    local targetY = self._MinLocalY + floorHeight * floorId
     return CsMathf.Clamp(targetY, self._MinLocalY, self._MaxLocalY)
 end
 
@@ -400,10 +450,8 @@ function XSkyTowerCamera:CalcCurFloorId()
     if not self._CameraParam or XTool.UObjIsNil(self.CameraMoveTran) or not self._MoveTanHalfFov then
         return 0
     end
-    local detection = self._CameraParam.FloorDetection
-    local minFloor = math.max(detection.MinFloor, 1)
     local floorYList = self:GetFloorWorldYList()
-    local anchorY = floorYList[minFloor]
+    local anchorY = floorYList[1]
     if not anchorY then
         return 0
     end
@@ -412,17 +460,15 @@ function XSkyTowerCamera:CalcCurFloorId()
     if not limitY then
         return 0
     end
-    --地板挂点相对楼层根节点的高度补正，按世界单位处理
-    limitY = limitY - detection.FloorPointLocalYOffset
 
     local result = 0
-    for floorId = minFloor, self._Model:GetMaxFloorId() do
+    for floorId = 1, self._Model:GetMaxFloorId() do
         local floorY = floorYList[floorId]
         if floorY and floorY <= limitY then
             result = floorId
         end
     end
-    return result > 0 and result or minFloor
+    return result > 0 and result or 1
 end
 
 ---镜头移动后按CheckInterval节流地重算当前楼层，变化时回调
@@ -430,9 +476,8 @@ function XSkyTowerCamera:CheckCurFloor()
     if not self._CurFloorChangeCb or not self._CameraParam then
         return
     end
-    local interval = self._CameraParam.FloorDetection.CheckInterval
     local now = CsTime.unscaledTime
-    if interval > 0 and self._LastFloorCheckTime and now - self._LastFloorCheckTime < interval then
+    if self._LastFloorCheckTime and now - self._LastFloorCheckTime < CheckInterval then
         return
     end
     self._LastFloorCheckTime = now
@@ -476,7 +521,7 @@ function XSkyTowerCamera:OnMainDrag(eventData)
     self._LastHeightVelocity = self._UnscaledDeltaTime > 0 and actualDelta / self._UnscaledDeltaTime or 0
 end
 
----结束拖动，尝试按松手速度进入惯性滑动
+---结束拖动，按松手速度进入惯性滑动
 function XSkyTowerCamera:OnMainEndDrag()
     if not self._IsHeightDragging then
         return
@@ -488,7 +533,7 @@ function XSkyTowerCamera:OnMainEndDrag()
     end
 end
 
----按增量移动镜头高度，接近上下边界时衰减，超出范围时截断
+---按增量移动镜头高度，超出范围时截断
 ---@param deltaY number 期望的高度增量
 ---@return number 实际生效的高度增量
 function XSkyTowerCamera:MoveHeight(deltaY)
@@ -497,36 +542,15 @@ function XSkyTowerCamera:MoveHeight(deltaY)
     end
     local localX, localY, localZ = self.CameraMoveTran:GetLocalPosition()
     local minY, maxY = self:GetHeightRange()
-    local multiplier = self:GetBoundaryMoveMultiplier(localY, deltaY)
-    local targetY = CsMathf.Clamp(localY + deltaY * multiplier, minY, maxY)
+    local targetY = CsMathf.Clamp(localY + deltaY, minY, maxY)
     local actualDelta = targetY - localY
     if actualDelta == 0 then
         return 0
     end
     self.CameraMoveTran:SetLocalPosition(localX, targetY, localZ)
-    --高度变化的唯一出口，拖动与惯性都经过此处，楼层检测只需挂在这里
+    --拖动、惯性与屏幕边缘滚动都经过此处，楼层检测统一在这里处理
     self:CheckCurFloor()
     return actualDelta
-end
-
----靠近边界时的位移衰减系数，越靠近边界阻力越大
----@param localY number 当前高度
----@param deltaY number 期望的高度增量，符号决定判定哪一侧边界
----@return number 0~1的系数
-function XSkyTowerCamera:GetBoundaryMoveMultiplier(localY, deltaY)
-    local heightParam = self._CameraParam.Height
-    local resistanceDistance = heightParam.ResistanceStartDistance
-    if resistanceDistance <= 0 then
-        return 1
-    end
-    local minY, maxY = self:GetHeightRange()
-    local distance = deltaY > 0 and maxY - localY or localY - minY
-    if distance >= resistanceDistance then
-        return 1
-    end
-    local proximity = 1 - CsMathf.Clamp01(distance / resistanceDistance)
-    local resistance = CsMathf.Clamp01(heightParam.ResistanceCurve:Evaluate(proximity))
-    return 1 - resistance
 end
 
 --- 按指针到屏幕上下边缘的距离滚动镜头，拖动期间每帧调用
@@ -537,9 +561,8 @@ function XSkyTowerCamera:MoveHeightByScreenEdge(pointerScreenY, screenHeight)
     if not self._CameraParam or not pointerScreenY or not screenHeight or screenHeight <= 0 then
         return 0
     end
-    local scrollParam = self._CameraParam.DragEdgeScroll
     -- 边缘区最多各占半屏，否则上下两侧会重叠
-    local range = math.min(scrollParam.ScreenEdgePixels, screenHeight * 0.5)
+    local range = math.min(self._ScreenEdgePixels, screenHeight * 0.5)
     if range <= 0 then
         return 0
     end
@@ -555,17 +578,16 @@ function XSkyTowerCamera:MoveHeightByScreenEdge(pointerScreenY, screenHeight)
     end
     ratio = CsMathf.Clamp(ratio, -1, 1)
     -- 拖动属UI交互，不应被战斗/演出的timeScale影响
-    return self:MoveHeight(ratio * scrollParam.AutoMoveSpeed * self._UnscaledDeltaTime)
+    return self:MoveHeight(ratio * self._AutoMoveSpeed * self._UnscaledDeltaTime)
 end
 
---- 限制镜头只能在指定高度区间内移动，允许越出的位移取自镜头参数（松手后由SnapBackToHeightLimit回弹）
+--- 限制镜头只能在指定高度区间内移动，允许越出的位移取自镜头参数
 ---@param minLocalY number 区间下界
 ---@param maxLocalY number 区间上界
 function XSkyTowerCamera:SetHeightLimit(minLocalY, maxLocalY)
     self._LimitMinLocalY = minLocalY
     self._LimitMaxLocalY = math.max(minLocalY, maxLocalY)
-    local overflow = self._CameraParam and self._CameraParam.DragEdgeScroll.CrossGroupAllowedDistance or 0
-    self._LimitOverflow = math.max(overflow, 0)
+    self._LimitOverflow = self._CrossGroupAllowedDistance or 0
 end
 
 function XSkyTowerCamera:ClearHeightLimit()
@@ -580,51 +602,23 @@ function XSkyTowerCamera:GetHeightRange()
     if not self._LimitMinLocalY then
         return self._MinLocalY, self._MaxLocalY
     end
-    return math.min(self._MinLocalY, self._LimitMinLocalY - self._LimitOverflow), math.max(self._MaxLocalY, self._LimitMaxLocalY + self._LimitOverflow)
+    --塔底和塔顶不参与越界放宽，保留镜头的全局端点
+    local minY = self._LimitMinLocalY <= self._MinLocalY and self._MinLocalY or self._LimitMinLocalY - self._LimitOverflow
+    local maxY = self._LimitMaxLocalY >= self._MaxLocalY and self._MaxLocalY or self._LimitMaxLocalY + self._LimitOverflow
+    --镜头已越出区间时放宽到当前位置，避免被瞬间拉回
+    local _, localY = self.CameraMoveTran:GetLocalPosition()
+    return math.min(minY, localY), math.max(maxY, localY)
 end
 
---- 把越出区间的镜头回弹到区间内最近的边界，未越出时不做任何处理
----@return boolean 是否发起回弹
-function XSkyTowerCamera:SnapBackToHeightLimit()
-    if not self._LimitMinLocalY or not self._CameraParam or XTool.UObjIsNil(self.CameraMoveTran) then
-        return false
-    end
-    local minY = math.max(self._MinLocalY, self._LimitMinLocalY)
-    local maxY = math.min(self._MaxLocalY, self._LimitMaxLocalY)
-    local _, beginY = self.CameraMoveTran:GetLocalPosition()
-    local targetY = CsMathf.Clamp(beginY, minY, maxY)
-    if targetY == beginY then
-        return false
-    end
-    self:StopInertia()
-    self:StopLocate()
-    self._LocateTimer = XUiHelper.Tween(self._CameraParam.Height.LocateFloorDuration, function(progress)
-        if XTool.UObjIsNil(self.CameraMoveTran) then
-            return true
-        end
-        local x, _, z = self.CameraMoveTran:GetLocalPosition()
-        self.CameraMoveTran:SetLocalPosition(x, beginY + (targetY - beginY) * progress, z)
-    end, function()
-        self._LocateTimer = nil
-        if XTool.UObjIsNil(self.CameraMoveTran) then
-            return
-        end
-        self:NotifyGameplayUiState()
-        self:ForceCheckCurFloor()
-    end)
-    return true
-end
-
----松手后按初速度开启惯性滑动，速度过小或配置关闭时不生效
+---松手后按初速度开启惯性滑动，速度过小或时长非正时不启动
 ---@param velocity number 松手瞬间的高度速度
 ---@return boolean 是否进入惯性
 function XSkyTowerCamera:StartInertia(velocity)
-    local heightParam = self._CameraParam.Height
-    if not heightParam.EnableInertia or heightParam.InertiaDuration <= 0 then
+    if self._InertiaDuration <= 0 then
         return false
     end
-    velocity = CsMathf.Clamp(velocity * heightParam.InertiaVelocityScale, -heightParam.MaxInertiaSpeed, heightParam.MaxInertiaSpeed)
-    if math.abs(velocity) <= heightParam.InertiaStopSpeed then
+    velocity = CsMathf.Clamp(velocity * self._InertiaVelocityScale, -self._MaxInertiaSpeed, self._MaxInertiaSpeed)
+    if math.abs(velocity) <= self._InertiaStopSpeed then
         return false
     end
     self._InertiaVelocity = velocity
@@ -642,13 +636,12 @@ function XSkyTowerCamera:UpdateInertia()
         self:ForceCheckCurFloor()
         return
     end
-    local heightParam = self._CameraParam.Height
     self._InertiaElapsed = self._InertiaElapsed + self._UnscaledDeltaTime
-    local progress = CsMathf.Clamp01(self._InertiaElapsed / heightParam.InertiaDuration)
-    local speed = self._InertiaVelocity * heightParam.InertiaSpeedCurve:Evaluate(progress)
+    local progress = CsMathf.Clamp01(self._InertiaElapsed / self._InertiaDuration)
+    local speed = self._InertiaVelocity * self._InertiaSpeedCurve:Evaluate(progress)
     local actualDelta = self:MoveHeight(speed * self._UnscaledDeltaTime)
     local actualSpeed = self._UnscaledDeltaTime > 0 and math.abs(actualDelta / self._UnscaledDeltaTime) or 0
-    if progress >= 1 or actualSpeed <= heightParam.InertiaStopSpeed then
+    if progress >= 1 or actualSpeed <= self._InertiaStopSpeed then
         self:StopInertia()
         self:NotifyGameplayUiState()
         self:ForceCheckCurFloor()
@@ -669,26 +662,17 @@ function XSkyTowerCamera:OnMainZoom(value)
     if not self._MainInputEnabled or not self._CameraParam or not self:IsZoomInputAllowed() then
         return
     end
-    local sensitivity = CsInput.touchCount >= 2 and self._CameraParam.Zoom.PinchSensitivity or self._CameraParam.Zoom.MouseWheelSensitivity
+    local sensitivity = CsInput.touchCount >= 2 and self._PinchSensitivity or self._MouseWheelSensitivity
     local localX, localY, localZ = self.CameraMoveTran:GetLocalPosition()
-    local targetZ = CsMathf.Clamp(localZ - value * sensitivity, self._FarthestLocalZ, self._CameraParam.Zoom.NearestLocalZ)
+    local targetZ = CsMathf.Clamp(localZ - value * sensitivity, self._FarthestLocalZ, self._NearestLocalZ)
     if targetZ == localZ then
         return
     end
     --演出定位的目标位置按当前缩放计算，主动缩放时取消定位
     self:StopLocate()
     self.CameraMoveTran:SetLocalPosition(localX, localY, targetZ)
-    self._IsZooming = true
+    --缩放只刷新玩法UI显隐，保持当前楼层和分区选中状态
     self:NotifyGameplayUiState()
-    --缩放改变了视野范围，楼层落在屏幕上的位置也会变
-    self:CheckCurFloor()
-    self:StopZoomTimer()
-    self._ZoomTimer = XScheduleManager.ScheduleOnce(function()
-        self._ZoomTimer = nil
-        self._IsZooming = false
-        self:NotifyGameplayUiState()
-        self:ForceCheckCurFloor()
-    end, self._CameraParam.Zoom.ZoomStopDelay * XScheduleManager.SECOND)
 end
 
 ---缩放输入是否落在镜头操作区域内（避免在UI上捏合时误缩放）
@@ -714,21 +698,13 @@ function XSkyTowerCamera:IsZoomInputAllowed()
     return raycastTransform == self._InputArea.transform or raycastTransform:IsChildOf(self._InputArea.transform)
 end
 
----打断缩放结束的延迟判定计时
-function XSkyTowerCamera:StopZoomTimer()
-    if self._ZoomTimer then
-        XScheduleManager.UnSchedule(self._ZoomTimer)
-        self._ZoomTimer = nil
-    end
-end
-
 ---通知外部玩法UI的显隐：缩放超出可视区间时隐藏，其余情况都显示
 function XSkyTowerCamera:NotifyGameplayUiState()
     if not self._CameraParam or XTool.UObjIsNil(self.CameraMoveTran) then
         return
     end
     local _, _, localZ = self.CameraMoveTran:GetLocalPosition()
-    local hideByZoomRange = localZ < self._CameraParam.Zoom.HideUiBelowLocalZ or localZ > self._CameraParam.Zoom.HideUiAboveLocalZ
+    local hideByZoomRange = localZ < self._HideUiBelowLocalZ or localZ > self._HideUiAboveLocalZ
     XEventManager.DispatchEvent(XEventId.EVENT_SKY_TOWER_HIDE_GAMEPLAY_UI, hideByZoomRange)
 end
 
@@ -737,7 +713,7 @@ function XSkyTowerCamera:ShowDefault()
 end
 
 ---返回入口时注视玩法镜头内的最高楼层，首次进入活动时默认注视已解锁最高层。
-function XSkyTowerCamera:ShowEntranceCamera()
+function XSkyTowerCamera:ShowEntranceCamera(immediate)
     self:SetMainInputEnabled(false)
     self:RefreshMoveRange()
     local floorId = self._Model:GetMaxFloorId()
@@ -752,7 +728,7 @@ function XSkyTowerCamera:ShowEntranceCamera()
     local transform = self.CameraMain.transform
     local localX, _, localZ = transform:GetLocalPosition()
     transform:SetLocalPosition(localX, self:GetFloorLocalY(floorId), localZ)
-    self:ShowCamera(self.CameraMain)
+    self:ShowCamera(self.CameraMain, immediate)
 end
 
 ---入口当前注视的楼层，供再次进入玩法时恢复定位
@@ -779,12 +755,20 @@ function XSkyTowerCamera:ShowWorkCamera(node)
     self:ShowCamera(self.CameraWork)
 end
 
-function XSkyTowerCamera:ShowCamera(camera)
+function XSkyTowerCamera:ShowCamera(camera, immediate)
     self.CameraMain.gameObject:SetActiveEx(camera == self.CameraMain)
     self.CameraMove.gameObject:SetActiveEx(camera == self.CameraMove)
     self.CameraDance.gameObject:SetActiveEx(camera == self.CameraDance)
     self.CameraWork.gameObject:SetActiveEx(camera == self.CameraWork)
     self.CameraFloor.gameObject:SetActiveEx(camera == self.CameraFloor)
+
+    if not immediate or XTool.UObjIsNil(self._Brain) then
+        return
+    end
+
+    camera.PreviousStateIsValid = false
+    self._Brain.enabled = false
+    self._Brain.enabled = true
 end
 
 ---混合镜头的Brain，挂在真实摄像机上
@@ -803,7 +787,7 @@ function XSkyTowerCamera:SetScenePickEnabled(value)
 end
 
 function XSkyTowerCamera:GetDefaultLocalOffsetY()
-    return self._CameraParam.Height.DefaultLocalOffsetY
+    return self._DefaultLocalOffsetY
 end
 
 return XSkyTowerCamera

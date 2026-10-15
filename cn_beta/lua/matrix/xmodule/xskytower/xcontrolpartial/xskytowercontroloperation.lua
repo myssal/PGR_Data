@@ -73,7 +73,7 @@ function XSkyTowerControl:OpenSpeedUpReturnPopup(returnCount)
     local itemId = self:GetIntConfigValue("SpeedUpItemId")
     local title = self:GetClientConfigText("AccelerateReturnTip", 1)
     local content = self:GetClientConfigText("AccelerateReturnTip", 2, returnCount, self:GetItemName(itemId))
-    self:OpenPopup(title, content, { Icon = self:GetItemIcon(itemId), Count = returnCount })
+    self:OpenPopup(title, content, { Icon = self:GetItemIcon(itemId), Count = returnCount }, nil, nil, true)
 end
 
 ---加速产出的图标：备菜/做菜给产物本身，售卖台给金币
@@ -157,4 +157,3 @@ end
 --endregion
 
 return XSkyTowerControl
-SkyTowerControl

@@ -4,6 +4,7 @@ local XSkyTowerAgency = XClassPartial('XSkyTowerAgency')
 
 function XSkyTowerAgency:InitScene()
     self._SceneObj = nil
+    self._SceneLoadId = 0
     -- 已完成的加载步骤数（包含最后的资源回收）
     self.LoadCount = 0
     -- 本次加载需要的总步骤数
@@ -23,9 +24,14 @@ function XSkyTowerAgency:InitScene()
 end
 
 function XSkyTowerAgency:LoadAsync(url, loadSuccess, loadFail)
+    local sceneLoadId = self._SceneLoadId
     ---@type XLoaderUtil
     local loader = CS.XLoaderUtil.GetModuleLoader(ModuleId.XSkyTower)
     loader:LoadAsync(url, function(asset)
+        --退出或重新进入后，旧加载器的回调不能再创建场景和模型
+        if self._SceneLoadId ~= sceneLoadId then
+            return
+        end
         if not asset then
             XLog.Error("通天塔资源加载失败：" .. url)
             if loadFail then
@@ -54,6 +60,7 @@ end
 
 ---创建场景、预加载楼层
 function XSkyTowerAgency:LoadSceneResources()
+    self._SceneLoadId = self._SceneLoadId + 1
     local sceneUrl = self._Model:GetClientConfigValue("ScenePrefab")
     --实例化最高楼层附近一定范围的楼层，其他楼层预加载
     --local instantiateFloorRange = self._Model:GetIntClientConfigValue("InstantiateFloorRange")
@@ -71,6 +78,12 @@ function XSkyTowerAgency:LoadSceneResources()
         local go = XUiHelper.Instantiate(asset)
         XUiHelper.InitUiClass(self._SceneObj, go)
         self:InitFloorHeight()
+        --楼层资源可能先于场景返回，等挂载节点就绪后再实例化
+        for floorId in pairs(self._FloorPreLoadAssetHash) do
+            if floorId <= maxFloorId then
+                self:LoadFloor(floorId)
+            end
+        end
         checkLoadEnd()
     end, function()
         self:OnLoadSceneFail(sceneUrl)
@@ -80,7 +93,7 @@ function XSkyTowerAgency:LoadSceneResources()
         local floorCfg = self._Model:GetFloorConfig(i)
         self:LoadAsync(floorCfg.ResLut, function(asset)
             self._FloorPreLoadAssetHash[i] = asset
-            if i <= maxFloorId then
+            if self._SceneObj and i <= maxFloorId then
                 self:LoadFloor(i)
             end
             checkLoadEnd()
@@ -88,6 +101,7 @@ function XSkyTowerAgency:LoadSceneResources()
             self:OnLoadSceneFail(sceneUrl)
         end)
     end
+    return self._SceneLoadId
 end
 
 --- 推进最后的资源回收步骤并获取场景加载进度（0~1）
@@ -117,7 +131,7 @@ end
 
 ---加载场景资源失败
 function XSkyTowerAgency:OnLoadSceneFail(url)
-    CS.XLoaderUtil.ClearModuleLoader(ModuleId.XSkyTower)
+    self:ResetSceneObj()
     XLuaUiManager.Remove("UiSkyTowerLoading")
     XLog.Error(string.format("通天塔场景资源加载失败！%s", url))
 end
@@ -198,12 +212,22 @@ function XSkyTowerAgency:GetFloorObjHash()
 end
 
 function XSkyTowerAgency:ResetSceneObj()
-    XUiHelper.Destroy(self._SceneObj.GameObject)
+    --先作废回调；Loading阶段场景可能尚未创建，重复释放也应安全
+    self._SceneLoadId = self._SceneLoadId + 1
+    self.LoadCount = 0
+    self.LoadTotalCount = 0
+    self._SceneUnloadOperation = nil
+    if self._SceneObj then
+        XUiHelper.Destroy(self._SceneObj.GameObject)
+    end
     self._SceneObj = nil
     self._FloorPreLoadAssetHash = {}
     self._FloorObjHash = {}
     self._FloorTotalHeight = nil
     self._FloorBuildHeight = nil
+    self._LoadedAssetUrls = {}
+    --Loading阶段Control可能尚未获取Loader，由场景持有方兜底回收
+    CS.XLoaderUtil.ClearModuleLoader(ModuleId.XSkyTower)
 end
 
 return XSkyTowerAgency

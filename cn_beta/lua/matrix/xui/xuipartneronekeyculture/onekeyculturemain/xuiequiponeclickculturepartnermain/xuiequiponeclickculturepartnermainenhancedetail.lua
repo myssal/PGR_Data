@@ -93,6 +93,7 @@ end
 function XUiEquipOneClickCulturePartnerMainEnhanceDetail:_Refresh()
     for _, entry in ipairs(self._ItemList) do
         entry.Item:Refresh(entry.CultureType)
+        CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(entry.Item.Transform)
         if not entry.Item:IsCultureDone(entry.CultureType) then
             entry.Item.Transform:SetAsLastSibling()
         end
@@ -102,6 +103,7 @@ function XUiEquipOneClickCulturePartnerMainEnhanceDetail:_Refresh()
             entry.Item.Transform:SetAsLastSibling()
         end
     end
+    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._LvupItem.Transform.parent)
 end
 
 return XUiEquipOneClickCulturePartnerMainEnhanceDetail

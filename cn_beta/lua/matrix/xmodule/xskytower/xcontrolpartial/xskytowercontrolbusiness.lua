@@ -552,7 +552,7 @@ function XSkyTowerControl:GetProductiveness(floorId, index, timeUnit)
         return timeUnit
     end
     -- 周期数乘上单轮产出份数才是实际产量
-    return self:GetAroundValue(timeUnit / produceNeedTime * self:GetOutputCount(floorId, index), XMVCA.XSkyTower.Digital.One)
+    return timeUnit / produceNeedTime * self:GetOutputCount(floorId, index)
 end
 
 ---单位时间对指定产品的消耗量（做菜台消耗食材与手作、售卖台消耗食物）
@@ -580,7 +580,7 @@ function XSkyTowerControl:GetConsumption(floorId, index, consumeProductId, timeU
                 speed = speed + consume.Count * count
             end
         end
-        return self:GetAroundValue(speed, XMVCA.XSkyTower.Digital.One)
+        return speed
     elseif workType == WorkType.Sale then
         if consumeProductId ~= productId then
             return 0
@@ -590,7 +590,7 @@ function XSkyTowerControl:GetConsumption(floorId, index, consumeProductId, timeU
             XLog.Error("食物的售卖速度小于等于0，请检查配置! foodId = ", productId)
             return timeUnit
         end
-        return self:GetAroundValue(timeUnit / saleNeedTime, XMVCA.XSkyTower.Digital.One)
+        return timeUnit / saleNeedTime
     end
     return 0
 end
@@ -845,6 +845,9 @@ end
 
 ---退出玩法时每个已开放分区上报一次；与统计页一致，使用每小时理论速率的原始值
 function XSkyTowerControl:RecordProductionStatistics()
+    if not self._Model:IsOpen() then
+        return
+    end
     local statistics = self:GetProductionStatistics()
     local towerLevel = self:GetSkyTowerLv()
     local ProductType = XMVCA.XSkyTower.ProductType

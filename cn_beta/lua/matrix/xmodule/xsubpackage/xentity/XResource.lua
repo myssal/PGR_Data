@@ -261,6 +261,9 @@ function XResource:ResetDownloadTaskGroup(fileInfos)
 end
 
 function XResource:GetProgress()
+    if self._State == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE then
+        return 1
+    end
     if not self._TaskGroupBuilt then
         local totalSize = self:GetTotalSize()
         if totalSize and totalSize > 0 then
@@ -292,6 +295,10 @@ function XResource:GetTotalSize()
 end
 
 function XResource:GetDownloadSize()
+    -- 任务组释放后会清空统计，已完成资源返回完整大小。
+    if self._State == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE then
+        return self:GetTotalSize()
+    end
     if not self._TaskGroupBuilt then
         return self._DownSize
     end

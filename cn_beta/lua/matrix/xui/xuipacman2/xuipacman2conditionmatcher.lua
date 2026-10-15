@@ -193,7 +193,7 @@ end
 
 ---处理本次条件系统变化。
 ---@param fieldChanges table|nil
----@return table matchedResults
+---@return table[] matchedResults 命中的规则列表，元素为原规则的只读引用
 function XUiPacMan2ConditionMatcher:OnFieldsChanged(fieldChanges)
     local matchedResults = {}
 
@@ -214,10 +214,8 @@ function XUiPacMan2ConditionMatcher:OnFieldsChanged(fieldChanges)
             if shouldTrigger then
                 state.HasTriggered = true
 
-                matchedResults[#matchedResults + 1] = {
-                    RuleId = rule.Id,
-                    EventGroupId = rule.EventGroupId,
-                }
+                -- 调用方只读使用，不得修改规则或在其中保存每次执行的状态。
+                matchedResults[#matchedResults + 1] = rule
             end
 
             -- 必须在ShouldTrigger之后更新，否则无法判断false进入true。
@@ -430,9 +428,6 @@ function XUiPacMan2ConditionMatcher:Dispose()
     self._RuleOrder = nil
     self._RuleStates = nil
     self._FieldRuleIndex = nil
-end
-
-return XUiPacMan2ConditionMatchereldRuleIndex = nil
 end
 
 return XUiPacMan2ConditionMatcher

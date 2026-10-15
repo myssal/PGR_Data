@@ -57,7 +57,11 @@ function XUiSkyTowerCook:OnEnable()
     if XTool.IsNumberValid(self.CurSelectFloorGroupTabIndex) then
         self:SetupDynamicTable()
     else
-        self.PanelTabArea:SelectIndex(1)
+        local floorGroupId = 1
+        if XTool.IsNumberValid(self.LocateCharacterId) then
+            floorGroupId = self._Control:GetCharacterFloorGroup(self.LocateCharacterId)
+        end
+        self.PanelTabArea:SelectIndex(floorGroupId)
     end
 end
 
@@ -195,7 +199,15 @@ end
 
 function XUiSkyTowerCook:SetupDynamicTable()
     self.CharacterDataList = self:GetCharacterDataList()
-    if XTool.IsTableEmpty(self.CharacterDataList) then
+    self.CurSelectRoleGrid = nil
+    local isEmpty = XTool.IsTableEmpty(self.CharacterDataList)
+    if self.PanelDetails then
+        self.PanelDetails.gameObject:SetActiveEx(not isEmpty)
+    end
+    if self.EmptyState then
+        self.EmptyState.gameObject:SetActiveEx(isEmpty)
+    end
+    if isEmpty then
         self.DynamicTable:Clear()
         self:ClearDetails()
         return
@@ -343,7 +355,8 @@ end
 ---@param isRoll boolean 是否数字滚动
 function XUiSkyTowerCook:RefreshLevelText(isRoll)
     local targetLevel = self:GetDisplayLevel()
-    self.TxtLv.color = targetLevel > self.CurCharacterLevel and XMVCA.XSkyTower.StaffColor.Preview or self.TxtLvColor
+    local previewColor = self._Control:GetClientConfigValue("CharacterLevelPreviewColor")
+    self.TxtLv.color = targetLevel > self.CurCharacterLevel and XUiHelper.Hexcolor2Color(previewColor) or self.TxtLvColor
 
     local startValue = self.LevelTextValue or self.CurCharacterLevel
     self:StopLevelRoll()
@@ -645,8 +658,8 @@ function XUiSkyTowerCook:RefreshConsumeText(targetLevel)
     local price = self:GetLevelUpCost(targetLevel)
     local ownCount = self._Control:GetItemCount(coinId)
     self.TxtConsume.text = ownCount
-    -- X>=Y蓝色，X<Y红色；代币不足时按钮仍可点，点击后弹提示
-    self.TxtConsume.color = ownCount >= price and XMVCA.XSkyTower.StaffColor.CoinEnough or XMVCA.XSkyTower.StaffColor.CoinNotEnough
+    local color = self._Control:GetClientConfigValue("StaffUpgradeCoinEnoughColor", ownCount >= price and 1 or 2)
+    self.TxtConsume.color = XUiHelper.Hexcolor2Color(color)
     self.TxtPrice.text = "/" .. price
 end
 

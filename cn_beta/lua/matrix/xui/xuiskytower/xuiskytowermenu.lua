@@ -211,18 +211,20 @@ function XUiSkyTowerMenu:GetGridIndex(param)
     return 1
 end
 
+---@param grid XUiGridSkyTowerMenu
 function XUiSkyTowerMenu:OnClickPerform(grid)
     if not grid then
         return
     end
     local performId = grid:GetId()
-    if self._Control:IsNotStart(performId) then
+    --与锁定样式保持一致，尚未进行对话的事件也不能从图鉴打开
+    if not grid:IsUnLock() then
         XMVCA.XSkyTower:TipMsg(self._Control:GetUnlockConditionDesc(performId))
         return
     end
     grid:SetRedPointState(false)
     self._Control:MarkPerformRedPoint(performId)
-    self._Control:OpenPerformUi(performId)
+    self._Control:OpenPerformUi(performId, true)
 end
 
 function XUiSkyTowerMenu:OnFoodScroll()
@@ -287,13 +289,6 @@ function XUiSkyTowerMenu:CloseIngredientBubble()
 end
 
 function XUiSkyTowerMenu:OnDragProxy(int, eventData)
-    if int == 0 then
-        self:CloseIngredientBubble()
-    end
-end
-
-return XUiSkyTowerMenu
-xy(int, eventData)
     if int == 0 then
         self:CloseIngredientBubble()
     end

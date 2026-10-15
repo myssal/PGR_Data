@@ -99,18 +99,53 @@ function XUiReformBalancePanelSide:RefreshAffixList()
     self:ScheduleRefreshAnchor()
 end
 
---- 刷新砝码格状态：选中态 + 羁绊强化箭头
+--- 刷新砝码格状态：选中态 + 词缀强化箭头 + 角色完美配平表现
 ---@param balanceControl XReformBalanceControl
 function XUiReformBalancePanelSide:RefreshCellState(balanceControl)
     for index = 1, #self._RoleCells do
-        local cell = self._RoleCells[index]
-        cell:RefreshSelectState()
-        cell:SetEnhanced(balanceControl:IsWeightBondEnhanced(cell:GetMassId()))
+        self._RoleCells[index]:RefreshSelectState()
     end
     for index = 1, #self._AffixCells do
         local cell = self._AffixCells[index]
         cell:RefreshSelectState()
-        cell:SetSpecial(balanceControl:IsSpecialAffix(cell:GetAffixId()))
+        cell:SetSpecial(balanceControl:IsWeightBondEnhanced(cell:GetMassId()))
+    end
+    self:RefreshAffixGlow(balanceControl)
+    self:RefreshRolePerfect(balanceControl)
+end
+
+--- 新变为特殊的词缀在对应格子上播一次高亮
+---@param balanceControl XReformBalanceControl
+function XUiReformBalancePanelSide:RefreshAffixGlow(balanceControl)
+    local specialAffixIdSet = balanceControl:GetSpecialAffixIdSet()
+    local lastSpecialAffixIdSet = self._LastSpecialAffixIdSet or table.empty
+    for index = 1, #self._AffixCells do
+        local cell = self._AffixCells[index]
+        local affixId = cell:GetAffixId()
+        if specialAffixIdSet[affixId] and not lastSpecialAffixIdSet[affixId] then
+            cell:PlayGlow()
+        end
+    end
+    self._LastSpecialAffixIdSet = specialAffixIdSet
+end
+
+--- 我方角色砝码格：完美配平时全亮强化标并播一次高亮动效，否则全灭
+---@param balanceControl XReformBalanceControl
+function XUiReformBalancePanelSide:RefreshRolePerfect(balanceControl)
+    if self:IsCostSide() then
+        return
+    end
+    local BalanceResult = balanceControl:GetBalanceLogic().BalanceResult
+    local isPerfect = balanceControl:GetBalanceViewModel().Data.BalanceResult == BalanceResult.Perfect
+    local shouldPlayGlow = isPerfect and self._IsPerfectGlowOn == false
+    self._IsPerfectGlowOn = isPerfect
+
+    for index = 1, #self._RoleCells do
+        local cell = self._RoleCells[index]
+        cell:SetEnhanced(isPerfect)
+        if shouldPlayGlow then
+            cell:PlayHightGlow()
+        end
     end
 end
 

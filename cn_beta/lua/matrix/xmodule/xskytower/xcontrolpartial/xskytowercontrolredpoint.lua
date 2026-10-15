@@ -35,13 +35,34 @@ end
 function XSkyTowerControl:GetMenuTabUnlockCount(tabId)
     local performType = XMVCA.XSkyTower.PerformType
     if tabId == XMVCA.XSkyTower.MenuTabType.Perform then
-        return self._Model:GetUnlockPerformCount(performType.Event) + self._Model:GetUnlockPerformCount(performType.FloorGroup)
+        return self:GetUnlockPerformCount(performType.Event) + self:GetUnlockPerformCount(performType.FloorGroup)
     elseif tabId == XMVCA.XSkyTower.MenuTabType.Indent then
-        return self._Model:GetUnlockPerformCount(performType.Indent)
+        return self:GetUnlockPerformCount(performType.Indent)
     elseif tabId == XMVCA.XSkyTower.MenuTabType.Food then
         return self:GetUnlockProductListCount(XMVCA.XSkyTower.WorkType.Food)
     end
     return 0
+end
+
+--- 已解锁（非未开始状态）的演出/订单数量
+---@param performType number XMVCA.XSkyTower.PerformType
+function XSkyTowerControl:GetUnlockPerformCount(performType)
+    local infos = self._Model:GetPerformInfos()
+    if XTool.IsTableEmpty(infos) then
+        return 0
+    end
+    local count = 0
+    local PerformState = XMVCA.XSkyTower.PerformState
+    for _, info in pairs(infos) do
+        if info.Type == performType then
+            if info.State == PerformState.OnGoing and self:IsPerformShow(info.PerformId) then
+                count = count + 1
+            elseif info.State == PerformState.Finish then
+                count = count + 1
+            end
+        end
+    end
+    return count
 end
 
 --- 标记菜单页签为已读（把当前解锁数写进存档，红点随之熄灭）
@@ -86,18 +107,6 @@ function XSkyTowerControl:MarkPerformListRedPoint(performIds)
     end
 end
 
-function XSkyTowerControl:CheckSkyTowerUpgradeRedPoint(level)
-    return false
-    --[[if not self:IsInBusiness() then
-        return false
-    end
-    if XTool.IsNumberValid(level) then
-        return self:CheckSingleLevelUpgradeRedPoint(level)
-    end
-    local curLv = self:GetSkyTowerLv()
-    return self:CheckSingleLevelUpgradeRedPoint(curLv + 1)]]
-end
-
 --- 工位红点：有空闲员工且存在空工位
 ---@param index number 工位下标，不传则检查该区域全部工位
 ---@param floorId number 不传取当前楼层
@@ -109,22 +118,7 @@ function XSkyTowerControl:CheckWorkBenchRedPoint(index, floorId)
     return self:HasFreeCharacter()
 end
 
-function XSkyTowerControl:CheckRecipeTaskRedPoint()
-    return XMVCA.XSkyTower:CheckRecipeTaskRedPoint()
-end
-
 function XSkyTowerControl:CheckAchievementTaskRedPoint()
-    return XMVCA.XSkyTower:CheckAchievementTaskRedPoint()
-end
-
-function XSkyTowerControl:CheckDailyTaskRedPoint()
-    return XMVCA.XSkyTower:CheckDailyTaskRedPoint()
-end
-
---endregion
-
-return XSkyTowerControl
-mentTaskRedPoint()
     return XMVCA.XSkyTower:CheckAchievementTaskRedPoint()
 end
 

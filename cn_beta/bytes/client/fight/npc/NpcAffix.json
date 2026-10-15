@@ -7774,6 +7774,17 @@
         "AssetUrl": "Assets/Product/Ui/UiFightPrefab/UiFightAffixTemplate/AffixTemplateBlue.prefab"
     },
     {
+        "Id": 786168,
+        "Name": "演出",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou.png",
+        "Description": "每层全队提伤20%",
+        "ShowType": 1,
+        "Priority": 50,
+        "ShowNumType": 1,
+        "ShowTimeType": 2,
+        "AssetUrl": "Assets/Product/Ui/UiFightPrefab/UiFightAffixTemplate/AffixTemplateBlue.prefab"
+    },
+    {
         "Id": 876901,
         "Name": "力场屏障",
         "Level": 1,
@@ -8598,6 +8609,7 @@
         "AssetUrl": "Assets/Product/Ui/UiFightPrefab/UiFightAffixTemplate/AffixTemplateRed.prefab",
         "ShowNameType": 1,
         "TranslateId": 250,
+        "Effect": "FxUiFightGeneral",
         "FadeEffect": "FxUiFightIconDisappear08"
     },
     {
@@ -8612,6 +8624,7 @@
         "AssetUrl": "Assets/Product/Ui/UiFightPrefab/UiFightAffixTemplate/AffixTemplateRed.prefab",
         "ShowNameType": 1,
         "TranslateId": 250,
+        "Effect": "FxUiFightGeneral",
         "FadeEffect": "FxUiFightIconDisappear08"
     },
     {
@@ -8626,6 +8639,7 @@
         "AssetUrl": "Assets/Product/Ui/UiFightPrefab/UiFightAffixTemplate/AffixTemplateRed.prefab",
         "ShowNameType": 1,
         "TranslateId": 250,
+        "Effect": "FxUiFightGeneral",
         "FadeEffect": "FxUiFightIconDisappear08"
     },
     {
@@ -8640,6 +8654,7 @@
         "AssetUrl": "Assets/Product/Ui/UiFightPrefab/UiFightAffixTemplate/AffixTemplateRed.prefab",
         "ShowNameType": 1,
         "TranslateId": 250,
+        "Effect": "FxUiFightGeneral",
         "FadeEffect": "FxUiFightIconDisappear08"
     },
     {
@@ -11792,7 +11807,7 @@
     },
     {
         "Id": 167125,
-        "Name": "极凝霜晶",
+        "Name": "霜晶刻蚀",
         "Level": 1,
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiankangPojiaBing.png",
         "Description": "冰属性抗性降低",
@@ -11820,7 +11835,7 @@
     },
     {
         "Id": 167127,
-        "Name": "极凝霜晶",
+        "Name": "霜晶刻蚀",
         "Level": 1,
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiankangPojiaBing.png",
         "Description": "冰属性抗性降低",
@@ -11848,7 +11863,7 @@
     },
     {
         "Id": 167129,
-        "Name": "极凝霜晶",
+        "Name": "霜晶刻蚀",
         "Level": 1,
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiankangPojiaBing.png",
         "Description": "冰属性抗性降低",
@@ -11876,7 +11891,7 @@
     },
     {
         "Id": 167131,
-        "Name": "极凝霜晶",
+        "Name": "霜晶刻蚀",
         "Level": 1,
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiankangPojiaBing.png",
         "Description": "冰属性抗性降低",
@@ -11904,7 +11919,7 @@
     },
     {
         "Id": 167133,
-        "Name": "极凝霜晶",
+        "Name": "霜晶刻蚀",
         "Level": 1,
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiankangPojiaBing.png",
         "Description": "冰属性抗性降低",
@@ -11932,7 +11947,7 @@
     },
     {
         "Id": 167135,
-        "Name": "极凝霜晶",
+        "Name": "霜晶刻蚀",
         "Level": 1,
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiankangPojiaBing.png",
         "Description": "冰属性抗性降低",
@@ -11951,6 +11966,32 @@
         "Level": 1,
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiankangPojiaFubing.png",
         "Description": "覆冰抗性降低",
+        "ShowType": 1,
+        "Priority": 50,
+        "ShowNumType": 1,
+        "ShowTimeType": 1,
+        "AssetUrl": "Assets/Product/Ui/UiFightPrefab/UiFightAffixTemplate/AffixTemplateRed.prefab",
+        "ShowNameType": 1
+    },
+    {
+        "Id": 167137,
+        "Name": "真空冻结",
+        "Level": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiankangPojiaBing.png",
+        "Description": "额外冰属性抗性降低",
+        "ShowType": 1,
+        "Priority": 50,
+        "ShowNumType": 1,
+        "ShowTimeType": 1,
+        "AssetUrl": "Assets/Product/Ui/UiFightPrefab/UiFightAffixTemplate/AffixTemplateRed.prefab",
+        "ShowNameType": 1
+    },
+    {
+        "Id": 167138,
+        "Name": "真空冻结",
+        "Level": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiankangPojiaFubing.png",
+        "Description": "额外覆冰抗性降低",
         "ShowType": 1,
         "Priority": 50,
         "ShowNumType": 1,

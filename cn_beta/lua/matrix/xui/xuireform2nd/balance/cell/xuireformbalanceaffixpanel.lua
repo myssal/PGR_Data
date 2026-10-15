@@ -4,12 +4,13 @@
 ---@field ImgSelect UnityEngine.RectTransform
 ---@field TxtWeightNum UnityEngine.UI.Text
 ---@field TxtName UnityEngine.UI.Text
----@field TagBond UnityEngine.RectTransform
 ---@field TagPower UiObject
 ---@field ImgAffixEnhance UnityEngine.RectTransform
+---@field BalanceHightGlow UnityEngine.RectTransform
 -- ======== AUTO FIELDS END ========
 --- 4.9 天平词缀砝码的展示面板
 --- 常态（PanelSelectionNor）与预选态（PanelPreSelection）两套节点内容相同，共用本类的内容逻辑
+--- 但 BalanceHightGlow 只有常态面板挂了，两个 Glow 方法只能在常态面板实例上调
 local XUiReformBalanceAffixPanel = XClass(XUiNode, "XUiReformBalanceAffixPanel")
 
 ---@param affixConfig XTableReformBalanceAffix
@@ -31,11 +32,20 @@ function XUiReformBalanceAffixPanel:SetSelected(isSelected)
     self.ImgSelect.gameObject:SetActiveEx(isSelected)
 end
 
---- 特殊词缀（羁绊触发）标记
----@param isSpecial boolean
-function XUiReformBalanceAffixPanel:SetSpecial(isSpecial)
-    self.ImgAffixEnhance.gameObject:SetActiveEx(isSpecial)
-    self.TagBond.gameObject:SetActiveEx(isSpecial)
+--- 羁绊强化箭头
+---@param isEnhanced boolean
+function XUiReformBalanceAffixPanel:SetSpecial(isEnhanced)
+    self.ImgAffixEnhance.gameObject:SetActiveEx(isEnhanced)
+end
+
+--- 播高亮动效
+function XUiReformBalanceAffixPanel:PlayGlow()
+    self.BalanceHightGlow:PlayTimelineAnimation()
+end
+
+--- 停高亮动效（格子换绑到别的词缀时调，避免动效残留在别的格子上）
+function XUiReformBalanceAffixPanel:StopGlow()
+    self.BalanceHightGlow:StopTimelineAnimation(false, true)
 end
 
 return XUiReformBalanceAffixPanel

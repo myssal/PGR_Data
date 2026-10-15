@@ -27,16 +27,18 @@ function XUiPanelSkyTowerCommonGroupEvent:OnUpdateLoopFloor(floorId)
     local room = self._Control:GetRoom(floorId)
     local grid = self._Grids[floorId]
     if grid then
-        if self:IsInScreen(grid.Transform) then
-            grid:Show(performId)
-            grid:UpdateTransform(room)
-        else
+        grid:Show(performId)
+        grid:UpdateTransform(room)
+        if not self:IsInScreen(grid.Transform) then
             self:OnRecycleFloor(floorId)
         end
     else
         local target = self:GetTarget(room, floorId)
         if target and self:IsTargetInScreen(room, target) then
-            self:CreateEventBtn(floorId, target, performId):UpdateTransform(room)
+            grid = self:CreateEventBtn(floorId, target, performId)
+            if grid then
+                grid:UpdateTransform(room)
+            end
         end
     end
 end
@@ -44,6 +46,9 @@ end
 function XUiPanelSkyTowerCommonGroupEvent:CreateEventBtn(floorId, target, performId)
     ---@type XUiGridSkyTower3DBase
     local grid = self:CreateGridWithPool()
+    if not grid then
+        return
+    end
     grid:SetTarget(target)
     grid:Show(performId)
     self._Grids[floorId] = grid
@@ -71,12 +76,6 @@ function XUiPanelSkyTowerCommonGroupEvent:GetTarget(room, floorId)
     if not target then
         target = room:GetGroupPerformIconNode()
         self._Targets[floorId] = target
-    end
-    return target
-end
-
-return XUiPanelSkyTowerCommonGroupEvent
-argets[floorId] = target
     end
     return target
 end

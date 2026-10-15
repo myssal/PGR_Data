@@ -218,25 +218,3 @@ function XReformBalanceControl:GetCfgBalanceMassByCombineIdAndTarget(idPrefix, t
 end
 
 return XReformBalanceControl
-�着哈希链找到对应的配置
-    for i = 2, 99 do
-        local id = idPrefix + i
-
-        -- 探索查找，可能为空，不报错
-        cfg = self:GetBalanceMass(id, true)
-
-        if cfg then
-            if cfg.TargetId == targetId then
-                -- 查找成功
-                return cfg
-            end
-        else
-            -- 索引必连续，断开表示终止
-            break
-        end
-    end
-    
-    return nil
-end
-
-return XReformBalanceControl

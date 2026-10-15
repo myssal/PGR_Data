@@ -435,8 +435,7 @@ function XUiTeamPrefabMain:OnBtnUseClick()
                 if XTool.IsNumberValid(charId) then
                     if v:GetIsWeaponResonanceCountConflict() then
                         local weaponId = curTeamPrefabEntity:GetWeaponData(pos).EquipId
-                        local xEquip = XMVCA.XEquip:GetEquip(weaponId)
-                        local resDic = xEquip:GetResonanceInfoDic()
+                        local resDic = XMVCA.XEquip:GetResonanceSkillDic(weaponId)
                         curTeamPrefabEntity:CopyRealWeaponResonance(XTool.Clone(resDic), pos)
                     end
     

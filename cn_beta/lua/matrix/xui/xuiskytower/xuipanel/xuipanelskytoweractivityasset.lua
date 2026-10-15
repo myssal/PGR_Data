@@ -17,6 +17,7 @@ function XUiPanelSkyTowerActivityAsset:OnGetLuaEvents()
         XEventId.EVENT_SKY_TOWER_DATA_CHANGE,
         XEventId.EVENT_SKY_TOWER_LEVEL_CHANGE,
         XEventId.EVENT_SKY_TOWER_LEVEL_CONDITION_CHANGE,
+        XEventId.EVENT_SKY_TOWER_DAILY_RESET,
     }
 end
 
@@ -108,10 +109,6 @@ end
 
 function XUiPanelSkyTowerActivityAsset:OnRelease()
     self.Super.OnRelease(self)
-end
-
-return XUiPanelSkyTowerActivityAsset
-lf)
 end
 
 return XUiPanelSkyTowerActivityAsset

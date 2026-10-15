@@ -270,6 +270,7 @@ XFunctionManager.FunctionName = {
     PokerGuessing2 = 10486,
     VersionGift = 10487, -- 合版本活动
     ScoreTower = 10488, -- 新矿区
+    PacMan2 = 10490,
     Theatre5 = 10491, -- 肉鸽5.0
     BountyChallenge = 10492, -- 悬赏挑战
     DlcRelink = 10493, -- 联机共斗

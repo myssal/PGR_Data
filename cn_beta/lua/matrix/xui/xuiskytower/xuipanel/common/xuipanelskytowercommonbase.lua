@@ -9,7 +9,7 @@ local ScreenCullMargin = 200
 function XUiPanelSkyTowerCommonBase:OnStart()
     self:InitPool()
     ---池子里最多留几个闲置Grid，多出来的直接销毁
-    self._PoolMaxCount = 3
+    --self._PoolMaxCount = 3
     self._HalfWidth = CS.XUiManager.RealScreenWidth * 0.5 + ScreenCullMargin
     self._HalfHeight = CS.XUiManager.RealScreenHeight * 0.5 + ScreenCullMargin
 end
@@ -63,12 +63,16 @@ function XUiPanelSkyTowerCommonBase:DestroyGrid(grid)
     XUiHelper.Destroy(go)
 end
 
+---@return XUiGridSkyTower3DBase|nil 当帧新建额度耗尽时返回nil
 function XUiPanelSkyTowerCommonBase:CreateGridWithPool()
     local count = #self._Pool
     if count > 0 then
         local grid = self._Pool[count]
         self._Pool[count] = nil
         return grid
+    end
+    if not self.Parent:TryConsumeGridCreateBudget() then
+        return nil
     end
     local ui = XUiHelper.Instantiate(self._NodeTransform, self.Transform)
     return self:OnCreateGrid(ui)
@@ -78,10 +82,10 @@ end
 ---@param grid XUiGridSkyTower3DBase
 function XUiPanelSkyTowerCommonBase:PushPool(grid)
     grid:OnRecycle()
-    if #self._Pool >= self._PoolMaxCount then
-        self:DestroyGrid(grid)
-        return
-    end
+    --if #self._Pool >= self._PoolMaxCount then
+    --    self:DestroyGrid(grid)
+    --    return
+    --end
     self._Pool[#self._Pool + 1] = grid
 end
 

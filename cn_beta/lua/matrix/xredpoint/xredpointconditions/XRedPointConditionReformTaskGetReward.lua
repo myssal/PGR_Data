@@ -10,7 +10,7 @@ function XRedPointConditionReformTaskGetReward.GetEvents()
 end
 
 function XRedPointConditionReformTaskGetReward.Check()
-    local taskDatas = XDataCenter.TaskManager.GetTaskList(TaskType.Reform)
+    local taskDatas = XMVCA.XReform:GetTaskList()
     for _, taskData in pairs(taskDatas) do
         if taskData.State == XDataCenter.TaskManager.TaskState.Achieved then
             return true

@@ -209,13 +209,3 @@ function XSkyTowerControl:NewPanelActivityAsset(itemIds, panelGo, parent)
 end
 
 return XSkyTowerControl
-    XDataCenter.ItemManager.AddCountUpdateListener(id, function()
-                assetActivityPanel:RefreshCurrentAssets()
-            end, assetActivityPanel)
-        end
-    end
-    assetActivityPanel:Refresh(itemIds)
-    return assetActivityPanel
-end
-
-return XSkyTowerControl

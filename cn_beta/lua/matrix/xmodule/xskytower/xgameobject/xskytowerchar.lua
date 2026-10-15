@@ -139,8 +139,8 @@ function XSkyTowerChar:OnLoadSuccess()
     --订单NPC、演员等可能直接使用预制体自带的移动组件，也要统一关闭角色碰撞。
     self:TryAddNavMeshAgent(true)
     --处理阴影
-    CS.XMaterialContainerHelper.SetCharacterShadowVolumeEnable(self._GameObject, false)
-    CS.XShadowHelper.AddShadow(self._GameObject, true)
+    --CS.XMaterialContainerHelper.SetCharacterShadowVolumeEnable(self._GameObject, false)
+    --CS.XShadowHelper.AddShadow(self._GameObject, true)
 
     self._DelayReleaseCb = handler(self, self.DelayRelease)
 

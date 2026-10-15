@@ -31,6 +31,9 @@ end
 --- 由 XTool.UpdateDynamicItem 驱动
 ---@param massId number
 function XUiReformBalanceAffixCell:Update(massId)
+    if self._MassId ~= massId then
+        self:StopGlow()
+    end
     self._MassId = massId
     local balanceControl = self._Control:GetBalanceControl()
     local massConfig = balanceControl:GetBalanceMass(massId)
@@ -67,14 +70,30 @@ function XUiReformBalanceAffixCell:IsPreSelecting()
     return self._PreSelectState ~= PreSelectState.None
 end
 
---- 特殊词缀（羁绊触发）：显示强化箭头与羁绊标签；敌方词缀无此表现
----@param isSpecial boolean
-function XUiReformBalanceAffixCell:SetSpecial(isSpecial)
+--- 强化箭头：羁绊相关的词缀才亮；敌方词缀无此表现
+---@param isEnhanced boolean
+function XUiReformBalanceAffixCell:SetSpecial(isEnhanced)
     if self.Parent:IsCostSide() then
         return
     end
-    self._NorPanel:SetSpecial(isSpecial)
-    self._PrePanel:SetSpecial(isSpecial)
+    self._NorPanel:SetSpecial(isEnhanced)
+    self._PrePanel:SetSpecial(isEnhanced)
+end
+
+--- 播高亮动效；敌方词缀无此表现
+function XUiReformBalanceAffixCell:PlayGlow()
+    if self.Parent:IsCostSide() then
+        return
+    end
+    self._NorPanel:PlayGlow()
+end
+
+--- 停高亮动效；敌方词缀无此表现
+function XUiReformBalanceAffixCell:StopGlow()
+    if self.Parent:IsCostSide() then
+        return
+    end
+    self._NorPanel:StopGlow()
 end
 
 function XUiReformBalanceAffixCell:GetMassId()

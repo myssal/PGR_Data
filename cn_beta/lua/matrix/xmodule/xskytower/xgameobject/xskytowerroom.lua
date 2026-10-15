@@ -92,11 +92,9 @@ function XSkyTowerRoom:OnLoadSuccess()
         self._CharacterRoot = go.transform
     end
 
-    self:LoadGlobalSO()
     self:InitPerform()
     self:InitNavMesh()
     self:InitCustomer()
-    self:InitSceneSetting()
     self:LoadWorkModels()
     self:StartBusiness()
     self:InitFlootGroupName()
@@ -210,28 +208,6 @@ function XSkyTowerRoom:InitPerform()
     self._FloorGroupPerform:SetFloorGroupPerform(true)
 end
 
-function XSkyTowerRoom:InitSceneSetting()
-    self._SceneSetting = self._Transform:GetComponent("XSceneSetting")
-    if self._SceneSetting then
-        self._SceneSetting.enabled = true
-        CS.XGraphicManager.BindScene(self._SceneSetting)
-    end
-end
-
-function XSkyTowerRoom:LoadGlobalSO()
-    --场景加载完
-    XUiHelper.SetSceneType(CS.XSceneType.Dormitory)
-    local path = self._Model:GetGlobalIllumination()
-    local loader = self._OwnControl:GetLoader()
-    local asset = loader:Load(path)
-    if not asset then
-        XLog.Error("skyTower load resource error: asset path = " .. path)
-        return
-    end
-    CS.XGlobalIllumination.SetGlobalIllumSO(asset)
-    self._GOPath = path
-end
-
 function XSkyTowerRoom:InitNavMesh()
     self:AddNavMeshObstacleSizeByCollider(self._UiObj.Furniture)
     self:AddNavMeshObstacleSizeByCollider(self._UiObj.DanceHideFurniture)
@@ -252,8 +228,21 @@ function XSkyTowerRoom:InitNavMesh()
         end
     end
     if not XTool.UObjIsNil(self._UiObj.Floor) then
-        CS.XNavMeshUtility.SetColliderNavMeshSurfaceAndBuild(self._UiObj.Floor.gameObject)
+        --self:SetNavMeshSurfaceAndBuild(self._UiObj.Floor.gameObject)
     end
+end
+
+function XSkyTowerRoom:SetNavMeshSurfaceAndBuild(gameObject)
+    local meshRenderer = gameObject:GetComponent(typeof(CS.UnityEngine.MeshRenderer))
+    if XTool.UObjIsNil(meshRenderer) then
+        return
+    end
+    local navMeshSurface = meshRenderer.gameObject:GetComponent(typeof(CS.UnityEngine.AI.NavMeshSurface))
+    if navMeshSurface == nil then
+        navMeshSurface = meshRenderer.gameObject:AddComponent(typeof(CS.UnityEngine.AI.NavMeshSurface))
+        navMeshSurface.collectObjects = CS.UnityEngine.AI.CollectObjects.Children
+    end
+    navMeshSurface:BuildNavMesh()
 end
 
 function XSkyTowerRoom:InitCustomer()
@@ -276,12 +265,6 @@ function XSkyTowerRoom:GetObjName()
 end
 
 function XSkyTowerRoom:Release()
-    if not string.IsNilOrEmpty(self._GOPath) then
-        local loader = self._OwnControl:GetLoader()
-        loader:Unload(self._GOPath)
-        self._GOPath = nil
-    end
-
     self.Super.Release(self)
     for _, role in pairs(self._CharacterMap) do
         role:Release()
@@ -323,10 +306,10 @@ function XSkyTowerRoom:Release()
 end
 
 function XSkyTowerRoom:AddNavMeshObstacleSizeByCollider(transform)
-    if XTool.UObjIsNil(transform) then
-        return
-    end
-    CS.XNavMeshUtility.AddNavMeshObstacleSizeByCollider(transform.gameObject)
+    --if XTool.UObjIsNil(transform) then
+    --    return
+    --end
+    --CS.XNavMeshUtility.AddNavMeshObstacleSizeByCollider(transform.gameObject)
 end
 
 function XSkyTowerRoom:StartBusiness()
@@ -770,6 +753,8 @@ end
 
 --每秒会执行一次
 function XSkyTowerRoom:Simulation(timeOfNow)
+    --到达订单解锁时间不一定触发数据更新，定时补齐订单NPC
+    self:TryLoadIndent()
     self:SimulationCustomer(timeOfNow)
 end
 

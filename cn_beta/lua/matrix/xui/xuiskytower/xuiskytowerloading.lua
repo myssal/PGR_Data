@@ -6,21 +6,28 @@ local CsTime = CS.UnityEngine.Time
 
 --region 生命周期
 function XUiSkyTowerLoading:OnEnable()
+    self._IsLoadingActive = true
+    self._SceneLoadId = nil
     self._Progress = 0
-    self._IsProgressFinished = false
-    self._IsEnableAnimationFinished = false
-    self._IsSuccess = false
+    self._HasStartedLoading = false
+    self._HasFinishedLoading = false
+    self._HasNotifiedLoadSuccess = false
     self:RefreshBar()
-    XScheduleManagerPro.ScheduleForever(self._OnUpdateScheduleCb, self, 0, 0)
     self:PlayAnimation("Enable", handler(self, self.OnEnableAnimationFinished))
 end
 
 function XUiSkyTowerLoading:OnDisable()
+    self._IsLoadingActive = false
+    self:ClearTimer()
+end
+
+function XUiSkyTowerLoading:OnRelease()
+    self._IsLoadingActive = false
     self:ClearTimer()
 end
 
 function XUiSkyTowerLoading:_OnUpdateScheduleCb()
-    if XTool.UObjIsNil(self.GameObject) then
+    if not self._IsLoadingActive or XTool.UObjIsNil(self.GameObject) then
         return
     end
     self:UpdateLoop()
@@ -31,54 +38,44 @@ function XUiSkyTowerLoading:ClearTimer()
 end
 
 function XUiSkyTowerLoading:OnEnableAnimationFinished(isFinished)
-    if not isFinished then
+    if not self._IsLoadingActive or not isFinished or self._HasStartedLoading then
         return
     end
-    self._IsEnableAnimationFinished = true
-    self:TryFinishLoading()
-end
---endregion
-
---region 界面刷新
--- 每帧推进进度条：目标值取资源实际加载比例，显示值按固定速度逼近目标，
--- 故资源瞬时就绪时进度条仍要走完这段时间，不会直接跳满
-function XUiSkyTowerLoading:UpdateLoop()
-    if self._IsProgressFinished then
-        return
-    end
-    local target = XMVCA.XSkyTower:GetSceneLoadProgress()
-    local step = XMVCA.XSkyTower.SceneLoadingBarSpeed * CsTime.deltaTime
-    self._Progress = math.min(self._Progress + step, target)
-    self:RefreshBar()
-    if self._Progress < 1 then
-        return
-    end
-    self._IsProgressFinished = true
-    self:ClearTimer()
-    self:TryFinishLoading()
+    self._HasStartedLoading = true
+    self:PlayAnimation("Loop", nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.Loop)
+    XScheduleManagerPro.ScheduleForever(self._OnUpdateScheduleCb, self, 0, 0)
+    self._SceneLoadId = XMVCA.XSkyTower:LoadSceneResources()
 end
 
-function XUiSkyTowerLoading:RefreshBar()
-    if XTool.UObjIsNil(self.ImgBar) then
+function XUiSkyTowerLoading:OnDisableAnimationFinished(isFinished)
+    if not self._IsLoadingActive or not isFinished or self._HasNotifiedLoadSuccess then
         return
     end
-    self.ImgBar.fillAmount = self._Progress
-end
-
-function XUiSkyTowerLoading:TryFinishLoading()
-    if not self._IsProgressFinished or not self._IsEnableAnimationFinished then
-        return
-    end
-    if self._IsSuccess then
-        return
-    end
-    self._IsSuccess = true
+    self._HasNotifiedLoadSuccess = true
     XMVCA.XSkyTower:OnLoadSceneSuccess()
 end
 --endregion
 
-return XUiSkyTowerLoading
-nFinished))
+--region 界面刷新
+-- 按固定速度逼近实际进度，进度条走满后再切入退场动画
+function XUiSkyTowerLoading:UpdateLoop()
+    if not self._HasStartedLoading or self._HasFinishedLoading then
+        return
+    end
+    local targetProgress = XMVCA.XSkyTower:GetSceneLoadProgress()
+    local step = XMVCA.XSkyTower.SceneLoadingBarSpeed * CsTime.deltaTime
+    local progress = math.min(self._Progress + step, targetProgress)
+    if self._Progress ~= progress then
+        self._Progress = progress
+        self:RefreshBar()
+    end
+    if self._Progress < 1 then
+        return
+    end
+    self._HasFinishedLoading = true
+    self:ClearTimer()
+    self:StopAnimation("Loop", false, false)
+    self:PlayAnimation("Disable", handler(self, self.OnDisableAnimationFinished))
 end
 
 function XUiSkyTowerLoading:RefreshBar()

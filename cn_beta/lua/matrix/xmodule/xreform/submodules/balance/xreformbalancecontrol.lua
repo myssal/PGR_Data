@@ -36,10 +36,16 @@ end
 function XReformBalanceControl:EnterMainUI(stageId)
     self._StageId = stageId
     local stageConfig = self:_GetStageConfig()
-    self:InitBalanceSlots(self._Model:GetStage(stageId), stageConfig.WishWeightSlotNum, stageConfig.CostWeightSlotNum, self:GetFixedEnemyMassIds())
+    self:InitBalanceSlots(self._Model:GetStage(stageId), stageConfig.WishWeightSlotNum, stageConfig.CostWeightSlotNum)
+    self:_ResetSelectedMassIds()
+    self:RefreshBalanceResult()
+end
+
+--- 放关卡固定怪 + 恢复上次选择的砝码；由 UI 在打开动效播完后调
+function XReformBalanceControl:ApplyInitSelect()
+    self:PlaceFixedWeights()
     self:InitBalanceSelect()
     self:ApplySelectedWeightsCache()
-    self:RefreshBalanceResult()
 end
 
 --- 退出天平质点主界面（UI 栈自动回退到上一个主界面）

@@ -19,6 +19,7 @@ end
 ---@param desc string
 function XUiReformBalanceBubbleRecommend:ShowTips(desc)
     self.UiTxtDesc.text = desc
+    self:Close()
     self:Open()
     self:StopAutoCloseTimer()
     self._AutoCloseTimer = XScheduleManager.ScheduleOnce(handler(self, self.Close), AUTO_CLOSE_DELAY)

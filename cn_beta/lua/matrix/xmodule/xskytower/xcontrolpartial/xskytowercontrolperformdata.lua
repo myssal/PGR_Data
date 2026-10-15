@@ -48,6 +48,11 @@ function XSkyTowerControl:CheckPerformFinish(performId)
     return self._Model.Perform:CheckPerformFinish(performId)
 end
 
+---演出是否可领取奖励（正在进行中+任务已全部完成）
+function XSkyTowerControl:CheckPerformClaimReward(performId)
+    return self._Model.Perform:CheckPerformClaimReward(performId)
+end
+
 --- 演出单个任务是否完成
 function XSkyTowerControl:CheckPerformTaskFinish(taskId)
     return self._Model.Perform:CheckPerformTaskFinish(taskId)
@@ -80,7 +85,7 @@ function XSkyTowerControl:GetTaskDescWithProgress(taskId)
     local progress = ""
     local taskLocalData = self:GetTaskLocalData(taskId)
     if taskLocalData then
-        progress = string.format("(%d/%d)", taskLocalData.Schedule, taskLocalData.Result)
+        progress = string.format("(%s/%s)", taskLocalData.Schedule, taskLocalData.Result)
     end
     return string.format("%s %s", XTaskConfig.GetTaskCfgById(taskId).Desc, progress)
 end
@@ -94,9 +99,9 @@ function XSkyTowerControl:GetTaskDescWithProgressRich(taskId)
     if taskLocalData then
         local schedule, result = taskLocalData.Schedule, taskLocalData.Result
         if schedule >= result then
-            progress = string.format("<color=#%s>(%d/%d)</color>", finishColor, schedule, result)
+            progress = string.format("<color=#%s>(%s/%s)</color>", finishColor, schedule, result)
         else
-            progress = string.format("(%d/%d)", schedule, result)
+            progress = string.format("(%s/%s)", schedule, result)
         end
     end
     return string.format("%s %s", XTaskConfig.GetTaskCfgById(taskId).Desc, progress)
@@ -135,10 +140,10 @@ function XSkyTowerControl:GetWorkOrderDescList(maxCount, floorId)
         end
         :: continue ::
     end
-    --优先未完成＞已完成 事件＞楼层区间事件＞订单
+    --已完成事件＞已完成订单＞未完成事件＞未完成订单，事件内仍按普通事件＞楼层区间事件排序
     table.sort(performs, function(a, b)
         if a.IsFinish ~= b.IsFinish then
-            return not a.IsFinish
+            return a.IsFinish
         end
         if a.Priority ~= b.Priority then
             return a.Priority < b.Priority
@@ -190,7 +195,7 @@ end
 --- 演出解锁条件Id列表
 function XSkyTowerControl:GetUnlockConditions(performId)
     local template = self:GetPerformConfig(performId)
-    return template and template.UnlockConditionIds or {}
+    return template and template.UnlockConditionIds or table.empty
 end
 
 --- 演出解锁条件描述（返回第一个未达成条件的描述，全部达成返回未开始文本）

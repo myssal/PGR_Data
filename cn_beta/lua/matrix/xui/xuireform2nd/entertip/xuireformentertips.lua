@@ -1,5 +1,6 @@
 -- ======== AUTO FIELDS BEGIN ========
 ---@class XUiReformEnterTips : XLuaUi
+---@field private _Control XReformControl
 ---@field GoLock UnityEngine.RectTransform
 ---@field TxtTip UnityEngine.UI.Text
 ---@field TxtWeight UnityEngine.UI.Text
@@ -10,11 +11,9 @@ local XUiReformEnterTips = XLuaUiManager.Register(XLuaUi, "UiReformEnterTips")
 local AUTO_CLOSE_DELAY = XScheduleManagerPro.SECOND * 2
 
 -- 4.9 天平质点：进入关卡配平环节的横条提示
--- 文本组件由调用方传参赋值（调用方读表后传入），如：
--- XLuaUiManager.Open("UiReformEnterTips", XUiHelper.GetText("XxxTip"), minQuality)
-function XUiReformEnterTips:OnStart(txtTip, txtWeight)
-    self.TxtTip.text = txtTip or ""
-    self.TxtWeight.text = txtWeight or ""
+function XUiReformEnterTips:OnStart(onClosed)
+    self._OnClosed = onClosed
+    self.TxtWeight.text = self._Control:GetBalanceControl():GetMinQuality()
 end
 
 function XUiReformEnterTips:OnEnable()
@@ -25,9 +24,14 @@ function XUiReformEnterTips:OnDisable()
     XScheduleManagerPro.UnSchedule(XUiReformEnterTips._OnAutoCloseScheduleCb, self)
 end
 
---- 自动关闭定时器回调（类级方法，非闭包）
----@param self XUiReformEnterTips
-function XUiReformEnterTips:_OnAutoCloseScheduleCb(self)
+function XUiReformEnterTips:OnDestroy()
+    if self._OnClosed then
+        self._OnClosed()
+        self._OnClosed = nil
+    end
+end
+
+function XUiReformEnterTips:_OnAutoCloseScheduleCb()
     self:Close()
 end
 

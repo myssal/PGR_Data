@@ -36,7 +36,7 @@
         "Key": "StorageCountDesc",
         "Values": [
             "库存%s件",
-            "<size=32><color=#70A998>%s</color></size>/%s"
+            "<size=32><color=#7de4e9>%s</color></size>/%s"
         ]
     },
     {
@@ -77,8 +77,8 @@
     {
         "Key": "ProductNotEnough",
         "Values": [
-            "粗糙物料不足",
-            "【<color=#b55252>%s</color>】所需粗糙物料不足，员工无法立即工作！\\n是否继续修造【<color=#b55252>%s</color>】？\\n（粗糙物料足够后，员工再继续修造【<color=#b55252>%s</color>】）",
+            "原料不足",
+            "【<color=#b55252>%s</color>】所需原料不足，员工无法立即工作！\\n是否继续修造【<color=#b55252>%s</color>】？\\n（原料足够后，员工再继续修造【<color=#b55252>%s</color>】）",
             "闪耀成品不足",
             "【<color=#b55252>%s</color>】库存为<color=#b55252>0</color>，员工无法立即酬宾！\\n是否继续选择酬宾【<color=#b55252>%s</color>】?\\n（其库存数量大于0后，员工将开始酬宾）"
         ]
@@ -145,7 +145,7 @@
     {
         "Key": "StoragePreviewTip3",
         "Values": [
-            "预计%s小时后收银台达到上限",
+            "预计%s小时后达到库存上限",
             "预计%s小时后消耗完毕",
             "持续产出"
         ]
@@ -651,8 +651,8 @@
     {
         "Key": "ItemTagName",
         "Values": [
-            "闪耀成品",
-            "粗糙物料"
+            "粗糙物料",
+            "闪耀成品"
         ]
     },
     {
@@ -708,24 +708,6 @@
         "Key": "SkyTowerLevelName",
         "Values": [
             "Lv.%s"
-        ]
-    },
-    {
-        "Key": "DragEdgeScrollRange",
-        "Values": [
-            200
-        ]
-    },
-    {
-        "Key": "DragEdgeScrollSpeed",
-        "Values": [
-            12
-        ]
-    },
-    {
-        "Key": "DragEdgeScrollOverflow",
-        "Values": [
-            3
         ]
     },
     {
@@ -1066,6 +1048,33 @@
             "每日任务已完成",
             "食谱任务已完成",
             "成就任务已完成"
+        ]
+    },
+    {
+        "Key": "MainBtnExpandText",
+        "Values": [
+            "粗糙物料",
+            "闪耀成品"
+        ]
+    },
+    {
+        "Key": "SpeedUpLimitReached",
+        "Values": [
+            "<size=20><color=#676BD5>/%s（已达上限）</color></size>",
+            "<size=20><color=#D5676D>/%s（原料不足）</color></size>"
+        ]
+    },
+    {
+        "Key": "StaffUpgradeCoinEnoughColor",
+        "Values": [
+            "7de4e9",
+            "FF0000"
+        ]
+    },
+    {
+        "Key": "CharacterLevelPreviewColor",
+        "Values": [
+            "0D70BC"
         ]
     }
 ]

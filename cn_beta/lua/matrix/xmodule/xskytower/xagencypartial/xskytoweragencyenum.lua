@@ -306,12 +306,6 @@ function XSkyTowerAgency:InitConst()
     self.StaffRollDuration = 0.3
     --文本颜色
     self.StaffColor = {
-        --代币充足
-        CoinEnough = XUiHelper.Hexcolor2Color("0D70BC"),
-        --代币不足
-        CoinNotEnough = XUiHelper.Hexcolor2Color("FF0000"),
-        --下一级预览态高亮
-        Preview = XUiHelper.Hexcolor2Color("0D70BC"),
         --加成为正
         AdditionUp = XUiHelper.Hexcolor2Color("356C38"),
         --加成为负

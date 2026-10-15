@@ -18,7 +18,8 @@ function XUiPacMan2PopupSettlement:OnAwake()
 end
 
 ---@param data XPacMan2SettlementData
-function XUiPacMan2PopupSettlement:OnStart(data)
+function XUiPacMan2PopupSettlement:OnStart(data, reportAgain)
+    self._ReportAgain = reportAgain
     if data.IsWin then
         self.PanelWin.gameObject:SetActive(true)
         self.PanelLost.gameObject:SetActive(false)
@@ -82,6 +83,9 @@ function XUiPacMan2PopupSettlement:UpdateBtnNext()
 end
 
 function XUiPacMan2PopupSettlement:OnClickAgain()
+    if self._ReportAgain then
+        self._ReportAgain()
+    end
     self:Close()
     XLuaUiManager.Remove("UiPacMan2Game")
     XScheduleManager.ScheduleNextFrame(function()
@@ -114,12 +118,6 @@ function XUiPacMan2PopupSettlement:PlayAnimationList()
             target:Open()
             target:PlayAnimation("GridTargetEnable")
             self:_RemoveTimerIdAndDoCallback(timer)
-        end, i * 200 + 200)
-        self:_AddTimerId(timer)
-    end
-end
-
-return XUiPacMan2PopupSettlement(timer)
         end, i * 200 + 200)
         self:_AddTimerId(timer)
     end

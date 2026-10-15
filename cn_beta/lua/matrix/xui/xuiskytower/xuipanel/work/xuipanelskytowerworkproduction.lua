@@ -23,7 +23,7 @@ function XUiPanelSkyTowerWorkProduction:RefreshChooseInfo(productId)
     local groupId = self._Control:GetFloorGroupIdByFloorId(self.Parent:GetFloorId())
     XUiHelper.RefreshUiObjectList(self._NeedList, self.GridNeed.parent, self.GridNeed, #consumes, function(index, grid)
         local consume = consumes[index]
-        local ownCount = self._Control:GetStorageProductCount(groupId, consume.ProductType, productId)
+        local ownCount = self._Control:GetStorageProductCount(groupId, consume.ProductType, consume.Id)
         grid.RImgIcon:SetRawImageEx(self._Control:GetProductIcon(consume.WorkType, consume.Id))
         grid.TxtCount.text = consume.Count
         grid.TxtCount.color = XUiHelper.Hexcolor2Color(self._Control:GetClientConfigValue("EnoughColor", ownCount >= consume.Count and 1 or 2))

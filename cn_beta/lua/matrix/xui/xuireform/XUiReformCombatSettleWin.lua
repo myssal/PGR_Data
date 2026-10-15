@@ -20,6 +20,9 @@ end
 ----@class UiReformCombatSettleWin:XLuaUi
 local XUiReformCombatSettleWin = XLuaUiManager.Register(XLuaUi, "UiReformCombatSettleWin")
 
+-- 质量数字递增时长（秒）
+local WEIGHT_TWEEN_TIME = 1
+
 function XUiReformCombatSettleWin:OnAwake()
     self.GridWinRole.gameObject:SetActiveEx(false)
     self.GridReward.gameObject:SetActiveEx(false)
@@ -109,14 +112,35 @@ end
 -- 质量数值 + 完美配平额外奖励提示
 function XUiReformCombatSettleWin:UpdateCombatWeight(winData)
     local fightResult = winData.SettleData.ReformFightResult
-    self.TxtWeight.text = fightResult and fightResult.FinalWishWeight or 0
-
+    local finalWeight = fightResult and fightResult.FinalWishWeight or 0
     -- 完美配平才有额外积分，无加成时服务端不下发
     local bonusWishWeight = fightResult and fightResult.BonusWishWeight or 0
+
     self.TxtRewardTip.gameObject:SetActiveEx(bonusWishWeight > 0)
     if bonusWishWeight > 0 then
         self.TxtRewardTip.text = XUiHelper.GetText("ReformSettlePerfectBalanceTip", bonusWishWeight)
+        self:PlayWeightTween(finalWeight)
+    else
+        self.TxtWeight.text = finalWeight
     end
+end
+
+-- 质量数字从 0 递增到最终值
+---@param finalWeight number
+function XUiReformCombatSettleWin:PlayWeightTween(finalWeight)
+    self.TxtWeight.text = 0
+    if finalWeight <= 0 then
+        return
+    end
+    XUiHelper.Tween(WEIGHT_TWEEN_TIME, function(progress)
+        if XTool.UObjIsNil(self.Transform) then
+            return true
+        end
+        self.TxtWeight.text = math.floor(progress * finalWeight)
+        return false
+    end, function()
+        self.TxtWeight.text = finalWeight
+    end)
 end
 
 function XUiReformCombatSettleWin:RegisterUiEvents()

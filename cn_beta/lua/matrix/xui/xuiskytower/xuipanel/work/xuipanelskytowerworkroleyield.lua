@@ -159,9 +159,9 @@ function XUiPanelSkyTowerWorkRoleYield:GetHourlyRateAndAddition(override, previe
     if self._Control:IsIngredientArea(self._WorkType) or self._Control:IsCookArea(self._WorkType) then
         outputCount = self._Control:GetOutputCount(self._FloorId, self._Index, override, previewRatios)
     end
-    local baseRate = self._Control:GetAroundValue(hour / base, digital)
-    local rate = self._Control:GetAroundValue(hour / single * outputCount, digital)
-    local addition = self._Control:GetAroundValue(math.max(rate - baseRate, 0), digital)
+    local baseRate = self._Control:GetFloorValue(hour / base, digital)
+    local rate = self._Control:GetFloorValue(hour / single * outputCount, digital)
+    local addition = self._Control:GetFloorValue(math.max(rate - baseRate, 0), digital)
     return baseRate, addition
 end
 

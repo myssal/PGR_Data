@@ -26,11 +26,14 @@ end
 
 function XUiGridSkyTowerMenu:RefreshIndent(indentId)
     self.Id = indentId
-    local isOnGoing = self._Control:IsPerformShow(indentId)
-    local isLock = self._Control:IsNotStart(indentId) or not isOnGoing
+    local isFinish, isOnGoing, isLock = self._Control:IsFinish(indentId), false, false
+    if not isFinish then
+        isOnGoing = self._Control:IsPerformShow(indentId)
+        isLock = self._Control:IsNotStart(indentId) or not isOnGoing
+    end
     self.Unlock = not isLock
     self.PanelOngoing.gameObject:SetActiveEx(isOnGoing)
-    self.PanelComplete.gameObject:SetActiveEx(self._Control:IsFinish(indentId))
+    self.PanelComplete.gameObject:SetActiveEx(isFinish)
     self.PanelLock.gameObject:SetActiveEx(isLock)
 
     self.BtnClick:SetNameByGroup(0, self._Control:GetPerformTitleWithStory(indentId))
@@ -64,11 +67,6 @@ function XUiGridSkyTowerMenu:PlayTip()
         return
     end
     self.TipAnimation.gameObject:SetActiveEx(false)
-    self.TipAnimation.gameObject:SetActiveEx(true)
-end
-
-return XUiGridSkyTowerMenu
-x(false)
     self.TipAnimation.gameObject:SetActiveEx(true)
 end
 

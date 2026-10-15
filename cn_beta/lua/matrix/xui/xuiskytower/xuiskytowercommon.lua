@@ -7,9 +7,11 @@ local XUiGridSkyTower3DDialog = require("XUi/XUiSkyTower/XUiGrid/3D/XUiGridSkyTo
 local XUiCommonDragContext = require("XUi/XUiCommon/XCommonDrag/XUiCommonDragContext")
 
 local DoEnable = false
+local MaxGridCreatePerFrame = 2
 
 --region 生命周期
 function XUiSkyTowerCommon:OnAwake()
+    self._IsHideView = false
     self:InitUi()
 end
 
@@ -40,6 +42,7 @@ function XUiSkyTowerCommon:OnDestroy()
 end
 
 function XUiSkyTowerCommon:InitUi()
+    self._GridCreateBudget = 0
     ---@type XStack
     self.DialogPool = XStack.New()
     ---@type table<number, XUiGridSkyTower3DDialog>
@@ -66,7 +69,13 @@ function XUiSkyTowerCommon:InitView()
 end
 
 function XUiSkyTowerCommon:HideUi(isHide)
-    self.UiCanvas.enabled = not isHide
+    local isShow = not isHide
+    self._IsHideView = isHide
+    self.FullScreenBackground.gameObject:SetActiveEx(isShow)
+    self.SafeAreaContentPane.gameObject:SetActiveEx(isShow)
+    if isShow then
+        self:UpdateLoop()
+    end
 end
 
 function XUiSkyTowerCommon:ShowBillView()
@@ -81,6 +90,10 @@ function XUiSkyTowerCommon:UpdateLoop()
         self:ClearTimer()
         return
     end
+    if self._IsHideView then
+        return
+    end
+    self._GridCreateBudget = MaxGridCreatePerFrame
     --隐藏其他区间的UI
     local edgeGroupId = self._Control:GetCurEdgeGroupId()
     if self._AllFloorIds and edgeGroupId ~= self._EdgeGroupId then
@@ -118,6 +131,16 @@ function XUiSkyTowerCommon:UpdateLoopFloor(floorId)
     self._Event:UpdateLoopFloor(floorId)
     self._Indent:UpdateLoopFloor(floorId)
     self._GroupEvent:UpdateLoopFloor(floorId)
+end
+
+-- 只限制节点新建，额度耗尽后由下一帧重新检查是否仍需显示
+---@return boolean
+function XUiSkyTowerCommon:TryConsumeGridCreateBudget()
+    if self._GridCreateBudget <= 0 then
+        return false
+    end
+    self._GridCreateBudget = self._GridCreateBudget - 1
+    return true
 end
 
 function XUiSkyTowerCommon:ClearTimer()
@@ -197,6 +220,11 @@ end
 
 --region 3D对话框
 function XUiSkyTowerCommon:ShowDialog(id, content, emoji, target, offset)
+    -- 公共UI隐藏后角色的延时气泡仍会触发，此时不打开气泡节点
+    if self._IsHideView then
+        return
+    end
+
     if XTool.UObjIsNil(self.GridDialogBox) then
         return
     end
@@ -433,26 +461,6 @@ function XUiSkyTowerCommon:ClearWorkPosSwap()
     self._Workbench:EndSwapWaiting()
     if self._ReleasedDragClone then
         self._Workbench:RecycleDragClone(self._ReleasedDragClone)
-        self._ReleasedDragClone = nil
-    end
-    self:FinishWorkPosDrag()
-end
-
--- 广播拖动状态，2D主界面据此刷新技能生效提示
-function XUiSkyTowerCommon:_NotifyDragState(fromKey, toKey)
-    local fromFloorId, fromIndex, toFloorId, toIndex
-    if XTool.IsNumberValid(fromKey) then
-        fromFloorId, fromIndex = self._Control:ParseWorkPosKey(fromKey)
-    end
-    if XTool.IsNumberValid(toKey) then
-        toFloorId, toIndex = self._Control:ParseWorkPosKey(toKey)
-    end
-    XEventManager.DispatchEvent(XEventId.EVENT_SKY_TOWER_DRAG_STATE_CHANGE, fromFloorId, fromIndex, toFloorId, toIndex)
-end
---endregion
-
-return XUiSkyTowerCommon
-ecycleDragClone(self._ReleasedDragClone)
         self._ReleasedDragClone = nil
     end
     self:FinishWorkPosDrag()

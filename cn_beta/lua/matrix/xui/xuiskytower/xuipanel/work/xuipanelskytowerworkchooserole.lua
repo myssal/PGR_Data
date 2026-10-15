@@ -21,28 +21,32 @@ end
 --endregion
 
 --region 界面刷新
----@param isKeepSelection boolean 数据更新时保留当前选择，包括主动取消
-function XUiPanelSkyTowerWorkChooseRole:RefreshView(isKeepSelection)
+function XUiPanelSkyTowerWorkChooseRole:RefreshView()
     self._FloorId = self.Parent:GetFloorId()
     self._Index = self.Parent:GetIndex()
     self._WorkType = self.Parent:GetWorkType()
     self._ProductId = self.Parent:GetSelectProductId()
     -- 排序与技能展示使用同一份目标工位预览
     self._CharacterIds, self._SkillDescMap = self._Control:GetWorkStaffIdsWithSort(self._FloorId, self._Index, self._WorkType, self._ProductId)
-    if not isKeepSelection then
-        -- 重新进入选人页时按当前工位初始化，数据更新不能覆盖用户正在选择的角色
-        local workInfo = self.Parent:GetWorkInfo()
-        self._SelectCharacterId = workInfo and workInfo.CharacterId
-    elseif XTool.IsNumberValid(self._SelectCharacterId) and not table.contains(self._CharacterIds, self._SelectCharacterId) then
-        self._SelectCharacterId = 0
+    -- 重新进入选人页时按当前工位初始化
+    local workInfo = self.Parent:GetWorkInfo()
+    self._SelectCharacterId = workInfo and workInfo.CharacterId
+    -- 已选员工置顶，其余员工保持原有排序
+    local selectIndex = table.indexof(self._CharacterIds, self._SelectCharacterId)
+    if selectIndex and selectIndex > 1 then
+        table.remove(self._CharacterIds, selectIndex)
+        table.insert(self._CharacterIds, 1, self._SelectCharacterId)
     end
     self.ImgEmpty.gameObject:SetActiveEx(XTool.IsTableEmpty(self._CharacterIds))
     self.DynamicTable:SetDataSource(self._CharacterIds)
-    if isKeepSelection then
-        self.DynamicTable:ReloadDataSync()
-    else
-        local index = table.indexof(self._CharacterIds, self._SelectCharacterId) or 1
-        self.DynamicTable:ReloadDataASync(index)
+    self.DynamicTable:ReloadDataASync(1)
+end
+
+-- 事件复用进入页面时的角色和技能数据，不改排序及选中态
+function XUiPanelSkyTowerWorkChooseRole:RefreshData()
+    for _, grid in pairs(self.DynamicTable:GetGrids()) do
+        local characterId = grid.CharacterId
+        grid:Refresh(characterId, self._SkillDescMap[characterId])
     end
 end
 

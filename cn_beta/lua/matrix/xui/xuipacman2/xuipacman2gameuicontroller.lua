@@ -491,7 +491,10 @@ function XUiPacMan2GameUiController:_OnEnemyOrbChanged(args, pendingValues)
     pendingValues[UiField.EnemyOrbCount] = newEnemyOrbs
 end
 
----KillChanged参数：[0]旧累计击杀数，[1]新累计击杀数。
+---KillChanged参数：
+---[0] 旧累计击杀数。
+---[1] 新累计击杀数。
+---[2] 被击杀怪物的原始类型，本处理器不使用。
 ---这里只收集最终新值，不播放表现，也不再次查询C#。
 ---同一事务中多次收到击杀变化时，后值覆盖前值。
 ---@param args System.Array
@@ -556,10 +559,6 @@ function XUiPacMan2GameUiController:Dispose()
 
     -- 星级控件同样属于Game节点生命周期，这里只释放引用。
     self._StarList = nil
-    self._StarDatas = nil
-end
-
-return XUiPacMan2GameUiControllerList = nil
     self._StarDatas = nil
 end
 

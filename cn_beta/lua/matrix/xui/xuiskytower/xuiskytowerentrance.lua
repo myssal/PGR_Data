@@ -84,7 +84,8 @@ function XUiSkyTowerEntrance:RefreshTime()
     if timeLeft < 0 then
         timeLeft = 0
     end
-    self.TxtTime.text = XUiHelper.GetTime(timeLeft, XUiHelper.TimeFormatType.PIVOT_COMBAT)
+    self.TxtTime.text = XUiHelper.GetTime(timeLeft, XUiHelper.TimeFormatType.DAY_HOUR_MINUTE)
+    self.BtnRight:ShowReddot(XMVCA.XSkyTower:CheckEnterBtnRedPoint())
 end
 
 function XUiSkyTowerEntrance:RefreshBusinessState()
@@ -102,17 +103,9 @@ function XUiSkyTowerEntrance:RefreshRedPoint()
     --任务红点
     self.BtnTask:ShowReddot(self._Control:CheckTaskRedPoint())
     self.BtnMenu:ShowReddot(self._Control:CheckMenuRedPoint())
-    self.BtnLv:ShowReddot(self._Control:CheckSkyTowerUpgradeRedPoint())
 end
 
 function XUiSkyTowerEntrance:RefreshComplete()
-    XMVCA.XSkyTower:CheckShopComplete(function(complete)
-        self.BtnShop:ShowTag(complete)
-        --complete为限购道具全部买完，未买完且商店开着时显示蓝点
-        self.BtnShop:ShowReddot(not complete and XMVCA.XSkyTower:CheckShopOpen())
-        self:RefreshShopReward(complete)
-    end)
-
     self.BtnTask:ShowTag(self._Control:IsAllTaskFinished())
     self.BtnMenu:ShowTag(self._Control:IsAllLogCollect())
 end
@@ -164,6 +157,7 @@ function XUiSkyTowerEntrance:RefreshSkyTowerInfo()
     local needCount = self._Control:GetLvNeedGoldCount(targetLv)
     self.BtnLv:SetRawImageVisible(true)
     self.BtnLv:SetNameByGroup(1, needCount) --升级所需金币
+    self.BtnLv:ShowReddot(XMVCA.XSkyTower:CheckLevelUpRedPoint())
 end
 --endregion
 
@@ -172,7 +166,6 @@ function XUiSkyTowerEntrance:RegisterUiEvents()
     self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
     self.BtnRight:AddEventListener(handler(self, self.OnBtnRightClick))
-    self.BtnShop:AddEventListener(handler(self, self.OnBtnShopClick))
     self.BtnTask:AddEventListener(handler(self, self.OnBtnTaskClick))
     self.BtnMenu:AddEventListener(handler(self, self.OnBtnMenuClick))
     self.BtnLv:AddEventListener(handler(self, self.OnBtnLvClick))
@@ -191,18 +184,11 @@ function XUiSkyTowerEntrance:OnBtnRightClick()
     self:OnEntrySkyTower()
 end
 
-function XUiSkyTowerEntrance:OnBtnShopClick()
-    XMVCA.XSkyTower:Burying(XMVCA.XSkyTower.BuryingButton.BtnShop, self.Name)
-    self._Control:OpenShop()
-end
-
 function XUiSkyTowerEntrance:OnBtnTaskClick()
-    XMVCA.XSkyTower:Burying(XMVCA.XSkyTower.BuryingButton.BtnTask, self.Name)
     self._Control:OpenTask()
 end
 
 function XUiSkyTowerEntrance:OnBtnMenuClick()
-    XMVCA.XSkyTower:Burying(XMVCA.XSkyTower.BuryingButton.BtnMenu, self.Name)
     XLuaUiManager.OpenWithCloseCallback("UiSkyTowerMenu", function()
         self:RefreshRedPoint()
     end)
@@ -217,7 +203,7 @@ function XUiSkyTowerEntrance:OnEntrySkyTower()
         XMVCA.XSkyTower:TipMsg(self._Control:GetSkyTowerNotInBusinessText())
         return
     end
-    XMVCA.XSkyTower:Burying(XMVCA.XSkyTower.BuryingButton.BtnGo, self.Name)
+    self._Control:UpdateEntranceTime()
     XLuaUiManager.Open("UiSkyTowerMain")
 end
 --endregion

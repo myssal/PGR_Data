@@ -27,6 +27,18 @@ local XUiReformBalancePreSelectDetail = require("XUi/XUiReform2nd/Balance/XUiRef
 --- 封存时随 Balance 天平功能一并删除
 local XUiReformBalance = XLuaUiManager.Register(XLuaUi, "UiReformBalance")
 
+-- 天平倾斜动效：整条 Tab timeline 从我方全沉(第0帧)摆到敌方全沉(第40帧)，程序按倾斜档采样到对应时刻
+local TAB_ANIM_NAME = "Tab"
+local TILT_FRAME_RATE = 60
+local TILT_TIME_BALANCED = 20 / TILT_FRAME_RATE
+local TILT_TIME = {
+    [-2] = 0 / TILT_FRAME_RATE,   -- TiltResult.WishSevere
+    [-1] = 10 / TILT_FRAME_RATE,  -- TiltResult.WishSlight
+    [0] = TILT_TIME_BALANCED,
+    [1] = 30 / TILT_FRAME_RATE,   -- TiltResult.CostSlight
+    [2] = 40 / TILT_FRAME_RATE,   -- TiltResult.CostSevere
+}
+
 function XUiReformBalance:OnAwake()
     self:BindExitBtns(self.BtnBack, self.BtnMainUi)
     self:BindHelpBtn(self.BtnHelp, "ReformHelp")
@@ -68,10 +80,20 @@ function XUiReformBalance:OnStart(stage)
     self:RefreshEnvironment()
     self:RefreshAll()
 
-    XLuaUiManager.Open("UiReformEnterTips")
+    XLuaUiManager.Open("UiReformEnterTips", handler(self, self.OnEnterTipsClosed))
+end
+
+--- 横条提示退场后才放固定怪与恢复上次选择
+function XUiReformBalance:OnEnterTipsClosed()
+    if self:IsDestroy() then
+        return
+    end
+    self._Control:GetBalanceControl():ApplyInitSelect()
+    self:RefreshAll()
 end
 
 function XUiReformBalance:OnDestroy()
+    self:StopTiltTween()
     self._Control:GetBalanceControl():ExitMainUI()
 end
 
@@ -95,6 +117,68 @@ function XUiReformBalance:RefreshAll()
     self._PanelLeft:RefreshCellState(balanceControl)
     self._PanelRight:RefreshCellState(balanceControl)
     self._PanelMiddle:Refresh()
+    self:RefreshTilt(balanceControl)
+end
+
+--- 天平倾斜：Tab 动效不整条播，按倾斜档把 timeline 采样停在对应时刻
+--- 待美术把 TagXxxEnable 几条动效的 Animator 绑定从界面根节点挪走，否则会盖掉这里的采样
+---@param balanceControl XReformBalanceControl
+function XUiReformBalance:RefreshTilt(balanceControl)
+    local tiltResult = balanceControl:GetBalanceViewModel().Data.TiltResult
+    if self._TiltResult == tiltResult then
+        return
+    end
+    self._TiltResult = tiltResult
+
+    local director = self:FindPlayable(TAB_ANIM_NAME)
+    if not director then
+        return
+    end
+    self:StopTiltTween()
+    -- 没播过的 director 还没建 PlayableGraph，直接改 time + Evaluate 不会生效
+    if not director.playableGraph:IsValid() then
+        director:Play()
+        director:Pause()
+    end
+
+    local toTime = TILT_TIME[tiltResult] or TILT_TIME_BALANCED
+    local tweenTime = balanceControl:GetSpineTweenTime()
+    if tweenTime <= 0 then
+        director.time = toTime
+        director:Evaluate()
+        return
+    end
+
+    self._TiltDirector = director
+    self._TiltFromTime = director.time
+    self._TiltToTime = toTime
+    self._TiltTweenId = self:Tween(tweenTime, handler(self, self.OnTiltTweenRefresh), handler(self, self.OnTiltTweenFinish))
+end
+
+---@param progress number 0~1
+function XUiReformBalance:OnTiltTweenRefresh(progress)
+    local director = self._TiltDirector
+    director.time = self._TiltFromTime + (self._TiltToTime - self._TiltFromTime) * progress
+    director:Evaluate()
+    -- Tween 把 onRefresh 的返回值当中断信号，这里必须显式交回 false
+    return false
+end
+
+function XUiReformBalance:OnTiltTweenFinish()
+    self._TiltDirector.time = self._TiltToTime
+    self._TiltDirector:Evaluate()
+    self._TiltTweenId = nil
+    self._TiltDirector = nil
+end
+
+function XUiReformBalance:StopTiltTween()
+    if not self._TiltTweenId then
+        return
+    end
+    self:_RemoveTimerIdAndDoCallback(self._TiltTweenId)
+    XScheduleManager.UnSchedule(self._TiltTweenId)
+    self._TiltTweenId = nil
+    self._TiltDirector = nil
 end
 
 --endregion
@@ -108,7 +192,7 @@ function XUiReformBalance:OnAffixPreSelect(cell)
     if cell.Parent:IsCostSide() then
         detail = self._PreSelectDetailRight
     end
-    detail:ShowAffix(cell:GetAffixId(), cell.Transform)
+    detail:ShowAffix(cell:GetMassId(), cell.Transform)
 end
 
 function XUiReformBalance:OnAffixPreSelectClear()

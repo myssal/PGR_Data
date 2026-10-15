@@ -809,18 +809,3 @@ function XSkyTowerModel:IsSkyTowerItem(itemId)
 end
 
 return XSkyTowerModel
-tType, productId)
-    if XMain.IsEditorDebug then
-        if productId >= STORAGE_TYPE_FACTOR then
-            XLog.Error(string.format("通天塔仓库键溢出，产品Id必须小于100：productType=%s productId=%s", productType, productId))
-        end
-    end
-    return productType * STORAGE_TYPE_FACTOR + productId
-end
-
----通天塔局内道具唯一Id，需落在 38000000~38999999 段，由 XArrange.GetGoodsType 推导为 SkyTowerItem
-function XSkyTowerModel:IsSkyTowerItem(itemId)
-    return itemId >= 38000000 and itemId <= 38999999
-end
-
-return XSkyTowerModel

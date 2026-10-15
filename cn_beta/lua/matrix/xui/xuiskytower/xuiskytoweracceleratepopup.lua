@@ -32,6 +32,7 @@ function XUiSkyTowerAcceleratePopup:OnGetLuaEvents()
         XEventId.EVENT_SKY_TOWER_LEVEL_CHANGE,
         XEventId.EVENT_SKY_TOWER_SKILL_ACTIVE_CHANGE,
         XEventId.EVENT_SKY_TOWER_STAFF_CHANGE,
+        XEventId.EVENT_SKY_TOWER_DAILY_RESET,
     }
 end
 
@@ -138,8 +139,5 @@ function XUiSkyTowerAcceleratePopup:OnBtnConfirmClick()
     end)
 end
 --endregion
-
-return XUiSkyTowerAcceleratePopup
--endregion
 
 return XUiSkyTowerAcceleratePopup

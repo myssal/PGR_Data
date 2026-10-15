@@ -19,7 +19,6 @@ function XViewModelReform2nd:Ctor(model)
     self.TaskList = {}
     self.TaskLength = 0
     self.CurrentChapterIndex = 1
-    self.MaxTaskStar = 0
     self.IsChange = false
     self.StageTimeOpenDic = {}
     self:Init()
@@ -299,22 +298,26 @@ function XViewModelReform2nd:GetChapterIsUnlockedByIndex(index)
     return self._Model:IsChapterUnlocked(chapter, self._Model:GetIsSelectHardMode())
 end
 
+-- 任务进度：已完成任务数 / 总任务数
+---@return string 文本 "已完成/总数"
+---@return number 0~1 进度条
 function XViewModelReform2nd:GetTaskProgressTextAndImgExp()
-    local maxStar = self:GetTaskMaxStar()
-    local count = self:GetChapterTotalNumber()
-    local nowStar = 0
-
-    for i = 1, count do
-        local chapter = self._Model:GetChapterByIndex(i)
-        nowStar = nowStar + self._Model:GetChapterStarNumber(chapter, true, true)
-                + self._Model:GetChapterStarNumber(chapter, true, false)
+    local total = self.TaskLength
+    if total <= 0 then
+        return StringFormat("%s/%s", 0, 0), 0
     end
 
-    if maxStar > nowStar then
-        return StringFormat("%s/%s", nowStar, maxStar), nowStar / maxStar
-    else
-        return StringFormat("%s/%s", maxStar, maxStar), 1
+    local TaskState = XDataCenter.TaskManager.TaskState
+    local achievedCount = 0
+    for i = 1, total do
+        local state = self.TaskList[i]:GetState()
+        -- 已领奖(Finish)也算完成，否则领完奖进度条会倒退
+        if state == TaskState.Achieved or state == TaskState.Finish then
+            achievedCount = achievedCount + 1
+        end
     end
+
+    return StringFormat("%s/%s", achievedCount, total), achievedCount / total
 end
 
 -------==============================================
@@ -361,7 +364,7 @@ function XViewModelReform2nd:SetStageIsSelectToLocal()
 end
 
 function XViewModelReform2nd:RefreshTaskData()
-    local taskData = XDataCenter.TaskManager.GetTaskList(TaskType.Reform)
+    local taskData = self._Model:GetTaskList()
 
     for i, data in Pairs(taskData) do
         local task = self.TaskList[i]
@@ -382,7 +385,6 @@ function XViewModelReform2nd:RefreshTaskData()
     end)
 
     self.TaskLength = #self.TaskList
-    self.MaxTaskStar = self.TaskList[self.TaskLength]:GetTotalStar()
 end
 
 function XViewModelReform2nd:GetDisplayRewards()
@@ -405,10 +407,6 @@ function XViewModelReform2nd:GetDisplayRewards()
     end
 
     return rewards
-end
-
-function XViewModelReform2nd:GetTaskMaxStar()
-    return self.MaxTaskStar
 end
 
 function XViewModelReform2nd:GetTaskTotalNumber()

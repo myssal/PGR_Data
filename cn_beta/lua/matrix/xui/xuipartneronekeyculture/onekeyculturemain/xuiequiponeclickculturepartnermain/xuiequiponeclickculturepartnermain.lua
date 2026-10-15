@@ -73,6 +73,9 @@ end
 
 function XUiEquipOneClickCulturePartnerMain:OnDisable()
     self:_SetEvent(false)
+    -- GoEffect 为 PlayOnAwake 一次性特效节点，界面被遮挡（如点击前往养成跳转）时需关闭节点，
+    -- 否则界面重新激活时 GameObject 重启会触发特效重复播放（对齐 XUiFightProxy.OnDisable 处理 OneShotEffects 的思路）
+    self.GoEffect.gameObject:SetActiveEx(false)
 end
 
 function XUiEquipOneClickCulturePartnerMain:OnDestroy()

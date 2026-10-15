@@ -1,3 +1,5 @@
+local XUiButton = require("XUi/XUiCommon/XUiButton")
+
 ---@class XUiReform2ndChapterGrid : XUiNode
 ---@field _Control XReformControl
 ---@field Parent XUiReform2New
@@ -12,6 +14,7 @@ function XUiReform2ndChapterGrid:OnStart()
     self._Index = 0
     self._Data = nil
     self.BtnReform:AddEventListener(handler(self, self.OnBtnReformClick))
+    self._BtnWrapper = XUiButton.New(self.BtnReform)
 end
 
 ---@param data XUiReform2ndChapterData
@@ -33,6 +36,9 @@ function XUiReform2ndChapterGrid:RefreshStatus()
 
     local button = self.BtnReform
     button:SetNameByGroup(GROUP_NUMBER, data.QualityDesc)
+    -- 未解锁的关卡不展示质量进度
+    self._BtnWrapper:SetActive("TxtNumber", data.IsUnlocked)
+    self._BtnWrapper:SetActive("ImgIcon", data.IsUnlocked)
     button:SetRawImageVisible(data.IsFinished)
     button:ShowReddot(data.IsShowRed)
     button:SetDisable(not data.IsUnlocked)

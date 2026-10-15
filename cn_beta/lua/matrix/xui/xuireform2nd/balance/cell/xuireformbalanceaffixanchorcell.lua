@@ -9,7 +9,7 @@ end
 
 function XUiReformBalanceAffixAnchorCell:Update(massId)
     self.Super.Update(self, massId)
-    self:SetSpecial(self._Control:GetBalanceControl():IsSpecialAffix(self._AffixId))
+    self:SetSpecial(self._Control:GetBalanceControl():IsWeightBondEnhanced(massId))
 end
 
 return XUiReformBalanceAffixAnchorCell

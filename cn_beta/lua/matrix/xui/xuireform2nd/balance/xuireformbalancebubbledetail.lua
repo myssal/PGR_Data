@@ -32,7 +32,7 @@ function XUiReformBalanceBubbleDetail:Refresh()
     local isCostExceed = balanceControl:IsCostMassExceed()
     self.UiTxtDesc2.gameObject:SetActiveEx(isCostExceed)
     if isCostExceed then
-        self.UiTxtDesc2.text = XUiHelper.GetText("ReformBalanceBubbleCostExceed")
+        self.UiTxtDesc2.text = XUiHelper.GetText("ReformBalanceBubbleHigh", balanceControl:GetCostMassLimit())
         self.UiTxtDesc2.color = COLOR_TXT_RED
     end
 end

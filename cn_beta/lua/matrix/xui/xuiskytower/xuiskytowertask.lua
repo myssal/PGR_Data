@@ -92,6 +92,9 @@ function XUiSkyTowerTask:OnSelectedTab(selectIndex)
     self.TaskType = self.TaskTypeList[selectIndex]
     self:PlayAnimation("QieHuan")
     self:Refresh()
+    if self.HintText then
+        self.HintText.gameObject:SetActiveEx(self.SelectIndex == XMVCA.XSkyTower.TaskType.Daily)
+    end
 end
 
 --------------------------------------------------------------------------------
@@ -167,7 +170,7 @@ function XUiSkyTowerTask:UpdateTime()
     local nowTime = XTime.GetServerNowTimestamp()
     local leftTime = endTime - nowTime
     if leftTime and leftTime > 0 then
-        local timeStr = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.PIVOT_COMBAT)
+        local timeStr = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.DAY_HOUR_MINUTE)
         self.TxtTime.text = self._Control:GetShopTimeTxt(timeStr)
         self.TxtTime.gameObject:SetActiveEx(true)
     else

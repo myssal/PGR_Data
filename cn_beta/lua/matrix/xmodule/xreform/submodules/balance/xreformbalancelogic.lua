@@ -25,6 +25,16 @@ local DifficultyResult = {
 }
 XReformBalanceLogic.DifficultyResult = DifficultyResult
 
+-- 天平倾斜档（驱动 Tab 动效停在哪一刻；负值我方沉，正值敌方沉）
+local TiltResult = {
+    WishSevere = -2, -- 我方质量大幅超出
+    WishSlight = -1, -- 我方质量小幅超出
+    Balanced = 0,    -- 差异在普通配平阈值内
+    CostSlight = 1,  -- 敌方质量小幅超出
+    CostSevere = 2,  -- 敌方质量大幅超出
+}
+XReformBalanceLogic.TiltResult = TiltResult
+
 -- 羁绊触发方式（对齐服务端 ReformBalanceBondTriggerMode enum，两端口径一致）
 -- All=1：RequiredCharacterIds 与 RequiredAffixIds 两组条件需全部满足（空组视为满足 / vacuous true）
 -- Any=2：任意一个所需角色或所需词缀满足即触发（single-OR，空组贡献 false）
@@ -83,8 +93,35 @@ function XReformBalanceLogic:JudgeBalance(wishTotal, costTotal, normalThreshold)
     return BalanceResult.Unbalanced
 end
 
--- 完美配平通关后愿望总质量提升（结算侧 utility，非配平判定算法本体）
--- 仅困难模式完美配平通关触发；普通模式完美配平走 buff（战斗端，算法外）
+-- 天平倾斜档判定（差异在普通阈值内视为平衡，超出严重阈值为大幅倾斜）
+-- normalThreshold / severeThreshold: 0~1
+---@param wishTotal number
+---@param costTotal number
+---@param normalThreshold number
+---@param severeThreshold number
+---@return number XReformBalanceLogic.TiltResult
+function XReformBalanceLogic:JudgeTilt(wishTotal, costTotal, normalThreshold, severeThreshold)
+    local wishTotal = wishTotal or 0
+    local costTotal = costTotal or 0
+    -- 单侧为空按大幅倾斜处理：CalcMassDiff 对 wishTotal<=0 返回 0，会被误判成平衡
+    if wishTotal <= 0 or costTotal <= 0 then
+        if wishTotal == costTotal then
+            return TiltResult.Balanced
+        end
+        return wishTotal > costTotal and TiltResult.WishSevere or TiltResult.CostSevere
+    end
+    local diff = self:CalcMassDiff(wishTotal, costTotal)
+    if diff <= (normalThreshold or 0) then
+        return TiltResult.Balanced
+    end
+    local isSevere = diff > (severeThreshold or 0)
+    if wishTotal > costTotal then
+        return isSevere and TiltResult.WishSevere or TiltResult.WishSlight
+    end
+    return isSevere and TiltResult.CostSevere or TiltResult.CostSlight
+end
+
+-- 完美配平通关后愿望总质量提升（结算侧 utility，非配平判定算法本体）-- 仅困难模式完美配平通关触发；普通模式完美配平走 buff（战斗端，算法外）
 -- 完美+10%累积/跨关卡/上限属结算存档（算法外），本函数仅算单次 boost
 -- perfectBoostPct: 提升百分比（0~1，如 0.1=+10%）；boosted = wishTotal * (1 + perfectBoostPct)
 ---@param wishTotal number

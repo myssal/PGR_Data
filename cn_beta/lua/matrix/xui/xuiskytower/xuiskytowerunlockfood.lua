@@ -8,7 +8,7 @@ function XUiSkyTowerUnlockFood:OnAwake()
     self.BtnClose:AddEventListener(handler(self, self.Close))
 end
 
-function XUiSkyTowerUnlockFood:OnStart(title, itemDict, onCloseCb)
+function XUiSkyTowerUnlockFood:OnStart(title, itemDict, isShowTip, onCloseCb)
     self._OnCloseCb = onCloseCb
     self._Handers = {
         [UnlockItemType.Illustrated] = handler(self, self.GetIllustratedInfo),
@@ -16,10 +16,8 @@ function XUiSkyTowerUnlockFood:OnStart(title, itemDict, onCloseCb)
         [UnlockItemType.Character] = handler(self, self.GetCharacterInfo),
     }
 
-    --自定义标题
-    if not string.IsNilOrEmpty(title) then
-        self.TxtTitle.text = title
-    end
+    self.TxtTitle.text = title
+    self.TxtTips.gameObject:SetActiveEx(isShowTip)
 
     --按id从小到大排序
     for _, itemIds in pairs(itemDict) do

@@ -231,6 +231,22 @@ function XReformModel:GetActivityId()
     return self._ActivityId
 end
 
+--- 当前活动任务组 Id（ReformCfg.TaskGroupId -> TaskTimeLimit.Id）
+---@return number
+function XReformModel:GetTaskGroupId()
+    return self:GetActivityTaskGroupId(self._ActivityId)
+end
+
+--- 当前活动任务列表（走任务组，取代按 TaskType.Reform 取任务）
+---@return XTaskData[]
+function XReformModel:GetTaskList(isSort)
+    local taskGroupId = self:GetTaskGroupId()
+    if not XTool.IsNumberValid(taskGroupId) then
+        return table.empty
+    end
+    return XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskGroupId, isSort)
+end
+
 function XReformModel:GetIsOpen()
     if not self._ActivityId or self._ActivityId == 0 then
         return false
@@ -387,16 +403,24 @@ function XReformModel:GetChapterQualityDesc(chapter)
     return string.format("%s/%s", achievedQuality, targetQuality)
 end
 
--- 单关质量进度描述（天平玩法，"已完成质量/目标质量"）
+-- 单关质量进度（天平玩法）
 -- 已完成 = 该关 BalanceMaxWishQuality；目标 = 该关 MinQuality
 ---@param stageId number
----@return string
-function XReformModel:GetStageQualityDesc(stageId)
+---@return number achievedQuality
+---@return number targetQuality
+function XReformModel:GetStageBalanceQuality(stageId)
     local stage = self:GetStage(stageId)
     local achievedQuality = stage and (stage:GetBalanceMaxWishQuality() or 0) or 0
     local stageConfig = self:GetStageConfigById(stageId)
     local targetQuality = stageConfig and (stageConfig.MinQuality or 0) or 0
-    return string.format("%s/%s", achievedQuality, targetQuality)
+    return achievedQuality, targetQuality
+end
+
+-- 单关质量进度描述（"已完成质量/目标质量"）
+---@param stageId number
+---@return string
+function XReformModel:GetStageQualityDesc(stageId)
+    return string.format("%s/%s", self:GetStageBalanceQuality(stageId))
 end
 
 ---@param chapter XReform2ndChapter

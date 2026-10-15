@@ -289,22 +289,20 @@ function XSubpackage:OnStateChanged(resState)
     if resState == CSDownloadTaskGroupState.CompleteError then
         state = CSDownloadTaskGroupState.CompleteError
     elseif self._WaitPause then
+        -- 空任务组不参与暂停判定。
         local hasRegistered = false
         local hasComplete = false
-        local hasOtherState = false
-        for i = 1, #taskGroups do
-            if taskGroups[i].State == CSDownloadTaskGroupState.Registered then
-                hasRegistered = true
-            end
-            if taskGroups[i].State == CSDownloadTaskGroupState.Complete then
-                hasComplete = true
-            end
-            if taskGroups[i].State ~= CSDownloadTaskGroupState.Registered and taskGroups[i].State ~= CSDownloadTaskGroupState.Complete then
-                hasOtherState = true
-            end
-
-            if hasOtherState then
-                return
+        for k, resItem in pairs(self._ResItemDic) do
+            if resItem:HasDownloadTasks() then
+                local taskState = resItem:GetTaskGroup().State
+                if taskState == CSDownloadTaskGroupState.Registered then
+                    hasRegistered = true
+                elseif taskState == CSDownloadTaskGroupState.Complete then
+                    hasComplete = true
+                else
+                    -- 等待正在执行的任务结束暂停。
+                    return
+                end
             end
         end
         if hasRegistered or hasComplete then
@@ -322,7 +320,7 @@ function XSubpackage:OnStateChanged(resState)
 
         if isResStateComplete then
             state = CSDownloadTaskGroupState.Complete
-        else
+        elseif #taskGroups > 0 then
             state = taskGroups[1].State
             if #taskGroups > 1 then
                 for i = 2, #taskGroups do
@@ -338,8 +336,8 @@ function XSubpackage:OnStateChanged(resState)
     -- print("SP/DN OnStateChanged", self._Id, resState, state, self._WaitPause)
 
     if state == CSDownloadTaskGroupState.Registered and self._WaitPause then
-        XMVCA.XSubPackage:OnDownloadRelease()
         self._WaitPause = false
+        XMVCA.XSubPackage:FinishSubpackageDownload()
     elseif state == CSDownloadTaskGroupState.Complete then
         local formattedStrings = {}
         for i = 1, #taskGroups do
@@ -351,14 +349,14 @@ function XSubpackage:OnStateChanged(resState)
         local stringRes = table.concat(formattedStrings)
         -- print("SP/DN OnStateChanged 全子Res 完成？\n ",stringRes)
 
-        XMVCA.XSubPackage:OnComplete(self._Id)
-        XMVCA.XSubPackage:OnDownloadRelease()
         self._WaitPause = false
+        XMVCA.XSubPackage:OnComplete(self._Id)
+        XMVCA.XSubPackage:FinishSubpackageDownload()
     elseif state == CSDownloadTaskGroupState.Pausing then
         self._WaitPause = true
     elseif state == CSDownloadTaskGroupState.CompleteError then
         XMVCA.XSubPackage:DoDownloadError(self._Id)
-        XMVCA.XSubPackage:OnDownloadRelease()
+        XMVCA.XSubPackage:FinishSubpackageDownload()
     end
 end
 
@@ -367,9 +365,6 @@ function XSubpackage:Release()
     for k, resItem in pairs(self._ResItemDic) do
         resItem:Release()
     end
-end
-
-return XSubpackage    end
 end
 
 return XSubpackage

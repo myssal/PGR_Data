@@ -24,19 +24,23 @@ local SelectFailReason = {
 }
 XReformBalanceControl.SelectFailReason = SelectFailReason
 
--- 建当前关卡选择态（EnterMainUI 调；与 InitBalanceSlots 同期）
+-- 建当前关卡选择态（ApplyInitSelect 调；与 InitBalanceSlots 同期）
 function XReformBalanceControl:InitBalanceSelect()
-    -- 已选 massId 列表（按侧分，保持添加顺序）
-    self._SelectedMassIds = {
-        [self.Side.Wish] = {},
-        [self.Side.Cost] = {},
-    }
+    self:_ResetSelectedMassIds()
     -- 固定怪进关即占槽且锁定，直接计入代价侧已选（参与质量与详情展示）
     local fixedMassIds = self:GetFixedSlotMassIds()
     for index = 1, #fixedMassIds do
         local selected = self._SelectedMassIds[self.Side.Cost]
         selected[#selected + 1] = fixedMassIds[index]
     end
+end
+
+--- 已选 massId 列表（按侧分，保持添加顺序）；两侧 key 必须都在，UI 刷新时会直接索引
+function XReformBalanceControl:_ResetSelectedMassIds()
+    self._SelectedMassIds = {
+        [self.Side.Wish] = {},
+        [self.Side.Cost] = {},
+    }
 end
 
 --- 该侧固定槽内的 massId（按槽位顺序）
@@ -304,8 +308,7 @@ function XReformBalanceControl:GetWeightIcon(massId)
     local massConfig = self:GetBalanceMass(massId)
     local weightType = massConfig.WeightType
     if weightType == WeightType.Character then
-        local characterConfig = self:GetBalanceCharacter(massConfig.TargetId)
-        return XRobotManager.GetRobotSmallHeadIcon(characterConfig.RobotId)
+        return self:GetCharacterShowHeadIcon(self:GetBalanceCharacter(massConfig.TargetId))
     end
     if weightType == WeightType.Monster then
         return self:GetBalanceMob(massConfig.TargetId).HeadIcon
@@ -370,7 +373,7 @@ function XReformBalanceControl:GetAutoDeployEntityIds()
     local entityIds = {}
     local characterConfigs = self:_GetSelectedCharacterConfigs()
     for index = 1, #characterConfigs do
-        local entityId = self:_GetDeployEntityId(characterConfigs[index])
+        local entityId = self:GetStrongerEntityId(characterConfigs[index])
         if entityId then
             entityIds[#entityIds + 1] = entityId
         end
@@ -424,17 +427,19 @@ end
 --- 当前已选是否与保底方案完全一致
 ---@return boolean
 function XReformBalanceControl:IsRecommendApplied()
+    -- 固定怪进关即占槽，不计入玩家选择；推荐表里却配了它，两边都要剔除才能比
+    local matchCount = 0
     local recommendMassIds = self:GetRecommendMassIds()
-    -- 固定怪非推荐表内容，比对时剔除
-    if self:GetPlayerSelectedAmount() ~= #recommendMassIds then
-        return false
-    end
     for index = 1, #recommendMassIds do
-        if not self:IsWeightSelected(recommendMassIds[index]) then
-            return false
+        local massId = recommendMassIds[index]
+        if not self:IsFixedWeight(massId) then
+            if not self:IsWeightSelected(massId) then
+                return false
+            end
+            matchCount = matchCount + 1
         end
     end
-    return true
+    return self:GetPlayerSelectedAmount() == matchCount
 end
 
 --- 应用保底方案（先清空再依次选中）
@@ -558,10 +563,10 @@ function XReformBalanceControl:_GetSelectedCharacterConfigs()
     return characterConfigs
 end
 
---- 该角色砝码派哪个实体上阵：自机与试玩机器人取战力高者
+--- 该角色砝码对应的实体：自机与试玩机器人取战力高者
 ---@param characterConfig XTableReformBalanceCharacter
 ---@return number|nil
-function XReformBalanceControl:_GetDeployEntityId(characterConfig)
+function XReformBalanceControl:GetStrongerEntityId(characterConfig)
     local characterId = characterConfig.CharacterId
     local robotId = characterConfig.RobotId
     local hasRobot = XTool.IsNumberValid(robotId)
@@ -576,6 +581,27 @@ function XReformBalanceControl:_GetDeployEntityId(characterConfig)
         return characterId
     end
     return robotId
+end
+
+--- 该角色砝码展示的战力
+---@param characterConfig XTableReformBalanceCharacter
+---@return number
+function XReformBalanceControl:GetCharacterShowAbility(characterConfig)
+    local entityId = self:GetStrongerEntityId(characterConfig)
+    if not entityId then
+        return 0
+    end
+    return XMVCA.XCharacter:GetCharacterHaveRobotAbilityById(entityId)
+end
+
+--- 该角色砝码展示的头像
+---@param characterConfig XTableReformBalanceCharacter
+---@return string
+function XReformBalanceControl:GetCharacterShowHeadIcon(characterConfig)
+    if XMVCA.XCharacter:IsOwnCharacter(characterConfig.CharacterId) then
+        return XMVCA.XCharacter:GetCharSmallHeadIcon(characterConfig.CharacterId)
+    end
+    return XRobotManager.GetRobotSmallHeadIcon(characterConfig.RobotId)
 end
 
 --endregion

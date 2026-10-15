@@ -97,27 +97,37 @@ end
 ---@param timeUnit number
 ---@return boolean, string
 function XSkyTowerControl:GetWorkBenchPreviewTip(workType, productId, timeUnit)
-    local produce = self:GetProduceTotalSpeed(workType, productId, timeUnit)
+    timeUnit = timeUnit or XMVCA.XSkyTower.TimeUnit.Hour
+    local isSale = self:IsSaleArea(workType)
+    -- 售卖与手作共用成品库存，补货来自手作工位，而非售卖工位自身。
+    local produceWorkType = isSale and XMVCA.XSkyTower.WorkType.Food or workType
+    local produce = self:GetProduceTotalSpeed(produceWorkType, productId, timeUnit)
     local consume = self:GetConsumeTotalSpeed(workType, productId, timeUnit)
     if produce == 0 and consume == 0 then
         return true, ""
     end
     local tip
     local subSpeed = produce - consume
+    local isBalanced = self:IsZero(subSpeed)
     local freeCount = subSpeed > 0 and self:GetProductFreeCapacity(workType, productId) or self:GetProductCount(workType, productId)
-    if self:IsIngredientArea(workType) then
-        if self:IsZero(subSpeed) and not self:IsZero(produce) then
-            tip = self:GetClientConfigValue("StoragePreviewTip1", 1)
+    if self:IsIngredientArea(workType) or isSale then
+        local configKey = isSale and "StoragePreviewTip3" or "StoragePreviewTip1"
+        if isBalanced then
+            -- 产消平衡时使用无占位符的持续产出文案。
+            tip = self:GetClientConfigValue(configKey, 3)
         else
             local index = subSpeed > 0 and 1 or 2
-            local desc = self:GetClientConfigValue("StoragePreviewTip1", index)
+            local desc = self:GetClientConfigValue(configKey, index)
             local time = math.abs(freeCount / subSpeed)
-            tip = string.format(desc, self:GetAroundValue(time, XMVCA.XSkyTower.Digital.One))
+            tip = string.format(desc, self:GetFloorValue(time, XMVCA.XSkyTower.Digital.One))
         end
-        return subSpeed > 0, tip
+        return not isBalanced and subSpeed > 0, tip
     elseif self:IsCookArea(workType) then
-        --消耗完毕或者满仓速度
-        local stop = freeCount / math.abs(produce - consume)
+        -- 平衡时成品不会耗尽或满仓，但仍需检查材料；除法前判零，避免 0/0。
+        local stop = math.huge
+        if not isBalanced then
+            stop = freeCount / math.abs(subSpeed)
+        end
         local list = self:GetFoodConsumes(productId)
         if XTool.IsTableEmpty(list) then
             --没有配方需求的食物，只看自身产销差
@@ -126,12 +136,20 @@ function XSkyTowerControl:GetWorkBenchPreviewTip(workType, productId, timeUnit)
         --取所有配方材料里最先见底的那个
         local cStop = stop
         for _, need in ipairs(list) do
-            local cSpeed = self:GetProductCount(need.WorkType, need.Id) / self:GetConsumeTotalSpeed(need.WorkType, need.Id, timeUnit)
-            cStop = math.min(cStop, cSpeed)
+            -- 库存非负，零时刻已是最早事件；仅精确为零时跳过后续查询。
+            if cStop == 0 then
+                break
+            end
+            local materialProduce = self:GetProduceTotalSpeed(need.WorkType, need.Id, timeUnit)
+            local materialConsume = self:GetConsumeTotalSpeed(need.WorkType, need.Id, timeUnit)
+            local netConsume = materialConsume - materialProduce
+            if netConsume > 0 and not self:IsZero(netConsume) then
+                local materialStop = self:GetProductCount(need.WorkType, need.Id) / netConsume
+                cStop = math.min(cStop, materialStop)
+            end
         end
-        local increase = subSpeed > 0 and stop <= cStop
-        local isZero = self:IsZero(cStop) and self:IsZero(subSpeed)
-        if isZero then
+        local increase = not isBalanced and subSpeed > 0 and stop <= cStop
+        if cStop == math.huge then
             tip = self:GetClientConfigValue("StoragePreviewTip2", 4)
         else
             local index
@@ -139,24 +157,16 @@ function XSkyTowerControl:GetWorkBenchPreviewTip(workType, productId, timeUnit)
             if increase then
                 index = 1
             elseif stop > cStop then
-                --食材消耗 > 售卖
+                -- 材料先于成品耗尽或满仓
                 index = 3
             else
-                --食材消耗 < 售卖
+                -- 成品先耗尽，或与材料同时耗尽
                 index = 2
             end
             local desc = self:GetClientConfigValue("StoragePreviewTip2", index)
-            tip = string.format(desc, self:GetAroundValue(cStop, XMVCA.XSkyTower.Digital.One))
+            tip = string.format(desc, self:GetFloorValue(cStop, XMVCA.XSkyTower.Digital.One))
         end
         return increase, tip
-    elseif self:IsSaleArea(workType) then
-        -- 售卖区没有容量上限，只预测存货卖完的时间
-        if self:IsZero(consume) then
-            return false, ""
-        end
-        local consumeTime = self:GetProductCount(workType, productId) / consume
-        local desc = self:GetClientConfigValue("StoragePreviewTip3", 2)
-        return false, string.format(desc, self:GetAroundValue(consumeTime, XMVCA.XSkyTower.Digital.One))
     end
 end
 

@@ -511,6 +511,8 @@ end
 --endregion
 
 --region activity
+
+---@return XTableReformCfg
 function XReformConfigModel:GetActivity(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.ReformCfg, id)
 end
@@ -536,6 +538,14 @@ end
 
 function XReformConfigModel:GetActivityBannerIcon(id)
     return self:GetActivity(id).BannerIcon
+end
+
+function XReformConfigModel:GetActivityTaskGroupId(id)
+    local activityCfg = self:GetActivity(id)
+    if not activityCfg then
+        return 0
+    end
+    return activityCfg.TaskGroupId or 0
 end
 
 function XReformConfigModel:IsActivityExist(id)

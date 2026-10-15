@@ -37,7 +37,8 @@ XUiPacMan2EventDefine.DialogType = {
     Text = 1,
     Character = 2,
 }
-return XUiPacMan2EventDefine来源。
+
+---倒计时完成通知的来源。
 ---Game、EventRuntime和ContextUpdater共用这套约定。
 ---仅用于Lua内部通知，策划仍通过三个独立条件字段配置。
 XUiPacMan2EventDefine.CountdownSource = {

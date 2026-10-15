@@ -12,7 +12,7 @@ local XUiSkyTowerLevelUp = XLuaUiManager.Register(XLuaUi, "UiSkyTowerLevelUp")
 
 function XUiSkyTowerLevelUp:OnAwake()
     XUiHelper.NewPanelTopControl(self, self.TopControlWhite)
-    self:RegisterLongPress()
+    self.BtnLevelUp:AddEventListener(handler(self, self.OnBtnLevelUpClick))
     self.BtnEmpty:AddEventListener(handler(self, self.Close))
 end
 
@@ -28,7 +28,6 @@ function XUiSkyTowerLevelUp:OnStart()
     ---@type XUiGridSkyTowerLevelUpBuff
     --self._GridDrance = require("XUi/XUiSkyTower/XUiGrid/XUiGridSkyTowerLevelUpBuff").New(self.GridDrance, self)
     --self._GridDrance:SetLimitShowCount(self._Control:GetIntClientConfigValue("FloorLevelUpMaxShowItemCount", 2))
-    --长按使用开始时的金币快照，与累计消耗比较
     self._CoinCount = self._Control:GetItemCount(SkyTowerCoin)
 end
 
@@ -42,18 +41,12 @@ end
 
 function XUiSkyTowerLevelUp:OnDisable()
     self:RemoveEventListener()
-    self:StopLongPress(true)
     self:StopWaitCameraBlend()
     XEventManager.DispatchEvent(XEventId.EVENT_SKY_TOWER_HIDE_UI, false)
 end
 
 function XUiSkyTowerLevelUp:OnDestroy()
-    self:StopLongPress(true)
     self:StopWaitCameraBlend()
-    if self.LongClick then
-        self.LongClick:Destroy()
-        self.LongClick = nil
-    end
 end
 
 function XUiSkyTowerLevelUp:AddEventListener()
@@ -71,19 +64,12 @@ function XUiSkyTowerLevelUp:RemoveEventListener()
 end
 
 --region 界面刷新
----刷新界面，长按期间目标等级由本地累计，其余情况都是当前等级的下一级
+---刷新界面，始终预览当前等级的下一级
 function XUiSkyTowerLevelUp:UpdateView()
-    if not self.IsLongPressing then
-        self._CoinCount = self._Control:GetItemCount(SkyTowerCoin)
-    end
+    self._CoinCount = self._Control:GetItemCount(SkyTowerCoin)
     self._CurLevel = self._Control:GetSkyTowerLv()
     self._IsMaxLevel = self._Control:IsFloorMaxLevel(self._CurLevel)
-    if self._IsMaxLevel then
-        self._TargetLv = self._CurLevel
-    elseif not self.IsLongPressing or not self._TargetLv or self._TargetLv <= self._CurLevel then
-        --非长按期间预览的就是下一级；长按期间沿用本地累计出来的目标等级
-        self._TargetLv = self._CurLevel + 1
-    end
+    self._TargetLv = self._IsMaxLevel and self._CurLevel or self._CurLevel + 1
     self._CurFloorId = self._Control:GetLvFloorId(self._CurLevel)
     self._TargetFloorId = self._Control:GetLvFloorId(self._TargetLv)
 
@@ -94,19 +80,22 @@ end
 
 function XUiSkyTowerLevelUp:UpdateLevelPreview()
     self.TxtLvBefore.text = string.format("LV.%d", self._CurLevel)
-    self.TxtLvAfter.text = string.format("LV.%d", self._TargetLv)
+    if self._IsMaxLevel then
+        self.Arrow.gameObject:SetActiveEx(false)
+        self.TxtLvAfter.gameObject:SetActiveEx(false)
+    else
+        self.Arrow.gameObject:SetActiveEx(true)
+        self.TxtLvAfter.gameObject:SetActiveEx(true)
+        self.TxtLvAfter.text = string.format("LV.%d", self._TargetLv)
+    end
 end
 
 function XUiSkyTowerLevelUp:UpdateItem()
-    --长按期间保留开始时的金币快照，营业收入到账不能顶掉判定基准
-    if self.IsLongPressing then
-        return
-    end
     self._CoinCount = self._Control:GetItemCount(SkyTowerCoin)
     self:UpdateLevelUpButton()
 end
 
----升级按钮：满级禁用，条件未满足时显示事件入口，其余显示累计金币消耗
+---升级按钮：满级禁用，条件未满足时显示事件入口，其余显示下一级金币消耗
 function XUiSkyTowerLevelUp:UpdateLevelUpButton()
     if self._IsMaxLevel then
         --满级走Disable样式，不触发回调
@@ -120,7 +109,7 @@ function XUiSkyTowerLevelUp:UpdateLevelUpButton()
 
     local isUnlock, desc = self._Control:GetFloorUnlockCondition(self._CurLevel + 1)
     if not isUnlock then
-        self.BtnLevelUp:SetDisable(true, false)
+        self.BtnLevelUp:SetDisable(true, true)
         self.BtnLevelUp:ShowReddot(false)
         self.BtnLevelUp:SetNameByGroup(1, desc)
         self.PanelMaxLv.gameObject:SetActiveEx(false)
@@ -129,7 +118,7 @@ function XUiSkyTowerLevelUp:UpdateLevelUpButton()
         return
     end
     
-    --金币显示的是升到目标等级的累计消耗，与实际扣款口径一致
+    --显示升到下一级的金币消耗，与实际扣款口径一致
     local need = self._Control:GetFloorLevelUpTotalGold(self._TargetLv)
     local enough = self._CoinCount >= need
     local color = self._Control:GetClientConfigValue("EnoughColor", enough and 1 or 2)
@@ -316,7 +305,7 @@ end
 --同层3个：8层所有工位
 --跨层属于配置错误，不实现（例如，8层左侧工位、9层右侧工位）
 function XUiSkyTowerLevelUp:GetUnlockWorkDesc()
-    --长按连升时把区间内每级解锁的工位数累加起来
+    --本次升级解锁的工位数
     local unlockWorkNum = 0
     for lv = self._CurLevel + 1, self._TargetLv do
         unlockWorkNum = unlockWorkNum + self._Control:GetLvUnlockWorkNum(lv)
@@ -355,7 +344,7 @@ function XUiSkyTowerLevelUp:GetUnlockWorkDesc()
     return table.concat(desc)
 end
 
---新事件&订单&角色&物品，长按连升时汇总整个区间并按类型去重
+--本次升级解锁的新事件&订单&角色&物品，按类型去重
 function XUiSkyTowerLevelUp:GetNewWorkFunctional()
     local desc = {}
     local performTypeHash = {}
@@ -397,7 +386,7 @@ function XUiSkyTowerLevelUp:GetNewWorkFunctional()
     return self._Control:GetClientConfigText("NewText") .. table.concat(desc, self._Symbol2)
 end
 
---增幅&可移动&自动充能，长按连升时汇总整个区间
+--本次升级解锁的增幅&可移动&自动充能
 function XUiSkyTowerLevelUp:GetNewDanceFunctional()
     local desc = {}
     local hasWorkTime, hasAuto = false, false
@@ -424,9 +413,8 @@ end
 --endregion
 
 --region 升级操作
----短按升级，条件不满足时给出对应提示
+---点击提升一级，条件不满足时给出对应提示
 function XUiSkyTowerLevelUp:OnBtnLevelUpClick()
-    self._HasHandledLevelUpPress = true
     if self.IsRequesting then
         return
     end
@@ -446,10 +434,8 @@ function XUiSkyTowerLevelUp:TipLevelUpBlock()
     local isUnLock, desc = self._Control:GetFloorUnlockCondition(self._CurLevel + 1)
     if not isUnLock then
         local performId = self._Control:GetFloorUnlockPerformId(self._CurLevel + 1)
-        if XTool.IsNumberValid(performId) then
-            if self._Control:IsOnGoing(performId) then
-                self._Control:OpenPerformUi(performId)
-            end
+        if XTool.IsNumberValid(performId) and self._Control:IsOnGoing(performId) and self._Control:IsPerformShow(performId) then
+            self._Control:OpenPerformUi(performId)
         else
             XMVCA.XSkyTower:TipMsg(desc)
         end
@@ -458,16 +444,16 @@ function XUiSkyTowerLevelUp:TipLevelUpBlock()
     XMVCA.XSkyTower:TipMsg(self._Control:GetClientConfigText("GoldNoEnoughTip"))
 end
 
----请求升级到目标等级，长按累计出来的多级会一次请求完
+---每次请求只提升一级
 function XUiSkyTowerLevelUp:RequestLevelUp()
     if self.IsRequesting then
         return
     end
     local startLv = self._CurLevel
-    local targetLv = self._TargetLv
-    if not targetLv or targetLv <= startLv then
+    if self._Control:IsFloorMaxLevel(startLv) then
         return
     end
+    local targetLv = startLv + 1
     --回包会先刷新货币，保留目标等级供按钮计算消耗，回调中再通过UpdateView重建预览
     self.IsRequesting = true
     self._Control:RequestFloorLevelUp(targetLv, function(result)
@@ -482,120 +468,6 @@ function XUiSkyTowerLevelUp:RequestLevelUp()
     end)
 end
 
----注册长按升级
-function XUiSkyTowerLevelUp:RegisterLongPress()
-    local speed = self._Control:GetLevelUpLongPressSpeed()
-    local interval = speed > 0 and math.floor(XScheduleManager.SECOND / speed) or XScheduleManager.SECOND
-    local offset = self._Control:GetLevelUpLongPressDelay() / XScheduleManager.SECOND
-    --onlyOneCallback为true，短按只走OnBtnLevelUpClick；noAutoUp为true，避免按钮置灰时被组件强制抬起
-    self.LongClick = require("XUi/XUiCommon/XUiButtonLongClick").New(self.BtnLevelUp, interval, self,
-            self.OnBtnLevelUpClick, self.OnLongPress, self.OnLongPressUp, false, nil, true, true, offset)
-    self.LongClick.Widget:AddPointerDownListener(function()
-        self._HasHandledLevelUpPress = false
-    end)
-end
-
-function XUiSkyTowerLevelUp:OnLongPressStart()
-    --长按期间锁住镜头，松手后才允许移动
-    self:SetCameraInputEnabled(false)
-    --从当前等级开始累计，首级也计入费用；期间营业收入不改变本次预算
-    self._TargetLv = self._CurLevel
-    self._CoinCount = self._Control:GetItemCount(SkyTowerCoin)
-end
-
----松手（含金币不足视为松手）时才发协议，一次升到累计出来的目标等级
-function XUiSkyTowerLevelUp:OnLongPressEnd()
-    self:SetCameraInputEnabled(true)
-    if self._TargetLv and self._TargetLv > self._CurLevel then
-        self:RequestLevelUp()
-    else
-        self:UpdateView()
-    end
-end
-
----目标等级推进一级，金币不足或已满级时推不动
----@return boolean 是否推进成功
-function XUiSkyTowerLevelUp:TryAdvanceTargetLv()
-    local nextLv = (self._TargetLv or self._CurLevel) + 1
-    if self._Control:IsFloorMaxLevel(nextLv - 1) then
-        return false
-    end
-    local need = self._Control:GetFloorLevelUpTotalGold(nextLv)
-    if self._CoinCount < need then
-        return false
-    end
-    local isUnLock = self._Control:GetFloorUnlockCondition(nextLv)
-    if not isUnLock then
-        return false
-    end
-    self._TargetLv = nextLv
-    return true
-end
-
----长按每个间隔触发一次，只累计目标等级，不发协议
----@return boolean, boolean 是否结束长按、结束时是否跳过短按回调
-function XUiSkyTowerLevelUp:OnLongPress()
-    --长按组件的Tick按毫秒累加，短按判定使用秒；这里按真实按下时间校验激活阈值
-    if self.LongClick and self.LongClick.DownTime
-            and CS.UnityEngine.Time.time - self.LongClick.DownTime < self.LongClick.Offset then
-        return
-    end
-    self._HasHandledLevelUpPress = true
-    if self.IsRequesting then
-        return true, true
-    end
-    if not self.IsLongPressing then
-        self:UpdateView()
-        if self._IsMaxLevel then
-            return true, true
-        end
-        if not self.AbleLevelUp then
-            self:TipLevelUpBlock()
-            return true, true
-        end
-        self.IsLongPressing = true
-        self:OnLongPressStart()
-    end
-    --推不动就视为松手，已累计的等级仍会在OnLongPressEnd里请求
-    if not self:TryAdvanceTargetLv() then
-        return true, true
-    end
-    self:UpdateView()
-    self._GridWork:PlayRefreshAnimation()
-end
-
-function XUiSkyTowerLevelUp:OnLongPressUp()
-    --达到时间阈值但尚未触发下一次Tick时，按一次普通升级结算
-    if not self._HasHandledLevelUpPress then
-        self:OnBtnLevelUpClick()
-    end
-    self:StopLongPress()
-end
-
-function XUiSkyTowerLevelUp:StopLongPress(cancel)
-    self._HasHandledLevelUpPress = true
-    if self.LongClick then
-        self.LongClick:Reset()
-    end
-    if not self.IsLongPressing then
-        return
-    end
-    self.IsLongPressing = false
-    if cancel then
-        self:SetCameraInputEnabled(true)
-        self._TargetLv = nil
-    else
-        self:OnLongPressEnd()
-    end
-end
-
----@param value boolean
-function XUiSkyTowerLevelUp:SetCameraInputEnabled(value)
-    local camera = self._Control:GetCameraModel()
-    if camera then
-        camera:SetMainInputEnabled(value)
-    end
-end
 --endregion
 
 --region 升级后表演
