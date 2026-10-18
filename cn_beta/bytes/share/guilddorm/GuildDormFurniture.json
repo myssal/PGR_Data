@@ -1,0 +1,1615 @@
+[
+    {
+        "Id": 1,
+        "Name": "地板",
+        "FurnitureType": 1,
+        "PrefabName": "GuildFloor001",
+        "DontAutoCreateCollider": 1
+    },
+    {
+        "Id": 2,
+        "Name": "墙1号",
+        "FurnitureType": 3,
+        "PrefabName": "GuildWall001"
+    },
+    {
+        "Id": 3,
+        "Name": "墙2号",
+        "FurnitureType": 3,
+        "PrefabName": "GuildWall002"
+    },
+    {
+        "Id": 4,
+        "Name": "墙3号",
+        "FurnitureType": 3,
+        "PrefabName": "GuildWall003"
+    },
+    {
+        "Id": 5,
+        "Name": "墙4号",
+        "FurnitureType": 3,
+        "PrefabName": "GuildWall004"
+    },
+    {
+        "Id": 6,
+        "Name": "监控器1号",
+        "FurnitureType": 3,
+        "PrefabName": "GuildCamera001"
+    },
+    {
+        "Id": 7,
+        "Name": "监控器2号",
+        "FurnitureType": 3,
+        "PrefabName": "GuildCamera001_1"
+    },
+    {
+        "Id": 8,
+        "Name": "监控器3号",
+        "FurnitureType": 3,
+        "PrefabName": "GuildCamera002"
+    },
+    {
+        "Id": 9,
+        "Name": "监控器4号",
+        "FurnitureType": 3,
+        "PrefabName": "GuildCamera002_1"
+    },
+    {
+        "Id": 10,
+        "Name": "大门1号",
+        "FurnitureType": 3,
+        "PrefabName": "GuildDoor001"
+    },
+    {
+        "Id": 11,
+        "Name": "大门2号",
+        "FurnitureType": 3,
+        "PrefabName": "GuildDoor001_1"
+    },
+    {
+        "Id": 12,
+        "Name": "窗户1号",
+        "FurnitureType": 3,
+        "PrefabName": "GuildWindow001"
+    },
+    {
+        "Id": 13,
+        "Name": "窗户2号",
+        "FurnitureType": 3,
+        "PrefabName": "GuildWindow001 _1"
+    },
+    {
+        "Id": 14,
+        "Name": "墙挂器材",
+        "FurnitureType": 3,
+        "PrefabName": "GuildPackage001"
+    },
+    {
+        "Id": 15,
+        "Name": "墙挂器材",
+        "FurnitureType": 3,
+        "PrefabName": "GuildPackage001_1"
+    },
+    {
+        "Id": 16,
+        "Name": "天花板",
+        "FurnitureType": 3,
+        "PrefabName": "GuildCeiling001"
+    },
+    {
+        "Id": 17,
+        "Name": "战术长桌",
+        "FurnitureType": 2,
+        "PrefabName": "GuildTable001",
+        "DontAutoCreateCollider": 1
+    },
+    {
+        "Id": 18,
+        "Name": "播放器",
+        "IsShowName": true,
+        "NameHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "GuildConsole001",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "SpecialUiNames": [
+            "PanelMusicPlayer"
+        ],
+        "UiNameProxyPaths": [
+            "XUi/XUiGuildDorm/XUiGuildDormMusicGrid"
+        ],
+        "SpecialUiNameHeightOffset": [
+            1.75
+        ],
+        "UiShowDistance": 4.0,
+        "ShowButtonGroupId": 200
+    },
+    {
+        "Id": 19,
+        "Name": "信息板",
+        "FurnitureType": 2,
+        "PrefabName": "GuildConsole001_1"
+    },
+    {
+        "Id": 20,
+        "Name": "战术小桌",
+        "FurnitureType": 2,
+        "PrefabName": "GuildConsole002"
+    },
+    {
+        "Id": 21,
+        "Name": "战术小桌",
+        "FurnitureType": 2,
+        "PrefabName": "GuildConsole002_1"
+    },
+    {
+        "Id": 22,
+        "Name": "信息板",
+        "FurnitureType": 2,
+        "PrefabName": "GuildBlackboard001",
+        "UiShowDistance": 4.0
+    },
+    {
+        "Id": 23,
+        "Name": "战术终端",
+        "FurnitureType": 2,
+        "PrefabName": "GuildCommand001",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "AnimationArg": "Test",
+        "AnimationName": [
+            "Setup",
+            "Exit"
+        ],
+        "ShowButtonGroupId": 100
+    },
+    {
+        "Id": 24,
+        "Name": "睡眠舱1号",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.75,
+        "FurnitureType": 2,
+        "PrefabName": "GuildCockpit001",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 1
+    },
+    {
+        "Id": 25,
+        "Name": "睡眠舱2号",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.75,
+        "FurnitureType": 2,
+        "PrefabName": "GuildCockpit001_1",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 1
+    },
+    {
+        "Id": 26,
+        "Name": "战术椅1号",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "GuildChair001",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 3
+    },
+    {
+        "Id": 27,
+        "Name": "战术椅2号",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "GuildChair001_1",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 3
+    },
+    {
+        "Id": 28,
+        "Name": "战术椅3号",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "GuildChair001_2",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 3
+    },
+    {
+        "Id": 29,
+        "Name": "战术椅4号",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "GuildChair001_3",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 3
+    },
+    {
+        "Id": 30,
+        "Name": "战术椅5号",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "GuildChair001_4",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 3
+    },
+    {
+        "Id": 31,
+        "Name": "战术椅6号",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "GuildChair001_5",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 3
+    },
+    {
+        "Id": 32,
+        "Name": "战术椅7号",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "GuildChair001_6",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 3
+    },
+    {
+        "Id": 33,
+        "Name": "战术椅8号",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "GuildChair001_7",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 3
+    },
+    {
+        "Id": 34,
+        "Name": "售货机1号",
+        "IsGetReward": true,
+        "RewardHeightOffset": 2.0,
+        "FurnitureType": 2,
+        "PrefabName": "GuildCabinet001",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 4
+    },
+    {
+        "Id": 35,
+        "Name": "售货机2号",
+        "IsGetReward": true,
+        "RewardHeightOffset": 2.0,
+        "FurnitureType": 2,
+        "PrefabName": "GuildCabinet003",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 4
+    },
+    {
+        "Id": 36,
+        "Name": "售货机3号",
+        "IsGetReward": true,
+        "RewardHeightOffset": 2.0,
+        "FurnitureType": 2,
+        "PrefabName": "GuildCabinet003_1",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 4
+    },
+    {
+        "Id": 37,
+        "Name": "妙算神机",
+        "IsShowName": true,
+        "NameHeightOffset": 2.0,
+        "RewardHeightOffset": 2.2999,
+        "FurnitureType": 2,
+        "PrefabName": "Signmodel01",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "UiShowDistance": 5.0,
+        "RedPointCondition": "CONDITION_GUILD_SIGN_REWARD",
+        "ShowButtonGroupId": 300,
+        "EffectGroupId": 300
+    },
+    {
+        "Id": 1000,
+        "Name": "地面",
+        "FurnitureType": 1,
+        "PrefabName": "S03006_Terrain01",
+        "DontAutoCreateCollider": 1
+    },
+    {
+        "Id": 1001,
+        "Name": "躺椅",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11Tanyi (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 1
+    },
+    {
+        "Id": 1002,
+        "Name": "躺椅",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11Tanyi (2)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 1
+    },
+    {
+        "Id": 1003,
+        "Name": "躺椅",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11Tanyi (4)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 1
+    },
+    {
+        "Id": 1004,
+        "Name": "躺椅",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11Tanyi (6)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 1
+    },
+    {
+        "Id": 1005,
+        "Name": "躺椅",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11Tanyi (7)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 1
+    },
+    {
+        "Id": 1006,
+        "Name": "躺椅",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11Tanyi (8)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 1
+    },
+    {
+        "Id": 1007,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11yizi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1008,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11yizi (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1009,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11yizi (2)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1010,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11yizi (3)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1011,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11yizi (4)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1012,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11yizi (5)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1013,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11yizi (6)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1014,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11yizi (7)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1015,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11yizi (8)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1016,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_11yizi (9)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1017,
+        "Name": "雪糕凳",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_10Denzi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1018,
+        "Name": "雪糕凳",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_10Denzi (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1019,
+        "Name": "雪糕凳",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_10Denzi (4)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1020,
+        "Name": "雪糕凳",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_10Denzi (5)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1021,
+        "Name": "播放器",
+        "IsShowName": true,
+        "NameHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_01Tiaoyintao",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "SpecialUiNames": [
+            "PanelMusicPlayer"
+        ],
+        "UiNameProxyPaths": [
+            "XUi/XUiGuildDorm/XUiGuildDormMusicGrid"
+        ],
+        "SpecialUiNameHeightOffset": [
+            1.75
+        ],
+        "UiShowDistance": 4.0,
+        "ShowButtonGroupId": 200
+    },
+    {
+        "Id": 1022,
+        "Name": "蓝色椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_13Yizi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1023,
+        "Name": "蓝色椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_13Yizi (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1024,
+        "Name": "蓝色椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_13Yizi (2)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1025,
+        "Name": "蓝色椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03006_13Yizi (3)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 1026,
+        "Name": "烤肉架",
+        "FurnitureType": 2,
+        "PrefabName": "WoodenBarbecues001",
+        "DontAutoCreateCollider": 1,
+        "EnvironmentSound": 2636
+    },
+    {
+        "Id": 1027,
+        "Name": "海面",
+        "FurnitureType": 2,
+        "PrefabName": "3006_Water_01",
+        "DontAutoCreateCollider": 1,
+        "EnvironmentSound": 2634
+    },
+    {
+        "Id": 1028,
+        "Name": "妙算神机",
+        "IsShowName": true,
+        "NameHeightOffset": 2.0,
+        "RewardHeightOffset": 2.2999,
+        "FurnitureType": 2,
+        "PrefabName": "Signmodel02",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "UiShowDistance": 5.0,
+        "RedPointCondition": "CONDITION_GUILD_SIGN_REWARD",
+        "ShowButtonGroupId": 300,
+        "EffectGroupId": 300
+    },
+    {
+        "Id": 2000,
+        "Name": "地面",
+        "FurnitureType": 1,
+        "PrefabName": "Navigation",
+        "DontAutoCreateCollider": 1
+    },
+    {
+        "Id": 2001,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03405_11Yizi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 2002,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03405_11Yizi (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 2003,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03405_11Yizi (2)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 2004,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03405_11Yizi (3)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 2005,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03405_11Yizi (4)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 2006,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03405_11Yizi (5)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 2007,
+        "Name": "烟花装置",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03405_06Yanhua (3)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 5
+    },
+    {
+        "Id": 2008,
+        "Name": "烟花装置",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03405_06Yanhua (4)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 5
+    },
+    {
+        "Id": 2009,
+        "Name": "烟花装置",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03405_06Yanhua (5)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 5
+    },
+    {
+        "Id": 2010,
+        "Name": "战术终端",
+        "FurnitureType": 2,
+        "PrefabName": "S03405_22Qiandaoji",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 100
+    },
+    {
+        "Id": 2011,
+        "Name": "播放器",
+        "IsShowName": true,
+        "NameHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03405_22Bofangqi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "SpecialUiNames": [
+            "PanelMusicPlayer"
+        ],
+        "UiNameProxyPaths": [
+            "XUi/XUiGuildDorm/XUiGuildDormMusicGrid"
+        ],
+        "SpecialUiNameHeightOffset": [
+            1.75
+        ],
+        "UiShowDistance": 5.0,
+        "ShowButtonGroupId": 200
+    },
+    {
+        "Id": 2012,
+        "Name": "妙算神机",
+        "IsShowName": true,
+        "NameHeightOffset": 2.0,
+        "RewardHeightOffset": 2.2999,
+        "FurnitureType": 2,
+        "PrefabName": "S03405_13Qiandaoji",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "UiShowDistance": 5.0,
+        "RedPointCondition": "CONDITION_GUILD_SIGN_REWARD",
+        "ShowButtonGroupId": 300,
+        "EffectGroupId": 300
+    },
+    {
+        "Id": 2013,
+        "Name": "空中烟花",
+        "FurnitureType": 3,
+        "PrefabName": "Yanhua",
+        "EnvironmentSound": 2838,
+        "EffectGroupId": 1
+    },
+    {
+        "Id": 2014,
+        "Name": "空中烟花",
+        "FurnitureType": 3,
+        "PrefabName": "Yanhua (4)",
+        "EnvironmentSound": 2838,
+        "EffectGroupId": 1
+    },
+    {
+        "Id": 3000,
+        "Name": "地面",
+        "FurnitureType": 1,
+        "PrefabName": "Navigation",
+        "DontAutoCreateCollider": 1
+    },
+    {
+        "Id": 3001,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03804_10Dengzi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 3002,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03804_10Dengzi (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 3003,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03804_10Dengzi (2)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 3004,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03804_10Dengzi (3)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 3005,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03804_10Dengzi (4)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 3006,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03804_10Dengzi (5)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 3007,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03804_10Dengzi (9)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 3008,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03804_10Dengzi (10)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 3009,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03804_10Dengzi (11)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 3010,
+        "Name": "饮料机",
+        "IsGetReward": true,
+        "RewardHeightOffset": 2.0,
+        "FurnitureType": 2,
+        "PrefabName": "S03804_05Yinliaoji",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 4
+    },
+    {
+        "Id": 3011,
+        "Name": "战术终端",
+        "FurnitureType": 2,
+        "PrefabName": "S03804_10Zhongduan",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 100
+    },
+    {
+        "Id": 3012,
+        "Name": "播放器",
+        "IsShowName": true,
+        "NameHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "S03804_12Bofangqi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "SpecialUiNames": [
+            "PanelMusicPlayer"
+        ],
+        "UiNameProxyPaths": [
+            "XUi/XUiGuildDorm/XUiGuildDormMusicGrid"
+        ],
+        "SpecialUiNameHeightOffset": [
+            1.75
+        ],
+        "UiShowDistance": 5.0,
+        "ShowButtonGroupId": 200
+    },
+    {
+        "Id": 3013,
+        "Name": "妙算神机",
+        "IsShowName": true,
+        "NameHeightOffset": 2.0,
+        "RewardHeightOffset": 2.2999,
+        "FurnitureType": 2,
+        "PrefabName": "S03804_16Qiandaoji",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "UiShowDistance": 5.0,
+        "RedPointCondition": "CONDITION_GUILD_SIGN_REWARD",
+        "ShowButtonGroupId": 300,
+        "EffectGroupId": 300
+    },
+    {
+        "Id": 4000,
+        "Name": "地面",
+        "FurnitureType": 1,
+        "PrefabName": "Navigation",
+        "DontAutoCreateCollider": 1
+    },
+    {
+        "Id": 4001,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Guild04_06Yizi (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 4002,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Guild04_06Yizi (2)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 4003,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Guild04_06Yizi (3)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 4004,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Guild04_06Yizi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 4005,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Guild04_11Qiuqian",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 4006,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Guild04_11Qiuqian (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 4007,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Guild04_05Yizi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 4008,
+        "Name": "烟花装置",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Guild04_18Baozhu",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 6
+    },
+    {
+        "Id": 4009,
+        "Name": "烟花装置",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Guild04_18Baozhu (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 6
+    },
+    {
+        "Id": 4010,
+        "Name": "烟花装置",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Guild04_18Baozhu (3)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 6
+    },
+    {
+        "Id": 4011,
+        "Name": "烟花装置",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Guild04_18Baozhu (2)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 6
+    },
+    {
+        "Id": 4012,
+        "Name": "战术终端",
+        "FurnitureType": 2,
+        "PrefabName": "Guild04_12Huodongji",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 100
+    },
+    {
+        "Id": 4013,
+        "Name": "播放器",
+        "IsShowName": true,
+        "NameHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Guild04_35Bofangqi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "SpecialUiNames": [
+            "PanelMusicPlayer"
+        ],
+        "UiNameProxyPaths": [
+            "XUi/XUiGuildDorm/XUiGuildDormMusicGrid"
+        ],
+        "SpecialUiNameHeightOffset": [
+            1.75
+        ],
+        "UiShowDistance": 5.0,
+        "ShowButtonGroupId": 200
+    },
+    {
+        "Id": 4014,
+        "Name": "妙算神机",
+        "IsShowName": true,
+        "NameHeightOffset": 2.0,
+        "RewardHeightOffset": 2.2999,
+        "FurnitureType": 2,
+        "PrefabName": "Guild04_13Qiandaoji",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "UiShowDistance": 5.0,
+        "RedPointCondition": "CONDITION_GUILD_SIGN_REWARD",
+        "ShowButtonGroupId": 300
+    },
+    {
+        "Id": 5000,
+        "Name": "地面",
+        "FurnitureType": 1,
+        "PrefabName": "Navigation",
+        "DontAutoCreateCollider": 1
+    },
+    {
+        "Id": 5001,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_23Yizi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 5002,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_23Yizi (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 5003,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_23Yizi (2)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 5004,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_23Yizi (3)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 5005,
+        "Name": "黄士尼",
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_11Lajitonga (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 7
+    },
+    {
+        "Id": 5006,
+        "Name": "加倍吃",
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_11Lajitongc (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 7
+    },
+    {
+        "Id": 5007,
+        "Name": "立刻喝",
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_11Lajitongb (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 7
+    },
+    {
+        "Id": 5008,
+        "Name": "灰螺丝",
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_11Lajitongd (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 7
+    },
+    {
+        "Id": 5009,
+        "Name": "巨大的鲨士碧儿",
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_17Dx03 (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 9
+    },
+    {
+        "Id": 5010,
+        "Name": "馋嘴的雕像",
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_17Dx03 (2)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 9
+    },
+    {
+        "Id": 5011,
+        "Name": "可爱的雕像",
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_17Dx01 (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 9
+    },
+    {
+        "Id": 5012,
+        "Name": "碧儿执事",
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_17Dx04 (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 9
+    },
+    {
+        "Id": 5013,
+        "Name": "正经的雕像",
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_17Dx02 (3)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 9
+    },
+    {
+        "Id": 5014,
+        "Name": "战术终端",
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_04Weijiaoji",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 100
+    },
+    {
+        "Id": 5015,
+        "Name": "播放器",
+        "IsShowName": true,
+        "NameHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_01Cd",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "SpecialUiNames": [
+            "PanelMusicPlayer"
+        ],
+        "UiNameProxyPaths": [
+            "XUi/XUiGuildDorm/XUiGuildDormMusicGrid"
+        ],
+        "SpecialUiNameHeightOffset": [
+            1.75
+        ],
+        "UiShowDistance": 5.0,
+        "ShowButtonGroupId": 200
+    },
+    {
+        "Id": 5016,
+        "Name": "妙算神机",
+        "IsShowName": true,
+        "NameHeightOffset": 2.0,
+        "RewardHeightOffset": 2.2999,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_02Qiandaoji",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "UiShowDistance": 5.0,
+        "RedPointCondition": "CONDITION_GUILD_SIGN_REWARD",
+        "ShowButtonGroupId": 300
+    },
+    {
+        "Id": 5017,
+        "Name": "清凉一夏",
+        "IsShowName": true,
+        "NameHeightOffset": 2.0,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_05Yingliaoji",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 8
+    },
+    {
+        "Id": 5018,
+        "Name": "超大画板",
+        "FurnitureType": 3,
+        "PrefabName": "Zhiwuyuan_29Huajia (1)",
+        "DontAutoCreateCollider": 1
+    },
+    {
+        "Id": 5019,
+        "Name": "左1画板",
+        "FurnitureType": 3,
+        "PrefabName": "Zhiwuyuan_29Huajia02 (4)",
+        "DontAutoCreateCollider": 1
+    },
+    {
+        "Id": 5020,
+        "Name": "左2画板",
+        "FurnitureType": 3,
+        "PrefabName": "Zhiwuyuan_29Huajia02 (3)",
+        "DontAutoCreateCollider": 1
+    },
+    {
+        "Id": 5021,
+        "Name": "左3画板",
+        "FurnitureType": 3,
+        "PrefabName": "Zhiwuyuan_29Huajia01 (1)",
+        "DontAutoCreateCollider": 1
+    },
+    {
+        "Id": 5022,
+        "Name": "右1画板",
+        "FurnitureType": 3,
+        "PrefabName": "Zhiwuyuan_29Huajia02 (1)",
+        "DontAutoCreateCollider": 1
+    },
+    {
+        "Id": 5023,
+        "Name": "右2画板",
+        "FurnitureType": 3,
+        "PrefabName": "Zhiwuyuan_29Huajia02 (2)",
+        "DontAutoCreateCollider": 1
+    },
+    {
+        "Id": 5024,
+        "Name": "想让你吃的茶桌",
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_23Zhuozi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 10
+    },
+    {
+        "Id": 5025,
+        "Name": "让你想开的荷花",
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Zhiwuyuan_24Hehuadeng (2)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 11
+    },
+    {
+        "Id": 6000,
+        "Name": "地面",
+        "FurnitureType": 1,
+        "PrefabName": "Jingluo_xingzoumian",
+        "DontAutoCreateCollider": 1
+    },
+    {
+        "Id": 6001,
+        "Name": "钢琴",
+        "IsShowName": true,
+        "NameHeightOffset": 1.25,
+        "FurnitureType": 6,
+        "PrefabName": "Jingluo_07Gangqinzuoyi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "SpecialUiNameHeightOffset": [
+            1.75
+        ],
+        "UiShowDistance": 5.0,
+        "ShowButtonGroupId": 400
+    },
+    {
+        "Id": 6002,
+        "Name": "战术终端",
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_31Qiandaoji",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 100
+    },
+    {
+        "Id": 6003,
+        "Name": "播放器",
+        "IsShowName": true,
+        "NameHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_31Bofangqi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "SpecialUiNames": [
+            "PanelMusicPlayer"
+        ],
+        "UiNameProxyPaths": [
+            "XUi/XUiGuildDorm/XUiGuildDormMusicGrid"
+        ],
+        "SpecialUiNameHeightOffset": [
+            1.75
+        ],
+        "UiShowDistance": 5.0,
+        "ShowButtonGroupId": 200
+    },
+    {
+        "Id": 6004,
+        "Name": "妙算神机",
+        "IsShowName": true,
+        "NameHeightOffset": 2.0,
+        "RewardHeightOffset": 2.2999,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_47Qiandaoji",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "UiShowDistance": 5.0,
+        "RedPointCondition": "CONDITION_GUILD_SIGN_REWARD",
+        "ShowButtonGroupId": 300
+    },
+    {
+        "Id": 6005,
+        "Name": "凳子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_11Shizhuzuoyi (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 6006,
+        "Name": "凳子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_11Shizhuzuoyi01",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 6007,
+        "Name": "凳子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_11Shizhuzuoyi (2)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 6008,
+        "Name": "凳子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_11Shizhuzuoyi01 (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 6009,
+        "Name": "凳子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_11Shizhuzuoyi01 (3)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 6010,
+        "Name": "凳子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_11Shizhuzuoyi (4)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 6011,
+        "Name": "凳子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_11Shizhuzuoyi01 (2)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 6012,
+        "Name": "凳子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_11Shizhuzuoyi (3)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 6013,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_08Yizi",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 6014,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_08Yizi (3)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 6015,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_08Yizi (2)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 6016,
+        "Name": "椅子",
+        "IsGetReward": true,
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_08Yizi (1)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 2
+    },
+    {
+        "Id": 6017,
+        "Name": "让你睡觉的花束",
+        "RewardHeightOffset": 1.25,
+        "FurnitureType": 2,
+        "PrefabName": "Jingluo_36Huapanhua (18)",
+        "DontAutoCreateCollider": 1,
+        "InteractPos": 1,
+        "ShowButtonGroupId": 9
+    }
+]

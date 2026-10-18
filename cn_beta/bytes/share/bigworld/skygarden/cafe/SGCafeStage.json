@@ -1,0 +1,354 @@
+[
+    {
+        "Id": 1001,
+        "Name": "营业记录-1",
+        "Type": 1,
+        "Condition": 50000107,
+        "Rounds": 3,
+        "CustomerGroup": 1001,
+        "Review": true,
+        "ActPoint": 3,
+        "MaxCustomer": 4,
+        "Target": [
+            40,
+            70,
+            100
+        ],
+        "Reward": [
+            7000036,
+            7000037,
+            7000038
+        ]
+    },
+    {
+        "Id": 1002,
+        "Name": "营业记录-2",
+        "Type": 1,
+        "PreStage": 1001,
+        "IsKickOutCafe": true,
+        "Rounds": 3,
+        "CustomerGroup": 1002,
+        "Review": true,
+        "ActPoint": 3,
+        "MaxCustomer": 3,
+        "Target": [
+            40,
+            160,
+            240
+        ],
+        "Reward": [
+            7000039,
+            7000040,
+            7000041
+        ]
+    },
+    {
+        "Id": 1003,
+        "Name": "营业记录-3",
+        "Type": 1,
+        "PreStage": 1002,
+        "Condition": 50000108,
+        "Rounds": 3,
+        "CustomerGroup": 1003,
+        "IsSingleGenerate": true,
+        "Review": true,
+        "ActPoint": 3,
+        "MaxCustomer": 3,
+        "Target": [
+            150,
+            240,
+            330
+        ],
+        "Reward": [
+            7000042,
+            7000043,
+            7000044
+        ]
+    },
+    {
+        "Id": 1004,
+        "Name": "营业记录-4",
+        "Type": 1,
+        "PreStage": 1003,
+        "IsKickOutCafe": true,
+        "Rounds": 3,
+        "CustomerGroup": 1004,
+        "Review": true,
+        "ActPoint": 3,
+        "MaxCustomer": 4,
+        "Target": [
+            250,
+            350,
+            450
+        ],
+        "Reward": [
+            7000045,
+            7000046,
+            7000047
+        ]
+    },
+    {
+        "Id": 1005,
+        "Name": "营业记录-5",
+        "Type": 1,
+        "PreStage": 1004,
+        "Condition": 50000109,
+        "Rounds": 3,
+        "CustomerGroup": 1005,
+        "IsSingleGenerate": true,
+        "Review": true,
+        "ActPoint": 3,
+        "MaxCustomer": 4,
+        "Target": [
+            150,
+            210,
+            270
+        ],
+        "Reward": [
+            7000048,
+            7000049,
+            7000050
+        ]
+    },
+    {
+        "Id": 1006,
+        "Name": "营业记录-6",
+        "Type": 1,
+        "PreStage": 1005,
+        "Rounds": 3,
+        "CustomerGroup": 1006,
+        "Review": true,
+        "ActPoint": 6,
+        "MaxCustomer": 4,
+        "Target": [
+            200,
+            300,
+            400
+        ],
+        "Reward": [
+            7000051,
+            7000052,
+            7000053
+        ]
+    },
+    {
+        "Id": 2001,
+        "Name": "特别调制-1",
+        "Type": 2,
+        "PreStage": 1006,
+        "Rounds": 4,
+        "Review": true,
+        "IsReDraw": true,
+        "ActPoint": 3,
+        "MaxCustomer": 4,
+        "BuffListId": 2001,
+        "Target": [
+            200,
+            300,
+            400
+        ],
+        "Reward": [
+            7000054,
+            7000055,
+            7000056
+        ]
+    },
+    {
+        "Id": 2002,
+        "Name": "特别调制-2",
+        "Type": 2,
+        "PreStage": 2001,
+        "Rounds": 4,
+        "Review": true,
+        "IsReDraw": true,
+        "ActPoint": 3,
+        "MaxCustomer": 4,
+        "BuffListId": 2002,
+        "Target": [
+            200,
+            300,
+            400
+        ],
+        "Reward": [
+            7000057,
+            7000058,
+            7000059
+        ]
+    },
+    {
+        "Id": 2003,
+        "Name": "特别调制-3",
+        "Type": 2,
+        "PreStage": 2002,
+        "Rounds": 4,
+        "Review": true,
+        "IsReDraw": true,
+        "ActPoint": 3,
+        "MaxCustomer": 4,
+        "BuffListId": 2003,
+        "Target": [
+            200,
+            300,
+            400
+        ],
+        "Reward": [
+            7000060,
+            7000061,
+            7000062
+        ]
+    },
+    {
+        "Id": 2004,
+        "Name": "特别调制-4",
+        "Type": 2,
+        "PreStage": 2003,
+        "Rounds": 4,
+        "Review": true,
+        "IsReDraw": true,
+        "ActPoint": 3,
+        "MaxCustomer": 4,
+        "BuffListId": 2004,
+        "Target": [
+            200,
+            300,
+            400
+        ],
+        "Reward": [
+            7000063,
+            7000064,
+            7000065
+        ]
+    },
+    {
+        "Id": 2005,
+        "Name": "特别调制-5",
+        "Type": 2,
+        "PreStage": 2004,
+        "Rounds": 4,
+        "Review": true,
+        "IsReDraw": true,
+        "ActPoint": 3,
+        "MaxCustomer": 4,
+        "BuffListId": 2005,
+        "Target": [
+            200,
+            300,
+            400
+        ],
+        "Reward": [
+            7000066,
+            7000067,
+            7000068
+        ]
+    },
+    {
+        "Id": 2006,
+        "Name": "特别调制-6",
+        "Type": 2,
+        "PreStage": 2005,
+        "Rounds": 4,
+        "Review": true,
+        "IsReDraw": true,
+        "ActPoint": 3,
+        "MaxCustomer": 4,
+        "BuffListId": 2006,
+        "Target": [
+            200,
+            300,
+            400
+        ],
+        "Reward": [
+            7000069,
+            7000070,
+            7000071
+        ]
+    },
+    {
+        "Id": 2007,
+        "Name": "特别调制-7",
+        "Type": 2,
+        "PreStage": 2006,
+        "Rounds": 4,
+        "Review": true,
+        "IsReDraw": true,
+        "ActPoint": 3,
+        "MaxCustomer": 4,
+        "BuffListId": 2007,
+        "Target": [
+            200,
+            300,
+            400
+        ],
+        "Reward": [
+            7000072,
+            7000073,
+            7000074
+        ]
+    },
+    {
+        "Id": 2008,
+        "Name": "特别调制-8",
+        "Type": 2,
+        "PreStage": 2007,
+        "Rounds": 4,
+        "Review": true,
+        "IsReDraw": true,
+        "ActPoint": 3,
+        "MaxCustomer": 4,
+        "BuffListId": 2008,
+        "Target": [
+            200,
+            300,
+            400
+        ],
+        "Reward": [
+            7000075,
+            7000076,
+            7000077
+        ]
+    },
+    {
+        "Id": 2009,
+        "Name": "特别调制-9",
+        "Type": 2,
+        "PreStage": 2008,
+        "Rounds": 4,
+        "Review": true,
+        "IsReDraw": true,
+        "ActPoint": 3,
+        "MaxCustomer": 4,
+        "BuffListId": 2009,
+        "Target": [
+            200,
+            300,
+            400
+        ],
+        "Reward": [
+            7000078,
+            7000079,
+            7000080
+        ]
+    },
+    {
+        "Id": 2010,
+        "Name": "特别调制-10",
+        "Type": 2,
+        "PreStage": 2009,
+        "Rounds": 4,
+        "Review": true,
+        "IsReDraw": true,
+        "ActPoint": 3,
+        "MaxCustomer": 4,
+        "BuffListId": 2010,
+        "Target": [
+            200,
+            300,
+            400
+        ],
+        "Reward": [
+            7000081,
+            7000082,
+            7000083
+        ]
+    }
+]

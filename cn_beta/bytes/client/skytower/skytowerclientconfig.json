@@ -1,0 +1,1080 @@
+[
+    {
+        "Key": "ScenePrefab",
+        "Values": [
+            "Assets/Product/Scene/ScenePrefab/System_SkyTower01.prefab"
+        ]
+    },
+    {
+        "Key": "CharacterProperty",
+        "Values": [
+            0.5,
+            "0|1.2|0",
+            "4|8",
+            "40|120"
+        ]
+    },
+    {
+        "Key": "Ui3DOffset",
+        "Values": [
+            "-1|1.2|0",
+            "0|1.5|0",
+            "-0.2|0.8|0",
+            "0|2.1|0"
+        ]
+    },
+    {
+        "Key": "WorkRImgTitle",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiRestaurant/UiRestaurantMenuTxt02.png",
+            "Assets/Product/Texture/Atlas/UiRestaurant/UiRestaurantMenuTxt04.png",
+            "Assets/Product/Texture/Atlas/UiRestaurant/UiRestaurantMenuTxt06.png",
+            "Assets/Product/Texture/Atlas/UiRestaurant/UiRestaurantMenuTxt05.png"
+        ]
+    },
+    {
+        "Key": "StorageCountDesc",
+        "Values": [
+            "库存%s件",
+            "<size=32><color=#7de4e9>%s</color></size>/%s"
+        ]
+    },
+    {
+        "Key": "SkillAdditionDesc",
+        "Values": [
+            "产出速度",
+            "酬宾价格",
+            "%s对%s无加成效果"
+        ]
+    },
+    {
+        "Key": "ProduceDesc",
+        "Values": [
+            "[%s]开始订购[%s]啦！",
+            "[%s]开始修造[%s]啦！",
+            "[%s]开始酬宾[%s]啦！",
+            "请先选择工作员工",
+            "修造一件%s需要:",
+            "粗糙物料不足"
+        ]
+    },
+    {
+        "Key": "ProduceTimeUnit",
+        "Values": [
+            "件/小时",
+            "/件"
+        ]
+    },
+    {
+        "Key": "StorageFullTip",
+        "Values": [
+            "收银台库存已满",
+            "收银台货币<color=#b55252>已满</color>，员工无法立即酬宾！\\n是否继续酬宾【<color=#b55252>%s</color>】？\\n（收银台存储货币小于上限后，员工将继续酬宾工作）",
+            "库存已满",
+            "【<color=#b55252>%s</color>】库存<color=#b55252>已满</color>，员工无法立即工作！\\n是否继续选择订购【<color=#b55252>%s</color>】?\\n（其库存小于上限后，员工再开始工作）"
+        ]
+    },
+    {
+        "Key": "ProductNotEnough",
+        "Values": [
+            "原料不足",
+            "【<color=#b55252>%s</color>】所需原料不足，员工无法立即工作！\\n是否继续修造【<color=#b55252>%s</color>】？\\n（原料足够后，员工再继续修造【<color=#b55252>%s</color>】）",
+            "闪耀成品不足",
+            "【<color=#b55252>%s</color>】库存为<color=#b55252>0</color>，员工无法立即酬宾！\\n是否继续选择酬宾【<color=#b55252>%s</color>】?\\n（其库存数量大于0后，员工将开始酬宾）"
+        ]
+    },
+    {
+        "Key": "StopProduceTip",
+        "Values": [
+            "终止订购【%s】",
+            "终止订购【%s】粗糙物料",
+            "终止修造【%s】",
+            "终止修造【%s】，系统将返还粗糙物料（%s）",
+            "终止修造【%s】",
+            "终止酬宾【%s】",
+            "终止酬宾【%s】，系统将返还（%s）",
+            "终止酬宾【%s】"
+        ]
+    },
+    {
+        "Key": "StopAllProductText",
+        "Values": [
+            "本工作区全员休憩",
+            "终止【<color=#b55252>%s</color>】所有员工工作？"
+        ]
+    },
+    {
+        "Key": "IngredientStatisticsTip",
+        "Values": [
+            "订购产出",
+            "预期消耗",
+            "预期变化"
+        ]
+    },
+    {
+        "Key": "FoodStatisticsTip",
+        "Values": [
+            "修造产出",
+            "预期消耗",
+            "预期变化"
+        ]
+    },
+    {
+        "Key": "StatisticsUnit",
+        "Values": [
+            "件"
+        ]
+    },
+    {
+        "Key": "StoragePreviewTip1",
+        "Values": [
+            "预计%s小时后达到库存上限",
+            "预计%s小时后消耗完毕",
+            "持续产出"
+        ]
+    },
+    {
+        "Key": "StoragePreviewTip2",
+        "Values": [
+            "预计%s小时后达到库存上限",
+            "预计%s小时后消耗完毕",
+            "预计%s小时后粗糙物料消耗完毕",
+            "持续产出"
+        ]
+    },
+    {
+        "Key": "StoragePreviewTip3",
+        "Values": [
+            "预计%s小时后达到库存上限",
+            "预计%s小时后消耗完毕",
+            "持续产出"
+        ]
+    },
+    {
+        "Key": "RImgUpgradeIcon",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiRestaurant/UiRestaurantUpgrade.png",
+            "Assets/Product/Texture/Atlas/UiRestaurant/UiRestaurantUpgrade2.png"
+        ]
+    },
+    {
+        "Key": "StaffStateBtnText",
+        "Values": [
+            "升级",
+            "雇佣",
+            "已满级"
+        ]
+    },
+    {
+        "Key": "BoardCastTips",
+        "Values": [
+            "恭喜<color=#fae94c>%s</color>加入库洛洛大楼",
+            "<color=#fae94c>%s</color>升级至<color=#fae94c>%s</color>",
+            "恭喜<color=#fae94c>库洛洛大楼</color>升级至<color=#fae94c>%s</color>"
+        ]
+    },
+    {
+        "Key": "SkyTowerLvUpEffectText",
+        "Values": [
+            "订购台数量上限:",
+            "修造台数量上限:",
+            "酬宾台数量上限:",
+            "员工雇佣上限:",
+            "收银台存储上限:",
+            "热酬宾价额外提升:"
+        ]
+    },
+    {
+        "Key": "SkyTowerLvUpConditionText",
+        "Values": [
+            "雇佣%s名员工",
+            "%s名员工等级达到<color=#ff8346>%s</color>",
+            "该等级效果已解锁",
+            "该等级效果已解锁，库洛洛大楼等级已达MAX",
+            "未满足升级条件",
+            "---暂无---"
+        ]
+    },
+    {
+        "Key": "SkyTowerLvUpPopupTip",
+        "Values": [
+            "库洛洛大楼升级",
+            "指挥官，请确认是否将库洛洛大楼\\n由【<color=#70A998>LV%s</color>】升级至【<color=#70A998>LV%s</color>】？"
+        ]
+    },
+    {
+        "Key": "StaffRecruitTip",
+        "Values": [
+            "招募员工已达上限"
+        ]
+    },
+    {
+        "Key": "StaffWorkTip",
+        "Values": [
+            "【%s】正在其他地方工作",
+            "当前工作台信息未变更"
+        ]
+    },
+    {
+        "Key": "OfflineBillText",
+        "Values": [
+            "指挥官你离开了%s"
+        ]
+    },
+    {
+        "Key": "BubbleProperty",
+        "Values": [
+            2
+        ]
+    },
+    {
+        "Key": "ShopBuyTxtColor",
+        "Values": [
+            "ffffff",
+            "B73131"
+        ]
+    },
+    {
+        "Key": "ShopBuyLimitColor",
+        "Values": [
+            "ffd070",
+            "ffd070"
+        ]
+    },
+    {
+        "Key": "ShopTimeTxt",
+        "Values": [
+            "剩余时间：<color=#9b9de3>%s</color>"
+        ]
+    },
+    {
+        "Key": "ShopRewardId",
+        "Values": [
+            63682
+        ]
+    },
+    {
+        "Key": "SignedTxt",
+        "Values": [
+            "今天已经签到过啦！"
+        ]
+    },
+    {
+        "Key": "SignNotInTimeTxt",
+        "Values": [
+            "当前不在签到时间范围内！"
+        ]
+    },
+    {
+        "Key": "FoodQualityIcon3DUI",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerCommonImgQuality01.png",
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerCommonImgQuality01.png",
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerCommonImgQuality01.png",
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerCommonImgQuality01.png"
+        ]
+    },
+    {
+        "Key": "FoodQualityIcon2DUI",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerQualitySmallGreen.png",
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerQualitySmallBlue.png",
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerQualitySmallPurple.png",
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerQualitySmallOrange.png"
+        ]
+    },
+    {
+        "Key": "CommonQualityIconUI",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerCommonImgQuality01.png",
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerQualitySmallGreen.png"
+        ]
+    },
+    {
+        "Key": "AdditionIcon",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiRestaurant/UiRestaurantDianIconSkill.png",
+            "Assets/Product/Texture/Atlas/UiRestaurant/UiRestaurantDianIconBuff.png"
+        ]
+    },
+    {
+        "Key": "RequestFrequentlyTip",
+        "Values": [
+            "请求过于频繁，请等待%s秒后重试！"
+        ]
+    },
+    {
+        "Key": "AccelerateTip",
+        "Values": [
+            "加速提示",
+            "是否消耗%s个【%s】，对此设施进行加速%s秒\\n你将获得",
+            "是否消耗1个【调度指令】，对此设施进行加速%s秒\\n因粗糙物料/闪耀成品不足，你将获得",
+            "仓库增加%s件%s",
+            "收银台增加%s个筑梦资金",
+            "加速成功，暂无收益"
+        ]
+    },
+    {
+        "Key": "SignNpcProperty",
+        "Values": [
+            "28.6|0|12.5",
+            "0|1.5|0"
+        ]
+    },
+    {
+        "Key": "CharacterEffect",
+        "Values": [
+            "Assets/Product/Effect/Prefab/FxSushe/FxSuSheZSCFyanwu.prefab",
+            "Assets/Product/Effect/Prefab/FxSushe/FxSuSheZSCFzuocai01.prefab",
+            "Assets/Product/Effect/Prefab/FxSushe/FxSuSheZSCFzuocai02.prefab",
+            "Assets/Product/Effect/Prefab/FxSushe/FxQHappy01.prefab",
+            "Assets/Product/Effect/Prefab/FxSushe/FxQAngry.prefab"
+        ]
+    },
+    {
+        "Key": "CharacterEffectPos",
+        "Values": [
+            "0|0|0",
+            0,
+            "0.063|0.384|0.3",
+            "0|0|0"
+        ]
+    },
+    {
+        "Key": "SignNPCEffect",
+        "Values": [
+            "Assets/Product/Effect/Prefab/FxSushe/FxSuSheZSCFyanwu.prefab",
+            "Assets/Product/Effect/Prefab/FxSushe/FxSuSheZSCFliwu.prefab",
+            "Assets/Product/Effect/Prefab/FxSushe/FxQGift.prefab"
+        ]
+    },
+    {
+        "Key": "UiEffect",
+        "Values": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiFubenYuandan/FxUiFuBenYanhua001.prefab"
+        ]
+    },
+    {
+        "Key": "WorkPauseReason",
+        "Values": [
+            "——   因粗糙物料不足暂停工作   ——",
+            "——   因酬宾闪耀成品数量不足暂停工作   ——",
+            "——   因收银台存储达到上限暂停工作   ——",
+            "——   因库存已满暂停工作   ——"
+        ]
+    },
+    {
+        "Key": "OrderNpcBehaviourId",
+        "Values": [
+            "Order_1",
+            "Order_1",
+            "Order_2"
+        ]
+    },
+    {
+        "Key": "SignNpcBehaviourId",
+        "Values": [
+            "Sign_1",
+            "Sign_2"
+        ]
+    },
+    {
+        "Key": "CustomerProperty",
+        "Values": [
+            15,
+            20
+        ]
+    },
+    {
+        "Key": "RecipeTaskTriggerTip",
+        "Values": [
+            "恭喜你触发了【%s】，持之以恒地练习可以解锁新闪耀成品!"
+        ]
+    },
+    {
+        "Key": "CommonUnlockText",
+        "Values": [
+            "将在%s解锁",
+            "库洛洛大楼等级达到%s级后解锁",
+            "还未解锁该闪耀成品",
+            "库洛洛大楼LV%s"
+        ]
+    },
+    {
+        "Key": "SkyTowerNotInBusiness",
+        "Values": [
+            "库洛洛大楼已经打烊了"
+        ]
+    },
+    {
+        "Key": "BuffUpdateText",
+        "Values": [
+            "【%s】已解锁",
+            "%s增益替换成【%s】"
+        ]
+    },
+    {
+        "Key": "BuffAdditionText",
+        "Values": [
+            "生效粗糙物料&产出速度的提升百分比",
+            "生效闪耀成品&产出速度的提升百分比",
+            "生效闪耀成品&酬宾价格的提升百分比"
+        ]
+    },
+    {
+        "Key": "TaskDescText",
+        "Values": [
+            "<size=40><color=#a2a8e7>%s</color></size>/%s"
+        ]
+    },
+    {
+        "Key": "NoStaffWorkText",
+        "Values": [
+            "没有员工在工作哦~"
+        ]
+    },
+    {
+        "Key": "OrderTitleText",
+        "Values": [
+            "来自%s的建筑订单"
+        ]
+    },
+    {
+        "Key": "BehaviorTreeEffect",
+        "Values": [
+            "Assets/Product/Effect/Prefab/FxSushe/FxSuSheZSCFliwu.prefab",
+            "Assets/Product/Effect/Prefab/FxSushe/FxSuSheZSCFyanwu.prefab",
+            "Assets/Product/Effect/Prefab/FxSushe/FxCanTinbeicai02.prefab",
+            "Assets/Product/Effect/Prefab/FxSushe/FxCanTinbeicai01.prefab",
+            "Assets/Product/Effect/Prefab/FxSushe/FxCanTinpengren02.prefab",
+            "Assets/Product/Effect/Prefab/FxSushe/FxCanTinpengren01.prefab",
+            "Assets/Product/Effect/Prefab/FxSushe/FxCanTinxiaoshou.prefab",
+            "Assets/Product/Effect/Prefab/FxSushe/FxQHappy01.prefab",
+            "Assets/Product/Effect/Prefab/FxSushe/FxQAngry.prefab"
+        ]
+    },
+    {
+        "Key": "SkyTowerInfo",
+        "Values": [
+            "Lv",
+            "升级需"
+        ]
+    },
+    {
+        "Key": "PerformUnlockText",
+        "Values": [
+            "<color=#70A998>%s</color>解锁",
+            "<color=#70A998>%s</color>解锁"
+        ]
+    },
+    {
+        "Key": "PerformTypeIcon",
+        "Values": [
+            "Assets/Product/Texture/Image/UiRestaurant/UiRestaurantStory.png",
+            "Assets/Product/Texture/Image/UiRestaurant/UiRestaurantIndent.png"
+        ]
+    },
+    {
+        "Key": "PerformTypeTitle",
+        "Values": [
+            "日常事件",
+            "建筑订单"
+        ]
+    },
+    {
+        "Key": "PerformTypeTitleIocn",
+        "Values": [
+            "Assets/Product/Texture/Image/UiRestaurant/UiRestaurantPopupStoryTxt.png",
+            "Assets/Product/Texture/Image/UiRestaurant/UiRestaurantPopupStoryTxt.png"
+        ]
+    },
+    {
+        "Key": "SwitchStaffContent",
+        "Values": [
+            "更换员工",
+            "【<color=#b55252>%s</color>】正在【<color=#b55252>%s%s</color>】工作，请确认是否为其更换工作？"
+        ]
+    },
+    {
+        "Key": "PerformNotStartText",
+        "Values": [
+            "请先领取%s"
+        ]
+    },
+    {
+        "Key": "InstantiateFloorRange",
+        "Values": [
+            5
+        ]
+    },
+    {
+        "Key": "SkyTowerLevelText",
+        "Values": [
+            "筑梦等级：%s"
+        ]
+    },
+    {
+        "Key": "EnoughColor",
+        "Values": [
+            "FFFFFF",
+            "FF4949"
+        ]
+    },
+    {
+        "Key": "ImproveColor",
+        "Values": [
+            "70A998",
+            313850
+        ]
+    },
+    {
+        "Key": "FloorLevelUpLongPress",
+        "Values": [
+            500,
+            2
+        ]
+    },
+    {
+        "Key": "MaxFloorId",
+        "Values": [
+            20
+        ]
+    },
+    {
+        "Key": "MaxLv",
+        "Values": [
+            55
+        ]
+    },
+    {
+        "Key": "FloorLevelUpWorkText",
+        "Values": [
+            "新楼层",
+            "——梦想舞台自动进入新楼层",
+            "新工位",
+            "新内容",
+            "离线收益上限"
+        ]
+    },
+    {
+        "Key": "FloorLevelUpEffectText",
+        "Values": [
+            "筑梦资金收益",
+            "激活时间",
+            "冷却时间",
+            "自动充能速率",
+            "强化工时增益",
+            "强化区域拓展",
+            "新内容"
+        ]
+    },
+    {
+        "Key": "FloorUnlockWorkbenchText",
+        "Values": [
+            "同层所有工位",
+            "上方%s层所有工位",
+            "下方%s层所有工位"
+        ]
+    },
+    {
+        "Key": "FloorUnlockNewFunctionalText",
+        "Values": [
+            "日常事件",
+            "建筑订单",
+            "角色",
+            "闪耀成品",
+            "粗糙物料"
+        ]
+    },
+    {
+        "Key": "DanceUnlockNewFunctionalText",
+        "Values": [
+            "增幅",
+            "可移动",
+            "自动充能"
+        ]
+    },
+    {
+        "Key": "DirectionText",
+        "Values": [
+            "左侧",
+            "中间",
+            "右侧",
+            "所有"
+        ]
+    },
+    {
+        "Key": "FloorText",
+        "Values": [
+            "%s层"
+        ]
+    },
+    {
+        "Key": "WorkbenchText",
+        "Values": [
+            "工位"
+        ]
+    },
+    {
+        "Key": "FloorLevelUpMaxShowItemCount",
+        "Values": [
+            3,
+            6
+        ]
+    },
+    {
+        "Key": "Symbol",
+        "Values": [
+            "、",
+            "&"
+        ]
+    },
+    {
+        "Key": "NewText",
+        "Values": [
+            "新"
+        ]
+    },
+    {
+        "Key": "UnlockAreaDefaultValue",
+        "Values": [
+            99
+        ]
+    },
+    {
+        "Key": "UnlockNewGroupTitle",
+        "Values": [
+            "解锁新分区",
+            "解锁新内容"
+        ]
+    },
+    {
+        "Key": "ItemTagName",
+        "Values": [
+            "粗糙物料",
+            "闪耀成品"
+        ]
+    },
+    {
+        "Key": "MenuBonus",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerMenuBonus01.png",
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerMenuBonus02.png"
+        ]
+    },
+    {
+        "Key": "MaterialShortagesText",
+        "Values": [
+            "<color=red>【%s】</color>所需粗糙物料不足，员工无法立即工作！\\n是否继续修造<color=red>【%s】</color>\\n（粗糙物料足够后，员工再继续修造<color=red>【%s】</color>）"
+        ]
+    },
+    {
+        "Key": "PerformProgressFinishColor",
+        "Values": [
+            "4BFB34"
+        ]
+    },
+    {
+        "Key": "ProductSpeedText",
+        "Values": [
+            "订购速度：  %s秒/件"
+        ]
+    },
+    {
+        "Key": "SaleSpeedText",
+        "Values": [
+            "酬宾速度：  %s秒/件"
+        ]
+    },
+    {
+        "Key": "ProductionNeedText",
+        "Values": [
+            "修造一件%s需要："
+        ]
+    },
+    {
+        "Key": "StaffUpgradeLongPressInterval",
+        "Values": [
+            300
+        ]
+    },
+    {
+        "Key": "StaffUpgradeLongPressActiveTime",
+        "Values": [
+            0.5
+        ]
+    },
+    {
+        "Key": "SkyTowerLevelName",
+        "Values": [
+            "Lv.%s"
+        ]
+    },
+    {
+        "Key": "SkillEffectStateText",
+        "Values": [
+            "未生效",
+            "已生效",
+            "即将生效",
+            "即将失效"
+        ]
+    },
+    {
+        "Key": "SkillEffectStateDesc",
+        "Values": [
+            "%s <color=#85E7A9>%s</color>",
+            "%s <color=#EF8785>%s</color>"
+        ]
+    },
+    {
+        "Key": "WorkPosDropTip",
+        "Values": [
+            "因工位限制，无法放入"
+        ]
+    },
+    {
+        "Key": "FloorGroupCount",
+        "Values": [
+            4
+        ]
+    },
+    {
+        "Key": "FloorGroupStartFloorId",
+        "Values": [
+            1,
+            6,
+            11,
+            16
+        ]
+    },
+    {
+        "Key": "WorkTypeIcon",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerTypeIconSet.png",
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerTypeIconCraft.png",
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerTypeIconCoin.png"
+        ]
+    },
+    {
+        "Key": "WorkTypeName",
+        "Values": [
+            "订购",
+            "修造",
+            "酬宾"
+        ]
+    },
+    {
+        "Key": "SkillUnknownName",
+        "Values": [
+            "<B>? ? ?</B>"
+        ]
+    },
+    {
+        "Key": "WorkRoleLevelDesc",
+        "Values": [
+            "%s(Lv.%s)",
+            "Lv.%s"
+        ]
+    },
+    {
+        "Key": "ExamineGoldBubbleText",
+        "Values": [
+            "活动中每获得%s",
+            "自动获得%s"
+        ]
+    },
+    {
+        "Key": "SkillTypeIcon",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerTypeIconComSkill.png",
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerTypeIconHopeSkill.png",
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerTypeIconAuraSkill.png",
+            "Assets/Product/Texture/Atlas/UiSkyTower/UiSkyTowerTypeIconComSkill.png"
+        ]
+    },
+    {
+        "Key": "SkillAdditionText",
+        "Values": [
+            "时间-%ss",
+            "价格+%s"
+        ]
+    },
+    {
+        "Key": "SkillAdditionProduceText",
+        "Values": [
+            "掉落%s",
+            "额外%s",
+            "额外%s"
+        ]
+    },
+    {
+        "Key": "SkillEffectiveColor",
+        "Values": [
+            "85E7A9",
+            "8C8C8C"
+        ]
+    },
+    {
+        "Key": "ActivityDataRequestInterval",
+        "Values": [
+            36000
+        ]
+    },
+    {
+        "Key": "GoldNoEnoughTip",
+        "Values": [
+            "所需筑梦资金不足"
+        ]
+    },
+    {
+        "Key": "FloorGroup3DName",
+        "Values": [
+            "▲ %s ▲",
+            "▲ %s ▼",
+            "▼ %s ▼"
+        ]
+    },
+    {
+        "Key": "IconFoodA",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/IconActivityConsume2025001.png"
+        ]
+    },
+    {
+        "Key": "IconFoodB",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/IconActivityConsume2027001.png"
+        ]
+    },
+    {
+        "Key": "IconFoodC",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiSkyTowerIcon01.png"
+        ]
+    },
+    {
+        "Key": "IconFoodD",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiSkyTowerIcon03.png"
+        ]
+    },
+    {
+        "Key": "IconFoodE",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiSkyTowerIcon04.png"
+        ]
+    },
+    {
+        "Key": "IconFoodF",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/ItStoneI040010.png"
+        ]
+    },
+    {
+        "Key": "IconFoodG",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiScoreTowerIcon01.png"
+        ]
+    },
+    {
+        "Key": "IconFoodH",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiSkyTowerIcon05.png"
+        ]
+    },
+    {
+        "Key": "IconFoodI",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiSkyTowerIcon06.png"
+        ]
+    },
+    {
+        "Key": "IconFoodJ",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiSkyTowerIcon07.png"
+        ]
+    },
+    {
+        "Key": "IconFoodK",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/IconFubenYuanxiao5.png"
+        ]
+    },
+    {
+        "Key": "IconFoodL",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/IconActivityConsumeTic2017002.png"
+        ]
+    },
+    {
+        "Key": "IconFoodM",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiSkyTowerIcon08.png"
+        ]
+    },
+    {
+        "Key": "IconFoodN",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/IconTheatre08.png"
+        ]
+    },
+    {
+        "Key": "IconFoodO",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/IconTheatre07.png"
+        ]
+    },
+    {
+        "Key": "IconFoodP",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiMusicGameActivity01.png"
+        ]
+    },
+    {
+        "Key": "IconFoodQ",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/KillZoneShowGoods01.png"
+        ]
+    },
+    {
+        "Key": "IconIngredientA",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/IconActivityConsume2028001.png"
+        ]
+    },
+    {
+        "Key": "IconIngredientB",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/IconActivityConsume2029001.png"
+        ]
+    },
+    {
+        "Key": "IconIngredientC",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/IconActivityConsumeTic2017001.png"
+        ]
+    },
+    {
+        "Key": "IconIngredientD",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiSkyTowerIcon02.png"
+        ]
+    },
+    {
+        "Key": "IconIngredientE",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiNonogramItem17.png"
+        ]
+    },
+    {
+        "Key": "IconIngredientF",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/IconMain4003.png"
+        ]
+    },
+    {
+        "Key": "IconIngredientG",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiConnectingLineGameItem02.png"
+        ]
+    },
+    {
+        "Key": "IconIngredientH",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/IconGameCollection01.png"
+        ]
+    },
+    {
+        "Key": "IconIngredientI",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/IconRougeItem07.png"
+        ]
+    },
+    {
+        "Key": "IconIngredientJ",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiNonogramItem09.png"
+        ]
+    },
+    {
+        "Key": "IconIngredientK",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/IconActivityConsumeTic2001001.png"
+        ]
+    },
+    {
+        "Key": "IconIngredientL",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/IconTheatre03.png"
+        ]
+    },
+    {
+        "Key": "IconIngredientM",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/PBRItemsIconCoin.png"
+        ]
+    },
+    {
+        "Key": "IconIngredientN",
+        "Values": [
+            "Assets/Product/Texture/Image/IconTools/UiSkyTowerIcon09.png"
+        ]
+    },
+    {
+        "Key": "AcceleratePopupText",
+        "Values": [
+            "%s秒",
+            "x%s",
+            "（已达上限）",
+            "（原料不足）"
+        ]
+    },
+    {
+        "Key": "AccelerateReturnTip",
+        "Values": [
+            "道具返还",
+            "本次加速未完全生效，已返还%s个【%s】。"
+        ]
+    },
+    {
+        "Key": "FloorHeight",
+        "Values": [
+            3.3
+        ]
+    },
+    {
+        "Key": "SkyTowerTaskNoneTxt",
+        "Values": [
+            "每日任务已完成",
+            "食谱任务已完成",
+            "成就任务已完成"
+        ]
+    },
+    {
+        "Key": "MainBtnExpandText",
+        "Values": [
+            "粗糙物料",
+            "闪耀成品"
+        ]
+    },
+    {
+        "Key": "SpeedUpLimitReached",
+        "Values": [
+            "<size=20><color=#676BD5>/%s（已达上限）</color></size>",
+            "<size=20><color=#D5676D>/%s（原料不足）</color></size>"
+        ]
+    },
+    {
+        "Key": "StaffUpgradeCoinEnoughColor",
+        "Values": [
+            "7de4e9",
+            "FF0000"
+        ]
+    },
+    {
+        "Key": "CharacterLevelPreviewColor",
+        "Values": [
+            "0D70BC"
+        ]
+    }
+]

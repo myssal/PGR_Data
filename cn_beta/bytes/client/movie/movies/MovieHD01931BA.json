@@ -1,0 +1,105 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory667.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 201,
+        "Params": [
+            1,
+            500214
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "罗塞塔",
+            "指挥官？有什么事情吗？",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 302,
+        "Params": [
+            "",
+            "（向罗塞塔讲述迷宫的事情  ）",
+            6
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "迷宫？那是需要一些‘幸运’才能通过的地方……",
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "罗塞塔",
+            "指挥官确定要和我一起吗？",
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 302,
+        "Params": [
+            "",
+            "当然。",
+            9
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "罗塞塔",
+            "我明白了，我会做好准备的。",
+            1
+        ]
+    }
+]

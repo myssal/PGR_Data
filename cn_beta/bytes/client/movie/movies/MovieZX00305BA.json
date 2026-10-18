@@ -1,0 +1,109 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory.png"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 100,
+        "Type": 401,
+        "Params": [
+            1,
+            201
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 2,
+        "Type": 201,
+        "Params": [
+            1,
+            1011001,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 3,
+        "Type": 201,
+        "Params": [
+            2,
+            1081001,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 4,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "里",
+            "你还打算跟着我们吗？",
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 5,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "当然，我犯下的错误，我一定要自己弥补。",
+            2
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 6,
+        "Type": 204,
+        "Params": [
+            1,
+            10
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "我只希望你不会添更多的麻烦。",
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 8,
+        "Type": 301,
+        "Params": [
+            "",
+            "神威",
+            "说话还真不留情面啊……我开始不喜欢你了。",
+            2
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 9,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "里",
+            "无所谓。",
+            1
+        ]
+    }
+]

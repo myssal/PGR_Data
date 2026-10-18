@@ -1,0 +1,348 @@
+[
+    {
+        "Id": 900100,
+        "StageId": 25,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800101,
+        "ConditionFields": [
+            "PlayerKillGhostPhaseEntered"
+        ],
+        "ConditionOperators": [
+            "Triggered"
+        ]
+    },
+    {
+        "Id": 900101,
+        "StageId": 25,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800102,
+        "ConditionFields": [
+            "ExitEnabled"
+        ],
+        "ConditionOperators": [
+            "Triggered"
+        ]
+    },
+    {
+        "Id": 900102,
+        "StageId": 26,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800103,
+        "ConditionFields": [
+            "PlayerOrbProgress"
+        ],
+        "ConditionOperators": [
+            "GreaterEqual"
+        ],
+        "ConditionValues": [
+            0
+        ]
+    },
+    {
+        "Id": 900103,
+        "StageId": 26,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800104,
+        "ConditionFields": [
+            "KillItemPickupCount"
+        ],
+        "ConditionOperators": [
+            "Equal"
+        ],
+        "ConditionValues": [
+            3
+        ]
+    },
+    {
+        "Id": 900104,
+        "StageId": 27,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800106,
+        "ConditionFields": [
+            "HealItemPickupCount"
+        ],
+        "ConditionOperators": [
+            "Equal"
+        ],
+        "ConditionValues": [
+            1
+        ]
+    },
+    {
+        "Id": 900105,
+        "StageId": 28,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800107,
+        "ConditionFields": [
+            "PlayerOrbProgress"
+        ],
+        "ConditionOperators": [
+            "GreaterEqual"
+        ],
+        "ConditionValues": [
+            0
+        ]
+    },
+    {
+        "Id": 900106,
+        "StageId": 28,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800108,
+        "ConditionFields": [
+            "SpeedItemPickupCount"
+        ],
+        "ConditionOperators": [
+            "Equal"
+        ],
+        "ConditionValues": [
+            1
+        ]
+    },
+    {
+        "Id": 900107,
+        "StageId": 29,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800109,
+        "ConditionFields": [
+            "PlayerOrbProgress"
+        ],
+        "ConditionOperators": [
+            "GreaterEqual"
+        ],
+        "ConditionValues": [
+            0
+        ]
+    },
+    {
+        "Id": 900108,
+        "StageId": 29,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800110,
+        "ConditionFields": [
+            "PortalEnterCount"
+        ],
+        "ConditionOperators": [
+            "Equal"
+        ],
+        "ConditionValues": [
+            1
+        ]
+    },
+    {
+        "Id": 900109,
+        "StageId": 30,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800112,
+        "ConditionFields": [
+            "PlayerOrbProgress"
+        ],
+        "ConditionOperators": [
+            "GreaterEqual"
+        ],
+        "ConditionValues": [
+            30
+        ]
+    },
+    {
+        "Id": 900110,
+        "StageId": 30,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800113,
+        "ConditionFields": [
+            "PlayerOrbProgress"
+        ],
+        "ConditionOperators": [
+            "GreaterEqual"
+        ],
+        "ConditionValues": [
+            60
+        ]
+    },
+    {
+        "Id": 900111,
+        "StageId": 30,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800114,
+        "ConditionFields": [
+            "PlayerHp"
+        ],
+        "ConditionOperators": [
+            "LessEqual"
+        ],
+        "ConditionValues": [
+            2
+        ]
+    },
+    {
+        "Id": 900112,
+        "StageId": 31,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800115,
+        "ConditionFields": [
+            "PlayerOrbProgress"
+        ],
+        "ConditionOperators": [
+            "GreaterEqual"
+        ],
+        "ConditionValues": [
+            0
+        ]
+    },
+    {
+        "Id": 900113,
+        "StageId": 31,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800116,
+        "ConditionFields": [
+            "PlayerOrbProgress"
+        ],
+        "ConditionOperators": [
+            "GreaterEqual"
+        ],
+        "ConditionValues": [
+            30
+        ]
+    },
+    {
+        "Id": 900114,
+        "StageId": 31,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800117,
+        "ConditionFields": [
+            "PlayerOrbProgress"
+        ],
+        "ConditionOperators": [
+            "GreaterEqual"
+        ],
+        "ConditionValues": [
+            60
+        ]
+    },
+    {
+        "Id": 900115,
+        "StageId": 31,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800118,
+        "ConditionFields": [
+            "KillCount"
+        ],
+        "ConditionOperators": [
+            "Equal"
+        ],
+        "ConditionValues": [
+            3
+        ]
+    },
+    {
+        "Id": 900116,
+        "StageId": 32,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800120,
+        "ConditionFields": [
+            "DamageTakenCount"
+        ],
+        "ConditionOperators": [
+            "Equal"
+        ],
+        "ConditionValues": [
+            1
+        ]
+    },
+    {
+        "Id": 900117,
+        "StageId": 32,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800121,
+        "ConditionFields": [
+            "DamageTakenCount"
+        ],
+        "ConditionOperators": [
+            "Equal"
+        ],
+        "ConditionValues": [
+            2
+        ]
+    },
+    {
+        "Id": 900118,
+        "StageId": 32,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800122,
+        "ConditionFields": [
+            "DamageTakenCount"
+        ],
+        "ConditionOperators": [
+            "Equal"
+        ],
+        "ConditionValues": [
+            4
+        ]
+    },
+    {
+        "Id": 900119,
+        "StageId": 33,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800123,
+        "ConditionFields": [
+            "PlayerOrbProgress"
+        ],
+        "ConditionOperators": [
+            "GreaterEqual"
+        ],
+        "ConditionValues": [
+            0
+        ]
+    },
+    {
+        "Id": 900120,
+        "StageId": 33,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800124,
+        "ConditionFields": [
+            "PlayerOrbProgress"
+        ],
+        "ConditionOperators": [
+            "GreaterEqual"
+        ],
+        "ConditionValues": [
+            30
+        ]
+    },
+    {
+        "Id": 900121,
+        "StageId": 33,
+        "TriggerMode": "Once",
+        "Logic": "All",
+        "EventGroupId": 800125,
+        "ConditionFields": [
+            "PlayerOrbProgress"
+        ],
+        "ConditionOperators": [
+            "GreaterEqual"
+        ],
+        "ConditionValues": [
+            60
+        ]
+    }
+]

@@ -1,0 +1,89 @@
+local XUiChatBoard = XClass(XUiNode, 'XUiChatBoard')
+
+function XUiChatBoard:Refresh(chatBoradId, isRight)
+    --还原翻转
+    if self._IsMirror or self.PanelBg.transform.localScale.x < 0 then
+        self.PanelBg.transform.localScale = Vector3(1, 1, 1)
+        self.SubIconRoot.transform.localScale = Vector3(1, 1, 1)
+    end
+    self._IsMirror = false
+    
+    -- 对聊天框Id进行检查和处理确保有效
+    chatBoradId = XTool.IsNumberValid(chatBoradId) and chatBoradId or XChatConfigs.DefaultChatBoardId
+
+    local cfg = XChatConfigs.GetChatBoardCfgById(chatBoradId)
+
+    self._TextColor = nil
+    if cfg then
+        if not string.IsNilOrEmpty(cfg.TextColor) then
+            self._TextColor = XUiHelper.Hexcolor2Color(cfg.TextColor)
+        end
+        --设置底图
+        if isRight then
+            if cfg.ChatBoardImageRes then
+                self.PanelBg:SetSprite(cfg.ChatBoardImageRes)
+            else
+                self.PanelBg:SetSprite(cfg.ChatBoardRes)
+                --翻转
+                self.PanelBg.transform.localScale = Vector3(-1, 1, 1)
+                self.SubIconRoot.transform.localScale = Vector3(-1, 1, 1)
+                self._IsMirror = true
+            end
+        else
+            self.PanelBg:SetSprite(cfg.ChatBoardRes)
+        end
+        --设置小图标
+        if cfg.LogoRes then
+            self.Image.gameObject:SetActiveEx(true)
+            self.Image:SetRawImage(cfg.LogoRes)
+        else
+            self.Image.gameObject:SetActiveEx(false)
+        end
+        if cfg.EffectRes then
+            local effectGo = self.Effect.gameObject:LoadPrefab(cfg.EffectRes)
+            self.Effect.gameObject:SetActiveEx(true)
+            self:InitEffectAnim(effectGo)
+        else
+            self.Effect.gameObject:SetActiveEx(false)
+            self:InitEffectAnim(nil)
+        end
+    end
+end
+
+---缓存特效 prefab 里的进出场动效节点
+function XUiChatBoard:InitEffectAnim(effectGo)
+    self._EffectEnableAnim = effectGo and effectGo.transform:FindTransform("Enable")
+    self._EffectDisableAnim = effectGo and effectGo.transform:FindTransform("Disable")
+    if self._IsPlayEnableAnimOnRefresh or XDataCenter.ChatManager.IsChatBoardNeedPlayEnableAnim() then
+        self:PlayEffectAnim(self._EffectEnableAnim)
+    end
+end
+
+function XUiChatBoard:SetPlayEnableAnimOnRefresh(isPlay)
+    self._IsPlayEnableAnimOnRefresh = isPlay and true or false
+end
+
+function XUiChatBoard:PlayEffectAnim(animTrans)
+    if XTool.UObjIsNil(animTrans) or not animTrans.gameObject.activeInHierarchy then
+        return
+    end
+    animTrans.gameObject:PlayTimelineAnimation()
+end
+
+function XUiChatBoard:OnEnable()
+    XEventManager.AddEventListener(XEventId.EVENT_CHAT_BOARD_PLAY_DISABLE, self.PlayDisableAnim, self)
+end
+
+function XUiChatBoard:OnDisable()
+    XEventManager.RemoveEventListener(XEventId.EVENT_CHAT_BOARD_PLAY_DISABLE, self.PlayDisableAnim, self)
+end
+
+function XUiChatBoard:PlayDisableAnim()
+    self:PlayEffectAnim(self._EffectDisableAnim)
+end
+
+function XUiChatBoard:GetTextColor()
+    return self._TextColor
+end
+
+return XUiChatBoard

@@ -1,0 +1,90 @@
+[
+    {
+        "Id": 1,
+        "Name": "基础售价",
+        "MethodName": "GetCommodityPriceBubble",
+        "ParamNames": [
+            "Id"
+        ]
+    },
+    {
+        "Id": 2,
+        "Name": "售价加成",
+        "MethodName": "GetCommodityPriceAddBubble",
+        "ParamNames": [
+            "Id"
+        ]
+    },
+    {
+        "Id": 3,
+        "Name": "本季度价格波动",
+        "MethodName": "GetCommodityPriceFluctuationBubble",
+        "ParamNames": [
+            "Id"
+        ]
+    },
+    {
+        "Id": 4,
+        "Name": "最终售价增加",
+        "MethodName": "GetCommodityPriceAddFixedBubble",
+        "ParamNames": [
+            "Id"
+        ]
+    },
+    {
+        "Id": 5,
+        "Name": "销售暴击概率",
+        "MethodName": "GetCommodityPriceCritAddBubble",
+        "ParamNames": [
+            "Id"
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "销售暴击效果",
+        "MethodName": "GetCommodityPriceCritHurtAddBubble",
+        "ParamNames": [
+            "Id"
+        ]
+    },
+    {
+        "Id": 7,
+        "Name": "基础产量",
+        "MethodName": "GetCommodityProductionBubble",
+        "ParamNames": [
+            "Id"
+        ]
+    },
+    {
+        "Id": 8,
+        "Name": "生产效率加成",
+        "MethodName": "GetCommodityProductionAddBubble",
+        "ParamNames": [
+            "Id"
+        ]
+    },
+    {
+        "Id": 9,
+        "Name": "本季度产量波动",
+        "MethodName": "GetCommodityProductionFluctuationBubble",
+        "ParamNames": [
+            "Id"
+        ]
+    },
+    {
+        "Id": 10,
+        "Name": "生产暴击概率",
+        "MethodName": "GetCommodityProductionCritAddBubble",
+        "ParamNames": [
+            "Id"
+        ]
+    },
+    {
+        "Id": 11,
+        "Name": "生产暴击效果",
+        "MethodName": "GetCommodityProductionCritHurtAddBubble",
+        "ParamNames": [
+            "Id"
+        ]
+    }
+]

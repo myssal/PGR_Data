@@ -1,0 +1,1495 @@
+[
+    {
+        "Id": 1,
+        "FightEventId": 50600,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMoai2.png",
+        "Name": "石化",
+        "Desc": "装置每隔<color=#34aff9>5</color>秒会石化<color=#34aff9>10米内</color>的<color=#34aff9>所有单位</color>",
+        "DescZonglan": "装置每隔<color=#34aff9>5</color>秒会石化<color=#34aff9>10米内</color>的<color=#34aff9>所有单位</color>"
+    },
+    {
+        "Id": 2,
+        "FightEventId": 50601,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong2.png",
+        "Name": "黑洞",
+        "Desc": "装置每隔<color=#34aff9>15</color>秒后吸引附近<color=#34aff9>所有单位</color>",
+        "DescZonglan": "装置每隔<color=#34aff9>15</color>秒后吸引附近<color=#34aff9>所有单位</color>"
+    },
+    {
+        "Id": 3,
+        "FightEventId": 50602,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12251.png",
+        "Name": "横扫激光",
+        "Image": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg02.png",
+        "Desc": "装置会向角色发射光线，对路径上<color=#34aff9>所有单位</color>造成最大生命值10%的伤害",
+        "DescZonglan": "装置会向角色发射光线，对路径上<color=#34aff9>所有单位</color>造成最大生命值10%的伤害"
+    },
+    {
+        "Id": 4,
+        "FightEventId": 50603,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13001.png",
+        "Name": "全面炮击",
+        "Image": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg01.png",
+        "Desc": "装置会向角色发射炮击，对范围内的<color=#34aff9>所有单位</color>造成最大生命值30%的伤害",
+        "DescZonglan": "装置会向角色发射炮击，对范围内的<color=#34aff9>所有单位</color>造成最大生命值30%的伤害"
+    },
+    {
+        "Id": 5,
+        "FightEventId": 50604,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22080.png",
+        "Name": "优速愈合",
+        "Desc": "装置<color=#34aff9>10米内</color>的所有单位每秒回复最大生命值1%的血量",
+        "DescZonglan": "装置<color=#34aff9>10米内</color>的所有单位每秒回复最大生命值1%的血量"
+    },
+    {
+        "Id": 6,
+        "FightEventId": 50605,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22001.png",
+        "Name": "治疗",
+        "Desc": "装置<color=#34aff9>10米外</color>的所有单位每秒回复最大生命值1%血量",
+        "DescZonglan": "装置<color=#34aff9>10米外</color>的所有单位每秒回复最大生命值1%血量"
+    },
+    {
+        "Id": 7,
+        "FightEventId": 50606,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe2.png",
+        "Name": "辐射",
+        "Image": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg03.png",
+        "Desc": "装置<color=#34aff9>10米内</color>的所有单位每秒受到最大生命值7%的伤害",
+        "DescZonglan": "装置<color=#34aff9>10米内</color>的所有单位每秒受到最大生命值7%的伤害"
+    },
+    {
+        "Id": 8,
+        "FightEventId": 50607,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong2.png",
+        "Name": "波动",
+        "Desc": "装置<color=#34aff9>10米外</color>的所有单位每秒受到最大生命值7%的伤害",
+        "DescZonglan": "装置<color=#34aff9>10米外</color>的所有单位每秒受到最大生命值7%的伤害"
+    },
+    {
+        "Id": 9,
+        "FightEventId": 50608,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMoai2.png",
+        "Name": "停滞",
+        "Desc": "角色的攻击会石化怪物，石化状态内的怪物<color=#34aff9>免疫</color>来自于角色的伤害，持续<color=#34aff9>5</color>秒，冷却<color=#34aff9>10</color>秒",
+        "DescZonglan": "角色的攻击会石化怪物，石化状态内的怪物<color=#34aff9>免疫</color>来自于角色的伤害，持续<color=#34aff9>5</color>秒，冷却<color=#34aff9>10</color>秒"
+    },
+    {
+        "Id": 10,
+        "FightEventId": 50609,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong2.png",
+        "Name": "动荡",
+        "Desc": "怪物会生成黑洞吸引玩家，怪物每次<color=#34aff9>受伤</color>会发出冲击波伤害附近的<color=#34aff9>所有单位</color>",
+        "DescZonglan": "怪物会生成黑洞吸引玩家，怪物每次<color=#34aff9>受伤</color>会发出冲击波伤害附近的<color=#34aff9>所有单位</color>"
+    },
+    {
+        "Id": 11,
+        "FightEventId": 50610,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXunjie2.png",
+        "Name": "追击",
+        "Desc": "怪物移动速度提升，但<color=#34aff9>受到伤害提高</color>",
+        "DescZonglan": "怪物移动速度提升，但<color=#34aff9>受到伤害提高</color>"
+    },
+    {
+        "Id": 12,
+        "FightEventId": 50611,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe2.png",
+        "Name": "自我憎恶",
+        "Desc": "怪物持续对周围单位造成伤害，距离<color=#34aff9>越近伤害越高</color>",
+        "DescZonglan": "怪物持续对周围单位造成伤害，距离<color=#34aff9>越近伤害越高</color>"
+    },
+    {
+        "Id": 13,
+        "FightEventId": 50612,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21161.png",
+        "Name": "内溃",
+        "Desc": "怪物<color=#34aff9>免疫</color>来自于角色的伤害，但会持续损失生命值",
+        "DescZonglan": "怪物<color=#34aff9>免疫</color>来自于角色的伤害，但会持续损失生命值"
+    },
+    {
+        "Id": 14,
+        "FightEventId": 50613,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22041.png",
+        "Name": "自由代价",
+        "Desc": "怪物不受控制，但受到<color=#34aff9>伤害提升</color>",
+        "DescZonglan": "怪物不受控制，但受到<color=#34aff9>伤害提升</color>"
+    },
+    {
+        "Id": 15,
+        "FightEventId": 50614,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12051.png",
+        "Name": "踌躇",
+        "Desc": "怪物每次<color=#34aff9>受到伤害</color>，将降低攻击者的闪避值与移动速度",
+        "DescZonglan": "怪物每次<color=#34aff9>受到伤害</color>，将降低攻击者的闪避值与移动速度"
+    },
+    {
+        "Id": 16,
+        "FightEventId": 50615,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian2.png",
+        "Name": "传送波动",
+        "Desc": "怪物获得闪现，每次闪现后<color=#34aff9>受到伤害提升</color>",
+        "DescZonglan": "怪物获得闪现，每次闪现后<color=#34aff9>受到伤害提升</color>"
+    },
+    {
+        "Id": 17,
+        "FightEventId": 50616,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13011.png",
+        "Name": "超算置换",
+        "Desc": "角色闪避<color=#34aff9>无法进入超算</color>，但所有消球都视为三消",
+        "DescZonglan": "角色闪避<color=#34aff9>无法进入超算</color>，但所有消球都视为三消"
+    },
+    {
+        "Id": 18,
+        "FightEventId": 50617,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12121.png",
+        "Name": "超算弱点",
+        "Desc": "角色超算CD降低，但怪物在<color=#34aff9>超算空间外</color>的减伤大幅度提升",
+        "DescZonglan": "角色超算CD降低，但怪物在<color=#34aff9>超算空间外</color>的减伤大幅度提升"
+    },
+    {
+        "Id": 19,
+        "FightEventId": 50618,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22041.png",
+        "Name": "孤注一掷",
+        "Desc": "角色必杀技伤害提升<color=#34aff9>1000%</color>，必杀<color=#34aff9>造成伤害10秒后死亡</color>",
+        "DescZonglan": "角色必杀技伤害提升<color=#34aff9>1000%</color>，必杀<color=#34aff9>造成伤害10秒后死亡</color>"
+    },
+    {
+        "Id": 20,
+        "FightEventId": 50619,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Name": "恒动",
+        "Desc": "角色伤害增加，但<color=#34aff9>无法释放必杀技</color>",
+        "DescZonglan": "角色伤害增加，但<color=#34aff9>无法释放必杀技</color>"
+    },
+    {
+        "Id": 21,
+        "FightEventId": 50620,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22060.png",
+        "Name": "协作计划",
+        "Desc": "换人以及<color=#34aff9>QTE</color>冷却时间降低，但角色在场时会<color=#34aff9>逐渐降低攻击力</color>，换人后重置",
+        "DescZonglan": "换人以及<color=#34aff9>QTE</color>冷却时间降低，但角色在场时会<color=#34aff9>逐渐降低攻击力</color>，换人后重置"
+    },
+    {
+        "Id": 22,
+        "FightEventId": 50621,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21121.png",
+        "Name": "一夫当关",
+        "Desc": "<color=#34aff9>无法换人</color>，无法使用信号球激活QTE，但在场角色攻击力持续提升，开局获得一次免费QTE",
+        "DescZonglan": "<color=#34aff9>无法换人</color>，无法使用信号球激活QTE，但在场角色攻击力持续提升，开局获得一次免费QTE"
+    },
+    {
+        "Id": 23,
+        "FightEventId": 50622,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21081.png",
+        "Name": "汲取信号",
+        "Desc": "普攻<color=#34aff9>无法获得信号球</color>，但能量恢复效率提升",
+        "DescZonglan": "普攻<color=#34aff9>无法获得信号球</color>，但能量恢复效率提升"
+    },
+    {
+        "Id": 24,
+        "FightEventId": 50623,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21151.png",
+        "Name": "信号集中",
+        "Desc": "<color=#34aff9>无法获得能量</color>，每次普攻获得信号球时会额外获得1个随机信号球",
+        "DescZonglan": "<color=#34aff9>无法获得能量</color>，每次普攻获得信号球时会额外获得1个随机信号球"
+    },
+    {
+        "Id": 25,
+        "FightEventId": 50624,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11051.png",
+        "Name": "精灵",
+        "Desc": "角色闪避值回复效率提升，每次闪避后<color=#34aff9>6</color>秒内受到伤害提高",
+        "DescZonglan": "角色闪避值回复效率提升，每次闪避后<color=#34aff9>6</color>秒内受到伤害提高"
+    },
+    {
+        "Id": 26,
+        "FightEventId": 50625,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21161.png",
+        "Name": "坚重如石",
+        "Desc": "角色<color=#34aff9>获得减伤</color>，但闪避会消耗<color=#34aff9>全部闪避值</color>",
+        "DescZonglan": "角色<color=#34aff9>获得减伤</color>，但闪避会消耗<color=#34aff9>全部闪避值</color>"
+    },
+    {
+        "Id": 27,
+        "FightEventId": 50626,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21111.png",
+        "Name": "分裂",
+        "Desc": "怪物每存活<color=#34aff9>30</color>秒会召唤一只复制体，复制体<color=#34aff9>持续损失血量</color>",
+        "DescZonglan": "怪物每存活<color=#34aff9>30</color>秒会召唤一只复制体，复制体<color=#34aff9>持续损失血量</color>"
+    },
+    {
+        "Id": 28,
+        "FightEventId": 50627,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22060.png",
+        "Name": "残影",
+        "Desc": "怪物<color=#34aff9>死亡</color>会召唤2只复制体，复制体<color=#34aff9>持续损失血量</color>",
+        "DescZonglan": "怪物<color=#34aff9>死亡</color>会召唤2只复制体，复制体<color=#34aff9>持续损失血量</color>"
+    },
+    {
+        "Id": 29,
+        "FightEventId": 50628,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe2.png",
+        "Name": "渗透",
+        "Desc": "<color=#34aff9>所有角色</color>会持续降低生命值上限，最低为10点",
+        "DescZonglan": "<color=#34aff9>所有角色</color>会持续降低生命值上限，最低为10点"
+    },
+    {
+        "Id": 30,
+        "FightEventId": 50629,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian2.png",
+        "Name": "主宰",
+        "Desc": "怪物免疫超算效果",
+        "DescZonglan": "怪物免疫超算效果"
+    },
+    {
+        "Id": 31,
+        "FightEventId": 50630,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12001.png",
+        "Name": "濒死袭击",
+        "Desc": "怪物死亡扣除在场角色<color=#34aff9>10%生命值</color>",
+        "DescZonglan": "怪物死亡扣除在场角色<color=#34aff9>10%生命值</color>"
+    },
+    {
+        "Id": 32,
+        "FightEventId": 50631,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png",
+        "Name": "双生",
+        "Desc": "开局召唤一只场上<color=#34aff9>血量最高</color>怪物的复制体",
+        "DescZonglan": "开局召唤一只场上<color=#34aff9>血量最高</color>怪物的复制体"
+    },
+    {
+        "Id": 33,
+        "FightEventId": 50632,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33021.png",
+        "Name": "信号干扰",
+        "Desc": "怪物<color=#34aff9>死亡</color>扣除全角色1个信号球",
+        "DescZonglan": "怪物<color=#34aff9>死亡</color>扣除全角色1个信号球"
+    },
+    {
+        "Id": 34,
+        "FightEventId": 50633,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu2.png",
+        "Name": "动态校准",
+        "Desc": "怪物持续回复生命值，怪物受到伤害后回复速率会降低",
+        "DescZonglan": "怪物持续回复生命值，怪物受到伤害后回复速率会降低"
+    },
+    {
+        "Id": 35,
+        "FightEventId": 50634,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21161.png",
+        "Name": "濒死斗志",
+        "Desc": "怪物<color=#34aff9>死亡</color>会为其他角色提供高额减伤，持续<color=#34aff9>6</color>秒",
+        "DescZonglan": "怪物<color=#34aff9>死亡</color>会为其他角色提供高额减伤，持续<color=#34aff9>6</color>秒"
+    },
+    {
+        "Id": 36,
+        "FightEventId": 50635,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti2.png",
+        "Name": "刚体",
+        "Desc": "怪物受到的伤害变为1点，受到12次伤害时移除效果，8秒后效果恢复",
+        "DescZonglan": "怪物受到的伤害变为1点，受到12次伤害时移除效果，8秒后效果恢复"
+    },
+    {
+        "Id": 37,
+        "FightEventId": 50636,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian2.png",
+        "Name": "闪现",
+        "Desc": "怪物会周期性位移到角色附近",
+        "DescZonglan": "怪物会周期性位移到角色附近"
+    },
+    {
+        "Id": 38,
+        "FightEventId": 50637,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhuanyi2.png",
+        "Name": "转移",
+        "Desc": "怪物会周期性位移到远离角色的地方",
+        "DescZonglan": "怪物会周期性位移到远离角色的地方"
+    },
+    {
+        "Id": 39,
+        "FightEventId": 50638,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "Name": "独斗",
+        "Desc": "场上怪物越少，剩下怪物的攻击力越高",
+        "DescZonglan": "场上怪物越少，剩下怪物的攻击力越高"
+    },
+    {
+        "Id": 40,
+        "FightEventId": 50639,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling2.png",
+        "Name": "统领",
+        "Desc": "场上怪物越多，剩下怪物的攻击力越高",
+        "DescZonglan": "场上怪物越多，剩下怪物的攻击力越高"
+    },
+    {
+        "Id": 41,
+        "FightEventId": 50640,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12131.png",
+        "Name": "精密规划",
+        "Desc": "角色闪避值回复率降低",
+        "DescZonglan": "角色闪避值回复率降低"
+    },
+    {
+        "Id": 42,
+        "FightEventId": 50641,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12051.png",
+        "Name": "重力适应",
+        "Desc": "角色移动速度降低",
+        "DescZonglan": "角色移动速度降低"
+    },
+    {
+        "Id": 43,
+        "FightEventId": 50642,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhuanyi2.png",
+        "Name": "物抗-25%",
+        "Desc": "怪物会周期性位移到远离角色的地方",
+        "DescZonglan": "怪物会周期性位移到远离角色的地方"
+    },
+    {
+        "Id": 44,
+        "FightEventId": 50643,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "Name": "火抗-25%",
+        "Desc": "场上怪物越少，剩下怪物的攻击力越高",
+        "DescZonglan": "场上怪物越少，剩下怪物的攻击力越高"
+    },
+    {
+        "Id": 45,
+        "FightEventId": 50644,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling2.png",
+        "Name": "雷抗-25%",
+        "Desc": "场上怪物越多，剩下怪物的攻击力越高",
+        "DescZonglan": "场上怪物越多，剩下怪物的攻击力越高"
+    },
+    {
+        "Id": 46,
+        "FightEventId": 50645,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12131.png",
+        "Name": "冰抗-25%",
+        "Desc": "角色闪避值回复率降低",
+        "DescZonglan": "角色闪避值回复率降低"
+    },
+    {
+        "Id": 47,
+        "FightEventId": 50646,
+        "Type": 2,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12051.png",
+        "Name": "暗抗-25%",
+        "Desc": "角色移动速度降低",
+        "DescZonglan": "角色移动速度降低"
+    },
+    {
+        "Id": 48,
+        "FightEventId": 50647,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12051.png",
+        "Name": "天行者",
+        "Desc": "修理机工的武器变为小型光剑，攻击速度提升",
+        "DescZonglan": "修理机工的武器变为小型光剑，攻击速度提升"
+    },
+    {
+        "Id": 49,
+        "FightEventId": 50648,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "Name": "大师",
+        "Desc": "修理机工的武器变为大型光剑，攻击范围扩大，成功闪避其攻击也会持续损失少量生命值",
+        "DescZonglan": "修理机工的武器变为大型光剑，攻击范围扩大，成功闪避其攻击也会持续损失少量生命值"
+    },
+    {
+        "Id": 50,
+        "FightEventId": 50649,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21093.png",
+        "Name": "化形",
+        "Desc": "怪物体型增大，生命值与攻击力大幅提升",
+        "DescZonglan": "怪物体型增大，生命值与攻击力大幅提升"
+    },
+    {
+        "Id": 51,
+        "FightEventId": 50650,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21063.png",
+        "Name": "太极",
+        "Desc": "怪物增殖为多个",
+        "DescZonglan": "怪物增殖为多个"
+    },
+    {
+        "Id": 52,
+        "FightEventId": 50651,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32001.png",
+        "Name": "扫地僧",
+        "Desc": "怪物不受控制效果影响，不受超算影响",
+        "DescZonglan": "怪物不受控制效果影响，不受超算影响"
+    },
+    {
+        "Id": 53,
+        "FightEventId": 50652,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32031.png",
+        "Name": "走火入魔",
+        "Desc": "怪物获得闪现效果，攻击频率提高，造成伤害时有概率造成额外伤害",
+        "DescZonglan": "怪物获得闪现效果，攻击频率提高，造成伤害时有概率造成额外伤害"
+    },
+    {
+        "Id": 54,
+        "FightEventId": 50653,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png",
+        "Name": "黑白无常",
+        "Desc": "怪物攻击时会召唤一个修理机工进行协同攻击",
+        "DescZonglan": "怪物攻击时会召唤一个修理机工进行协同攻击"
+    },
+    {
+        "Id": 55,
+        "FightEventId": 50654,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32011.png",
+        "Name": "不朽不灭",
+        "Desc": "怪物获得持续回复最大生命值效果",
+        "DescZonglan": "怪物获得持续回复最大生命值效果"
+    },
+    {
+        "Id": 56,
+        "FightEventId": 50655,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33141.png",
+        "Name": "镜花水月",
+        "Desc": "怪物在攻击阶段进入隐身状态",
+        "DescZonglan": "怪物在攻击阶段进入隐身状态"
+    },
+    {
+        "Id": 57,
+        "FightEventId": 50656,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12051.png",
+        "Name": "判官笔",
+        "Desc": "怪物对角色造成伤害时降低角色治疗效果",
+        "DescZonglan": "怪物对角色造成伤害时降低角色治疗效果"
+    },
+    {
+        "Id": 58,
+        "FightEventId": 50657,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun2.png",
+        "Name": "竭力",
+        "Desc": "角色不会再获得信号球，普通攻击伤害大幅度提升",
+        "DescZonglan": "角色不会再获得信号球，普通攻击伤害大幅度提升"
+    },
+    {
+        "Id": 59,
+        "FightEventId": 50658,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong2.png",
+        "Name": "无念",
+        "Desc": "音效关闭，信号球获取速率提升",
+        "DescZonglan": "音效关闭，信号球获取速率提升"
+    },
+    {
+        "Id": 60,
+        "FightEventId": 50659,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian2.png",
+        "Name": "缥缈",
+        "Desc": "不再获得必杀能量，闪避也不再消耗闪避值",
+        "DescZonglan": "不再获得必杀能量，闪避也不再消耗闪避值"
+    },
+    {
+        "Id": 61,
+        "FightEventId": 50660,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhufu2.png",
+        "Name": "贯通",
+        "Desc": "视野变窄，角色造成伤害大幅提升",
+        "DescZonglan": "视野变窄，角色造成伤害大幅提升"
+    },
+    {
+        "Id": 62,
+        "FightEventId": 50661,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJinliao2.png",
+        "Name": "剑舞",
+        "Desc": "无法再回复生命值，超算空间的冷却时间大幅降低，触发超算获得30%最大生命值护盾，最高可叠加4次",
+        "DescZonglan": "无法再回复生命值，超算空间的冷却时间大幅降低，触发超算获得30%最大生命值护盾，最高可叠加4次"
+    },
+    {
+        "Id": 63,
+        "FightEventId": 50662,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33121.png",
+        "Name": "山岳",
+        "Desc": "不再显示血条和伤害，角色减伤大幅提升",
+        "DescZonglan": "不再显示血条和伤害，角色减伤大幅提升"
+    },
+    {
+        "Id": 64,
+        "FightEventId": 50663,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiban2.png",
+        "Name": "相助",
+        "Desc": "切换角色的冷却时间大幅度提升，所有攻击将附加后台角色攻击力100%的伤害",
+        "DescZonglan": "切换角色的冷却时间大幅度提升，所有攻击将附加后台角色攻击力100%的伤害"
+    },
+    {
+        "Id": 65,
+        "FightEventId": 50664,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33171.png",
+        "Name": "对影",
+        "Desc": "角色切换按钮变为暗影，切换角色与QTE下场的角色将变为随机后台角色，切换角色与QTE冷却时间大幅度降低",
+        "DescZonglan": "角色切换按钮变为暗影，切换角色与QTE下场的角色将变为随机后台角色，切换角色与QTE冷却时间大幅度降低"
+    },
+    {
+        "Id": 66,
+        "FightEventId": 50665,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "Name": "奇巧",
+        "Desc": "击杀核心目标后所有角色攻击力提升2500",
+        "DescZonglan": "击杀核心目标后所有角色攻击力提升2500"
+    },
+    {
+        "Id": 67,
+        "FightEventId": 50666,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Name": "天狗",
+        "Desc": "击杀核心目标后所有角色每造成10次伤害，全队所有角色攻击力提升100，最高可叠加50层",
+        "DescZonglan": "击杀核心目标后所有角色每造成10次伤害，全队所有角色攻击力提升100，最高可叠加50层"
+    },
+    {
+        "Id": 68,
+        "FightEventId": 50667,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti2.png",
+        "Name": "徐公",
+        "Desc": "击杀核心目标后所有怪物全抗性削弱100%",
+        "DescZonglan": "击杀核心目标后所有怪物全抗性削弱100%"
+    },
+    {
+        "Id": 69,
+        "FightEventId": 50668,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32121.png",
+        "Name": "英姿",
+        "Desc": "击杀核心目标后所有怪物全抗性削弱40%，每次切换角色怪物全抗性降低40%，最高可叠加5层",
+        "DescZonglan": "击杀核心目标后所有怪物全抗性削弱40%，每次切换角色怪物全抗性降低40%，最高可叠加5层"
+    },
+    {
+        "Id": 70,
+        "FightEventId": 50669,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22070.png",
+        "Name": "头筹",
+        "Desc": "击杀核心目标后全队角色伤害提升100%",
+        "DescZonglan": "击杀核心目标后全队角色伤害提升100%"
+    },
+    {
+        "Id": 71,
+        "FightEventId": 50670,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32081.png",
+        "Name": "初阵",
+        "Desc": "击杀核心目标后角色每次闪避，全队角色伤害提升10%，最高可叠加20层",
+        "DescZonglan": "击杀核心目标后角色每次闪避，全队角色伤害提升10%，最高可叠加20层"
+    },
+    {
+        "Id": 72,
+        "FightEventId": 50671,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22021.png",
+        "Name": "散华",
+        "Desc": "触发色彩爆发后留下染色区域，每秒对范围内怪物造成1.5%最大生命值伤害，持续5秒",
+        "DescZonglan": "触发色彩爆发后留下染色区域，每秒对范围内怪物造成1.5%最大生命值伤害，持续5秒"
+    },
+    {
+        "Id": 73,
+        "FightEventId": 50672,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22011.png",
+        "Name": "多维",
+        "Desc": "怪物再次染色的冷却时间降低为3秒，且怪物颜色会切换成三消球的颜色",
+        "DescZonglan": "怪物再次染色的冷却时间降低为3秒，且怪物颜色会切换成三消球的颜色"
+    },
+    {
+        "Id": 74,
+        "FightEventId": 50673,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32121.png",
+        "Name": "饱和",
+        "Desc": "色彩爆发效果提升60%",
+        "DescZonglan": "色彩爆发效果提升60%"
+    },
+    {
+        "Id": 75,
+        "FightEventId": 50674,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12051.png",
+        "Name": "调色",
+        "Desc": "怪物受到色彩爆发伤害会降低其25%全抗性，最高可叠加4层",
+        "DescZonglan": "怪物受到色彩爆发伤害会降低其25%全抗性，最高可叠加4层"
+    },
+    {
+        "Id": 76,
+        "FightEventId": 50675,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22130.png",
+        "Name": "光影",
+        "Desc": "色彩爆发时会触发染色扩散，对范围内所有怪物造成一次染色伤害",
+        "DescZonglan": "色彩爆发时会触发染色扩散，对范围内所有怪物造成一次染色伤害"
+    },
+    {
+        "Id": 77,
+        "FightEventId": 50676,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22120.png",
+        "Name": "灵感",
+        "Desc": "触发色彩爆发后将随机生成不同颜色信号球，拾取后获得一组对应颜色的三消球",
+        "DescZonglan": "触发色彩爆发后将随机生成不同颜色信号球，拾取后获得一组对应颜色的三消球"
+    },
+    {
+        "Id": 78,
+        "FightEventId": 50677,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21081.png",
+        "Name": "蓄势",
+        "Desc": "消球会额外回复必杀能量",
+        "DescZonglan": "消球会额外回复必杀能量"
+    },
+    {
+        "Id": 79,
+        "FightEventId": 50678,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Name": "专注",
+        "Desc": "角色造成伤害时将附加自身当前生命值100%的伤害",
+        "DescZonglan": "角色造成伤害时将附加自身当前生命值100%的伤害"
+    },
+    {
+        "Id": 80,
+        "FightEventId": 50679,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13011.png",
+        "Name": "遗愿",
+        "Desc": "存活角色不足3个时剩余角色的每个信号球都将视为三消",
+        "DescZonglan": "存活角色不足3个时剩余角色的每个信号球都将视为三消"
+    },
+    {
+        "Id": 81,
+        "FightEventId": 50680,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21131.png",
+        "Name": "良药",
+        "Desc": "角色每秒回复3%最大生命值",
+        "DescZonglan": "角色每秒回复3%最大生命值"
+    },
+    {
+        "Id": 82,
+        "FightEventId": 50681,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12241.png",
+        "Name": "牺牲",
+        "Desc": "必杀伤害提升3500%，但角色会在15秒后死亡",
+        "DescZonglan": "必杀伤害提升3500%，但角色会在15秒后死亡"
+    },
+    {
+        "Id": 83,
+        "FightEventId": 50682,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11001.png",
+        "Name": "旌旗",
+        "Desc": "角色生命值提升100%，闪避值回复效率降低25%",
+        "DescZonglan": "角色生命值提升100%，闪避值回复效率降低25%"
+    },
+    {
+        "Id": 201,
+        "FightEventId": 2281001,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13061.png",
+        "Name": "电闪雷鸣",
+        "Image": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg18.png",
+        "Desc": "<color=#37f9ee>每隔10s</color>，将在<color=#37f9ee>己方角色位置召唤雷电</color>，对玩家角色造成伤害",
+        "DescZonglan": "<color=#037a75>每隔10s</color>，将在<color=#037a75>己方角色位置召唤雷电</color>，对玩家角色造成伤害"
+    },
+    {
+        "Id": 202,
+        "FightEventId": 2281002,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon025.png",
+        "Name": "百万伏特",
+        "Desc": "召唤雷电的<color=#37f9ee>间隔时间减少到6s</color>",
+        "DescZonglan": "召唤雷电的<color=#037a75>间隔时间减少到6s</color>"
+    },
+    {
+        "Id": 203,
+        "FightEventId": 2281003,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun2.png",
+        "Name": "雷笼塑身",
+        "Desc": "每次召唤雷电都将在己方角色身旁<color=#37f9ee>额外随机生成四个落雷</color>",
+        "DescZonglan": "每次召唤雷电都将在己方角色身旁<color=#037a75>额外随机生成四个落雷</color>"
+    },
+    {
+        "Id": 204,
+        "FightEventId": 2281004,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon023.png",
+        "Name": "步履维艰",
+        "Desc": "落雷命中己方角色后，将会<color=#37f9ee>使目标减速50%</color>，持续5秒",
+        "DescZonglan": "落雷命中己方角色后，将会<color=#037a75>使目标减速50%</color>，持续5秒"
+    },
+    {
+        "Id": 205,
+        "FightEventId": 2281005,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12131.png",
+        "Name": "身法修炼",
+        "Desc": "落雷命中己方角色后，<color=#37f9ee>降低己方200闪避值</color>，每秒最多1次",
+        "DescZonglan": "落雷命中己方角色后，<color=#037a75>降低己方200闪避值</color>，每秒最多1次"
+    },
+    {
+        "Id": 206,
+        "FightEventId": 2281006,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLuehua2.png",
+        "Name": "不治之痛",
+        "Desc": "落雷<color=#37f9ee>命中己方角色后</color>，<color=#37f9ee>己方角色获得劣化</color>，效果持续5s",
+        "DescZonglan": "落雷<color=#037a75>命中己方角色后</color>，<color=#037a75>己方角色获得劣化</color>，效果持续5s"
+    },
+    {
+        "Id": 207,
+        "FightEventId": 2281007,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon012.png",
+        "Name": "强力提粹",
+        "Desc": "落雷<color=#37f9ee>命中敌方后</color>，使该<color=#37f9ee>敌方单位的伤害增加30%</color>，持续15s",
+        "DescZonglan": "落雷<color=#037a75>命中敌方后</color>，使该<color=#037a75>敌方单位的伤害增加30%</color>，持续15s"
+    },
+    {
+        "Id": 208,
+        "FightEventId": 2281008,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13001.png",
+        "Name": "陨石天降",
+        "Image": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg19.png",
+        "Desc": "<color=#37f9ee>每隔7s</color>，将在<color=#37f9ee>己方角色位置召唤陨石</color>，对玩家角色造成伤害",
+        "DescZonglan": "<color=#037a75>每隔7s</color>，将在<color=#037a75>己方角色位置召唤陨石</color>，对玩家角色造成伤害"
+    },
+    {
+        "Id": 209,
+        "FightEventId": 2281009,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong2.png",
+        "Name": "地火昭昭",
+        "Desc": "<color=#37f9ee>每隔7s随机召唤3处地火</color>，对己方角色造成伤害",
+        "DescZonglan": "<color=#037a75>每隔7s随机召唤3处地火</color>，对己方角色造成伤害"
+    },
+    {
+        "Id": 210,
+        "FightEventId": 2281010,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon007.png",
+        "Name": "高温附着",
+        "Desc": "<color=#37f9ee>敌方得到火焰附魔</color>，攻击将<color=#37f9ee>额外造成等同于自身攻击力30%火焰伤害</color>",
+        "DescZonglan": "<color=#037a75>敌方得到火焰附魔</color>，攻击将<color=#037a75>额外造成等同于自身攻击力30%火焰伤害</color>"
+    },
+    {
+        "Id": 211,
+        "FightEventId": 2281011,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22130.png",
+        "Name": "触底熔岩",
+        "Desc": "陨石落地后<color=#37f9ee>生成岩浆地面</color>，位于岩浆地面上的己方角色<color=#37f9ee>将持续受到伤害</color>。地块<color=#37f9ee>持续存在10s</color>",
+        "DescZonglan": "陨石落地后<color=#037a75>生成岩浆地面</color>，位于岩浆地面上的己方角色<color=#037a75>将持续受到伤害</color>。地块<color=#037a75>持续存在10s</color>"
+    },
+    {
+        "Id": 212,
+        "FightEventId": 2281012,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei2.png",
+        "Name": "坚固堡垒",
+        "Desc": "敌方单位<color=#37f9ee>获得壁垒</color>，获得<color=#37f9ee>当前生命值15%的永久护盾</color>。护盾存在时<color=#37f9ee>免疫受击状态</color>，移除护盾后15秒护盾会重新生效。",
+        "DescZonglan": "敌方单位<color=#037a75>获得壁垒</color>，获得<color=#037a75>当前生命值15%的永久护盾</color>。护盾存在时<color=#037a75>免疫受击状态</color>，移除护盾后15秒护盾会重新生效。"
+    },
+    {
+        "Id": 213,
+        "FightEventId": 2281013,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHuoyan2.png",
+        "Name": "烈焰灼烧",
+        "Desc": "当己方角色<color=#37f9ee>受到环境伤害后将额外获得灼烧</color>，每秒<color=#37f9ee>受到额外火焰伤害</color>",
+        "DescZonglan": "当己方角色<color=#037a75>受到环境伤害后将额外获得灼烧</color>，每秒<color=#037a75>受到额外火焰伤害</color>"
+    },
+    {
+        "Id": 214,
+        "FightEventId": 2281014,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu2.png",
+        "Name": "业火祝祷",
+        "Desc": "敌人获得火焰祝福，每秒<color=#37f9ee>恢复0.3%最大生命值</color>",
+        "DescZonglan": "敌人获得火焰祝福，每秒<color=#037a75>恢复0.3%最大生命值</color>"
+    },
+    {
+        "Id": 215,
+        "FightEventId": 2281015,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingdu2.png",
+        "Name": "涌潮覆火",
+        "Image": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg20.png",
+        "Desc": "战斗开始时若<color=#37f9ee>场上构造体数目多于感染体</color>，所有敌方获得<color=#37f9ee>统领</color>；战斗开始时若<color=#37f9ee>场上感染体数目多于构造体</color>，所有敌方获得<color=#37f9ee>暴走</color>",
+        "DescZonglan": "战斗开始时若<color=#037a75>场上构造体数目多于感染体</color>，所有敌方获得<color=#037a75>统领</color>；战斗开始时若<color=#037a75>场上感染体数目多于构造体</color>，所有敌方获得<color=#037a75>暴走</color>"
+    },
+    {
+        "Id": 216,
+        "FightEventId": 2281016,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32131.png",
+        "Name": "朝生夕死",
+        "Desc": "一个构造体<color=#37f9ee>转化为感染体</color>；感染体死亡时将<color=#37f9ee>触发暗爆</color>并对己方角色造成伤害，同时<color=#37f9ee>恢复敌方10% ×感染体数量的生命</color>",
+        "DescZonglan": "一个构造体<color=#037a75>转化为感染体</color>；感染体死亡时将<color=#037a75>触发暗爆</color>并对己方角色造成伤害，同时<color=#037a75>恢复敌方10% ×感染体数量的生命</color>"
+    },
+    {
+        "Id": 217,
+        "FightEventId": 2281017,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11021.png",
+        "Name": "不摧圣盾",
+        "Desc": "一个感染体<color=#37f9ee>转化为构造体</color>；全体构造体获得圣盾，<color=#37f9ee>增加10%×构造体数量的护盾值</color>",
+        "DescZonglan": "一个感染体<color=#037a75>转化为构造体</color>；全体构造体获得圣盾，<color=#037a75>增加10%×构造体数量的护盾值</color>"
+    },
+    {
+        "Id": 218,
+        "FightEventId": 2281018,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33001.png",
+        "Name": "锁魂追踪",
+        "Desc": "一个构造体<color=#37f9ee>转化为感染体</color>；全体感染体得到<color=#37f9ee>闪现</color>，远离玩家一定距离后将闪现至玩家身旁",
+        "DescZonglan": "一个构造体<color=#037a75>转化为感染体</color>；全体感染体得到<color=#037a75>闪现</color>，远离玩家一定距离后将闪现至玩家身旁"
+    },
+    {
+        "Id": 219,
+        "FightEventId": 2281019,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33101.png",
+        "Name": "血脉移植",
+        "Desc": "一个感染体<color=#37f9ee>转化为构造体</color>；所有构造体得到<color=#37f9ee>劣化</color>，攻击命中玩家后10s内玩家无法获得治疗效果",
+        "DescZonglan": "一个感染体<color=#037a75>转化为构造体</color>；所有构造体得到<color=#037a75>劣化</color>，攻击命中玩家后10s内玩家无法获得治疗效果"
+    },
+    {
+        "Id": 220,
+        "FightEventId": 2281020,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22001.png",
+        "Name": "生生不息",
+        "Desc": "一个构造体<color=#37f9ee>转化为感染体</color>；全体感染体获得<color=#37f9ee>复苏</color>，<color=#37f9ee>最大生命值增加200%</color>，所有<color=#37f9ee>易伤增加300%</color>",
+        "DescZonglan": "一个构造体<color=#037a75>转化为感染体</color>；全体感染体获得<color=#037a75>复苏</color>，<color=#037a75>最大生命值增加200%</color>，所有<color=#037a75>易伤增加300%</color>"
+    },
+    {
+        "Id": 221,
+        "FightEventId": 2281021,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32091.png",
+        "Name": "金石之坚",
+        "Desc": "一个感染体<color=#37f9ee>转化为构造体</color>；全体构造体获得<color=#37f9ee>毅力</color>，首次濒死时将<color=#37f9ee>免疫死亡</color>并恢复<color=#37f9ee>生命上限10%×构造体数量的生命值</color>",
+        "DescZonglan": "一个感染体<color=#037a75>转化为构造体</color>；全体构造体获得<color=#037a75>毅力</color>，首次濒死时将<color=#037a75>免疫死亡</color>并恢复<color=#037a75>生命上限10%×构造体数量的生命值</color>"
+    },
+    {
+        "Id": 222,
+        "FightEventId": 2281022,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33151.png",
+        "Name": "朽烂侵蚀",
+        "Desc": "全体感染体得到<color=#37f9ee>腐蚀</color>，造成伤害后提升所有感染体30%伤害和30%移动速度，效果持续10秒",
+        "DescZonglan": "全体感染体得到<color=#037a75>腐蚀</color>，造成伤害后提升所有感染体30%伤害和30%移动速度，效果持续10秒"
+    },
+    {
+        "Id": 223,
+        "FightEventId": 2281023,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13031.png",
+        "Name": "血光予求",
+        "Desc": "全体构造体得到<color=#37f9ee>圣光</color>，造成伤害后恢复所有构造体5%生命上限的血量，CD5秒",
+        "DescZonglan": "全体构造体得到<color=#037a75>圣光</color>，造成伤害后恢复所有构造体5%生命上限的血量，CD5秒"
+    },
+    {
+        "Id": 224,
+        "FightEventId": 2281025,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLiejie.png",
+        "Name": "嘶猎奔啸",
+        "Image": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg21.png",
+        "Desc": "在场怪物中<color=#37f9ee>将有一只被寄生</color>，被寄生的怪物<color=#37f9ee>将在15秒后孵化一只感染体</color>，随后场上<color=#37f9ee>另一随机敌方被寄生</color>",
+        "DescZonglan": "在场怪物中<color=#037a75>将有一只被寄生</color>，被寄生的怪物<color=#037a75>将在15秒后孵化一只感染体</color>，随后场上<color=#037a75>另一随机敌方被寄生</color>"
+    },
+    {
+        "Id": 225,
+        "FightEventId": 2281026,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12121.png",
+        "Name": "高速寄生",
+        "Desc": "寄生孵化所需要的时间<color=#37f9ee>缩短为10s</color>",
+        "DescZonglan": "寄生孵化所需要的时间<color=#037a75>缩短为10s</color>"
+    },
+    {
+        "Id": 226,
+        "FightEventId": 2281027,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22041.png",
+        "Name": "高效遗传",
+        "Desc": "完成寄生后，宿体将<color=#37f9ee>最多损失最大生命值的30%</color>，感染体<color=#37f9ee>获得等额血量加成和30%的额外伤害加成</color>",
+        "DescZonglan": "完成寄生后，宿体将<color=#037a75>最多损失最大生命值的30%</color>，感染体<color=#037a75>获得等额血量加成和30%的额外伤害加成</color>"
+    },
+    {
+        "Id": 227,
+        "FightEventId": 2281028,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33001.png",
+        "Name": "生存有道",
+        "Desc": "敌方被寄生后，获得<color=#37f9ee>转移</color>和<color=#37f9ee>电盾</color>",
+        "DescZonglan": "敌方被寄生后，获得<color=#037a75>转移</color>和<color=#037a75>电盾</color>"
+    },
+    {
+        "Id": 228,
+        "FightEventId": 2281029,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22001.png",
+        "Name": "哺液传递",
+        "Desc": "当场上存在感染者时，<color=#37f9ee>被寄生的敌方单位每秒恢复1%最大生命值</color>",
+        "DescZonglan": "当场上存在感染者时，<color=#037a75>被寄生的敌方单位每秒恢复1%最大生命值</color>"
+    },
+    {
+        "Id": 229,
+        "FightEventId": 2281030,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21251.png",
+        "Name": "躁狂膨胀",
+        "Desc": "敌方被寄生后，获得<color=#37f9ee>暴走</color>和<color=#37f9ee>强攻</color>",
+        "DescZonglan": "敌方被寄生后，获得<color=#037a75>暴走</color>和<color=#037a75>强攻</color>"
+    },
+    {
+        "Id": 230,
+        "FightEventId": 2281031,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32031.png",
+        "Name": "冲动本能",
+        "Desc": "感染者获得<color=#37f9ee>闪现</color>和<color=#37f9ee>暴走</color>",
+        "DescZonglan": "感染者获得<color=#037a75>闪现</color>和<color=#037a75>暴走</color>"
+    },
+    {
+        "Id": 231,
+        "FightEventId": 2281032,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32121.png",
+        "Name": "层叠穿刺",
+        "Desc": "敌方被寄生后，获得<color=#37f9ee>劣化</color>和<color=#37f9ee>贯穿</color>",
+        "DescZonglan": "敌方被寄生后，获得<color=#037a75>劣化</color>和<color=#037a75>贯穿</color>"
+    },
+    {
+        "Id": 232,
+        "FightEventId": 2281033,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png",
+        "Name": "污染蔓延",
+        "Desc": "完成寄生后，感染者获得<color=#37f9ee>辐射</color>",
+        "DescZonglan": "完成寄生后，感染者获得<color=#037a75>辐射</color>"
+    },
+    {
+        "Id": 233,
+        "FightEventId": 2281034,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon004.png",
+        "Name": "梦界终许",
+        "Image": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg22.png",
+        "Desc": "<color=#37f9ee>召唤火炬</color>，不同的火炬将<color=#37f9ee>提供不同的增益</color>",
+        "DescZonglan": "<color=#037a75>召唤火炬</color>，不同的火炬将<color=#037a75>提供不同的增益</color>"
+    },
+    {
+        "Id": 234,
+        "FightEventId": 2281035,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32031.png",
+        "Name": "震怒扑杀",
+        "Desc": "火炬将为敌方获得<color=#37f9ee>暴走</color>和<color=#37f9ee>强攻</color>",
+        "DescZonglan": "火炬将为敌方获得<color=#037a75>暴走</color>和<color=#037a75>强攻</color>"
+    },
+    {
+        "Id": 235,
+        "FightEventId": 2281036,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32061.png",
+        "Name": "森严不折",
+        "Desc": "火炬将为敌方获得一层<color=#37f9ee>壁垒</color>",
+        "DescZonglan": "火炬将为敌方获得一层<color=#037a75>壁垒</color>"
+    },
+    {
+        "Id": 236,
+        "FightEventId": 2281037,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33101.png",
+        "Name": "命途震断",
+        "Desc": "火炬将召唤2个鬼魂枪兵。<color=#37f9ee>每隔15秒出现电锯</color>并攻击玩家，被攻击命中的玩家在15s内<color=#37f9ee>治疗量下降75%</color>",
+        "DescZonglan": "火炬将召唤2个鬼魂枪兵。<color=#037a75>每隔15秒出现电锯</color>并攻击玩家，被攻击命中的玩家在15s内<color=#037a75>治疗量下降75%</color>"
+    },
+    {
+        "Id": 237,
+        "FightEventId": 2281038,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12101.png",
+        "Name": "脆弱躯壳",
+        "Desc": "火炬将召唤2个鬼魂电锯。<color=#37f9ee>每隔15秒出现电锯</color>并冲撞玩家，被攻击命中的玩家15s内<color=#37f9ee>易伤35%</color>",
+        "DescZonglan": "火炬将召唤2个鬼魂电锯。<color=#037a75>每隔15秒出现电锯</color>并冲撞玩家，被攻击命中的玩家15s内<color=#037a75>易伤35%</color>"
+    },
+    {
+        "Id": 238,
+        "FightEventId": 2281039,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon026.png",
+        "Name": "炎柱喷发",
+        "Desc": "火炬存在时，每隔10秒在己方角色脚下<color=#37f9ee>召唤火柱</color>。短暂延迟后火柱喷发并造成伤害",
+        "DescZonglan": "火炬存在时，每隔10秒在己方角色脚下<color=#037a75>召唤火柱</color>。短暂延迟后火柱喷发并造成伤害"
+    },
+    {
+        "Id": 239,
+        "FightEventId": 2281040,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon10042.png",
+        "Name": "焚烧遗症",
+        "Desc": "火炬存在时，敌方获得<color=#37f9ee>灼烧</color>，命中己方角色后在5s内持续造伤",
+        "DescZonglan": "火炬存在时，敌方获得<color=#037a75>灼烧</color>，命中己方角色后在5s内持续造伤"
+    },
+    {
+        "Id": 240,
+        "FightEventId": 2281041,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon018.png",
+        "Name": "囚牢陷阱",
+        "Desc": "火炬存在时，每15秒<color=#37f9ee>召唤荆棘</color>攻击己方角色。荆棘将留在场上，受到一定伤害后破坏",
+        "DescZonglan": "火炬存在时，每15秒<color=#037a75>召唤荆棘</color>攻击己方角色。荆棘将留在场上，受到一定伤害后破坏"
+    },
+    {
+        "Id": 241,
+        "FightEventId": 2281042,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon023.png",
+        "Name": "名曰安魂",
+        "Desc": "火炬存在时，每30秒为己方角色<color=#37f9ee>打上安魂烙印</color>。拥有烙印的玩家<color=#37f9ee>闪避值恢复速度上升</color>，下次受击将直接<color=#37f9ee>受到最大生命值50%的伤害</color>，持续15秒",
+        "DescZonglan": "火炬存在时，每30秒为己方角色<color=#037a75>打上安魂烙印</color>。拥有烙印的玩家<color=#037a75>闪避值恢复速度上升</color>，下次受击将直接<color=#037a75>受到最大生命值50%的伤害</color>，持续15秒"
+    },
+    {
+        "Id": 301,
+        "FightEventId": 2280001,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22041.png",
+        "Name": "回转必杀",
+        "Desc": "<color=#37f9ee>切换角色</color>后，立即回满<color=#37f9ee>必杀能量</color>",
+        "DescZonglan": "<color=#037a75>切换角色</color>后，立即回满<color=#037a75>必杀能量</color>"
+    },
+    {
+        "Id": 302,
+        "FightEventId": 2280002,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21151.png",
+        "Name": "交错突击",
+        "Desc": "<color=#37f9ee>切换角色</color>后，3秒内回复<color=#37f9ee>3组信号球</color>",
+        "DescZonglan": "<color=#037a75>切换角色</color>后，3秒内回复<color=#037a75>3组信号球</color>"
+    },
+    {
+        "Id": 303,
+        "FightEventId": 2280003,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22090.png",
+        "Name": "超级加倍",
+        "Desc": "释放<color=#37f9ee>必杀</color>后，刷新切换角色的冷却。释放<color=#37f9ee>必杀</color>后，下一个登场的角色<color=#37f9ee>攻击力增加25%</color>，效果可叠加",
+        "DescZonglan": "释放<color=#037a75>必杀</color>后，刷新切换角色的冷却。释放<color=#037a75>必杀</color>后，下一个登场的角色<color=#037a75>攻击力增加25%</color>，效果可叠加"
+    },
+    {
+        "Id": 304,
+        "FightEventId": 2280004,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33021.png",
+        "Name": "接力突围",
+        "Desc": "累积<color=#37f9ee>消除6个球</color>，刷新切换角色的冷却时间。累积<color=#37f9ee>消除6个球</color>，下一个登场的角色<color=#37f9ee>额外伤害增加25%</color>，效果可叠加",
+        "DescZonglan": "累积<color=#037a75>消除6个球</color>，刷新切换角色的冷却时间。累积<color=#037a75>消除6个球</color>，下一个登场的角色<color=#037a75>额外伤害增加25%</color>，效果可叠加"
+    },
+    {
+        "Id": 305,
+        "FightEventId": 2280005,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22130.png",
+        "Name": "天降正义",
+        "Desc": "切换入场后，释放<color=#37f9ee>冲击波</color>对范围内怪物造成<color=#37f9ee>8万真实伤害</color>。<color=#37f9ee>切人冷却</color>下降3秒",
+        "DescZonglan": "切换入场后，释放<color=#037a75>冲击波</color>对范围内怪物造成<color=#037a75>8万真实伤害</color>。<color=#037a75>切人冷却</color>下降3秒"
+    },
+    {
+        "Id": 306,
+        "FightEventId": 2280006,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12121.png",
+        "Name": "超我空间",
+        "Desc": "切换入场后，主动进入<color=#37f9ee>超算空间</color>。<color=#37f9ee>切人冷却</color>下降3秒",
+        "DescZonglan": "切换入场后，主动进入<color=#037a75>超算空间</color>。<color=#037a75>切人冷却</color>下降3秒"
+    },
+    {
+        "Id": 307,
+        "FightEventId": 2281024,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11001.png",
+        "Name": "集雪散霰",
+        "Desc": "受到怪物攻击时，大幅降低角色<color=#37f9ee>移动速度</color>。<color=#37f9ee>切换角色</color>后清除效果",
+        "DescZonglan": "受到怪物攻击时，大幅降低角色<color=#037a75>移动速度</color>。<color=#037a75>切换角色</color>后清除效果"
+    },
+    {
+        "Id": 311,
+        "FightEventId": 2280007,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32141.png",
+        "Name": "核心击破",
+        "Desc": "<color=#37f9ee>3消</color>攻击对护盾造成额外<color=#37f9ee>100%伤害</color>。护盾被击破时产生爆炸，造成<color=#37f9ee>5万范围伤害</color>",
+        "DescZonglan": "<color=#037a75>3消</color>攻击对护盾造成额外<color=#037a75>100%伤害</color>。护盾被击破时产生爆炸，造成<color=#037a75>5万范围伤害</color>"
+    },
+    {
+        "Id": 312,
+        "FightEventId": 2280008,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21101.png",
+        "Name": "趁热打铁",
+        "Desc": "<color=#37f9ee>必杀</color>攻击对护盾造成额外<color=#37f9ee>25%伤害</color>。护盾被击破时，主控角色<color=#37f9ee>攻击力增加30%</color>，持续<color=#37f9ee>8秒</color>",
+        "DescZonglan": "<color=#037a75>必杀</color>攻击对护盾造成额外<color=#037a75>25%伤害</color>。护盾被击破时，主控角色<color=#037a75>攻击力增加30%</color>，持续<color=#037a75>8秒</color>"
+    },
+    {
+        "Id": 313,
+        "FightEventId": 2280009,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12101.png",
+        "Name": "循序渐进",
+        "Desc": "破除护盾后<color=#37f9ee>10秒</color>内，每次攻击，怪物将掉落<color=#37f9ee>1个信号球</color>",
+        "DescZonglan": "破除护盾后<color=#037a75>10秒</color>内，每次攻击，怪物将掉落<color=#037a75>1个信号球</color>"
+    },
+    {
+        "Id": 314,
+        "FightEventId": 2280010,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21111.png",
+        "Name": "一鼓作气",
+        "Desc": "破除护盾后，怪物立即掉落<color=#37f9ee>3组信号球</color>",
+        "DescZonglan": "破除护盾后，怪物立即掉落<color=#037a75>3组信号球</color>"
+    },
+    {
+        "Id": 315,
+        "FightEventId": 2280011,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22021.png",
+        "Name": "万物皆准",
+        "Desc": "击破护盾后<color=#37f9ee>10秒</color>内，<color=#37f9ee>任意消除</color>都会被视为3消",
+        "DescZonglan": "击破护盾后<color=#037a75>10秒</color>内，<color=#037a75>任意消除</color>都会被视为3消"
+    },
+    {
+        "Id": 316,
+        "FightEventId": 2280012,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21071.png",
+        "Name": "以战养战",
+        "Desc": "攻击护盾可额外回复<color=#37f9ee>必杀能量</color>",
+        "DescZonglan": "攻击护盾可额外回复<color=#037a75>必杀能量</color>"
+    },
+    {
+        "Id": 317,
+        "FightEventId": 2281024,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11001.png",
+        "Name": "磐峙斧礴",
+        "Desc": "怪物拥有<color=#37f9ee>壁垒</color>效果，周期性获得护盾。击破护盾后移除壁垒效果，并降低怪物<color=#37f9ee>30%抗性</color>",
+        "DescZonglan": "怪物拥有<color=#037a75>壁垒</color>效果，周期性获得护盾。击破护盾后移除壁垒效果，并降低怪物<color=#037a75>30%抗性</color>"
+    },
+    {
+        "Id": 318,
+        "FightEventId": 2280013,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13031.png",
+        "Name": "一触即发",
+        "Desc": "<color=#37f9ee>三消</color>时主动进入未冷却的超算空间。三消后减少超算空间<color=#37f9ee>10%剩余冷却时间</color>",
+        "DescZonglan": "<color=#037a75>三消</color>时主动进入未冷却的超算空间。三消后减少超算空间<color=#037a75>10%剩余冷却时间</color>"
+    },
+    {
+        "Id": 319,
+        "FightEventId": 2280014,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22011.png",
+        "Name": "一击即胜",
+        "Desc": "<color=#37f9ee>释放必杀</color>后，主动进入未冷却的超算空间。释放必杀后，减少超算空间<color=#37f9ee>35%剩余冷却时间</color>",
+        "DescZonglan": "<color=#037a75>释放必杀</color>后，主动进入未冷却的超算空间。释放必杀后，减少超算空间<color=#037a75>35%剩余冷却时间</color>"
+    },
+    {
+        "Id": 320,
+        "FightEventId": 2280015,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22021.png",
+        "Name": "风驰电逝",
+        "Desc": "<color=#37f9ee>任意消除</color>都会被视为三消，<color=#37f9ee>闪避值</color>回复速度加快",
+        "DescZonglan": "<color=#037a75>任意消除</color>都会被视为三消，<color=#037a75>闪避值</color>回复速度加快"
+    },
+    {
+        "Id": 321,
+        "FightEventId": 2280016,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21071.png",
+        "Name": "蹑景追风",
+        "Desc": "<color=#37f9ee>必杀能量</color>获取效率加倍，<color=#37f9ee>闪避值</color>回复速度加快",
+        "DescZonglan": "<color=#037a75>必杀能量</color>获取效率加倍，<color=#037a75>闪避值</color>回复速度加快"
+    },
+    {
+        "Id": 322,
+        "FightEventId": 2280017,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32101.png",
+        "Name": "回能加速",
+        "Desc": "超算空间内，每次消除信号球后<color=#37f9ee>提升角色5%攻击</color>，效果可叠加",
+        "DescZonglan": "超算空间内，每次消除信号球后<color=#037a75>提升角色5%攻击</color>，效果可叠加"
+    },
+    {
+        "Id": 323,
+        "FightEventId": 2280018,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32111.png",
+        "Name": "超速霸体",
+        "Desc": "超算空间内释放必杀后<color=#37f9ee>提升角色15%攻击</color>，效果可叠加。超算空间结束后获得<color=#37f9ee>5秒霸体</color>",
+        "DescZonglan": "超算空间内释放必杀后<color=#037a75>提升角色15%攻击</color>，效果可叠加。超算空间结束后获得<color=#037a75>5秒霸体</color>"
+    },
+    {
+        "Id": 324,
+        "FightEventId": 2280019,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21111.png",
+        "Name": "涓滴微利",
+        "Desc": "击杀怪物后立即进入超算空间。进入超算空间时<color=#37f9ee>回复三组球</color>，冷却时间<color=#37f9ee>5秒</color>",
+        "DescZonglan": "击杀怪物后立即进入超算空间。进入超算空间时<color=#037a75>回复三组球</color>，冷却时间<color=#037a75>5秒</color>"
+    },
+    {
+        "Id": 325,
+        "FightEventId": 2280020,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32131.png",
+        "Name": "丘山大功",
+        "Desc": "击杀怪物后立即进入超算空间。进入超算空间时<color=#37f9ee>回满必杀技能量</color>，冷却时间<color=#37f9ee>5秒</color>",
+        "DescZonglan": "击杀怪物后立即进入超算空间。进入超算空间时<color=#037a75>回满必杀技能量</color>，冷却时间<color=#037a75>5秒</color>"
+    },
+    {
+        "Id": 326,
+        "FightEventId": 2281024,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32031.png",
+        "Name": "穿笼剪羽",
+        "Desc": "怪物获得<color=#37f9ee>暴走</color>，攻击欲望提升，每隔一段时间闪现接近角色。进入超算空间时，<color=#37f9ee>解除暴走状态10秒</color>",
+        "DescZonglan": "怪物获得<color=#037a75>暴走</color>，攻击欲望提升，每隔一段时间闪现接近角色。进入超算空间时，<color=#037a75>解除暴走状态10秒</color>"
+    },
+    {
+        "Id": 327,
+        "FightEventId": 2280021,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12101.png",
+        "Name": "滴水穿石",
+        "Desc": "<color=#37f9ee>击杀子体</color>对母体造成母体最大生命值的<color=#37f9ee>20%真实伤害</color>",
+        "DescZonglan": "<color=#037a75>击杀子体</color>对母体造成母体最大生命值的<color=#037a75>20%真实伤害</color>"
+    },
+    {
+        "Id": 328,
+        "FightEventId": 2280022,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22011.png",
+        "Name": "且入洞观",
+        "Desc": "击杀怪物时，获得<color=#37f9ee>10秒强化效果</color>。强化状态下，<color=#37f9ee>释放必杀</color>主动进入超算空间。强化状态下，<color=#37f9ee>增加20%额外伤害</color>",
+        "DescZonglan": "击杀怪物时，获得<color=#037a75>10秒强化效果</color>。强化状态下，<color=#037a75>释放必杀</color>主动进入超算空间。强化状态下，<color=#037a75>增加20%额外伤害</color>"
+    },
+    {
+        "Id": 329,
+        "FightEventId": 2280023,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13001.png",
+        "Name": "骇然轰炸",
+        "Desc": "<color=#37f9ee>子体死亡</color>时产生爆炸造成范围<color=#37f9ee>5万真实伤害</color>",
+        "DescZonglan": "<color=#037a75>子体死亡</color>时产生爆炸造成范围<color=#037a75>5万真实伤害</color>"
+    },
+    {
+        "Id": 330,
+        "FightEventId": 2280024,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21071.png",
+        "Name": "且视电掣",
+        "Desc": "击杀怪物时，获得<color=#37f9ee>10秒强化效果</color>。强化状态下，持续<color=#37f9ee>回复必杀能量</color>。强化状态下，<color=#37f9ee>增加20%额外伤害</color>",
+        "DescZonglan": "击杀怪物时，获得<color=#037a75>10秒强化效果</color>。强化状态下，持续<color=#037a75>回复必杀能量</color>。强化状态下，<color=#037a75>增加20%额外伤害</color>"
+    },
+    {
+        "Id": 331,
+        "FightEventId": 2280025,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22050.png",
+        "Name": "借力打力",
+        "Desc": "对母体造成的伤害会溅射到子体，对子体造成<color=#37f9ee>30%真实伤害</color>",
+        "DescZonglan": "对母体造成的伤害会溅射到子体，对子体造成<color=#037a75>30%真实伤害</color>"
+    },
+    {
+        "Id": 332,
+        "FightEventId": 2280026,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22021.png",
+        "Name": "且准消亡",
+        "Desc": "击杀怪物时，获得<color=#37f9ee>10秒</color>强化效果。强化状态下，<color=#37f9ee>任意消除</color>都会被视为三消。强化状态下，<color=#37f9ee>增加20%额外伤害</color>",
+        "DescZonglan": "击杀怪物时，获得<color=#037a75>10秒</color>强化效果。强化状态下，<color=#037a75>任意消除</color>都会被视为三消。强化状态下，<color=#037a75>增加20%额外伤害</color>"
+    },
+    {
+        "Id": 333,
+        "FightEventId": 2280027,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon10021.png",
+        "Name": "回溯抵抗",
+        "Desc": "每个子体为母体附加的<color=#37f9ee>复苏效果降低50%</color>。子体<color=#37f9ee>受到的伤害增加50%</color>",
+        "DescZonglan": "每个子体为母体附加的<color=#037a75>复苏效果降低50%</color>。子体<color=#037a75>受到的伤害增加50%</color>"
+    },
+    {
+        "Id": 334,
+        "FightEventId": 2280028,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22130.png",
+        "Name": "且听潮鸣",
+        "Desc": "击杀怪物时，获得<color=#37f9ee>10秒</color>强化效果。强化状态下，切换角色释放<color=#37f9ee>冲击波</color>，<color=#37f9ee>切人冷却</color>大幅降低",
+        "DescZonglan": "击杀怪物时，获得<color=#037a75>10秒</color>强化效果。强化状态下，切换角色释放<color=#037a75>冲击波</color>，<color=#037a75>切人冷却</color>大幅降低"
+    },
+    {
+        "Id": 335,
+        "FightEventId": 2281024,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21131.png",
+        "Name": "游鸟横镰",
+        "Desc": "场上存在<color=#37f9ee>母体怪物</color>，每隔<color=#37f9ee>6秒</color>召唤1个<color=#37f9ee>子体怪物</color>，上限3个。场上每个子体为母体增加一层<color=#37f9ee>复苏</color>",
+        "DescZonglan": "场上存在<color=#037a75>母体怪物</color>，每隔<color=#037a75>6秒</color>召唤1个<color=#037a75>子体怪物</color>，上限3个。场上每个子体为母体增加一层<color=#037a75>复苏</color>"
+    },
+    {
+        "Id": 336,
+        "FightEventId": 2280029,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32151.png",
+        "Name": "暗爆明伤",
+        "Desc": "能源核心超频所需充能层数减少到2层，每层提升的<color=#37f9ee>角色攻击力提高至10%</color>。强化状态下，进入超算空间，以玩家为中心生成一次暗爆，造成范围内<color=#37f9ee>20W真实伤害</color>",
+        "DescZonglan": "能源核心超频所需充能层数减少到2层，每层提升的<color=#037a75>角色攻击力提高至10%</color>。强化状态下，进入超算空间，以玩家为中心生成一次暗爆，造成范围内<color=#037a75>20W真实伤害</color>"
+    },
+    {
+        "Id": 337,
+        "FightEventId": 2280030,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22021.png",
+        "Name": "允诺施行",
+        "Desc": "强化状态下，<color=#37f9ee>任意消除</color>都会被视为三消，<color=#37f9ee>三消伤害提高100%</color>",
+        "DescZonglan": "强化状态下，<color=#037a75>任意消除</color>都会被视为三消，<color=#037a75>三消伤害提高100%</color>"
+    },
+    {
+        "Id": 338,
+        "FightEventId": 2280031,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21071.png",
+        "Name": "协理回复",
+        "Desc": "能源核心每次充能，主控角色<color=#37f9ee>回满必杀能量</color>。强化状态下<color=#37f9ee>持续回复必杀能量</color>，必杀伤害<color=#37f9ee>提高50%</color>",
+        "DescZonglan": "能源核心每次充能，主控角色<color=#037a75>回满必杀能量</color>。强化状态下<color=#037a75>持续回复必杀能量</color>，必杀伤害<color=#037a75>提高50%</color>"
+    },
+    {
+        "Id": 339,
+        "FightEventId": 2280032,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33281.png",
+        "Name": "不误磨刀",
+        "Desc": "强化状态下，必杀伤害<color=#37f9ee>提高50%</color>，释放必杀后返还<color=#37f9ee>50%必杀能量</color>",
+        "DescZonglan": "强化状态下，必杀伤害<color=#037a75>提高50%</color>，释放必杀后返还<color=#037a75>50%必杀能量</color>"
+    },
+    {
+        "Id": 340,
+        "FightEventId": 2280033,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13021.png",
+        "Name": "无穷引力",
+        "Desc": "强化状态下，三消后，以角色为中心生成<color=#37f9ee>黑洞</color>持续<color=#37f9ee>5秒</color>吸引怪物，并降低怪物<color=#37f9ee>15%抗性</color>，冷却时间<color=#37f9ee>8秒</color>",
+        "DescZonglan": "强化状态下，三消后，以角色为中心生成<color=#037a75>黑洞</color>持续<color=#037a75>5秒</color>吸引怪物，并降低怪物<color=#037a75>15%抗性</color>，冷却时间<color=#037a75>8秒</color>"
+    },
+    {
+        "Id": 341,
+        "FightEventId": 2280034,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon10001.png",
+        "Name": "一雷二闪",
+        "Desc": "强化状态下，全角色获得<color=#37f9ee>30%额外伤害加成</color>，并且闪避<color=#37f9ee>不会消耗闪避值</color>",
+        "DescZonglan": "强化状态下，全角色获得<color=#037a75>30%额外伤害加成</color>，并且闪避<color=#037a75>不会消耗闪避值</color>"
+    },
+    {
+        "Id": 342,
+        "FightEventId": 2280035,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13031.png",
+        "Name": "不破消解",
+        "Desc": "强化状态下，<color=#37f9ee>三消</color>时主动进入超算空间。超算空间冷却<color=#37f9ee>减少5秒</color>",
+        "DescZonglan": "强化状态下，<color=#037a75>三消</color>时主动进入超算空间。超算空间冷却<color=#037a75>减少5秒</color>"
+    },
+    {
+        "Id": 343,
+        "FightEventId": 2280036,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22011.png",
+        "Name": "不破击杀",
+        "Desc": "强化状态下，<color=#37f9ee>释放必杀</color>后，主动进入超算空间。超算空间冷却<color=#37f9ee>减少5秒</color>",
+        "DescZonglan": "强化状态下，<color=#037a75>释放必杀</color>后，主动进入超算空间。超算空间冷却<color=#037a75>减少5秒</color>"
+    },
+    {
+        "Id": 344,
+        "FightEventId": 2281024,
+        "Type": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png",
+        "Name": "攀黎越髓",
+        "Desc": "关卡拥有<color=#37f9ee>能源核心</color>。<color=#37f9ee>击杀怪物</color>会为能源核心充能，每层充能<color=#37f9ee>提升角色6%攻击力</color>。4层充能后能源核心<color=#37f9ee>超频</color>，全角色<color=#37f9ee>获得强化状态</color>",
+        "DescZonglan": "关卡拥有<color=#037a75>能源核心</color>。<color=#037a75>击杀怪物</color>会为能源核心充能，每层充能<color=#037a75>提升角色6%攻击力</color>。4层充能后能源核心<color=#037a75>超频</color>，全角色<color=#037a75>获得强化状态</color>"
+    }
+]

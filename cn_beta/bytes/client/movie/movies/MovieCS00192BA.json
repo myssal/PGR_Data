@@ -1,0 +1,81 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory833.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "测试-背景特效控制"
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 111,
+        "Params": [
+            1,
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "特效播放"
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 111,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab"
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "播放结束"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "测试结束"
+        ]
+    }
+]

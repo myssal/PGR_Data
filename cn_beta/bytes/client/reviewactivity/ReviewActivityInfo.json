@@ -1,0 +1,443 @@
+[
+    {
+        "Id": 1,
+        "Key": "TxtCharaEnName",
+        "ActivityId": 1,
+        "Page": 2,
+        "TextFormat": "{0}",
+        "DataName": "MaxAbilityCharacterEnName",
+        "Note": "最高练度角色英文名"
+    },
+    {
+        "Id": 2,
+        "Key": "TxtCharaFullName",
+        "ActivityId": 1,
+        "Page": 2,
+        "TextFormat": "{0}",
+        "DataName": "MaxAbilityCharacterFullName",
+        "Note": "最高练度角色名称(全称)"
+    },
+    {
+        "Id": 3,
+        "Key": "TxtAbility",
+        "ActivityId": 1,
+        "Page": 2,
+        "TextFormat": "{0}",
+        "DataName": "MaxAbility",
+        "Note": "最高练度角色战力"
+    },
+    {
+        "Id": 4,
+        "Key": "TxtLoveNum",
+        "ActivityId": 1,
+        "Page": 2,
+        "TextFormat": "共与<color=#34AFF8><size=50>{0}</size></color>个成员好感度\\n达到[{1}]",
+        "DataName": "MaxTrustData",
+        "Note": "最高好感度角色数"
+    },
+    {
+        "Id": 5,
+        "Key": "TxtPartnerNum",
+        "ActivityId": 1,
+        "Page": 2,
+        "TextFormat": "当前共拥有<color=#34AFF8><size=50>{0}</size></color>个",
+        "DataName": "PartnerCount",
+        "Note": "辅助机拥有数量"
+    },
+    {
+        "Id": 6,
+        "Key": "TxtPlayerName",
+        "ActivityId": 1,
+        "Page": 2,
+        "TextFormat": "{0}",
+        "DataName": "Name",
+        "Note": "指挥官名称"
+    },
+    {
+        "Id": 7,
+        "Key": "TxtRegisterTime",
+        "ActivityId": 1,
+        "Page": 2,
+        "TextFormat": "{0}",
+        "DataName": "CreateTime",
+        "Note": "玩家注册时间"
+    },
+    {
+        "Id": 8,
+        "Key": "TxtPlayDays",
+        "ActivityId": 1,
+        "Page": 2,
+        "TextFormat": "距今 <color=#34AFF8>{0}</color> 天",
+        "DataName": "ExistDayCount",
+        "Note": "注册到现在的时间"
+    },
+    {
+        "Id": 9,
+        "Key": "TxtGuildName",
+        "ActivityId": 1,
+        "Page": 2,
+        "TextFormat": "{0}",
+        "DataName": "GuildName",
+        "Note": "所属公会名"
+    },
+    {
+        "Id": 10,
+        "Key": "TxtMainStoryProgress",
+        "ActivityId": 1,
+        "Page": 2,
+        "TextFormat": "<color=#34AFF8>{0}</color> {1}",
+        "DataName": "MainLineStage",
+        "Note": "主线进度关卡名 {0} 进度序号 {1} 关卡名"
+    },
+    {
+        "Id": 11,
+        "Key": "TxtMainChapter",
+        "ActivityId": 1,
+        "Page": 2,
+        "TextFormat": "{0}",
+        "DataName": "BfrtSchedule",
+        "Note": "据点章节名"
+    },
+    {
+        "Id": 12,
+        "Key": "TxtAreaChapter",
+        "ActivityId": 1,
+        "Page": 2,
+        "TextFormat": "成功达到第 <color=#34AFF8>{0}</color> 区域",
+        "DataName": "AssignSchedule",
+        "Note": "边境公约进度"
+    },
+    {
+        "Id": 13,
+        "Key": "TxtPlayerName",
+        "ActivityId": 1,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "Name",
+        "Note": "指挥官名称"
+    },
+    {
+        "Id": 14,
+        "Key": "TxtPlayerId",
+        "ActivityId": 1,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "PlayerId",
+        "Note": "指挥官Id"
+    },
+    {
+        "Id": 15,
+        "Key": "TxtEnterDay",
+        "ActivityId": 1,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "CreateTime",
+        "Note": "玩家注册时间"
+    },
+    {
+        "Id": 16,
+        "Key": "TxtPlayDay",
+        "ActivityId": 1,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "ExistDayCount",
+        "Note": "注册到现在的时间"
+    },
+    {
+        "Id": 17,
+        "Key": "TxtMedalNum",
+        "ActivityId": 1,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "MedalCount",
+        "Note": "获得勋章数"
+    },
+    {
+        "Id": 18,
+        "Key": "TxtCollectionNum",
+        "ActivityId": 1,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "ScoreTitleCount",
+        "Note": "获得收藏品数"
+    },
+    {
+        "Id": 19,
+        "Key": "TxtMemberCount",
+        "ActivityId": 1,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "CharacterCnt",
+        "Note": "拥有角色数"
+    },
+    {
+        "Id": 20,
+        "Key": "TxtLoveNum",
+        "ActivityId": 1,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "MaxTrustLvCharacterCnt",
+        "Note": "最高好感度角色数"
+    },
+    {
+        "Id": 21,
+        "Key": "TxtMaxTrustName",
+        "ActivityId": 1,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "MaxTrustName",
+        "Note": "最高好感度的名称"
+    },
+    {
+        "Id": 22,
+        "Key": "TxtDormNum",
+        "ActivityId": 1,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "DormCount",
+        "Note": "拥有宿舍数"
+    },
+    {
+        "Id": 23,
+        "Key": "TxtFurnitureNum",
+        "ActivityId": 1,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "FurnitureCount",
+        "Note": "拥有家具数"
+    },
+    {
+        "Id": 24,
+        "Key": "TxtPlayerName",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "{0}",
+        "DataName": "Name",
+        "Note": "指挥官名称"
+    },
+    {
+        "Id": 25,
+        "Key": "TxtRegisterTime",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "{0}",
+        "DataName": "CreateTime",
+        "Note": "玩家注册时间"
+    },
+    {
+        "Id": 26,
+        "Key": "TxtPlayDays",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "距今 <color=#34AFF8>{0}</color> 天",
+        "DataName": "ExistDayCount",
+        "Note": "注册到现在的时间"
+    },
+    {
+        "Id": 27,
+        "Key": "TxtGuildName",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "{0}",
+        "DataName": "GuildName",
+        "Note": "所属公会名"
+    },
+    {
+        "Id": 28,
+        "Key": "TxtLoginDayTimes",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "今年，您在空中花园执行任务长达 <color=#34AFF8>{0}</color> 天",
+        "DataName": "LoginDayTimes",
+        "Note": "今年登录游戏天数"
+    },
+    {
+        "Id": 29,
+        "Key": "TxtConsumeSerum",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "使用血清 <color=#34AFF8>{0}</color> 毫升",
+        "DataName": "ConsumeSerum",
+        "Note": "今年消耗的血清总数"
+    },
+    {
+        "Id": 30,
+        "Key": "TxtConsumeNut",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "使用螺母 <color=#34AFF8>{0}</color> 个",
+        "DataName": "ConsumeNut",
+        "Note": "今年消耗的螺母总数"
+    },
+    {
+        "Id": 31,
+        "Key": "TxtCharaEnName",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "{0}",
+        "DataName": "MaxAbilityCharacterEnName",
+        "Note": "最高练度角色英文名"
+    },
+    {
+        "Id": 32,
+        "Key": "TxtCharaFullName",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "{0}",
+        "DataName": "MaxAbilityCharacterFullName",
+        "Note": "最高练度角色名称(全称)"
+    },
+    {
+        "Id": 33,
+        "Key": "TxtAbility",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "{0}",
+        "DataName": "MaxAbility",
+        "Note": "最高练度角色战力"
+    },
+    {
+        "Id": 34,
+        "Key": "TxtLoveNum",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "共与<color=#34AFF8><size=50>{0}</size></color>个成员好感度\\n达到[{1}]",
+        "DataName": "MaxTrustData",
+        "Note": "最高好感度角色数"
+    },
+    {
+        "Id": 35,
+        "Key": "TxtPartnerNum",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "当前共拥有<color=#34AFF8><size=50>{0}</size></color>个",
+        "DataName": "PartnerCount",
+        "Note": "辅助机拥有数量"
+    },
+    {
+        "Id": 36,
+        "Key": "TxtMainStoryProgress",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "<color=#34AFF8>{0}</color> {1}",
+        "DataName": "MainLineStage",
+        "Note": "主线进度关卡名 {0} 进度序号 {1} 关卡名"
+    },
+    {
+        "Id": 37,
+        "Key": "TxtMainChapter",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "{0}",
+        "DataName": "BfrtSchedule",
+        "Note": "据点"
+    },
+    {
+        "Id": 38,
+        "Key": "TxtAreaChapter",
+        "ActivityId": 2,
+        "Page": 2,
+        "TextFormat": "成功达到第 <color=#34AFF8>{0}</color> 区域",
+        "DataName": "AssignSchedule",
+        "Note": "边境公约进度"
+    },
+    {
+        "Id": 39,
+        "Key": "TxtPlayerName",
+        "ActivityId": 2,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "Name",
+        "Note": "指挥官名称"
+    },
+    {
+        "Id": 40,
+        "Key": "TxtPlayerId",
+        "ActivityId": 2,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "PlayerId",
+        "Note": "指挥官Id"
+    },
+    {
+        "Id": 41,
+        "Key": "TxtEnterDay",
+        "ActivityId": 2,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "CreateTime",
+        "Note": "玩家注册时间"
+    },
+    {
+        "Id": 42,
+        "Key": "TxtPlayDay",
+        "ActivityId": 2,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "ExistDayCount",
+        "Note": "注册到现在的时间"
+    },
+    {
+        "Id": 43,
+        "Key": "TxtMedalNum",
+        "ActivityId": 2,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "MedalCount",
+        "Note": "获得勋章数"
+    },
+    {
+        "Id": 44,
+        "Key": "TxtCollectionNum",
+        "ActivityId": 2,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "ScoreTitleCount",
+        "Note": "获得收藏品数"
+    },
+    {
+        "Id": 45,
+        "Key": "TxtMemberCount",
+        "ActivityId": 2,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "CharacterCnt",
+        "Note": "拥有角色数"
+    },
+    {
+        "Id": 46,
+        "Key": "TxtLoveNum",
+        "ActivityId": 2,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "MaxTrustLvCharacterCnt",
+        "Note": "最高好感度角色数"
+    },
+    {
+        "Id": 47,
+        "Key": "TxtMaxTrustName",
+        "ActivityId": 2,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "MaxTrustName",
+        "Note": "最高好感度的名称"
+    },
+    {
+        "Id": 48,
+        "Key": "TxtDormNum",
+        "ActivityId": 2,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "DormCount",
+        "Note": "拥有宿舍数"
+    },
+    {
+        "Id": 49,
+        "Key": "TxtFurnitureNum",
+        "ActivityId": 2,
+        "Page": 5,
+        "TextFormat": "{0}",
+        "DataName": "FurnitureCount",
+        "Note": "拥有家具数"
+    }
+]

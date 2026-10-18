@@ -1,0 +1,187 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory260.png"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            201
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 201,
+        "Params": [
+            1,
+            1031001,
+            "",
+            -600
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 201,
+        "Params": [
+            2,
+            500026,
+            "",
+            600
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 201,
+        "Params": [
+            3,
+            500166
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "",
+            "通往‘比安卡’推断地点的道路，此刻正被一大群紊乱的程序体封堵着。"
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "每个程序体身上都有明显的痕迹指向……啧，已经不藏了吗。",
+            2
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "这种数量的程序体堵在路上，也许根本不需要藏吧，如果不想办法让这些程序体清除，我们也过不去。",
+            3
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "是啊……也没有时间逐个修复了。",
+            2
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "露西亚",
+            "那么，指挥官，我们应该怎么做？",
+            3
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 305,
+        "Params": [
+            12,
+            17
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "露西亚",
+            "……",
+            3
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "露西亚，这是我们必须做的选择。",
+            2
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "我知道……",
+            3
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "……走吧，大家。",
+            3
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 302,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "嗯。"
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 202,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            2,
+            3,
+            "",
+            "",
+            1
+        ]
+    }
+]

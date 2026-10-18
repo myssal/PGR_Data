@@ -1,0 +1,52 @@
+---@class XUiSameColorGameGiveUp:XLuaUi
+local XUiSameColorGameGiveUp = XLuaUiManager.Register(XLuaUi, "UiSameColorGameGiveUp")
+---@param boss XSCBoss
+function XUiSameColorGameGiveUp:OnStart(boss, rePlayCb, backCb)
+    self.Boss = boss
+    self.RePlayCb = rePlayCb
+    self.BackCb = backCb
+    self.BattleManager = XDataCenter.SameColorActivityManager.GetBattleManager()
+    self:SetButtonCallBack()
+end
+
+function XUiSameColorGameGiveUp:OnEnable()
+    self:UpdateSkill()
+end
+
+function XUiSameColorGameGiveUp:UpdateSkill()
+    local isRoundType = self.Boss:IsRoundType()
+    self.TxtStep.gameObject:SetActiveEx(isRoundType)
+    if isRoundType then
+        local step = self.BattleManager:GetBattleStep(self.Boss)
+        self.TxtStep.text = XUiHelper.GetText("SCStepText", step)
+    end
+
+    local damage = self.BattleManager:GetDamageCount() or 0
+    self.TxtDamage.text = XUiHelper.GetText("SCDamageText", damage)
+    self.RankIcon:SetRawImage(self.Boss:GetCurGradeIcon(damage))
+end
+
+function XUiSameColorGameGiveUp:SetButtonCallBack()
+    self.BtnRePlay.CallBack = function() self:OnBtnRePlayClick() end
+    self.BtnExit.CallBack = function() self:OnBtnExitClick() end
+    self.BtnClose.CallBack = function() self:Close() end
+end
+
+function XUiSameColorGameGiveUp:OnBtnRePlayClick()
+    self:Close()
+    XScheduleManagerPro.ScheduleOnce(self._OnOnBtnRePlayClickScheduleCb, self, 1)
+
+end
+
+function XUiSameColorGameGiveUp:OnBtnExitClick()
+    self:Close()
+    XScheduleManagerPro.ScheduleOnce(self._OnOnBtnExitClickScheduleCb, self, 1)
+end
+
+function XUiSameColorGameGiveUp:_OnOnBtnExitClickScheduleCb()
+    XDataCenter.SameColorActivityManager.RequestGiveUp(self.Boss:GetId())
+    if self.BackCb then self.BackCb() end
+end
+function XUiSameColorGameGiveUp:_OnOnBtnRePlayClickScheduleCb()
+    if self.RePlayCb then self.RePlayCb() end
+end

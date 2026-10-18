@@ -1,0 +1,793 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory20.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 302,
+        "Params": [
+            "",
+            "背景震动",
+            5,
+            "角色震动",
+            31,
+            "对话框震动&左侧分支对话（往下继续点）",
+            4
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 302,
+        "Params": [
+            "",
+            "对话框震动",
+            56,
+            "左侧分支对话",
+            49
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 104,
+        "EndDelay": 600.0,
+        "Params": [
+            "200|100|-350",
+            0.5
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "背景位移"
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "",
+            "背景震动"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 502,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "背景放大动画"
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 505,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "背景放大动画结束"
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1253.jpg"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "切新背景"
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1255.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1255.jpg"
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "透明度转场"
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 302,
+        "Params": [
+            "",
+            "不同图层位置的Bg",
+            19,
+            "跳过结束",
+            76
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront5.png",
+            "",
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 104,
+        "EndDelay": 600.0,
+        "Params": [
+            "300|-150|-200",
+            0.5,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
+        "BeginAnim": "RImgBg4Shake",
+        "Params": [
+            "",
+            "",
+            "报纸（4）"
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront27.png",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 104,
+        "EndDelay": 600.0,
+        "Params": [
+            "300|-150|-200",
+            0.5,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 301,
+        "BeginAnim": "RImgBg5Shake",
+        "Params": [
+            "",
+            "",
+            "蝴蝶（5）"
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront29.png",
+            "",
+            "",
+            6
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 104,
+        "EndDelay": 600.0,
+        "Params": [
+            "300|-150|-200",
+            0.5,
+            "",
+            6
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 301,
+        "BeginAnim": "RImgBg6Shake",
+        "Params": [
+            "",
+            "",
+            "舞台（6）"
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront28.png",
+            "",
+            "",
+            7
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 104,
+        "EndDelay": 600.0,
+        "Params": [
+            "300|-150|-200",
+            0.5,
+            "",
+            7
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "NextActionId": 76,
+        "Type": 301,
+        "BeginAnim": "RImgBg7Shake",
+        "Params": [
+            "",
+            "",
+            "十字（7）"
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 201,
+        "Params": [
+            4,
+            501298,
+            "",
+            -500
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 201,
+        "Params": [
+            5,
+            500533,
+            "",
+            500
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "角色4、5出现"
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 502,
+        "Params": [
+            "PanelActor4Shake"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "角色4抖动"
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 502,
+        "Params": [
+            "PanelActor5Shake"
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "角色5抖动"
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 202,
+        "Params": [
+            4,
+            5,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 201,
+        "Params": [
+            1,
+            501294,
+            "",
+            -600
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 201,
+        "Params": [
+            2,
+            500530
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 201,
+        "Params": [
+            3,
+            501292,
+            "",
+            600
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "对照组（角色1、2、3）（已设置X坐标）"
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 502,
+        "Params": [
+            "PanelActor1Shake"
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "角色1抖动"
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 502,
+        "Params": [
+            "PanelActor2Shake"
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "角色2抖动"
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 502,
+        "Params": [
+            "PanelActor3Shake"
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "NextActionId": 76,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "角色3抖动"
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 302,
+        "Params": [
+            "",
+            "测试文本测试文本",
+            50,
+            "测试文本测试文本",
+            50,
+            "测试文本测试文本",
+            50,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "污染效果"
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 302,
+        "Params": [
+            "",
+            "测试文本测试文本",
+            52,
+            "测试文本测试文本",
+            52,
+            "测试文本测试文本",
+            52,
+            2,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "对照组（右侧常规分支对话）"
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 302,
+        "Params": [
+            "",
+            "测试文本测试文本",
+            54,
+            "测试文本测试文本",
+            54,
+            "测试文本测试文本",
+            54
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "污染效果"
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "NextActionId": 76,
+        "Type": 302,
+        "Params": [
+            "",
+            "测试文本测试文本",
+            76,
+            "测试文本测试文本",
+            76,
+            "测试文本测试文本",
+            76,
+            2,
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "对话框抖动"
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            "",
+            "",
+            "对话框抖动ing"
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 201,
+        "Params": [
+            18,
+            501294
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "对话框抖动+人物",
+            18
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 301,
+        "BeginAnim": "DialogShake",
+        "Params": [
+            1,
+            "",
+            "对话框抖动+人物ing",
+            18
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "对话框震动循环（预备）"
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 502,
+        "Params": [
+            "DialogShakeLoop"
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "对话框震动循环"
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 505,
+        "Params": [
+            "DialogShakeLoop"
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 502,
+        "Params": [
+            "DialogShakeLoopDisable"
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "对话框震动循环停止+复位"
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 201,
+        "Params": [
+            18,
+            501294
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "对话框震动循环，带立绘（预备）"
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 502,
+        "Params": [
+            "DialogShakeLoop"
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "对话框震动循环，带立绘",
+            18
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 505,
+        "Params": [
+            "DialogShakeLoop"
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 502,
+        "Params": [
+            "DialogShakeLoopDisable"
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "对话框震动循环停止+复位，带立绘"
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 202,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "演示结束"
+        ]
+    }
+]

@@ -1,0 +1,99 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory42.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 100,
+        "Type": 401,
+        "Params": [
+            1,
+            201
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 2,
+        "Type": 201,
+        "Params": [
+            1,
+            1031001,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 3,
+        "Type": 201,
+        "Params": [
+            2,
+            500029,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 4,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "露西亚",
+            "倒下了吗……",
+            2
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 5,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "连攻击的模式都一模一样。",
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 6,
+        "Type": 302,
+        "Params": [
+            "",
+            "没时间研究了，继续深入。",
+            7
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "露西亚",
+            "指挥官说的没错，虽然疑问很多，但现在更重要的是找到神威。",
+            2
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 8,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "露西亚",
+            "任务完成后，再找合适的时机，来对这些机械进行回收研究。",
+            2
+        ]
+    }
+]

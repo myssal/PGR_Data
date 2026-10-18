@@ -1,0 +1,78 @@
+local stringUtf8Len = string.Utf8Len
+local DefaultColor = CS.UnityEngine.Color.white
+local UpperCenter = CS.UnityEngine.TextAnchor.UpperCenter
+local UpperLeft = CS.UnityEngine.TextAnchor.UpperLeft
+
+local XUiGridSingleDialog = XClass(nil, "XUiGridSingleDialog")
+
+function XUiGridSingleDialog:Ctor(ui, uiRoot)
+    self.GameObject = ui.gameObject
+    self.Transform = ui.transform
+    self.UiRoot = uiRoot
+    XTool.InitUiObject(self)
+end
+
+function XUiGridSingleDialog:Refresh(dialogContent, isCenter, color, duration, typeWriterCb)
+
+    -- #207657 后续从源头解决问题
+    if XOverseaManager.IsENRegion() then
+        local transform = self.TxtWords.transform
+        local size = transform.sizeDelta
+        size.x = 1700
+        transform.sizeDelta = size
+    end
+
+    local txtWords = self.TxtWords
+    local typeWriter = self.TypeWriter
+    txtWords.text = string.gsub(dialogContent, "\\n", "\n")
+
+    self.DialogContent = dialogContent
+
+    self.LayoutGroup.ChildAlignment = isCenter and UpperCenter or UpperLeft
+
+    if color then
+        txtWords.color = XUiHelper.Hexcolor2Color(color)
+    end
+
+    if self.UiRoot then
+        self.UiRoot:ApplyFullScreenChannelOffsetTo(txtWords)
+    end
+
+    if duration then
+        typeWriter.Duration = duration ~= 0 and duration or stringUtf8Len(dialogContent) * XMovieConfigs.TYPE_WRITER_SPEED
+        self._PendingPlay = true
+    else
+        self._PendingPlay = false
+    end
+
+    if typeWriterCb then
+        typeWriter.CompletedHandle = typeWriterCb
+    end
+end
+
+-- 由调用方在布局稳定后触发，避免 OnEnable 后下一帧的二次 ParseVerts/重排导致文本视觉跳变
+function XUiGridSingleDialog:PlayTypeWriter()
+    if self._PendingPlay then
+        self._PendingPlay = false
+        self.TypeWriter:Play()
+    end
+end
+
+function XUiGridSingleDialog:Reset()
+    local txtWords = self.TxtWords
+    txtWords.text = ""
+    txtWords.color = DefaultColor
+
+    local typeWriter = self.TypeWriter
+    typeWriter:Stop()
+    typeWriter.CompletedHandle = nil
+
+    self._PendingPlay = false
+end
+
+function XUiGridSingleDialog:StopTypeWriter()
+    self.TypeWriter:Stop()
+    self.TypeWriter:ShowAllText()
+end
+
+return XUiGridSingleDialog

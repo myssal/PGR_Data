@@ -1,0 +1,249 @@
+[
+    {
+        "Id": 1,
+        "NodeGroups": [
+            52
+        ],
+        "ReviveCount": 100,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "StarRewardTemplateId": 1,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 800,
+        "RoundScore": -30,
+        "ReviveScore": 80,
+        "KillScore": 30,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "序章",
+        "TargetDesc": [
+            "初入棋局，掌握基本信息"
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "EnterCommunicationId": 1,
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg01.png"
+    },
+    {
+        "Id": 2,
+        "NodeGroups": [
+            53
+        ],
+        "ReviveCount": 100,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "StarRewardTemplateId": 2,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 800,
+        "RoundScore": -30,
+        "ReviveScore": 80,
+        "KillScore": 30,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "第一章",
+        "TargetDesc": [
+            "前有强敌在等待"
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "EnterCommunicationId": 2,
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg02.png",
+        "ShowBossId": [
+            1001
+        ],
+        "ShowBossIcon": [
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon01.png"
+        ]
+    },
+    {
+        "Id": 3,
+        "NodeGroups": [
+            54
+        ],
+        "ReviveCount": 100,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "StarRewardTemplateId": 3,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 800,
+        "RoundScore": -30,
+        "ReviveScore": 80,
+        "KillScore": 30,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "第二章",
+        "TargetDesc": [
+            "棋局难度提升，需要谨慎行动"
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg01.png"
+    },
+    {
+        "Id": 4,
+        "NodeGroups": [
+            55
+        ],
+        "ReviveCount": 100,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "StarRewardTemplateId": 4,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 800,
+        "RoundScore": -30,
+        "ReviveScore": 80,
+        "KillScore": 30,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "第三章",
+        "TargetDesc": [
+            "某鲨在这等待很久了，注意看好它的出招"
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "EnterCommunicationId": 3,
+        "ExitCommunicationId": 4,
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg04.png",
+        "ShowBossId": [
+            1002
+        ],
+        "ShowBossIcon": [
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon02.png"
+        ]
+    },
+    {
+        "Id": 5,
+        "NodeGroups": [
+            56
+        ],
+        "ReviveCount": 100,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "StarRewardTemplateId": 5,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 800,
+        "RoundScore": -30,
+        "ReviveScore": 80,
+        "KillScore": 30,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "第四章",
+        "TargetDesc": [
+            "综合棋局，混合双打"
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg05.png",
+        "ShowBossId": [
+            1001,
+            1002
+        ],
+        "ShowBossIcon": [
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon01.png",
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon02.png"
+        ]
+    },
+    {
+        "Id": 6,
+        "NodeGroups": [
+            57
+        ],
+        "ReviveCount": 8,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 500,
+        "RoundScore": -20,
+        "ReviveScore": 2000,
+        "KillScore": 60,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "第一章·极",
+        "TargetDesc": [
+            "复活次数减少，敌人性能提高，结算分数更高"
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg02.png",
+        "ShowBossId": [
+            1001
+        ],
+        "ShowBossIcon": [
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon01.png"
+        ]
+    },
+    {
+        "Id": 7,
+        "NodeGroups": [
+            58
+        ],
+        "ReviveCount": 8,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 500,
+        "RoundScore": -20,
+        "ReviveScore": 2000,
+        "KillScore": 60,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "第二章·极",
+        "TargetDesc": [
+            "复活次数减少，敌人性能提高，结算分数更高"
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg01.png"
+    },
+    {
+        "Id": 8,
+        "NodeGroups": [
+            59
+        ],
+        "ReviveCount": 8,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 500,
+        "RoundScore": -20,
+        "ReviveScore": 2000,
+        "KillScore": 60,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "第三章·极",
+        "TargetDesc": [
+            "复活次数减少，敌人性能提高，结算分数更高"
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg04.png",
+        "ShowBossId": [
+            1002
+        ],
+        "ShowBossIcon": [
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon02.png"
+        ]
+    },
+    {
+        "Id": 9,
+        "NodeGroups": [
+            60
+        ],
+        "ReviveCount": 8,
+        "MinGuaranteeReviveCount": 10,
+        "ReviveBuffGroupId": 1,
+        "SettleItemFactor": 100,
+        "MaxSettleItem": 500,
+        "RoundScore": -20,
+        "ReviveScore": 2000,
+        "KillScore": 60,
+        "Version": 1,
+        "StageIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessIcon05.png",
+        "Name": "第四章·极",
+        "TargetDesc": [
+            "复活次数减少，敌人性能提高，结算分数更高"
+        ],
+        "HelpKey": "UiBlackRockChessChapter",
+        "ShowIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessChapterBg05.png",
+        "ShowBossId": [
+            1001,
+            1002
+        ],
+        "ShowBossIcon": [
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon01.png",
+            "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBossIcon02.png"
+        ]
+    }
+]

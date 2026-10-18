@@ -1,0 +1,72 @@
+[
+    {
+        "Type": 1,
+        "Name": "小飞碟",
+        "Prefab": "Assets/Product/Ui/ComponentPrefab/GoldenMiner/PartnerShip.prefab",
+        "TriggerEffect": "Assets/Product/Effect/Prefab/FxUi/FxUiGoldenMinerBattle/FxUiGoldenMinerBattleEliminate.prefab",
+        "MoveSpeed": 260,
+        "RangeXMax": 1000000,
+        "RangeYMin": -30000,
+        "RangeYMax": 779555,
+        "IgnoreStoneConfigKey": "PartnerShipIgnore",
+        "IntParam": [
+            373152,
+            843555,
+            150
+        ],
+        "FloatParam": [
+            0.3,
+            3.0,
+            0.5,
+            0.6,
+            1.0
+        ]
+    },
+    {
+        "Type": 2,
+        "Name": "扫描线",
+        "Prefab": "Assets/Product/Ui/ComponentPrefab/GoldenMiner/PartnerScan.prefab",
+        "TriggerEffect": "Assets/Product/Effect/Prefab/FxUi/FxUiGoldenMinerBattle/FxUiGoldenMinerBattleEliminate.prefab",
+        "MoveSpeed": 500,
+        "RangeXMax": 1000000,
+        "RangeYMin": -79555,
+        "RangeYMax": 779555,
+        "IgnoreStoneConfigKey": "PartnerScanIgnore",
+        "IntParam": [
+            3,
+            1
+        ]
+    },
+    {
+        "Type": 3,
+        "Name": "雷达",
+        "Prefab": "Assets/Product/Ui/ComponentPrefab/GoldenMiner/PartnerRadar.prefab",
+        "TriggerEffect": "Assets/Product/Effect/Prefab/FxUi/FxUiGoldenMinerBattle/FxUiGoldenMinerBattleEliminate.prefab",
+        "RangeXMax": 1000000,
+        "RangeYMin": -79555,
+        "RangeYMax": 779555,
+        "IntParam": [
+            633152,
+            843555,
+            6003,
+            6004
+        ],
+        "FloatParam": [
+            10.0,
+            1.0
+        ]
+    },
+    {
+        "Type": 4,
+        "Name": "电磁链接",
+        "IgnoreStoneConfigKey": "PartnerLinkIgonre",
+        "IntParam": [
+            1,
+            2
+        ],
+        "FloatParam": [
+            7.0,
+            0.0
+        ]
+    }
+]

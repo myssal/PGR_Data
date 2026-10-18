@@ -1,0 +1,260 @@
+[
+    {
+        "Key": "ChipMaxCount",
+        "IntValues": [
+            1000
+        ],
+        "Comment": "芯片最大数量上限"
+    },
+    {
+        "Key": "ChipFormCount",
+        "IntValues": [
+            6
+        ],
+        "Comment": "芯片组数量"
+    },
+    {
+        "Key": "ChipFormNameMaxLength",
+        "IntValues": [
+            8
+        ],
+        "Comment": "芯片组命名最大长度"
+    },
+    {
+        "Key": "LostTipId",
+        "IntValues": [
+            1
+        ],
+        "Comment": "战力不足，失败"
+    },
+    {
+        "Key": "RoomTipId",
+        "IntValues": [
+            2
+        ],
+        "Comment": "房间解散，失败"
+    },
+    {
+        "Key": "WeekTaskGroupId",
+        "IntValues": [
+            5
+        ],
+        "Comment": "每周任务"
+    },
+    {
+        "Key": "TaskGroupId",
+        "IntValues": [
+            6
+        ],
+        "Comment": "玩法任务"
+    },
+    {
+        "Key": "WeekGainAssistLimit",
+        "IntValues": [
+            10000
+        ],
+        "Comment": "每周可获得支援点上限"
+    },
+    {
+        "Key": "WeekGainSocialAssistLimit",
+        "IntValues": [
+            10000
+        ],
+        "Comment": "每周可获得好友支援点上限"
+    },
+    {
+        "Key": "BorrowSocialAssist",
+        "IntValues": [
+            15,
+            15
+        ],
+        "Comment": "借用好友的芯片自己获得支援点值及好友获得支援点"
+    },
+    {
+        "Key": "BorrowTeammateAssist",
+        "IntValues": [
+            10,
+            10
+        ],
+        "Comment": "借用队友的芯片自己获得支援点值及队友获得支援点"
+    },
+    {
+        "Key": "BorrowRandomAssist",
+        "IntValues": [
+            5,
+            5
+        ],
+        "Comment": "借用随机路人的芯片自己获得支援点值及路人获得支援点"
+    },
+    {
+        "Key": "AssistPointItemId",
+        "IntValues": [
+            97002
+        ],
+        "Comment": "支援点ItemId"
+    },
+    {
+        "Key": "RandAssistChipCount",
+        "IntValues": [
+            5
+        ],
+        "Comment": "玩家提供得随机支援碎片最大上限"
+    },
+    {
+        "Key": "HelpKey",
+        "StringValues": [
+            "lalalal"
+        ],
+        "Comment": "帮助按钮"
+    },
+    {
+        "Key": "IconBreakthrough0",
+        "StringValues": [
+            "Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntIconBreak01.png",
+            "Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntIconBreak3D01.png"
+        ],
+        "Comment": "突破图标次数0"
+    },
+    {
+        "Key": "IconBreakthrough1",
+        "StringValues": [
+            "Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntIconBreak02.png",
+            "Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntIconBreak3D02.png"
+        ],
+        "Comment": "突破图标次数1"
+    },
+    {
+        "Key": "IconBreakthrough2",
+        "StringValues": [
+            "Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntIconBreak03.png",
+            "Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntIconBreak3D03.png"
+        ],
+        "Comment": "突破图标次数2"
+    },
+    {
+        "Key": "SortGroup",
+        "StringValues": [
+            "星级",
+            "等级",
+            "突破",
+            "最近"
+        ],
+        "Comment": "批量装备界面的筛选框"
+    },
+    {
+        "Key": "EmptyChipGroup",
+        "StringValues": [
+            "Assets/Product/Texture/Image/UiDlcHunt/UiDlcHuntIconMain00.png"
+        ],
+        "Comment": "芯片组为空的图标"
+    },
+    {
+        "Key": "MatchTimeoutSec",
+        "IntValues": [
+            300
+        ],
+        "Comment": "匹配超时时间（秒），0为不限制"
+    },
+    {
+        "Key": "ReJoinWorldDuration",
+        "IntValues": [
+            300
+        ],
+        "Comment": "断线可重连持续时间"
+    },
+    {
+        "Key": "ModelMainUi",
+        "StringValues": [
+            "Mb1BengyuehtMd010001"
+        ],
+        "Comment": "主界面的模型"
+    },
+    {
+        "Key": "CharacterAttr",
+        "StringValues": [
+            "Defense",
+            "Life",
+            "Attack"
+        ],
+        "Comment": "人物界面显示的属性"
+    },
+    {
+        "Key": "DurationRequestFriendAssistantChipClient",
+        "IntValues": [
+            300
+        ],
+        "Comment": "客户端好友芯片支援列表的请求间隔"
+    },
+    {
+        "Key": "AssistantChipAmount",
+        "IntValues": [
+            10,
+            2,
+            2,
+            2
+        ],
+        "Comment": "客户端芯片支援列表的数量，对应顺序是：好友，队友，随机，策划配置"
+    },
+    {
+        "Key": "RoomKickCountDownTime",
+        "IntValues": [
+            30
+        ],
+        "Comment": "房间全员准备后，倒计时踢出房主"
+    },
+    {
+        "Key": "RoomKickCountDownShowTime",
+        "IntValues": [
+            10
+        ],
+        "Comment": "房间全员准备后，倒计时踢出房主，不提示时间"
+    },
+    {
+        "Key": "ChipEffect",
+        "StringValues": [
+            0,
+            0,
+            "Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcSceneHunt02/FxUiDlcSceneHunt02Blue.prefab",
+            "Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcSceneHunt02/FxUiDlcSceneHunt02Purple.prefab",
+            "Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcSceneHunt02/FxUiDlcSceneHunt02Golden.prefab"
+        ],
+        "Comment": "芯片模型特效"
+    },
+    {
+        "Key": "ChipSubEffect",
+        "StringValues": [
+            0,
+            0,
+            "Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcHuntChipDetails/FxUiDlcHuntChipMainCongBlue.prefab",
+            "Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcHuntChipDetails/FxUiDlcHuntChipMainCongPurple.prefab",
+            "Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcHuntChipDetails/FxUiDlcHuntChipMainCongGolden.prefab"
+        ],
+        "Comment": "副芯片主界面模型特效"
+    },
+    {
+        "Key": "ChipMainEffect",
+        "StringValues": [
+            0,
+            0,
+            "Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcHuntChipDetails/FxUiDlcHuntChipMainZhuBlue.prefab",
+            "Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcHuntChipDetails/FxUiDlcHuntChipMainZhuPurple.prefab",
+            "Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcHuntChipDetails/FxUiDlcHuntChipMainZhuGolden.prefab"
+        ],
+        "Comment": "主芯片主界面模型特效"
+    },
+    {
+        "Key": "TimeOutSettleMailId",
+        "IntValues": [
+            67001
+        ]
+    },
+    {
+        "Key": "RankNumber",
+        "StringValues": [
+            "Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntNoOne.png",
+            "Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntNoTwo.png",
+            "Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntNoThree.png"
+        ],
+        "Comment": "排行榜图片123"
+    }
+]

@@ -1,0 +1,195 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory26.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 100,
+        "Type": 401,
+        "Params": [
+            1,
+            203
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 2,
+        "Type": 201,
+        "Params": [
+            1,
+            1031001
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 3,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "丽芙",
+            "我稍微查了一下这片地区的资料。",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 4,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "大约十公里外有一处前时代的军事基地。",
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 5,
+        "Type": 301,
+        "Params": [
+            "",
+            "丽芙",
+            "上面标注了一个叫做‘遗忘者’的外部势力组织。",
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 6,
+        "Type": 201,
+        "Params": [
+            1,
+            1011001
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            1,
+            "里",
+            "遗忘者……我在黑野的时候对这个组织好像略有耳闻。",
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 8,
+        "Type": 202,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 9,
+        "Type": 201,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            1,
+            1011001
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 10,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "里",
+            "等等，这震动……规模和刚才完全不一样。",
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 11,
+        "Type": 202,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 12,
+        "Type": 201,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            1,
+            1031001,
+            7
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 13,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "丽芙",
+            "1点钟方向！",
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 14,
+        "Type": 202,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 15,
+        "Type": 201,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            1,
+            1021001
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 16,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "露西亚",
+            "在沙子里面！它过来了！",
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 17,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "露西亚",
+            "准备接敌！",
+            1
+        ]
+    }
+]

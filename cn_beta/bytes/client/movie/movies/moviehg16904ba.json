@@ -1,0 +1,3200 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1595.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            161
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 401,
+        "Params": [
+            2,
+            4982
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "突如其来的变故让士兵骚动起来。"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 402,
+        "Params": [
+            4982
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "脑海中迅速思考着应对方式，又分心去推测海盗出现的理由：进入界面前自己的确看到过相应资料，大副也提到过海盗的猖獗。只是没想到这个变量真的会在作战中出现。"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "是自己把时间拖长的惩罚机制？亦或是难度本身如此？"
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 401,
+        "Params": [
+            2,
+            4176
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "",
+            "轰隆！"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "无论原因是什么，都来不及细想了——巨大的撞击声已经从极近的距离炸响。"
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 201,
+        "Params": [
+            1,
+            500093
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 301,
+        "Params": [
+            1,
+            "灰方副手",
+            "左舷！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020431
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 202,
+        "EndDelay": 500.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 401,
+        "Params": [
+            2,
+            4176
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 502,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab",
+            2,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 511,
+        "Params": [
+            1,
+            0,
+            "0|0|-150"
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "海盗的第一轮炮击，在几乎没有任何预警的情况，正面命中了旗舰左舷。"
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "渔翁得利。等双方都打残了再收网——这是这片海域最古老的战术之一。而现在，己方的战损比红方重，成为了更容易下口的目标。"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "那一侧的装甲在连续作战中已经反复承受炮击，防护的有效厚度早就不够了。"
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "紧随其后的是与之相关的坏消息。"
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 201,
+        "Params": [
+            1,
+            500093
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 301,
+        "Params": [
+            1,
+            "灰方副手",
+            "左舷装甲击穿，轮机舱进水！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020432
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 302,
+        "Params": [
+            "",
+            "损管队全力处置，堵住进水点。",
+            28
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 301,
+        "Params": [
+            "",
+            "灰方副手",
+            "……报告，前方传来消息，进水量已超出处置上限！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020433
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "灰方副手",
+            "损管队需要时间！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020434
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 202,
+        "EndDelay": 400.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1145.jpg",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining01.prefab",
+            2,
+            "",
+            "",
+            2
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining01.prefab",
+            2,
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 511,
+        "Params": [
+            2,
+            0,
+            "170|0|0"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 511,
+        "Params": [
+            3,
+            0,
+            "-170|0|0"
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "舰队总览的信号屏幕上，己方的部分信号灯开始晦暗不明地闪烁。"
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "那是舰艇严重受损的标志。"
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "这片海域的海盗装备多源自劫掠所得，其规模已相当惊人。"
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "加之他们毫无军事道德可言，遇敌时只会倾泻火力。这群毫无章法的恶徒，短时间内的凶险程度甚至超过正规军。"
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 401,
+        "Params": [
+            2,
+            4928
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining01.prefab",
+            "",
+            "",
+            2
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining01.prefab",
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            0.6,
+            0.3
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "屏幕上两个光点挣扎了几下，先后失去生机。"
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 205,
+        "Params": [
+            1004,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0.6,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1145.jpg",
+            1,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "在场的人即刻明白了它意味着什么。"
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 201,
+        "Params": [
+            1,
+            500093
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "灰方副手",
+            "指挥官，目前战损已严重超出预计，可用兵力持续下降。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020435
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 302,
+        "Params": [
+            "",
+            "调整炮火轨道方向，集中精力应敌。",
+            51
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 302,
+        "Params": [
+            "",
+            "派出所有救援船。",
+            52
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "灰方副手",
+            "真的要调整炮火轨道吗？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020436
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "灰方副手",
+            "可红方……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020437
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 302,
+        "Params": [
+            "",
+            "目前为止，红方没有开火。",
+            55
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 302,
+        "Params": [
+            "",
+            "如果他们真想把我们逼上绝路……",
+            56,
+            "如果他们真是机会主义者……",
+            56
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 302,
+        "Params": [
+            "",
+            "我们应该被两面夹击了才是。",
+            57
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "灰方副手",
+            "好，那就赌一把！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020438
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在及时的反制之下，左舷损管队还是失去了联系。"
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "目测至少四艘盖伦船和先锋船，分成两路钳形逼近。"
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 302,
+        "Params": [
+            "",
+            "第一编队，向海盗左翼展开，不要让他们咬住主舰。",
+            62
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 302,
+        "Params": [
+            "",
+            "第二驱逐编队，绕右翼迂回，压制他们的火力输出节奏。",
+            63
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 218,
+        "Params": [
+            1,
+            "Assets/Product/Texture/Image/IconMovie/V480haituNormal01.png"
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "几艘先锋帆船正在接近，距离不过百米。按照移速，即将靠近主舰队。目的显然是为了登船。"
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "迅速将他们击溃，而对方的武装商船也紧随其后。损管队的作业因此受到极大的干扰。"
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 220,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 306
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 201,
+        "Params": [
+            1,
+            500093
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 301,
+        "Params": [
+            1,
+            "灰方副手",
+            "指挥，我申请带领第一编队机动应对！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020439
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 301,
+        "Params": [
+            "",
+            "灰方副手",
+            "海盗一旦登船，轮机舱进水加上近身火力，主舰更加危险。我去为损管队争取时间！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020440
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 302,
+        "Params": [
+            "",
+            "批准。",
+            73,
+            "现在移乘太危险。",
+            74
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "NextActionId": 75,
+        "Type": 301,
+        "Params": [
+            "",
+            "灰方副手",
+            "是！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020441
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 301,
+        "Params": [
+            "",
+            "灰方副手",
+            "这话可不是您该说的。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020442
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 301,
+        "Params": [
+            "",
+            "灰方副手",
+            "我这就出发。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020443
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "言毕，他通知相应编队，冒险移乘驱逐舰旗舰，率舰迎向海盗舰队。"
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 310,
+        "Params": [
+            "第一编队在大副的带领下迅速摆好阵型，通过不间断的攻击吸引了海盗方大部分火力。",
+            "",
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 310,
+        "Params": [
+            "有实战经验丰厚的大副带队，自己下的命令被准确且及时地执行着，间或的火力输出比自己预想的更加果决。"
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "Type": 310,
+        "Params": [
+            "心情刚放松一些，可很快就察觉到了不同寻常之处。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 302,
+        "Params": [
+            "",
+            "不对……",
+            82
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 302,
+        "Params": [
+            "",
+            "弹药储备不应该撑得起这样的消耗。",
+            83
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 401,
+        "Params": [
+            2,
+            1099
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 509,
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1582.jpg",
+            1
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 401,
+        "Params": [
+            1,
+            211
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 201,
+        "Params": [
+            11,
+            500093,
+            "",
+            -500
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            2,
+            "",
+            "",
+            11
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 511,
+        "Params": [
+            11,
+            0,
+            "-500|0|0"
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "灰方副手",
+            "报告灰旗主舰，第一编队弹药即将耗尽。",
+            11,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020444
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 401,
+        "Params": [
+            2,
+            4260
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "轰——"
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "灰方副手",
+            "报告灰旗主舰，第一编队弹药已耗尽，仅剩自卫用轻武器弹药。",
+            11,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020445
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 401,
+        "Params": [
+            2,
+            4260
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 501,
+        "EndDelay": 350.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 401,
+        "Params": [
+            2,
+            4260
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 501,
+        "EndDelay": 350.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "轰——轰——"
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 301,
+        "Params": [
+            "",
+            "灰方副手",
+            "请求接入次频道。",
+            11,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020446
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 301,
+        "Params": [
+            "",
+            "灰方副手",
+            "指挥，这艘舰上的火药已经空了。",
+            11,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020447
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 302,
+        "Params": [
+            "",
+            "迅速回归舰队主体。",
+            103
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 301,
+        "Params": [
+            "",
+            "灰方副手",
+            "我已经让编队其余船只执行该命令。",
+            11,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020448
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 301,
+        "Params": [
+            "",
+            "灰方副手",
+            "还不够，指挥官，还不够。",
+            11,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020449
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 301,
+        "Params": [
+            "",
+            "灰方副手",
+            "这艘空了的船本身也是武器。",
+            11,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020450
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 301,
+        "Params": [
+            "",
+            "灰方副手",
+            "刚刚我们已经解决他们的三艘盖伦船了，我还能再炸一艘。",
+            11,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020451
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 302,
+        "Params": [
+            "",
+            "不……",
+            108,
+            "……",
+            108
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 301,
+        "Params": [
+            "",
+            "灰方副手",
+            "没别的办法了，指挥官。",
+            11,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020452
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "他的声音仍然洪亮，却不似之前执行任务和回报战况那般严肃，更像是决战之前简单唠家常的状态，带着怀念与放松。"
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 301,
+        "Params": [
+            "",
+            "灰方副手",
+            "我当兵就是为了这个。",
+            11,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020453
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "灰方副手",
+            "能为了自己最初的志向而死，也不枉这一遭了。",
+            11,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020454
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 202,
+        "Params": [
+            11
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 401,
+        "Params": [
+            2,
+            1024
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            "",
+            "",
+            11
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 510,
+        "EndDelay": 500.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "通讯频道断开。"
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1145.jpg",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining01.prefab",
+            2,
+            "",
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 511,
+        "Params": [
+            4,
+            0,
+            "150|0|0"
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 511,
+        "EndDelay": 1350.0,
+        "Params": [
+            4,
+            1.3,
+            "-150|0|0"
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "信号屏幕上，载着唯一乘客的驱逐舰光点开始移动，从旗舰侧后方缓缓驶出，朝着中路四艘盖伦船的方向去了。"
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining01.prefab",
+            "",
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1145.jpg",
+            1,
+            0,
+            0.3
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 302,
+        "Params": [
+            "",
+            "一二编队，咬紧左右两翼！",
+            125
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "必须为大副创造空间，不能让海盗在这个时候将他拦截或击沉。"
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "炮火密集，逼迫盖伦船转向应对。"
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "他们并没有意识到那艘靠近的补给舰意味着什么。"
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1145.jpg",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1145.jpg"
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining01.prefab",
+            2,
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 511,
+        "Params": [
+            5,
+            0,
+            "-150|0|0"
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 511,
+        "EndDelay": 1050.0,
+        "Params": [
+            5,
+            1,
+            "-220|0|0"
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "光点在屏幕上移动着，逼近敌方。"
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 401,
+        "Params": [
+            2,
+            4260
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "",
+            "轰——"
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "爆炸声比任何一轮炮击都要重，它带来的闷响沉郁地砸进耳畔。"
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining01.prefab",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "信号屏幕上，补给舰的光点消失了。"
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1595.jpg"
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 201,
+        "Params": [
+            1,
+            500093,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 504,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 310,
+        "Params": [
+            "他说他出身在渔家，目睹了太多被海盗破坏的家庭。",
+            "",
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 310,
+        "Params": [
+            "他说他当兵就是为了这个。"
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 310,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "他以生命践行了入伍时的誓言，于敌前不退，于危时不避。水手以大海为终途，军人以职责为归宿。他就是这么做的。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab"
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1587.jpg"
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 501,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "舷窗外，中路的浓烟还没有散，海面上漂着燃烧的残骸。"
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "大副争取到了足够的时间，残余损管队勉强处置了最要命的破损。"
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "尽管进水这一情况难以逆转，至少还是有了喘息的空间。"
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab"
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 205,
+        "EndDelay": 1550.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1595.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1595.jpg"
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 310,
+        "Params": [
+            "以眼下的情况，顶着海盗继续与红方作战毫无成功的可能。双线战场，弹药剩不到四成，旗舰还在进水。自己分身乏术。",
+            "",
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 310,
+        "Params": [
+            "设计让海盗和红方打呢？不，同样需要时间布局，同样负担不起。"
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 310,
+        "Params": [
+            "流失的每一分每一秒都已换算成涌入的海水、炮口的火花与……己方士兵的生命。"
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 310,
+        "Params": [
+            "消耗只有一个结果：全军覆没，葬身鱼腹。"
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 310,
+        "Params": [
+            "大副用生命创造出的机会，对于强弩之末的灰方主体来说，还是回天乏术、仅延残喘。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 302,
+        "Params": [
+            "",
+            "没有别的办法了吗……",
+            169
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 104,
+        "Params": [
+            "0|0|-150",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 205,
+        "EndDelay": 1550.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1595.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1595.jpg"
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 104,
+        "Params": [
+            "0|0|-150",
+            0
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "把视线从信号屏幕移向舷窗外。"
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 310,
+        "Params": [
+            "开阔海域那边，红方的舰队静静地浮在原有位置。",
+            "",
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 310,
+        "Params": [
+            "在海盗入场、己方遭到重创的情况下，对方没有趁机压上来。"
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 310,
+        "Params": [
+            "对于系统来说，这不是最优解。任何一个以赢为目的的系统，在这种时候都应该立刻配合海盗的炮火，把灰方彻底击溃。"
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 310,
+        "Params": [
+            "但对方停了。"
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 310,
+        "Params": [
+            "那份战前资料附录中的内容，此时在脑海中闪过。旧邦旗，白色为主色调，一套信号旗旗语……",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 302,
+        "Params": [
+            "",
+            "大副，你还记得旧邦……",
+            181
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "无人应答。才意识到指挥室原本的另一个中坚力量已经不在。"
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 401,
+        "Params": [
+            2,
+            6708
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 501,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1596.jpg"
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 201,
+        "Params": [
+            1,
+            500303,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "走出指挥室，一个文官模样的士兵匆匆赶来。"
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 301,
+        "Params": [
+            "",
+            "情报员",
+            "指挥官，您有什么需要？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020455
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 302,
+        "Params": [
+            "",
+            "我们储物仓里现在有什么旗？",
+            189
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "情报员",
+            "旗？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020456
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 302,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "是的，我们得换旗。",
+            191
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 101,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1593.jpg"
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 401,
+        "Params": [
+            1,
+            396
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "红方。"
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "阿德莱德站在舰首，看着西北方向的帆影越来越近，又看了一眼对面灰方旗舰的方向。"
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 201,
+        "Params": [
+            1,
+            500202
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 301,
+        "Params": [
+            1,
+            "红方副手",
+            "将领，灰方遭到海盗夹击，正是一举拿下的好机会！请指示！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020457
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            400
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 201,
+        "Params": [
+            2,
+            501731,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "全队停止推进。弹药保持上膛状态，暂不发射。",
+            2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020458
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 301,
+        "Params": [
+            "",
+            "红方副手",
+            "将领？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020459
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 204,
+        "Params": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "我说不发射。",
+            2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020460
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 202,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她的语气波澜不惊，但副官听出了其中丝毫没有商量余地，悻悻地闭了嘴。"
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "这并非出于怜悯，她不是优柔寡断之人。阻止她的是这数十小时里积累下来的某种惺惺相惜。"
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "那个和自己许多想法如出一辙的学生，用着劣势的兵力走到这一步，每一个决策都清醒，每一步棋都算过代价。"
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在这种时候落井下石，她做不出，更做不到。"
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 306
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 201,
+        "Params": [
+            1,
+            501731,
+            14
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 301,
+        "Params": [
+            1,
+            "阿德莱德",
+            "你会怎么选呢。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020461
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她轻声说道。仿佛期盼着这个问题能乘着风飘洋过海，送到那人耳边。"
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "像是在回应一般，她看到一面新的旗帜被送上了主桅杆。"
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 201,
+        "Params": [
+            1,
+            500202
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 301,
+        "Params": [
+            1,
+            "红方副手",
+            "将领，灰方旗舰……升旗了，疑似投降信号！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020462
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            400
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 201,
+        "Params": [
+            2,
+            501731,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "阿德莱德",
+            "等一下。",
+            2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020463
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront13.png",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1587.jpg"
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 104,
+        "Params": [
+            "0|0|-200",
+            0
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 104,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndDelay": 1050.0,
+        "Params": [
+            "70|0|-200",
+            1
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 401,
+        "Params": [
+            2,
+            10113408
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 218,
+        "Params": [
+            1,
+            "Assets/Product/Texture/Image/IconMovie/V480jiubangqiNormal01.png",
+            "",
+            "",
+            -150
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "她把望远镜对准那面旗，看得仔细。"
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在她阅览的战前资料里，还有一面白底的旗帜。"
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "灰方主桅杆的旗面是白没错，但并非投降用的纯白。灰红交错的特殊标志，正落在白旗的一角。"
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 220,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront13.png",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1593.jpg"
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 201,
+        "Params": [
+            1,
+            501731,
+            7
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "阿德莱德",
+            "……旧邦旗。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020464
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "Type": 202,
+        "EndDelay": 450.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "Type": 310,
+        "Params": [
+            "那一面升起的旗帜，毫无疑问是旧邦旗。但，为什么要在此时升起旧航盟的势力旗？",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "Type": 310,
+        "Params": [
+            "下方挥舞着手旗的那名士兵，其旗语也另有他意。"
+        ]
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 310,
+        "Params": [
+            "这并不是投降。若有此意，大可以在系统内直接认输，模拟战场会立刻将对方的信息登出，这场战斗即刻终止，挂旗反而多此一举。"
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "Type": 310,
+        "Params": [
+            "而模拟战斗此时还在运行。"
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
+        "Type": 310,
+        "Params": [
+            "在深夜备战的情况下，对方读了那份与战局看似没有直接关联的附录，记住了一面被两方同时抛弃的旧邦旗，并在弹药告急、轮机舱进水、海盗逼近的时刻，把它用出来了。"
+        ]
+    },
+    {
+        "Id": 244,
+        "ActionId": 244,
+        "Type": 310,
+        "EndDelay": 500.0,
+        "Params": [
+            "这是一场盲赌，赌的是两方之间团结、甚至和平的可能。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "Type": 201,
+        "Params": [
+            1,
+            501731
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "阿德莱德",
+            "还会阅读这份资料？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020465
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "Type": 204,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "“若求和平，必先备战”……吗。优秀的军人。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020466
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "Type": 301,
+        "Params": [
+            "",
+            "阿德莱德",
+            "士兵。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020467
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 201,
+        "Params": [
+            2,
+            500202,
+            "",
+            400
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "Type": 301,
+        "Params": [
+            1,
+            "红方副手",
+            "将领，请指示！",
+            2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020468
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "阿德莱德",
+            "打开公共通讯频道。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100020469
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "Type": 307,
+        "Params": [
+            "她识别出了那一套旗语，那是曾被两个势力的炮火掩埋多年的词句：请求对话。",
+            "",
+            40
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "Type": 309,
+        "IsBlock": 1,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "她识别出了那一套旗语，那是曾被两个势力的炮火掩埋多年的词句：请求对话。"
+        ]
+    }
+]

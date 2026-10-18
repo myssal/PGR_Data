@@ -1,0 +1,71 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory673.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 4,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            1,
+            "",
+            "测试测试"
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 5,
+        "Type": 307,
+        "IsBlock": 1,
+        "Params": [
+            "在首次出发之前，她做过许多想象。",
+            "",
+            "",
+            "ffffffff"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 6,
+        "Type": 307,
+        "IsBlock": 1,
+        "Params": [
+            "想象过去只在教科书上见到过的地面风光，如今成了什么模样。",
+            "",
+            "",
+            "ffffffff",
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 7,
+        "Type": 307,
+        "IsBlock": 1,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "想象留在地面上的人们会编织怎样的诗谣，会诞生怎样与黄金时代不同的文化。",
+            "",
+            "",
+            "ffffffff"
+        ]
+    }
+]

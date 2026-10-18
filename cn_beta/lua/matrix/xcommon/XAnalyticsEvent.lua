@@ -1,0 +1,33 @@
+--==============================--
+-- 通用数据收集事件
+--==============================--
+XAnalyticsEvent = XAnalyticsEvent or {}
+
+local OnRoleCreate = function()
+    if XUserManager.IsUseSdk() then
+        XHeroSdkManager.CreateNewRole()
+    end
+end
+
+local OnLogin = function()
+    if XUserManager.IsUseSdk() then
+        XHeroSdkManager.EnterGame()
+    end
+end
+
+local OnLevelUp = function()
+    if XUserManager.IsUseSdk() then
+        XHeroSdkManager.RoleLevelUp()
+    end
+end
+
+local OnLogout = function()
+
+end
+
+function XAnalyticsEvent.Init()
+    XEventManager.AddEventListener(XEventId.EVENT_NEW_PLAYER, OnRoleCreate)
+    XEventManager.AddEventListener(XEventId.EVENT_LOGIN_SUCCESS, OnLogin)
+    XEventManager.AddEventListener(XEventId.EVENT_PLAYER_LEVEL_CHANGE, OnLevelUp)
+    XEventManager.AddEventListener(XEventId.EVENT_USER_LOGOUT, OnLogout)
+end

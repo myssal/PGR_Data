@@ -1,0 +1,192 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory14.png"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            208
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 201,
+        "Params": [
+            1,
+            1011001
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            1,
+            "里",
+            "嗯……零件和维修设备都准备好了。",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "只要不是什么隐藏的巨大隐患或者漏洞，这样就没问题了。",
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 302,
+        "Params": [
+            "",
+            "是例行检查吗？",
+            7,
+            "需要帮忙吗？",
+            8
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "NextActionId": 9,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "没错，你也要来一套吗？",
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "暂时没有需要动用指挥官的地方。",
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "其实，只要没人给我添乱就谢天谢地……",
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "咳咳，不过……适时鼓励一下指挥官也是增加我们胜算的策略之一。",
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "等你消灭500个感染体，我就再收集零件帮你做个什么吧。",
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 302,
+        "Params": [
+            "",
+            "是你亲手做的机器人？",
+            13,
+            "可以指定吗？",
+            13
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "真不知道该称赞还是嫌弃你们人类。",
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 301,
+        "Params": [
+            "",
+            "里",
+            "我都开始好奇‘贪心’这种特性到底有没有尽头。",
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 302,
+        "Params": [
+            "",
+            "你已经答应了。",
+            16,
+            "这是要反悔吗？",
+            17
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "里",
+            "等你消灭掉500个感染体了再看我心情吧~~",
+            1
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 301,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "里",
+            "等你消灭掉500个感染体了再看我心情吧……",
+            1
+        ]
+    }
+]

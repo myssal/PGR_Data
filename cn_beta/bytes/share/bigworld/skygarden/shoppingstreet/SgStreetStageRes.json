@@ -1,0 +1,277 @@
+[
+    {
+        "Id": 101,
+        "ValueType": 1,
+        "AttrId": 101,
+        "BuffCalId": 102,
+        "Desc": "客流",
+        "Name": "基础客流",
+        "InitKey": "CustomerNumFixed",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlowAdd.png",
+        "IconColor": "7776D2FF",
+        "Color": "7776D2FF"
+    },
+    {
+        "Id": 102,
+        "ValueType": 2,
+        "AttrId": 102,
+        "Div": 10000,
+        "Desc": "客流",
+        "Name": "客流倍率",
+        "InitKey": "CustomerNumMultiple",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlowPercent.png",
+        "IconColor": "7776D2FF",
+        "Color": "7776D2FF"
+    },
+    {
+        "Id": 103,
+        "ValueType": 1,
+        "AttrId": 103,
+        "BuffCalId": 104,
+        "Desc": "氛围",
+        "Name": "基础氛围",
+        "InitKey": "EnvironmentFixed",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconEnvironmentAdd.png",
+        "IconColor": "8DA955FF",
+        "Color": "8DA955FF"
+    },
+    {
+        "Id": 104,
+        "ValueType": 2,
+        "AttrId": 104,
+        "Div": 10000,
+        "Desc": "氛围",
+        "Name": "氛围倍率",
+        "InitKey": "EnvironmentMultiple",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconEnvironmentPercent.png",
+        "IconColor": "8DA955FF",
+        "Color": "8DA955FF"
+    },
+    {
+        "Id": 105,
+        "ValueType": 1,
+        "AttrId": 105,
+        "BuffCalId": 106,
+        "Desc": "满意度",
+        "Name": "基础满意度",
+        "InitKey": "SatisfactionFixed",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconFavorabilityLevel.png",
+        "IconColor": "C97D99FF",
+        "Color": "FFD055FF"
+    },
+    {
+        "Id": 106,
+        "ValueType": 2,
+        "AttrId": 106,
+        "Div": 10000,
+        "Desc": "满意度",
+        "Name": "满意度倍率",
+        "InitKey": "SatisfactionMultiple",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconFavorabilityLevel.png",
+        "IconColor": "C97D99FF",
+        "Color": "C97D99FF"
+    },
+    {
+        "Id": 201,
+        "ValueType": 1,
+        "Name": "顾客小费数量固定加成"
+    },
+    {
+        "Id": 202,
+        "ValueType": 2,
+        "Div": 10000,
+        "Name": "顾客小费数量倍率"
+    },
+    {
+        "Id": 203,
+        "ValueType": 1,
+        "Name": "突发事件数量固定加成"
+    },
+    {
+        "Id": 204,
+        "ValueType": 2,
+        "Div": 10000,
+        "Name": "突发事件数量倍率"
+    },
+    {
+        "Id": 205,
+        "ValueType": 1,
+        "Name": "推荐店铺利润固定加成"
+    },
+    {
+        "Id": 206,
+        "ValueType": 2,
+        "Div": 10000,
+        "Name": "推荐店铺利润倍率"
+    },
+    {
+        "Id": 207,
+        "ValueType": 1,
+        "Name": "推荐店铺到店系数固定加成"
+    },
+    {
+        "Id": 208,
+        "ValueType": 2,
+        "Div": 10000,
+        "Name": "推荐店铺到店系数倍率"
+    },
+    {
+        "Id": 301,
+        "ValueType": 1,
+        "Name": "自动处理不满（纯客户端）"
+    },
+    {
+        "Id": 302,
+        "ValueType": 1,
+        "Name": "自动处理反馈（纯客户端）"
+    },
+    {
+        "Id": 303,
+        "ValueType": 1,
+        "Name": "拆除店铺时返还金额加成"
+    },
+    {
+        "Id": 304,
+        "ValueType": 1,
+        "Name": "空花新闻负面新闻权重降低值"
+    },
+    {
+        "Id": 305,
+        "ValueType": 1,
+        "Name": "突发事件启用特殊奖励"
+    },
+    {
+        "Id": 20001,
+        "ValueType": 1,
+        "Desc": "消费",
+        "Name": "消费",
+        "IconColor": "FF7200FF"
+    },
+    {
+        "Id": 20002,
+        "ValueType": 1,
+        "Desc": "客流",
+        "Name": "客流",
+        "IconColor": "1EBDFFFF"
+    },
+    {
+        "Id": 20003,
+        "ValueType": 1,
+        "Desc": "氛围",
+        "Name": "氛围",
+        "IconColor": "45A22FFF"
+    },
+    {
+        "Id": 30001,
+        "ValueType": 2,
+        "IsShopAttr": 1,
+        "AttrId": 1,
+        "Div": 10000,
+        "IsSp": true,
+        "HasBubble": true,
+        "BubbleDesc": "星级越高，就会有越多的顾客前来",
+        "Desc": "客流",
+        "Name": "到店系数固定加成",
+        "InitKey": "CustomerFactor",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconStarLevel.png",
+        "IconColor": "8DA955FF",
+        "Color": "A5D449FF"
+    },
+    {
+        "Id": 30002,
+        "ValueType": 2,
+        "IsShopAttr": 1,
+        "AttrId": 2,
+        "Div": 10000,
+        "Desc": "客流",
+        "Name": "到店系数万分比加成",
+        "IconColor": "C3A453FF",
+        "Color": "C3A453FF"
+    },
+    {
+        "Id": 30003,
+        "ValueType": 1,
+        "IsShopAttr": 1,
+        "AttrId": 3,
+        "IsSp": true,
+        "HasBubble": true,
+        "FormatStr": "%s/人",
+        "BubbleDesc": "增加顾客到店后的人均消费",
+        "Desc": "利润",
+        "Name": "利润固定加成",
+        "InitKey": "AwardGold",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "IconColor": "C3A453FF",
+        "Color": "C3A453FF"
+    },
+    {
+        "Id": 30004,
+        "ValueType": 2,
+        "IsShopAttr": 1,
+        "AttrId": 4,
+        "Div": 10000,
+        "Desc": "利润",
+        "Name": "利润万分比加成",
+        "IconColor": "C3A453FF",
+        "Color": "C3A453FF"
+    },
+    {
+        "Id": 30005,
+        "ValueType": 2,
+        "IsShopAttr": 1,
+        "AttrId": 5,
+        "Div": 10000,
+        "Desc": "建造消耗",
+        "Name": "建造消耗加成",
+        "IconColor": "C3A453FF",
+        "Color": "C3A453FF"
+    },
+    {
+        "Id": 30006,
+        "ValueType": 2,
+        "IsShopAttr": 1,
+        "AttrId": 6,
+        "Div": 10000,
+        "Desc": "升级消耗",
+        "Name": "升级消耗加成",
+        "IconColor": "C3A453FF",
+        "Color": "C3A453FF"
+    },
+    {
+        "Id": 20101,
+        "ValueType": 1,
+        "Desc": "可用于建造与升级店铺",
+        "Name": "公共储金",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png",
+        "IconColor": "C3A453FF",
+        "Color": "C3A453FF"
+    },
+    {
+        "Id": 20102,
+        "ValueType": 2,
+        "Div": 100,
+        "Desc": "由店铺评分与氛围值决定",
+        "Name": "满意度",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconFavorabilityLevel.png",
+        "IconColor": "C97D99FF",
+        "Color": "FD71A5FF"
+    },
+    {
+        "Id": 20103,
+        "ValueType": 1,
+        "Desc": "代表运营阶段的客人总数",
+        "Name": "客流量",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png",
+        "IconColor": "7776D2FF",
+        "Color": "7B79FFFF"
+    },
+    {
+        "Id": 20104,
+        "ValueType": 1,
+        "Desc": "提高氛围值可以提高满意度",
+        "Name": "氛围值",
+        "Icon": "Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconEnvironment.png",
+        "IconColor": "8DA955FF",
+        "Color": "A5D449FF"
+    }
+]

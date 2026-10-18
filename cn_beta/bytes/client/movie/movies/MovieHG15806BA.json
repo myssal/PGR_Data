@@ -1,0 +1,7562 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1112.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "Type": 401,
+        "Params": [
+            1,
+            55
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "当得知无论尝试各种方法都无法靠近雪山后，时间已经来到了五月。与洛莎辗转在山下的聚落之中，探听比安卡的消息。"
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "Type": 201,
+        "Params": [
+            1,
+            500434,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
+        "Params": [
+            1,
+            "拾荒者",
+            "……她们简直比深渊里涌现出来的怪物还要恐怖！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010985
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在人群的中央，一个衣衫破烂的拾荒者指着身后的画像，手舞足蹈地吆喝着。"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "Type": 306,
+        "EndDelay": 200.0
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
+        "Params": [
+            "",
+            "拾荒者",
+            "装作人类的样子，屠杀我们的同胞——现在已经有好几个人失踪了！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010986
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "Type": 201,
+        "Params": [
+            18,
+            500539
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "Type": 301,
+        "Params": [
+            1,
+            "洛莎",
+            "指挥官，那几张画像上，有一个好像是比安卡姐姐！",
+            18,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010987
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "Type": 202,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "Type": 302,
+        "Params": [
+            "",
+            "你知道比安卡在哪吗？",
+            14
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "Type": 203,
+        "Params": [
+            1,
+            0.25,
+            "",
+            -20,
+            -50
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "拾荒者",
+            "你们认识那个魔女？你知道她杀了我们多少人吗？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010988
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "拾荒者夸张地舞动着肢体。"
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "拾荒者",
+            "要是我们知道她藏在哪里，所有人都不用担惊受怕了！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010989
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "Type": 302,
+        "Params": [
+            "",
+            "她不是会无缘无故杀人的人。",
+            19,
+            "（无视他的话语，继续寻找比安卡）",
+            25
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "Type": 302,
+        "Params": [
+            "",
+            "这其中一定是有什么误会。",
+            20
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "拾荒者",
+            "就是因为你身边的人没有被夺走，所以才有恃无恐吧？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010990
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "Type": 301,
+        "Params": [
+            "",
+            "拾荒者",
+            "说到底是因为你站在那个魔女那边，才敢帮她说话！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010991
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "“就是就是”，“魔女滚出我们的村子”……\\n一如南方小镇的教堂里的人一样，这些人对比安卡也抱有极深的成见。"
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "NextActionId": 28,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "在几番争论无果后，与洛莎默默地退出了人群，自行寻找比安卡的踪迹。"
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "那一脸激动的表情，不像是能听懂人话的样子。"
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "明智地无视了喋喋不休的拾荒者，与洛莎默默地退出了人群，自行寻找比安卡的踪迹。"
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "Type": 101,
+        "EndDelay": 1000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1113.jpg"
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "Type": 201,
+        "Params": [
+            1,
+            500539,
+            14
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "洛莎",
+            "指挥官，你还记得吗？我们在小镇上曾经听说过的传闻，有很多人成为了深渊的信徒。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010992
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "走在聚落的小道上，洛莎忽然扯住了自己的衣角。"
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "Type": 301,
+        "Params": [
+            "",
+            "洛莎",
+            "这处聚落和深渊相隔很近了……我有点害怕……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010993
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "——近在咫尺的危机感甚至不需要洛莎的提醒。从夜幕降临开始，便可以清晰地感知阴影中不怀好意的视线。"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "可即使已经四处探查了几个小时，却没有任何人向自己和洛莎出手……"
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "Type": 201,
+        "Params": [
+            1,
+            500539,
+            14
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "Type": 301,
+        "Params": [
+            1,
+            "洛莎",
+            "指挥官，那里好像有浓烟？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010994
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "Type": 201,
+        "Params": [
+            18,
+            500454,
+            "",
+            -125,
+            -140,
+            100
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            1,
+            "？？？",
+            "求求你，求求你，我再也不敢了！",
+            18,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010995
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "Type": 202,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "Type": 401,
+        "Params": [
+            2,
+            4008
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "Type": 205,
+        "EndDelay": 450.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory767.png",
+            0,
+            1,
+            0.4
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory767.png"
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "倾塌的木屋下火光灼灼燃烧，“怪物”的尸骸闯入视野。它们的獠牙并未长齐，但面相已趋于狰狞与痛苦。"
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "Type": 201,
+        "Params": [
+            1,
+            500434,
+            "",
+            "",
+            -150
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "衣衫褴褛的男人狼狈地跪倒在地上——正是白天那个大肆宣扬魔女的拾荒者。"
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "Type": 402,
+        "Params": [
+            4008
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "Type": 306
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "Type": 301,
+        "Params": [
+            "",
+            "拾荒者",
+            "他们说崇拜“深渊”可以获得力量，找到粮食——我还没开始拜，他们就变异了——早知道会变成怪物我就不来了！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010996
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
+        "Params": [
+            "",
+            "拾荒者",
+            "魔女大人，求您给我个机会，给我看着我女儿长大……再不济您把我杀了，身体送回部落，他们会用得上……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010997
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "Type": 203,
+        "EndDelay": 200.0,
+        "Params": [
+            1,
+            0.25,
+            400,
+            -150
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "Type": 201,
+        "Params": [
+            2,
+            501076,
+            "",
+            -400
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "他所跪倒的方向上，是一个身着斗篷的女性，但并不是比安卡。"
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "Type": 301,
+        "Params": [
+            "",
+            "“魔女”",
+            "自己滚回去，我没空扛你的尸体。",
+            2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010998
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
+        "Params": [
+            "",
+            "拾荒者",
+            "谢谢您，谢谢您……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100010999
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "Type": 302,
+        "Params": [
+            "",
+            "现在明白了吗？你所说的魔女不是坏人，而是……",
+            60
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "Type": 301,
+        "BeginAnim": "PanelActor1Shake",
+        "Params": [
+            "",
+            "拾荒者",
+            "我明白了，我明白了，我再也不敢了，我再也不敢了……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011000
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "Type": 203,
+        "EndDelay": 300.0,
+        "Params": [
+            1,
+            0.4,
+            1000,
+            -150
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "他几度将头伏倒在地上，最后颤抖着逃开了。"
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "Type": 203,
+        "EndDelay": 250.0,
+        "Params": [
+            2,
+            0.25
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "Type": 301,
+        "Params": [
+            "",
+            "“魔女”",
+            "没用的。",
+            2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011001
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "被称作魔女的女性扬起脸，朝这边说道。"
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "Type": 301,
+        "Params": [
+            "",
+            "“魔女”",
+            "当你说服了一个人，总会有下一个人对我们抱有偏见。",
+            2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011002
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "Type": 301,
+        "Params": [
+            "",
+            "“魔女”",
+            "只要我们还在杀死谁的亲人，爱人，朋友，这件事就不会有所改变。",
+            2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011003
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "Type": 301,
+        "Params": [
+            "",
+            "“魔女”",
+            "反正在人眼中是件脏活，比安卡还是如此墨迹。",
+            2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011004
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "Type": 302,
+        "Params": [
+            "",
+            "她刚刚来过？",
+            71
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "Type": 301,
+        "Params": [
+            "",
+            "“魔女”",
+            "这里的信徒都是她了结的，但她很快就走了。要是来的是我，刚才那个男人早就成尸体了。",
+            2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011005
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "Type": 302,
+        "Params": [
+            "",
+            "……",
+            74,
+            "为什么她不肯见我？",
+            73
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "Type": 301,
+        "Params": [
+            "",
+            "“魔女”",
+            "谁知道呢？兴许是怕血溅到你的身上吧。",
+            2,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011006
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "Type": 202,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她意味深长地看了自己一眼，便头也不回地离开了。"
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "Type": 201,
+        "Params": [
+            1,
+            500539,
+            14
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "Type": 301,
+        "Params": [
+            1,
+            "洛莎",
+            "比安卡姐姐……一直在暗中守护我们？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011007
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "Type": 302,
+        "Params": [
+            "",
+            "她是在履行自己的使命。",
+            79,
+            "（回头）",
+            81
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "Type": 502,
+        "EndDelay": 1500.0,
+        "Params": [
+            "AniZhuanchangBegin"
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "NextActionId": 90,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "Type": 401,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory826.jpg"
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "“她就在这里”，直觉让自己猛然回头。"
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "——白雪纷飞，夜色下的雪幕里并没有任何人的身影。"
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab"
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab"
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "Type": 401,
+        "Params": [
+            1,
+            120
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "Type": 401,
+        "Params": [
+            2,
+            2930
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1089.jpg"
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1216.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1216.jpg"
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory576.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory576.jpg"
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory105.png",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory105.png"
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "Type": 402,
+        "Params": [
+            2930
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "在那之后，自己又与洛莎寻遍了世界的每一个角落，似乎哪里都有她的踪迹，但却哪里都找不到她。"
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "Type": 201,
+        "Params": [
+            1,
+            500539,
+            14
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "Type": 301,
+        "Params": [
+            1,
+            "洛莎",
+            "要不……我们回去吧……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011008
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "Type": 301,
+        "Params": [
+            "",
+            "洛莎",
+            "已经六月了，我们终于找遍了所有比安卡姐姐可能在的地方，但是，她却拒绝任何人到访。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011009
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "Type": 302,
+        "Params": [
+            "",
+            "只要她还在这里，就一定有再找到她的机会。",
+            110
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "Type": 301,
+        "Params": [
+            "",
+            "洛莎",
+            "……我们只要让她明白，她的梦里有人来过就好了。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011010
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "洛莎扯住自己徒劳向前的衣摆，摇了摇头。"
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "Type": 301,
+        "Params": [
+            "",
+            "洛莎",
+            "你不是已经知道了吗，我们只能止步于此了……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011012
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "Type": 302,
+        "Params": [
+            "",
+            "不……还没有……",
+            114
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "所有的地方都没有她，到底该怎么见到她？"
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "Type": 401,
+        "Params": [
+            2,
+            2959
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "Type": 504,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory767.png"
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "Type": 201,
+        "Params": [
+            1,
+            500539,
+            14,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "Type": 301,
+        "Params": [
+            1,
+            "洛莎",
+            "比安卡姐姐……一直在暗中守护我们？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011014
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "Type": 401,
+        "Params": [
+            2,
+            2959
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory105.png"
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "一个大胆的想法浮现人类心头。"
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "Type": 302,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "洛莎……你先回去吧。",
+            129
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "Type": 101,
+        "EndDelay": 1000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1105.jpg"
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "Type": 401,
+        "Params": [
+            2,
+            2905
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "Type": 401,
+        "Params": [
+            2,
+            2593
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "随着剑锋又一次贯穿要害，滚烫的鲜血溅入茫茫风雪，在低温下凝成灰红色的痂。"
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "一击毙命就没有痛苦。"
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "Type": 401,
+        "Params": [
+            2,
+            10042608
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "Type": 201,
+        "Params": [
+            1,
+            501280
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "将圣剑别回腰间，比安卡默默地望向信徒们的遗体。"
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "Type": 201,
+        "Params": [
+            1,
+            500164,
+            "",
+            -600
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "Type": 201,
+        "Params": [
+            2,
+            500564
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "Type": 201,
+        "Params": [
+            3,
+            500268,
+            "",
+            600
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "这一个是为了再见到死去的母亲，这一个是为了逃避不堪的过往，这一个是为了让伴侣在动荡的世界中平安地活下去……"
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在将灵魂出卖给深渊之前，他们所许下的愿望都是如此脆弱而渺小。"
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "只是伏倒在雪下的狰狞躯壳，再也无法辨清人类的模样。"
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "Type": 202,
+        "Params": [
+            1,
+            2,
+            3,
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "Type": 306
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "Type": 201,
+        "Params": [
+            1,
+            501280
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "Type": 301,
+        "Params": [
+            1,
+            "比安卡",
+            "……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011015
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "Type": 201,
+        "Params": [
+            1,
+            500678
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "肃清已然结束。比安卡不由得望向山下那个身着指挥服的身影。"
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "距离二人分别已经过了很长时间，<M>他</M><W>她</W>还是执着地跋涉在冰天雪地里。"
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "Type": 306
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "Type": 201,
+        "Params": [
+            1,
+            501280,
+            1
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "Type": 301,
+        "Params": [
+            1,
+            "比安卡",
+            "嗯……看来您一切安好。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011016
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "确认好对方的状态，她于是准备转身离开。"
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory105.png"
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "Type": 201,
+        "Params": [
+            1,
+            500678,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "Type": 301,
+        "Params": [
+            1,
+            "【kuroname】",
+            "只要她还在……就一定有……",
+            1
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1105.jpg"
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "Type": 201,
+        "Params": [
+            1,
+            501280,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "她的身形顿了顿，暂时停下了离开的脚步。"
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory105.png"
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "Type": 201,
+        "Params": [
+            1,
+            501292,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "Type": 301,
+        "Params": [
+            1,
+            "小莎",
+            "……我们只要……，她的梦里有人来过……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011011
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "Type": 301,
+        "Params": [
+            "",
+            "小莎",
+            "……我们只能止步于此了……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011013
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "Type": 201,
+        "Params": [
+            1,
+            500678
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "Type": 301,
+        "Params": [
+            1,
+            "【kuroname】",
+            "不……还没有……",
+            1
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "Type": 401,
+        "Params": [
+            2,
+            558
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1105.jpg"
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "那个人沉思片刻，忽然开始环视四周。"
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "Type": 201,
+        "Params": [
+            1,
+            501280
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "Type": 301,
+        "Params": [
+            1,
+            "比安卡",
+            "…………",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011017
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "Type": 203,
+        "EndDelay": 300.0,
+        "Params": [
+            1,
+            0.3,
+            "",
+            -30,
+            20
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "比安卡下意识地向后退了一步，将身躯隐没在山峰的阴影之下。"
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "而指挥官在低声同小莎交代几句话后便兀自离开。"
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "Type": 306
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "Type": 201,
+        "Params": [
+            1,
+            501280,
+            7,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "比安卡",
+            "等等，那个方向是……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011018
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "Type": 401,
+        "Params": [
+            1,
+            5016
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1216.jpg"
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "Type": 401,
+        "Params": [
+            2,
+            5165
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "一直向地块的边界前行，无垠的世界两侧逐渐出现断层。凹凸不平的雪地下，埋葬着难以计数的骸骨。"
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "狂风的尖啸宛如无数亡灵的嘶嚎，每前进一步，不祥的阴影便更浓一分。"
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在悬崖的边缘堪堪停下，就是这里了，比安卡噩梦的边界。"
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab"
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory105.png"
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "Type": 504,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "Type": 201,
+        "Params": [
+            1,
+            500539,
+            11,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "Type": 301,
+        "Params": [
+            1,
+            "洛莎",
+            "你要一个人去“深渊”？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011019
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "听到这个决定的洛莎难以置信地瞪大了双眼。"
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "Type": 301,
+        "Params": [
+            "",
+            "洛莎",
+            "为什么非要去那里找她？如果是履行“魔女”的使命，她应该只会出没在人世……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011020
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "洛莎",
+            "阿西莫夫先生说，就算只是在她的噩梦里，你受到的生命威胁也会直接反馈到思维信标上。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011021
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "Type": 302,
+        "Params": [
+            "",
+            "不必担心……",
+            218,
+            "我会在那里找到比安卡。",
+            218
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1216.jpg"
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "Type": 504,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "Type": 306,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "黄昏的暮光凝于睁眼的刹那，深渊缓缓张开巨口，吞灭一片片纯白……"
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "Type": 306
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "Type": 505,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "Type": 401,
+        "Params": [
+            2,
+            4784
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "怪物",
+            "吱！！！！"
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "无数只手飞速上涌，就要擒住自己的脚尖。"
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "Type": 302,
+        "Params": [
+            "",
+            "（挥剑抵抗）",
+            232,
+            "（放弃抵抗）",
+            246
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "Type": 401,
+        "Params": [
+            2,
+            10042001
+        ]
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "Type": 401,
+        "Params": [
+            2,
+            1505
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "",
+            "出于本能地挥出一剑，一些触手被斩断，更多的则是直逼脖颈和心脏。"
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "Type": 302,
+        "Params": [
+            "",
+            "（挥剑抵抗）",
+            237,
+            "（放弃抵抗）",
+            246
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "Type": 401,
+        "Params": [
+            2,
+            10042001
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "Type": 401,
+        "Params": [
+            2,
+            4833
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "Type": 104,
+        "EndDelay": 300.0,
+        "Params": [
+            "0|50|-20",
+            0.3
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "Type": 402,
+        "Params": [
+            4833
+        ]
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "掉下去就会切切实实地死去——那抹黑暗是如此令人窒息。但触手们很快缠上了挥出的剑身，连同手臂一起将自己的身体往下拖。"
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "Type": 302,
+        "Params": [
+            "",
+            "（全力挣扎）",
+            243,
+            "（放弃抵抗）",
+            246
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
+        "Type": 401,
+        "Params": [
+            2,
+            4536
+        ]
+    },
+    {
+        "Id": 244,
+        "ActionId": 244,
+        "Type": 104,
+        "EndDelay": 300.0,
+        "Params": [
+            "0|50|-20",
+            0.3
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "Type": 301,
+        "BeginAnim": "RImgBg1Shake",
+        "Params": [
+            "",
+            "",
+            "没等自己付诸行动，脚下的地块便先行坍塌。"
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "Type": 401,
+        "Params": [
+            2,
+            4895
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "Type": 104,
+        "EndDelay": 300.0,
+        "Params": [
+            "0|70|-80",
+            0.4
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "Type": 402,
+        "Params": [
+            5165
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab"
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "Type": 205,
+        "EndDelay": 350.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "身体在永无止境地下坠，连视野的光芒都消逝不见。"
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "Type": 301,
+        "Params": [
+            "",
+            "？？？",
+            "指挥官——",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011022
+        ]
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "Type": 401,
+        "Params": [
+            2,
+            4259
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "Type": 401,
+        "Params": [
+            2,
+            2690
+        ]
+    },
+    {
+        "Id": 258,
+        "ActionId": 258,
+        "Type": 205,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront79.png",
+            0,
+            1,
+            0.5
+        ]
+    },
+    {
+        "Id": 259,
+        "ActionId": 259,
+        "Type": 104,
+        "Params": [
+            "0|0|-300",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 260,
+        "ActionId": 260,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0.3,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 261,
+        "ActionId": 261,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "脑海中刺出剧烈的疼痛，再蔓延向全身。胸膛麻痹不已，直至难以呼吸——思维信标在向自己发射危险的信号。"
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "要在她的噩梦中死去了吗？"
+        ]
+    },
+    {
+        "Id": 263,
+        "ActionId": 263,
+        "Type": 301,
+        "Params": [
+            "",
+            "？？？",
+            "指挥官！！",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011023
+        ]
+    },
+    {
+        "Id": 264,
+        "ActionId": 264,
+        "Type": 402,
+        "Params": [
+            4259
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
+        "Type": 501,
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 266,
+        "ActionId": 266,
+        "Type": 401,
+        "EndDelay": 2500.0,
+        "Params": [
+            2,
+            819016
+        ]
+    },
+    {
+        "Id": 267,
+        "ActionId": 267,
+        "Type": 205,
+        "Params": [
+            999,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 268,
+        "ActionId": 268,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab"
+        ]
+    },
+    {
+        "Id": 269,
+        "ActionId": 269,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab"
+        ]
+    },
+    {
+        "Id": 270,
+        "ActionId": 270,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            "",
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 271,
+        "ActionId": 271,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "Type": 501,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory428.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 274,
+        "ActionId": 274,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory428.jpg"
+        ]
+    },
+    {
+        "Id": 275,
+        "ActionId": 275,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 276,
+        "ActionId": 276,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "——凛冽的剑光撕破眼前的黑暗，身体快速地被向上捞取。"
+        ]
+    },
+    {
+        "Id": 277,
+        "ActionId": 277,
+        "Type": 401,
+        "Params": [
+            2,
+            4134
+        ]
+    },
+    {
+        "Id": 278,
+        "ActionId": 278,
+        "Type": 501,
+        "EndDelay": 1200.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 279,
+        "ActionId": 279,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory428.jpg"
+        ]
+    },
+    {
+        "Id": 280,
+        "ActionId": 280,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            4,
+            1
+        ]
+    },
+    {
+        "Id": 281,
+        "ActionId": 281,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab"
+        ]
+    },
+    {
+        "Id": 282,
+        "ActionId": 282,
+        "Type": 501,
+        "EndDelay": 100.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 283,
+        "ActionId": 283,
+        "Type": 505,
+        "Params": [
+            "",
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab"
+        ]
+    },
+    {
+        "Id": 284,
+        "ActionId": 284,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1216.jpg"
+        ]
+    },
+    {
+        "Id": 285,
+        "ActionId": 285,
+        "Type": 401,
+        "Params": [
+            1,
+            6198
+        ]
+    },
+    {
+        "Id": 286,
+        "ActionId": 286,
+        "Type": 201,
+        "Params": [
+            1,
+            501280,
+            7
+        ]
+    },
+    {
+        "Id": 287,
+        "ActionId": 287,
+        "Type": 301,
+        "Params": [
+            1,
+            "比安卡",
+            "指挥官……阁下？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011024
+        ]
+    },
+    {
+        "Id": 288,
+        "ActionId": 288,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 289,
+        "ActionId": 289,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "当脚跟再次踏上地面，消散的知觉也再一次回归。"
+        ]
+    },
+    {
+        "Id": 290,
+        "ActionId": 290,
+        "Type": 401,
+        "Params": [
+            2,
+            10042001
+        ]
+    },
+    {
+        "Id": 291,
+        "ActionId": 291,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "在深渊的悬崖边将最后一个触手斩断，她才缓缓地回头望向这边。"
+        ]
+    },
+    {
+        "Id": 292,
+        "ActionId": 292,
+        "Type": 201,
+        "Params": [
+            1,
+            501280,
+            5
+        ]
+    },
+    {
+        "Id": 293,
+        "ActionId": 293,
+        "Type": 301,
+        "Params": [
+            1,
+            "比安卡",
+            "您为什么会出现在这里？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011025
+        ]
+    },
+    {
+        "Id": 294,
+        "ActionId": 294,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "……您知道这里是什么地方吗？您知道有多少人丧命于此吗？您知道刚才有多危险吗，要是我没有及时赶到，您……！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011026
+        ]
+    },
+    {
+        "Id": 295,
+        "ActionId": 295,
+        "Type": 302,
+        "Params": [
+            "",
+            "比安卡……",
+            296
+        ]
+    },
+    {
+        "Id": 296,
+        "ActionId": 296,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 297,
+        "ActionId": 297,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "…………失礼了，指挥官阁下。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011027
+        ]
+    },
+    {
+        "Id": 298,
+        "ActionId": 298,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "我想，您一定不会介意告诉我……您不远万里也要奔赴“深渊”的原因。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011028
+        ]
+    },
+    {
+        "Id": 299,
+        "ActionId": 299,
+        "Type": 302,
+        "Params": [
+            "",
+            "看来我赌对了。",
+            300
+        ]
+    },
+    {
+        "Id": 300,
+        "ActionId": 300,
+        "Type": 204,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 301,
+        "ActionId": 301,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "……？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011029
+        ]
+    },
+    {
+        "Id": 302,
+        "ActionId": 302,
+        "Type": 302,
+        "Params": [
+            "",
+            "赌你会为了救我而出现。",
+            303
+        ]
+    },
+    {
+        "Id": 303,
+        "ActionId": 303,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 304,
+        "ActionId": 304,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "比安卡",
+            "…………",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011030
+        ]
+    },
+    {
+        "Id": 305,
+        "ActionId": 305,
+        "Type": 302,
+        "Params": [
+            "",
+            "我跑遍了整个世界，都没有找到你。",
+            306
+        ]
+    },
+    {
+        "Id": 306,
+        "ActionId": 306,
+        "Type": 302,
+        "Params": [
+            "",
+            "我尝试过的所有方法，全都徒劳无功。",
+            307
+        ]
+    },
+    {
+        "Id": 307,
+        "ActionId": 307,
+        "Type": 302,
+        "Params": [
+            "",
+            "所以……",
+            308
+        ]
+    },
+    {
+        "Id": 308,
+        "ActionId": 308,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 309,
+        "ActionId": 309,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "比安卡",
+            "您怎么可以这样做？！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011031
+        ]
+    },
+    {
+        "Id": 310,
+        "ActionId": 310,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "您知道自己的生命有多么宝贵吗？有多少人挂念您的安危，和平的生活又有多么珍贵——仅仅只是为了见我一面，您就将这些东西当作赌注！",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011032
+        ]
+    },
+    {
+        "Id": 311,
+        "ActionId": 311,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 312,
+        "ActionId": 312,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "……我希望您能明白，比安卡会一直守护您，这是即使与您不再相见，也永远不会过期的约定。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011033
+        ]
+    },
+    {
+        "Id": 313,
+        "ActionId": 313,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 314,
+        "ActionId": 314,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "所以，告诉我，好吗？您到底遭遇了什么……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011034
+        ]
+    },
+    {
+        "Id": 315,
+        "ActionId": 315,
+        "Type": 302,
+        "Params": [
+            "",
+            "没有什么特别的原因，只是为了带你回去，比安卡。",
+            316
+        ]
+    },
+    {
+        "Id": 316,
+        "ActionId": 316,
+        "Type": 204,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 317,
+        "ActionId": 317,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "……？",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011035
+        ]
+    },
+    {
+        "Id": 318,
+        "ActionId": 318,
+        "Type": 302,
+        "Params": [
+            "",
+            "我要带你回去。",
+            319
+        ]
+    },
+    {
+        "Id": 319,
+        "ActionId": 319,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "人类直视着比安卡的瞳孔，固执地重复着自己的话语。"
+        ]
+    },
+    {
+        "Id": 320,
+        "ActionId": 320,
+        "Type": 302,
+        "Params": [
+            "",
+            "等到春天的时候，和我一起见证百合的盛开……",
+            321
+        ]
+    },
+    {
+        "Id": 321,
+        "ActionId": 321,
+        "Type": 302,
+        "Params": [
+            "",
+            "还有很多要一起去做的事。",
+            322
+        ]
+    },
+    {
+        "Id": 322,
+        "ActionId": 322,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 323,
+        "ActionId": 323,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "比安卡",
+            "…………",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011036
+        ]
+    },
+    {
+        "Id": 324,
+        "ActionId": 324,
+        "Type": 302,
+        "Params": [
+            "",
+            "和我一起回去吧……回到大家的身边，回到我的身边……",
+            325
+        ]
+    },
+    {
+        "Id": 325,
+        "ActionId": 325,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 326,
+        "ActionId": 326,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "比安卡",
+            "对不起，指挥官阁下。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011037
+        ]
+    },
+    {
+        "Id": 327,
+        "ActionId": 327,
+        "Type": 302,
+        "Params": [
+            "",
+            "……为什么？",
+            328
+        ]
+    },
+    {
+        "Id": 328,
+        "ActionId": 328,
+        "Type": 302,
+        "Params": [
+            "",
+            "在圣祈仪式上，我们不是都约好了吗？",
+            329
+        ]
+    },
+    {
+        "Id": 329,
+        "ActionId": 329,
+        "Type": 204,
+        "Params": [
+            1,
+            11
+        ]
+    },
+    {
+        "Id": 330,
+        "ActionId": 330,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "比安卡",
+            "……是啊，我其实早就已经想好了……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011038
+        ]
+    },
+    {
+        "Id": 331,
+        "ActionId": 331,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 332,
+        "ActionId": 332,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1290.jpg"
+        ]
+    },
+    {
+        "Id": 333,
+        "ActionId": 333,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 334,
+        "ActionId": 334,
+        "Type": 201,
+        "Params": [
+            18,
+            501280,
+            1,
+            -160,
+            50,
+            100,
+            1
+        ]
+    },
+    {
+        "Id": 335,
+        "ActionId": 335,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            1,
+            "比安卡",
+            "等到春天的时候，教堂会重新迎来祷告的旅人，神父的腿伤会慢慢愈合，天气也会逐渐转暖。",
+            18,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011039
+        ]
+    },
+    {
+        "Id": 336,
+        "ActionId": 336,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory698.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 337,
+        "ActionId": 337,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory698.jpg"
+        ]
+    },
+    {
+        "Id": 338,
+        "ActionId": 338,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 339,
+        "ActionId": 339,
+        "Type": 204,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 340,
+        "ActionId": 340,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "而且，阻挡山路的积雪融化后，指挥官阁下就要返回军营了吧？不过，等待您的时间也不会太长，毕竟百合的花期就快要到了。",
+            18,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011040
+        ]
+    },
+    {
+        "Id": 341,
+        "ActionId": 341,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory508.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 342,
+        "ActionId": 342,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory508.jpg"
+        ]
+    },
+    {
+        "Id": 343,
+        "ActionId": 343,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 344,
+        "ActionId": 344,
+        "Type": 204,
+        "Params": [
+            18,
+            1
+        ]
+    },
+    {
+        "Id": 345,
+        "ActionId": 345,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "正如我们约好的那样，您会再次来到教堂，与我一起见证百合的盛开。",
+            18,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011041
+        ]
+    },
+    {
+        "Id": 346,
+        "ActionId": 346,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory744.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 347,
+        "ActionId": 347,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory744.jpg"
+        ]
+    },
+    {
+        "Id": 348,
+        "ActionId": 348,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 349,
+        "ActionId": 349,
+        "Type": 204,
+        "Params": [
+            18,
+            8
+        ]
+    },
+    {
+        "Id": 350,
+        "ActionId": 350,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "春天许下夏天的约定，夏天许下秋天的约定……这样的话，时间就会慢慢积累下来……",
+            18,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011042
+        ]
+    },
+    {
+        "Id": 351,
+        "ActionId": 351,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory539.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 352,
+        "ActionId": 352,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory539.jpg"
+        ]
+    },
+    {
+        "Id": 353,
+        "ActionId": 353,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 354,
+        "ActionId": 354,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "或许有一天，我们也会像我所祝福过的无数个伴侣那样，成为相守一生的人……",
+            18,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011043
+        ]
+    },
+    {
+        "Id": 355,
+        "ActionId": 355,
+        "Type": 302,
+        "Params": [
+            "",
+            "比安卡……",
+            356
+        ]
+    },
+    {
+        "Id": 356,
+        "ActionId": 356,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1288.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 357,
+        "ActionId": 357,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1288.jpg"
+        ]
+    },
+    {
+        "Id": 358,
+        "ActionId": 358,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 359,
+        "ActionId": 359,
+        "Type": 204,
+        "Params": [
+            18,
+            1
+        ]
+    },
+    {
+        "Id": 360,
+        "ActionId": 360,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "虽然无法自己祝福自己，但斯诺神父一定会很乐意代劳。我们在教堂里、在神父的引导下举行仪式……",
+            18,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011044
+        ]
+    },
+    {
+        "Id": 361,
+        "ActionId": 361,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory609.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 362,
+        "ActionId": 362,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory609.jpg"
+        ]
+    },
+    {
+        "Id": 363,
+        "ActionId": 363,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 364,
+        "ActionId": 364,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "在那之后，该去哪里呢？雪原很美，但我也想去南方看看……嗯，就在靠山的小镇上，有一个小小的家。",
+            18,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011045
+        ]
+    },
+    {
+        "Id": 365,
+        "ActionId": 365,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1118.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 366,
+        "ActionId": 366,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1118.jpg"
+        ]
+    },
+    {
+        "Id": 367,
+        "ActionId": 367,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 368,
+        "ActionId": 368,
+        "Type": 204,
+        "Params": [
+            18,
+            8
+        ]
+    },
+    {
+        "Id": 369,
+        "ActionId": 369,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "比安卡",
+            "没有拿起圣剑的我，或许会稍微有些软弱。幸好，指挥官阁下是值得依靠的人、是值得依赖的人……",
+            18,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011046
+        ]
+    },
+    {
+        "Id": 370,
+        "ActionId": 370,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 371,
+        "ActionId": 371,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1216.jpg"
+        ]
+    },
+    {
+        "Id": 372,
+        "ActionId": 372,
+        "Type": 202,
+        "Params": [
+            18,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 373,
+        "ActionId": 373,
+        "Type": 201,
+        "Params": [
+            1,
+            501280,
+            1,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 374,
+        "ActionId": 374,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "比安卡",
+            "那时我不必再担任圣女……只是当一个普通人，与您一起慢慢老去……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011047
+        ]
+    },
+    {
+        "Id": 375,
+        "ActionId": 375,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 376,
+        "ActionId": 376,
+        "Type": 401,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 377,
+        "ActionId": 377,
+        "Type": 502,
+        "EndDelay": 1000.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 378,
+        "ActionId": 378,
+        "Type": 401,
+        "Params": [
+            1,
+            6223
+        ]
+    },
+    {
+        "Id": 379,
+        "ActionId": 379,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_06_01.jpg"
+        ]
+    },
+    {
+        "Id": 380,
+        "ActionId": 380,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "比安卡",
+            "……",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011048
+        ]
+    },
+    {
+        "Id": 381,
+        "ActionId": 381,
+        "Type": 302,
+        "Params": [
+            "",
+            "既然已经考虑得那么远了……为什么——",
+            382
+        ]
+    },
+    {
+        "Id": 382,
+        "ActionId": 382,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_06_02.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 383,
+        "ActionId": 383,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_06_02.jpg"
+        ]
+    },
+    {
+        "Id": 384,
+        "ActionId": 384,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 385,
+        "ActionId": 385,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_06_03.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 386,
+        "ActionId": 386,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_06_03.jpg"
+        ]
+    },
+    {
+        "Id": 387,
+        "ActionId": 387,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 388,
+        "ActionId": 388,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "比安卡",
+            "——因为我终究还是拿起了圣剑。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011049
+        ]
+    },
+    {
+        "Id": 389,
+        "ActionId": 389,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "我从不后悔自己的选择，但为了终结他人的罪行而犯下了罪行，这是事实。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011050
+        ]
+    },
+    {
+        "Id": 390,
+        "ActionId": 390,
+        "Type": 502,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 391,
+        "ActionId": 391,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_06_04.png",
+            "",
+            "",
+            6
+        ]
+    },
+    {
+        "Id": 392,
+        "ActionId": 392,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_06_06.png"
+        ]
+    },
+    {
+        "Id": 393,
+        "ActionId": 393,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_06_05.png",
+            "",
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 394,
+        "ActionId": 394,
+        "Type": 104,
+        "Params": [
+            "80|-110|50",
+            0,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 395,
+        "ActionId": 395,
+        "Type": 502,
+        "EndDelay": 300.0,
+        "Params": [
+            "AniZhuanchangEnd"
+        ]
+    },
+    {
+        "Id": 396,
+        "ActionId": 396,
+        "Type": 104,
+        "EndDelay": 1500.0,
+        "Params": [
+            "0|0|0",
+            1.2,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 397,
+        "ActionId": 397,
+        "Type": 302,
+        "Params": [
+            "",
+            "那并不是你的错。",
+            398
+        ]
+    },
+    {
+        "Id": 398,
+        "ActionId": 398,
+        "Type": 302,
+        "Params": [
+            "",
+            "他们的生命早在被病毒侵蚀的那一刻就已经结束了，你给予了他们最后的解脱。",
+            399
+        ]
+    },
+    {
+        "Id": 399,
+        "ActionId": 399,
+        "Type": 205,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_06_07.png",
+            0,
+            1,
+            1.2
+        ]
+    },
+    {
+        "Id": 400,
+        "ActionId": 400,
+        "Type": 104,
+        "Params": [
+            "0|50|0",
+            0,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 401,
+        "ActionId": 401,
+        "Type": 104,
+        "EndDelay": 1500.0,
+        "Params": [
+            "0|0",
+            1,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 402,
+        "ActionId": 402,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "比安卡",
+            "是啊……我是不得不拿起圣剑，不得不将剑锋对准他们的人。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011051
+        ]
+    },
+    {
+        "Id": 403,
+        "ActionId": 403,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "比安卡",
+            "——我总是可以用这样的理由安慰自己。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011052
+        ]
+    },
+    {
+        "Id": 404,
+        "ActionId": 404,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 405,
+        "ActionId": 405,
+        "Type": 401,
+        "Params": [
+            2,
+            5165
+        ]
+    },
+    {
+        "Id": 406,
+        "ActionId": 406,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            6,
+            1
+        ]
+    },
+    {
+        "Id": 407,
+        "ActionId": 407,
+        "Type": 205,
+        "Params": [
+            1005,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 408,
+        "ActionId": 408,
+        "Type": 205,
+        "Params": [
+            1003,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_07_02.png",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 409,
+        "ActionId": 409,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_07_04.png"
+        ]
+    },
+    {
+        "Id": 410,
+        "ActionId": 410,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_07_03.png",
+            "",
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 411,
+        "ActionId": 411,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_07_01.png",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 412,
+        "ActionId": 412,
+        "Type": 401,
+        "Params": [
+            2,
+            10113408
+        ]
+    },
+    {
+        "Id": 413,
+        "ActionId": 413,
+        "Type": 104,
+        "Params": [
+            "-40|-105|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 414,
+        "ActionId": 414,
+        "Type": 104,
+        "Params": [
+            "45|-35|100",
+            0,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 415,
+        "ActionId": 415,
+        "Type": 104,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "30|-75|0",
+            2,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 416,
+        "ActionId": 416,
+        "Type": 104,
+        "EndDelay": 900.0,
+        "Params": [
+            "-20|-105|50",
+            1,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 417,
+        "ActionId": 417,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            1,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 418,
+        "ActionId": 418,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "风雪呼啸，刺骨的寒意渗入肌肤。人类的身影在剧烈的风暴中连连后退，再也无法前进分毫。"
+        ]
+    },
+    {
+        "Id": 419,
+        "ActionId": 419,
+        "Type": 302,
+        "Params": [
+            "",
+            "（为什么雪忽然变大了？）",
+            420
+        ]
+    },
+    {
+        "Id": 420,
+        "ActionId": 420,
+        "Type": 104,
+        "Params": [
+            "-10|-50|-20",
+            1,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 421,
+        "ActionId": 421,
+        "Type": 104,
+        "EndDelay": 900.0,
+        "Params": [
+            "0|20|-20",
+            1,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 422,
+        "ActionId": 422,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            1006,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_07_05.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 423,
+        "ActionId": 423,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 424,
+        "ActionId": 424,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            0,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 425,
+        "ActionId": 425,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_07_08.png"
+        ]
+    },
+    {
+        "Id": 426,
+        "ActionId": 426,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_07_07.png",
+            "",
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 427,
+        "ActionId": 427,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_07_06.png",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 428,
+        "ActionId": 428,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            4,
+            1
+        ]
+    },
+    {
+        "Id": 429,
+        "ActionId": 429,
+        "Type": 104,
+        "Params": [
+            "0|-100|-40",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 430,
+        "ActionId": 430,
+        "Type": 205,
+        "EndDelay": 1200.0,
+        "Params": [
+            1006,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_07_05.jpg",
+            1,
+            0,
+            1
+        ]
+    },
+    {
+        "Id": 431,
+        "ActionId": 431,
+        "Type": 104,
+        "EndDelay": 1500.0,
+        "Params": [
+            "0|0|-20",
+            1.2,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 432,
+        "ActionId": 432,
+        "Type": 205,
+        "Params": [
+            1006,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 433,
+        "ActionId": 433,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "雪花仿佛被人施予了魔力一般，固执地将比安卡的身影吞没在一片无机质的灰白之中。"
+        ]
+    },
+    {
+        "Id": 434,
+        "ActionId": 434,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "她近在咫尺，而又遥不可及。"
+        ]
+    },
+    {
+        "Id": 435,
+        "ActionId": 435,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 436,
+        "ActionId": 436,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 437,
+        "ActionId": 437,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 438,
+        "ActionId": 438,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_07_10.jpg"
+        ]
+    },
+    {
+        "Id": 439,
+        "ActionId": 439,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "比安卡",
+            "它们是为了掩盖我曾沾染的鲜血而落下的。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011053
+        ]
+    },
+    {
+        "Id": 440,
+        "ActionId": 440,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 441,
+        "ActionId": 441,
+        "Type": 205,
+        "Params": [
+            1003,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_07_11.png",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 442,
+        "ActionId": 442,
+        "Type": 104,
+        "Params": [
+            "0|-100|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 443,
+        "ActionId": 443,
+        "Type": 104,
+        "EndDelay": 1500.0,
+        "Params": [
+            "0|0|0",
+            1.2,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 444,
+        "ActionId": 444,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "比安卡",
+            "我可以安慰自己，但那些死去的人都再也不会回来。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011054
+        ]
+    },
+    {
+        "Id": 445,
+        "ActionId": 445,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "被风雪包裹的地方，太冰冷了，但……"
+        ]
+    },
+    {
+        "Id": 446,
+        "ActionId": 446,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "比安卡",
+            "雪一旦停下，鲜血又会满布我的世界。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011055
+        ]
+    },
+    {
+        "Id": 447,
+        "ActionId": 447,
+        "Type": 205,
+        "Params": [
+            1003,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 448,
+        "ActionId": 448,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 449,
+        "ActionId": 449,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_07_12.jpg"
+        ]
+    },
+    {
+        "Id": 450,
+        "ActionId": 450,
+        "Type": 205,
+        "EndDelay": 1500.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_07_13.jpg",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 451,
+        "ActionId": 451,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_07_13.jpg"
+        ]
+    },
+    {
+        "Id": 452,
+        "ActionId": 452,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 453,
+        "ActionId": 453,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "她固执地将自己封锁在寒冬之中。"
+        ]
+    },
+    {
+        "Id": 454,
+        "ActionId": 454,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "您应该明白了，这里没有表面那样纯净无暇，而我也早已成为传说中的“魔女”了。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011056
+        ]
+    },
+    {
+        "Id": 455,
+        "ActionId": 455,
+        "Type": 302,
+        "Params": [
+            "",
+            "既然是“魔女”，为什么会出现在这里，为什么要救我？",
+            456
+        ]
+    },
+    {
+        "Id": 456,
+        "ActionId": 456,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "比安卡",
+            "那么您呢？为了一个罪孽深重的人，只身一人踏入深渊？",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011057
+        ]
+    },
+    {
+        "Id": 457,
+        "ActionId": 457,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 458,
+        "ActionId": 458,
+        "Type": 401,
+        "Params": [
+            2,
+            1514
+        ]
+    },
+    {
+        "Id": 459,
+        "ActionId": 459,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_01.jpg"
+        ]
+    },
+    {
+        "Id": 460,
+        "ActionId": 460,
+        "Type": 402,
+        "Params": [
+            1514
+        ]
+    },
+    {
+        "Id": 461,
+        "ActionId": 461,
+        "Type": 302,
+        "Params": [
+            "",
+            "因为我相信你会来，比安卡，从一开始便是如此。",
+            462
+        ]
+    },
+    {
+        "Id": 462,
+        "ActionId": 462,
+        "Type": 205,
+        "Params": [
+            1003,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_02.png",
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 463,
+        "ActionId": 463,
+        "Type": 104,
+        "Params": [
+            "100|0|0",
+            0,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 464,
+        "ActionId": 464,
+        "Type": 104,
+        "EndDelay": 1500.0,
+        "Params": [
+            "0|0|0",
+            1,
+            "",
+            3
+        ]
+    },
+    {
+        "Id": 465,
+        "ActionId": 465,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "比安卡",
+            "…………",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011058
+        ]
+    },
+    {
+        "Id": 466,
+        "ActionId": 466,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "比安卡",
+            "……指挥官阁下，比安卡，已经选择了她要走的路。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011059
+        ]
+    },
+    {
+        "Id": 467,
+        "ActionId": 467,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 468,
+        "ActionId": 468,
+        "Type": 205,
+        "Params": [
+            1003,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 469,
+        "ActionId": 469,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_03.jpg"
+        ]
+    },
+    {
+        "Id": 470,
+        "ActionId": 470,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "比安卡",
+            "这是一条遍布罪孽与荆棘的路，是一条充满痛苦的路。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011060
+        ]
+    },
+    {
+        "Id": 471,
+        "ActionId": 471,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 472,
+        "ActionId": 472,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_04.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 473,
+        "ActionId": 473,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_04.jpg"
+        ]
+    },
+    {
+        "Id": 474,
+        "ActionId": 474,
+        "Type": 205,
+        "Params": [
+            999,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 475,
+        "ActionId": 475,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "比安卡",
+            "正因如此，这条路只要我一个人走就可以了。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011061
+        ]
+    },
+    {
+        "Id": 476,
+        "ActionId": 476,
+        "Type": 401,
+        "Params": [
+            2,
+            4825
+        ]
+    },
+    {
+        "Id": 477,
+        "ActionId": 477,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "一如圣剑的诅咒一样，雪地中生长出漆黑的荆棘，将比安卡牢牢地困于其中。"
+        ]
+    },
+    {
+        "Id": 478,
+        "ActionId": 478,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 479,
+        "ActionId": 479,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_05.png",
+            "",
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 480,
+        "ActionId": 480,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_06.png",
+            "",
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 481,
+        "ActionId": 481,
+        "Type": 104,
+        "Params": [
+            "-500|0|0",
+            0,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 482,
+        "ActionId": 482,
+        "Type": 104,
+        "EndDelay": 500.0,
+        "Params": [
+            "500|0|0",
+            0,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 483,
+        "ActionId": 483,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            5,
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 484,
+        "ActionId": 484,
+        "Type": 104,
+        "Params": [
+            "0|0|0",
+            5,
+            "",
+            5
+        ]
+    },
+    {
+        "Id": 485,
+        "ActionId": 485,
+        "Type": 104,
+        "EndDelay": 4500.0,
+        "Params": [
+            "0|0|-100",
+            3
+        ]
+    },
+    {
+        "Id": 486,
+        "ActionId": 486,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_07.png",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 487,
+        "ActionId": 487,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_07.png"
+        ]
+    },
+    {
+        "Id": 488,
+        "ActionId": 488,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 489,
+        "ActionId": 489,
+        "Type": 401,
+        "Params": [
+            2,
+            1505
+        ]
+    },
+    {
+        "Id": 490,
+        "ActionId": 490,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_08.png",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 491,
+        "ActionId": 491,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_08.png"
+        ]
+    },
+    {
+        "Id": 492,
+        "ActionId": 492,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 493,
+        "ActionId": 493,
+        "Type": 401,
+        "Params": [
+            2,
+            1505
+        ]
+    },
+    {
+        "Id": 494,
+        "ActionId": 494,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_09.png",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 495,
+        "ActionId": 495,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_09.png"
+        ]
+    },
+    {
+        "Id": 496,
+        "ActionId": 496,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 497,
+        "ActionId": 497,
+        "Type": 401,
+        "Params": [
+            2,
+            10113408
+        ]
+    },
+    {
+        "Id": 498,
+        "ActionId": 498,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_10.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 499,
+        "ActionId": 499,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_08_10.jpg"
+        ]
+    },
+    {
+        "Id": 500,
+        "ActionId": 500,
+        "Type": 205,
+        "Params": [
+            1007,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 501,
+        "ActionId": 501,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            4,
+            1
+        ]
+    },
+    {
+        "Id": 502,
+        "ActionId": 502,
+        "Type": 101,
+        "Params": [
+            "",
+            "",
+            "",
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 503,
+        "ActionId": 503,
+        "Type": 302,
+        "Params": [
+            "",
+            "你履行了你的约定，现在轮到我了。",
+            504
+        ]
+    },
+    {
+        "Id": 504,
+        "ActionId": 504,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "比安卡",
+            "不要再过来了，它们会将您刺伤的。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011062
+        ]
+    },
+    {
+        "Id": 505,
+        "ActionId": 505,
+        "Type": 302,
+        "Params": [
+            "",
+            "我不管你到底是怎么想的……",
+            506
+        ]
+    },
+    {
+        "Id": 506,
+        "ActionId": 506,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "比安卡",
+            "请您回去吧……",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011063
+        ]
+    },
+    {
+        "Id": 507,
+        "ActionId": 507,
+        "Type": 302,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "我来是为了告诉你……",
+            508
+        ]
+    },
+    {
+        "Id": 508,
+        "ActionId": 508,
+        "Type": 402,
+        "Params": [
+            5165
+        ]
+    },
+    {
+        "Id": 509,
+        "ActionId": 509,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndDelay": 100.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_09_01.png"
+        ]
+    },
+    {
+        "Id": 510,
+        "ActionId": 510,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "比安卡",
+            "已经够了……指挥官阁下……",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011064
+        ]
+    },
+    {
+        "Id": 511,
+        "ActionId": 511,
+        "Type": 302,
+        "Params": [
+            "",
+            "那些你未曾看到的事。",
+            512
+        ]
+    },
+    {
+        "Id": 512,
+        "ActionId": 512,
+        "Type": 401,
+        "Params": [
+            2,
+            100011078
+        ]
+    },
+    {
+        "Id": 513,
+        "ActionId": 513,
+        "Type": 304,
+        "Params": [
+            "<i>逝去的人们都已经得到安息，</i>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1
+        ]
+    },
+    {
+        "Id": 514,
+        "ActionId": 514,
+        "Type": 304,
+        "Params": [
+            "<i>你救下的孩子在岁月里长大……</i>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1
+        ]
+    },
+    {
+        "Id": 515,
+        "ActionId": 515,
+        "Type": 304,
+        "Params": [
+            "<i>你降下的风雪护佑着城镇安宁。</i>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1,
+            1
+        ]
+    },
+    {
+        "Id": 516,
+        "ActionId": 516,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_09_05.png",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 517,
+        "ActionId": 517,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_09_05.png",
+            "",
+            "",
+            "",
+            4
+        ]
+    },
+    {
+        "Id": 518,
+        "ActionId": 518,
+        "Type": 205,
+        "Params": [
+            1005,
+            "",
+            0,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 519,
+        "ActionId": 519,
+        "Type": 304,
+        "Params": [
+            "<i>即使被世人所畏惧着，你所做的那些都在切实地拯救着我们。</i>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1
+        ]
+    },
+    {
+        "Id": 520,
+        "ActionId": 520,
+        "Type": 304,
+        "Params": [
+            "<i>我踏入“深渊”的那一刻不曾有一刻犹疑，</i>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1
+        ]
+    },
+    {
+        "Id": 521,
+        "ActionId": 521,
+        "Type": 304,
+        "Params": [
+            "<i>因为我相信所谓的“魔女”即使满身血污，但圣女的灵魂从未改变。</i>",
+            "ffffffff",
+            "",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -1,
+            1
+        ]
+    },
+    {
+        "Id": 522,
+        "ActionId": 522,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_09_02.png",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 523,
+        "ActionId": 523,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_09_02.png"
+        ]
+    },
+    {
+        "Id": 524,
+        "ActionId": 524,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 525,
+        "ActionId": 525,
+        "Type": 304,
+        "Params": [
+            "<i><size=40>你之所以身陷黑暗，是为了将光明留给其他的人。</size></i>",
+            "ffffffff",
+            2.5,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -4,
+            1
+        ]
+    },
+    {
+        "Id": 526,
+        "ActionId": 526,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_09_03.png",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 527,
+        "ActionId": 527,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_09_03.png"
+        ]
+    },
+    {
+        "Id": 528,
+        "ActionId": 528,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 529,
+        "ActionId": 529,
+        "Type": 304,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "<i><size=40>而“比安卡”，她与我许下的约定永远不会过期。</size></i>",
+            "ffffffff",
+            2.5,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            "",
+            "",
+            -4,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 530,
+        "ActionId": 530,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 531,
+        "ActionId": 531,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_09_04.jpg"
+        ]
+    },
+    {
+        "Id": 532,
+        "ActionId": 532,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "与你一样的“魔女”曾对我说，你总是太过犹豫和软弱。"
+        ]
+    },
+    {
+        "Id": 533,
+        "ActionId": 533,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "",
+            "但我知道，为什么你每次都要坚持调查清楚，"
+        ]
+    },
+    {
+        "Id": 534,
+        "ActionId": 534,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 535,
+        "ActionId": 535,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_10_01.jpg"
+        ]
+    },
+    {
+        "Id": 536,
+        "ActionId": 536,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "因为你深知人们在选择投身黑暗之前，往往固执地守着心底的美好。"
+        ]
+    },
+    {
+        "Id": 537,
+        "ActionId": 537,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 538,
+        "ActionId": 538,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_10_02.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 539,
+        "ActionId": 539,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_10_02.jpg"
+        ]
+    },
+    {
+        "Id": 540,
+        "ActionId": 540,
+        "Type": 205,
+        "EndDelay": 500.0,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 541,
+        "ActionId": 541,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "",
+            "而你要亲眼见证每一片花瓣的盛开，亲手抚过每一寸花蕊，亲身漫步每一个春天……"
+        ]
+    },
+    {
+        "Id": 542,
+        "ActionId": 542,
+        "Type": 502,
+        "EndDelay": 500.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 543,
+        "ActionId": 543,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_10_03.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 544,
+        "ActionId": 544,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_10_03.jpg"
+        ]
+    },
+    {
+        "Id": 545,
+        "ActionId": 545,
+        "Type": 205,
+        "EndDelay": 300.0,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 546,
+        "ActionId": 546,
+        "Type": 205,
+        "EndDelay": 2000.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_10_04.jpg",
+            0,
+            1,
+            1.5
+        ]
+    },
+    {
+        "Id": 547,
+        "ActionId": 547,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_10_04.jpg"
+        ]
+    },
+    {
+        "Id": 548,
+        "ActionId": 548,
+        "Type": 205,
+        "EndDelay": 300.0,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 549,
+        "ActionId": 549,
+        "Type": 101,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndDelay": 300.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_10_06.jpg"
+        ]
+    },
+    {
+        "Id": 550,
+        "ActionId": 550,
+        "Type": 109,
+        "Params": [
+            15,
+            "<color=#ffffffff><size=60><i>——那些，都是你深爱的东西啊。</i></size></color>",
+            "",
+            160,
+            "",
+            1,
+            "",
+            10,
+            3,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 551,
+        "ActionId": 551,
+        "Type": 109,
+        "Params": [
+            10,
+            "<color=#4d4d4dff><size=60><i>——那些，都是你深爱的东西啊。</i></size></color>",
+            4.8,
+            155,
+            "",
+            1,
+            "",
+            10,
+            2,
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 552,
+        "ActionId": 552,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "——那些，都是你深爱的东西啊。"
+        ]
+    },
+    {
+        "Id": 553,
+        "ActionId": 553,
+        "Type": 110,
+        "EndDelay": 600.0,
+        "Params": [
+            "15|1",
+            "10|1"
+        ]
+    },
+    {
+        "Id": 554,
+        "ActionId": 554,
+        "Type": 302,
+        "Params": [
+            "",
+            "所以……比安卡……",
+            555
+        ]
+    },
+    {
+        "Id": 555,
+        "ActionId": 555,
+        "Type": 302,
+        "Params": [
+            "",
+            "与我一起回到现实吧。",
+            556
+        ]
+    },
+    {
+        "Id": 556,
+        "ActionId": 556,
+        "Type": 401,
+        "Params": [
+            2,
+            4044
+        ]
+    },
+    {
+        "Id": 557,
+        "ActionId": 557,
+        "Type": 205,
+        "EndDelay": 1800.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_10_05.jpg",
+            0,
+            1,
+            1.2
+        ]
+    },
+    {
+        "Id": 558,
+        "ActionId": 558,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_10_05.jpg"
+        ]
+    },
+    {
+        "Id": 559,
+        "ActionId": 559,
+        "Type": 205,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 560,
+        "ActionId": 560,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "比安卡",
+            "嗯，指挥官阁下。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011065
+        ]
+    },
+    {
+        "Id": 561,
+        "ActionId": 561,
+        "Type": 401,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 562,
+        "ActionId": 562,
+        "Type": 101,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 563,
+        "ActionId": 563,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "………………"
+        ]
+    },
+    {
+        "Id": 564,
+        "ActionId": 564,
+        "Type": 301,
+        "Params": [
+            "",
+            "？？？",
+            "指挥官阁下。",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011066
+        ]
+    },
+    {
+        "Id": 565,
+        "ActionId": 565,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "淡雅的芬芳掠入鼻腔。"
+        ]
+    },
+    {
+        "Id": 566,
+        "ActionId": 566,
+        "Type": 302,
+        "Params": [
+            "",
+            "（睁开眼睛）"
+        ]
+    },
+    {
+        "Id": 567,
+        "ActionId": 567,
+        "Type": 401,
+        "Params": [
+            1,
+            5028
+        ]
+    },
+    {
+        "Id": 568,
+        "ActionId": 568,
+        "Type": 501,
+        "EndDelay": 50.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 569,
+        "ActionId": 569,
+        "Type": 101,
+        "EndDelay": 1000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory232.png"
+        ]
+    },
+    {
+        "Id": 570,
+        "ActionId": 570,
+        "Type": 301,
+        "BeginAnim": "DialogEnable",
+        "Params": [
+            "",
+            "比安卡",
+            "指挥官阁下？",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011067
+        ]
+    },
+    {
+        "Id": 571,
+        "ActionId": 571,
+        "Type": 201,
+        "Params": [
+            1,
+            501280
+        ]
+    },
+    {
+        "Id": 572,
+        "ActionId": 572,
+        "Type": 301,
+        "Params": [
+            1,
+            "",
+            "视线上移，恰好对上一双圣洁的瞳孔。"
+        ]
+    },
+    {
+        "Id": 573,
+        "ActionId": 573,
+        "Type": 302,
+        "Params": [
+            "",
+            "我还在……梦里吗？",
+            574,
+            "你醒来了吗？比安卡。",
+            576
+        ]
+    },
+    {
+        "Id": 574,
+        "ActionId": 574,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 575,
+        "ActionId": 575,
+        "NextActionId": 578,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "当然……不是。您成功稳定了我的意识海，现在的我们都已经回到现实了。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011068
+        ]
+    },
+    {
+        "Id": 576,
+        "ActionId": 576,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 577,
+        "ActionId": 577,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "嗯，您成功稳定了我的意识海，现在的我们都已经回到现实了。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011069
+        ]
+    },
+    {
+        "Id": 578,
+        "ActionId": 578,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 579,
+        "ActionId": 579,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "洛莎告诉我，说机体数据明明已经达到唤醒的阈值了，您还是不愿意放弃让我自然醒来。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011070
+        ]
+    },
+    {
+        "Id": 580,
+        "ActionId": 580,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "一个人往危险的“深渊”走，说什么都劝不动……还好最后思维信标没有受损。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011071
+        ]
+    },
+    {
+        "Id": 581,
+        "ActionId": 581,
+        "Type": 302,
+        "Params": [
+            "",
+            "多亏圣女大人救驾及时。",
+            582,
+            "我只是选择了一个必然的结局。",
+            585
+        ]
+    },
+    {
+        "Id": 582,
+        "ActionId": 582,
+        "Type": 204,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 583,
+        "ActionId": 583,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "还能与我贫嘴，看来您恢复得还不错。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011072
+        ]
+    },
+    {
+        "Id": 584,
+        "ActionId": 584,
+        "NextActionId": 587,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她没好气地白了自己一眼。"
+        ]
+    },
+    {
+        "Id": 585,
+        "ActionId": 585,
+        "Type": 204,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 586,
+        "ActionId": 586,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "……实在是太乱来了。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011073
+        ]
+    },
+    {
+        "Id": 587,
+        "ActionId": 587,
+        "Type": 204,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 588,
+        "ActionId": 588,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "不过，责备您的话，您也听得差不多了，无论如何……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011074
+        ]
+    },
+    {
+        "Id": 589,
+        "ActionId": 589,
+        "Type": 204,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 590,
+        "ActionId": 590,
+        "Type": 301,
+        "Params": [
+            "",
+            "比安卡",
+            "谢谢您，指挥官阁下。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011075
+        ]
+    },
+    {
+        "Id": 591,
+        "ActionId": 591,
+        "Type": 202,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 592,
+        "ActionId": 592,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "她转身捧出一束白花，原来这便是刚才香气的来源。"
+        ]
+    },
+    {
+        "Id": 593,
+        "ActionId": 593,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "纯挚的心愿深埋于梦中的寒土，却在现实的温室中抽枝发芽，生长成花。"
+        ]
+    },
+    {
+        "Id": 594,
+        "ActionId": 594,
+        "Type": 201,
+        "Params": [
+            1,
+            501280,
+            1
+        ]
+    },
+    {
+        "Id": 595,
+        "ActionId": 595,
+        "Type": 301,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "比安卡",
+            "这个梦，我会一直铭记于心……",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011076
+        ]
+    },
+    {
+        "Id": 596,
+        "ActionId": 596,
+        "Type": 202,
+        "Params": [
+            1,
+            "",
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 597,
+        "ActionId": 597,
+        "Type": 401,
+        "Params": [
+            2,
+            967
+        ]
+    },
+    {
+        "Id": 598,
+        "ActionId": 598,
+        "Type": 101,
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgComic/V360Bianca/V360_10_06.jpg"
+        ]
+    },
+    {
+        "Id": 599,
+        "ActionId": 599,
+        "Type": 301,
+        "BeginAnim": "AniZhuanchangEnd",
+        "Params": [
+            "",
+            "",
+            "记忆筑成梦乡，无论多少次面对不堪的过往，她都将毫不犹豫地作出同样的抉择。"
+        ]
+    },
+    {
+        "Id": 600,
+        "ActionId": 600,
+        "Type": 301,
+        "Params": [
+            "",
+            "",
+            "那是无可改变的过去，但身前的人却从过去追往未来，在无垠的风雪中握紧她的手。"
+        ]
+    },
+    {
+        "Id": 601,
+        "ActionId": 601,
+        "Type": 301,
+        "EndAnim": "DialogDisable",
+        "Params": [
+            "",
+            "",
+            "所以她也挽起【kuroname】的手，将百合握紧于<M>他</M><W>她</W>的手心。"
+        ]
+    },
+    {
+        "Id": 602,
+        "ActionId": 602,
+        "Type": 302,
+        "Params": [
+            "",
+            "欢迎回来，比安卡。",
+            603
+        ]
+    },
+    {
+        "Id": 603,
+        "ActionId": 603,
+        "Type": 302,
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            "",
+            "欢迎回到我的身边。",
+            604
+        ]
+    },
+    {
+        "Id": 604,
+        "ActionId": 604,
+        "Type": 402,
+        "Params": [
+            967
+        ]
+    },
+    {
+        "Id": 605,
+        "ActionId": 605,
+        "Type": 101,
+        "EndDelay": 500.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory232.png"
+        ]
+    },
+    {
+        "Id": 606,
+        "ActionId": 606,
+        "Type": 201,
+        "Params": [
+            1,
+            501280,
+            1,
+            "",
+            "",
+            "",
+            1
+        ]
+    },
+    {
+        "Id": 607,
+        "ActionId": 607,
+        "Type": 502,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 608,
+        "ActionId": 608,
+        "Type": 301,
+        "IsEnd": 1,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": "AniZhuanchangBegin",
+        "Params": [
+            1,
+            "比安卡",
+            "嗯，我回来了，指挥官阁下。",
+            1,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            100011077
+        ]
+    }
+]

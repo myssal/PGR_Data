@@ -1,0 +1,465 @@
+[
+    {
+        "Name": "Walk",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -895785005,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Lifu_Walk_Loop.anim"
+    },
+    {
+        "Name": "WalkStart",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -895785005,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Lifu_Walk_Start.anim"
+    },
+    {
+        "Name": "WalkEnd",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -895785005,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Lifu_Walk_End.anim"
+    },
+    {
+        "Name": "RunStart",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -162882405,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/RunStart.anim"
+    },
+    {
+        "Name": "RunStartEnd01",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -162882405,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/RunStartEnd01.anim"
+    },
+    {
+        "Name": "Run",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 1391530821,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/RunLeanL.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Run.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/RunLeanR.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -20.0,
+            0.0,
+            20.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Stop",
+        "Layer": "BaseLayer",
+        "SpeedParameter": -162882405,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Stop.anim"
+    },
+    {
+        "Name": "SprintStart",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/RunStart.anim"
+    },
+    {
+        "Name": "SprintStartEnd01",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/RunStartEnd01.anim"
+    },
+    {
+        "Name": "Sprint",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "BlendParameter": -1977151796,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/SprintLeanL.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Sprint.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/SprintLeanR.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -20.0,
+            0.0,
+            20.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "SprintStop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/SprintStop.anim"
+    },
+    {
+        "Name": "Jumpsquat1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumpsquat1.anim"
+    },
+    {
+        "Name": "Jumprise1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumprise1.anim"
+    },
+    {
+        "Name": "Jumpchange1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumpchange1.anim"
+    },
+    {
+        "Name": "Jumpfall1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumpfall1.anim"
+    },
+    {
+        "Name": "Jumpfalling1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumpfalling1.anim"
+    },
+    {
+        "Name": "Jumpdown1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumpdown1.anim"
+    },
+    {
+        "Name": "Jumpsquat2",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumpsquat2.anim"
+    },
+    {
+        "Name": "Jumprise2",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumprise2.anim"
+    },
+    {
+        "Name": "Jumpchange2",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumpchange2.anim"
+    },
+    {
+        "Name": "Jumpfall2",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumpfall2.anim"
+    },
+    {
+        "Name": "Jumpdown2",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumpdown2.anim"
+    },
+    {
+        "Name": "Stand2",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Stand2.anim"
+    },
+    {
+        "Name": "Stand1",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Stand2.anim"
+    },
+    {
+        "Name": "Turn90L",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Lifu_Turnleft.anim"
+    },
+    {
+        "Name": "Turn90R",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Lifu_Turnright.anim"
+    },
+    {
+        "Name": "FPJumpSquat",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "BlendParameter": 587217167,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumpsquat1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumpsquat1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumpsquat1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumpsquat1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumpsquat1.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "FPJumpRise",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "BlendParameter": -198437067,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumprise1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumprise1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumprise1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumprise1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Jumprise1.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Photo_01",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Photo_01.anim"
+    },
+    {
+        "Name": "Photo_02",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Photo_02.anim"
+    },
+    {
+        "Name": "Photo_03",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Photo_03.anim"
+    },
+    {
+        "Name": "Photo_04",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Photo_04.anim"
+    },
+    {
+        "Name": "Drama_Lifu_Xuanze_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Lifu_Xuanze_Start.anim"
+    },
+    {
+        "Name": "Drama_Lifu_Xuanze_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Lifu_Xuanze_Loop.anim"
+    },
+    {
+        "Name": "Drama_Lifu_Xuanze_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Lifu_Xuanze_End.anim"
+    },
+    {
+        "Name": "Drama_Stand_01_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_01.anim"
+    },
+    {
+        "Name": "Drama_Stand_02_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_02_Start.anim"
+    },
+    {
+        "Name": "Drama_Stand_02_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_02_Loop.anim"
+    },
+    {
+        "Name": "Drama_Stand_02_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_02_End.anim"
+    },
+    {
+        "Name": "Drama_Stand_03_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_03_Start.anim"
+    },
+    {
+        "Name": "Drama_Stand_03_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_03_Loop.anim"
+    },
+    {
+        "Name": "Drama_Stand_03_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_03_End.anim"
+    },
+    {
+        "Name": "Drama_Stand_04_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_04_Start.anim"
+    },
+    {
+        "Name": "Drama_Stand_04_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_04_Loop.anim"
+    },
+    {
+        "Name": "Drama_Stand_04_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_04_End.anim"
+    },
+    {
+        "Name": "Drama_Stand_05_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_05_Start.anim"
+    },
+    {
+        "Name": "Drama_Stand_05_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_05_Loop.anim"
+    },
+    {
+        "Name": "Drama_Stand_05_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_05_End.anim"
+    },
+    {
+        "Name": "Drama_Stand_06_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_06_Start.anim"
+    },
+    {
+        "Name": "Drama_Stand_06_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_06_Loop.anim"
+    },
+    {
+        "Name": "Drama_Stand_06_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_06_End.anim"
+    },
+    {
+        "Name": "Drama_Stand_07_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_07_Start.anim"
+    },
+    {
+        "Name": "Drama_Stand_07_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_07_Loop.anim"
+    },
+    {
+        "Name": "Drama_Stand_07_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_07_End.anim"
+    },
+    {
+        "Name": "Drama_Stand_08_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_08_Start.anim"
+    },
+    {
+        "Name": "Drama_Stand_08_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_08_Loop.anim"
+    },
+    {
+        "Name": "Drama_Stand_08_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_08_End.anim"
+    },
+    {
+        "Name": "Drama_Stand_09_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_09_Start.anim"
+    },
+    {
+        "Name": "Drama_Stand_09_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_09_Loop.anim"
+    },
+    {
+        "Name": "Drama_Stand_09_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Stand_09_End.anim"
+    },
+    {
+        "Name": "Drama_ClassroomSit_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_ClassroomSit_Start.anim"
+    },
+    {
+        "Name": "Drama_ClassroomSit_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_ClassroomSit_Loop.anim"
+    },
+    {
+        "Name": "Drama_ClassroomSit_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_ClassroomSit_End.anim"
+    },
+    {
+        "Name": "Drama_HandsBehind_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_HandsBehind_Start.anim"
+    },
+    {
+        "Name": "Drama_HandsBehind_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_HandsBehind_Loop.anim"
+    },
+    {
+        "Name": "Drama_HandsBehind_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_HandsBehind_End.anim"
+    },
+    {
+        "Name": "Drama_Sleep_01_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Sleep_01_Loop.anim"
+    },
+    {
+        "Name": "Drama_Sleep_01_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Sleep_01_Start.anim"
+    },
+    {
+        "Name": "Drama_Sleep_01_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Sleep_01_End.anim"
+    },
+    {
+        "Name": "Drama_Snuggle_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Snuggle_Start.anim"
+    },
+    {
+        "Name": "Drama_Snuggle_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Snuggle_Loop.anim"
+    },
+    {
+        "Name": "Drama_Snuggle_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Snuggle_End.anim"
+    },
+    {
+        "Name": "Drama_Snuggle2_Start",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Snuggle2_Start.anim"
+    },
+    {
+        "Name": "Drama_Snuggle2_Loop",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Snuggle2_Loop.anim"
+    },
+    {
+        "Name": "Drama_Snuggle2_End",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Snuggle2_End.anim"
+    },
+    {
+        "Name": "Drama_Snuggle3",
+        "Layer": "BaseLayer",
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5LifuMdCommonSG/R5LifuMdCommonSG/CommonLayer/Drama_Snuggle3.anim"
+    }
+]

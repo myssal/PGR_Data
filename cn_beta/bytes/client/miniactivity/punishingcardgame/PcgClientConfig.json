@@ -1,0 +1,516 @@
+[
+    {
+        "Key": "HelpKey",
+        "Note": "帮助Key",
+        "Params": [
+            "Pcg1Help"
+        ]
+    },
+    {
+        "Key": "CardColorNames",
+        "Note": "卡面颜色球名称",
+        "Params": [
+            "红球",
+            "蓝球",
+            "黄球"
+        ]
+    },
+    {
+        "Key": "CardColorIcons",
+        "Note": "卡面颜色球图标",
+        "Params": [
+            "Assets/Product/Texture/Image/IconSkill/hongse.png",
+            "Assets/Product/Texture/Image/IconSkill/lanse.png",
+            "Assets/Product/Texture/Image/IconSkill/huangse.png"
+        ]
+    },
+    {
+        "Key": "CardSuitIcons",
+        "Note": "卡面套装图",
+        "Params": [
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardIconSpade.png",
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardIconClub.png",
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardIconDiamond.png",
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardIconHeart.png"
+        ]
+    },
+    {
+        "Key": "CardPointTexts",
+        "Note": "卡面点数显示文本",
+        "Params": [
+            "A",
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            "J",
+            "Q",
+            "K"
+        ]
+    },
+    {
+        "Key": "CommanderName",
+        "Note": "指挥官名称",
+        "Params": [
+            "指挥官"
+        ]
+    },
+    {
+        "Key": "CommanderHeadIcon",
+        "Note": "指挥官头像",
+        "Params": [
+            "Assets/Product/Texture/Image/UiPcg/UiPcgGameCommanderRole.png"
+        ]
+    },
+    {
+        "Key": "CommanderSkillIcon",
+        "Note": "指挥官技能图标",
+        "Params": [
+            "Assets/Product/Texture/Image/UiPcg/UiPcgGameCommanderSkill.png"
+        ]
+    },
+    {
+        "Key": "CommanderSkillName",
+        "Note": "指挥官技能名称",
+        "Params": [
+            "首席的实力！"
+        ]
+    },
+    {
+        "Key": "CommanderSkillDesc",
+        "Note": "指挥官技能名称描述",
+        "Params": [
+            "消耗5充能，拖动任意一张手牌，移动其位置。消耗行动点以为指挥官技能充能。"
+        ]
+    },
+    {
+        "Key": "StageLockTips",
+        "Note": "关卡未解锁点击提示",
+        "Params": [
+            "通关%s后解锁！"
+        ]
+    },
+    {
+        "Key": "CanNoPlayCardTips",
+        "Note": "非出牌阶段非法操作",
+        "Params": [
+            "当前非出牌阶段！"
+        ]
+    },
+    {
+        "Key": "ActionPointNoEnoughTips",
+        "Note": "出牌阶段行动点不足提示",
+        "Params": [
+            "当前行动点不足！"
+        ]
+    },
+    {
+        "Key": "NoSelectedEnoughCharacterTips",
+        "Note": "未选择足够角色提示",
+        "Params": [
+            "请至少选择%s个角色！"
+        ]
+    },
+    {
+        "Key": "NoChangeCharacterTips",
+        "Note": "教学关不能切换角色提示",
+        "Params": [
+            "教学关卡不能切换角色!"
+        ]
+    },
+    {
+        "Key": "CharacterSelectedTips",
+        "Note": "选人时提示",
+        "Params": [
+            "该成员已上阵"
+        ]
+    },
+    {
+        "Key": "NoSelectCharacterTips",
+        "Note": "教学关无解锁角色提示",
+        "Params": [
+            "当前位置暂无解锁角色"
+        ]
+    },
+    {
+        "Key": "CharacterNoUnlockTips",
+        "Note": "角色未解锁提示",
+        "Params": [
+            "角色未解锁！"
+        ]
+    },
+    {
+        "Key": "CardSpacing",
+        "Note": "卡牌数量对应间隔",
+        "Params": [
+            0,
+            -81,
+            -81,
+            -81,
+            -81,
+            -81,
+            -119,
+            -146,
+            -165,
+            -180,
+            -192,
+            -200
+        ]
+    },
+    {
+        "Key": "CardBriefDetailLength",
+        "Note": "卡牌简短详情显示的长度，超出长度显示…",
+        "Params": [
+            30
+        ]
+    },
+    {
+        "Key": "GiveUpGameTips",
+        "Note": "放弃对局二次确认",
+        "Params": [
+            "是否放弃当前对局?"
+        ]
+    },
+    {
+        "Key": "ChallengeFailTips",
+        "Note": "挑战关卡时，已有正在进行中的关卡",
+        "Params": [
+            "已有正在进行中的关卡！"
+        ]
+    },
+    {
+        "Key": "SetTargetMonsterFailTips",
+        "Note": "设置目标怪物失败提示",
+        "Params": [
+            "怪物已死亡！"
+        ]
+    },
+    {
+        "Key": "PopupDetailPrefabs",
+        "Note": "弹窗详情预制体，依次是指挥官、怪物、成员",
+        "Params": [
+            "Assets/Product/Ui/ComponentPrefab/UiPcg/UiPcgPopupCommanderDetail.prefab",
+            "Assets/Product/Ui/ComponentPrefab/UiPcg/UiPcgPopupMonsterDetail.prefab",
+            "Assets/Product/Ui/ComponentPrefab/UiPcg/UiPcgPopupCharacterDetail.prefab"
+        ]
+    },
+    {
+        "Key": "MonsterBehaviorIcons",
+        "Note": "怪物行动预览图标",
+        "Params": [
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardAttlkIcon01.png",
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardAttlkIcon02.png",
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardAttlkIcon03.png",
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardAttlkIcon06.png",
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardAttlkIcon05.png",
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardAttlkIcon04.png"
+        ]
+    },
+    {
+        "Key": "RoundTxt",
+        "Note": "回合日志显示第几回合",
+        "Params": [
+            "第%s回合"
+        ]
+    },
+    {
+        "Key": "EffectSettleLog1",
+        "Note": "效果结算日志，造成伤害",
+        "Params": [
+            "<color=#B7B7B764><color=#B7B7B764>·</color></color><color=#FFFFFF> <%s> </color>对<color=#FFFFFF> <%s> </color>造成了 <Icon=IconAttack|25|25|0.5/> <color=#E76D88>%s</color>"
+        ]
+    },
+    {
+        "Key": "EffectSettleLog2",
+        "Note": "效果结算日志，目标血量变化",
+        "Params": [
+            "<color=#B7B7B764>·</color><color=#FFFFFF> <%s> </color>HP -> %s"
+        ]
+    },
+    {
+        "Key": "EffectSettleLog3",
+        "Note": "效果结算日志，目标护甲变化",
+        "Params": [
+            "<color=#B7B7B764>·</color><color=#FFFFFF> <%s> </color> <Icon=IconArmor|25|25|0.5/> -><color=#FAD364FF> %s </color>"
+        ]
+    },
+    {
+        "Key": "EffectSettleLog4",
+        "Note": "效果结算日志，行动点变化",
+        "Params": [
+            "<color=#B7B7B764>·</color> 行动点  -> %s"
+        ]
+    },
+    {
+        "Key": "EffectSettleLog5",
+        "Note": "效果结算日志，角色切换到中间",
+        "Params": [
+            "<color=#B7B7B764>·</color><color=#FFFFFF> <%s> </color>切换出场"
+        ]
+    },
+    {
+        "Key": "EffectSettleLog6",
+        "Note": "效果结算日志，牌堆变化",
+        "Params": [
+            "<color=#B7B7B764>·</color> 卡牌 %s 从%s进入%s"
+        ]
+    },
+    {
+        "Key": "EffectSettleLog7",
+        "Note": "效果结算日志，标记变化",
+        "Params": [
+            "<color=#B7B7B764>·</color><color=#FFFFFF> <%s> </color>的标记<color=#FFFFFF>【%s】</color>  -> %s层"
+        ]
+    },
+    {
+        "Key": "EffectSettleLog8",
+        "Note": "效果结算日志，新一波怪物刷新",
+        "Params": [
+            "<color=#B7B7B764>·</color> 新的怪物出现: %s"
+        ]
+    },
+    {
+        "Key": "EffectSettleLog9",
+        "Note": "效果结算日志，手牌排序",
+        "Params": [
+            "<color=#B7B7B764>·</color> 对手牌进行了排序"
+        ]
+    },
+    {
+        "Key": "EffectSettleLog10",
+        "Note": "效果结算日志，调整卡牌在卡池中的顺序",
+        "Params": [
+            "<color=#B7B7B764>·</color> 卡牌 %s 移动至手牌第 %s 位"
+        ]
+    },
+    {
+        "Key": "EffectSettleLog11",
+        "Note": "效果结算日志，弃置手牌",
+        "Params": [
+            "<color=#B7B7B764>·</color> 卡牌 %s 被弃置，进入弃牌堆"
+        ]
+    },
+    {
+        "Key": "EffectSettleLog12",
+        "Note": "效果结算日志，移除卡牌"
+    },
+    {
+        "Key": "EffectSettleLog13",
+        "Note": "效果结算日志，直接生成卡牌",
+        "Params": [
+            "<color=#B7B7B764>·</color> 卡牌 %s 从衍生区进入%s"
+        ]
+    },
+    {
+        "Key": "EffectSettleLog14",
+        "Note": "效果结算日志，怪物波次死亡"
+    },
+    {
+        "Key": "CardPos",
+        "Note": "卡牌位置",
+        "Params": [
+            "抽牌堆",
+            "弃牌堆",
+            "手牌",
+            0,
+            "衍生区生成，"
+        ]
+    },
+    {
+        "Key": "DrawPoolTips",
+        "Note": "抽牌堆提示",
+        "Params": [
+            "此处排序不影响实际抽牌"
+        ]
+    },
+    {
+        "Key": "DropPoolTips",
+        "Note": "弃牌堆提示",
+        "Params": [
+            "抽牌堆为空时进行抽牌，弃牌堆所有卡牌将重新洗入抽牌堆"
+        ]
+    },
+    {
+        "Key": "ProgressTxt",
+        "Note": "玩法入口进度",
+        "Params": [
+            "进度：%s/%s"
+        ]
+    },
+    {
+        "Key": "ChapterProgressTxt",
+        "Note": "章节进度文本，第一个是UiPcgMain显示，第二个是UiPcgStage显示",
+        "Params": [
+            "%s<color=#FFFFFF><size=34>/%s</size></color>",
+            "%s/<color=#FFFFFF>%s</color>"
+        ]
+    },
+    {
+        "Key": "EnterActivityFail",
+        "Note": "进入活动失败，第一个是活动未开启，第二个是活动已结束",
+        "Params": [
+            "当前不在活动时间内",
+            "当前不在活动时间内"
+        ]
+    },
+    {
+        "Key": "StartPlayCardTips",
+        "Note": "开始出牌提示，参数1是提示文本，参数2是提示持续时间(毫秒)",
+        "Params": [
+            "我方行动",
+            1000
+        ]
+    },
+    {
+        "Key": "ReStartContent",
+        "Note": "重新开始文本",
+        "Params": [
+            "是否重新开始对局？"
+        ]
+    },
+    {
+        "Key": "CharacterUnlockTips",
+        "Note": "角色图鉴未解锁提示",
+        "Params": [
+            "通关%s后解锁"
+        ]
+    },
+    {
+        "Key": "EnergyNoEnoughTips",
+        "Note": "使用指挥官技能能量不足提示",
+        "Params": [
+            "技能能量不足"
+        ]
+    },
+    {
+        "Key": "NoValidCardTips",
+        "Note": "行动记录下发卡牌Id为0的卡牌时提示",
+        "Params": [
+            "牌库里没有符合要求的卡牌！"
+        ]
+    },
+    {
+        "Key": "IconSpade",
+        "Note": "花色黑桃，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardIconSpade.png"
+        ]
+    },
+    {
+        "Key": "IconClub",
+        "Note": "花色梅花，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardIconClub.png"
+        ]
+    },
+    {
+        "Key": "IconDiamond",
+        "Note": "花色方块，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardIconDiamond.png"
+        ]
+    },
+    {
+        "Key": "IconHeart",
+        "Note": "花色红桃，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardIconHeart.png"
+        ]
+    },
+    {
+        "Key": "IconDualBlades",
+        "Note": "红莲核心双刀术，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/IconSkill/R1luxiyahexin1.png"
+        ]
+    },
+    {
+        "Key": "IconMercy",
+        "Note": "零度核心饶恕，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/IconSkill/R2biankahexin1.png"
+        ]
+    },
+    {
+        "Key": "IconDance",
+        "Note": "清商核心曼舞，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/IconSkill/R2Hanyinhexin1.png"
+        ]
+    },
+    {
+        "Key": "IconSingularity",
+        "Note": "银冕核心奇点，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/IconSkill/R3Lunahexin1.png"
+        ]
+    },
+    {
+        "Key": "IconAnnihilation",
+        "Note": "银冕核心湮灭，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/IconSkill/R3Lunadazhao1.png"
+        ]
+    },
+    {
+        "Key": "IconReprise",
+        "Note": "幻奏核心重奏，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/IconSkill/R4Sailinnahexin1.png"
+        ]
+    },
+    {
+        "Key": "IconAttack",
+        "Note": "效果攻击，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardSmallIcon04.png"
+        ]
+    },
+    {
+        "Key": "IconArmor",
+        "Note": "效果护甲，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardSmallIcon05.png"
+        ]
+    },
+    {
+        "Key": "IconHeal",
+        "Note": "效果治疗，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/UiPcg/UiPcgCardSmallIcon06.png"
+        ]
+    },
+    {
+        "Key": "IconRedSkill",
+        "Note": "红球，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/IconSkill/hongse.png"
+        ]
+    },
+    {
+        "Key": "IconBlueSkill",
+        "Note": "蓝球，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/IconSkill/lanse.png"
+        ]
+    },
+    {
+        "Key": "IconYellowSkill",
+        "Note": "黄球，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/IconSkill/huangse.png"
+        ]
+    },
+    {
+        "Key": "IconPower",
+        "Note": "增幅型QTE力量，用于图文混排图标显示",
+        "Params": [
+            "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong.png"
+        ]
+    }
+]

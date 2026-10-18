@@ -1,0 +1,514 @@
+[
+    {
+        "Id": 1,
+        "Type": 1,
+        "GridName": "GridStart",
+        "Name": "起点"
+    },
+    {
+        "Id": 99,
+        "Type": 2,
+        "GridName": "GridEnd07",
+        "Name": "神威终点1"
+    },
+    {
+        "Id": 100,
+        "Type": 2,
+        "GridName": "GridEnd07",
+        "Name": "神威终点2"
+    },
+    {
+        "Id": 101,
+        "Type": 3,
+        "Color": 1,
+        "GridName": "GridEnd01",
+        "Name": "卡穆终点1"
+    },
+    {
+        "Id": 102,
+        "Type": 3,
+        "Color": 2,
+        "GridName": "GridEnd02",
+        "Name": "卡穆终点2"
+    },
+    {
+        "Id": 103,
+        "Type": 3,
+        "Color": 3,
+        "GridName": "GridEnd03",
+        "Name": "库洛姆终点1"
+    },
+    {
+        "Id": 104,
+        "Type": 3,
+        "Color": 4,
+        "GridName": "GridEnd04",
+        "Name": "库洛姆终点2"
+    },
+    {
+        "Id": 105,
+        "Type": 3,
+        "Color": 5,
+        "GridName": "GridEnd05",
+        "Name": "万事终点1"
+    },
+    {
+        "Id": 106,
+        "Type": 3,
+        "Color": 6,
+        "GridName": "GridEnd06",
+        "Name": "万事终点2"
+    },
+    {
+        "Id": 404,
+        "Type": 6,
+        "GridName": "GridObstacle",
+        "Name": "障碍"
+    },
+    {
+        "Id": 666,
+        "Type": 5,
+        "GridName": "GridStation07",
+        "Name": "车站"
+    },
+    {
+        "Id": 1000,
+        "Type": 10,
+        "GridName": "GridCharacter01",
+        "CharacterId": 1,
+        "Name": "神威1"
+    },
+    {
+        "Id": 1101,
+        "Type": 10,
+        "Color": 1,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2,
+        "Name": "卡穆12"
+    },
+    {
+        "Id": 1102,
+        "Type": 10,
+        "Color": 2,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2,
+        "Name": "卡穆12"
+    },
+    {
+        "Id": 1103,
+        "Type": 10,
+        "Color": 3,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3,
+        "Name": "库洛姆34"
+    },
+    {
+        "Id": 1104,
+        "Type": 10,
+        "Color": 4,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3,
+        "Name": "库洛姆34"
+    },
+    {
+        "Id": 2101,
+        "Type": 4,
+        "Color": 1,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1101,
+        "Name": "卡穆12"
+    },
+    {
+        "Id": 2102,
+        "Type": 4,
+        "Color": 2,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1102,
+        "Name": "卡穆12"
+    },
+    {
+        "Id": 2103,
+        "Type": 4,
+        "Color": 3,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1103,
+        "Name": "库洛姆34"
+    },
+    {
+        "Id": 2104,
+        "Type": 4,
+        "Color": 4,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1104,
+        "Name": "库洛姆34"
+    },
+    {
+        "Id": 1201,
+        "Type": 10,
+        "Color": 1,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2,
+        "Name": "卡穆1"
+    },
+    {
+        "Id": 1202,
+        "Type": 10,
+        "Color": 2,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2,
+        "Name": "卡穆2"
+    },
+    {
+        "Id": 1203,
+        "Type": 10,
+        "Color": 1,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3,
+        "Name": "库洛姆1"
+    },
+    {
+        "Id": 1204,
+        "Type": 10,
+        "Color": 2,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3,
+        "Name": "库洛姆2"
+    },
+    {
+        "Id": 1205,
+        "Type": 10,
+        "Color": 1,
+        "GridName": "GridCharacter04",
+        "CharacterId": 4,
+        "Name": "万事1"
+    },
+    {
+        "Id": 1206,
+        "Type": 10,
+        "Color": 2,
+        "GridName": "GridCharacter04",
+        "CharacterId": 4,
+        "Name": "万事2"
+    },
+    {
+        "Id": 2201,
+        "Type": 4,
+        "Color": 1,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1201,
+        "Name": "卡穆1"
+    },
+    {
+        "Id": 2202,
+        "Type": 4,
+        "Color": 2,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1202,
+        "Name": "卡穆2"
+    },
+    {
+        "Id": 2203,
+        "Type": 4,
+        "Color": 1,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1203,
+        "Name": "库洛姆1"
+    },
+    {
+        "Id": 2204,
+        "Type": 4,
+        "Color": 2,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1204,
+        "Name": "库洛姆2"
+    },
+    {
+        "Id": 2205,
+        "Type": 4,
+        "Color": 1,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1205,
+        "Name": "万事1"
+    },
+    {
+        "Id": 2206,
+        "Type": 4,
+        "Color": 2,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1206,
+        "Name": "万事2"
+    },
+    {
+        "Id": 1301,
+        "Type": 10,
+        "Color": 1,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2,
+        "Name": "卡穆1"
+    },
+    {
+        "Id": 1302,
+        "Type": 10,
+        "Color": 2,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2,
+        "Name": "卡穆2"
+    },
+    {
+        "Id": 1303,
+        "Type": 10,
+        "Color": 3,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3,
+        "Name": "库洛姆3"
+    },
+    {
+        "Id": 1304,
+        "Type": 10,
+        "Color": 4,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3,
+        "Name": "库洛姆4"
+    },
+    {
+        "Id": 1305,
+        "Type": 10,
+        "Color": 5,
+        "GridName": "GridCharacter04",
+        "CharacterId": 4,
+        "Name": "万事5"
+    },
+    {
+        "Id": 1306,
+        "Type": 10,
+        "Color": 6,
+        "GridName": "GridCharacter04",
+        "CharacterId": 4,
+        "Name": "万事6"
+    },
+    {
+        "Id": 2301,
+        "Type": 4,
+        "Color": 1,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1301,
+        "Name": "卡穆1"
+    },
+    {
+        "Id": 2302,
+        "Type": 4,
+        "Color": 2,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1302,
+        "Name": "卡穆2"
+    },
+    {
+        "Id": 2303,
+        "Type": 4,
+        "Color": 3,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1303,
+        "Name": "库洛姆3"
+    },
+    {
+        "Id": 2304,
+        "Type": 4,
+        "Color": 4,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1304,
+        "Name": "库洛姆4"
+    },
+    {
+        "Id": 2305,
+        "Type": 4,
+        "Color": 5,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1305,
+        "Name": "万事5"
+    },
+    {
+        "Id": 2306,
+        "Type": 4,
+        "Color": 6,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1306,
+        "Name": "万事6"
+    },
+    {
+        "Id": 1401,
+        "Type": 10,
+        "Color": 1,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2,
+        "Name": "卡穆1"
+    },
+    {
+        "Id": 1402,
+        "Type": 10,
+        "Color": 2,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2,
+        "Name": "卡穆2"
+    },
+    {
+        "Id": 1403,
+        "Type": 10,
+        "Color": 5,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2,
+        "Name": "卡穆3"
+    },
+    {
+        "Id": 1404,
+        "Type": 10,
+        "Color": 3,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3,
+        "Name": "库洛姆1"
+    },
+    {
+        "Id": 1405,
+        "Type": 10,
+        "Color": 4,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3,
+        "Name": "库洛姆2"
+    },
+    {
+        "Id": 1406,
+        "Type": 10,
+        "Color": 5,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3,
+        "Name": "库洛姆3"
+    },
+    {
+        "Id": 1407,
+        "Type": 10,
+        "Color": 5,
+        "GridName": "GridCharacter04",
+        "CharacterId": 4,
+        "Name": "万事1"
+    },
+    {
+        "Id": 1408,
+        "Type": 10,
+        "Color": 6,
+        "GridName": "GridCharacter04",
+        "CharacterId": 4,
+        "Name": "万事2"
+    },
+    {
+        "Id": 1409,
+        "Type": 10,
+        "GridName": "GridCharacter05",
+        "CharacterId": 5,
+        "Name": "库洛洛"
+    },
+    {
+        "Id": 1410,
+        "Type": 10,
+        "GridName": "GridCharacter05",
+        "CharacterId": 5,
+        "Name": "库洛洛"
+    },
+    {
+        "Id": 1411,
+        "Type": 10,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3,
+        "Name": "库洛姆3"
+    },
+    {
+        "Id": 2401,
+        "Type": 4,
+        "Color": 1,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1401,
+        "Name": "卡穆1"
+    },
+    {
+        "Id": 2402,
+        "Type": 4,
+        "Color": 2,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1402,
+        "Name": "卡穆2"
+    },
+    {
+        "Id": 2403,
+        "Type": 4,
+        "Color": 5,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1403,
+        "Name": "卡穆3"
+    },
+    {
+        "Id": 2404,
+        "Type": 4,
+        "Color": 3,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1404,
+        "Name": "库洛姆1"
+    },
+    {
+        "Id": 2405,
+        "Type": 4,
+        "Color": 4,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1405,
+        "Name": "库洛姆2"
+    },
+    {
+        "Id": 2406,
+        "Type": 4,
+        "Color": 5,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1406,
+        "Name": "库洛姆3"
+    },
+    {
+        "Id": 2407,
+        "Type": 4,
+        "Color": 5,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1407,
+        "Name": "万事1"
+    },
+    {
+        "Id": 2408,
+        "Type": 4,
+        "Color": 6,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1408,
+        "Name": "万事2"
+    },
+    {
+        "Id": 2409,
+        "Type": 4,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1409,
+        "Name": "库洛洛"
+    },
+    {
+        "Id": 2410,
+        "Type": 4,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1410,
+        "Name": "库洛洛"
+    },
+    {
+        "Id": 2411,
+        "Type": 5,
+        "GridName": "GridStation07",
+        "CharacterId": 1411,
+        "Name": "车站+库洛姆"
+    },
+    {
+        "Id": 2412,
+        "Type": 5,
+        "GridName": "GridStation07",
+        "CharacterId": 1407,
+        "Name": "车站+万事"
+    }
+]
