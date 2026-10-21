@@ -1267,25 +1267,36 @@ end
 --endregion
 
 function XUiPurchaseBuyTips:RefreshItemCount(itemId, priceTxt)
+    self:RefreshSignTipBuyBtnColor()
+
     if itemId ~= self.CurItemId then
         return
     end
     self:PayCoinStates(self.CurItemId, self.CurPriceTxt)
 end
 
+-- 虹卡数量变动时，重刷当前打开的签到礼包子面板购买按钮的价格颜色
+function XUiPurchaseBuyTips:RefreshSignTipBuyBtnColor()
+    local signTip = self.CurPrefabPath and self.PurchaseSignTipDic[self.CurPrefabPath]
+    if signTip and signTip.RefreshBuyBtnColor then
+        signTip:RefreshBuyBtnColor()
+    end
+end
+
+-- 按虹卡(消耗道具)拥有量给价格上色：足够为充足色，不足为不足色，返回富文本
+function XUiPurchaseBuyTips:GetConsumePriceColorText(itemId, price)
+    local colorEnough = CS.XGame.ClientConfig:GetString("UiPurchaseBuyTipsButtonColor1")
+    local colorUnenough = CS.XGame.ClientConfig:GetString("UiPurchaseBuyTipsButtonColor2")
+    local item = XDataCenter.ItemManager.GetItem(itemId)
+    local itemCount = item and item.Count or 0
+    local color = itemCount >= tonumber(price) and colorEnough or colorUnenough
+    return string.format("<color=%s>%s</color>", color, price)
+end
+
 function XUiPurchaseBuyTips:PayCoinStates(itemId, priceTxt)
     self.CurPriceTxt = priceTxt
     self.CurItemId = itemId
-    local colorEnough = CS.XGame.ClientConfig:GetString("UiPurchaseBuyTipsButtonColor1")
-    local colorUnenough = CS.XGame.ClientConfig:GetString("UiPurchaseBuyTipsButtonColor2")
-    local itemCount = XDataCenter.ItemManager.GetItem(itemId).Count
-    local priceText = ""
-    if itemCount >= tonumber(priceTxt) then
-        priceText = string.format("<color=%s>%s</color>", colorEnough, priceTxt)
-    else
-        priceText = string.format("<color=%s>%s</color>", colorUnenough, priceTxt)
-    end
-    self.BtnBuy:SetName(priceText)
+    self.BtnBuy:SetName(self:GetConsumePriceColorText(itemId, priceTxt))
 end
 
 ---@param data XPurchaseComboData

@@ -124,6 +124,11 @@ end
 
 --ui是否显示中
 function XGuideAgent:IsUiActive(uiName, panel)
+    -- 条件节点会逐帧检查；界面未显示时属于正常等待，无需逐帧报错
+    if not CsXUiManager.Instance:IsUiShow(uiName) then
+        return false
+    end
+
     local target = self:FindTransformInUi(uiName, panel)
 
     if not target then
@@ -136,6 +141,12 @@ end
 --聚焦UI
 function XGuideAgent:FocusOn(uiName, panel, eulerAngles, passEvent, sizeDelta, offset, focusStyle, bubbleIndex, bubbleTextId, bubblePosOffset, imgIconId)
     local target = self:FindActiveTransformInUi(uiName, panel)
+    -- 目标未找到时不继续聚焦；FindActiveTransformInUi 已记录具体错误。
+    -- 此处返回后焦点节点仍会等待点击，不会自动重试聚焦。
+    if not target then
+        return
+    end
+
     local uiGuide = self:GetUiGuide()
     uiGuide:FocusOnPanel(target, eulerAngles, passEvent, sizeDelta, offset, nil, focusStyle, bubbleIndex, bubbleTextId, bubblePosOffset, imgIconId)
 end
@@ -409,6 +420,11 @@ function XGuideAgent:FocuOnScrollRect(uiName, scroll, target)
 end
 
 function XGuideAgent:CheckAnimIsPlaying(uiName, animName)
+    -- 界面未显示时条件尚未满足，避免逐帧进入会打错误日志的查找路径
+    if not CsXUiManager.Instance:IsUiShow(uiName) then
+        return false
+    end
+
     local target = self:FindTransformInUi(uiName, animName)
     if not target then
         return false

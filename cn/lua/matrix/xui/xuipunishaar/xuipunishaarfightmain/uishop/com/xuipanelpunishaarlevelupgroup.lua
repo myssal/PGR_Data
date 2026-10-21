@@ -10,6 +10,7 @@
 ---@field Parent
 ---@field CanLevelup UnityEngine.RectTransform 可升级标识节点（可升级态显 + 播 TagLevelupEnable loop）
 ---@field Levelup UnityEngine.RectTransform 升级中标识节点（升级执行后显 + 播 LevelupSweep，finCb 播完隐）
+---@field PnlMask UnityEngine.UI.RawImage 升级瞬间遮罩（挂 Levelup 下，随 Levelup 显隐；按卡牌 Type/Size 设 MaskBgs 图）#升级瞬间遮罩
 local XUiPanelPunishaarLevelupGroup = XClass(XUiNode, "XUiPanelPunishaarLevelupGroup")
 
 function XUiPanelPunishaarLevelupGroup:OnStart()

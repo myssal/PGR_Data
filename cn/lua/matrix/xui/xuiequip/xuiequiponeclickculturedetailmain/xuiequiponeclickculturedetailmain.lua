@@ -224,6 +224,7 @@ end
 function XUiEquipOneClickCultureDetailMain:OnCultureFinished()
     self:ReplayUpgradeEffect()
     self:Refresh()
+    XMVCA.XTeamRecommend:GetServerCharacterTargetProgressAndCheckFinishByCharacterId(self.TargetData.CharacterId)
 end
 
 function XUiEquipOneClickCultureDetailMain:ReplayUpgradeEffect()

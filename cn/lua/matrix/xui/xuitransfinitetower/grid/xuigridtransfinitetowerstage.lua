@@ -33,6 +33,8 @@ function XUiGridTransfiniteTowerStage:Refresh(towerCfgId)
 
     -- 未开放时置灰
     self.BtnStage:SetDisable(not isUnlock)
+    -- 解锁后未进入过的红点
+    self.BtnStage:ShowReddot(self._Control:IsTowerUnlockRedDotShow(towerCfgId))
     -- 通关标记
     self.ImgComplete.gameObject:SetActiveEx(isComplete)
 end

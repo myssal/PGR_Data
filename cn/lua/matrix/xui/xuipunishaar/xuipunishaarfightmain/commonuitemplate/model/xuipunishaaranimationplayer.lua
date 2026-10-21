@@ -51,20 +51,6 @@ function XUiPunishaarAnimationPlayer:PlayCardAttack(slotIndex, cardId, fromBegin
     end
 end
 
---- 播 Idle 动画（主动切回待机，供状态切换/卡牌刷新时调）#71
----@param slotIndex number|nil 卡牌挂点索引 1..N（默认 1）
----@param cardId number
-function XUiPunishaarAnimationPlayer:PlayCardIdle(slotIndex, cardId)
-    local panel = self._ModelPool:GetCardModelPanel(slotIndex or 1)
-    if not panel then
-        return
-    end
-    local row = self._ConfigResolver:GetCardModelRow(cardId)
-    if row and not string.IsNilOrEmpty(row.NormalIdleAnima) then
-        panel:PlayAnimaCross(row.NormalIdleAnima)
-    end
-end
-
 --- 敌人攻击动画（fromBegin=true 打断重播，播完由动画状态机自动过渡回 Idle）。
 --- AttackAnima 由 RefreshEnemyModel 时 ConfigReader 缓存（enemyCfg.AttackAnima），避免每次攻击现查。#73
 ---@param fromBegin boolean|nil true=从头播打断重播

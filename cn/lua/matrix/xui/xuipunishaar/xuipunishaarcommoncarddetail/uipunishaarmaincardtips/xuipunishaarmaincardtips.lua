@@ -1,6 +1,6 @@
 --- 主卡详情内容子面板（普通 XUiNode，由 TipsRoot 气泡壳加载并定位；不继承 bubble、不带 BtnClose）。
 --- 展示单张主卡的描述/标签/副卡槽，并按所处上下文显示操作按钮组。
---- PanelBuy/PanelSell/PanelDiscard 互斥（同一时刻只显示一个），由 OperationMode 驱动 SetActiveEx 切换。主卡保留环节显 Discard（gc:IsRewardPlacementActive），其余场景无 Discard。
+--- PanelBuy/PanelSell/PanelDiscard 互斥（同一时刻只显示一个），由 OperationMode 驱动 SetActiveEx 切换。主卡保留环节显 Discard（gameControl:IsRewardPlacementActive），其余场景无 Discard。
 local XUiPanelPunishaarMainCard = require("XUi/XUiPunishaar/XUiPunishaarCommonCardDetail/UiPunishaarMainCardTips/XUiPanelPunishaarMainCard")
 local XUiPanelPunishaarCardTag = require("XUi/XUiPunishaar/XUiPunishaarCommonCardDetail/UiPunishaarMainCardTips/XUiPanelPunishaarCardTag")
 local XUiPanelPunishaarSubCardSlot = require("XUi/XUiPunishaar/XUiPunishaarCommonCardDetail/UiPunishaarMainCardTips/XUiPanelPunishaarSubCardSlot")
@@ -18,7 +18,7 @@ local XUiPanelPunishaarSubCardSlot = require("XUi/XUiPunishaar/XUiPunishaarCommo
 ---@field BtnLock XUiComponent.XUiButton 冻结/解冻按钮（商品冻结态切换；装备态不显示）
 ---@field BtnBuy XUiComponent.XUiButton 购买按钮
 ---@field BtnSell XUiComponent.XUiButton 出售按钮
----@field BtnDiscard XUiComponent.XUiButton 丢弃按钮（主卡保留环节腾位路径，gc:IsRewardPlacementActive 时显；非商店不售出走丢弃）#主卡Discard
+---@field BtnDiscard XUiComponent.XUiButton 丢弃按钮（主卡保留环节腾位路径，gameControl:IsRewardPlacementActive 时显；非商店不售出走丢弃）#主卡Discard
 ---@field PanelDiscard UnityEngine.RectTransform 丢弃操作区根节点（内含 BtnDiscard；prefab 有则显，无则 BtnDiscard 直显）#主卡Discard
 ---@field DetailRootLeft UnityEngine.RectTransform 副卡详情气泡左侧锚点（主卡偏右时副卡在左，pivot.x=1 从右边沿展开）
 ---@field DetailRootRight UnityEngine.RectTransform 副卡详情气泡右侧锚点（主卡偏左/默认时副卡在右，pivot.x=0 从左边沿展开）
@@ -35,7 +35,7 @@ local OperationMode = {
     None = 0,
     Buy = 1,
     Sell = 2,
-    Discard = 3,  -- 主卡丢弃（主卡保留环节腾位，gc:IsRewardPlacementActive 时显；非商店不售出走丢弃）#主卡Discard
+    Discard = 3,  -- 主卡丢弃（主卡保留环节腾位，gameControl:IsRewardPlacementActive 时显；非商店不售出走丢弃）#主卡Discard
 }
 
 function XUiPunishaarMainCardTips:OnStart()
@@ -230,9 +230,13 @@ function XUiPunishaarMainCardTips:_ResolveOperationMode(detail)
         -- 已购商品只读（无 Buy 按钮）
         return detail.isBought and OperationMode.None or OperationMode.Buy
     elseif detail.source == TipsSource.Equipped then
-        -- 主卡保留环节（reward-placement）：主卡走丢弃路径（非商店不售出）；其余场景售出 #主卡Discard
-        local gc = self._Control and self._Control.GameControl
-        if gc and gc.IsRewardPlacementActive and gc:IsRewardPlacementActive() then
+        -- 奖励卡（未拥有，无 Id）→ 只读（None），不显 Sell/Discard（玩家未拥有此卡，不能卖/弃）
+        if not detail.masterCard or not detail.masterCard.Id then
+            return OperationMode.None
+        end
+        -- 主卡保留环节（reward-placement）：已拥有主卡走丢弃路径（非商店不售出）；其余场景售出 #主卡Discard
+        local gameControl = self._Control and self._Control.GameControl
+        if gameControl and gameControl.IsRewardPlacementActive and gameControl:IsRewardPlacementActive() then
             return OperationMode.Discard
         end
         return OperationMode.Sell
@@ -308,7 +312,7 @@ function XUiPunishaarMainCardTips:_OnBtnSell()
     end)
 end
 
---- 丢弃主卡（主卡保留环节腾位路径，gc:IsRewardPlacementActive 时显此按钮；非商店不售出走丢弃）#主卡Discard
+--- 丢弃主卡（主卡保留环节腾位路径，gameControl:IsRewardPlacementActive 时显此按钮；非商店不售出走丢弃）#主卡Discard
 function XUiPunishaarMainCardTips:_OnBtnDiscard()
     if self._IsOperating then
         return
@@ -322,15 +326,15 @@ function XUiPunishaarMainCardTips:_OnBtnDiscard()
     -- IsMasterCard=true：丢弃主卡自身（服务端 XPunishaarDiscardCardRequest）；成功关详情，MasterCardChange 触发 SellCardTip 刷背包+TryAutoPlace
     self._Control.GameControl:DiscardCard(masterCard.Id, true, function(success)
         self._IsOperating = false
-        XLog.Debug(string.format("[主卡Discard诊断] DiscardCard 响应: masterCard.Id=%s success=%s", tostring(masterCard.Id), tostring(success)))
+
         if success then
             if self.Parent then
                 self.Parent:Hide()
             end
+            -- 丢弃成功 tip 移至 SellCardTip _OnMasterCardChange（TryAutoPlace 未放置时弹，避免与放置成功 tip 冲突）
             -- DiscardCard 仅本地 UpdateMasterCardByNotify + BuySuccess，未发 MasterCardChange；
             -- 主卡保留环节 SellCardTip 订阅 MasterCardChange 刷背包+TryAutoPlace，故显式补发触发腾位后自动放入奖励卡 #主卡Discard
-            XLog.Debug("[主卡Discard诊断] 补发 MasterCardChange（触发 SellCardTip 刷背包+TryAutoPlace）")
-            XEventManager.DispatchEvent(XEventId.EVENT_PUNISHAAR_MASTER_CARD_CHANGE)
+            XMVCA.XPunishaar:DispatchEvent(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_MASTER_CARD_CHANGE)
         end
     end)
 end

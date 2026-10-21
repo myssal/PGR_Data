@@ -20,6 +20,8 @@ local XUiGridMemberSlot = require("XUi/XUiTransfiniteTower/Grid/XUiGridMemberSlo
 ---@field ImgTrait2 UnityEngine.UI.Image
 ---@field TagRollback UnityEngine.GameObject
 ---@field ImgRollbackBg UnityEngine.GameObject
+---@field ImgBg UnityEngine.GameObject
+---@field ImgBg02 UnityEngine.GameObject
 local XUiGridTowerStage = XClass(XUiNode, "XUiGridTowerStage")
 
 local MemberSlotNodeNames = {
@@ -33,7 +35,6 @@ function XUiGridTowerStage:OnStart()
     -- 根节点即按钮：列表项实例为 GridTowerStage，固定最终层实例为 GridTowerBoss
     self._RootBtn = self.GridTowerStage or self.GridTowerBoss
     self._RootBtn:AddEventListener(handler(self, self.OnClick))
-    self:PlayAnimation()
 end
 
 function XUiGridTowerStage:OnClick()
@@ -49,11 +50,6 @@ function XUiGridTowerStage:InitMemberSlots()
 end
 
 function XUiGridTowerStage:PlayAnimation()
-    if self.IsAnimation then
-        return
-    end
-
-    self.IsAnimation = true
     self.GridTowerStageEnable:PlayTimelineAnimation()
 end
 
@@ -66,6 +62,7 @@ function XUiGridTowerStage:Refresh(stageCfgId)
     local isUnlock = self._Control:IsStageUnlock(stageCfgId)
 
     self:RefreshStageNum()
+    self:RefreshBg()
     self:RefreshBoss()
     self:RefreshMembers()
     self:RefreshComplete(isPass)
@@ -74,6 +71,17 @@ function XUiGridTowerStage:Refresh(stageCfgId)
     self:RefreshLockState(isUnlock)
     -- 动态列表复用时按当前选中层纠正选中态，避免滚动后旧选中框残留
     self:SetSelect(self.Parent:IsStageSelected(stageCfgId))
+end
+
+function XUiGridTowerStage:RefreshBg()
+    if not self.ImgBg or not self.ImgBg02 then
+        return
+    end
+    local isChangeBg = self.GridTowerStage ~= nil and self._Control:IsStageChangeBg(self.StageCfgId)
+    self.ImgBg.gameObject:SetActiveEx(not isChangeBg)
+    if self.ImgBg02 then
+        self.ImgBg02.gameObject:SetActiveEx(isChangeBg)
+    end
 end
 
 function XUiGridTowerStage:RefreshStageNum()

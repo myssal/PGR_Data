@@ -272,8 +272,11 @@ function XUiPanelFashionSuitButtonGroup:OnBuyBefore()
         endTime = XTime.GetServerNowTimestamp() + self._RemainTime
     end
 
-    local giftId = XFashionConfigs.GetFashionTemplate(self._Id).GiftId
-    local isHideWorldDesc = self._Helper:IsEnableGroupSales() and not XTool.IsNumberValid(giftId)
+    local isHideWorldDesc = false
+    if self._Helper:IsEnableGroupSales() then
+        local giftId = XFashionConfigs.GetFashionTemplate(self._FashionGroup.FashionId).GiftId
+        isHideWorldDesc = not XTool.IsNumberValid(giftId)
+    end
 
     ---@type CoatingBuyTipsViewModel
     local viewModel = {
@@ -404,13 +407,6 @@ function XUiPanelFashionSuitButtonGroup:_GetPrice()
         return self._Purchase:GetPrice()
     elseif self._GainType == GainType.Shop then
         return self._Shop:GetPrice()
-    end
-end
-
---endregion
-
-return XUiPanelFashionSuitButtonGroup
-e()
     end
 end
 

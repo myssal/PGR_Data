@@ -114,29 +114,7 @@ end
 --region 事件处理
 
 function XUiGridTransfiniteTowerTask:OnBtnFinishClick()
-    local weaponCount = 0
-    local chipCount = 0
-    local rewards = XRewardManager.GetRewardList(self.tableData.RewardId)
-    for i = 1, #rewards do
-        local rewardsId = self.RewardPanelList[i].TemplateId
-        if XMVCA.XEquip:IsClassifyEqualByTemplateId(rewardsId, XEnumConst.EQUIP.CLASSIFY.WEAPON) then
-            weaponCount = weaponCount + 1
-        elseif XMVCA.XEquip:IsClassifyEqualByTemplateId(rewardsId, XEnumConst.EQUIP.CLASSIFY.AWARENESS) then
-            chipCount = chipCount + 1
-        end
-    end
-    if weaponCount > 0 and XMVCA.XEquip:CheckBagCount(weaponCount, XEnumConst.EQUIP.CLASSIFY.WEAPON) == false or
-            chipCount > 0 and XMVCA.XEquip:CheckBagCount(chipCount, XEnumConst.EQUIP.CLASSIFY.AWARENESS) == false then
-        return
-    end
-    XDataCenter.TaskManager.FinishTask(self.Data.Id, function(rewardGoodsList)
-        for i = 1, #rewards do
-            if rewards[i].RewardType == XRewardManager.XRewardType.Nameplate then
-                return
-            end
-        end
-        XUiManager.OpenUiObtain(rewardGoodsList, nil, handler(self, self.OnObtainClose))
-    end)
+    self.Parent._Control:FinishAllAchievedTask(handler(self, self.OnObtainClose))
 end
 
 function XUiGridTransfiniteTowerTask:OnObtainClose()

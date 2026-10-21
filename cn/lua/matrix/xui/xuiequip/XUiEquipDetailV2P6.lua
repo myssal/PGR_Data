@@ -6,6 +6,7 @@ local XDragAutoRotateType = typeof(CS.XDragAutoRotate)
 ---@class XUiEquipDetailV2P6 : XLuaUi
 ---@field _Control XEquipControl
 ---@field EffectUiOverrunV4P6 UnityEngine.GameObject
+---@field ShouldOpenHelpOnEnable boolean 是否在首次启用时自动打开当前页签的帮助说明
 local XUiEquipDetailV2P6 = XLuaUiManager.Register(XLuaUi, "UiEquipDetailV2P6")
 
 function XUiEquipDetailV2P6:OnAwake()
@@ -29,7 +30,8 @@ end
 
 --参数isPreview为true时是装备详情预览，传templateId进来
 --characterId只有需要判断武器共鸣特效时才传
-function XUiEquipDetailV2P6:OnStart(equipId, isPreview, characterId, forceShowBindCharacter, childUiIndex, openUiType, openResonanceSkillPos)
+---@param openHelpOnEnable boolean|nil 是否在首次启用时自动打开当前页签的帮助说明
+function XUiEquipDetailV2P6:OnStart(equipId, isPreview, characterId, forceShowBindCharacter, childUiIndex, openUiType, openResonanceSkillPos, openHelpOnEnable)
     self.IsPreview = isPreview
     self.EquipId = equipId
     self.CharacterId = characterId
@@ -38,6 +40,7 @@ function XUiEquipDetailV2P6:OnStart(equipId, isPreview, characterId, forceShowBi
     self.TemplateId = isPreview and self.EquipId or XMVCA.XEquip:GetEquipTemplateId(equipId)
     self.OpenUiType = openUiType
     self.OpenResonanceSkillPos = openResonanceSkillPos
+    self.ShouldOpenHelpOnEnable = openHelpOnEnable == true
     self.IsWeapon = XMVCA.XEquip:IsEquipWeapon(self.TemplateId)
     self.IsAwareness = XMVCA.XEquip:IsEquipAwareness(self.TemplateId)
     if self.IsWeapon then
@@ -54,6 +57,10 @@ end
 
 function XUiEquipDetailV2P6:OnEnable()
     self:UpdateView()
+    if self.ShouldOpenHelpOnEnable then
+        self.ShouldOpenHelpOnEnable = false
+        self:OnBtnHelpClick()
+    end
 end
 
 function XUiEquipDetailV2P6:OnDestroy()
@@ -133,6 +140,10 @@ function XUiEquipDetailV2P6:OnBtnStrengthenMax()
 end
 
 function XUiEquipDetailV2P6:OnBtnHelpClick()
+    if XUiManager.IsHideFunc then
+        return
+    end
+
     local keyStr = self.IsWeapon and "EquipWeapon" or "EquipAwareness"
 
     local indexKey

@@ -34,11 +34,11 @@ function XUiTransfiniteTowerTeach:SkipLifeAnim(animName)
     if self._SkipAnimTimer then
         XScheduleManager.UnSchedule(self._SkipAnimTimer)
     end
-    self._SkipAnimTimer = XScheduleManager.ScheduleOnce(function()
+    self._SkipAnimTimer = XScheduleManager.ScheduleNextFrame(function()
         self._SkipAnimTimer = nil
         self:ForceSkipToEndAnimation(animName)
         self:FinishAnimation(animName)
-    end, 0)
+    end)
 end
 
 function XUiTransfiniteTowerTeach:OnDisable()
@@ -153,14 +153,13 @@ end
 --region 按钮回调
 
 function XUiTransfiniteTowerTeach:OnBtnEnterTeachClick()
-    -- 进选人界面跳过动画
     self._IsSkipEnableAnim = true
-    self:SkipLifeAnim("AnimDisable")
-    XEventManager.DispatchEvent(XEventId.EVENT_TRANSFINITE_TOWER_SKIP_LIFE_ANIM)
     self._Control:EnterTeachStage(self._RoleDataList[self._SelectedIndex])
+    self:ForceSkipToEndAnimation("AnimDisable")
+    self:FinishAnimation("AnimDisable")
+    XEventManager.DispatchEvent(XEventId.EVENT_TRANSFINITE_TOWER_SKIP_LIFE_ANIM)
 end
 
 --endregion
 
 return XUiTransfiniteTowerTeach
-sfiniteTowerTeach

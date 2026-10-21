@@ -268,6 +268,11 @@ end
 
 --聚焦panel
 function XUiGuideNew:FocusOnPanel(panel, eulerAngles, passEvent, sizeDelta, offset, passAll, focusStyle, bubbleIndex, bubbleTextId, bubblePosOffset, imgIconId)
+    -- 无效目标不能用于聚焦；返回后调用方的焦点节点不会自动重试。
+    if XTool.UObjIsNil(panel) then
+        return
+    end
+
     eulerAngles = eulerAngles or CS.UnityEngine.Vector3.zero
     sizeDelta = sizeDelta or CS.UnityEngine.Vector2.zero
     offset = offset or CS.UnityEngine.Vector2.zero

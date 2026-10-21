@@ -30,6 +30,7 @@ function XUiTransfiniteTowerMain:OnAwake()
     self:InitStageGrids()
     self:InitRewardBubble()
     self:RegisterButtonEvent()
+    self:InitTaskRedPoint()
 end
 
 function XUiTransfiniteTowerMain:OnStart()
@@ -52,26 +53,28 @@ function XUiTransfiniteTowerMain:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_TRANSFINITE_TOWER_SKIP_LIFE_ANIM, self.OnSkipLifeAnim, self)
     if self._IsSkipEnableAnim then
         self._IsSkipEnableAnim = false
-        self:SkipLifeAnim("AnimEnable")
+        self:ScheduleSkipAnim("AnimEnable")
     end
     self:Refresh()
+    XRedPointManager.Check(self._TaskRedPointId)
     XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.TransfiniteTower)
 end
 
 function XUiTransfiniteTowerMain:OnSkipLifeAnim()
     self._IsSkipEnableAnim = true
-    self:SkipLifeAnim("AnimDisable")
+    self:ForceSkipToEndAnimation("AnimDisable")
+    self:FinishAnimation("AnimDisable")
 end
 
-function XUiTransfiniteTowerMain:SkipLifeAnim(animName)
+function XUiTransfiniteTowerMain:ScheduleSkipAnim(animName)
     if self._SkipAnimTimer then
         XScheduleManager.UnSchedule(self._SkipAnimTimer)
     end
-    self._SkipAnimTimer = XScheduleManager.ScheduleOnce(function()
+    self._SkipAnimTimer = XScheduleManager.ScheduleNextFrame(function()
         self._SkipAnimTimer = nil
         self:ForceSkipToEndAnimation(animName)
         self:FinishAnimation(animName)
-    end, 0)
+    end)
 end
 
 function XUiTransfiniteTowerMain:OnDisable()
@@ -114,6 +117,15 @@ function XUiTransfiniteTowerMain:InitRewardBubble()
     self._RankRewardGrid = XUiGridCommon.New(self, self.Grid256NewRight)
 end
 
+function XUiTransfiniteTowerMain:InitTaskRedPoint()
+    self._TaskRedPointId = self:AddRedPointEvent(self.BtnTask, self.OnTaskRedPointCheck, self,
+        { XRedPointConditions.Types.CONDITION_TRANSFINITE_TOWER_TASK })
+end
+
+function XUiTransfiniteTowerMain:OnTaskRedPointCheck(count)
+    self.BtnTask:ShowReddot(count >= 0)
+end
+
 function XUiTransfiniteTowerMain:RegisterButtonEvent()
     self.BtnTask:AddEventListener(handler(self, self.OnBtnTaskClick))
     self.BtnRank:AddEventListener(handler(self, self.OnBtnRankClick))
@@ -130,6 +142,11 @@ function XUiTransfiniteTowerMain:Refresh()
     self:RefreshTask()
     self:RefreshRewardBubble()
     self:RefreshTime()
+    self:RefreshRankRedDot()
+end
+
+function XUiTransfiniteTowerMain:RefreshRankRedDot()
+    self.BtnRank:ShowReddot(XMVCA.XTransfiniteTower:IsRankRecordRedDotShow())
 end
 
 function XUiTransfiniteTowerMain:RefreshStageGrids()
@@ -181,7 +198,7 @@ end
 function XUiTransfiniteTowerMain:RefreshTime()
     self:UpdateTime()
     self:StopTimeTimer()
-    self._TimeTimer = XScheduleManager.ScheduleForever(handler(self, self.UpdateTime), XScheduleManager.SECOND)
+    self._TimeTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateTime), XScheduleManager.SECOND)
 end
 
 function XUiTransfiniteTowerMain:UpdateTime()
@@ -195,37 +212,7 @@ function XUiTransfiniteTowerMain:UpdateTime()
 end
 
 function XUiTransfiniteTowerMain:StopTimeTimer()
-    if self._TimeTimer then
-        XScheduleManager.UnSchedule(self._TimeTimer)
-        self._TimeTimer = nil
-    end
-end
-
---endregion
-
---region 按钮回调
-
-function XUiTransfiniteTowerMain:OnBtnTaskClick()
-    self._Control:OpenTaskUi()
-end
-
-function XUiTransfiniteTowerMain:OnBtnRankClick()
-    local isUnlock, unlockDaysDesc = self._Control:IsRankUnlock()
-    if not isUnlock then
-        XUiManager.TipMsg(unlockDaysDesc)
-        return
-    end
-    self._Control:OpenRankUi()
-end
-
-function XUiTransfiniteTowerMain:OnBtnTeachClick()
-    XLuaUiManager.Open("UiTransfiniteTowerTeach")
-end
-
---endregion
-
-return XUiTransfiniteTowerMain
-if self._TimeTimerId then
+    if self._TimeTimerId then
         XScheduleManager.UnSchedule(self._TimeTimerId)
         self._TimeTimerId = nil
     end

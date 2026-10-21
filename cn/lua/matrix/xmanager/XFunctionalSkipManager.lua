@@ -1678,9 +1678,11 @@ XFunctionalSkipManagerCreator = function()
     function XFunctionalSkipManager.SkipToUiWelfare(list)
         local functionType = list.CustomParams[1]
         local welfareId = list.CustomParams[2]
+        local activityId = (list.CustomParams[3] ~= 0) and list.CustomParams[3] or nil
         XLuaUiManager.Open("UiWelfare", nil, nil,{
             FunctionType = functionType,
             WelfareId = welfareId,
+            ActivityId = activityId,
         })
     end
 

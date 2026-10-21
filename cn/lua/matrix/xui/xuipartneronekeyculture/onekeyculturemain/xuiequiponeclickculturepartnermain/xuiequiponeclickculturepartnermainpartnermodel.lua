@@ -19,7 +19,7 @@ function XUiEquipOneClickCulturePartnerMainPartnerModel:InitComponents()
 end
 
 function XUiEquipOneClickCulturePartnerMainPartnerModel:OnStart(...)
-    self._CameraNames = { "CamNearMainPad", "CamNearMainStandard", "CamNearMainWidescreen" }
+    self._CameraNames = { "CamNearMainPad", "CamNearMainStandard", "CamNearMainWidescreen", "CamNearMainSuperWidescreen" }
     self:InitComponents()
     self:_InitScene3DRoot()
     self:_Refresh()
@@ -104,7 +104,7 @@ function XUiEquipOneClickCulturePartnerMainPartnerModel:_AdaptScreenAspectRatio(
     local currentIndex = 1
     for _, targetRatio in pairs(ratios) do
         if realRatio > tonumber(targetRatio) then
-            currentIndex = currentIndex + 1
+            currentIndex = math.min(currentIndex + 1, #cameraNames)
         else
             break
         end

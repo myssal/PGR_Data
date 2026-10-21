@@ -35,14 +35,58 @@ XPunishaarGameControl.ArrangeDomain = ArrangeDomain
 ---@param cardPosList table[{Id,AreaType,StartPos}] 全量位置快照（由策略构建，复用 _CardPosListBuffer）
 ---@param cb function(success: boolean)|nil
 function XPunishaarGameControl:_SubmitCardPosList(cardPosList, cb)
+    -- 客户端终检：cardPosList 同区卡牌不得占格重叠，非法则 tip+cb(false) 不发请求（防策略 bug 把非法状态传服务端）#客户端拦截
+    if not self:_ValidateCardPosListNoOverlap(cardPosList) then
+        XUiManager.TipMsg(XMVCA.XPunishaar:GetClientStringByKey("BagFullWhenInsert"))
+        if cb then
+            cb(false)
+        end
+        return
+    end
     XMVCA.XPunishaar.NetworkAgency:DoSetCardPos(cardPosList, function(success)
         if success then
-            self:DispatchEvent(self.ShopEventId.BuySuccess)
+            self:DispatchEvent(self.EventId.Shop.BuySuccess)
         end
         if cb then
             cb(success)
         end
     end)
+end
+
+--- cardPosList 同区占格重叠校验（客户端终检，_SubmitCardPosList 提交前调）。#客户端拦截
+--- 每张卡占 [StartPos, StartPos+Size-1]，同区任一格被两张卡占即重叠→非法。
+--- Size 从 TotalMasterCards[id].TemplateId 反查（cardPosList entry 无 Size 字段）；Id 不在 TotalMasterCards（异常/未来新卡路径）
+---   时 fail-closed 拒（不静默降级 sz=1 削弱守卫，refuter M1）。
+---@param cardPosList table[{Id,AreaType,StartPos}]
+---@return boolean true=合法可发；false=有重叠/无法校验
+function XPunishaarGameControl:_ValidateCardPosListNoOverlap(cardPosList)
+    if #cardPosList == 0 then
+        return false  -- 空 list 不发（上游 no-op 应拦，防御 refuter L1）
+    end
+    if not self._ValidateSlotDict then
+        self._ValidateSlotDict = XDictionary.New()
+    end
+    local slotDict = self._ValidateSlotDict
+    slotDict:Clear()
+    local stage = self._Model:GetCurrentStage()
+    local cards = stage and stage.TotalMasterCards
+    for i = 1, #cardPosList do
+        local entry = cardPosList[i]
+        local card = cards and cards[entry.Id]
+        if not card then
+            return false  -- Id 不在 TotalMasterCards（异常/未来新卡路径），无法校验 size→fail-closed 拒（refuter M1）
+        end
+        local cfg = self:GetTablePunishaarCard(card.TemplateId, true)
+        local sz = (cfg and cfg.Size) or 1  -- cfg 缺失兜底 1（配置数据异常，至少不漏拦 size1 占格）
+        for slot = entry.StartPos, entry.StartPos + sz - 1 do
+            local key = (entry.AreaType << 16) | slot  -- AreaType 高 16 位 | slot 低 16 位，32 位整数 key 零 alloc 无碰撞（项目 Lua 5.3.5 原生位移运算符）
+            if slotDict:ContainsKey(key) then
+                return false  -- 同区同格被两张卡占→重叠
+            end
+            slotDict:SetValueByKey(key, true)
+        end
+    end
+    return true
 end
 
 --- 全量位置快照构建辅助：遍历 TotalMasterCards 输出 {Id,AreaType,StartPos}，复用 self._CardPosListBuffer
@@ -261,15 +305,40 @@ end
 function XPunishaarGameControl:_FindPlacementForDirectBuy(cardId)
     local cardCfg = self:GetTablePunishaarCard(cardId, true)
     local size = cardCfg and cardCfg.Size or 1
-    local fightPos = self:_FindFreePosInArea(XMVCA.XPunishaar.EnumConst.CardAreaType.FightArea, size)
-    if fightPos then
-        return { AreaType = XMVCA.XPunishaar.EnumConst.CardAreaType.FightArea, StartPos = fightPos, SubCardId = 0, MasterCardId = 0 }
+    -- 每个区域按优先级：连续空位 → repack 腾位 → CrossGap 跨空位腾挪
+    local areas = {
+        XMVCA.XPunishaar.EnumConst.CardAreaType.FightArea,
+        XMVCA.XPunishaar.EnumConst.CardAreaType.Bag,
+    }
+    for _, area in ipairs(areas) do
+        -- 1. 连续空位（不挤压）
+        local freePos = self:_FindFreePosInArea(area, size)
+        if freePos then
+            return { AreaType = area, StartPos = freePos, SubCardId = 0, MasterCardId = 0 }
+        end
+        -- 2. repack 腾位（紧凑推移）
+        local gridLimit = self:_GetAreaGridLimit(area) or 0
+        for testPos = 1, gridLimit do
+            if self:_IsDropPosOccupied(area, testPos, size) then
+                if self:_RepackFeasible(area, testPos, size, nil, false, false) then
+                    local cardPosList = self:_ComputeBuyRepack(area, testPos, size)
+                    if cardPosList then
+                        return { AreaType = area, StartPos = testPos, SubCardId = 0, MasterCardId = 0, CardPosList = cardPosList, IsCardsPosChange = true }
+                    end
+                end
+            end
+        end
+        -- 3. CrossGap 跨空位腾挪（repack 失败 + 有连续空位段容纳 overlap 卡）#跨空位腾挪
+        for testPos = 1, gridLimit do
+            if self:_IsDropPosOccupied(area, testPos, size) then
+                local cardPosList = self:_ComputeBuyRepackCrossGap(area, testPos, size)
+                if cardPosList then
+                    return { AreaType = area, StartPos = testPos, SubCardId = 0, MasterCardId = 0, CardPosList = cardPosList, IsCardsPosChange = true }
+                end
+            end
+        end
     end
-    local bagPos = self:_FindFreePosInArea(XMVCA.XPunishaar.EnumConst.CardAreaType.Bag, size)
-    if bagPos then
-        return { AreaType = XMVCA.XPunishaar.EnumConst.CardAreaType.Bag, StartPos = bagPos, SubCardId = 0, MasterCardId = 0 }
-    end
-    return nil  -- 仅找连续空位，不挤压（奖励入位路径依赖此契约，无位走 _EnterManualPlacement 手动编排；购买腾位走 BuyAutoPlace repack fallback）
+    return nil  -- 两区均满放不下
 end
 
 --- 点击购买腾位：无连续空位时扫描各区域各位置，找首个能挤让出连续位容纳新卡的 dropPos。
@@ -301,6 +370,40 @@ function XPunishaarGameControl:_FindRepackPlacementForBuy(size)
         end
     end
     return nil
+end
+
+--- 购买域是否已满（两区均无法容纳 size 格卡，含腾位 repack）。拖起时算一次供 UI 显 Invalid 态 #PanelDragBuyTips
+--- 直接空位优先（_FindFreePosInArea 两区，空区/有空位即非满）；无空位再看腾位 repack
+--- （_FindRepackPlacementForBuy 空区返回 nil 语义=无需 repack 非放不下，不能单独判满，须空位前置拦截）#空区误判满
+---@param size number 卡占格数
+---@return boolean true=已满（Invalid 态）
+function XPunishaarGameControl:IsBuyAreaFull(size)
+    local CardAreaType = XMVCA.XPunishaar.EnumConst.CardAreaType
+    if self:_FindFreePosInArea(CardAreaType.FightArea, size) then
+        return false
+    end
+    if self:_FindFreePosInArea(CardAreaType.Bag, size) then
+        return false
+    end
+    return self:_FindRepackPlacementForBuy(size) == nil
+end
+
+--- 全场是否存在可装配指定副卡的宿主主卡（遍历 TotalMasterCards，任一 CanMountSubCardOnMaster true）。
+--- 拖起时算一次供 UI 显副卡 Invalid 态（无可装配宿主）#PanelDragBuyTips
+---@param subCardId number 副卡模板 Id
+---@return boolean true=有可装配宿主
+function XPunishaarGameControl:HasMountableMasterForSubCard(subCardId)
+    local stage = self._Model:GetCurrentStage()
+    local cards = stage and stage.TotalMasterCards
+    if not cards then
+        return false
+    end
+    for _, card in pairs(cards) do
+        if self:CanMountSubCardOnMaster(subCardId, card) then
+            return true
+        end
+    end
+    return false
 end
 
 --- 【临时方案】为购买的副卡寻找宿主主卡：取第一个尚未携带副卡的主卡自动装配。
@@ -597,6 +700,15 @@ function XPunishaarGameControl:_RepackInsert(tgtCards, insertIdx, dId, dSize, dO
             return false  -- 同尺寸落卡右推溢出 → 让 Swap 互换（不左一格兜底 #规格1a）
         end
     end
+    -- 异尺寸右推失败：尝试左移重叠卡填左侧空位（D 留 dropPos，与 D 区间重叠的卡紧凑左移填 [frontEnd,dropPos-1]）
+    -- 用户需求：D 落右端紧凑区、被推开的卡左移填左侧空位而非右推越界拒 #左移填空
+    if self:_TryLeftShiftOverlap(tgtCards, insertIdx, dId, dSize, dOrigStartPos, dropPos, srcArea, targetArea, gridLimit, outNewPosMap) then
+        return true
+    end
+    -- 左挤前段+D 左移找最近可行位：dropPos 精确位不可行时，P 从 dropPos 递减找最右可行位（D@P，前段+重叠卡紧凑左挤进 [1,P-1]）#左挤腾位
+    if self:_TryLeftCompact(tgtCards, dId, dSize, dOrigStartPos, dropPos, srcArea, targetArea, gridLimit, outNewPosMap) then
+        return true
+    end
     local leftPos = dropPos - dSize
     if leftPos >= 1 and self:_IsSlotRangeFree(targetArea, leftPos, dSize, { [dId] = true }) then
         outNewPosMap:Clear()
@@ -645,6 +757,135 @@ function XPunishaarGameControl:_TryRightPush(tgtCards, insertIdx, dId, dSize, dO
         prevEnd = newPos + sz
     end
     return prevEnd - 1 <= gridLimit
+end
+
+--- 左移重叠卡填左侧空位尝试：D 留 dropPos，与 D 目标区间[dropPos,dropPos+dSize-1]重叠的卡紧凑左移填进
+--- 前段空位[frontEnd,dropPos-1]（frontEnd=前段末卡之后），D 占 [dropPos,dropPos+dSize-1]。
+--- 右推越界（右侧无空间）但左侧有空位能容纳重叠卡时使用（#左移填空，用户需求：D 落右端、小卡左填空位）。
+--- 仅当 sumOverlap<=gapSize 且 D 不越界时成功；同尺寸仍交 Swap（#规格1a），本方法在 Swap 判定后调用（异尺寸路径）。
+---@param tgtCards XList 区域卡升序（已移除 D）
+---@param insertIdx number D 插入序列位
+---@param dId number D 的 Id
+---@param dSize number D 占格数
+---@param dOrigStartPos number D 原 StartPos
+---@param dropPos number 落点格
+---@param srcArea number D 源区
+---@param targetArea number 目标区
+---@param gridLimit number 目标区容量上限
+---@param outNewPosMap XDictionary 输出（内部 Clear 后写）
+---@return boolean 左移是否成功
+function XPunishaarGameControl:_TryLeftShiftOverlap(tgtCards, insertIdx, dId, dSize, dOrigStartPos, dropPos, srcArea, targetArea, gridLimit, outNewPosMap)
+    outNewPosMap:Clear()
+    local dMax = dropPos + dSize - 1
+    if dMax > gridLimit then
+        return false  -- D 越界（落锁定槽/超容量）
+    end
+    local sizeCache = self._SizeCacheDict
+    -- frontEnd=前段末卡之后（insertIdx>1 取 prevCard.EndPos+1，否则 1）
+    local frontEnd = 1
+    if insertIdx > 1 then
+        local prevCard = tgtCards:GetValueByIndex(insertIdx - 1)
+        frontEnd = prevCard.StartPos + (sizeCache:GetValueByKey(prevCard.Id) or 1)
+    end
+    local gapSize = dropPos - frontEnd
+    if gapSize <= 0 then
+        return false  -- 无左侧空位（前段紧贴 dropPos）
+    end
+    -- 收集与 D 区间[dropPos,dMax]重叠的卡：从 insertIdx 起，StartPos>dMax 即后续卡均不重叠 break
+    -- 重叠判据：card[StartPos,StartPos+sz-1] 与 [dropPos,dMax] 相交（StartPos<=dMax 且 EndPos>=dropPos）
+    -- insertIdx 之前的卡 EndPos<dropPos（insertIdx 定义保证）故不重叠，从 insertIdx 起遍历
+    local N = tgtCards:GetCount()
+    local sumOverlap = 0
+    local overlapCards = {}
+    for i = insertIdx, N do
+        local card = tgtCards:GetValueByIndex(i)
+        if card.StartPos > dMax then
+            break  -- 后续卡 StartPos>dMax，均在 D 之后不重叠
+        end
+        local sz = sizeCache:GetValueByKey(card.Id) or 1
+        if card.StartPos + sz - 1 >= dropPos then
+            overlapCards[#overlapCards + 1] = card
+            sumOverlap = sumOverlap + sz
+        end
+    end
+    if sumOverlap == 0 then
+        return false  -- 无重叠卡（右推应已成功，防御）
+    end
+    if sumOverlap > gapSize then
+        return false  -- 左侧空位装不下重叠卡
+    end
+    -- 紧凑左移填进 [frontEnd, frontEnd+sumOverlap-1]（顺序保持，frontEnd=前段末卡之后不与前段重叠）
+    -- 新位==原位不入 map（保留间隙）；左移后新位<原位必入 map
+    local pos = frontEnd
+    for i = 1, #overlapCards do
+        local card = overlapCards[i]
+        local sz = sizeCache:GetValueByKey(card.Id) or 1
+        if pos ~= card.StartPos then
+            outNewPosMap:SetValueByKey(card.Id, pos)
+        end
+        pos = pos + sz
+    end
+    -- D 留 dropPos（同区回原位 no-op 不入 map）
+    if not (srcArea == targetArea and dropPos == dOrigStartPos) then
+        outNewPosMap:SetValueByKey(dId, dropPos)
+    end
+    return true
+end
+
+--- 左挤前段+D 左移找最近可行位：dropPos 精确位不可行（右推越界 + 左移填空无紧邻空位）时，
+--- P 从 dropPos 递减到 1 找最右可行位——D@P，所有 StartPos<=dMax 的卡（前段+与 D 重叠的）紧凑左挤进 [1,P-1]，
+--- 后段（StartPos>dMax）不动。用户需求：左挤腾位置而非报"区域满" #左挤腾位
+--- 可行条件：sumLeft(StartPos<=dMax 的卡尺寸和) <= P-1（左段容下）且 D@dMax<=gridLimit。
+---@param tgtCards XList 区域卡升序（已移除 D）
+---@param dId number D 的 Id
+---@param dSize number D 占格数
+---@param dOrigStartPos number D 原 StartPos
+---@param dropPos number 落点格（D 期望位，P 从此递减）
+---@param srcArea number D 源区
+---@param targetArea number 目标区
+---@param gridLimit number 目标区容量上限
+---@param outNewPosMap XDictionary 输出（内部 Clear 后写）
+---@return boolean 左挤是否成功
+function XPunishaarGameControl:_TryLeftCompact(tgtCards, dId, dSize, dOrigStartPos, dropPos, srcArea, targetArea, gridLimit, outNewPosMap)
+    local sizeCache = self._SizeCacheDict
+    local N = tgtCards:GetCount()
+    -- P 从 dropPos 递减到 1，找最右可行位（最接近 dropPos）
+    for P = dropPos, 1, -1 do
+        local dMax = P + dSize - 1
+        if dMax <= gridLimit then
+            -- 收集 leftCards：StartPos<=dMax 的卡（前段+重叠，升序），后段(StartPos>dMax)不动
+            local sumLeft = 0
+            local leftCount = 0
+            for i = 1, N do
+                local card = tgtCards:GetValueByIndex(i)
+                if card.StartPos > dMax then
+                    break  -- 升序，后续均>dMax
+                end
+                sumLeft = sumLeft + (sizeCache:GetValueByKey(card.Id) or 1)
+                leftCount = leftCount + 1
+            end
+            -- 可行：左段 [1,P-1] 容下 leftCards（紧凑），D@P，后段不动（StartPos>dMax≥P，与 D[P,dMax] 无重叠）
+            if sumLeft <= P - 1 then
+                outNewPosMap:Clear()
+                -- 紧凑 leftCards 到 [1, sumLeft]（顺序保持，新位==原位不入 map）
+                local pos = 1
+                for i = 1, leftCount do
+                    local card = tgtCards:GetValueByIndex(i)
+                    local sz = sizeCache:GetValueByKey(card.Id) or 1
+                    if pos ~= card.StartPos then
+                        outNewPosMap:SetValueByKey(card.Id, pos)
+                    end
+                    pos = pos + sz
+                end
+                -- D@P（同区回原位 no-op 不入 map）
+                if not (srcArea == targetArea and P == dOrigStartPos) then
+                    outNewPosMap:SetValueByKey(dId, P)
+                end
+                return true
+            end
+        end
+    end
+    return false
 end
 
 --region ----------卡牌升级链预判（Buy 域策略用）----------
@@ -791,7 +1032,120 @@ function XPunishaarGameControl:_RepackFeasible(targetArea, dropPos, dSize, exclu
     return true
 end
 
---- Swap 可行性纯读（#72 Q4 简化：跨 Size 互换不支持，D.Size==B.Size 硬条件）。
+--- 购买跨空位腾挪：BuyRepack 紧凑右推失败后的 fallback——D 与多张已有卡重合 + 右推溢出 + 左侧无连续空间时，
+--- 收集 D 区间外所有连续空段（分散亦可），对 overlap 卡按 size 降序 first-fit 分配到各空段 → 腾 D 区间给新卡 #跨空位腾挪
+--- 取代旧"找单连续段≥sumOverlap"：分散空位（总容量够但无单段≥sumOverlap）旧逻辑误判满，现支持跨段拆分安置。
+---@param targetArea number CardAreaType
+---@param dropPos number D 落点格（1-based）
+---@param dSize number D 占格数
+---@return table|nil cardPosList（全量快照，nil=D 区间外空段不足以容纳全部 overlap 卡）
+function XPunishaarGameControl:_ComputeBuyRepackCrossGap(targetArea, dropPos, dSize)
+    local ctx = self:_PrepareRepackCtx(targetArea, dropPos, nil, false)
+    if not ctx then
+        return nil
+    end
+    local N = ctx.tgtCards:GetCount()
+    if N == 0 then
+        return nil  -- 无卡无冲突，不该走此策略
+    end
+    -- D 目标区间 [dropPos, dropPos+dSize-1]
+    local dEnd = dropPos + dSize - 1
+    if dEnd > ctx.gridLimit then
+        return nil  -- D 自身越界（dropPos+dSize-1>gridLimit），腾出空间再多也不放 #核实
+    end
+    -- 找 overlap 卡（与 D 区间重合）+ excludeIds（overlap 卡原位排除，供他 overlap 卡落入判定）
+    local overlapCards = {}
+    local excludeIds = {}
+    for i = 1, N do
+        local card = ctx.tgtCards:GetValueByIndex(i)
+        local sz = ctx.sizeCache:GetValueByKey(card.Id) or 1
+        local cardEnd = card.StartPos + sz - 1
+        if card.StartPos <= dEnd and cardEnd >= dropPos then
+            overlapCards[#overlapCards + 1] = { card = card, size = sz }
+            excludeIds[card.Id] = true
+        end
+    end
+    if #overlapCards == 0 then
+        return nil  -- 无重叠，不该走此策略
+    end
+    -- 收集 D 区间外所有连续空段（右侧 [dEnd+1, gridLimit] + 左侧 [1, dropPos-1]）；
+    -- _IsSlotRangeFree(pos, 1, excludeIds) 逐格判，overlap 卡原位在 D 区间内不在扫描范围故自然排除
+    local freeSegments = {}  -- { { start = number, len = number } }
+    local segStart, segLen = nil, 0
+    local function FlushSegment()
+        if segStart then
+            freeSegments[#freeSegments + 1] = { start = segStart, len = segLen }
+            segStart, segLen = nil, 0
+        end
+    end
+    for pos = dEnd + 1, ctx.gridLimit do
+        if self:_IsSlotRangeFree(targetArea, pos, 1, excludeIds) then
+            if not segStart then segStart = pos end
+            segLen = segLen + 1
+        else
+            FlushSegment()
+        end
+    end
+    FlushSegment()
+    for pos = 1, dropPos - 1 do
+        if self:_IsSlotRangeFree(targetArea, pos, 1, excludeIds) then
+            if not segStart then segStart = pos end
+            segLen = segLen + 1
+        else
+            FlushSegment()
+        end
+    end
+    FlushSegment()
+    if #freeSegments == 0 then
+        return nil  -- D 区间外无空段，真满
+    end
+    -- overlap 卡按 size 降序（同 size 按 StartPos 升序保稳定）：大卡先占大段，避免小卡占碎段致大卡无处放
+    table.sort(overlapCards, function(a, b)
+        if a.size ~= b.size then
+            return a.size > b.size
+        end
+        return a.card.StartPos < b.card.StartPos
+    end)
+    -- first-fit：每张 overlap 卡找首个剩余连续 ≥ size 的段，落入 start+segUsed，segUsed+=size
+    local segUsed = {}
+    for i = 1, #freeSegments do segUsed[i] = 0 end
+    for _, entry in ipairs(overlapCards) do
+        local placed = false
+        for i = 1, #freeSegments do
+            if freeSegments[i].len - segUsed[i] >= entry.size then
+                ctx.newPosMap:SetValueByKey(entry.card.Id, freeSegments[i].start + segUsed[i])
+                segUsed[i] = segUsed[i] + entry.size
+                placed = true
+                break
+            end
+        end
+        if not placed then
+            return nil  -- 该 overlap 卡无连续空段可容（真满 / 碎片不足以放大卡）
+        end
+    end
+    -- D 落 dropPos（哨兵 0）
+    ctx.newPosMap:SetValueByKey(0, dropPos)
+    -- 构造全量 cardPosList（所在分区所有已有卡，含未推开卡原位）
+    local stage = self._Model:GetCurrentStage()
+    local cardPosList = {}
+    for _, card in pairs(stage.TotalMasterCards) do
+        if card.AreaType == targetArea then
+            local newPos
+            if ctx.newPosMap:ContainsKey(card.Id) then
+                newPos = ctx.newPosMap:GetValueByKey(card.Id)
+            else
+                newPos = card.StartPos
+            end
+            table.insert(cardPosList, { Id = card.Id, AreaType = targetArea, StartPos = newPos })
+        end
+    end
+    if #cardPosList == 0 then
+        return nil
+    end
+    return cardPosList
+end
+
+
 --- §5 就近断言：B = GetMasterCardByAreaPos(targetArea, dropPos) 取的是 dropPos 落点格所占据的卡，
 ---   即"距落点最近"的卡（dropPos 必落 B 占格内才进 Swap；dropPos 落空格时 Swap canExecute 的
 ---   _IsDropPosOccupied 判 false 不进 Swap）。故 B 即最近卡，隐式就近正确，不扩展空格扫最近卡。
@@ -861,6 +1215,89 @@ function XPunishaarGameControl:_CompactedPushSolve(targetArea, dropPos, D, dSize
         return nil
     end
     return { [D.Id] = dropPos, [B.Id] = bNewPos }
+end
+
+--- 规格2·异尺寸组合交换求解（仅跨区、仅 repack 满区无解时由 SwapCombo 策略触发，#规格2）。
+--- D(dSize) 跨区落到 targetArea dropPos，目标区满(repack 无解) → 找目标区与 D 区间重叠的卡 M(必移走)搬到 D 源区原位、D 落 dropPos。
+--- G=M（只搬重叠卡，不补 N 填满 D 原位——D 区间空槽不需移卡，D 原位余空格合法 #SwapCombo不补N）。
+--- G 回填 srcArea：按 StartPos 升序紧凑排入 D 原位从 dOrig 起（sumM 格，余 dSize-sumM 格空）。
+---@param ctx table ArrangeCtx
+---@param D table 拖拽主卡
+---@param dSize number D 占格数
+---@return table|nil newPosMap {[id]={AreaType,StartPos}}；nil=不可组合交换
+function XPunishaarGameControl:_SwapComboSolve(ctx, D, dSize)
+    local srcArea = D.AreaType
+    local targetArea = ctx.targetArea
+    if srcArea == targetArea then
+        return nil  -- 仅跨区（同区异尺寸由 repack/Insert 处理）
+    end
+    local dropPos = ctx.dropPos
+    local targetGridLimit = self:_GetAreaGridLimit(targetArea)
+    -- D 落点合法（不越界/不落锁格）
+    if dropPos < 1 or dropPos + dSize - 1 > targetGridLimit then
+        return nil
+    end
+    local stage = self._Model:GetCurrentStage()
+    if not stage or not stage.TotalMasterCards then
+        return nil
+    end
+    local dMin = dropPos
+    local dMax = dropPos + dSize - 1
+    -- 收集目标区卡：M(与 D 区间相交，必移走) + candidates(非 M，按距 D 区间距离)
+    local M = {}
+    local candidates = {}
+    for _, card in pairs(stage.TotalMasterCards) do
+        if card.AreaType == targetArea and card.Id ~= D.Id then
+            local cfg = self:GetTablePunishaarCard(card.TemplateId, true)
+            local size = (cfg and cfg.Size) or 1
+            local cEnd = card.StartPos + size - 1
+            -- 相交：D 区间[dMin,dMax] 与卡[StartPos,cEnd] 有重叠
+            if math.max(card.StartPos, dMin) <= math.min(cEnd, dMax) then
+                M[#M + 1] = card
+            else
+                -- 距 D 区间距离（左 gap=dMin-cEnd / 右 gap=StartPos-dMax）
+                local dist = cEnd < dMin and (dMin - cEnd) or (card.StartPos - dMax)
+                candidates[#candidates + 1] = { card = card, size = size, dist = dist }
+            end
+        end
+    end
+    -- 相交卡尺寸和 > dSize → 必移卡已超 D 占格，无解
+    local sumM = 0
+    for i = 1, #M do
+        local cfg = self:GetTablePunishaarCard(M[i].TemplateId, true)
+        sumM = sumM + ((cfg and cfg.Size) or 1)
+    end
+    if sumM > dSize then
+        return nil
+    end
+    -- G = M（只搬与 D 重叠的卡，不补 N 填满 D 原位——D 区间空槽不需移卡，D 原位余空格合法 #SwapCombo不补N）
+    local G = {}
+    for i = 1, #M do G[#G + 1] = M[i] end
+    table.sort(G, function(a, b) return a.StartPos < b.StartPos end)
+    local dOrig = D.StartPos
+    local srcGridLimit = self:_GetAreaGridLimit(srcArea)
+    -- D 原位本解锁（D 原占），防御
+    if dOrig + dSize - 1 > srcGridLimit then
+        return nil
+    end
+    -- 排除 D + G 各卡 Id，校验 G 紧凑排入不与 srcArea 其他卡重叠（D 原位应空，防御）
+    local exclude = { [D.Id] = true }
+    local newPosMap = {}
+    local pos = dOrig
+    for i = 1, #G do
+        local card = G[i]
+        local cfg = self:GetTablePunishaarCard(card.TemplateId, true)
+        local size = (cfg and cfg.Size) or 1
+        if not self:_IsSlotRangeFree(srcArea, pos, size, exclude) then
+            return nil
+        end
+        newPosMap[card.Id] = { AreaType = srcArea, StartPos = pos }
+        exclude[card.Id] = true
+        pos = pos + size
+    end
+    -- D 落 targetArea dropPos
+    newPosMap[D.Id] = { AreaType = targetArea, StartPos = dropPos }
+    return newPosMap
 end
 
 --- Buy 域 ctx 构造辅助（gold 预判 + 升级链预判 + ctx 标量字段，#72 ArrangeCtx 构造辅助）。
@@ -1226,16 +1663,54 @@ XPunishaarGameControl._ArrangeStrategies = {
         end,
     },
     {
+        name = "BuyRepackCrossGap", domain = ArrangeDomain.Buy, priority = 22,
+        -- BuyRepack 右推失败后的跨空位腾挪：D 与多张已有卡重合 + 右推溢出 + 左侧无空间时，
+        -- 扫描目标区连续空位段（非紧凑贴 D，跨空位跳）容纳 overlap 卡 → 腾 D 区间给新卡 #跨空位腾挪
+        canExecute = function(ctx, owner)
+            if ctx.isSubCard or not ctx.hasDropPos then
+                return false
+            end
+            local item = ctx.goodsItem
+            local dCfg = owner:GetTablePunishaarCard(item.CardId, true)
+            local dSize = (dCfg and dCfg.Size) or 1
+            local gridLimit = owner:_GetAreaGridLimit(ctx.targetArea)
+            if ctx.dropPos > gridLimit or ctx.dropPos + dSize - 1 > gridLimit then
+                return false
+            end
+            if not owner:_IsDropPosOccupied(ctx.targetArea, ctx.dropPos, dSize) then
+                return false
+            end
+            -- BuyRepack 先命中 break，此处只在 BuyRepack 不可行时轮到
+            ctx._crossGapCardPosList = owner:_ComputeBuyRepackCrossGap(ctx.targetArea, ctx.dropPos, dSize)
+            return ctx._crossGapCardPosList ~= nil
+        end,
+        execute = function(owner, ctx, cb)
+            local cardPosList = ctx._crossGapCardPosList
+            if not cardPosList then
+                XUiManager.TipMsg(XMVCA.XPunishaar:GetClientStringByKey("PunishaarShopCardFull"))
+                if cb then cb(false) end
+                return
+            end
+            local detail = {
+                AreaType = ctx.targetArea,
+                StartPos = ctx.dropPos,
+                SubCardId = 0,
+                MasterCardId = 0,
+                CardPosList = cardPosList,
+                IsCardsPosChange = true,
+            }
+            owner:_DoBuyGoodsFinal(ctx.goodsIndex, detail, cb)
+        end,
+    },
+    {
         name = "BuyAutoPlace", domain = ArrangeDomain.Buy, priority = 30,
         canExecute = function(ctx, owner)
             if ctx.isSubCard or ctx.hasDropPos then
                 return false
             end
-            -- 先找连续空位（_FindPlacementForDirectBuy，奖励路径亦用此法不挤压）；无空位再 repack 挤让腾位 #腾位
-            local cardId = ctx.goodsItem.CardId
-            local dCfg = owner:GetTablePunishaarCard(cardId, true)
-            local size = (dCfg and dCfg.Size) or 1
-            ctx._autoPlaceDetail = owner:_FindPlacementForDirectBuy(cardId) or owner:_FindRepackPlacementForBuy(size)
+            -- _FindPlacementForDirectBuy 已含每区三步（空位→repack→CrossGap），战区优先 #战区优先腾位
+            -- cardId 取 ctx.goodsItem.CardId（对齐 BuyExact/BuyRepack），原裸 cardId 是 nil 全局→size 恒 1→多格卡腾位永不触发 #腾位cardId修复
+            ctx._autoPlaceDetail = owner:_FindPlacementForDirectBuy(ctx.goodsItem.CardId)
             return ctx._autoPlaceDetail ~= nil
         end,
         execute = function(owner, ctx, cb)
@@ -1253,8 +1728,53 @@ XPunishaarGameControl._ArrangeStrategies = {
     },
     -- ━━ 编排域（Arrange）：含互换能力 ━━
     {
+        name = "Swap", domain = ArrangeDomain.Arrange, priority = 11,
+        -- Swap 优先：同尺寸 dropPos 落 B → 直接互换（D↔B 换位），不再走 CompactedPush 推挤 #策略顺序调整
+        -- canExecute 独立判 _IsDropPosOccupied + _SwapFeasible，不依赖 Insert 先判 false
+        canExecute = function(ctx, owner)
+            if not ctx.hasDropPos then
+                return false
+            end
+            local stage = owner._Model:GetCurrentStage()
+            local D = stage and stage.TotalMasterCards and stage.TotalMasterCards[ctx.dragCardId]
+            if not D then
+                return false
+            end
+            local dCfg = owner:GetTablePunishaarCard(D.TemplateId, true)
+            local dSize = (dCfg and dCfg.Size) or 1
+            if not owner:_IsDropPosOccupied(ctx.targetArea, ctx.dropPos, dSize) then
+                return false
+            end
+            return owner:_SwapFeasible(ctx, D, dSize)
+        end,
+        execute = function(owner, ctx, cb)
+            local stage = owner._Model:GetCurrentStage()
+            local D = stage.TotalMasterCards[ctx.dragCardId]
+            local dCfg = owner:GetTablePunishaarCard(D.TemplateId, true)
+            local dSize = (dCfg and dCfg.Size) or 1
+            local srcArea = D.AreaType
+            local dOrigStartPos = D.StartPos
+            local B = owner:GetMasterCardByAreaPos(ctx.targetArea, ctx.dropPos)
+            -- canExecute 已判 _SwapFeasible（含 D.Size==B.Size），B 必非 nil
+            -- cardPosList：D→B 整槽(area=targetArea,B.StartPos)，B→D 原位(area=srcArea,dOrigStartPos)，其余原位
+            -- D 取 B.StartPos 而非 ctx.dropPos：dropPos 落多格 B 中段时 D@dropPos 会偏移溢出 B 槽位撞相邻卡
+            -- （同尺寸 bSize==dSize 保证 D 正好填满 B 整槽 [B.StartPos,B.EndPos]，B 移走后槽位空出无重叠 #Swap整槽修复）
+            -- 复用 _CardPosListBuffer（#72 6.3-3）
+            local cardPosList = owner:_BuildCardPosList(function(card, entry)
+                if card.Id == D.Id then
+                    entry.AreaType = ctx.targetArea
+                    entry.StartPos = B.StartPos
+                elseif card.Id == B.Id then
+                    entry.AreaType = srcArea  -- 跨区时 B 搬到 D 源区；同区时 srcArea==targetArea 不变
+                    entry.StartPos = dOrigStartPos
+                end
+            end)
+            owner:_SubmitCardPosList(cardPosList, cb)
+        end,
+    },
+    {
         name = "CompactedPush", domain = ArrangeDomain.Arrange, priority = 9.5,
-        -- 数组位在 Insert 前（选择器 _SelectArrangeStrategy 按数组顺序遍历，不读 priority，priority 仅作文档定位）
+        -- CompactedPush 退化为 Swap 不可行时的 fallback（Swap 先命中同尺寸 dropPos 落 B → 互换，推挤不再触发）#策略顺序调整
         -- R3 同尺寸紧凑推移：dropPos 落同尺寸 B → B 推 1 格紧贴 D 一侧；跨尺寸/无B/B移后非法返 nil fall-through Insert repack
         canExecute = function(ctx, owner)
             if not ctx.hasDropPos then
@@ -1324,9 +1844,9 @@ XPunishaarGameControl._ArrangeStrategies = {
         end,
     },
     {
-        name = "Swap", domain = ArrangeDomain.Arrange, priority = 11,
-        -- 注：Swap canExecute 不重判 _RepackFeasible——Insert(priority 10) 在前已判 false 才轮到本策略
-        -- （选择器 ipairs 数组顺序+break，不读 priority，#72 6.3-4/6.3-5 避免重复调算法层）
+        name = "SwapCombo", domain = ArrangeDomain.Arrange, priority = 12,
+        -- 规格2·异尺寸组合交换：仅当 CompactedPush/Insert(repack)/Swap(同尺寸) 均 false 才轮到本
+        -- （选择器数组顺序+break，#72 6.3-4），即 repack 满区无解 + 跨区异尺寸才触发。#规格2
         canExecute = function(ctx, owner)
             if not ctx.hasDropPos then
                 return false
@@ -1336,31 +1856,33 @@ XPunishaarGameControl._ArrangeStrategies = {
             if not D then
                 return false
             end
+            if D.AreaType == ctx.targetArea then
+                return false  -- 仅跨区
+            end
             local dCfg = owner:GetTablePunishaarCard(D.TemplateId, true)
             local dSize = (dCfg and dCfg.Size) or 1
-            if not owner:_IsDropPosOccupied(ctx.targetArea, ctx.dropPos, dSize) then
+            local newPosMap = owner:_SwapComboSolve(ctx, D, dSize)
+            if not newPosMap then
                 return false
             end
-            return owner:_SwapFeasible(ctx, D, dSize)
+            ctx._swapComboDetail = newPosMap  -- 缓存避 execute 双重求 subsetSum（对齐 #137 BuyAutoPlace 范式）
+            return true
         end,
         execute = function(owner, ctx, cb)
-            local stage = owner._Model:GetCurrentStage()
-            local D = stage.TotalMasterCards[ctx.dragCardId]
-            local dCfg = owner:GetTablePunishaarCard(D.TemplateId, true)
-            local dSize = (dCfg and dCfg.Size) or 1
-            local srcArea = D.AreaType
-            local dOrigStartPos = D.StartPos
-            local B = owner:GetMasterCardByAreaPos(ctx.targetArea, ctx.dropPos)
-            -- canExecute 已判 _SwapFeasible（含 D.Size==B.Size），B 必非 nil
-            -- cardPosList：D→B 位(area=targetArea,dropPos)，B→D 原位(area=srcArea,dOrigStartPos)，其余原位
-            -- 复用 _CardPosListBuffer（#72 6.3-3）
+            local newPosMap = ctx._swapComboDetail
+            ctx._swapComboDetail = nil  -- one-shot 清理防 ctx 残留
+            if not newPosMap then
+                -- canExecute 已判非 nil，理论不可达，防御
+                XUiManager.TipMsg(XMVCA.XPunishaar:GetClientStringByKey("BagFullWhenInsert"))
+                if cb then cb(false) end
+                return
+            end
+            -- cardPosList：newPosMap 命中的卡改 AreaType/StartPos（G 各卡→srcArea 紧凑位、D→targetArea dropPos），其余原位
             local cardPosList = owner:_BuildCardPosList(function(card, entry)
-                if card.Id == D.Id then
-                    entry.AreaType = ctx.targetArea
-                    entry.StartPos = ctx.dropPos
-                elseif card.Id == B.Id then
-                    entry.AreaType = srcArea  -- 跨区时 B 搬到 D 源区；同区时 srcArea==targetArea 不变
-                    entry.StartPos = dOrigStartPos
+                local np = newPosMap[card.Id]
+                if np then
+                    entry.AreaType = np.AreaType
+                    entry.StartPos = np.StartPos
                 end
             end)
             owner:_SubmitCardPosList(cardPosList, cb)

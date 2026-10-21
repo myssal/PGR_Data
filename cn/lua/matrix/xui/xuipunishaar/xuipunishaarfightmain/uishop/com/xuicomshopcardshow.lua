@@ -95,9 +95,9 @@ function XUiComShopCardShow:_RefreshDisableMaskSprite(cardCfg)
     if not self.RImgDisable then
         return
     end
-    local gc = self._Control and self._Control.GameControl
-    local sprite = (gc and cardCfg)
-            and CardBgSettingsReader.GetMaskSprite(gc, cardCfg.Type, cardCfg.Size)
+    local gameControl = self._Control and self._Control.GameControl
+    local sprite = (gameControl and cardCfg)
+            and CardBgSettingsReader.GetMaskSprite(gameControl, cardCfg.Type, cardCfg.Size)
             or nil
     if self._LastDisableMaskSprite ~= sprite then
         self._LastDisableMaskSprite = sprite
@@ -115,14 +115,32 @@ function XUiComShopCardShow:_RefreshLevelUpEffectMaskSprite(cardCfg)
     if not self.TagLevelUpEffectMask then
         return
     end
-    local gc = self._Control and self._Control.GameControl
-    local sprite = (gc and cardCfg)
-            and CardBgSettingsReader.GetMaskSprite(gc, cardCfg.Type, cardCfg.Size)
+    local gameControl = self._Control and self._Control.GameControl
+    local sprite = (gameControl and cardCfg)
+            and CardBgSettingsReader.GetMaskSprite(gameControl, cardCfg.Type, cardCfg.Size)
             or nil
     if self._LastLevelUpEffectMaskSprite ~= sprite then
         self._LastLevelUpEffectMaskSprite = sprite
         if sprite and sprite ~= "" then
             self.TagLevelUpEffectMask:SetRawImage(sprite)
+        end
+    end
+end
+
+--- 刷新升级瞬间遮罩图：LevelupGroup.PnlMask 按卡牌 Type/Size 取 MaskBgs 图（复用配置，显隐随 Levelup 联动）。#升级瞬间遮罩
+---@param cardCfg XTablePunishaarCard|nil
+function XUiComShopCardShow:_RefreshLevelupSweepMaskSprite(cardCfg)
+    if not self._LevelupGroup or not self._LevelupGroup.PnlMask then
+        return
+    end
+    local gameControl = self._Control and self._Control.GameControl
+    local sprite = (gameControl and cardCfg)
+            and CardBgSettingsReader.GetMaskSprite(gameControl, cardCfg.Type, cardCfg.Size)
+            or nil
+    if self._LastLevelupSweepMaskSprite ~= sprite then
+        self._LastLevelupSweepMaskSprite = sprite
+        if sprite and sprite ~= "" then
+            self._LevelupGroup.PnlMask:SetRawImage(sprite)
         end
     end
 end
@@ -189,6 +207,17 @@ function XUiComShopCardShow:RefreshAsEquipped(card)
     end
 end
 
+function XUiComShopCardShow:RefreshOutlineShow(isShow, rimg)
+    if self.RImgOutlineGroup then
+        if isShow and not string.IsNilOrEmpty(rimg) and self.RImgOutline then
+            self.RImgOutlineGroup.gameObject:SetActiveEx(true)
+            self.RImgOutline:SetRawImage(rimg)
+        else
+            self.RImgOutlineGroup.gameObject:SetActiveEx(false)
+        end
+    end
+end
+
 --- 脏则按缓存的模式分派到对应私有刷新，再清脏。分派读缓存，但真正的 _DoRefreshAsXxx 无数据感知。
 function XUiComShopCardShow:_FlushIfDirty()
     if not self._Dirty then
@@ -230,9 +259,9 @@ function XUiComShopCardShow:_DoRefreshAsEquipped(card)
     -- atk/cd 投影在 grid 层 XUiPunishaarCardValueTag（#79），球数经 _BgApplier 在本组件显，故此处自取投影球值
     local ballConsume = levelCfg and levelCfg.BallConsume or 0
     local ballOutPut = levelCfg and levelCfg.BallOutPut or 0
-    local gc = self._Control.GameControl
-    if gc then
-        local proj = gc:GetCardRealtimeAtkCd(card.TemplateId, card.Level, card)
+    local gameControl = self._Control.GameControl
+    if gameControl then
+        local proj = gameControl:GetCardRealtimeAtkCd(card.TemplateId, card.Level, card)
         -- GetCardRealtimeAtkCd 内部对非 FightArea/无 stage 走 _ProjectionFallback（球 base=levelCfg，delta=0），此处直接取
         ballConsume = (proj.ballConsumeBase or ballConsume) + (proj.ballConsumeDelta or 0)
         ballOutPut = (proj.ballOutPutBase or ballOutPut) + (proj.ballOutPutDelta or 0)
@@ -284,6 +313,8 @@ function XUiComShopCardShow:_RefreshBase(cardCfg, levelCfg, level, frozen, ballC
     self:_RefreshDisableMaskSprite(cardCfg)
     -- 升级特效遮罩图：与禁用态遮罩共用 MaskBgs 配置字段（按 cardCfg.Type+Size 取图，显隐归 prefab/CanLevelup(LevelupGroup) 联动）#升级特效遮罩
     self:_RefreshLevelUpEffectMaskSprite(cardCfg)
+    -- 升级瞬间遮罩图：LevelupGroup.PnlMask 按卡牌 Type/Size 取 MaskBgs 图（显隐随 Levelup 联动）#升级瞬间遮罩
+    self:_RefreshLevelupSweepMaskSprite(cardCfg)
 
     if self.TxtLevel then
         self.TxtLevel.text = tostring(level)

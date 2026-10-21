@@ -38,10 +38,12 @@ end
 function XUiTransfiniteTowerRank:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_TRANSFINITE_TOWER_RANK_UPDATE, self.OnRankUpdate, self)
     self:StopRemainTimeTimer()
+    self:StopDelayRenderTimer()
 end
 
 function XUiTransfiniteTowerRank:OnDestroy()
     self:StopRemainTimeTimer()
+    self:StopDelayRenderTimer()
 end
 
 --region 初始化
@@ -87,11 +89,28 @@ end
 
 --region 刷新
 
+---服务端刷新回包：格子入场动效播放中时延后渲染，避免列表重建把动效打断在半截
 function XUiTransfiniteTowerRank:OnRankUpdate()
     if XTool.UObjIsNil(self.GameObject) then
         return
     end
-    self:RenderRankCache()
+    local remainTime = self._PanelRank:GetGridEnableAnimRemainTime()
+    if remainTime <= 0 then
+        self:RenderRankCache()
+        return
+    end
+    self:StopDelayRenderTimer()
+    self._DelayRenderTimerId = XScheduleManager.ScheduleOnce(function()
+        self._DelayRenderTimerId = nil
+        self:RenderRankCache()
+    end, remainTime * XScheduleManager.SECOND)
+end
+
+function XUiTransfiniteTowerRank:StopDelayRenderTimer()
+    if self._DelayRenderTimerId then
+        XScheduleManager.UnSchedule(self._DelayRenderTimerId)
+        self._DelayRenderTimerId = nil
+    end
 end
 
 function XUiTransfiniteTowerRank:RenderRankCache()
@@ -115,13 +134,13 @@ end
 
 function XUiTransfiniteTowerRank:StartRemainTimeTimer()
     self:StopRemainTimeTimer()
-    self._RemainTimeTimer = XScheduleManager.ScheduleForever(handler(self, self.UpdateRemainTime), XScheduleManager.SECOND)
+    self._RemainTimeTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateRemainTime), XScheduleManager.SECOND)
 end
 
 function XUiTransfiniteTowerRank:StopRemainTimeTimer()
-    if self._RemainTimeTimer then
-        XScheduleManager.UnSchedule(self._RemainTimeTimer)
-        self._RemainTimeTimer = nil
+    if self._RemainTimeTimerId then
+        XScheduleManager.UnSchedule(self._RemainTimeTimerId)
+        self._RemainTimeTimerId = nil
     end
 end
 

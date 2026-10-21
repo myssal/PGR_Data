@@ -197,13 +197,19 @@ XPurchaseManagerCreator = function()
     -- public int TimeToInvalid;
     -- 采购列表请求
     -- public List<XPurchaseClientInfo> PurchaseInfoList;
-    function XPurchaseManager.GetPurchaseListRequest(uiTypeList, cb)
+    function XPurchaseManager.GetPurchaseListRequest(uiTypeList, cb, failCb)
         if XTool.IsTableEmpty(uiTypeList) then
+            if failCb then
+                failCb()
+            end
             return
         end
         XNetwork.Call(PurchaseRequest.GetPurchaseListReq, { UiTypeList = uiTypeList }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
+                if failCb then
+                    failCb()
+                end
                 return
             end
 
@@ -977,9 +983,9 @@ XPurchaseManagerCreator = function()
     end
 
     -- 请求月卡数据
-    function XPurchaseManager.YKInfoDataReq(cb)
+    function XPurchaseManager.YKInfoDataReq(cb, failCb)
         local uiTypeList = XPurchaseConfigs.GetYKUiTypes()
-        XPurchaseManager.GetPurchaseListRequest(uiTypeList, cb)
+        XPurchaseManager.GetPurchaseListRequest(uiTypeList, cb, failCb)
     end
 
     -- Get月卡数据

@@ -6,9 +6,9 @@
 --- 镜像口径：
 ---   base 来源 = CardLevel 表（同 CreateCardEntity L227：atkBase=levelCfg.ATK；cdBaseMs=levelCfg.CD；
 ---     cd 帧 = max(1, floor(cdBaseMs/1000 * logicFrame))）
----   effect 链 = RunBattleStartEffects 的 CardEntityIds 序（数组序遍历 equippedCards），
+---   effect 链 = RunBattleStartEffects 阶段1（OnEquip）的 CardEntityIds 序（数组序遍历 equippedCards），
 ---     仅投 EffectType==1(ModifyNumberField) 且 targetFieldEnum∈{ATK(3),TickCDMax(5)} 的 effect，
----     时机 mask = TriggerTimeMask.BattleStart(6)（装备时|战斗开始时）。
+---     时机 mask = TriggerTimeMask.OnEquip(2)（仅装备时；战斗开始时生效属局内阶段2，不纳入局外装备预览）#B1271760。
 ---   Selector/Trigger 位置类逻辑镜像 STEDefine.Selector/Trigger/STEQuery；runtime 类（球池/HP/概率/tick 列表）保守 false。
 ---
 ---   index 域口径（重要，非严格镜像真值）：
@@ -318,8 +318,9 @@ function STEProjection.ProjectAtkCd(control, targetCard, equippedCards, logicFra
     local curBallConsume = ballConsumeBase
     local curBallOutPut = ballOutPutBase
 
-    -- 3. 遍历 equippedCards（数组序，镜像 RunBattleStartEffects 的 CardEntityIds 序）
-    local mask = TriggerTimeMask.BattleStart
+    -- 3. 遍历 equippedCards（数组序，镜像 RunBattleStartEffects 阶段1 OnEquip 的 CardEntityIds 序）
+    -- 局外预览只镜像「装备即生效」（阶段1 OnEquip），不含「战斗开始时生效」（阶段2 OnBattleStart）#B1271760
+    local mask = TriggerTimeMask.OnEquip
 
     -- 跑指定 effect group 的 ModifyNumberField(EffectType=1) effect，作用在 curAtk/curCdFrames/curBallConsume/curBallOutPut（targetCard 当前投影值）。
     -- E=执行者身份（局内 ownerId 语境）；命中 targetFieldEnum=ATK(3)/TickCDMax(5)/BallProductCount(8)/BallConsumeCount(9) 经 CheckTrigger+Selector 后 ValueOp.Apply。
@@ -345,7 +346,8 @@ function STEProjection.ProjectAtkCd(control, targetCard, equippedCards, logicFra
                         -- Selector 命中
                         if IsSelectorHit(effectCfg.ScopeType, effectCfg.ScopeParams, E, targetCard, equippedCards, control) then
                             local op = params[2]
-                            local rightVal = params[3]
+                            -- EffectParams params[3]=rightVal 为千分比定点数（int×1000），投影直读处还原 float #EffectParams定点
+                            local rightVal = params[3] * STECustomEnum.EffectPerMilleScale
                             if targetFieldEnum == 3 then
                                 -- ATK
                                 local newv = ValueOp.Apply(curAtk, op, rightVal)
@@ -405,6 +407,8 @@ function STEProjection.ProjectAtkCd(control, targetCard, equippedCards, logicFra
     end
 
     -- 4. curCdMs 回毫秒；球数无单位换算（整数 base+delta 直接取）
+    curCdFrames = math.max(curCdFrames, STECustomEnum.TickCDMaxMin)
+    
     local curCdMs = curCdFrames / logicFrame * 1000
     result.atkDelta = curAtk - atkBase
     result.cdDeltaMs = curCdMs - cdBaseMs

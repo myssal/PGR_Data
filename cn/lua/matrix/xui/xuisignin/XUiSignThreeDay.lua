@@ -101,7 +101,7 @@ function XUiSignThreeDay:RefreshByPurchasePackageData()
         if icon then
             self.BtnBuy:SetRawImage(icon)
         end
-        self.BtnBuy:SetName(self.PurchaseData.ConsumeCount)
+        self.BtnBuy:SetName(self.Parent:GetConsumePriceColorText(self.PurchaseData.ConsumeId, self.PurchaseData.ConsumeCount))
         if self.PurchaseData.BuyTimes < self.PurchaseData.BuyLimitTimes then
             self.BtnBuy:SetDisable(false)
         else
@@ -111,6 +111,14 @@ function XUiSignThreeDay:RefreshByPurchasePackageData()
     self.TxtTips.text = self.PurchaseData.Desc
     self.IsSellOut = self.PurchaseData.BuyLimitTimes > 0 and self.PurchaseData.BuyTimes == self.PurchaseData.BuyLimitTimes
     self:SetRewardInfos()
+end
+
+-- 虹卡数量变动时重刷购买按钮价格颜色(仅打脸购买态有购买按钮)
+function XUiSignThreeDay:RefreshBuyBtnColor()
+    if not self.IsPurchaseEnter or not self.PurchaseData or not self.BtnBuy then
+        return
+    end
+    self.BtnBuy:SetName(self.Parent:GetConsumePriceColorText(self.PurchaseData.ConsumeId, self.PurchaseData.ConsumeCount))
 end
 
 function XUiSignThreeDay:RefreshBySignIn()

@@ -18,10 +18,10 @@ end
 ---@param settleInfo table|nil XPunishaarSettleInfo（结算数据，nil 时兜底空表）
 function XUiPunishaarChallengeSettlementPanelStats:Refresh(settleInfo)
     settleInfo = settleInfo or {}
-    -- 存续值：优先取最新 stage.Durability；耐久耗尽失败（DurabilityEnd）时服务端 stage.Durability 可能未及时归零/缺失读旧值，
-    -- 按失败条件应 0 特殊处理显 0（避免显示战前残留 1）。Quit（主动退出）耐久未耗尽仍取实时值。#存续值失败显0
-    if settleInfo.SettleType == XMVCA.XPunishaar.EnumConst.SettleType.DurabilityEnd then
-        self.TxtLives.text = "0"
+    -- 存续值：优先用服务端 settleInfo.Durability 权威；无则 fallback stage.Durability
+    local dur = settleInfo.Durability
+    if dur ~= nil then
+        self.TxtLives.text = tostring(dur)
     else
         self.TxtLives.text = tostring(self._Control:GetCurrentDurability() or 0)
     end

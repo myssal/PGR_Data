@@ -526,17 +526,8 @@ function XSignInConfigs.IsShowSignIn(signInId)
         return false
     end
 
-    local startTime, closeTime = XFunctionManager.GetTimeByTimeId(timeId)
-    if not startTime or not closeTime then
-        return false
-    end
-
-    local now = XTime.GetServerNowTimestamp()
-    if now < startTime or now > closeTime then
-        return false
-    end
-
-    return true
+    -- 复用统一的时间判断：startTime为0表示无开启时间限制，endTime为0表示无结束时间限制
+    return XFunctionManager.CheckInTimeByTimeId(timeId)
 end
 
 -- 判断最后一轮最后一天获得后是否继续再福利界面显示

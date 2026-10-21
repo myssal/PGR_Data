@@ -34,6 +34,7 @@ function XUiPlayerPersonalizedSetting:OnAwake()
     self._PanelNoSelectInfo = XUiPanelNoSelectInfo.New(self.PanelNoSelectInfoObj, self)
     self._PanelNameplate = XUiPanelNameplate.New(self.PanelNameplate, self)
     self._ChatBoradPreview = XUiChatBoard.New(self.ChatBoardPreview, self)
+    self._ChatBoradPreview:SetPlayEnableAnimOnRefresh(true)
 end
 
 function XUiPlayerPersonalizedSetting:OnStart(defaultSelectIndex)

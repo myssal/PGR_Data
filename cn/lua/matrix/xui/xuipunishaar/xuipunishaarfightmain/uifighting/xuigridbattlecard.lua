@@ -13,11 +13,13 @@
 ---@field PnlMask UnityEngine.UI.RawImage @遮罩图，用于约束战斗的cd相关图片显示范围
 ---@field TagDamage     @攻击力数值标签根节点（normal=TxtDamage / up=TxtDamageUp，current≈config 显 normal 否则 up #79）
 ---@field TagCD         @CD 数值标签根节点（normal=TxtCD / up=TxtCDUp，同 TagDamage #79）
+---@field Used UnityEngine.RectTransform 释放特效节点（prefab 新增；DoneTimes++ 即释放瞬间 Close→Open 重启内部 Timeline playOnAwake 播外发光 #释放特效）
 local XUiGridBattleCard = XClass(XUiNode, "XUiGridBattleCard")
 
 local XUiComBattleCardShow = require("XUi/XUiPunishaar/XUiPunishaarFightMain/UiFighting/Com/XUiComBattleCardShow")
 local CardBgSettingsReader = require("XModule/XPunishaar/SubModules/InGame/XPunishaarCardBgSettingsReader")
 local XUiPunishaarCardValueTag = require("XUi/XUiPunishaar/XUiPunishaarFightMain/CommonUiTemplate/XUiPunishaarCardValueTag")
+local XUiGridBattleCardUsed = require("XUi/XUiPunishaar/XUiPunishaarFightMain/UiFighting/XUiGridBattleCardUsed")
 
 function XUiGridBattleCard:OnStart()
     local showRoot = self.PanelNormal or self.GameObject
@@ -39,22 +41,45 @@ function XUiGridBattleCard:OnStart()
         self.TagCDInst = XUiPunishaarCardValueTag.New(self.TagCD, self)
     end
 
+    -- 释放特效节点（DoneTimes++ 即释放瞬间 Close→Open 重启内部 Timeline 播外发光）#释放特效
+    -- 先 SetActiveEx(false) 再 New：XUiNode:InitNode:53 对 activeSelf=true 的 GO 会 auto-Open 触发 Timeline
+    -- （进战斗建卡时 spurious 闪一次），先隐使 New 不 auto-Open，留 fire 时 Close→Open 才激活+播
+    if self.Used then
+        self.Used.gameObject:SetActiveEx(false)
+        ---@type XUiGridBattleCardUsed
+        self.UsedInst = XUiGridBattleCardUsed.New(self.Used, self)
+    end
+
     self.GroupInCD.gameObject:SetActiveEx(true)
+end
+
+--- 退出战斗/切子面板 OnDisable：Close Used 释放特效节点，防下次切回 OnEnable 级联重激活触发 playOnAwake Timeline 误播外发光 #释放特效残留
+function XUiGridBattleCard:OnDisable()
+    if self.UsedInst then
+        self.UsedInst:Close()
+    end
 end
 
 --- 从槽位模板取标准单格宽度（槽位始终为标准格尺寸，不随卡内容变化）。
 ---@param slot UnityEngine.RectTransform|XUiGridBattleCardSlot|nil
 ---@return number|nil
 function XUiGridBattleCard:_GetSlotUnitWidth(slot)
-    if not slot then return nil end
+    if not slot then
+        return nil
+    end
     local trans = slot.Transform or slot
-    if not trans then return nil end
+    if not trans then
+        return nil
+    end
     return trans.sizeDelta.x
 end
 
 ---@param uid number 卡牌实体 uid
 ---@param slot UnityEngine.RectTransform|XUiGridBattleCardSlot|nil 槽位模板（取标准单格宽度用）
 function XUiGridBattleCard:Refresh(uid, slot)
+    if self._Uid2Card ~= uid then
+        self._LastDoneTimes = nil  -- 卡牌变更，重置释放计数缓存（防跨卡 DoneTimes 误触发 #释放特效）
+    end
     self._Uid2Card = uid
 
     local reader = self._Control.GameControl.FightControl.STEReader
@@ -70,8 +95,8 @@ function XUiGridBattleCard:Refresh(uid, slot)
 
     -- 遮罩（grid 独有 PnlMask，Image 取 MaskBgs 图；不依赖 reader，grid 持 cardCfg）#64
     if self.PnlMask and cardCfg then
-        local gc = self._Control.GameControl
-        local maskSprite = gc and CardBgSettingsReader.GetMaskSprite(gc, cardCfg.Type, cardCfg.Size) or nil
+        local gameControl = self._Control.GameControl
+        local maskSprite = gameControl and CardBgSettingsReader.GetMaskSprite(gameControl, cardCfg.Type, cardCfg.Size) or nil
         -- 图变跳过（per-card-change 非 hot path，仍加缓存对齐 GC 任务）
         if self._LastMaskSprite ~= maskSprite then
             self._LastMaskSprite = maskSprite
@@ -80,6 +105,13 @@ function XUiGridBattleCard:Refresh(uid, slot)
             end
             self.PnlMask.gameObject:SetActiveEx(maskSprite ~= nil)
         end
+    end
+
+    -- 释放特效描边图（与 CardShow 待激发外发光同一套图，按 Type/Size 取）#释放特效
+    if self.UsedInst and cardCfg then
+        local gameControl = self._Control.GameControl
+        local outlineSprite = gameControl and CardBgSettingsReader.GetOutlineSprite(gameControl, cardCfg.Type, cardCfg.Size) or nil
+        self.UsedInst:InitRImgOutline(outlineSprite)
     end
 
     self:RefreshCd()
@@ -98,17 +130,43 @@ end
 
 --- 仅刷球数显示（消球/产球变化，转发 CardShow:RefreshBallCount，不全量 Refresh 避 Close all + 重建）。
 function XUiGridBattleCard:RefreshBallCount()
-    if not self._Uid2Card or not self._CardCfg then return end
+    if not self._Uid2Card or not self._CardCfg then
+        return
+    end
     local reader = self._Control.GameControl.FightControl.STEReader
     if self.CardShow then
         self.CardShow:RefreshBallCount(self._Uid2Card, reader, self._CardCfg)
     end
 end
 
+--- 轻量刷手动牌"待激发+球够"显隐（CDTipsGroup + CardShow 的 ImgArrow/RImgOutlineGroup）。#手动牌球不足显隐
+--- 球数变化（BallListChanged）时调：CD 到 0 后 TickAllCards 不再推进 CD、不再 Emit CardCdChanged，
+--- 需此入口重判球够否（球变够/不够都要刷新显隐）。帧末刷新，不考虑帧内动态。
+function XUiGridBattleCard:RefreshActivateState()
+    if not self._Uid2Card then
+        return
+    end
+    local reader = self._Control.GameControl.FightControl.STEReader
+    local isCardByHand = reader:IsCardByHand(self._Uid2Card)
+    local canActivate = isCardByHand
+            and reader:IsCardWaitingDone(self._Uid2Card)
+            and not reader:IsCardBallNotEnough(self._Uid2Card)
+    if self.CDTipsGroup then
+        self.CDTipsGroup.gameObject:SetActiveEx(canActivate)
+    end
+    if self.CardShow then
+        self.CardShow:RefreshActivateState(canActivate)
+    end
+end
+
 function XUiGridBattleCard:RefreshCd()
     if not self._Uid2Card then
-        if self.TagDamageInst then self.TagDamageInst:Clear() end
-        if self.TagCDInst then self.TagCDInst:Clear() end
+        if self.TagDamageInst then
+            self.TagDamageInst:Clear()
+        end
+        if self.TagCDInst then
+            self.TagCDInst:Clear()
+        end
         return
     end
 
@@ -133,13 +191,25 @@ function XUiGridBattleCard:RefreshCd()
     end
 
     if self.CDTipsGroup then
-        local showTips = reader:IsCardByHand(self._Uid2Card) and reader:IsCardWaitingDone(self._Uid2Card)
+        -- 球不足时不显示"点击触发"字样（手动牌 CD 到但球不够时 STE 执行会 skip，UI 不应误导可点击）#手动牌球不足显隐
+        local showTips = reader:IsCardByHand(self._Uid2Card)
+                and reader:IsCardWaitingDone(self._Uid2Card)
+                and not reader:IsCardBallNotEnough(self._Uid2Card)
         self.CDTipsGroup.gameObject:SetActiveEx(showTips)
     end
 
     if self.CardShow then
         self.CardShow:Refresh(self._Uid2Card, reader, self._CardCfg)
     end
+    -- 释放特效：DoneTimes++ 即释放瞬间，Close→Open 重启 Used 内 Timeline 播外发光（轮询 a，每帧 CardCdChanged 时判）#释放特效
+    local doneTimes = reader:GetCardDoneTimes(self._Uid2Card) or 0
+    if self._LastDoneTimes ~= nil and doneTimes > self._LastDoneTimes then
+        if self.UsedInst then
+            self.UsedInst:Close()
+            self.UsedInst:Open()
+        end
+    end
+    self._LastDoneTimes = doneTimes
     -- atk/cd 计算归根节点 Tag（每帧 reader:GetCardAtk / GetCardCdMaxSeconds 含 buff 最终值；
     -- Tag 内变更检测驱动 Refresh 动效，值不变不播）#79
     self:_RefreshValueTags(self._Uid2Card, reader)
@@ -164,13 +234,21 @@ function XUiGridBattleCard:_RefreshValueTags(uid, reader)
     -- 卡牌切换（grid 复用显示其他卡）或 uid nil：清 Tag 缓存 _LastCurrent，下次 Refresh 视 first 不播动画
     -- 只有同卡数值变换才播 Refresh 动画（跨卡切换数值不一致不播）#82
     if self._LastUid2Card ~= uid then
-        if self.TagDamageInst then self.TagDamageInst:Clear() end
-        if self.TagCDInst then self.TagCDInst:Clear() end
+        if self.TagDamageInst then
+            self.TagDamageInst:Clear()
+        end
+        if self.TagCDInst then
+            self.TagCDInst:Clear()
+        end
         self._LastUid2Card = uid
     end
     if not uid or not self._CardLevelCfg then
-        if self.TagDamageInst then self.TagDamageInst:Clear() end
-        if self.TagCDInst then self.TagCDInst:Clear() end
+        if self.TagDamageInst then
+            self.TagDamageInst:Clear()
+        end
+        if self.TagCDInst then
+            self.TagCDInst:Clear()
+        end
         return
     end
     local levelCfg = self._CardLevelCfg
@@ -201,7 +279,9 @@ function XUiGridBattleCard:OnBtnClick()
     -- 详情查看走预留的 BtnDetail 角标（prefab 待美术提供），TODO 接入 ShowMainCardTips 只读详情：
     --   local host = self.Parent; while host and not host.ShowMainCardTips do host = host.Parent end
     --   host:ShowMainCardTips({ cardId = self._CardCfg.Id, level = <level>, operationMode = None }, self.DetailRoot or self.Transform)
-    if not self._Uid2Card then return end
+    if not self._Uid2Card then
+        return
+    end
     local reader = self._Control.GameControl.FightControl.STEReader
     if not (reader:IsCardByHand(self._Uid2Card) and reader:IsCardWaitingDone(self._Uid2Card)) then
         return

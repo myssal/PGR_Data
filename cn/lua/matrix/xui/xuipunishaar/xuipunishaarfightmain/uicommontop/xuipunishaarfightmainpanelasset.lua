@@ -19,11 +19,11 @@ end
 function XUiPunishaarFightMainPanelAsset:OnEnable()
     self:_RefreshGold()
     self:_RefreshHp()
-    XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_GOLD_CHANGE, self._RefreshGold, self)
+    XMVCA.XPunishaar:AddEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_GOLD_CHANGE, self._RefreshGold, self)
 end
 
 function XUiPunishaarFightMainPanelAsset:OnDisable()
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_GOLD_CHANGE, self._RefreshGold, self)
+    XMVCA.XPunishaar:RemoveEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_GOLD_CHANGE, self._RefreshGold, self)
 end
 
 function XUiPunishaarFightMainPanelAsset:OnDestroy()
@@ -42,7 +42,12 @@ end
 
 function XUiPunishaarFightMainPanelAsset:_RefreshHp()
     if self.TxtHp then
-        self.TxtHp.text = tostring(self._Control:GetCurrentDurability() or 0)
+        -- 优先用服务端权威 settleInfo.Durability（BattleSettlement 传入 override）；无则读 stage.Durability
+        local dur = self._DurabilityOverride
+        if dur == nil then
+            dur = self._Control:GetCurrentDurability() or 0
+        end
+        self.TxtHp.text = tostring(dur)
     end
 end
 

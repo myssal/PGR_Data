@@ -2,6 +2,7 @@ local XUiPunishaarFightMainPanelBattleBall = require("XUi/XUiPunishaar/XUiPunish
 local XUiPunishaarFightMainPanelMainHp = require("XUi/XUiPunishaar/XUiPunishaarFightMain/UiFighting/XUiPunishaarFightMainPanelMainHp")
 local XUiPunishaarFightMainPanelEnemyHp = require("XUi/XUiPunishaar/XUiPunishaarFightMain/UiFighting/XUiPunishaarFightMainPanelEnemyHp")
 local XUiPunishaarFightMainPanelBattleCardList = require("XUi/XUiPunishaar/XUiPunishaarFightMain/UiFighting/XUiPunishaarFightMainPanelBattleCardList")
+local XUiPunishaarBallConsumeEffectPlayer = require("XUi/XUiPunishaar/XUiPunishaarFightMain/CommonUiTemplate/Model/XUiPunishaarBallConsumeEffectPlayer")
 local STECustomEnum = require("XModule/XPunishaar/STEDefine/STECustomEnum")
 -- EffectController 删除（#73 重构）：攻击特效/卡牌攻击动画收口到 ModelShow 的 EffectPlayer/AnimationPlayer 子组件
 
@@ -18,6 +19,10 @@ local DAMAGE_POP_OFFSET_UP = 60
 ---@field PanelMainHp XUiPunishaarFightMainPanelMainHp
 ---@field PanelEnemyHp XUiPunishaarFightMainPanelEnemyHp
 ---@field PanelBattleCardList XUiPunishaarFightMainPanelBattleCardList
+---@field PanelBallConsumeEffectRoot UnityEngine.RectTransform 消球动效根节点（挂 EffectTrailPink/Yellow/Blue）#消球动效
+---@field EffectTrailPink UnityEngine.RectTransform 粉色消球 trail prefab
+---@field EffectTrailYellow UnityEngine.RectTransform 黄色消球 trail prefab
+---@field EffectTrailBlue UnityEngine.RectTransform 蓝色消球 trail prefab
 ---@field Parent XLuaUi
 local XUiPunishaarFightMainPanelFighting = XClass(XUiNode, "XUiPunishaarFightMainPanelFighting")
 
@@ -40,6 +45,13 @@ function XUiPunishaarFightMainPanelFighting:InitComponents(ModelShow)
     self.PanelEnemyHp:Open()
     self.PanelBattleCardList:Open()
     -- EffectController 创建删除（#73 重构）：EffectPlayer/AnimationPlayer 由 ModelShow:OnStart 创建
+
+    -- 消球动效播放器（PanelBallConsumeEffectRoot 下挂 EffectTrailPink/Yellow/Blue）#消球动效
+    if self.PanelBallConsumeEffectRoot then
+        ---@type XUiPunishaarBallConsumeEffectPlayer
+        self._BallConsumeEffectPlayer = XUiPunishaarBallConsumeEffectPlayer.New(self.PanelBallConsumeEffectRoot, self)
+        self._BallConsumeEffectPlayer:Open()
+    end
 
     -- 疲劳弹窗初始隐（显式保证不依赖 prefab 默认 active=false；显隐归 _OnFatigueAnim 显/OnDisable 隐，OnStart 初始隐兜底防误改 prefab 或复用残留）#80
     if self.PaneMiddleNotify then
@@ -72,6 +84,11 @@ function XUiPunishaarFightMainPanelFighting:OnEnable()
     gameControl:AddEventListener(gameControl.EventIds.DeathAnim, self._OnDeathAnim, self)  -- 死亡动画触发（no-op 预留）#75
     gameControl:AddEventListener(gameControl.EventIds.FatigueAnim, self._OnFatigueAnim, self)  -- 疲劳弹窗动画触发（no-op 预留）#80
     gameControl:AddEventListener(gameControl.EventIds.EnemyAttackPrepare, self._OnEnemyAttackPrepare, self)  -- 敌人准备攻击→FxEnemyAttack 特效 #EnemyAttack
+    -- 消球动效订阅（BallAnimSteps 批量 step 队列 → EnqueueStep + StartPlay）#消球动效动画队列
+    if self._BallConsumeEffectPlayer then
+        gameControl:AddEventListener(gameControl.EventIds.BallAnimSteps, self._OnBallAnimSteps, self)
+        self._BallConsumeEffectPlayer:_RefreshPreheat()  -- EnterFight 后 FightControl 就绪，预热生效（player:OnEnable 早于 EnterFight 已早退 #核实2）
+    end
     -- 受伤飘字 coordinator：HPChanged→DrainDamageLanded→算坐标→DispatchEvent(SpawnDamageNumber)（飘字系统纯订阅 SpawnDamageNumber）#飘字
     gameControl:AddEventListener(gameControl.EventIds.PlayerHPChanged, self._OnDamageLanded, self)
     gameControl:AddEventListener(gameControl.EventIds.EnemyHPChanged, self._OnDamageLanded, self)
@@ -113,6 +130,10 @@ function XUiPunishaarFightMainPanelFighting:OnDisable()
         gameControl:RemoveEventListener(gameControl.EventIds.DeathAnim, self._OnDeathAnim, self)
         gameControl:RemoveEventListener(gameControl.EventIds.FatigueAnim, self._OnFatigueAnim, self)
         gameControl:RemoveEventListener(gameControl.EventIds.EnemyAttackPrepare, self._OnEnemyAttackPrepare, self)
+        -- 消球动效注销 #消球动效动画队列
+        if self._BallConsumeEffectPlayer then
+            gameControl:RemoveEventListener(gameControl.EventIds.BallAnimSteps, self._OnBallAnimSteps, self)
+        end
         gameControl:RemoveEventListener(gameControl.EventIds.PlayerHPChanged, self._OnDamageLanded, self)
         gameControl:RemoveEventListener(gameControl.EventIds.EnemyHPChanged, self._OnDamageLanded, self)
     end
@@ -252,7 +273,28 @@ function XUiPunishaarFightMainPanelFighting:_RefreshEnemyCd()
 end
 
 function XUiPunishaarFightMainPanelFighting:_RefreshBallList()
-    self.PanelBattleBall:Refresh()
+    -- 队列播放中跳过 Refresh（队列增量操作 grid，全播完才 Refresh；此处 Refresh 会重建 grid 破坏增量状态）#消球动效动画队列
+    local isPlaying = self._BallConsumeEffectPlayer and self._BallConsumeEffectPlayer:GetIsPlaying()
+    if not isPlaying then
+        self.PanelBattleBall:Refresh()
+    end
+    -- 球数变化重判手动牌"待激发+球够"显隐（CD 到 0 后不再 Emit CardCdChanged，需此入口刷）#手动牌球不足显隐
+    self.PanelBattleCardList:RefreshCardActivateState()
+end
+
+--- BallAnimSteps 回调：遍历 stepList EnqueueStep + StartPlay（STEControl dispatch 同步调，stepList 引用当帧有效）。#消球动效动画队列
+function XUiPunishaarFightMainPanelFighting:_OnBallAnimSteps(stepList)
+    if not self._BallConsumeEffectPlayer then
+        return
+    end
+    local count = stepList:GetCount()
+    for i = 1, count do
+        local step = stepList:GetValueByIndex(i)
+        if step then
+            self._BallConsumeEffectPlayer:EnqueueStep(step.actionType, step.cardUid, step.color, step.count)
+        end
+    end
+    self._BallConsumeEffectPlayer:StartPlay()
 end
 
 function XUiPunishaarFightMainPanelFighting:_RefreshCardList()

@@ -69,7 +69,8 @@ function XUiPunishaarExploreDetail:Refresh(stageId)
     self.BtnResumeFight.gameObject:SetActiveEx(isHasSave and not isPassed)
     self.BtnRetryFight.gameObject:SetActiveEx(isPassed)
 
-    self.BtnEnterStory.gameObject:SetActiveEx((isHasSave or isPassed) and not string.IsNilOrEmpty(storyId))
+    local hasChallenged = XMVCA.XPunishaar:CheckStageHasChallengeRecord(stageId)
+    self.BtnEnterStory.gameObject:SetActiveEx(hasChallenged and not string.IsNilOrEmpty(storyId))
 
     local isShowProgress = isHasSave and not isPassed
     self.TxtProgress.gameObject:SetActiveEx(isShowProgress)
@@ -125,6 +126,12 @@ function XUiPunishaarExploreDetail:StartStageWithStory()
         CsXUiManager.Instance:SetReleaseAllLock(true)
         control:EnterStory(stageId, function()
             CsXUiManager.Instance:SetReleaseAllLock(false)
+            
+            -- 剧情期间 Control 可能因活动结束被释放，此时不再进入关卡
+            if control:GetIsRelease() then
+                return
+            end
+            
             control:EnterGame(data)
         end)
     end)

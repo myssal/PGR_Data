@@ -16,6 +16,15 @@ end
 
 -- region 配置
 
+---@return string[]
+function XFashionSuitControl:GetClientConfigs(key)
+    local config = self._Model:GetClientConfigById(key)
+    if config then
+        return config.Values
+    end
+    return nil
+end
+
 ---@return string
 function XFashionSuitControl:GetClientConfig(key, index)
     index = index or 1
@@ -179,13 +188,6 @@ function XFashionSuitControl:IsSuitHasNew(suitId)
     local fashionIds = self:GetFashionSuitById(suitId).FashionIds
     for _, fashionId in pairs(fashionIds) do
         if not XWeaponFashionConfigs.IsWeaponFashion(fashionId) and not self._Model:IsFashionViewed(fashionId) then
-            return true
-        end
-    end
-    return false
-end
-return XFashionSuitControl
-     if not XWeaponFashionConfigs.IsWeaponFashion(fashionId) and not self._Model:IsFashionViewed(fashionId) then
             return true
         end
     end

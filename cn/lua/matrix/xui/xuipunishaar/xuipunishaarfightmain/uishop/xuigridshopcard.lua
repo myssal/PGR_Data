@@ -52,10 +52,10 @@ function XUiGridShopCard:OnStart()
 
     -- 外发光选中态事件订阅移到 OnEnable（与 OnDisable 对称，避免 grid Close→Open 后监听丢失）
     -- 升级动画播放事件订阅（BuySuccess 刷新后 GameControl 派发 LevelupAnimPlay，检查缓存匹配+清+播）#升级动画
-    -- 注意：LevelupAnimPlay 在 GameControl 事件系统派发（_DoBuyGoodsFinal self:DispatchEvent），须 gc:AddEventListener 非 self._Control（根 Control）
-    local gc = self._Control.GameControl
-    if gc then
-        gc:AddEventListener(gc.ShopEventId.LevelupAnimPlay, self._OnLevelupAnimPlay, self)
+    -- 注意：LevelupAnimPlay 在 GameControl 事件系统派发（_DoBuyGoodsFinal self:DispatchEvent），须 gameControl:AddEventListener 非 self._Control（根 Control）
+    local gameControl = self._Control.GameControl
+    if gameControl then
+        gameControl:AddEventListener(gameControl.EventId.Shop.LevelupAnimPlay, self._OnLevelupAnimPlay, self)
     end
 
     -- 根节点数值标签（TagDamage/TagCD，atk/cd 计算归根节点避免子→父上行访问 #79）
@@ -116,16 +116,15 @@ function XUiGridShopCard:_SetOutlineSelected(isSelected)
             or (self._Goods and self._Control:GetTablePunishaarCard(self._Goods.CardId, true))
             or (self._DragCardData and self._Control:GetTablePunishaarCard(self._DragCardData.TemplateId, true))
         if cardCfg then
-            local gc = self._Control.GameControl
-            local sprite = gc and CardBgSettingsReader.GetOutlineSprite(gc, cardCfg.Type, cardCfg.Size) or nil
-            if sprite and show.RImgOutline then
-                show.RImgOutline:SetRawImage(sprite)
-            end
-            show.RImgOutlineGroup.gameObject:SetActiveEx(sprite ~= nil)
+            local gameControl = self._Control.GameControl
+            local sprite = gameControl and CardBgSettingsReader.GetOutlineSprite(gameControl, cardCfg.Type, cardCfg.Size) or nil
+
+            self.CardShowNormal:RefreshOutlineShow(true, sprite)
+            return
         end
-    else
-        show.RImgOutlineGroup.gameObject:SetActiveEx(false)
     end
+
+    self.CardShowNormal:RefreshOutlineShow(false)
 end
 
 --- 切换正常态 / 禁用态：转发给 CardShow 控其内部 PnlDisable 半透明遮罩显隐（#71）。
@@ -207,6 +206,7 @@ function XUiGridShopCard:Refresh(goods, goodsIndex, slot)
         end
         if self.CardShowNormal then
             self.CardShowNormal:SetBallGroupActive(false)
+            self.CardShowNormal:RefreshOutlineShow(false)  -- 重置隐藏外发光（防 grid 复用残留 #164）
         end
         return
     end
@@ -251,6 +251,7 @@ function XUiGridShopCard:Refresh(goods, goodsIndex, slot)
         end
         if self.CardShowNormal then
             self.CardShowNormal:SetBallGroupActive(false)
+            self.CardShowNormal:RefreshOutlineShow(false)  -- 重置隐藏外发光（防 grid 复用残留 #164）
         end
     else
         -- 主卡商品：隐 PanelShopSubCard，走主卡 CardShow 路径
@@ -270,6 +271,9 @@ function XUiGridShopCard:Refresh(goods, goodsIndex, slot)
         end
         -- 商品态默认非置灰（遮罩复位，防 grid 复用残留 #71）
         self:SetDisable(false)
+        -- 刷新重置隐藏外发光
+        self.CardShowNormal:RefreshOutlineShow(false)
+        
         if self.CardShowNormal then
             self.CardShowNormal:RefreshAsGoods(goods)
         end
@@ -316,6 +320,7 @@ function XUiGridShopCard:RefreshAsEquipped(card, size, slot)
         end
         if self.CardShowNormal then
             self.CardShowNormal:SetBallGroupActive(false)
+            self.CardShowNormal:RefreshOutlineShow(false)  -- 重置隐藏外发光（防 grid 复用残留 #164）
         end
         return
     end
@@ -327,6 +332,7 @@ function XUiGridShopCard:RefreshAsEquipped(card, size, slot)
     -- 遮罩复位为常态（置灰由容器随后按副卡宿主提示调 SetDisable 决定 #71）
     self:SetDisable(false)
     if self.CardShowNormal then
+        self.CardShowNormal:RefreshOutlineShow(false)  -- 重置隐藏外发光（防 grid 复用残留：卖出回收未对称清 #164）
         self.CardShowNormal:RefreshAsEquipped(card)
     end
     -- atk/cd 计算归根节点 Tag（装备态传 masterCard 走投影 base+delta，delta≠0 显 up）#79
@@ -390,15 +396,7 @@ function XUiGridShopCard:_RefreshValueTags(cardId, level, masterCard)
     if not self.TagDamageInst and not self.TagCDInst then
         return
     end
-    -- 卡牌切换（grid 复用显示其他卡）或 cardId/level/masterCard 变：清 Tag 缓存 _LastCurrent，下次 Refresh 视 first 不播动画
-    -- 只有同卡数值变换才播 Refresh 动画（跨卡切换数值不一致不播）#82
-    if self._LastCardId ~= cardId or self._LastLevel ~= level or self._LastMasterCard ~= masterCard then
-        if self.TagDamageInst then self.TagDamageInst:Clear() end
-        if self.TagCDInst then self.TagCDInst:Clear() end
-        self._LastCardId = cardId
-        self._LastLevel = level
-        self._LastMasterCard = masterCard
-    end
+    -- changed 改由逻辑层 cardId 历史追踪（替代 grid 实例级 _LastCardId 缓存）#数值动画逻辑分离
     local levelCfg = self._Control:GetTablePunishaarCardLevel(cardId * 100 + level)
     if not levelCfg then
         if self.TagDamageInst then self.TagDamageInst:Clear() end
@@ -406,9 +404,9 @@ function XUiGridShopCard:_RefreshValueTags(cardId, level, masterCard)
         return
     end
     local atkBase, atkDelta, cdBaseMs, cdDeltaMs
-    local gc = self._Control.GameControl
-    if masterCard and gc then
-        local proj = gc:GetCardRealtimeAtkCd(masterCard.TemplateId, level, masterCard)
+    local gameControl = self._Control.GameControl
+    if masterCard and gameControl then
+        local proj = gameControl:GetCardRealtimeAtkCd(masterCard.TemplateId, level, masterCard)
         atkBase, atkDelta = proj.atkBase, proj.atkDelta
         cdBaseMs, cdDeltaMs = proj.cdBaseMs, proj.cdDeltaMs
     else
@@ -417,28 +415,41 @@ function XUiGridShopCard:_RefreshValueTags(cardId, level, masterCard)
         cdBaseMs = levelCfg.CD or 0
         cdDeltaMs = 0
     end
+    local atkCur = atkBase + atkDelta
+    local cdCur = (cdBaseMs + cdDeltaMs) / 1000
+    cdCur = cdCur * 10
+    cdCur = math.floor(cdCur)
+    cdCur = cdCur / 10
+    local cdCfg = cdBaseMs / 1000
+
+    -- 查逻辑层算 changed（同卡 atk 变→changed→播；cross-card/首次→not changed→不播 #82 防护保留）
+    -- key 用 masterCard.Id（实例 Id，唯一；同模板不同等级/实例可共存故不用 TemplateId）#数值动画逻辑分离
+    -- masterCard 存在但 Id=nil（未拥有卡/异常数据）时不查逻辑层，防 nil key 写入报错
+    local lastAtk, lastCd
+    if masterCard and masterCard.Id and gameControl then
+        lastAtk, lastCd = gameControl:GetLastCardAtkCd(masterCard.Id)
+        gameControl:SetLastCardAtkCd(masterCard.Id, atkCur, cdCur)
+    end
+    local atkChanged = lastAtk ~= nil and lastAtk ~= atkCur
+    local cdChanged = lastCd ~= nil and lastCd ~= cdCur
+
     if self.TagDamageInst then
-        local atkCur = atkBase + atkDelta
         self.TagDamageInst:Open()
-        self.TagDamageInst:Refresh(atkCur, atkBase, tostring(math.floor(atkCur)))
+        self.TagDamageInst:Refresh(atkCur, atkBase, tostring(math.floor(atkCur)), atkChanged)
     end
     if self.TagCDInst then
-        local cdCur = (cdBaseMs + cdDeltaMs) / 1000
-
-        -- 转换成秒显示的时候需要同时满足保留1位小数和向下取整
-        cdCur = cdCur * 10
-        cdCur = math.floor(cdCur)
-        cdCur = cdCur / 10
-        
-        local cdCfg = cdBaseMs / 1000
         self.TagCDInst:Open()
-        self.TagCDInst:Refresh(cdCur, cdCfg, string.format("%.1f", cdCur))
+        self.TagCDInst:Refresh(cdCur, cdCfg, string.format("%.1f", cdCur), cdChanged)
     end
 end
 
 --- 点击卡牌打开主卡详情 Tips。按 _Goods 是否 nil 区分商品/装备态传不同 data；
 --- posUi 取 _PickDetailRoot 选出的锚点（背包区有 Left/Right 时 x-flip，否则单 DetailRoot）。
 function XUiGridShopCard:_OnCardClick()
+    -- 拖拽中不响应点击卡牌打开详情（防拖拽落点误触详情弹窗）#拖拽中禁点击
+    if self._Control.GameControl:GetIsDraggingCard() then
+        return
+    end
     local host = self:_GetTipsHost()
     if not host then
         return
@@ -586,13 +597,28 @@ end
 
 --endregion
 
+--- 拖拽开始钩子（由 XUiCardDragHandler 在真拖拽触发时调）。商品模式隐 PanelBuy（购买区跟拖拽走无意义）#PanelDragBuyTips
+function XUiGridShopCard:OnDragBegin()
+    if self._Goods and self.PanelBuy then
+        self.PanelBuy.gameObject:SetActiveEx(false)
+    end
+end
+
+--- 拖拽结束归位钩子（由 XUiCardDragHandler 在 _RestorePosition 末尾调，正常结束+取消单点全覆盖）。
+--- 商品模式恢复 PanelBuy（购买失败/取消归位恢复；购买成功 grid 已被 Refresh 重设 PanelBuy，此处 if _Goods 重复显 no-op）#PanelDragBuyTips
+function XUiGridShopCard:OnDragEnd()
+    if self._Goods and self.PanelBuy then
+        self.PanelBuy.gameObject:SetActiveEx(true)
+    end
+end
+
 function XUiGridShopCard:OnDestroy()
     if self._DragHandler then
         self._DragHandler:OnDestroy()
     end
-    local gc = self._Control and self._Control.GameControl
-    if gc then
-        gc:RemoveEventListener(gc.ShopEventId.LevelupAnimPlay, self._OnLevelupAnimPlay, self)
+    local gameControl = self._Control and self._Control.GameControl
+    if gameControl then
+        gameControl:RemoveEventListener(gameControl.EventId.Shop.LevelupAnimPlay, self._OnLevelupAnimPlay, self)
     end
 end
 
@@ -600,16 +626,16 @@ end
 --- 替代 ScheduleOnce 延迟（回调时间不可控）：事件派发在 BuySuccess 同步刷新完成后，grid 已重建 Open + 新 card。
 --- 装备态 grid（_DragCardData 是 MasterCard 有 TemplateId+Level）匹配播；商品态 grid（goods 无 TemplateId）不匹配跳过。
 function XUiGridShopCard:_OnLevelupAnimPlay()
-    local gc = self._Control and self._Control.GameControl
-    local pendingTid = gc and gc._PendingLevelupAnimTemplateId
-    local pendingLevel = gc and gc._PendingLevelupAnimLevel
+    local gameControl = self._Control and self._Control.GameControl
+    local pendingTid = gameControl and gameControl._PendingLevelupAnimTemplateId
+    local pendingLevel = gameControl and gameControl._PendingLevelupAnimLevel
     local card = self._DragCardData
     if not pendingTid then return end  -- 无缓存（非升级购买）跳过
     if not card or not card.TemplateId then return end
     -- 同步先检查（匹配）再清缓存（一次性，防多 grid 重复播）
     if card.TemplateId == pendingTid and card.Level == pendingLevel then
-        gc._PendingLevelupAnimTemplateId = nil
-        gc._PendingLevelupAnimLevel = nil
+        gameControl._PendingLevelupAnimTemplateId = nil
+        gameControl._PendingLevelupAnimLevel = nil
         if self.CardShowNormal then
             self.CardShowNormal:OnLevelupEvent()
         end

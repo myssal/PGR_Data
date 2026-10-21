@@ -155,15 +155,14 @@ function XUiTransfiniteTowerLastSettlement:RefreshPageButtons()
 end
 
 function XUiTransfiniteTowerLastSettlement:RefreshPlayer()
-    if self._IsReadOnly then
-        -- 他人记录：显示对方玩家信息
-        local info = self._Control:GetOthersPlayerInfo(self._PlayerId)
-        XUiPlayerHead.InitPortrait(info.HeadPortraitId, info.HeadFrameId, self.Head)
-        self.TxtPlayerName.text = info.Name
-    else
+    if not self._IsReadOnly or self._PlayerId == XPlayer.Id then
         XUiPlayerHead.InitPortrait(XPlayer.CurrHeadPortraitId, XPlayer.CurrHeadFrameId, self.Head)
         self.TxtPlayerName.text = XPlayer.Name
+        return
     end
+    local info = self._Control:GetOthersPlayerInfo(self._PlayerId)
+    XUiPlayerHead.InitPortrait(info.HeadPortraitId, info.HeadFrameId, self.Head)
+    self.TxtPlayerName.text = info.Name
 end
 
 function XUiTransfiniteTowerLastSettlement:RefreshStats()
